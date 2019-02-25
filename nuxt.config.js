@@ -1,5 +1,6 @@
 const pkg = require('./package')
 
+
 module.exports = {
   mode: 'universal',
 
@@ -21,7 +22,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FFFFFF' },
+  loading: { color: '#fff' },
 
   /*
   ** Global CSS
@@ -39,10 +40,10 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
   ],
   /*
   ** Axios module configuration
@@ -56,11 +57,9 @@ module.exports = {
   */
   build: {
     postcss: {
-      plugins: {
-        'postcss-cssnext': {
-          features: {
-            customProperties: false
-          }
+      preset: {
+        features: {
+          customProperties: false
         }
       }
     },
