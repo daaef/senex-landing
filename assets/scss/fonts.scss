@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+  font-family: "Avenir Next Lt Pro";
+  src: url("~assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Avenir Next Lt Pro";
+  src: url("~assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: bold;
+}
+
+$font-roboto: 'Roboto', sans-serif;
+$font-avenir: "Avenir Next Lt Pro", sans-serif;
+$family-sans-serif: $font-avenir;
+
