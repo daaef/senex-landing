@@ -71,7 +71,11 @@
             </button>
           </div>
           <div class="track-trade has-text-centered">
-            <p>Already have a trade? <nuxt-link to="/track">Track</nuxt-link></p>
+            <p>
+              Already have a trade? <nuxt-link to="/track">
+                Track
+              </nuxt-link>
+            </p>
             <p class="flutterwave-grp">
               <span class="text">Powered by </span>
               <span class="img"><img src="~assets/flutterwave.png" alt="Flutterwave icon" height="36" width="36"></span>
@@ -110,7 +114,6 @@ select:focus {
   outline: none;
   outline-style: none;
   box-shadow: none;
-  border-color: transparent;
 }
 
 div.button-container {

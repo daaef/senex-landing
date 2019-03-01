@@ -12,6 +12,12 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "Avenir Next Lt Pro";
+  src: url("~assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 500;
+}
+
 $font-roboto: 'Roboto', sans-serif;
 $font-avenir: "Avenir Next Lt Pro", sans-serif;
 $family-sans-serif: $font-avenir;

@@ -1,9 +1,251 @@
 <template>
-  <div>Track trade.</div>
+  <div class="container wrapper">
+    <div class="columns">
+      <div class="column is-3 is-offset-4">
+        <p class="is-size-4 has-text-weight-normal p-heading has-text-centered">
+          Track Trade
+        </p>
+        <div v-if="step === 'trackid'" class="trackid-wrapper">
+          <div class="card trackid-container">
+            <div class="field">
+              <label for="" class="label has-text-weight-normal">Track ID</label>
+              <p class="control">
+                <input type="text" class="input is-rounded" placeholder="#12345">
+              </p>
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="button is-fullwidth track-button">
+              Continue
+            </button>
+          </div>
+          <div class="has-no-trade has-text-centered">
+            <p>Haven't started a trade?</p>
+            <p>
+              <nuxt-link to="/" class="is-size-5 trade-link">
+                Start Trade
+              </nuxt-link>
+            </p>
+          </div>
+        </div>
+
+        <div v-else-if="step === 'otpverification'" class="otpverification-wrapper">
+          <div class="card otpverification-container">
+            <p class="subheading has-text-centered">
+              OTP Verification
+            </p>
+            <p class="text-info has-text-centered">
+              Enter the code sent to ********789
+            </p>
+            <div class="columns is-mobile">
+              <div class="column is-3">
+                <input type="text" class="input">
+              </div>
+              <div class="column is-3">
+                <input type="text" class="input">
+              </div>
+              <div class="column is-3">
+                <input type="text" class="input">
+              </div>
+              <div class="column is-3">
+                <input type="text" class="input">
+              </div>
+            </div>
+            <div class="btn-container">
+              <button class="button">
+                Track
+              </button>
+            </div>
+            <a href="#" class="resend">Resend</a>
+          </div>
+        </div>
+
+        <div v-else class="trade-status-wrapper">
+          <div class="card trade-status-container">
+            <div class="subheading-wrapper">
+              <p class="subheading">
+                Trade Status
+              </p>
+            </div>
+            <div class="trade-info">
+              <div class="trade-info-item">
+                <p class="item-heading">
+                  Trade type
+                </p>
+                <p class="item-res">
+                  Buying
+                </p>
+              </div>
+              <div class="trade-info-item">
+                <p class="item-heading">
+                  Customer
+                </p>
+                <p class="item-res">
+                  Bruce Wayne
+                </p>
+              </div>
+              <div class="trade-info-item">
+                <p class="item-heading">
+                  BTC Address
+                </p>
+                <p class="item-res">
+                  5151dc5sdc5sd2c51sd515c26s2d62csd
+                </p>
+              </div>
+              <div class="trade-info-item">
+                <p class="item-heading">
+                  Payment Status
+                </p>
+                <p class="item-res">
+                  Paid
+                </p>
+              </div>
+              <div class="trade-info-item">
+                <p class="item-heading">
+                  Trade Date
+                </p>
+                <p class="item-res">
+                  Tue, 24, Feb, 2018
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  layout: 'blue'
+  layout: 'blue',
+
+  data() {
+    return {
+      // This is used to determine which section of the UI to show.
+      // Valid values are trackid | otpverification | tradestatus
+      step: 'trackid'
+    }
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/fonts.scss';
+
+div.wrapper {
+  min-height: 480px;
+  margin-bottom: 3em;
+
+  button:focus,
+  input:focus,
+  select:focus {
+    outline: none;
+    outline-style: none;
+    box-shadow: none;
+  }
+
+  margin-top: 2em;
+  font-family: $font-avenir;
+
+  p.p-heading {
+    color: #1b70cf;
+    font-weight: 500;
+    margin-bottom: 1.5em;
+  }
+
+  div.trackid-wrapper {
+    label {
+      color: #455e6f;
+      font-family: $font-roboto;
+    }
+
+    div.trackid-container {
+      padding: 3em 2.5em;
+    }
+
+    div.button-container {
+      margin-top: 1em;
+      margin-bottom: 2em;
+      button.track-button {
+        background-color: #0c5db2;
+        font-family: $font-avenir;
+        color: #fff;
+      }
+    }
+
+    div.has-no-trade {
+      margin-top: 3.5em;
+      margin-bottom: 10em;
+      color: #d5d5d5;
+    }
+  }
+
+  div.otpverification-wrapper {
+    font-family: $font-avenir;
+
+    div.otpverification-container {
+      padding: 2em 1.5em;
+      background-color: #fbfbfb;
+      border-radius: 4px;
+
+      p.subheading {
+        text-align: center;
+        color: #0c5db2;
+        margin: 0.8em 0;
+      }
+
+      p.text-info {
+        color: #d5d5d5;
+        margin-bottom: 0.8em;
+      }
+
+      div.btn-container {
+        margin-top: 0.8em;
+        text-align: center;
+        button {
+          color: #ffffff;
+          background-color: #0c5db2;
+        }
+      }
+
+      a.resend {
+        display: block;
+        margin-top: 1.2em;
+        text-align: center;
+      }
+    }
+  }
+
+  div.trade-status-wrapper {
+    font-family: $font-avenir;
+
+    div.trade-status-container {
+      .subheading {
+        text-align: center;
+        color: #1b70cf;
+        padding: 1em 0;
+        font-size: 1.3em;
+      }
+
+      .trade-info {
+        padding: 1em 0.7em;
+
+        .trade-info-item {
+          margin: 0.7em 0;
+
+          .item-heading {
+            color: #1b70cf;
+            margin-bottom: 0.5em;
+          }
+
+          .item-res {
+            color: #d5d5d5;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

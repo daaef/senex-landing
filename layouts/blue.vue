@@ -3,8 +3,8 @@
     <navbar theme="white" logo-variant="blue" />
     <div class="container">
       <nuxt />
-      <footer-comp />
     </div>
+    <footer-comp />
   </div>
 </template>
 
