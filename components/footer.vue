@@ -34,8 +34,6 @@
   font-family: $font-avenir;
   box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.25);
   padding: 1em 0;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
 </style>

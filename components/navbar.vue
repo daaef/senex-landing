@@ -19,11 +19,19 @@
                  'blue-theme': theme === 'blue'}"
       >
         <div class="navbar-end">
-          <a href="#" class="navbar-item is-active">Home</a>
-          <a href="#" class="navbar-item">About</a>
-          <a href="#" class="navbar-item">Track</a>
+          <nuxt-link class="navbar-item" to="/">
+            Home
+          </nuxt-link>
+          <nuxt-link class="navbar-item" to="/about">
+            About
+          </nuxt-link>
+          <nuxt-link class="navbar-item" to="/track">
+            Track
+          </nuxt-link>
           <a href="#" class="navbar-item">Blog</a>
-          <a href="#" class="navbar-item">FAQ</a>
+          <nuxt-link class="navbar-item" to="/faq">
+            FAQ
+          </nuxt-link>
         </div>
       </div>
     </div>
