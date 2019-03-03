@@ -5,14 +5,14 @@
     </p>
     <div class="columns">
       <div class="column is-8 is-offset-2 q-wrapper">
-        <div v-for="(item, i) in items" :key="i" class="q-item" :id="`qa-${i}`">
+        <div v-for="(item, i) in items" :id="`qa-${i}`" :key="i" class="q-item">
           <p class="q" @click="toggleQuestionView(`qa-${i}`)">
             {{ item.q }}
             <span class="icon is-pulled-right icon-expand">
-              <i class="fas fa-fw fa-chevron-right"></i>
+              <i class="fas fa-fw fa-chevron-right" />
             </span>
             <span class="icon is-pulled-right icon-hide">
-              <i class="fas fa-fw fa-chevron-down"></i>
+              <i class="fas fa-fw fa-chevron-down" />
             </span>
           </p>
           <p class="a">
