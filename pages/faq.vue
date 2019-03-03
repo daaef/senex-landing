@@ -4,7 +4,7 @@
       FAQ
     </p>
     <div class="columns">
-      <div class="column is-8 is-offset-2 q-wrapper">
+      <div class="column is-6 is-offset-3 q-wrapper">
         <div v-for="(item, i) in items" :id="`qa-${i}`" :key="i" class="q-item">
           <p class="q" @click="toggleQuestionView(`qa-${i}`)">
             {{ item.q }}
