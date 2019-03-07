@@ -5,14 +5,11 @@
 </template>
 
 <script>
-const ICONS_ROOT_DIR = '~assets/icons/'
-
 export default {
   name: 'TradeIcon',
   props: {
     active: {
       type: Boolean,
-      required: true,
       default: false
     },
     name: {
@@ -23,9 +20,11 @@ export default {
 
   computed: {
     computedIconSrc() {
-      return this.$props.active
-        ? `${ICONS_ROOT_DIR}${this.$props.name}-active.png`
-        : `${ICONS_ROOT_DIR}${this.props.name}.png`
+      if (this.active) {
+        return require(`@/assets/icons/${this.name}-active.png`)
+      } else {
+        return require(`@/assets/icons/${this.name}.png`)
+      }
     }
   }
 }

@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg-wrapper {
+.bg-wrappe {
   position: absolute;
   left: -3.78%;
   right: -11.65%;
