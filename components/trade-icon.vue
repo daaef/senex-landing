@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 70px; height: 70px; text-align: center;">
     <img :src="computedIconSrc" :alt="name">
   </div>
 </template>

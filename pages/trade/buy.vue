@@ -5,20 +5,21 @@
     </p>
 
     <div class="columns">
-      <div class="column is-half is-offset-one-quarter">
+      <div class="column is-three-fifths is-offset-one-fifth">
         <div class="columns is-mobile trader">
-          <div class="column is-3 icons-wrapper">
+          <div class="column is-3 icons-wrapper has-text-centered">
             <trade-icon
               v-for="(icon, i) in iconList"
               :key="i"
               :name="icon"
+              :active="isIconActive(icon)"
               class="icon-container"
             />
           </div>
           <div class="column is-9 content-wrapper">
             <div class="columns is-mobile">
               <div class="column is-8">
-                <div class="content-area">
+                <div v-if="currentStep === 'user_info'" class="content-area visible">
                   <p class="__title">
                     Personal Information
                   </p>
@@ -52,53 +53,97 @@
                     </div>
                   </div>
                   <div class="button-wrapper">
-                    button
+                    <button class="button" @click.prevent="currentStep = 'wallet'">
+                      Continue
+                    </button>
                   </div>
                 </div>
 
-                <div class="content-area">
-                  <p class="__title">
+                <div v-else-if="currentStep === 'wallet'" class="content-area">
+                  <div class="__title">
                     Wallet Details
-                  </p>
+                  </div>
                   <div class="content">
                     <div class="field">
                       <label for="" class="label">Your bitcoin wallet address</label>
-                      <textarea id="" name="" cols="30" class="textarea" />
+                      <textarea id="" name="" rows="2" class="textarea" placeholder="Paste here" />
                     </div>
                   </div>
                   <div class="button-wrapper">
-                    button
+                    <button class="button" @click="currentStep = 'credit_card'">
+                      Continue
+                    </button>
                   </div>
                 </div>
 
-                <div class="content-area">
+                <div v-else-if="currentStep === 'credit_card'" class="content-area">
                   <p class="__title">
                     Payment
                   </p>
+                  <div class="content">
+                    <button class="button">
+                      Pay with flutterwave
+                    </button>
+                  </div>
                   <div class="button-wrapper">
-                    button
+                    <button class="button" @click="currentStep = 'user_verify'">
+                      Continue
+                    </button>
                   </div>
                 </div>
 
-                <div class="content-area">
+                <div v-else class="content-area">
                   <p class="__title">
                     Verification
                   </p>
-                  <div class="content" />
-                  <div class="button-wrapper">
-                    Complete trade
-                  </div>
-                </div>
+                  <div class="content user-verify">
+                    <div>Upload ID</div>
+                    <div class="id-section">
+                      <img v-if="uploads.id" src="" alt="" class="upload-id">
+                      <img v-else src="~assets/images/id-placeholder.png" alt="" class="upload-id">
+                      <div class="widget-grp">
+                        <button class="button select-file-btn">
+                          Choose File
+                        </button>
+                        <button class="button upload-file-btn">
+                          Upload
+                        </button>
+                      </div>
+                    </div>
 
-                <div class="content-area">
-                  <p class="__title">
-                    Payment
-                  </p>
-                  div.c
+                    <p>Upload Selfie</p>
+                    <div class="selfie-section">
+                      <img v-if="uploads.selfie" :src="upload.selfie" alt="" class="upload-selfie">
+                      <img v-else src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie">
+                      <div class="widget-grp">
+                        <button class="button select-file-btn">
+                          Choose File
+                        </button>
+                        <button class="button upload-file-btn">
+                          Upload
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-wrapper">
+                    <button class="button">
+                      Complete Trade
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="column is-4 help">
-                Help content.
+                <a href="" class="tooltip-a" @click.prevent="showHelpText = !showHelpText">
+                  <img
+                    src="~assets/helptext-tooltip.png"
+                    alt="Help text tool tip"
+                    height="30"
+                    width="30"
+                  >
+                </a>
+                <p v-if="showHelpText" class="text">
+                  {{ helpText }}
+                </p>
               </div>
             </div>
           </div>
@@ -120,10 +165,37 @@ export default {
 
   data() {
     return {
-      iconList: ['user_info', 'wallet', 'credit_card', 'user_verify'],
+      showHelpText: false,
+      currentStep: 'user_info',
+      steps: ['user_info', 'wallet', 'credit_card', 'user_verify'],
       amountBtc: 0.00012345,
       amountCurrency: 1250,
-      currency: 'NGN'
+      currency: 'NGN',
+      uploads: {
+        selfie: null,
+        id: null
+      }
+    }
+  },
+
+  computed: {
+    helpText() {
+      return 'Hello world how is everyone doing today'
+    },
+
+    iconList() {
+      return this.steps
+    }
+  },
+
+  methods: {
+    isIconActive(iconName) {
+      const index = this.steps.indexOf(iconName)
+      const currentStepIndex = this.steps.indexOf(this.currentStep)
+      if (index < 0 || !currentStepIndex < 0) {
+        return false
+      }
+      return index <= currentStepIndex
     }
   }
 }
@@ -131,7 +203,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/fonts.scss';
-$trader-height: 400px;
+$trader-height: 500px;
 
 .wrapper {
   font-family: $font-avenir;
@@ -183,6 +255,77 @@ $trader-height: 400px;
 }
 
 .content-area {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  font-size: 0.9em;
+  .__title {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+  }
+
+  label {
+    font-weight: normal;
+    font-size: inherit;
+  }
+
+  input {
+    border-style: solid;
+  }
+
+  .button-wrapper {
+    align-self: flex-end;
+    button {
+      background: #1b70cf;
+      color: #ffffff;
+      font-weight: 500;
+    }
+  }
+}
+
+.help {
+  .text {
+    display: inherit;
+    background: #caddf1;
+    color: #ffffff;
+    border-radius: 6px;
+    margin: 1.5em 0.3em;
+    padding: 0.3em 0.6em;
+  }
+}
+
+.user-verify {
+  font-family: $font-avenir;
+  .id-section,
+  .selfie-section {
+    display: flex;
+    height: 130px;
+    img {
+      height: 100%;
+    }
+    div.widget-grp {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 1em;
+      button {
+        font-size: 0.95em;
+        font-weight: normal;
+        border: none;
+        &.select-file-btn {
+          background: #ebebeb;
+          color: #455e6f;
+        }
+        &.upload-file-btn {
+          color: #ffffff;
+          background: #99aec4;
+        }
+      }
+    }
+  }
+  .id-section {
+    margin-bottom: 1.2em;
+  }
 }
 </style>
