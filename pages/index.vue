@@ -10,7 +10,7 @@
             <span class="text-crypto">Cryptocurrencies</span>
             <span class="text-made-easy">made easy!</span>
           </p>
-          <p>Buy and Sell securely  with Senex PAY</p>
+          <p>Buy and Sell securely  with SenexPAY</p>
         </div>
         <div class="image-illustration-container">
           <img src="~assets/illustration.png" alt="An image containing a trader operating a laptop">
@@ -56,19 +56,20 @@ div.info {
   line-height: normal;
   color: #707070;
   p.text-exchanging {
-    font-size: 1.5em;
+    font-size: 2rem;
     font-family: $font-open-sans;
     font-weight: 300;
   }
 
   span.text-crypto {
-    font-size: 1.7em;
+    font-size: 2.4rem;
     font-weight: bold;
     color: #0c5db2;
   }
 
   span.text-made-easy {
-    font-size: 1.2em;
+    font-size: 1.8rem;
+    margin-left: 0.6rem;
   }
 }
 </style>

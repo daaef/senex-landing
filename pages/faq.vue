@@ -44,6 +44,46 @@ export default {
           q: "Didn't receive Trade ID, why?",
           a:
             'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
+        },
+        {
+          q: "Didn't receive Trade ID, why?",
+          a:
+            'Trade ID is most times given for transaction with some form of errors.'
         }
       ]
     }
@@ -64,11 +104,13 @@ export default {
 @import '~assets/scss/fonts.scss';
 
 div.wrapper {
+  margin-bottom: 3em;
   min-height: 480px;
   font-family: $font-avenir;
   .title {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 2.3em;
+    font-weight: normal;
+    // font-weight: bold;
     color: #1b70cf;
   }
   .q-wrapper {

@@ -3,8 +3,10 @@
     <div class="columns">
       <div class="column is-3 is-offset-4">
         <p class="is-size-4 has-text-weight-normal p-heading has-text-centered">
-          Track Trade
+          Tracking
+          <span class="is-block  has-text-centered" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
         </p>
+
         <div v-if="step === 'trackid'" class="trackid-wrapper">
           <div class="card trackid-container">
             <div class="field">
@@ -39,16 +41,16 @@
             </p>
             <div class="columns is-mobile">
               <div class="column is-3">
-                <input type="text" class="input">
+                <input type="text" class="input" maxlength="1">
               </div>
               <div class="column is-3">
-                <input type="text" class="input">
+                <input type="text" class="input" maxlength="1">
               </div>
               <div class="column is-3">
-                <input type="text" class="input">
+                <input type="text" class="input" maxlength="1">
               </div>
               <div class="column is-3">
-                <input type="text" class="input">
+                <input type="text" class="input" maxlength="1">
               </div>
             </div>
             <div class="btn-container">
@@ -124,7 +126,7 @@ export default {
     return {
       // This is used to determine which section of the UI to show.
       // Valid values are trackid | otpverification | tradestatus
-      step: 'trackid'
+      step: 'tradestatus'
     }
   }
 }
@@ -162,6 +164,7 @@ div.wrapper {
 
     div.trackid-container {
       padding: 3em 2.5em;
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.161);
     }
 
     div.button-container {
@@ -183,6 +186,10 @@ div.wrapper {
 
   div.otpverification-wrapper {
     font-family: $font-avenir;
+    input {
+      font-weight: bold;
+      text-align: center;
+    }
 
     div.otpverification-container {
       padding: 2em 1.5em;

@@ -4,7 +4,7 @@
       <div class="level is-size-6">
         <div class="level-left">
           <div class="level-item">
-            <span>&copy; Copyright 2019</span>
+            <span>&copy; 2019 - SenexPAY</span>
           </div>
         </div>
 
@@ -35,5 +35,6 @@
   box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.25);
   padding: 1em 0;
   width: 100%;
+  font-size: 0.6em;
 }
 </style>

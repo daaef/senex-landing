@@ -21,21 +21,17 @@
               </button>
             </div>
 
-            <div class="columns is-mobile is-gapless" :style="{marginTop: '0.9em'}">
-              <div class="column is-4">
-                <div class="select is-ronded is-sall">
-                  <select id="" name="crypto" class="crypto">
-                    <option value="btc">
+            <div style="margin-bottom: 1em; width: 100%;">
+              <div>
+                <div class="field has-addons">
+                  <p class="control">
+                    <a href="" class="button is-static" style="background: #1b70cf; color: #fff;">
                       BTC
-                    </option>
-                  </select>
-                </div>
-              </div>
-              <div class="column is-8">
-                <div class="field">
-                  <div class="control">
+                    </a>
+                  </p>
+                  <p class="control">
                     <input type="number" class="input is-mall is-ronded blue-border" placeholder="Amount">
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -77,8 +73,10 @@
               </nuxt-link>
             </p>
             <p class="flutterwave-grp">
-              <span class="text">Powered by </span>
-              <span class="img"><img src="~assets/flutterwave.png" alt="Flutterwave icon" height="36" width="36"></span>
+              <span class="text">Payment powered by </span>
+              <a href="https://flutterwave.com">
+                <span class="img"><img src="~assets/flutterwave.png" alt="Flutterwave icon" height="36" width="36"></span>
+              </a>
             </p>
           </div>
 

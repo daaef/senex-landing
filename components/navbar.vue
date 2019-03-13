@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar is-transparent">
-    <div class="container">
+    <div class="container" style="margin-top: 0.5rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="navbar-item">
           <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant">
@@ -19,14 +19,14 @@
                  'blue-theme': theme === 'blue'}"
       >
         <div class="navbar-end">
-          <nuxt-link class="navbar-item" to="/">
+          <nuxt-link class="navbar-item is-active" to="/">
             Home
           </nuxt-link>
           <nuxt-link class="navbar-item" to="/about">
             About
           </nuxt-link>
           <nuxt-link class="navbar-item" to="/track">
-            Track
+            Tracking
           </nuxt-link>
           <a href="#" class="navbar-item">Blog</a>
           <nuxt-link class="navbar-item" to="/faq">
@@ -88,6 +88,21 @@ export default {
     color: $blue;
     font-family: $font-roboto;
     font-weight: normal;
+  }
+}
+
+.navbar-item {
+  &.is-active {
+    position: relative;
+    &:after {
+      content: '';
+      background: black;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 50%;
+      width: 1px;
+    }
   }
 }
 </style>
