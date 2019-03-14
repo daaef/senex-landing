@@ -32,7 +32,7 @@
             <span>Blog</span>
           </a>
           <nuxt-link class="navbar-item" to="/faq" :class="{'is-active': isActiveNavItem('/faq')}">
-            FAQ
+            <span>FAQ</span>
           </nuxt-link>
         </div>
       </div>
@@ -92,9 +92,13 @@ export default {
 
   .navbar-item {
     padding: 0.5rem 1.5rem;
+    span {
+      padding-bottom: 0.5rem;
+    }
+
     &.is-active {
       span {
-        border: 3px solid #ffffff;
+        border-bottom: 3px solid #ffffff;
       }
     }
   }

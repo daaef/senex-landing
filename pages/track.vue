@@ -2,7 +2,7 @@
   <div class="container wrapper">
     <div class="columns">
       <div class="column is-3 is-offset-4">
-        <p class="is-size-4 has-text-weight-normal p-heading has-text-centered">
+        <p class="has-text-weight-semibold p-heading has-text-centered">
           Tracking
           <span class="is-block  has-text-centered" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
         </p>
@@ -137,7 +137,7 @@ export default {
 
 div.wrapper {
   min-height: 480px;
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 
   button:focus,
   input:focus,
@@ -147,13 +147,13 @@ div.wrapper {
     box-shadow: none;
   }
 
-  margin-top: 2em;
+  margin-top: 2rem;
   font-family: $font-avenir;
 
   p.p-heading {
     color: #1b70cf;
-    font-weight: 500;
-    margin-bottom: 1.5em;
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
   }
 
   div.trackid-wrapper {
@@ -163,13 +163,13 @@ div.wrapper {
     }
 
     div.trackid-container {
-      padding: 3em 2.5em;
+      padding: 3rem 2.5rem;
       box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.161);
     }
 
     div.button-container {
-      margin-top: 1em;
-      margin-bottom: 2em;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
       button.track-button {
         background-color: #0c5db2;
         font-family: $font-avenir;
@@ -178,8 +178,8 @@ div.wrapper {
     }
 
     div.has-no-trade {
-      margin-top: 3.5em;
-      margin-bottom: 10em;
+      margin-top: 3.5rem;
+      margin-bottom: 10rem;
       color: #d5d5d5;
     }
   }
@@ -192,23 +192,23 @@ div.wrapper {
     }
 
     div.otpverification-container {
-      padding: 2em 1.5em;
+      padding: 2rem 1.5rem;
       background-color: #fbfbfb;
       border-radius: 4px;
 
       p.subheading {
         text-align: center;
         color: #0c5db2;
-        margin: 0.8em 0;
+        margin: 0.8rem 0;
       }
 
       p.text-info {
         color: #d5d5d5;
-        margin-bottom: 0.8em;
+        margin-bottom: 0.8rem;
       }
 
       div.btn-container {
-        margin-top: 0.8em;
+        margin-top: 0.8rem;
         text-align: center;
         button {
           color: #ffffff;
@@ -218,7 +218,7 @@ div.wrapper {
 
       a.resend {
         display: block;
-        margin-top: 1.2em;
+        margin-top: 1.2rem;
         text-align: center;
       }
     }
@@ -231,19 +231,19 @@ div.wrapper {
       .subheading {
         text-align: center;
         color: #1b70cf;
-        padding: 1em 0;
-        font-size: 1.3em;
+        padding: 1rem 0;
+        font-size: 1.3rem;
       }
 
       .trade-info {
-        padding: 1em 0.7em;
+        padding: 1rem 0.7rem;
 
         .trade-info-item {
-          margin: 0.7em 0;
+          margin: 0.7rem 0;
 
           .item-heading {
             color: #1b70cf;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.5rem;
           }
 
           .item-res {

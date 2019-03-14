@@ -1,6 +1,6 @@
 <template>
   <div class="container wrapper">
-    <p class="title has-text-centered">
+    <p class="title has-text-centered has-text-weight-semibold">
       FAQ
     </p>
     <div class="columns">
@@ -108,9 +108,7 @@ div.wrapper {
   min-height: 480px;
   font-family: $font-avenir;
   .title {
-    font-size: 2.3em;
-    font-weight: normal;
-    // font-weight: bold;
+    font-size: 1.7em;
     color: #1b70cf;
   }
   .q-wrapper {

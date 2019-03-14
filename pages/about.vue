@@ -2,7 +2,7 @@
   <div class="container wrapper">
     <div class="columns">
       <div class="column is-6 is-offset-3 has-text-centered about">
-        <p class="title">
+        <p class="title has-text-weight-semibold">
           About Us
         </p>
         <p>
@@ -119,15 +119,14 @@ div.wrapper {
     color: #ffffff;
     font-family: $font-avenir;
     .title {
-      font-weight: bold;
-      margin-bottom: 1em;
-      font-size: 1.5em;
+      margin-bottom: 1rem;
+      font-size: 1.7rem;
       color: #ffffff;
     }
   }
   .vision-wrapper {
-    margin-top: 4em;
-    margin-bottom: 1.5em;
+    margin-top: 5em;
+    margin-bottom: 2em;
     .image-vision {
       max-width: 95%;
       max-height: auto;
@@ -142,23 +141,24 @@ div.wrapper {
       font-weight: normal;
       font-style: normal;
       line-height: normal;
-      font-size: 1.3em;
+      font-size: 1.1em;
+      margin-top: 1.2rem;
       ._title {
         font-family: $font-avenir;
         font-size: 1.2em;
         color: #1c70c8;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
         font-weight: 500;
       }
     }
   }
   .core-values-wrapper {
-    margin: 2.5em 0;
+    margin: 2rem 0;
     ._title {
-      font-size: 1.4em;
+      font-size: 1.4rem;
       color: #1c70c8;
       font-weight: 500;
-      margin-bottom: 1em;
+      margin-bottom: 1rem;
     }
     .value-wrapper {
       text-align: center;
@@ -168,20 +168,20 @@ div.wrapper {
         height: 70px;
         background: #c4c4c4;
         border-radius: 10px;
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
       }
       .value {
         color: #b9b9b9;
-        font-size: 1.2em;
+        font-size: 1.2rem;
       }
     }
   }
 
   div.partners-wrapper {
-    margin: 2.5em 0;
-    margin-bottom: 3em;
+    margin: 2.5rem 0;
+    margin-bottom: 3rem;
     ._title {
-      font-size: 1.4em;
+      font-size: 1.4rem;
       color: #1c70c8;
       font-weight: 500;
     }

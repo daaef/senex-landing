@@ -57,7 +57,7 @@
           </div>
           <div class="button-container">
             <button class="button is-fullwidth trade-button has-text-weight-semibold">
-              TRADE
+              Trade
             </button>
           </div>
           <div class="track-trade has-text-centered">
@@ -69,7 +69,7 @@
             <p class="flutterwave-grp">
               <span class="text">Payment powered by </span>
               <a href="https://flutterwave.com">
-                <span class="img"><img src="~assets/flutterwave.png" alt="Flutterwave icon" height="36" width="36"></span>
+                <span class="img"><img src="~assets/flutterwave.png" alt="Flutterwave icon" height="32" width="32" style="vertical-align: middle;"></span>
               </a>
             </p>
           </div>
