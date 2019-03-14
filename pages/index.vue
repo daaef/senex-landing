@@ -10,7 +10,19 @@
             <span class="text-crypto">Cryptocurrencies</span>
             <span class="text-made-easy">made easy!</span>
           </p>
-          <p>Buy and Sell securely  with SenexPAY</p>
+          <p style="margin: 0.5rem 0; vertical-align: bottom;">
+            <svg
+              width="40"
+              height="2"
+              style="vertical-align: middle"
+              viewBox="0 0 69 2"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M3.05176e-05 1H69" stroke="#707070" />
+            </svg>
+            <span>Buy and Sell securely  with SenexPAY</span>
+          </p>
         </div>
         <div class="image-illustration-container">
           <img src="~assets/illustration.png" alt="An image containing a trader operating a laptop">

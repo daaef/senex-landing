@@ -19,17 +19,19 @@
                  'blue-theme': theme === 'blue'}"
       >
         <div class="navbar-end">
-          <nuxt-link class="navbar-item is-active" to="/">
-            Home
+          <nuxt-link class="navbar-item" to="/" :class="{'is-active': isActiveNavItem('/')}">
+            <span>Home</span>
           </nuxt-link>
-          <nuxt-link class="navbar-item" to="/about">
-            About
+          <nuxt-link class="navbar-item" to="/about" :class="{'is-active': isActiveNavItem('/about')}">
+            <span>About</span>
           </nuxt-link>
-          <nuxt-link class="navbar-item" to="/track">
-            Tracking
+          <nuxt-link class="navbar-item" to="/track" :class="{'is-active': isActiveNavItem('/track')}">
+            <span>Tracking</span>
           </nuxt-link>
-          <a href="#" class="navbar-item">Blog</a>
-          <nuxt-link class="navbar-item" to="/faq">
+          <a href="#" class="navbar-item">
+            <span>Blog</span>
+          </a>
+          <nuxt-link class="navbar-item" to="/faq" :class="{'is-active': isActiveNavItem('/faq')}">
             FAQ
           </nuxt-link>
         </div>
@@ -56,6 +58,12 @@ export default {
     return {
       isActive: false
     }
+  },
+
+  methods: {
+    isActiveNavItem(itemRoutePath) {
+      return itemRoutePath === this.$route.path
+    }
   }
 }
 </script>
@@ -81,6 +89,15 @@ export default {
     font-family: $font-roboto;
     font-weight: normal;
   }
+
+  .navbar-item {
+    padding: 0.5rem 1.5rem;
+    &.is-active {
+      span {
+        border: 3px solid #ffffff;
+      }
+    }
+  }
 }
 
 .blue-theme {
@@ -89,19 +106,17 @@ export default {
     font-family: $font-roboto;
     font-weight: normal;
   }
-}
 
-.navbar-item {
-  &.is-active {
-    position: relative;
-    &:after {
-      content: '';
-      background: black;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 50%;
-      width: 1px;
+  .navbar-item {
+    padding: 0.5rem 1.5rem;
+    span {
+      padding-bottom: 0.5rem;
+    }
+
+    &.is-active {
+      span {
+        border-bottom: 3px solid #0c5db2;
+      }
     }
   }
 }

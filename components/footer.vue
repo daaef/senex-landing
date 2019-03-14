@@ -13,7 +13,13 @@
             <a href="#">Terms &amp; conditions</a>
           </p>
           <p class="level-item">
+            |
+          </p>
+          <p class="level-item">
             <a href="#">Privacy Policy</a>
+          </p>
+          <p class="level-item">
+            |
           </p>
           <p class="level-item">
             <a href="#">Disclaimer</a>
@@ -36,5 +42,11 @@
   padding: 1em 0;
   width: 100%;
   font-size: 0.6em;
+}
+
+.item-with-sep {
+  &:after {
+    content: ' \00b7';
+  }
 }
 </style>

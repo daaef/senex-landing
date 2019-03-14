@@ -5,43 +5,36 @@
         <div class="column is-9">
           <div class="box trade-box">
             <div class="has-text-centered trade-selector-container">
-              <button
-                class="button buy-btn is-smll is-rounded"
-                :class="{'active-trade': tradeType === 'buy'}"
-                @click="toggleTradeType"
-              >
-                Buy
-              </button>
-              <button
-                class="button sell-btn is-mall is-rounded"
-                :class="{'active-trade': tradeType === 'sell'}"
-                @click="toggleTradeType"
-              >
-                Sell
-              </button>
+              <div class="b-v-centered">
+                <div class="inner" />
+              </div>
+              <fluid-switch label-left="Buy" label-right="Sell" />
+              <div class="b-v-centered">
+                <div class="inner" />
+              </div>
             </div>
 
-            <div style="margin-bottom: 1em; width: 100%;">
-              <div>
-                <div class="field has-addons">
-                  <p class="control">
-                    <a href="" class="button is-static" style="background: #1b70cf; color: #fff;">
-                      BTC
-                    </a>
-                  </p>
-                  <p class="control">
-                    <input type="number" class="input is-mall is-ronded blue-border" placeholder="Amount">
-                  </p>
+            <div style="margin-bottom: 1em;" class="columns">
+              <div class="field has-addons column">
+                <div class="control">
+                  <a href="" class="button" style="background: #1b70cf; color: #fff;">
+                    BTC
+                  </a>
+                </div>
+                <div class="control is-expanded">
+                  <input type="number" class="input blue-border" placeholder="Amount" style="direction: RTL;">
                 </div>
               </div>
             </div>
 
-            <div class="columns is-mobile">
+            <div class="columns is-gapless">
               <div class="column is-2 has-text-centered">
-                at
+                <span class="icon">
+                  <i class="fas fa-exchange" />
+                </span>
               </div>
               <div class="column is-5">
-                <div class="select is-runded is-mall is-4">
+                <div class="select">
                   <select id="" name="currency" class="currency-select">
                     <option value="NGN">
                       NGN
@@ -53,16 +46,17 @@
                 </div>
               </div>
               <div class="column is-5">
-                <div class="field">
-                  <div class="control">
-                    <input type="text" class="input is-mall is-runded" value="12,000.00" disabled>
-                  </div>
-                </div>
+                <input
+                  type="text"
+                  class="input"
+                  value="12,000.00"
+                  style="background: #f4f4f4; color: #707070; border: none;"
+                >
               </div>
             </div>
           </div>
           <div class="button-container">
-            <button class="button is-fullwidth trade-button">
+            <button class="button is-fullwidth trade-button has-text-weight-semibold">
               TRADE
             </button>
           </div>
@@ -88,7 +82,13 @@
 </template>
 
 <script>
+import FluidSwitch from './fluid-switch'
+
 export default {
+  components: {
+    FluidSwitch
+  },
+
   data() {
     return {
       tradeType: 'buy'
@@ -148,9 +148,8 @@ p.flutterwave-grp {
 div.trade-box {
   padding-bottom: 2em;
   padding-top: 2em;
-  color: #707070;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.54);
   font-family: $font-open-sans;
-
   select {
     color: #707070;
   }
@@ -168,22 +167,18 @@ div.trade-box {
 }
 
 div.trade-selector-container {
-  margin-bottom: 2.8em;
-  button {
-    color: #c4c4c4;
-    font-family: $font-open-sans;
-  }
-  button.sell-btn.active-trade {
-    margin-left: -1.3em;
-    color: #fff;
-    background-color: #1b70cf;
-    z-index: 10;
-  }
-  button.buy-btn.active-trade {
-    margin-right: -1.3em;
-    color: #fff;
-    background-color: #1b70cf;
-    z-index: 10;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  .b-v-centered {
+    width: 100%;
+    padding: 0 13px;
+    .inner {
+      margin-top: 19px;
+      border-bottom: 1px solid #0c5db2;
+      width: 100%;
+    }
   }
 }
 
