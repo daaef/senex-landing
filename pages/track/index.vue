@@ -4,7 +4,7 @@
       <div class="column is-3 is-offset-4">
         <p class="has-text-weight-semibold p-heading has-text-centered">
           Tracking
-          <span class="is-block  has-text-centered" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
+          <span class="is-block  has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
         </p>
 
         <div v-if="step === 'trackid'" class="trackid-wrapper">
@@ -61,58 +61,6 @@
             <a href="#" class="resend">Resend</a>
           </div>
         </div>
-
-        <div v-else class="trade-status-wrapper">
-          <div class="card trade-status-container">
-            <div class="subheading-wrapper">
-              <p class="subheading">
-                Trade Status
-              </p>
-            </div>
-            <div class="trade-info">
-              <div class="trade-info-item">
-                <p class="item-heading">
-                  Trade type
-                </p>
-                <p class="item-res">
-                  Buying
-                </p>
-              </div>
-              <div class="trade-info-item">
-                <p class="item-heading">
-                  Customer
-                </p>
-                <p class="item-res">
-                  Bruce Wayne
-                </p>
-              </div>
-              <div class="trade-info-item">
-                <p class="item-heading">
-                  BTC Address
-                </p>
-                <p class="item-res">
-                  5151dc5sdc5sd2c51sd515c26s2d62csd
-                </p>
-              </div>
-              <div class="trade-info-item">
-                <p class="item-heading">
-                  Payment Status
-                </p>
-                <p class="item-res">
-                  Paid
-                </p>
-              </div>
-              <div class="trade-info-item">
-                <p class="item-heading">
-                  Trade Date
-                </p>
-                <p class="item-res">
-                  Tue, 24, Feb, 2018
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -125,8 +73,8 @@ export default {
   data() {
     return {
       // This is used to determine which section of the UI to show.
-      // Valid values are trackid | otpverification | tradestatus
-      step: 'tradestatus'
+      // Valid values are trackid | otpverification
+      step: 'otpverification'
     }
   }
 }
