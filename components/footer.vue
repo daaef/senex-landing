@@ -26,6 +26,10 @@
           </p>
         </div>
       </div>
+      <a class="contact-support-container has-text-centered is-block">
+        <img src="~/assets/contact-support.png" alt="contact support image">
+        <span class="text">Contact <br> Support</span>
+      </a>
     </div>
   </footer>
 </template>
@@ -47,6 +51,29 @@
 .item-with-sep {
   &:after {
     content: ' \00b7';
+  }
+}
+
+.contact-support-container {
+  position: absolute;
+  right: 50px;
+  bottom: 200px;
+  text-align: center;
+  img,
+  span {
+    display: block;
+  }
+
+  img {
+    height: 32px;
+    width: 32px;
+  }
+  span {
+    color: #0c5db2;
+    font-size: 0.7rem;
+    margin-top: 0.2rem;
+    line-height: 1rem;
+    text-align: center;
   }
 }
 </style>
