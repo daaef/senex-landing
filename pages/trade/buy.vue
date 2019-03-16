@@ -2,12 +2,13 @@
   <div class="container wrapper">
     <p class="__title has-text-centered">
       Buying <span class="amount__btc">{{ amountBtc }} BTC</span> at <span class="amount__currency">{{ amountCurrency }} NGN</span>
+      <span style="margin-left: 1.5rem;"><a href="#" style="color:  #d50b1f; font-size: 0.8rem;">cancel</a></span>
     </p>
 
     <div class="columns">
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="columns is-mobile trader">
-          <div class="column is-3 icons-wrapper has-text-centered">
+          <div class="column is-2 icons-wrapper has-text-centered">
             <trade-icon
               v-for="(icon, i) in iconList"
               :key="i"
@@ -48,7 +49,7 @@
                     <div class="field">
                       <label for="" class="label">Mobile Number</label>
                       <div class="control">
-                        <input type="text" class="input" placeholder="Bruce">
+                        <input type="text" class="input" placeholder="+2340000000000">
                       </div>
                     </div>
                   </div>
@@ -66,7 +67,7 @@
                   <div class="content">
                     <div class="field">
                       <label for="" class="label">Your bitcoin wallet address</label>
-                      <textarea id="" name="" rows="2" class="textarea" placeholder="Paste here" />
+                      <input type="text" placeholder="Paste here" class="input">
                     </div>
                   </div>
                   <div class="button-wrapper">

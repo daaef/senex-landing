@@ -7,7 +7,7 @@
     <div class="columns">
       <div class="column is-three-fifths is-offset-one-fifth">
         <div class="columns is-mobile trader">
-          <div class="column is-3 icons-wrapper has-text-centered">
+          <div class="column is-2 icons-wrapper has-text-centered">
             <trade-icon
               v-for="(icon, i) in iconList"
               :key="i"
@@ -48,7 +48,7 @@
                     <div class="field">
                       <label for="" class="label">Mobile Number</label>
                       <div class="control">
-                        <input type="text" class="input" placeholder="Bruce">
+                        <input type="text" class="input" placeholder="+2340000000000">
                       </div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@
                         </p>
                       </div>
                       <a class="column is-2 clipboard-wrapper">
-                        <span class="icon">
+                        <span class="icon" style="padding: 0; margin: 0">
                           <i class="far fa-copy" />
                         </span>
                         <span>copy</span>

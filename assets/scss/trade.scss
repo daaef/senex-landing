@@ -33,11 +33,12 @@ $trader-height: 500px;
     border-bottom-left-radius: 12px;
     margin-right: 10px;
     background-color: #ffffff;
-    padding: 1.2em 2em;
+    padding: 1.2em 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     .icon-container {
-      flex: 1 100%;
+      flex: 100%;
     }
   }
   .content-wrapper {
@@ -51,10 +52,10 @@ $trader-height: 500px;
 }
 
 .content-area {
-  display: flex;
-  flex-direction: column;
   margin-left: 1em;
   font-size: 0.9em;
+  position: relative;
+  height: $trader-height;
   .__title {
     font-size: 1.8em;
     margin-bottom: 1em;
@@ -70,11 +71,14 @@ $trader-height: 500px;
   }
 
   .button-wrapper {
-    align-self: flex-end;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
     button {
       background: #1b70cf;
       color: #ffffff;
-      font-weight: 500;
+      font-weight: 600;
     }
   }
 }
@@ -133,25 +137,26 @@ $trader-height: 500px;
     }
 
     p.text-wrapper {
+      margin-top: 2rem;
       span.text {
-        margin: 1em 0.5em;
+        margin: 1rem 0.5rem;
       }
 
       span.icon {
-        margin-top: 1.5em;
-        margin-left: 0.5em;
+        margin-top: 1.5rem;
+        margin-left: 0.5rem;
       }
     }
   }
 
   .address-clipboard-wrapper {
-    margin-top: 1em;
-    margin-bottom: 1.5em;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .desc-text {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .address-wrapper {
