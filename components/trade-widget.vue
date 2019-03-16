@@ -29,8 +29,8 @@
 
             <div class="columns is-gapless">
               <div class="column is-2 has-text-centered">
-                <span class="icon">
-                  <i class="fas fa-exchange" />
+                <span class="icon" style="color: #c4c4c4; vertical-align: middle;">
+                  <i class="fas fa-exchange-alt" />
                 </span>
               </div>
               <div class="column is-5">
