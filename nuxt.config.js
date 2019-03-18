@@ -38,7 +38,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: ['~plugins/vee-validate.js'],
 
   /*
   ** Nuxt.js modules
@@ -54,6 +54,9 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'http://senexpay.herokuapp.com',
+    proxyHeaders: false,
+    credentials: false
   },
 
   /*
@@ -81,5 +84,7 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  vendors: ['vee-validate']
 }

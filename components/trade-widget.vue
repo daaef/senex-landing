@@ -8,7 +8,7 @@
               <div class="b-v-centered">
                 <div class="inner" />
               </div>
-              <fluid-switch label-left="Buy" label-right="Sell" />
+              <fluid-switch label-left="Buy" label-right="Sell" @switched="toggleTradeType" />
               <div class="b-v-centered">
                 <div class="inner" />
               </div>
@@ -22,11 +22,17 @@
                   </a>
                 </div>
                 <div class="control is-expanded">
-                  <input type="number" class="input blue-border" placeholder="Amount" style="direction: RTL;">
+                  <input
+                    v-model="computedCryptoAmount"
+                    type="number"
+                    class="input blue-border"
+                    :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
+                    placeholder="Amount"
+                    style="text-align: right;"
+                  >
                 </div>
               </div>
             </div>
-
             <div class="columns is-gapless">
               <div class="column is-2 has-text-centered">
                 <span class="icon" style="color: #c4c4c4; vertical-align: middle;">
@@ -35,7 +41,7 @@
               </div>
               <div class="column is-5">
                 <div class="select">
-                  <select id="" name="currency" class="currency-select">
+                  <select id="" v-model="currency" name="currency" class="currency-select">
                     <option value="NGN">
                       NGN
                     </option>
@@ -47,16 +53,17 @@
               </div>
               <div class="column is-5">
                 <input
+                  v-model="computedFiatAmount"
                   type="text"
                   class="input"
-                  value="12,000.00"
+                  :class="{'is-loading': true && !fiatAmountIsDirty}"
                   style="background: #f4f4f4; color: #707070; border: none;"
                 >
               </div>
             </div>
           </div>
           <div class="button-container">
-            <button class="button is-fullwidth trade-button has-text-weight-semibold">
+            <button class="button is-fullwidth trade-button has-text-weight-semibold" @click="doTrade">
               Trade
             </button>
           </div>
@@ -73,7 +80,6 @@
               </a>
             </p>
           </div>
-
           <div class="empty-grid-bg" />
         </div>
       </div>
@@ -82,7 +88,11 @@
 </template>
 
 <script>
+import _ from 'lodash'
 import FluidSwitch from './fluid-switch'
+
+const FETCH_RATES_INTERVAL = 1000
+const FETCH_RATES_ERR = 'Error fetching rates; try again later'
 
 export default {
   components: {
@@ -91,13 +101,118 @@ export default {
 
   data() {
     return {
-      tradeType: 'buy'
+      tradeType: 'buy',
+      fiatAmount: 0,
+      cryptoAmount: 0,
+      currency: 'NGN',
+
+      fiatAmountIsDirty: false,
+      cryptoAmountIsDirty: false,
+      isFetchingRates: false,
+      errorFetchRates: '',
+      rates: null
+    }
+  },
+
+  computed: {
+    computedCryptoAmount: {
+      set: function(val) {
+        this.cryptoAmount = val
+        this.fiatAmountIsDirty = false
+        this.cryptoAmountIsDirty = true
+      },
+
+      get: function() {
+        let rv
+        if (this.cryptoAmountIsDirty) {
+          return this.cryptoAmount
+        }
+        if (!this.rates) {
+          rv = 0
+        } else {
+          const rate = this.rates[this.tradeType]
+          const fiatAmount = this.fiatAmount
+          if (this.currency === 'USD') {
+            rv = fiatAmount / rate.USD
+          } else {
+            rv = fiatAmount / rate.NGN
+          }
+        }
+        return rv.toFixed(8)
+      }
+    },
+
+    computedFiatAmount: {
+      set: function(val) {
+        this.fiatAmount = val
+        this.cryptoAmountIsDirty = false
+        this.fiatAmountIsDirty = true
+      },
+
+      get: function() {
+        if (this.fiatAmountIsDirty) {
+          return this.fiatAmount
+        }
+        let rv
+        if (!this.rates) {
+          rv = 0
+        } else {
+          const rate = this.rates[this.tradeType]
+          const cryptoAmount = this.cryptoAmount
+          if (this.currency === 'USD') {
+            rv = rate.USD * cryptoAmount
+          } else {
+            rv = rate.NGN * cryptoAmount
+          }
+        }
+        return rv.toFixed(2)
+      }
+    }
+  },
+
+  watch: {
+    fiatAmount: function() {
+      if (this.fiatAmountIsDirty) {
+        this.fetchCryptoRates()
+      }
+    },
+
+    cryptoAmount: function() {
+      if (this.cryptoAmountIsDirty) {
+        this.fetchCryptoRates()
+      }
     }
   },
 
   methods: {
     toggleTradeType() {
       this.tradeType = this.tradeType === 'buy' ? 'sell' : 'buy'
+    },
+
+    fetchCryptoRates: _.debounce(function() {
+      this.isFetchingRates = true
+      this.$axios
+        .get('/rates/')
+        .then(resp => {
+          this.rates = resp.data
+          this.isFetchingRates = false
+        })
+        .catch(err => { // eslint-disable-line
+          this.errorFetchRates = FETCH_RATES_ERR
+          this.isFetchingRates = false
+        })
+    }, FETCH_RATES_INTERVAL),
+
+    doTrade() {
+      // TODO: do input validation
+      this.$router.push({
+        path: `/trade/${this.tradeType}`,
+        query: {
+          currency: this.currency,
+          amount_crypto: this.computedCryptoAmount,
+          amount_fiat: this.computedFiatAmount
+        }
+      })
     }
   }
 }
