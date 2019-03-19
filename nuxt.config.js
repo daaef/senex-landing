@@ -25,6 +25,11 @@ module.exports = {
     ]
   },
 
+  env: {
+    FLW_PUB_KEY: 'FLWPUBK-c1833222ad17ef7402e3b62c202927fa-X',
+    FLW_SANDBOX_BASE_URL: 'https://ravesandboxapi.flutterwave.com'
+  },
+
   /*
   ** Customize the progress-bar color
   */
@@ -38,7 +43,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~plugins/vee-validate.js'],
+  plugins: ['~/plugins/v-clipboard'],
 
   /*
   ** Nuxt.js modules
@@ -47,7 +52,14 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
+    [
+      'nuxt-validate',
+      {
+        lang: 'en'
+        // regular vee-validate options
+      }
+    ]
   ],
   /*
   ** Axios module configuration
@@ -84,7 +96,5 @@ module.exports = {
         })
       }
     }
-  },
-
-  vendors: ['vee-validate']
+  }
 }

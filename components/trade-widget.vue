@@ -204,7 +204,14 @@ export default {
     }, FETCH_RATES_INTERVAL),
 
     doTrade() {
-      // TODO: do input validation
+      // TODO: Input validation
+      this.$store.commit('trade/START_TRADE', {
+        currency: this.currency,
+        fiatAmount: this.computedFiatAmount,
+        tradeType: this.tradeType,
+        cryptoAmount: this.computedCryptoAmount,
+        rates: this.tradeType === 'buy' ? this.rates.buy : this.rates.sell
+      })
       this.$router.push({
         path: `/trade/${this.tradeType}`,
         query: {
