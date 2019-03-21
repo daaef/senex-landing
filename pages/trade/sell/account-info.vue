@@ -80,6 +80,12 @@ export default {
     }
   },
 
+  head() {
+    return {
+      title: 'Sell - SenexPay'
+    }
+  },
+
   computed: {
     filteredBanks() {
       return _.filter(this.banks, bank => {

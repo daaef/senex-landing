@@ -109,6 +109,12 @@ export default {
     Trader
   },
 
+  head() {
+    return {
+      title: 'Sell - SenexPay'
+    }
+  },
+
   computed: {
     ...mapState({
       info: state => state.trade.create.personalInformation

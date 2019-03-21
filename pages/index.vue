@@ -42,6 +42,12 @@ export default {
   layout: 'simple',
   components: {
     TradeWidget
+  },
+
+  head() {
+    return {
+      title: 'Home - SenexPay'
+    }
   }
 }
 </script>

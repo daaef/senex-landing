@@ -89,6 +89,12 @@ export default {
     }
   },
 
+  head() {
+    return {
+      title: 'Frequently asked question - SenexPay'
+    }
+  },
+
   methods: {
     toggleQuestionView(qaElementId) {
       const element = document.getElementById(qaElementId)

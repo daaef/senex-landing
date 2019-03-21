@@ -4,38 +4,40 @@
       Transfer BTC
     </template>
     <template slot="content" class="wallet_deposit">
-      <p class="desc-text">
-        Send {{ cryptoAmount }} BTC to the BTC Address Below
-      </p>
-      <div class="columns is-10 address-clipboard-wrapper">
-        <div class="column is-10 address-wrapper">
-          <p class="btc-address">
-            {{ walletAddress }}
+      <div class="wallet_deposit">
+        <p class="desc-text">
+          Send {{ cryptoAmount }} BTC to the BTC Address Below
+        </p>
+        <div class="columns is-10 address-clipboard-wrapper">
+          <div class="column is-10 address-wrapper">
+            <p class="btc-address">
+              {{ walletAddress }}
+            </p>
+          </div>
+          <a v-clipboard="walletAddress" class="column is-2 clipboard-wrapper">
+            <span class="icon" style="padding: 0; margin: 0">
+              <i class="far fa-copy" />
+            </span>
+            <span>copy</span>
+          </a>
+        </div>
+        <div class="qrcode-wrapper">
+          <p class="qrcode">
+            <vue-qrcode
+              :value="`bitcoin:${walletAddress}?amount=${cryptoAmount}`"
+              tag="img"
+              :options="{width: 160}"
+            />
+          </p>
+          <p class="text-wrapper">
+            <span class="text is-block">
+              Scan Wallet Address Directly.
+            </span>
+            <span class="icon is-block">
+              <i class="fas fa-download" />
+            </span>
           </p>
         </div>
-        <a v-clipboard="walletAddress" class="column is-2 clipboard-wrapper">
-          <span class="icon" style="padding: 0; margin: 0">
-            <i class="far fa-copy" />
-          </span>
-          <span>copy</span>
-        </a>
-      </div>
-      <div class="qrcode-wrapper">
-        <p class="qrcode">
-          <vue-qrcode
-            :value="`bitcoin:${walletAddress}?amount=${cryptoAmount}`"
-            tag="img"
-            :options="{width: 160}"
-          />
-        </p>
-        <p class="text-wrapper">
-          <span class="text is-block">
-            Scan Wallet Address Directly.
-          </span>
-          <span class="icon is-block">
-            <i class="fas fa-download" />
-          </span>
-        </p>
       </div>
     </template>
     <template slot="button">
@@ -50,16 +52,16 @@
 import { setTimeout, setInterval } from 'timers'
 import { mapState } from 'vuex'
 import Trader from '~/components/trade/trader.vue'
+import VueQrcode from '@chenfengyuan/vue-qrcode'
 
 const _TRADE_VERIFY_INTERVAL_ = 30 * 1000 /* 30 seconds */
-
-// TODO: download qrcode
 
 export default {
   layout: 'simple',
 
   components: {
-    Trader
+    Trader,
+    VueQrcode
   },
 
   data() {
@@ -81,7 +83,7 @@ export default {
   },
 
   created() {
-    setInterval(function() {
+    setInterval(() => {
       this.fetchTradeItem()
     }, _TRADE_VERIFY_INTERVAL_)
   },
@@ -101,13 +103,13 @@ export default {
             title: 'Error:',
             type: 'error',
             position: 'top-end',
-            text: "Couldn't verify trade. trying again...",
+            text: "Couldn't verify trade. retrying...",
             timer: 7 * 1000,
             toast: true,
             showConfirmButton: false
           })
 
-          setTimeout(function() {
+          setTimeout(() => {
             this.fetchTradeItem()
           }, _TRADE_VERIFY_INTERVAL_ / 2)
         })

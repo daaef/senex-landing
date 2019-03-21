@@ -25,6 +25,12 @@ export default {
 
   components: {
     Trader
+  },
+
+  head() {
+    return {
+      title: 'Buy - SenexPay'
+    }
   }
 }
 </script>

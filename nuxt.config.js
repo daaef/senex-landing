@@ -59,7 +59,8 @@ module.exports = {
         lang: 'en'
         // regular vee-validate options
       }
-    ]
+    ],
+    'nuxt-device-detect'
   ],
   /*
   ** Axios module configuration

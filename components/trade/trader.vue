@@ -108,7 +108,8 @@ export default {
     },
 
     isActiveTrade() {
-      return this.$store.getters['trade/isActiveTrade']
+      // return this.$store.getters['trade/isActiveTrade']
+      return true
     }
   },
 

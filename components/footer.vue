@@ -12,13 +12,13 @@
           <p class="level-item">
             <a href="#">Terms &amp; conditions</a>
           </p>
-          <p class="level-item">
+          <p class="level-item" v-show="!$device.isMobile">
             |
           </p>
-          <p class="level-item">
+          <p class="level-item" v-show="!$device.isMobile">
             <a href="#">Privacy Policy</a>
           </p>
-          <p class="level-item">
+          <p class="level-item" v-show="!$device.isMobile">
             |
           </p>
           <p class="level-item">

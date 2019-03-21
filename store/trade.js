@@ -34,7 +34,27 @@ export const state = () => ({
     // This is the information of the trade after it has been created, and before
     // it is being paid for in the case of trade/buy or paid in' in the case of
     // trade/sell
-    metadata: null
+    metadata: {
+      id: 'QQ1jh1qhaI4O',
+      type: 'sell',
+      cryptoAmount: 0.004382,
+      fiatAmount: 52830,
+      email: 'rasheedmusa9@gmail.com',
+      firstName: 'Rasheed',
+      lastName: 'Musa',
+      mobileNumber: '07066528898',
+      accountNumber: '3066678912',
+      walletAddress: 'xhsd832sdhzxdhquenhsAAAdhsz',
+      bank: '011',
+      expires: '2019-03-19T11:13:37.909970Z',
+      modified: '2019-03-19T10:13:38.344868Z',
+      created: '2019-03-19T10:13:38.344782Z',
+      transactions: [],
+      kyc: null,
+      deviceInfo: {},
+      networkInfo: {},
+      status: 'pending'
+    }
   }
 })
 
@@ -44,7 +64,8 @@ export const mutationTypes = {
   UPDATE_BANK_DETAILS: 'UPDATE_BANK_DETAILS',
   UPDATE_PAYMENT: 'UPDATE_PAYMENT',
   START_TRADE: 'START_TRADE',
-  SET_BANK_LIST: 'SET_BANK_LIST'
+  SET_BANK_LIST: 'SET_BANK_LIST',
+  SET_TRADE_METADATA: 'SET_TRADE_METADATA'
 }
 
 export const mutations = {

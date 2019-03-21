@@ -1,7 +1,7 @@
 {
-  "name": "senex",
+  "name": "senexpay",
   "version": "1.0.0",
-  "description": "My laudable Nuxt.js project",
+  "description": "SenexPay cryptocurrency exchange platform",
   "author": "cantell",
   "private": true,
   "scripts": {
@@ -21,9 +21,11 @@
     "cross-env": "^5.2.0",
     "lodash": "^4.17.11",
     "nuxt": "^2.4.0",
+    "nuxt-device-detect": "^1.1.4",
     "nuxt-validate": "^0.1.2",
     "v-clipboard": "^2.2.1",
     "vee-validate": "^2.2.0",
+    "vue": "^2.6.7",
     "vue-sweetalert2": "^1.6.4"
   },
   "devDependencies": {

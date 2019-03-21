@@ -3,39 +3,82 @@
     <template slot="title">
       Personal Information
     </template>
-
     <template slot="content">
       <div class="field">
         <label for="" class="label">First Name</label>
         <div class="control">
-          <input type="text" class="input" placeholder="Bruce">
+          <input
+            v-model="firstName"
+            v-validate="'required'"
+            name="first name"
+            type="text"
+            class="input"
+            :class="{ 'is-danger': errors.has('first name') }"
+            placeholder="Bruce"
+          >
         </div>
+        <p v-show="errors.has('first name')" class="help is-danger">
+          {{ errors.first('first name') }}
+        </p>
       </div>
 
       <div class="field">
         <label for="" class="label">Last Name</label>
         <div class="control">
-          <input type="text" class="input" placeholder="Wayne">
+          <input
+            v-model="lastName"
+            v-validate="'required'"
+            name="last name"
+            type="text"
+            class="input"
+            :class="{ 'is-danger': errors.has('last name') }"
+            placeholder="Wayne"
+          >
         </div>
+        <p v-show="errors.has('last name')" class="help is-danger">
+          {{ errors.first('last name') }}
+        </p>
       </div>
 
       <div class="field">
         <label for="" class="label">Email</label>
         <div class="control">
-          <input type="text" class="input" placeholder="batman@brucewayne.com">
+          <input
+            v-model="email"
+            v-validate="'required|email'"
+            name="email"
+            type="text"
+            class="input"
+            :class="{ 'is-danger': errors.has('email') }"
+            placeholder="batman@brucewayne.com"
+          >
         </div>
+        <p v-show="errors.has('email')" class="is-danger help">
+          {{ errors.first('email') }}
+        </p>
       </div>
 
       <div class="field">
         <label for="" class="label">Mobile Number</label>
         <div class="control">
-          <input type="text" class="input" placeholder="+2340000000000">
+          <input
+            v-model="mobileNumber"
+            v-validate="'required|phoneNumber'"
+            name="mobile number"
+            type="text"
+            class="input"
+            :class="{ 'is-danger': errors.has('mobile number') }"
+            placeholder="+2340000000000"
+          >
         </div>
+        <p v-show="errors.has('mobile number')" class="help is-danger">
+          {{ errors.first('mobile number') }}
+        </p>
       </div>
     </template>
 
     <template slot="button">
-      <button class="button">
+      <button type="submit" class="button" @click="handleContinue">
         Continue
       </button>
     </template>
@@ -43,13 +86,99 @@
 </template>
 
 <script>
+import { Validator } from 'vee-validate'
+import PhoneNumber from 'awesome-phonenumber'
+import { mapState } from 'vuex'
 import Trader from '~/components/trade/trader.vue'
+
+const phoneNumber = {
+  getMessage: field => `${field} is not a valid phone number`,
+  validate(value) {
+    return new Promise(resolve => {
+      const phone = new PhoneNumber(value)
+      resolve({ valid: phone.isValid() })
+    })
+  }
+}
+Validator.extend('phoneNumber', phoneNumber)
 
 export default {
   layout: 'simple',
 
   components: {
     Trader
+  },
+
+  head() {
+    return {
+      title: 'Buy - SenexPay'
+    }
+  },
+
+  computed: {
+    ...mapState({
+      info: state => state.trade.create.personalInformation
+    }),
+
+    firstName: {
+      get() {
+        return this.info.firstName
+      },
+      set(value) {
+        this.$store.commit('trade/UPDATE_PERSONAL_INFO', {
+          prop: 'firstName',
+          value
+        })
+      }
+    },
+
+    lastName: {
+      get() {
+        return this.info.lastName
+      },
+      set(value) {
+        this.$store.commit('trade/UPDATE_PERSONAL_INFO', {
+          prop: 'lastName',
+          value
+        })
+      }
+    },
+
+    email: {
+      get() {
+        return this.info.email
+      },
+      set(value) {
+        this.$store.commit('trade/UPDATE_PERSONAL_INFO', {
+          prop: 'email',
+          value
+        })
+      }
+    },
+
+    mobileNumber: {
+      get() {
+        return this.info.mobileNumber
+      },
+      set(value) {
+        this.$store.commit('trade/UPDATE_PERSONAL_INFO', {
+          prop: 'mobileNumber',
+          value
+        })
+      }
+    }
+  },
+
+  methods: {
+    handleContinue() {
+      this.$validator.validateAll().then(validated => {
+        if (validated) {
+          this.$router.push({
+            path: '/trade/buy/wallet'
+          })
+        }
+      })
+    }
   }
 }
 </script>

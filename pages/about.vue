@@ -6,26 +6,23 @@
           About Us
         </p>
         <p>
-          At SenexPay, we believe conversion of currency should be as easy and quicky as possible.
-          We’ve been in the business for over 9 years.
-          so yeah, we know it should be easy and quick to make exchanges.
+          SenexPAY is a multi-fiat to bitcoin exchange platform which is owned and managed by Senex Payment Services Limited in Lekki, Nigeria.
         </p>
       </div>
     </div>
 
-    <div class="columns vision-wrapper">
-      <div class="column is-5">
-        <div class="is-pulled-right image-vision" />
+    <div class="columns vision-wrapper is-centered">
+      <div class="column is-7 text">
+        Founded in 2016, SenexPAY (initially known as solely Senex) started as a traditional (over-the-counter) bitcoin to naira exchange service and has upgraded to become the most user-friendly, fasted, secure and fully-automated platform in Africa. The company is fully registered with the Corporate Affairs Commission of Nigeria and backed by some prestigious financial investors across Africa.
       </div>
-      <div class="column is-1" />
-      <div class="column is-4 text">
-        <p class="_title">
-          Our Vision
-        </p>
-        <p class="content">
-          At SenexPay, we believe conversion of currency should be as easy and quicky as possible.
-          We’ve been in the
-        </p>
+    </div>
+
+    <div class="columns is-centered extended-info">
+      <div class="column is-3 item" style="margin-right: 1.2rem;">
+        SenexPAY ushers-in a revolutionary, AI integrated technology which ensures customer's ease of use, security and reliability of its network. The platform also offers a third-party API endpoint for interested businesses to easily integrate our service as a bitcoin payment processor for their company.
+      </div>
+      <div class="column is-3 item">
+        SenexPAY remains trusted by thousands of customers across the world and can boast of the fastest and most secure service delivery in this venture. The platform is consistently seeking improvements to guarantee exceptional digital asset exchange experience.
       </div>
     </div>
 
@@ -104,7 +101,12 @@
 
 <script>
 export default {
-  layout: 'fullblue'
+  layout: 'fullblue',
+  head() {
+    return {
+      title: 'About SenexPay'
+    }
+  }
 }
 </script>
 
@@ -140,9 +142,10 @@ div.wrapper {
       color: #b9b9b9;
       font-weight: normal;
       font-style: normal;
-      line-height: normal;
+      line-height: 1.5;
       font-size: 1.1em;
       margin-top: 1.2rem;
+      text-align: center;
       ._title {
         font-family: $font-avenir;
         font-size: 1.2em;
@@ -184,6 +187,23 @@ div.wrapper {
       font-size: 1.4rem;
       color: #1c70c8;
       font-weight: 500;
+    }
+  }
+
+  div.extended-info {
+    margin: 2.5rem 0;
+    .item {
+      height: 320px;
+      padding: 3rem 1.5rem;
+      position: relative;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1rem;
+      color: #1c70c8;
+      line-height: 1.5;
     }
   }
 }
