@@ -1,98 +1,51 @@
 <template>
-  <div class="container wrapper">
-    <p class="title has-text-centered has-text-weight-semibold">
-      FAQ
-    </p>
-    <div class="columns">
-      <div class="column is-6 is-offset-3 q-wrapper">
-        <div v-for="(item, i) in items" :id="`qa-${i}`" :key="i" class="q-item">
-          <p class="q" @click="toggleQuestionView(`qa-${i}`)">
-            {{ item.q }}
-            <span class="icon is-pulled-right icon-expand">
-              <i class="fas fa-fw fa-chevron-right" />
-            </span>
-            <span class="icon is-pulled-right icon-hide">
-              <i class="fas fa-fw fa-chevron-down" />
-            </span>
-          </p>
-          <p class="a">
-            {{ item.a }}
-          </p>
+  <section class="section">
+    <div class="container wrapper">
+      <p class="title has-text-centered has-text-weight-semibold">
+        FAQ
+      </p>
+      <div class="columns">
+        <div class="column is-6 is-offset-3 q-wrapper">
+          <div v-if="items.length === 0">
+            <p class="has-text-centered">
+              There are no frequently asked questions yet.
+            </p>
+          </div>
+          <div v-for="item in items" :id="`qa-${i}`" :key="item.id" class="q-item">
+            <p class="q" @click="toggleQuestionView(`qa-${i}`)">
+              {{ item.question }}
+              <span class="icon is-pulled-right icon-expand">
+                <i class="fas fa-fw fa-chevron-right" />
+              </span>
+              <span class="icon is-pulled-right icon-hide">
+                <i class="fas fa-fw fa-chevron-down" />
+              </span>
+            </p>
+            <p class="a">
+              {{ item.answer }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
   layout: 'blue',
-  data() {
-    return {
-      items: [
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        },
-        {
-          q: "Didn't receive Trade ID, why?",
-          a:
-            'Trade ID is most times given for transaction with some form of errors.'
-        }
-      ]
-    }
-  },
+  data() {},
 
   head() {
     return {
       title: 'Frequently asked question - SenexPay'
     }
+  },
+
+  asyncData({ $axios }) {
+    return $axios.get('/faqs/').then(resp => ({
+      items: resp.data
+    }))
   },
 
   methods: {

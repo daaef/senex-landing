@@ -1,38 +1,40 @@
 <template>
-  <div class="container wrapper">
-    <div class="columns">
-      <div class="column is-three-fifths">
-        <div class="info">
-          <p class="text-exchanging is-uppercase">
-            Exchanging
-          </p>
-          <p>
-            <span class="text-crypto">Cryptocurrencies</span>
-            <span class="text-made-easy">made easy!</span>
-          </p>
-          <p style="margin: 0.5rem 0; vertical-align: bottom;">
-            <svg
-              width="40"
-              height="2"
-              style="vertical-align: middle"
-              viewBox="0 0 69 2"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M3.05176e-05 1H69" stroke="#707070" />
-            </svg>
-            <span>Buy and Sell securely  with SenexPAY</span>
-          </p>
+  <section class="section">
+    <div class="container wrapper">
+      <div class="columns">
+        <div class="column is-three-fifths">
+          <div class="info">
+            <p class="text-exchanging is-uppercase">
+              Exchanging
+            </p>
+            <p>
+              <span class="text-crypto">Cryptocurrencies</span>
+              <span class="text-made-easy">made easy!</span>
+            </p>
+            <p style="margin: 0.5rem 0; vertical-align: bottom;">
+              <svg
+                width="40"
+                height="2"
+                style="vertical-align: middle"
+                viewBox="0 0 69 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3.05176e-05 1H69" stroke="#707070" />
+              </svg>
+              <span>Buy and Sell securely  with SenexPAY</span>
+            </p>
+          </div>
+          <div class="image-illustration-container">
+            <img src="~assets/illustration.png" alt="An image containing a trader operating a laptop">
+          </div>
         </div>
-        <div class="image-illustration-container">
-          <img src="~assets/illustration.png" alt="An image containing a trader operating a laptop">
+        <div class="column">
+          <trade-widget />
         </div>
-      </div>
-      <div class="column">
-        <trade-widget />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -51,6 +53,15 @@ export default {
   }
 }
 </script>
+
+<style>
+.section {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/fonts.scss';
