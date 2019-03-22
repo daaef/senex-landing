@@ -56,8 +56,8 @@
 
 .contact-support-container {
   position: absolute;
-  right: 50px;
-  bottom: 200px;
+  right: 30px;
+  bottom: 230px;
   text-align: center;
   img,
   span {
