@@ -33,7 +33,7 @@
                 </div>
               </div>
             </div>
-            <div class="columns is-gapless">
+            <div class="columns is-gapless is-mobile">
               <div class="column is-2 has-text-centered">
                 <span class="icon" style="color: #c4c4c4; vertical-align: middle;">
                   <i class="fas fa-exchange-alt" />
@@ -213,12 +213,7 @@ export default {
         rates: this.tradeType === 'buy' ? this.rates.buy : this.rates.sell
       })
       this.$router.push({
-        path: `/trade/${this.tradeType}`,
-        query: {
-          currency: this.currency,
-          amount_crypto: this.computedCryptoAmount,
-          amount_fiat: this.computedFiatAmount
-        }
+        path: `/trade/${this.tradeType}`
       })
     }
   }

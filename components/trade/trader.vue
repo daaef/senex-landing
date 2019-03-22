@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section class="section">
     <template v-if="!isActiveTrade">
       <div class="container wrapper_trader">
         <p class="has-text-centered">
@@ -67,7 +67,7 @@
         </div>
       </div>
     </template>
-  </div>
+  </section>
 </template>
 
 <script>
