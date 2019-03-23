@@ -3,36 +3,82 @@
     <template slot="title">
       Verification
     </template>
-    <template slot="content" class="user-verify">
-      <div>Upload ID</div>
-      <div class="id-section">
-        <img src="~assets/images/id-placeholder.png" alt="" class="upload-id">
-        <div class="widget-grp">
-          <button class="button select-file-btn">
-            Choose File
-          </button>
-          <button class="button upload-file-btn">
-            Upload
-          </button>
+    <template v-if="shouldVerify" slot="content">
+      <div class="user-verify">
+        <div>Upload ID</div>
+        <div class="id-section">
+          <img src="~assets/images/id-placeholder.png" alt="" class="upload-id">
+          <div class="widget-grp">
+            <input
+              ref="idCardVer"
+              type="file"
+              style="display: none;"
+              accept="image/*"
+              @change="handleIdCardFileChange"
+            >
+            <button
+              class="button select-file-btn"
+              @click="$refs.idCardVer.click()"
+            >
+              Choose File
+            </button>
+            <button
+              class="button upload-file-btn"
+              :class="{'is-loading': idCard.loading}"
+              @click="handleIdCardUpload"
+            >
+              Upload
+            </button>
+            <span v-if="idCard.file" class="is-block is-size-7">
+              {{ idCard.file.name|formatFilename }}
+            </span>
+          </div>
         </div>
-      </div>
-
-      <p>Upload Selfie</p>
-      <div class="selfie-section">
-        <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie">
-        <div class="widget-grp">
-          <button class="button select-file-btn">
-            Choose File
-          </button>
-          <button class="button upload-file-btn">
-            Upload
-          </button>
+        <p>Upload Selfie</p>
+        <div class="selfie-section">
+          <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie">
+          <div class="widget-grp">
+            <input
+              ref="selfieVer"
+              type="file"
+              style="display: none"
+              accept="image/*"
+              @change="handleSelfieFileChange"
+            >
+            <button
+              class="button select-file-btn"
+              @click="$refs.selfieVer.click()"
+            >
+              Choose File
+            </button>
+            <button
+              class="button upload-file-btn"
+              :class="{'is-loading': selfie.loading}"
+              @click="handleSelfieUpload"
+            >
+              Upload
+            </button>
+            <span v-if="selfie.file" class="is-block is-size-7">
+              {{ selfie.file.name|formatFilename }}
+            </span>
+          </div>
         </div>
       </div>
     </template>
+    <template v-else slot="content" class="user-verify">
+      <div>
+        <p class="has-text-centered is-size-6">
+          No verification required.
+        </p>
+      </div>
+    </template>
     <template slot="button">
-      <button class="button">
-        Complete Trade
+      <button
+        class="button"
+        :class="{'is-loading': loading}"
+        @click="handleSubmit"
+      >
+        Complete
       </button>
     </template>
   </trader>
@@ -40,6 +86,12 @@
 
 <script>
 import Trader from '~/components/trade/trader.vue'
+import { mapState } from 'vuex'
+
+const _TRADE_VERIFY_AMOUNT_CONDITION_ = 1000.0 // in dollars
+const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
+const _STR_REQUIRED_FIELDS_ = 'You must upload both a selfie & an identity'
+const _ERR_KYC_UPDATE_ = 'Unable to update; try again'
 
 export default {
   layout: 'simple',
@@ -48,9 +100,133 @@ export default {
     Trader
   },
 
+  data() {
+    return {
+      loading: false,
+      idCard: {
+        file: null,
+        loading: false,
+        url: null
+      },
+      selfie: {
+        file: null,
+        loading: false,
+        url: null
+      }
+    }
+  },
+
+  computed: {
+    ...mapState({
+      cryptoAmount: state => state.trade.create.metadata.cryptoAmount,
+      fiatAmount: state => state.trade.create.metadata.fiatAmount,
+      currency: state => state.trade.create.currency,
+      conversionRate: state => state.trade.create.conversionRate,
+      tradeId: state => state.trade.create.metadata.id
+    }),
+
+    shouldVerify() {
+      let tradeAmount
+      if (this.currency === 'USD') {
+        tradeAmount = this.fiatAmount
+      } else {
+        tradeAmount = this.fiatAmount * this.conversionRate.USD_NGN
+      }
+      return tradeAmount >= _TRADE_VERIFY_AMOUNT_CONDITION_
+    },
+
+    canSubmit() {
+      return this.selfie.url && this.idCard.url
+    }
+  },
+
   head() {
     return {
       title: 'Buy - SenexPay'
+    }
+  },
+
+  methods: {
+    handleFileChange(event, type /* selfie or idCard */) {
+      const files = event.target.files || event.dataTransfer.files
+      if (!files) {
+        return
+      }
+      this[type].file = files[0]
+    },
+
+    async _doUpload(type /* selfie or idCard */) {
+      const fd = new FormData()
+      fd.append('datafile', this[type].file)
+
+      try {
+        this[type].loading = true
+        const resp = await this.$axios.post('/uploads/', fd, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
+        this[type].url = resp.data.url
+      } catch (err) {
+        this.$swal({
+          title: 'Error:',
+          type: 'error',
+          position: 'top-end',
+          text: _ERR_FILE_UPLOAD_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      }
+      this[type].loading = false
+    },
+
+    handleSelfieUpload() {
+      this._doUpload('selfie')
+    },
+
+    handleIdCardUpload() {
+      this._doUpload('idCard')
+    },
+
+    async handleSubmit() {
+      if (!this.selfie.url || !this.idCard.url) {
+        this.$swal({
+          title: '',
+          type: 'info',
+          position: 'top-end',
+          text: _STR_REQUIRED_FIELDS_,
+          timer: 5 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+        return
+      }
+
+      try {
+        const requestBody = {
+          govtIssuedId: this.idCard.url,
+          selfieWithId: this.selfie.url
+        }
+        this.loading = true
+        await this.$axios.post(`/trade/${this.tradeId}/kyc`, requestBody, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        })
+      } catch (err) {
+        this.$swal({
+          title: '',
+          type: 'error',
+          position: 'top-end',
+          text: _ERR_KYC_UPDATE_,
+          timer: 5 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } finally {
+        this.loading = false
+      }
     }
   }
 }

@@ -1,70 +1,70 @@
 <template>
   <section class="section">
     <div class="container wrapper">
-        <div class="columns">
-          <div class="column is-3 is-offset-4">
-            <p class="has-text-weight-semibold p-heading has-text-centered">
-              Tracking
-              <span class="is-block  has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
-            </p>
+      <div class="columns">
+        <div class="column is-3 is-offset-4">
+          <p class="has-text-weight-semibold p-heading has-text-centered">
+            Tracking
+            <span class="is-block  has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
+          </p>
 
-            <div v-if="step === 'trackid'" class="trackid-wrapper">
-              <div class="card trackid-container">
-                <div class="field">
-                  <label for="" class="label has-text-weight-normal">Track ID</label>
-                  <p class="control">
-                    <input type="text" class="input is-rounded" placeholder="#12345">
-                  </p>
-                </div>
-              </div>
-              <div class="button-container">
-                <button class="button is-fullwidth track-button">
-                  Continue
-                </button>
-              </div>
-              <div class="has-no-trade has-text-centered">
-                <p>Haven't started a trade?</p>
-                <p>
-                  <nuxt-link to="/" class="is-size-5 trade-link">
-                    Start Trade
-                  </nuxt-link>
+          <div v-if="step === 'trackid'" class="trackid-wrapper">
+            <div class="card trackid-container">
+              <div class="field">
+                <label for="" class="label has-text-weight-normal">Track ID</label>
+                <p class="control">
+                  <input type="text" class="input is-rounded" placeholder="#12345">
                 </p>
               </div>
             </div>
+            <div class="button-container">
+              <button class="button is-fullwidth track-button">
+                Continue
+              </button>
+            </div>
+            <div class="has-no-trade has-text-centered">
+              <p>Haven't started a trade?</p>
+              <p>
+                <nuxt-link to="/" class="is-size-5 trade-link">
+                  Start Trade
+                </nuxt-link>
+              </p>
+            </div>
+          </div>
 
-            <div v-else-if="step === 'otpverification'" class="otpverification-wrapper">
-              <div class="card otpverification-container">
-                <p class="subheading has-text-centered">
-                  OTP Verification
-                </p>
-                <p class="text-info has-text-centered">
-                  Enter the code sent to ********789
-                </p>
-                <div class="columns is-mobile">
-                  <div class="column is-3">
-                    <input type="text" class="input" maxlength="1">
-                  </div>
-                  <div class="column is-3">
-                    <input type="text" class="input" maxlength="1">
-                  </div>
-                  <div class="column is-3">
-                    <input type="text" class="input" maxlength="1">
-                  </div>
-                  <div class="column is-3">
-                    <input type="text" class="input" maxlength="1">
-                  </div>
+          <div v-else-if="step === 'otpverification'" class="otpverification-wrapper">
+            <div class="card otpverification-container">
+              <p class="subheading has-text-centered">
+                OTP Verification
+              </p>
+              <p class="text-info has-text-centered">
+                Enter the code sent to ********789
+              </p>
+              <div class="columns is-mobile">
+                <div class="column is-3">
+                  <input type="text" class="input" maxlength="1">
                 </div>
-                <div class="btn-container">
-                  <button class="button">
-                    Track
-                  </button>
+                <div class="column is-3">
+                  <input type="text" class="input" maxlength="1">
                 </div>
-                <a href="#" class="resend">Resend</a>
+                <div class="column is-3">
+                  <input type="text" class="input" maxlength="1">
+                </div>
+                <div class="column is-3">
+                  <input type="text" class="input" maxlength="1">
+                </div>
               </div>
+              <div class="btn-container">
+                <button class="button">
+                  Track
+                </button>
+              </div>
+              <a href="#" class="resend">Resend</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </section>
 </template>
 
@@ -187,10 +187,8 @@ div.wrapper {
 
       .trade-info {
         padding: 1rem 0.7rem;
-
         .trade-info-item {
           margin: 0.7rem 0;
-
           .item-heading {
             color: #1b70cf;
             margin-bottom: 0.5rem;

@@ -6,7 +6,7 @@ export const state = () => ({
     type: '',
     cryptoAmount: 0,
     fiatAmount: 0,
-    currency: '',
+    currency: 'USD',
     conversionRate: {
       USD: null,
       NGN: null,
@@ -20,7 +20,8 @@ export const state = () => ({
       mobileNumber: ''
     },
     walletInfo: {
-      address: ''
+      address: '',
+      pin: ''
     },
     payment: {
       reference: ''
@@ -35,20 +36,21 @@ export const state = () => ({
     // it is being paid for in the case of trade/buy or paid in' in the case of
     // trade/sell
     metadata: {
-      id: 'QQ1jh1qhaI4O',
-      type: 'sell',
-      cryptoAmount: 0.004382,
-      fiatAmount: 52830,
-      email: 'rasheedmusa9@gmail.com',
+      id: 'pYdAvgWX6rP8',
+      type: 'buy',
+      cryptoAmount: 0.0083,
+      fiatAmount: 502837,
+      email: 'edge@gmail.com',
       firstName: 'Rasheed',
       lastName: 'Musa',
       mobileNumber: '07066528898',
-      accountNumber: '3066678912',
-      walletAddress: 'xhsd832sdhzxdhquenhsAAAdhsz',
-      bank: '011',
-      expires: '2019-03-19T11:13:37.909970Z',
-      modified: '2019-03-19T10:13:38.344868Z',
-      created: '2019-03-19T10:13:38.344782Z',
+      accountNumber: null,
+      walletAddress: '1BoatSLRHtKNngkdXEeobR76b53LETtpyT',
+      bank: null,
+      pin: '3242',
+      expires: '2019-03-23T09:55:08.696058Z',
+      modified: '2019-03-23T08:55:08.780977Z',
+      created: '2019-03-23T08:55:08.780891Z',
       transactions: [],
       kyc: null,
       deviceInfo: {},

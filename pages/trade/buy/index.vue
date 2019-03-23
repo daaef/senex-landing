@@ -76,7 +76,6 @@
         </p>
       </div>
     </template>
-
     <template slot="button">
       <button type="submit" class="button" @click="handleContinue">
         Continue
