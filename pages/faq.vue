@@ -44,7 +44,7 @@ export default {
 
   asyncData({ $axios }) {
     return $axios.get('/faqs/').then(resp => ({
-      items: resp.data
+      items: resp.data.sort((a, b) => a.number < b.number)
     }))
   },
 
