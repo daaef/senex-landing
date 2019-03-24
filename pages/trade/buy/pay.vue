@@ -100,7 +100,7 @@ export default {
     async handlePaymentResponse(response) {
       try {
         this.verifying = true
-        const verificationResp = await this.$axios.get('/verify/rave', {
+        const verificationResp = await this.$axios.get('/verify/rave/', {
           params: {
             txref: response.txRef
           }

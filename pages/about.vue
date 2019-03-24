@@ -19,54 +19,55 @@
       </div>
 
       <div class="columns is-centered extended-info">
-        <div class="column is-3 item" style="margin-right: 1.2rem;">
-          SenexPAY ushers-in a revolutionary, AI integrated technology which ensures customer's ease of use, security and reliability of its network. The platform also offers a third-party API endpoint for interested businesses to easily integrate our service as a bitcoin payment processor for their company.
-        </div>
         <div class="column is-3 item">
-          SenexPAY remains trusted by thousands of customers across the world and can boast of the fastest and most secure service delivery in this venture. The platform is consistently seeking improvements to guarantee exceptional digital asset exchange experience.
+          <div class="image-wrapper">
+            <img src="~/assets/card-ai.png" alt="">
+          </div>
+          <p class="item-text">
+            SenexPAY ushers-in a revolutionary, AI integrated technology which ensures customer's ease of use, security and reliability of its network. The platform also offers a third-party API endpoint for interested businesses to easily integrate our service as a bitcoin payment processor for their company.
+          </p>
+        </div>
+
+        <div
+          class="column is-3 item"
+          :style="!$device.isMobile ? {'margin-left': '1rem'} : ''"
+        >
+          <div class="image-wrapper">
+            <img src="~/assets/card-user.png" alt="">
+          </div>
+          <p class="item-text">
+            SenexPAY remains trusted by thousands of customers across the world and can boast of the fastest and most secure service delivery in this venture. The platform is consistently seeking improvements to guarantee exceptional digital asset exchange experience.
+          </p>
         </div>
       </div>
-
       <div class="core-values-wrapper">
         <p class="_title has-text-centered">
           Core Values
         </p>
-        <div class="columns">
-          <div class="column is-6 is-offset-3">
-            <div class="columns">
-              <div class="column is-3 has-text-centered">
-                <div class="value-wrapper">
-                  <p class="image-container" />
-                  <p class="value">
-                    FAST
-                  </p>
-                </div>
-              </div>
-              <div class="column is-3 has-text-centered">
-                <div class="value-wrapper">
-                  <p class="image-container" />
-                  <p class="value">
-                    FAST
-                  </p>
-                </div>
-              </div>
-              <div class="column is-3 has-text-centered">
-                <div class="value-wrapper">
-                  <p class="image-container" />
-                  <p class="value">
-                    FAST
-                  </p>
-                </div>
-              </div>
-              <div class="column is-3 has-text-centered">
-                <div class="value-wrapper">
-                  <p class="image-container" />
-                  <p class="value">
-                    FAST
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div class="columns is-centered content">
+          <div class="column value-item">
+            <p class="image-wrappa">
+              <img src="~/assets/value-fast.png" alt="">
+            </p>
+            <p class="text">
+              FAST
+            </p>
+          </div>
+          <div class="column value-item">
+            <p class="image-wrappa">
+              <img src="~/assets/value-reliable.png" alt="">
+            </p>
+            <p class="text">
+              RELIABLE
+            </p>
+          </div>
+          <div class="column value-item">
+            <p class="image-wrappa">
+              <img src="~/assets/value-secure.png" alt="">
+            </p>
+            <p class="text">
+              FAST
+            </p>
           </div>
         </div>
       </div>
@@ -80,17 +81,9 @@
             <div class="columns">
               <div class="column has-text-centered">
                 <div class="column partner-img-container">
-                  <img src="~assets/flutterwave.png" alt="" class="Flutterwave partner">
-                </div>
-              </div>
-              <div class="column has-text-centered">
-                <div class="column partner-img-container">
-                  <img src="~assets/flutterwave.png" alt="" class="Flutterwave partner">
-                </div>
-              </div>
-              <div class="column has-text-centered">
-                <div class="column partner-img-container">
-                  <img src="~assets/flutterwave.png" alt="" class="Flutterwave partner">
+                  <a href="https://flutterwave.com" target="_blank">
+                    <img src="~assets/flutterwave.png" alt="" class="Flutterwave partner">
+                  </a>
                 </div>
               </div>
             </div>
@@ -145,7 +138,7 @@ div.wrapper {
       font-weight: normal;
       font-style: normal;
       line-height: 1.5;
-      font-size: 1.1em;
+      font-size: 1rem;
       margin-top: 1.2rem;
       text-align: center;
       ._title {
@@ -158,26 +151,38 @@ div.wrapper {
     }
   }
   .core-values-wrapper {
-    margin: 2rem 0;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 50%;
     ._title {
       font-size: 1.4rem;
       color: #1c70c8;
       font-weight: 500;
       margin-bottom: 1rem;
     }
-    .value-wrapper {
-      text-align: center;
-      width: 70px;
-      .image-container {
-        width: 70px;
-        height: 70px;
-        background: #c4c4c4;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-      }
-      .value {
-        color: #b9b9b9;
-        font-size: 1.2rem;
+    .content {
+      margin-top: 1.5rem;
+      .value-item {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        .image-wrappa {
+          width: 72px;
+          height: 72px;
+          margin: 0 auto;
+          vertical-align: center;
+          image {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+
+        .text {
+          margin-top: 2rem;
+          color: #1c70c8;
+          font-weight: 500;
+        }
       }
     }
   }
@@ -195,17 +200,36 @@ div.wrapper {
   div.extended-info {
     margin: 2.5rem 0;
     .item {
-      height: 320px;
-      padding: 3rem 1.5rem;
+      height: 350px;
       position: relative;
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      font-size: 1rem;
-      color: #1c70c8;
       line-height: 1.5;
+      margin-top: 3rem;
+      z-index: -9999;
+      .image-wrapper {
+        position: absolute;
+        top: -10%;
+        left: 35%;
+        box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+        width: 74px;
+        height: 74px;
+        padding: 1rem;
+        z-index: 2000;
+        image {
+          max-width: auto;
+          height: auto;
+        }
+      }
+      .item-text {
+        color: #1c70c8;
+        padding: 3rem 1.5rem;
+        font-size: 0.95rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
     }
   }
 }
