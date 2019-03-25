@@ -60,7 +60,13 @@ module.exports = {
         // regular vee-validate options
       }
     ],
-    'nuxt-device-detect'
+    'nuxt-device-detect',
+    [
+      'vue-sweetalert2/nuxt',
+      {
+        confirmButtonColor: '#41b882'
+      }
+    ]
   ],
   /*
   ** Axios module configuration
