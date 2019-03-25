@@ -52,18 +52,23 @@
                 </div>
               </div>
               <div class="column is-5">
-                <input
-                  v-model="computedFiatAmount"
-                  type="text"
-                  class="input"
-                  :class="{'is-loading': true && !fiatAmountIsDirty}"
-                  style="background: #f4f4f4; color: #707070; border: none;"
-                >
+                <div class="control" :class="{'is-loading': isFetchingRates}">
+                  <input
+                    v-model="computedFiatAmount"
+                    type="text"
+                    class="input"
+                    style="background: #f4f4f4; color: #707070; border: none;"
+                  >
+                </div>
               </div>
             </div>
           </div>
           <div class="button-container">
-            <button class="button is-fullwidth trade-button has-text-weight-semibold" @click="doTrade">
+            <button
+              class="button is-fullwidth trade-button has-text-weight-semibold"
+              :class="{'disabled': canSubmit}"
+              @click="doTrade"
+            >
               Trade
             </button>
           </div>
@@ -105,7 +110,6 @@ export default {
       fiatAmount: 0,
       cryptoAmount: 0,
       currency: 'NGN',
-
       fiatAmountIsDirty: false,
       cryptoAmountIsDirty: false,
       isFetchingRates: false,
@@ -138,7 +142,7 @@ export default {
             rv = fiatAmount / rate.NGN
           }
         }
-        return rv.toFixed(8)
+        return rv.toFixed(4)
       }
     },
 
@@ -167,6 +171,14 @@ export default {
         }
         return rv.toFixed(2)
       }
+    },
+
+    canSubmit() {
+      return (
+        !this.isFetchingRates &&
+        !this.fiatAmountIsDirty &&
+        !this.cryptoAmountIsDirty
+      )
     }
   },
 

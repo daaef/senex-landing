@@ -78,7 +78,12 @@
     </template>
 
     <template slot="button">
-      <button type="submit" class="button" @click="handleContinue">
+      <button
+        type="submit"
+        class="button"
+        :class="{'is-loading': isLoading}"
+        @click="handleContinue"
+      >
         Continue
       </button>
     </template>
@@ -90,6 +95,7 @@ import { Validator } from 'vee-validate'
 import PhoneNumber from 'awesome-phonenumber'
 import { mapState } from 'vuex'
 import Trader from '~/components/trade/trader.vue'
+import logger from '~/logger'
 
 const phoneNumber = {
   getMessage: field => `${field} is not a valid phone number`,
@@ -112,6 +118,12 @@ export default {
   head() {
     return {
       title: 'Sell - SenexPay'
+    }
+  },
+
+  data() {
+    return {
+      isLoading: false
     }
   },
 
@@ -172,6 +184,9 @@ export default {
   methods: {
     handleContinue() {
       this.$validator.validateAll().then(validated => {
+        this.isLoading = true
+        logger.debug(`Personal information: ${JSON.stringify(this.info)}`)
+
         if (validated) {
           this.$router.push({
             path: '/trade/sell/account-info'

@@ -17,11 +17,11 @@ export const state = () => ({
       firstName: '',
       lastName: '',
       email: '',
-      mobileNumber: ''
+      mobileNumber: '',
+      pin: ''
     },
     walletInfo: {
-      address: '',
-      pin: ''
+      address: ''
     },
     payment: {
       reference: ''
@@ -33,30 +33,13 @@ export const state = () => ({
     },
 
     // This is the information of the trade after it has been created, and before
-    // it is being paid for in the case of trade/buy or paid in' in the case of
-    // trade/sell
-    metadata: {
-      id: 'pYdAvgWX6rP8',
-      type: 'buy',
-      cryptoAmount: 0.0083,
-      fiatAmount: 502837,
-      email: 'edge@gmail.com',
-      firstName: 'Rasheed',
-      lastName: 'Musa',
-      mobileNumber: '07066528898',
-      accountNumber: null,
-      walletAddress: '1BoatSLRHtKNngkdXEeobR76b53LETtpyT',
-      bank: null,
-      pin: '3242',
-      expires: '2019-03-23T09:55:08.696058Z',
-      modified: '2019-03-23T08:55:08.780977Z',
-      created: '2019-03-23T08:55:08.780891Z',
-      transactions: [],
-      kyc: null,
-      deviceInfo: {},
-      networkInfo: {},
-      status: 'pending'
-    }
+    // it is being paid for in the case of trade/buy or paid in' in the case of trade/sell
+    metadata: {}
+  },
+
+  track: {
+    tradeId: '',
+    trade: null
   }
 })
 
@@ -67,7 +50,9 @@ export const mutationTypes = {
   UPDATE_PAYMENT: 'UPDATE_PAYMENT',
   START_TRADE: 'START_TRADE',
   SET_BANK_LIST: 'SET_BANK_LIST',
-  SET_TRADE_METADATA: 'SET_TRADE_METADATA'
+  SET_TRADE_METADATA: 'SET_TRADE_METADATA',
+  SET_TRACK_TRADE_ID: 'SET_TRACK_TRADE_ID',
+  SET_TRACK_TRADE_INFO: 'SET_TRACK_TRADE_INFO'
 }
 
 export const mutations = {
@@ -77,6 +62,14 @@ export const mutations = {
 
   [mutationTypes.UPDATE_BANK_DETAILS](state, opts) {
     state.create.bankDetails[opts.prop] = opts.value
+  },
+
+  [mutationTypes.UPDATE_WALLET_INFO](state, opts) {
+    state.create.walletInfo[opts.prop] = opts.value
+  },
+
+  [mutationTypes.UPDATE_PAYMENT](state, opts) {
+    state.create.payment[opts.prop] = opts.value
   },
 
   [mutationTypes.START_TRADE](state, opts) {
@@ -95,7 +88,18 @@ export const mutations = {
   },
 
   [mutationTypes.SET_TRADE_METADATA](state, metadata) {
-    state.create.metadata = metadata
+    state.create.metadata = {
+      ...(state.create.metadata || {}),
+      ...metadata
+    }
+  },
+
+  [mutationTypes.SET_TRACK_TRADE_ID](state, tradeId) {
+    state.track.tradeId = tradeId
+  },
+
+  [mutationTypes.SET_TRACK_TRADE_INFO](state, info) {
+    state.track.trade = info
   }
 }
 

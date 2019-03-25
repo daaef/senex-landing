@@ -11,14 +11,28 @@
           <div v-if="step === 'trackid'" class="trackid-wrapper">
             <div class="card trackid-container">
               <div class="field">
-                <label for="" class="label has-text-weight-normal">Track ID</label>
+                <label for="" class="label has-text-weight-normal">Trade ID</label>
                 <p class="control">
-                  <input type="text" class="input is-rounded" placeholder="#12345">
+                  <input
+                    v-model="tradeId"
+                    v-validate="'required'"
+                    type="text"
+                    name="trade id"
+                    class="input is-rounded"
+                    placeholder="#12345"
+                  >
                 </p>
               </div>
+              <p v-show="errors.has('trade id')" class="help is-danger">
+                {{ errors.first('trade id') }}
+              </p>
             </div>
             <div class="button-container">
-              <button class="button is-fullwidth track-button">
+              <button
+                class="button is-fullwidth track-button"
+                :class="{'is-loading': isLoading}"
+                @click="handleContinue"
+              >
                 Continue
               </button>
             </div>
@@ -35,27 +49,54 @@
           <div v-else-if="step === 'otpverification'" class="otpverification-wrapper">
             <div class="card otpverification-container">
               <p class="subheading has-text-centered">
-                OTP Verification
+                Pin Verification
               </p>
               <p class="text-info has-text-centered">
-                Enter the code sent to ********789
+                Enter the pin for this trade
               </p>
               <div class="columns is-mobile">
                 <div class="column is-3">
-                  <input type="text" class="input" maxlength="1">
+                  <input
+                    ref="pin1"
+                    v-model="pin1"
+                    type="text"
+                    class="input"
+                    maxlength="1"
+                  >
                 </div>
                 <div class="column is-3">
-                  <input type="text" class="input" maxlength="1">
+                  <input
+                    ref="pin2"
+                    v-model="pin2"
+                    type="text"
+                    class="input"
+                    maxlength="1"
+                  >
                 </div>
                 <div class="column is-3">
-                  <input type="text" class="input" maxlength="1">
+                  <input
+                    ref="pin3"
+                    v-model="pin3"
+                    type="text"
+                    class="input"
+                    maxlength="1"
+                  >
                 </div>
                 <div class="column is-3">
-                  <input type="text" class="input" maxlength="1">
+                  <input
+                    ref="pin4"
+                    v-model="pin4"
+                    type="text"
+                    class="input"
+                  >
                 </div>
               </div>
               <div class="btn-container">
-                <button class="button">
+                <button
+                  class="button"
+                  :disabled="!pin1 || !pin2 || !pin3 || !pin4"
+                  @click="handlePinSubmit"
+                >
                   Track
                 </button>
               </div>
@@ -69,14 +110,90 @@
 </template>
 
 <script>
+const _ERR_FETCH_TRADE_ = "Couldn't fetch trade; try again"
+const _STR_INVALID_PIN_ = 'Invalid pin; please enter correct trade pin'
+
 export default {
   layout: 'blue',
 
   data() {
     return {
+      isLoading: false,
+      pin1: '',
+      pin2: '',
+      pin3: '',
+      pin4: '',
+
       // This is used to determine which section of the UI to show.
-      // Valid values are trackid | otpverification
-      step: 'otpverification'
+      // Valid values are trackid | pinverification
+      step: 'pinverification'
+    }
+  },
+
+  computed: {
+    trade() {
+      return this.$store.state.trade.track.trade
+    },
+
+    tradeId: {
+      get() {
+        return this.$store.state.trade.track.tradeId
+      },
+      set(value) {
+        this.$store.commit('trade/UPDATE_TRACK_TRADE_ID', value)
+      }
+    }
+  },
+
+  methods: {
+    handleContinue() {
+      this.$validator.validateAll().then(async validated => {
+        if (validated) {
+          await this.getTrade()
+          if (this.trade) {
+            this.step = 'pinverification'
+          }
+        }
+      })
+    },
+
+    async getTrade() {
+      try {
+        this.isLoading = true
+        const resp = await this.$axios.get(`/trade/${this.tradeId}/`)
+        this.$store.commit('trade/SET_TRACK_TRADE_INFO', resp.data)
+      } catch (err) {
+        this.$swal({
+          title: '',
+          type: 'error',
+          position: 'top-end',
+          text: _ERR_FETCH_TRADE_,
+          timer: 5 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } finally {
+        this.isLoading = false
+      }
+    },
+
+    handlePinSubmit() {
+      const pin = `${this.pin1}${this.pin2}${this.pin3}${this.pin4}`
+      if ('' + this.trade.pin === pin) {
+        this.$router.replace({
+          path: '/track/verify'
+        })
+      } else {
+        this.$swal({
+          title: '',
+          type: 'info',
+          position: 'top-end',
+          text: _STR_INVALID_PIN_,
+          timer: 5 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      }
     }
   }
 }

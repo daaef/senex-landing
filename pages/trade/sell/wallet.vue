@@ -8,53 +8,71 @@
         <p class="desc-text">
           Send {{ cryptoAmount }} BTC to the BTC Address Below
         </p>
-        <div class="columns is-10 address-clipboard-wrapper">
+        <div class="columns is-10 address-clipboard-wrapper is-mobile">
           <div class="column is-10 address-wrapper">
             <p class="btc-address">
-              {{ walletAddress }}
+              {{ receiveAddress }}
             </p>
           </div>
-          <a v-clipboard="walletAddress" class="column is-2 clipboard-wrapper">
-            <span class="icon" style="padding: 0; margin: 0">
-              <i class="far fa-copy" />
-            </span>
-            <span>copy</span>
+          <a v-clipboard="receiveAddress" class="column buttn is-2 clipboard-wrapper">
+            Copy
           </a>
         </div>
         <div class="qrcode-wrapper">
           <p class="qrcode">
             <vue-qrcode
-              :value="`bitcoin:${walletAddress}?amount=${cryptoAmount}`"
+              :value="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`"
               tag="img"
               :options="{width: 160}"
             />
           </p>
           <p class="text-wrapper">
             <span class="text is-block">
-              Scan Wallet Address Directly.
+              Scan wallet address directly.
             </span>
             <span class="icon is-block">
               <i class="fas fa-download" />
             </span>
           </p>
         </div>
+        <div class="status-wrapper">
+          <p v-if="verifying">
+            Verifying transaction...
+          </p>
+          <p v-else-if="transactions.length > 0">
+            Transaction complete; please proceed.
+          </p>
+          <p v-else>
+            Transaction pending...
+          </p>
+          <p />
+        </div>
       </div>
     </template>
     <template slot="button">
-      <button class="button">
-        Continue
+      <button
+        class="button"
+        :class="{'is-loading': verifying}"
+        :disabled="transactions.length === 0"
+        @click="handleRequestTrade"
+      >
+        Request trade
       </button>
     </template>
   </trader>
 </template>
 
 <script>
-import { setTimeout, setInterval } from 'timers'
+import logger from '~/logger'
+import { setInterval } from 'timers'
 import { mapState } from 'vuex'
 import Trader from '~/components/trade/trader.vue'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
 
-const _TRADE_VERIFY_INTERVAL_ = 30 * 1000 /* 30 seconds */
+const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min 30 seconds */
+const _STR_CANNOT_VERIFY_ = "Couldn't verify trade. retrying..."
+const _STR_TRADE_REQUESTED_ =
+  'Trade requested; you will paid the equivalent fiat amount of this Bitcoin when your trade is confirmed'
 
 export default {
   layout: 'simple',
@@ -66,7 +84,8 @@ export default {
 
   data() {
     return {
-      verifying: false
+      verifying: false,
+      checkTradeIntervalTimer: null
     }
   },
 
@@ -75,44 +94,66 @@ export default {
       cryptoAmount: state => state.trade.create.metadata.cryptoAmount,
       fiatAmount: state => state.trade.create.metadata.fiatAmount,
       tradeId: state => state.trade.create.metadata.id,
-      transactions: state => state.trade.create.metadata.transactions,
+      transactions: state => state.trade.create.metadata.transactions || [],
       tradeStatus: state => state.trade.create.metadata.status,
       expires: state => state.trade.create.metadata.expires,
-      walletAddress: state => state.trade.create.metadata.walletAddress
+      receiveAddress: state => state.trade.create.metadata.receiveAddress
     })
   },
 
+  watch: {
+    transactions(newValue) {
+      if (newValue.length > 0) {
+        clearInterval(this.checkTradeIntervalTimer)
+      }
+    }
+  },
+
   created() {
-    setInterval(() => {
-      this.fetchTradeItem()
+    const self = this
+    this.checkTradeIntervalTimer = setInterval(() => {
+      self.fetchTradeItem()
     }, _TRADE_VERIFY_INTERVAL_)
   },
 
   methods: {
-    fetchTradeItem() {
-      this.verifying = true
-      this.$axios
-        .get(`/trade/${this.tradeId}`)
-        .then(resp => {
-          this.verifying = false
-          this.$store.commit('trade/SET_TRADE_METADATA', resp.data)
-        })
-        .catch(() => {
-          this.verifying = false
-          this.$swal({
-            title: 'Error:',
-            type: 'error',
-            position: 'top-end',
-            text: "Couldn't verify trade. retrying...",
-            timer: 7 * 1000,
-            toast: true,
-            showConfirmButton: false
-          })
+    async fetchTradeItem() {
+      try {
+        this.verifying = true
+        const resp = await this.$axios.get(`/trade/${this.tradeId}/`)
+        logger.debug(`[sell/wallet] resp data: ${JSON.stringify(resp.data)}`)
 
-          setTimeout(() => {
-            this.fetchTradeItem()
-          }, _TRADE_VERIFY_INTERVAL_ / 2)
+        this.$store.commit('trade/SET_TRADE_METADATA', resp.data)
+      } catch (err) {
+        this.$swal({
+          title: 'Error:',
+          type: 'error',
+          position: 'top-end',
+          text: _STR_CANNOT_VERIFY_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
         })
+      } finally {
+        this.verifying = false
+      }
+    },
+
+    handleRequestTrade() {
+      const self = this
+      const onClose = () => {
+        self.$router.replace({
+          path: '/track'
+        })
+      }
+
+      this.$swal({
+        type: 'success',
+        title: 'Trade Request Success',
+        text: _STR_TRADE_REQUESTED_,
+        footer: `Your trade pin is ${this.pin}`,
+        onClose
+      })
     }
   }
 }

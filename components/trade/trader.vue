@@ -15,7 +15,7 @@
         <p class="__title has-text-centered">
           <span v-if="tradeType === 'buy'">Buying </span>
           <span v-else>Selling </span>
-          <span class="amount__btc">{{ cryptoAmount }} BTC</span> at <span class="amount__currency">{{ fiatAmount }} {{ currency }}</span>
+          <span class="amount__btc">{{ cryptoAmount }} BTC</span> at <span class="amount__currency">{{ fiatAmount|formatMoney(currency) }}</span>
           <span style="margin-left: 1.5rem;"><a href="#" style="color:  #d50b1f; font-size: 0.8rem;">cancel</a></span>
         </p>
 
@@ -73,10 +73,15 @@
 <script>
 import { mapState } from 'vuex'
 import TradeIcon from '@/components/trade-icon'
+import formatMoney from '~/filters/format-money'
 
 export default {
   components: {
     TradeIcon
+  },
+
+  filters: {
+    formatMoney
   },
   props: {
     step: {

@@ -49,10 +49,28 @@
           >
         </div>
       </div>
+
+      <div class="field">
+        <label for="" class="label">Trade Pin</label>
+        <div class="control">
+          <input
+            v-model="pin"
+            v-validate="'required|numeric|length:4'"
+            type="text"
+            class="input"
+            placeholder="1234"
+            name="trade pin"
+            :class="{ 'is-danger': errors.has('trade pin') }"
+          >
+        </div>
+        <p v-show="errors.has('trade pin')" class="help is-danger">
+          {{ errors.first('trade pin') }}
+        </p>
+      </div>
     </template>
     <template slot="button">
       <button class="button" @click="handleRequestTrade">
-        Request Trade
+        Pay
       </button>
     </template>
   </trader>
@@ -61,8 +79,11 @@
 <script>
 import _ from 'lodash'
 import { mapState } from 'vuex'
+import logger from '~/logger'
 import Trader from '~/components/trade/trader.vue'
 import SelectSearch from '~/components/select-search.vue'
+
+const _ERR_CREATE_TRADE_ = 'Something bad happened; try again'
 
 export default {
   layout: 'simple',
@@ -74,6 +95,7 @@ export default {
 
   data() {
     return {
+      loading: false,
       selectedBank: null,
       bankSearchString: '',
       showErrors: false
@@ -125,6 +147,18 @@ export default {
           value
         })
       }
+    },
+
+    pin: {
+      get() {
+        return this.info.pin
+      },
+      set(value) {
+        this.$store.commit('trade/UPDATE_PERSONAL_INFO', {
+          prop: 'pin',
+          value
+        })
+      }
     }
   },
 
@@ -172,7 +206,7 @@ export default {
       }
     },
 
-    createTrade() {
+    async createTrade() {
       const data = this.$store.state.trade.create
       const payload = {
         type: data.type,
@@ -188,28 +222,34 @@ export default {
       }
       payload.bank = payload.bankCode
       delete payload.bankCode
-      this.loading = true
-      this.$axios
-        .post('/trade/', payload)
-        .then(resp => {
-          this.loading = false
-          this.$store.commit('trade/SET_TRADE_METADATA', resp.data)
-          this.$router.replace({
-            path: '/trade/sell/wallet'
-          })
+
+      logger.debug(`trade payload: ${JSON.stringify(payload)}`)
+      try {
+        this.loading = true
+        const resp = await this.$axios.post('/trade/', payload)
+        logger.debug(
+          `[sell/account-info] resp data: ${JSON.stringify(resp.data)}`
+        )
+
+        const trade = resp.data.trade
+        trade.receiveAddress = resp.data.receiveAddress
+        this.$store.commit('trade/SET_TRADE_METADATA', trade)
+        this.$router.replace({
+          path: '/trade/sell/wallet'
         })
-        .catch(() => {
-          this.loading = false
-          this.$swal({
-            title: 'Error:',
-            type: 'error',
-            position: 'top-end',
-            text: 'Something bad happened; try again',
-            timer: 7 * 1000,
-            toast: true,
-            showConfirmButton: false
-          })
+      } catch (err) {
+        this.$swal({
+          title: 'Error:',
+          type: 'error',
+          position: 'top-end',
+          text: _ERR_CREATE_TRADE_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
         })
+      } finally {
+        this.loading = false
+      }
     }
   }
 }
