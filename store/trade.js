@@ -1,4 +1,4 @@
-const _TRADE_TTL_ = 60 * 60 * 1000 /* 1 hr */
+const _TRADE_TTL_ = 60 * 15 * 1000 /* 15 mins */
 
 export const state = () => ({
   banks: [],
@@ -21,7 +21,7 @@ export const state = () => ({
       pin: ''
     },
     walletInfo: {
-      address: ''
+      walletAddress: ''
     },
     payment: {
       reference: ''
@@ -32,8 +32,6 @@ export const state = () => ({
       accountName: ''
     },
 
-    // This is the information of the trade after it has been created, and before
-    // it is being paid for in the case of trade/buy or paid in' in the case of trade/sell
     metadata: {}
   },
 
@@ -79,7 +77,7 @@ export const mutations = {
     state.create.cryptoAmount = opts.cryptoAmount
     state.create.conversionRate.NGN = opts.rates.NGN
     state.create.conversionRate.USD = opts.rates.USD
-    state.create.conversionRate.BTC = opts.rates.BTC
+    state.create.conversionRate.USD_NGN = opts.rates.USD_NGN
     state.create.startTime = new Date()
   },
 

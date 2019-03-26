@@ -16,17 +16,23 @@
         </div>
         <div class="content">
           <p class="brief">
-            Bruce Wayne, Buying 0.0025BTC
+            {{ tradeData.firstName }} {{ tradeData.lastName }}, Buying {{ tradeData.cryptoAmount }}BTC
           </p>
           <p>
             <span class="_title">BTC Address</span>
-            <span class="_item">
-              5151dc5sdc5sd2c51sd515c26s2d62csd...
+            <span v-if="tradeData.walletAddress" class="_item">
+              {{ tradeData.walletAddress }}
             </span>
           </p>
           <p>
             <span class="_title">Payment Status</span>
-            <span class="_item">Paid</span>
+            <span
+              v-if="tradeData.status !== 'pending'"
+              class="_item"
+            />
+            <span v-else>
+              Pending
+            </span>
           </p>
 
           <p class="date">
@@ -40,7 +46,7 @@
             >
               <path d="M3.05176e-05 1H69" stroke="#0C5DB2" />
             </svg>
-            <span>Tue, 24, Feb, 2018</span>
+            <span>{{ tradeData.created|prettydate(false) }}</span>
           </p>
         </div>
       </div>
@@ -51,29 +57,35 @@
           </div>
           <div class="column is-9">
             <span class="text is-block">SenexPAY Support</span>
-            <span class="status success is-block">Success</span>
+            <span v-if="tradeData.status === 'pending'" class="status is-block">
+              Pending
+            </span>
+            <span v-if="tradeData.status === 'paid'" class="status is-block">
+              Paid
+            </span>
+            <span v-if="tradeData.status === 'completed'" class="status is-block success">
+              Completed
+            </span>
+            <span v-if="tradeData.status === 'disbursed'" class="status is-block">
+              Disbursed
+            </span>
+            <span v-if="tradeData.status === 'kyc_passed'">
+              KYC
+            </span>
           </div>
         </div>
         <div class="chat-container">
-          <div class="chat chat-sent">
-            Can’t i make an urgent request about my trade?
+          <div
+            v-for="message in messages"
+            :key="message.id"
+            class="chat"
+            :class="{'chat-sent': !message.admin, 'chat-received': message.admin}"
+          >
+            {{ message.body }}
             <p class="time-info">
-              <span class="name">Bruce - </span>
-              12:15pm
-            </p>
-          </div>
-          <div class="chat chat-received">
-            Hello, How can i help you?
-            <p class="time-info">
-              <span class="name">Admin - </span>
-              12:19pm
-            </p>
-          </div>
-          <div class="chat chat-sent">
-            Can’t i make an urgent request about my trade?
-            <p class="time-info">
-              <span class="name">Bruce - </span>
-              1:00pm
+              <span v-if="!message.admin" class="name">You - </span>
+              <span v-else class="name">Admin - </span>
+              {{ message.created|prettydate }}
             </p>
           </div>
         </div>
@@ -96,8 +108,22 @@
 </template>
 
 <script>
+import hd from 'human-date'
+
 export default {
-  layout: 'blue'
+  layout: 'blue',
+
+  filters: {
+    prettydate(dateStr, showTime = true) {
+      return hd.prettyPrint(dateStr, { showTime })
+    }
+  },
+
+  computed: {
+    tradeData() {
+      return this.$store.state.trade.track
+    }
+  }
 }
 </script>
 

@@ -21,6 +21,7 @@
     "consola": "^2.5.7",
     "cross-env": "^5.2.0",
     "epic-spinners": "^1.0.4",
+    "human-date": "^1.4.0",
     "lodash": "^4.17.11",
     "nuxt": "^2.4.0",
     "nuxt-device-detect": "^1.1.4",

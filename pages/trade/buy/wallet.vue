@@ -28,21 +28,17 @@
         <div class="control">
           <input
             v-model="pin"
-            v-validate="'required|number'"
+            v-validate="'required|numeric|length:4'"
             type="text"
             class="input"
-            placeholder="12345"
+            placeholder="1234"
             name="trade pin"
             :disabled="loading"
             :class="{ 'is-danger': errors.has('trade pin') }"
           >
         </div>
-        <p v-if="errors.has('trade pin')" class="help is-danger">
+        <p v-show="errors.has('trade pin')" class="help is-danger">
           {{ errors.first('trade pin') }}
-        </p>
-        <p v-else>
-          This will be required for security purposes in case ou need to check your
-          trade progress later. Don't lose it!
         </p>
       </div>
     </template>
@@ -52,13 +48,14 @@
         :class="{'is-loading': loading}"
         @click="handleRequestTrade"
       >
-        Request Trade
+        Pay
       </button>
     </template>
   </trader>
 </template>
 
 <script>
+import log from '~/logger'
 import Trader from '~/components/trade/trader.vue'
 import { mapState } from 'vuex'
 
@@ -85,27 +82,30 @@ export default {
 
   computed: {
     ...mapState({
-      info: state => state.trade.create.walletInfo
+      info: state => state.trade.create.walletInfo,
+      personalInfo: state => state.trade.create.personalInformation
     }),
 
     address: {
       get() {
-        return this.info.address
+        return this.info.walletAddress
       },
       set(value) {
         this.$store.commit('trade/UPDATE_WALLET_INFO', {
-          address: value
+          prop: 'walletAddress',
+          value
         })
       }
     },
 
     pin: {
       get() {
-        return this.info.pin
+        return this.personalInfo.pin
       },
       set(value) {
-        this.$store.commit('trade/UPDATE_WALLET_INFO', {
-          pin: value
+        this.$store.commit('trade/UPDATE_PERSONAL_INFO', {
+          prop: 'pin',
+          value
         })
       }
     }
@@ -113,15 +113,11 @@ export default {
 
   methods: {
     handleRequestTrade() {
-      if (!this.details.bankCode) {
-        this.showErrors = true
-      } else {
-        this.$validator.validateAll().then(validated => {
-          if (validated) {
-            this.createTrade()
-          }
-        })
-      }
+      this.$validator.validateAll().then(validated => {
+        if (validated) {
+          this.createTrade()
+        }
+      })
     },
 
     async createTrade() {
@@ -138,12 +134,21 @@ export default {
         deviceInfo: {},
         networkInfo: {}
       }
+      log.debug(
+        `[trade/buy:wallet] createTrade payload: ${JSON.stringify(payload)}`
+      )
 
       try {
         this.loading = true
         const resp = await this.$axios.post('/trade/', payload)
+        log.debug(
+          `[trade/buy:wallet] POST /trade response: ${JSON.stringify(
+            resp.data
+          )}`
+        )
+
         this.$store.commit('trade/SET_TRADE_METADATA', resp.data)
-        this.$router.replace({
+        this.$router.push({
           path: '/trade/buy/pay'
         })
       } catch (err) {

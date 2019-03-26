@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import log from '~/logger'
 import { Validator } from 'vee-validate'
 import PhoneNumber from 'awesome-phonenumber'
 import { mapState } from 'vuex'
@@ -172,6 +173,8 @@ export default {
     handleContinue() {
       this.$validator.validateAll().then(validated => {
         if (validated) {
+          log.debug(`Personal information: ${this.info}`)
+
           this.$router.push({
             path: '/trade/buy/wallet'
           })

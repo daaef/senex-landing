@@ -94,6 +94,7 @@ export default {
       cryptoAmount: state => state.trade.create.metadata.cryptoAmount,
       fiatAmount: state => state.trade.create.metadata.fiatAmount,
       tradeId: state => state.trade.create.metadata.id,
+      pin: state => state.trade.create.metadata.pin,
       transactions: state => state.trade.create.metadata.transactions || [],
       tradeStatus: state => state.trade.create.metadata.status,
       expires: state => state.trade.create.metadata.expires,

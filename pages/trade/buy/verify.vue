@@ -87,17 +87,26 @@
 <script>
 import Trader from '~/components/trade/trader.vue'
 import { mapState } from 'vuex'
+import { truncate } from 'lodash'
 
 const _TRADE_VERIFY_AMOUNT_CONDITION_ = 1000.0 // in dollars
 const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
 const _STR_REQUIRED_FIELDS_ = 'You must upload both a selfie & an identity'
 const _ERR_KYC_UPDATE_ = 'Unable to update; try again'
+const _STR_TRADE_REQUESTED_ =
+  'You have successfully requested this trade; you will be notified on the status accordingly'
 
 export default {
   layout: 'simple',
 
   components: {
     Trader
+  },
+
+  filters: {
+    formatFilename(filename) {
+      return truncate(filename, { length: 7 })
+    }
   },
 
   data() {
@@ -122,7 +131,8 @@ export default {
       fiatAmount: state => state.trade.create.metadata.fiatAmount,
       currency: state => state.trade.create.currency,
       conversionRate: state => state.trade.create.conversionRate,
-      tradeId: state => state.trade.create.metadata.id
+      tradeId: state => state.trade.create.metadata.id,
+      pin: state => state.trade.create.metadata.pin
     }),
 
     shouldVerify() {
@@ -190,6 +200,10 @@ export default {
     },
 
     async handleSubmit() {
+      if (!this.shouldVerify) {
+        return this.requestTrade()
+      }
+
       if (!this.selfie.url || !this.idCard.url) {
         this.$swal({
           title: '',
@@ -214,6 +228,7 @@ export default {
             'Content-Type': 'application/x-www-form-urlencoded'
           }
         })
+        this.requestTrade()
       } catch (err) {
         this.$swal({
           title: '',
@@ -227,6 +242,23 @@ export default {
       } finally {
         this.loading = false
       }
+    },
+
+    requestTrade() {
+      const self = this
+      const onClose = () => {
+        self.$router.replace({
+          path: '/track'
+        })
+      }
+
+      this.$swal({
+        type: 'success',
+        title: 'Trade Request Success',
+        text: _STR_TRADE_REQUESTED_,
+        footer: `Your trade pin is ${this.pin}`,
+        onClose
+      })
     }
   }
 }

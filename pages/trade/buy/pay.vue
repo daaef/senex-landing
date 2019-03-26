@@ -4,31 +4,23 @@
       Payment
     </template>
     <template slot="content">
-      <div v-if="verifying">
-        <spinner :size="55" />
+      <div v-if="verifying" class="has-text-centered">
+        Verifying your payment; please wait...
       </div>
       <div v-else-if="verified" class="has-text-centered">
-        Transaction verificatin successful
+        Transaction verification successful
       </div>
       <div v-else class="has-text-centered">
-        <rave
-          :is-production="isProduction"
-          style-class="button"
-          :email="email"
-          :amount="amount"
-          :reference="reference"
-          :currency="currency"
-          :rave-key="raveKey"
-          :close="handleClose"
-          :callback="handlePaymentResponse"
-        />
+        <button class="button is-success" @click="payWithRave">
+          Pay with Flutterwave
+        </button>
       </div>
     </template>
     <template slot="button">
       <button
         class="button"
         :class="{'is-loading': verifying}"
-        :disabled="verifying || !verified"
+        :disabled="waiting || verifying || !verified"
         @click="handleContinue"
       >
         Continue
@@ -38,48 +30,55 @@
 </template>
 
 <script>
+import log from '~/logger'
 import Trader from '~/components/trade/trader.vue'
-import Rave from 'vue-ravepayment'
 
 const _ERR_VERIFY_TRANSACTION_ = 'Unable to verify your transaction, try again'
-const _STR_INVALID_TRANSACTION_ = 'Invalid transaction'
-const _STR_TRANSACTION_CANCELLED_ = 'You aborted the transaction'
+const _STR_INVALID_TRANSACTION_ = 'Transaction failed or invalid'
 
 export default {
   layout: 'simple',
 
   components: {
-    Rave,
     Trader
   },
 
   data() {
     return {
-      verifying: false
+      verifying: false,
+      verified: false
     }
   },
 
   head() {
     return {
-      title: 'Buy - SenexPay'
+      title: 'Buy - SenexPay',
+      script: [
+        {
+          src:
+            process.env.NODE_ENV === 'production'
+              ? 'https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js'
+              : 'https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js'
+        }
+      ]
     }
   },
 
   computed: {
-    isProduction() {
-      return process.env.NODE_ENV === 'production'
+    personalInfo() {
+      return this.$store.state.trade.create.personalInformation
     },
 
     currency() {
       return 'NGN'
     },
 
-    email() {
-      return this.$store.state.trade.create.personalInformation.email
-    },
-
     amount() {
-      const { amount, currency, conversionRate } = this.$store.state.create
+      const {
+        fiatAmount: amount,
+        currency,
+        conversionRate
+      } = this.$store.state.trade.create
       if (currency === 'NGN') {
         return amount
       } else {
@@ -87,25 +86,62 @@ export default {
       }
     },
 
-    reference() {
+    tradeId() {
       return this.$store.state.trade.create.metadata.id
-    },
-
-    raveKey() {
-      return process.env.FLW_PUB_KEY
     }
   },
 
   methods: {
-    async handlePaymentResponse(response) {
+    payWithRave() {
+      const vm = this
+      const x = window.getpaidSetup({
+        txref: this.tradeId,
+        PBFPubKey: process.env.FLW_PUB_KEY,
+        customer_email: this.personalInfo.email,
+        amount: this.amount,
+        customer_phone: this.personalInfo.mobileNumber,
+        currency: this.currency,
+        onclose: function() {},
+        callback: function(response) {
+          log.debug(`rave response: ${JSON.stringify(response)}`)
+          vm.handlePaymentComplete(response)
+          x.close()
+        }
+      })
+    },
+
+    async handlePaymentComplete(response) {
+      if (
+        !(response.tx.chargeResponseCode === '00') &&
+        !(response.tx.chargeResponseCode === '0')
+      ) {
+        this.$swal({
+          title: '',
+          type: 'info',
+          position: 'top-end',
+          text: 'Transaction failed; try again',
+          timer: 5 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+        return
+      }
+
       try {
         this.verifying = true
         const verificationResp = await this.$axios.get('/verify/rave/', {
           params: {
-            txref: response.txRef
+            txref: response.tx.txRef
           }
         })
-        if (verificationResp.data.success) {
+
+        log.debug(
+          `[trade/buy/pay] GET /verify/rave/ response: ${JSON.stringify(
+            verificationResp
+          )}`
+        )
+
+        if (verificationResp.data.status === 'successful') {
           this.verified = true
         } else {
           this.$swal({
@@ -119,6 +155,8 @@ export default {
           })
         }
       } catch (err) {
+        log.debug(`[error] /verify/rave ${JSON.stringify(err.response)}`)
+
         this.$swal({
           title: '',
           type: 'error',
@@ -133,17 +171,17 @@ export default {
       }
     },
 
-    handleClose() {
-      this.$swal({
-        title: '',
-        type: 'info',
-        position: 'top-end',
-        text: _STR_TRANSACTION_CANCELLED_,
-        timer: 5 * 1000,
-        toast: true,
-        showConfirmButton: false
+    handleContinue() {
+      this.$router.push({
+        path: '/trade/buy/verify'
       })
     }
   }
 }
 </script>
+
+<style>
+iframe {
+  height: 100vh !important;
+}
+</style>
