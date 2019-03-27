@@ -151,7 +151,7 @@ export default {
 
   methods: {
     handleKeyUp(event, pinLevel /* 1,2,3,4 */) {
-      if (event.key === 'Backspace') {
+      if (event.key === 'Backspace' || event.key === 'Delete') {
         if (pinLevel === 1) {
           return
         }
