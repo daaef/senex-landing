@@ -46,7 +46,7 @@
             </div>
           </div>
 
-          <div v-else-if="step === 'otpverification'" class="otpverification-wrapper">
+          <div v-else-if="step === 'pinverification'" class="otpverification-wrapper">
             <div class="card otpverification-container">
               <p class="subheading has-text-centered">
                 Pin Verification
@@ -62,6 +62,7 @@
                     type="text"
                     class="input"
                     maxlength="1"
+                    @keyup="handleKeyUp($event, 1)"
                   >
                 </div>
                 <div class="column is-3">
@@ -71,6 +72,7 @@
                     type="text"
                     class="input"
                     maxlength="1"
+                    @keyup="handleKeyUp($event, 2)"
                   >
                 </div>
                 <div class="column is-3">
@@ -80,6 +82,7 @@
                     type="text"
                     class="input"
                     maxlength="1"
+                    @keyup="handleKeyUp($event, 3)"
                   >
                 </div>
                 <div class="column is-3">
@@ -88,11 +91,13 @@
                     v-model="pin4"
                     type="text"
                     class="input"
+                    @keyup="handleKeyUp($event, 4)"
                   >
                 </div>
               </div>
               <div class="btn-container">
                 <button
+                  ref="submitPin"
                   class="button"
                   :disabled="!pin1 || !pin2 || !pin3 || !pin4"
                   @click="handlePinSubmit"
@@ -100,7 +105,6 @@
                   Track
                 </button>
               </div>
-              <a href="#" class="resend">Resend</a>
             </div>
           </div>
         </div>
@@ -126,7 +130,7 @@ export default {
 
       // This is used to determine which section of the UI to show.
       // Valid values are trackid | pinverification
-      step: 'pinverification'
+      step: 'trackid'
     }
   },
 
@@ -140,12 +144,25 @@ export default {
         return this.$store.state.trade.track.tradeId
       },
       set(value) {
-        this.$store.commit('trade/UPDATE_TRACK_TRADE_ID', value)
+        this.$store.commit('trade/SET_TRACK_TRADE_ID', value)
       }
     }
   },
 
   methods: {
+    handleKeyUp(event, pinLevel /* 1,2,3,4 */) {
+      if (event.key === 'Backspace') {
+        if (pinLevel === 1) {
+          return
+        }
+        this.$refs[`pin${pinLevel - 1}`].focus()
+      } else if (pinLevel === 4) {
+        this.$refs.submitPin.focus()
+      } else {
+        this.$refs[`pin${pinLevel + 1}`].focus()
+      }
+    },
+
     handleContinue() {
       this.$validator.validateAll().then(async validated => {
         if (validated) {
@@ -181,7 +198,10 @@ export default {
       const pin = `${this.pin1}${this.pin2}${this.pin3}${this.pin4}`
       if ('' + this.trade.pin === pin) {
         this.$router.replace({
-          path: '/track/verify'
+          path: '/track/verify',
+          query: {
+            trade_id: this.tradeId
+          }
         })
       } else {
         this.$swal({

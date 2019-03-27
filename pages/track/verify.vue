@@ -8,28 +8,45 @@
       <div class="column is-one-fifth status-area">
         <div class="grey-header-area">
           <p class="status">
-            Verifying ID
+            <span v-if="tradeData.status === 'pending'">Pending</span>
+            <span v-if="tradeData.status === 'paid'">Paid</span>
+            <span v-if="tradeData.status === 'kyc_passed'">ID Verification</span>
+            <span v-if="tradeData.status === 'disbursed'">Disbursement</span>
+            <span v-if="tradeData.status === 'complete'">Complete</span>
           </p>
           <div class="progress-bar">
-            <span class="percent" />
+            <span
+              class="percent"
+              :class="{
+                'percent-20': tradeData.status === 'pending',
+                'percent-40': tradeData.status === 'paid',
+                'percent-60': tradeData.status === 'kyc_passed',
+                'percent-80': tradeData.status === 'disbursed',
+                'percent-100': tradeData.status === 'complete'
+              }"
+            />
           </div>
         </div>
         <div class="content">
           <p class="brief">
-            {{ tradeData.firstName }} {{ tradeData.lastName }}, Buying {{ tradeData.cryptoAmount }}BTC
+            {{ tradeData.firstName }} {{ tradeData.lastName }},
+            <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> {{ tradeData.cryptoAmount }}BTC
           </p>
           <p>
             <span class="_title">BTC Address</span>
             <span v-if="tradeData.walletAddress" class="_item">
               {{ tradeData.walletAddress }}
             </span>
+            <span v-else>nil</span>
           </p>
           <p>
             <span class="_title">Payment Status</span>
             <span
               v-if="tradeData.status !== 'pending'"
               class="_item"
-            />
+            >
+              Paid
+            </span>
             <span v-else>
               Pending
             </span>
@@ -60,16 +77,16 @@
             <span v-if="tradeData.status === 'pending'" class="status is-block">
               Pending
             </span>
-            <span v-if="tradeData.status === 'paid'" class="status is-block">
+            <span v-else-if="tradeData.status === 'paid'" class="status is-block">
               Paid
             </span>
-            <span v-if="tradeData.status === 'completed'" class="status is-block success">
+            <span v-else-if="tradeData.status === 'completed'" class="status is-block success">
               Completed
             </span>
-            <span v-if="tradeData.status === 'disbursed'" class="status is-block">
+            <span v-else-if="tradeData.status === 'disbursed'" class="status is-block">
               Disbursed
             </span>
-            <span v-if="tradeData.status === 'kyc_passed'">
+            <span v-else-if="tradeData.status === 'kyc_passed'">
               KYC
             </span>
           </div>
@@ -93,12 +110,24 @@
         <div class="send-input-container">
           <div class="field is-grouped">
             <p class="control is-expanded">
-              <input class="input" type="text" placeholder="Send message">
+              <input
+                v-model="messageText"
+                v-validate="'required'"
+                class="input"
+                :class="{ 'is-danger': errors.has('message text') }"
+                type="text"
+                name="message text"
+                placeholder="Type message"
+              >
             </p>
             <p class="control">
-              <a class="button is-info">
+              <button
+                class="button is-info"
+                :class="{'is-loading': sendingMessage}"
+                @click.prevent="handleSendMessage"
+              >
                 Send
-              </a>
+              </button>
             </p>
           </div>
         </div>
@@ -110,8 +139,22 @@
 <script>
 import hd from 'human-date'
 
+const _SEND_MESSAGE_ERROR_ = "Couldn't send message; try again"
+
 export default {
   layout: 'blue',
+
+  validate({ query, store }) {
+    if (!query.trade_id) {
+      return false
+    }
+
+    if (!store.state.trade.track.trade || !store.state.trade.track.tradeId) {
+      return false
+    }
+
+    return true
+  },
 
   filters: {
     prettydate(dateStr, showTime = true) {
@@ -119,9 +162,56 @@ export default {
     }
   },
 
+  data() {
+    return {
+      messageText: '',
+      sendingMessage: false
+    }
+  },
+
   computed: {
     tradeData() {
-      return this.$store.state.trade.track
+      return this.$store.state.trade.track.trade
+    }
+  },
+
+  async asyncData({ query, app: { $axios } }) {
+    const resp = await $axios.get(`/trade/${query.trade_id}/messages`)
+    return {
+      messages: resp.data.sort((a, b) => a.id - b.id)
+    }
+  },
+
+  methods: {
+    async handleSendMessage() {
+      const validated = await this.$validator.validateAll()
+      if (validated) {
+        try {
+          const payload = {
+            body: this.messageText,
+            trade: this.tradeData.id
+          }
+          this.sendingMessage = true
+          const resp = await this.$axios.post(
+            `/trade/${this.tradeData.id}/messages/`,
+            payload
+          )
+          this.messages.push(resp.data)
+        } catch (err) {
+          this.$swal({
+            title: 'Error:',
+            type: 'error',
+            position: 'top-end',
+            text: _SEND_MESSAGE_ERROR_,
+            timer: 7 * 1000,
+            toast: true,
+            showConfirmButton: false
+          })
+        } finally {
+          this.sendingMessage = false
+          this.messageText = ''
+        }
+      }
     }
   }
 }
@@ -177,13 +267,28 @@ div.wrapper {
         text-align: left;
         .percent {
           display: inline-block;
-          width: 69%;
           text-align: left;
           height: inherit;
           background: #1b70cf;
           margin: 0;
           padding: 0;
           border-radius: inherit;
+          &.percent-20 {
+            width: 20%;
+          }
+          &.percent-40 {
+            width: 40%;
+          }
+          &.percent-60 {
+            width: 60%;
+          }
+          &.percent-80 {
+            width: 80%;
+          }
+          &.percent-100 {
+            width: 100%;
+            background: #58c13d;
+          }
         }
       }
     }
