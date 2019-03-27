@@ -26,13 +26,24 @@
           </p>
         </div>
       </div>
-      <a class="contact-support-container has-text-centered is-block">
+      <a v-if="displayContactFab" class="contact-support-container has-text-centered is-block">
         <img src="~/assets/contact-support.png" alt="contact support image">
         <span class="text">Contact <br> Support</span>
       </a>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  props: {
+    displayContactFab: {
+      type: Boolean,
+      default: true
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/colors.scss';
