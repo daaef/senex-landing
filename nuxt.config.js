@@ -71,7 +71,7 @@ module.exports = {
       '@nuxtjs/recaptcha',
       {
         hideBadge: true,
-        siteKey: '',
+        siteKey: '6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY',
 
         version: 3
       }
