@@ -26,8 +26,15 @@ module.exports = {
   },
 
   env: {
-    FLW_PUB_KEY: 'FLWPUBK-c1833222ad17ef7402e3b62c202927fa-X',
-    FLW_SANDBOX_BASE_URL: 'https://ravesandboxapi.flutterwave.com'
+    FLW_PUB_KEY:
+      process.env.NODE_ENV === 'production'
+        ? 'FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X'
+        : 'FLWPUBK-c1833222ad17ef7402e3b62c202927fa-X',
+
+    FLW_BASE_URL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://api.ravepay.co'
+        : 'https://ravesandboxapi.flutterwave.com'
   },
 
   /*
@@ -66,16 +73,16 @@ module.exports = {
       {
         confirmButtonColor: '#41b882'
       }
-    ]
-    /* [
-      '@nuxtjs/recaptcha',
+    ],
+    [
+      ('@nuxtjs/recaptcha',
       {
         hideBadge: true,
-        siteKey: '',
+        siteKey: '6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY',
 
         version: 3
-      }
-    ] */
+      })
+    ]
   ],
   /*
   ** Axios module configuration

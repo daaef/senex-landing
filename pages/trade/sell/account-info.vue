@@ -188,7 +188,7 @@ export default {
   },
 
   async fetch({ store, env, app: { $axios } }) {
-    const resp = await $axios.get(`${env.FLW_SANDBOX_BASE_URL}/v2/banks/ng`, {
+    const resp = await $axios.get(`${env.FLW_BASE_URL}/v2/banks/ng`, {
       params: {
         public_key: env.FLW_PUB_KEY
       }
