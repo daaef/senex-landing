@@ -27,7 +27,7 @@ module.exports = {
 
   env: {
     FLW_PUB_KEY: 'FLWPUBK-c1833222ad17ef7402e3b62c202927fa-X',
-    FLW_SANDBOX_BASE_URL: 'https://ravesandboxapi.flutterwave.com'
+    FLW_BASE_URL: 'https://ravesandboxapi.flutterwave.com'
   },
 
   /*
@@ -66,7 +66,7 @@ module.exports = {
       {
         confirmButtonColor: '#41b882'
       }
-    ],
+    ]
     /* [
       '@nuxtjs/recaptcha',
       {
@@ -75,7 +75,7 @@ module.exports = {
 
         version: 3
       }
-    ] /*
+    ] */
   ],
   /*
   ** Axios module configuration

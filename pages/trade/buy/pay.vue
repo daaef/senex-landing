@@ -65,10 +65,9 @@ export default {
       title: 'Buy - SenexPay',
       script: [
         {
-          src:
-            process.env.NODE_ENV === 'production'
-              ? 'https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js'
-              : 'https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js'
+          src: `${
+            process.env.FLW_BASE_URL
+          }/flwv3-pug/getpaidx/api/flwpbf-inline.js`
         }
       ]
     }
