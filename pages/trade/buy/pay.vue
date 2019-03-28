@@ -65,7 +65,9 @@ export default {
       title: 'Buy - SenexPay',
       script: [
         {
-          src: `${process.env.FLW_BASE_URL}/flwv3-pug/getpaidx/api/flwpbf-inline.js`
+          src: `${
+            process.env.FLW_BASE_URL
+          }/flwv3-pug/getpaidx/api/flwpbf-inline.js`
         }
       ]
     }
