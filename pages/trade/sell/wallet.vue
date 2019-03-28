@@ -75,7 +75,7 @@ import { mapState } from 'vuex'
 import Trader from '~/components/trade/trader.vue'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
 
-const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min 30 seconds */
+const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min */
 const _STR_CANNOT_VERIFY_ = "Couldn't verify trade. retrying..."
 const _STR_TRADE_REQUESTED_ = 'Trade request successful.'
 

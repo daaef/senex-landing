@@ -14,7 +14,7 @@
               type="file"
               style="display: none;"
               accept="image/*"
-              @change="handleIdCardFileChange"
+              @change="handleFileChange($event, 'idCard')"
             >
             <button
               class="button select-file-btn"
@@ -43,7 +43,7 @@
               type="file"
               style="display: none"
               accept="image/*"
-              @change="handleSelfieFileChange"
+              @change="handleFileChange($event, 'selfie')"
             >
             <button
               class="button select-file-btn"
@@ -99,7 +99,7 @@ export default {
   layout: 'simple',
 
   validate({ store }) {
-    if (!store.getters['trade/isActiveTrade']) {
+    /* if (!store.getters['trade/isActiveTrade']) {
       return false
     }
     if (!store.getters['trade/hasCreatedTrade']) {
@@ -107,7 +107,7 @@ export default {
     }
     if (!store.getters['trade/isPaid']) {
       return false
-    }
+    } */
     return true
   },
 
@@ -180,15 +180,14 @@ export default {
     async _doUpload(type /* selfie or idCard */) {
       const fd = new FormData()
       fd.append('datafile', this[type].file)
-
       try {
         this[type].loading = true
-        const resp = await this.$axios.post('/uploads/', fd, {
+        const resp = await this.$axios.post('/upload/', fd, {
           headers: {
-            'Content-Type': 'multipart/form-data'
+            'content-type': 'multipart/form-data'
           }
         })
-        this[type].url = resp.data.url
+        this[type].url = resp.data.datafile
       } catch (err) {
         this.$swal({
           title: 'Error:',
@@ -231,13 +230,14 @@ export default {
 
       try {
         const requestBody = {
+          trade: this.tradeId,
           govtIssuedId: this.idCard.url,
           selfieWithId: this.selfie.url
         }
         this.loading = true
-        await this.$axios.post(`/trade/${this.tradeId}/kyc`, requestBody, {
+        await this.$axios.post(`/trade/${this.tradeId}/kyc/`, requestBody, {
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'content-type': 'application/x-www-form-urlencoded'
           }
         })
         this.requestTrade()
