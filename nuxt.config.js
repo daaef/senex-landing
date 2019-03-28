@@ -66,16 +66,16 @@ module.exports = {
       {
         confirmButtonColor: '#41b882'
       }
-    ]
-    /* [
-      '@nuxtjs/recaptcha',
+    ],
+    [
+      ('@nuxtjs/recaptcha',
       {
         hideBadge: true,
-        siteKey: '',
+        siteKey: '6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY',
 
         version: 3
-      }
-    ] */
+      })
+    ]
   ],
   /*
   ** Axios module configuration
