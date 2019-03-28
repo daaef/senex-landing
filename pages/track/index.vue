@@ -9,33 +9,35 @@
           </p>
 
           <div v-if="step === 'trackid'" class="trackid-wrapper">
-            <div class="card trackid-container">
-              <div class="field">
-                <label for="" class="label has-text-weight-normal">Trade ID</label>
-                <p class="control">
-                  <input
-                    v-model="tradeId"
-                    v-validate="'required'"
-                    type="text"
-                    name="trade id"
-                    class="input is-rounded"
-                    placeholder="#12345"
-                  >
+            <form action="">
+              <div class="card trackid-container">
+                <div class="field">
+                  <label for="" class="label has-text-weight-normal">Trade ID</label>
+                  <p class="control">
+                    <input
+                      v-model="tradeId"
+                      v-validate="'required|alpha_dash|length:16'"
+                      type="text"
+                      name="trade id"
+                      class="input is-rounded"
+                      placeholder="#12345"
+                    >
+                  </p>
+                </div>
+                <p v-show="errors.has('trade id')" class="help is-danger">
+                  {{ errors.first('trade id') }}
                 </p>
               </div>
-              <p v-show="errors.has('trade id')" class="help is-danger">
-                {{ errors.first('trade id') }}
-              </p>
-            </div>
-            <div class="button-container">
-              <button
-                class="button is-fullwidth track-button"
-                :class="{'is-loading': isLoading}"
-                @click="handleContinue"
-              >
-                Continue
-              </button>
-            </div>
+              <div class="button-container">
+                <button
+                  class="button is-fullwidth track-button"
+                  :class="{'is-loading': isLoading}"
+                  @click.prevent="handleContinue"
+                >
+                  Continue
+                </button>
+              </div>
+            </form>
             <div class="has-no-trade has-text-centered">
               <p>Haven't started a trade?</p>
               <p>
@@ -178,7 +180,9 @@ export default {
       try {
         this.isLoading = true
         const resp = await this.$axios.get(`/trade/${this.tradeId}/`)
-        this.$store.commit('trade/SET_TRACK_TRADE_INFO', resp.data)
+        if (resp.data) {
+          this.$store.commit('trade/SET_TRACK_TRADE_INFO', resp.data)
+        }
       } catch (err) {
         this.$swal({
           title: '',

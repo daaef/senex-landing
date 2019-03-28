@@ -48,7 +48,7 @@
         :class="{'is-loading': loading}"
         @click="handleRequestTrade"
       >
-        Pay
+        Proceed to Payment
       </button>
     </template>
   </trader>

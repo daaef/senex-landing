@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-wrapper">
+  <div class="main bg-wrapper">
     <navbar theme="white" logo-variant="white" />
-    <nuxt />
+    <div class="content">
+      <nuxt />
+    </div>
 
     <footer-comp />
   </div>
@@ -20,10 +22,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .content {
+    flex: 1;
+  }
+}
+
 div.bg-wrapper {
   background-image: url('~assets/fullblue-bg.png');
   background-repeat: no-repeat;
   background-size: 100% 300px;
-  min-height: 300px;
 }
 </style>

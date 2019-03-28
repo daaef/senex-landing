@@ -78,7 +78,7 @@
         :class="{'is-loading': loading}"
         @click="handleSubmit"
       >
-        Complete
+        Request Trade
       </button>
     </template>
   </trader>
@@ -259,6 +259,7 @@ export default {
     requestTrade() {
       const self = this
       const onClose = () => {
+        self.$store.commit('trade/RESET_CREATE_TRADE')
         self.$router.replace({
           path: '/track'
         })

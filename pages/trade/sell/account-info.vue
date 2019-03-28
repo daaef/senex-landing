@@ -74,7 +74,7 @@
         :class="{'is-loading': loading}"
         @click="handleRequestTrade"
       >
-        Pay
+        Proceed to Payment
       </button>
     </template>
   </trader>
@@ -193,7 +193,16 @@ export default {
         public_key: env.FLW_PUB_KEY
       }
     })
-    store.commit('trade/SET_BANK_LIST', resp.data.data.Banks)
+    const sortedBanks = resp.data.data.Banks.sort((a, b) => {
+      if (a.Name < b.Name) {
+        return -1
+      } else if (a.Name > b.Name) {
+        return 1
+      } else {
+        return 0
+      }
+    })
+    store.commit('trade/SET_BANK_LIST', sortedBanks)
   },
 
   created() {

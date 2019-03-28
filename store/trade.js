@@ -1,46 +1,49 @@
 const _TRADE_TTL_ = 60 * 15 * 1000 /* 15 mins */
 
-export const state = () => ({
-  banks: [],
-  create: {
-    type: '',
-    cryptoAmount: 0,
-    fiatAmount: 0,
-    currency: 'USD',
-    conversionRate: {
-      USD: null,
-      NGN: null,
-      USD_NGN: null
-    },
-    startTime: null,
-    personalInformation: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      mobileNumber: '',
-      pin: ''
-    },
-    walletInfo: {
-      walletAddress: ''
-    },
-    payment: {
-      reference: ''
-    },
-    bankDetails: {
-      bankCode: null,
-      accountNumber: '',
-      accountName: ''
-    },
-
-    metadata: {},
-
-    paymentDone: false
+const getDefaultCreateDataStructure = () => ({
+  type: '',
+  cryptoAmount: 0,
+  fiatAmount: 0,
+  currency: 'USD',
+  conversionRate: {
+    USD: null,
+    NGN: null,
+    USD_NGN: null
+  },
+  startTime: null,
+  personalInformation: {
+    firstName: '',
+    lastName: '',
+    email: '',
+    mobileNumber: '',
+    pin: ''
+  },
+  walletInfo: {
+    walletAddress: ''
+  },
+  payment: {
+    reference: ''
+  },
+  bankDetails: {
+    bankCode: null,
+    accountNumber: '',
+    accountName: ''
   },
 
-  track: {
-    tradeId: '',
-    trade: null
-  }
+  metadata: {},
+
+  paymentDone: false
+})
+
+const getDefaultTrackTradeDataStructure = () => ({
+  tradeId: '',
+  trade: null
+})
+
+export const state = () => ({
+  banks: [],
+  create: getDefaultCreateDataStructure(),
+  track: getDefaultTrackTradeDataStructure()
 })
 
 export const mutationTypes = {
@@ -53,7 +56,9 @@ export const mutationTypes = {
   SET_TRADE_METADATA: 'SET_TRADE_METADATA',
   SET_TRACK_TRADE_ID: 'SET_TRACK_TRADE_ID',
   SET_TRACK_TRADE_INFO: 'SET_TRACK_TRADE_INFO',
-  SET_PAYMENT_DONE: 'SET_PAYMENT_DONE'
+  SET_PAYMENT_DONE: 'SET_PAYMENT_DONE',
+  RESET_CREATE_TRADE: 'RESET_CREATE_TRADE',
+  RESET_TRACK_TRADE: 'RESET_TRACK_TRADE'
 }
 
 export const mutations = {
@@ -105,6 +110,14 @@ export const mutations = {
 
   [mutationTypes.SET_PAYMENT_DONE](state, done) {
     state.create.paymentDone = done
+  },
+
+  [mutationTypes.RESET_CREATE_TRADE](state) {
+    state.create = getDefaultCreateDataStructure()
+  },
+
+  [mutationTypes.RESET_TRACK_TRADE](state) {
+    state.track = getDefaultTrackTradeDataStructure()
   }
 }
 

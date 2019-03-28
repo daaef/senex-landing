@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-if="error.statusCode === 404" class="wrapper">
+  <div class="main">
+    <div v-if="error.statusCode === 404" class="content wrapper">
       <img src="~assets/logo_white.png" alt="Senex logo - white variant" class="logo" :class="{'mobile-logo': $device.isMobile}">
       <img src="~assets/error-404.png" alt="error 404 art image" class="error-404" :class="{'mobile-error-404': $device.isMobile}">
       <div class="text-content">
@@ -14,10 +14,10 @@
         </p>
       </div>
     </div>
-    <div v-else class="has-text-centered">
+    <div v-else class="content has-text-centered">
       An error occurred
     </div>
-    <footer-comp :display-contact-fab="false" style="margin-top: 5rem;" />
+    <footer-comp :display-contact-fab="false" style="margin-top: 5rem; margin-bottom: 1rem;" />
   </div>
 </template>
 
@@ -40,6 +40,14 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/fonts.scss';
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .content {
+    flex: 1;
+  }
+}
 
 .wrapper {
   position: relative;

@@ -3,75 +3,103 @@
     <div class="">
       <div class="columns">
         <div class="column is-9">
-          <div class="box trade-box">
-            <div class="has-text-centered trade-selector-container">
-              <div class="b-v-centered">
-                <div class="inner" />
+          <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
+            <div class="box trade-box">
+              <div class="has-text-centered trade-selector-container">
+                <div class="b-v-centered">
+                  <div class="inner" />
+                </div>
+                <fluid-switch label-left="Buy" label-right="Sell" @switched="toggleTradeType" />
+                <div class="b-v-centered">
+                  <div class="inner" />
+                </div>
               </div>
-              <fluid-switch label-left="Buy" label-right="Sell" @switched="toggleTradeType" />
-              <div class="b-v-centered">
-                <div class="inner" />
+              <div style="margin-bottom: 1em;" class="columns">
+                <div class="field has-addons column">
+                  <div class="control">
+                    <a href="" class="button" style="background: #1b70cf; color: #fff;">
+                      BTC
+                    </a>
+                  </div>
+                  <div class="control is-expanded">
+                    <input
+                      v-model="computedCryptoAmount"
+                      type="number"
+                      class="input blue-border"
+                      :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
+                      placeholder="1.7329"
+                      step="any"
+                      min="0"
+                      style="text-align: right;"
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="columns is-gapless is-mobile" style="margin-bottom: 2rem;">
+                <div class="column is-2 has-text-centered">
+                  <span class="icon" style="color: #c4c4c4; vertical-align: middle;">
+                    <i class="fas fa-exchange-alt" />
+                  </span>
+                </div>
+                <div class="column is-5">
+                  <div class="select">
+                    <select id="" v-model="currency" name="currency" class="currency-select">
+                      <option value="NGN">
+                        NGN
+                      </option>
+                      <option value="USD">
+                        USD
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="column is-5">
+                  <div class="control" :class="{'is-loading': isFetchingRates}">
+                    <input
+                      v-model="computedFiatAmount"
+                      type="number"
+                      class="input"
+                      placeholder="1000"
+                      min="0"
+                      step="any"
+                      style="background: #f4f4f4; color: #707070; border: none;"
+                    >
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div style="margin-bottom: 1em;" class="columns">
-              <div class="field has-addons column">
-                <div class="control">
-                  <a href="" class="button" style="background: #1b70cf; color: #fff;">
-                    BTC
-                  </a>
-                </div>
-                <div class="control is-expanded">
-                  <input
-                    v-model="computedCryptoAmount"
-                    type="number"
-                    class="input blue-border"
-                    :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
-                    placeholder="Amount"
-                    style="text-align: right;"
-                  >
-                </div>
-              </div>
+            <div class="button-container">
+              <button
+                class="button is-fullwidth trade-button is-medium"
+                :class="{'disabled': !canSubmit, 'is-loading': isLoading}"
+                :disabled="!canSubmit"
+                style="font-weight: 500;"
+              >
+                TRADE
+              </button>
             </div>
-            <div class="columns is-gapless is-mobile">
-              <div class="column is-2 has-text-centered">
-                <span class="icon" style="color: #c4c4c4; vertical-align: middle;">
-                  <i class="fas fa-exchange-alt" />
-                </span>
-              </div>
-              <div class="column is-5">
-                <div class="select">
-                  <select id="" v-model="currency" name="currency" class="currency-select">
-                    <option value="NGN">
-                      NGN
-                    </option>
-                    <option value="USD">
-                      USD
-                    </option>
-                  </select>
-                </div>
-              </div>
-              <div class="column is-5">
-                <div class="control" :class="{'is-loading': isFetchingRates}">
-                  <input
-                    v-model="computedFiatAmount"
-                    type="number"
-                    class="input"
-                    style="background: #f4f4f4; color: #707070; border: none;"
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="button-container">
-            <button
-              class="button is-fullwidth trade-button has-text-weight-semibold"
-              :class="{'disabled': !canSubmit}"
-              :disabled="!canSubmit"
-              @click="doTrade"
+          </form>
+          <div
+            v-else
+            class="box trade-box"
+            style="margin-bottom: 7rem; padding-top: 3rem; padding-bottom: 3rem;"
+          >
+            <p
+              class="has-text-centere"
+              :style="{
+                'font-size': '0.9rem',
+              }"
             >
-              Trade
-            </button>
+              You have a pending trade session.
+            </p>
+            <div class="field is-grouped is-centered">
+              <p class="control">
+                <a href="" class="button is-small is-primary" style="background:#1b70cf;" @click.prevent="handleContinueTrade">Continue</a>
+              </p>
+              <p class="control">
+                <a href="" class="button is-small is-danger" @click.prevent="handleCancelTrade">Cancel</a>
+              </p>
+            </div>
           </div>
           <div class="track-trade has-text-centered">
             <p>
@@ -96,11 +124,10 @@
 <script>
 import _ from 'lodash'
 import FluidSwitch from './fluid-switch'
+import log from '~/logger'
 
 const FETCH_RATES_INTERVAL = 1000
 const FETCH_RATES_ERR = 'Error fetching rates; try again later'
-
-// TODO: format number input
 
 export default {
   components: {
@@ -110,18 +137,23 @@ export default {
   data() {
     return {
       tradeType: 'buy',
-      fiatAmount: 0,
-      cryptoAmount: 0,
+      fiatAmount: null,
+      cryptoAmount: null,
       currency: 'NGN',
       fiatAmountIsDirty: false,
       cryptoAmountIsDirty: false,
       isFetchingRates: false,
       errorFetchRates: '',
-      rates: null
+      rates: null,
+      isLoading: false
     }
   },
 
   computed: {
+    hasActiveTrade() {
+      return this.$store.getters['trade/isActiveTrade']
+    },
+
     computedCryptoAmount: {
       set: function(val) {
         this.cryptoAmount = val
@@ -134,6 +166,11 @@ export default {
         if (this.cryptoAmountIsDirty) {
           return this.cryptoAmount
         }
+
+        if (this.cryptoAmount == null) {
+          return null
+        }
+
         if (!this.rates) {
           rv = 0
         } else {
@@ -160,6 +197,11 @@ export default {
         if (this.fiatAmountIsDirty) {
           return this.fiatAmount
         }
+
+        if (this.fiatAmount == null) {
+          return null
+        }
+
         let rv
         if (!this.rates) {
           rv = 0
@@ -200,6 +242,41 @@ export default {
   },
 
   methods: {
+    handleCancelTrade() {
+      const shouldCancel = confirm('Really cancel trade?')
+      if (shouldCancel) {
+        this.$store.commit('trade/RESET_CREATE_TRADE')
+      }
+    },
+
+    handleContinueTrade() {
+      let toPath
+      const trade = this.$store.state.trade.create
+      if (trade.type === 'buy') {
+        if (trade.metadata.id) {
+          if (this.$store.getters['trade/isPaid']) {
+            toPath = '/trade/buy/verify'
+          } else {
+            toPath = '/trade/buy/pay'
+          }
+        } else if (this.$store.getters['trade/hasPersonalInformation']) {
+          toPath = '/trade/buy/wallet'
+        } else {
+          toPath = '/trade/buy'
+        }
+      } else if (trade.metadata.id) {
+        toPath = '/trade/sell/wallet'
+      } else if (this.$store.getters['trade/hasPersonalInformation']) {
+        toPath = '/trade/sell/account-info'
+      } else {
+        toPath = '/trade/sell'
+      }
+
+      this.$router.push({
+        path: toPath
+      })
+    },
+
     toggleTradeType() {
       this.tradeType = this.tradeType === 'buy' ? 'sell' : 'buy'
     },
@@ -218,18 +295,36 @@ export default {
         })
     }, FETCH_RATES_INTERVAL),
 
-    doTrade() {
-      // TODO: Input validation
-      this.$store.commit('trade/START_TRADE', {
-        currency: this.currency,
-        fiatAmount: this.computedFiatAmount,
-        tradeType: this.tradeType,
-        cryptoAmount: this.computedCryptoAmount,
-        rates: this.tradeType === 'buy' ? this.rates.buy : this.rates.sell
-      })
-      this.$router.push({
-        path: `/trade/${this.tradeType}`
-      })
+    async doTrade() {
+      // recaptcha validation
+      try {
+        this.isLoading = true
+        const token = await this.$recaptcha.execute('trade')
+        log.debug(`[trade start recaptcha token]: ${token}`)
+
+        this.$store.commit('trade/START_TRADE', {
+          currency: this.currency,
+          fiatAmount: this.computedFiatAmount,
+          tradeType: this.tradeType,
+          cryptoAmount: this.computedCryptoAmount,
+          rates: this.tradeType === 'buy' ? this.rates.buy : this.rates.sell
+        })
+        this.$router.push({
+          path: `/trade/${this.tradeType}`
+        })
+      } catch (err) {
+        this.$swal({
+          title: '',
+          type: 'info',
+          position: 'top-end',
+          text: 'Recaptcha verification failed',
+          timer: 5 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } finally {
+        this.isLoading = false
+      }
     }
   }
 }
@@ -299,7 +394,8 @@ div.trade-box {
 }
 
 div.trade-selector-container {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
   text-align: center;
   display: flex;
   justify-content: center;

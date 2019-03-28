@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="main">
     <navbar theme="blue" logo-variant="blue" />
-    <nuxt />
+    <div class="content">
+      <nuxt />
+    </div>
     <footer-comp />
   </div>
 </template>
@@ -17,3 +19,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .content {
+    flex: 1;
+  }
+}
+</style>

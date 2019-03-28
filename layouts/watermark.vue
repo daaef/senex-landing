@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-wrapper">
+  <div class="main bg-wrapper">
     <navbar theme="blue" logo-variant="blue" />
-    <div class="container">
+    <div class="content">
       <nuxt />
     </div>
   </div>
@@ -18,14 +18,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg-wrappe {
-  position: absolute;
-  left: -3.78%;
-  right: -11.65%;
-  top: -60.43%;
-  bottom: 58.26%;
-  background-image: url('~assets/watermark-bg.png');
-  background-repeat: no-repeat;
-  z-index: -1;
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .content {
+    flex: 1;
+  }
 }
 </style>

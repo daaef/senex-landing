@@ -5,7 +5,13 @@
         <span v-if="tradeType === 'buy'">Buying </span>
         <span v-else>Selling </span>
         <span class="amount__btc">{{ cryptoAmount }} BTC</span> at <span class="amount__currency">{{ fiatAmount|formatMoney(currency) }}</span>
-        <span style="margin-left: 1.5rem;"><a href="#" style="color:  #d50b1f; font-size: 0.8rem;">cancel</a></span>
+        <span style="margin-left: 1.5rem;">
+          <a
+            href="#"
+            style="color: #d50b1f; font-size: 0.8rem;"
+            @click.prevent="handleCancelTrade"
+          >cancel</a>
+        </span>
       </p>
 
       <div class="columns">
@@ -109,6 +115,16 @@ export default {
         return false
       }
       return index <= currentStepIndex
+    },
+
+    handleCancelTrade() {
+      const shouldCancel = confirm('Really cancel trade?')
+      if (shouldCancel) {
+        this.$store.commit('trade/RESET_CREATE_TRADE')
+        this.$router.replace({
+          path: '/'
+        })
+      }
     }
   }
 }

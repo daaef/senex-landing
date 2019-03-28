@@ -1,7 +1,7 @@
 <template>
   <footer class="footer2">
     <div class="container">
-      <div class="level is-size-6">
+      <div class="level is-size-6" :class="{'is-size-7': $device.isMobile}">
         <div class="level-left">
           <div class="level-item">
             <span>&copy; 2019 - SenexPAY</span>
@@ -9,21 +9,23 @@
         </div>
 
         <div class="level-right">
-          <p class="level-item">
-            <a href="#">Terms &amp; conditions</a>
-          </p>
-          <p v-show="!$device.isMobile" class="level-item">
-            |
-          </p>
-          <p class="level-item">
-            <a href="#">Privacy Policy</a>
-          </p>
-          <p v-show="!$device.isMobile" class="level-item">
-            |
-          </p>
-          <p class="level-item">
-            <a href="#">Disclaimer</a>
-          </p>
+          <div class="level is-mobile">
+            <p class="level-item">
+              <a href="#">Terms &amp; conditions</a>
+            </p>
+            <p class="level-item">
+              |
+            </p>
+            <p class="level-item">
+              <a href="#"> Privacy Policy</a>
+            </p>
+            <p class="level-item">
+              |
+            </p>
+            <p class="level-item">
+              <a href="#"> Disclaimer</a>
+            </p>
+          </div>
         </div>
       </div>
       <a v-if="displayContactFab" class="contact-support-container has-text-centered is-block">
@@ -54,7 +56,9 @@ export default {
   color: $blue;
   font-family: $font-avenir;
   box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.25);
-  padding: 1em 0;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
   width: 100%;
   font-size: 0.6em;
 }
@@ -68,7 +72,7 @@ export default {
 .contact-support-container {
   position: absolute;
   right: 30px;
-  bottom: 230px;
+  bottom: 150px;
   text-align: center;
   img,
   span {

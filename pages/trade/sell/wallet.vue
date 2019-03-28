@@ -176,6 +176,7 @@ export default {
     handleRequestTrade() {
       const self = this
       const onClose = () => {
+        self.$store.commit('trade/RESET_CREATE_TRADE')
         self.$router.replace({
           path: '/track'
         })
