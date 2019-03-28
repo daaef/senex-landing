@@ -14,8 +14,12 @@
               {{ receiveAddress }}
             </p>
           </div>
-          <a v-clipboard="receiveAddress" class="column buttn is-2 clipboard-wrapper">
-            Copy
+          <a
+            v-clipboard="receiveAddress"
+            v-clipboard:success="toggleCopyText"
+            class="column is-2 clipboard-wrapper"
+          >
+            {{ copyText }}
           </a>
         </div>
         <div class="qrcode-wrapper">
@@ -30,9 +34,11 @@
             <span class="text is-block">
               Scan wallet address directly.
             </span>
-            <span class="icon is-block">
-              <i class="fas fa-download" />
-            </span>
+            <a href="" @click.prevent="downloadQrCode">
+              <span class="icon is-block">
+                <i class="fas fa-download" />
+              </span>
+            </a>
           </p>
         </div>
         <div class="status-wrapper">
@@ -42,8 +48,8 @@
           <p v-else-if="transactions.length > 0">
             Transaction complete; please proceed.
           </p>
-          <p v-else>
-            Transaction pending...
+          <p v-else style="font-size: 1rem; color: red;">
+            Transaction pending; please make the appropriate deposit
           </p>
           <p />
         </div>
@@ -71,11 +77,20 @@ import VueQrcode from '@chenfengyuan/vue-qrcode'
 
 const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min 30 seconds */
 const _STR_CANNOT_VERIFY_ = "Couldn't verify trade. retrying..."
-const _STR_TRADE_REQUESTED_ =
-  'Trade requested; you will paid the equivalent fiat amount of this Bitcoin when your trade is confirmed'
+const _STR_TRADE_REQUESTED_ = 'Trade request successful.'
 
 export default {
   layout: 'simple',
+
+  validate({ store }) {
+    if (!store.getters['trade/isActiveTrade']) {
+      return false
+    }
+    if (!store.getters['trade/hasCreatedTrade']) {
+      return false
+    }
+    return true
+  },
 
   components: {
     Trader,
@@ -85,7 +100,8 @@ export default {
   data() {
     return {
       verifying: false,
-      checkTradeIntervalTimer: null
+      checkTradeIntervalTimer: null,
+      copyText: 'Copy'
     }
   },
 
@@ -118,6 +134,23 @@ export default {
   },
 
   methods: {
+    toggleCopyText() {
+      this.copyText = 'Copied'
+      const vm = this
+      setTimeout(() => {
+        vm.copyText = 'Copy'
+      }, 3000)
+    },
+
+    downloadQrCode() {
+      const img = document.querySelector('.qrcode img')
+      const a = document.createElement('a')
+      document.body.appendChild(a)
+      a.download = 'qrcode_.png'
+      a.href = img.src
+      a.click()
+    },
+
     async fetchTradeItem() {
       try {
         this.verifying = true
@@ -151,7 +184,7 @@ export default {
       this.$swal({
         type: 'success',
         title: 'Trade Request Success',
-        text: _STR_TRADE_REQUESTED_,
+        text: `${_STR_TRADE_REQUESTED_} Your trade ID is ${this.tradeId}`,
         footer: `Your trade pin is ${this.pin}`,
         onClose
       })

@@ -64,6 +64,16 @@ const _CREATE_TRADE_ERROR_ = 'Something bad happened; try again'
 export default {
   layout: 'simple',
 
+  validate({ store }) {
+    if (!store.getters['trade/isActiveTrade']) {
+      return false
+    }
+    if (!store.getters['trade/hasPersonalInformation']) {
+      return false
+    }
+    return true
+  },
+
   components: {
     Trader
   },

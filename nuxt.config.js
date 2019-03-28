@@ -66,6 +66,15 @@ module.exports = {
       {
         confirmButtonColor: '#41b882'
       }
+    ],
+    [
+      '@nuxtjs/recaptcha',
+      {
+        hideBadge: true,
+        siteKey: '',
+
+        version: 3
+      }
     ]
   ],
   /*

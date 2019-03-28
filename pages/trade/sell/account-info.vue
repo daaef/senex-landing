@@ -69,7 +69,11 @@
       </div>
     </template>
     <template slot="button">
-      <button class="button" @click="handleRequestTrade">
+      <button
+        class="button"
+        :class="{'is-loading': loading}"
+        @click="handleRequestTrade"
+      >
         Pay
       </button>
     </template>
@@ -87,6 +91,16 @@ const _ERR_CREATE_TRADE_ = 'Something bad happened; try again'
 
 export default {
   layout: 'simple',
+
+  validate({ store }) {
+    if (!store.getters['trade/isActiveTrade']) {
+      return false
+    }
+    if (!store.getters['trade/hasPersonalInformation']) {
+      return false
+    }
+    return true
+  },
 
   components: {
     SelectSearch,

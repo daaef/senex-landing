@@ -93,11 +93,23 @@ const _TRADE_VERIFY_AMOUNT_CONDITION_ = 1000.0 // in dollars
 const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
 const _STR_REQUIRED_FIELDS_ = 'You must upload both a selfie & an identity'
 const _ERR_KYC_UPDATE_ = 'Unable to update; try again'
-const _STR_TRADE_REQUESTED_ =
-  'You have successfully requested this trade; you will be notified on the status accordingly'
+const _STR_TRADE_REQUESTED_ = 'Trade request successful.'
 
 export default {
   layout: 'simple',
+
+  validate({ store }) {
+    if (!store.getters['trade/isActiveTrade']) {
+      return false
+    }
+    if (!store.getters['trade/hasCreatedTrade']) {
+      return false
+    }
+    if (!store.getters['trade/isPaid']) {
+      return false
+    }
+    return true
+  },
 
   components: {
     Trader
@@ -255,7 +267,7 @@ export default {
       this.$swal({
         type: 'success',
         title: 'Trade Request Success',
-        text: _STR_TRADE_REQUESTED_,
+        text: `${_STR_TRADE_REQUESTED_} Your trade ID is ${this.tradeId}`,
         footer: `Your trade pin is ${this.pin}`,
         onClose
       })

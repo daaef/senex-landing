@@ -55,7 +55,7 @@
                 <div class="control" :class="{'is-loading': isFetchingRates}">
                   <input
                     v-model="computedFiatAmount"
-                    type="text"
+                    type="number"
                     class="input"
                     style="background: #f4f4f4; color: #707070; border: none;"
                   >
@@ -66,7 +66,8 @@
           <div class="button-container">
             <button
               class="button is-fullwidth trade-button has-text-weight-semibold"
-              :class="{'disabled': canSubmit}"
+              :class="{'disabled': !canSubmit}"
+              :disabled="!canSubmit"
               @click="doTrade"
             >
               Trade
@@ -98,6 +99,8 @@ import FluidSwitch from './fluid-switch'
 
 const FETCH_RATES_INTERVAL = 1000
 const FETCH_RATES_ERR = 'Error fetching rates; try again later'
+
+// TODO: format number input
 
 export default {
   components: {
@@ -142,7 +145,7 @@ export default {
             rv = fiatAmount / rate.NGN
           }
         }
-        return rv.toFixed(4)
+        return rv.toFixed(2)
       }
     },
 
@@ -174,11 +177,11 @@ export default {
     },
 
     canSubmit() {
-      return (
+      const rv =
         !this.isFetchingRates &&
-        !this.fiatAmountIsDirty &&
-        !this.cryptoAmountIsDirty
-      )
+        !!parseFloat(this.computedCryptoAmount) &&
+        !!parseFloat(this.computedFiatAmount)
+      return rv
     }
   },
 

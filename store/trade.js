@@ -32,7 +32,9 @@ export const state = () => ({
       accountName: ''
     },
 
-    metadata: {}
+    metadata: {},
+
+    paymentDone: false
   },
 
   track: {
@@ -50,7 +52,8 @@ export const mutationTypes = {
   SET_BANK_LIST: 'SET_BANK_LIST',
   SET_TRADE_METADATA: 'SET_TRADE_METADATA',
   SET_TRACK_TRADE_ID: 'SET_TRACK_TRADE_ID',
-  SET_TRACK_TRADE_INFO: 'SET_TRACK_TRADE_INFO'
+  SET_TRACK_TRADE_INFO: 'SET_TRACK_TRADE_INFO',
+  SET_PAYMENT_DONE: 'SET_PAYMENT_DONE'
 }
 
 export const mutations = {
@@ -98,6 +101,10 @@ export const mutations = {
 
   [mutationTypes.SET_TRACK_TRADE_INFO](state, info) {
     state.track.trade = info
+  },
+
+  [mutationTypes.SET_PAYMENT_DONE](state, done) {
+    state.create.paymentDone = done
   }
 }
 
@@ -107,5 +114,23 @@ export const getters = {
       state.create.startTime &&
       new Date() - state.create.startTime < _TRADE_TTL_
     )
+  },
+
+  hasPersonalInformation: state => {
+    const o = state.create.personalInformation
+    return Object.keys(o).every(key => {
+      if (key === 'pin') {
+        return true
+      }
+      return o[key]
+    })
+  },
+
+  hasCreatedTrade: state => {
+    return state.create.metadata.id
+  },
+
+  isPaid: state => {
+    return state.create.paymentDone
   }
 }

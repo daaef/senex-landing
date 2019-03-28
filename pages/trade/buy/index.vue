@@ -105,6 +105,13 @@ Validator.extend('phoneNumber', phoneNumber)
 export default {
   layout: 'simple',
 
+  validate({ store }) {
+    if (!store.getters['trade/isActiveTrade']) {
+      return false
+    }
+    return true
+  },
+
   components: {
     Trader
   },

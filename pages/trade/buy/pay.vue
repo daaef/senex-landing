@@ -39,6 +39,16 @@ const _STR_INVALID_TRANSACTION_ = 'Transaction failed or invalid'
 export default {
   layout: 'simple',
 
+  validate({ store }) {
+    if (!store.getters['trade/isActiveTrade']) {
+      return false
+    }
+    if (!store.getters['trade/hasCreatedTrade']) {
+      return false
+    }
+    return true
+  },
+
   components: {
     Trader
   },
@@ -143,6 +153,7 @@ export default {
 
         if (verificationResp.data.status === 'successful') {
           this.verified = true
+          this.$store.commit('trade/SET_PAYMENT_DONE', true)
         } else {
           this.$swal({
             title: '',
