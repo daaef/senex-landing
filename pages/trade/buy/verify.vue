@@ -99,7 +99,7 @@ export default {
   layout: 'simple',
 
   validate({ store }) {
-    /* if (!store.getters['trade/isActiveTrade']) {
+    if (!store.getters['trade/isActiveTrade']) {
       return false
     }
     if (!store.getters['trade/hasCreatedTrade']) {
@@ -107,7 +107,7 @@ export default {
     }
     if (!store.getters['trade/isPaid']) {
       return false
-    } */
+    }
     return true
   },
 
