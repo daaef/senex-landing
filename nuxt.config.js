@@ -27,7 +27,7 @@ module.exports = {
 
   env: {
     FLW_PUB_KEY: 'FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X',
-    FLW_BASE_URL: 'https://api.ravepay.co/'
+    FLW_BASE_URL: 'https://api.ravepay.co'
   },
 
   /*
