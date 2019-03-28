@@ -66,8 +66,8 @@ module.exports = {
       {
         confirmButtonColor: '#41b882'
       }
-    ],
-    [
+    ]
+    /* [
       '@nuxtjs/recaptcha',
       {
         hideBadge: true,
@@ -75,7 +75,7 @@ module.exports = {
 
         version: 3
       }
-    ]
+    ] /*
   ],
   /*
   ** Axios module configuration
