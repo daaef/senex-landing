@@ -66,7 +66,7 @@ module.exports = {
       {
         confirmButtonColor: '#41b882'
       }
-    ],
+    ]
     /* [
       '@nuxtjs/recaptcha',
       {
@@ -75,7 +75,7 @@ module.exports = {
 
         version: 3
       }
-    ] /*
+    ] */
   ],
   /*
   ** Axios module configuration
