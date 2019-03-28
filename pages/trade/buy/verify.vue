@@ -152,7 +152,7 @@ export default {
       if (this.currency === 'USD') {
         tradeAmount = this.fiatAmount
       } else {
-        tradeAmount = this.fiatAmount * this.conversionRate.USD_NGN
+        tradeAmount = (this.fiatAmount / this.conversionRate.USD_NGN).toFixed(2)
       }
       return tradeAmount >= _TRADE_VERIFY_AMOUNT_CONDITION_
     },
