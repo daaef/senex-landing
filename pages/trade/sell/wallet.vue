@@ -6,10 +6,10 @@
     <template slot="content" class="wallet_deposit">
       <div class="wallet_deposit">
         <p class="desc-text">
-          Send {{ cryptoAmount }} BTC to the BTC Address Below
+          Send {{ cryptoAmount }} BTC to the BTC address Below
         </p>
-        <div class="columns is-10 address-clipboard-wrapper is-mobile">
-          <div class="column is-10 address-wrapper">
+        <div class="columns address-clipboard-wrapper is-mobile">
+          <div class="column is-8 address-wrapper">
             <p class="btc-address">
               {{ receiveAddress }}
             </p>
@@ -48,8 +48,12 @@
           <p v-else-if="transactions.length > 0">
             Transaction complete; please proceed.
           </p>
-          <p v-else style="font-size: 1rem; color: red;">
-            Transaction pending; please make the appropriate deposit
+          <p v-else class="is-size-6">
+            Trade pending; this trade is valid till
+            <minute-countdown
+              :minutes="tradeTTL"
+              @timer-elapsed="handleTimerElapsed"
+            />
           </p>
           <p />
         </div>
@@ -74,6 +78,7 @@ import { setInterval } from 'timers'
 import { mapState } from 'vuex'
 import Trader from '~/components/trade/trader.vue'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
+import MinuteCountdown from '~/components/minute-countdown.vue'
 
 const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min */
 const _STR_CANNOT_VERIFY_ = "Couldn't verify trade. retrying..."
@@ -94,14 +99,15 @@ export default {
 
   components: {
     Trader,
-    VueQrcode
+    VueQrcode,
+    MinuteCountdown
   },
 
   data() {
     return {
       verifying: false,
       checkTradeIntervalTimer: null,
-      copyText: 'Copy'
+      copyText: 'copy'
     }
   },
 
@@ -115,7 +121,11 @@ export default {
       tradeStatus: state => state.trade.create.metadata.status,
       expires: state => state.trade.create.metadata.expires,
       receiveAddress: state => state.trade.create.metadata.receiveAddress
-    })
+    }),
+
+    tradeTTL() {
+      return 15
+    }
   },
 
   watch: {
@@ -135,7 +145,7 @@ export default {
 
   methods: {
     toggleCopyText() {
-      this.copyText = 'Copied'
+      this.copyText = 'copied'
       const vm = this
       setTimeout(() => {
         vm.copyText = 'Copy'
@@ -188,6 +198,14 @@ export default {
         text: `${_STR_TRADE_REQUESTED_} Your trade ID is ${this.tradeId}`,
         footer: `Your trade pin is ${this.pin}`,
         onClose
+      })
+    },
+
+    handleTimerElapsed() {
+      alert('Trade is now expired. Trade has been cancelled.')
+      this.$store.commit('trade/RESET_CREATE_TRADE')
+      this.$router.replace({
+        path: '/'
       })
     }
   }

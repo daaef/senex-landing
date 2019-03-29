@@ -138,31 +138,32 @@ $trader-height: 530px;
 .wallet_deposit {
   .qrcode-wrapper {
     display: inline-flex;
+    margin-top: 1.2rem;
     p.qrcode {
       margin-right: 1rem;
     }
 
     p.text-wrapper {
-      margin-top: 2rrem;
+      margin-top: 0.8rem;
       span.text {
-        margin: 1rrem 0.5rrem;
+        line-height: 1.2;
       }
 
       span.icon {
-        margin-top: 1.5rrem;
-        margin-left: 0.5rrem;
+        margin-top: 1.5rem;
+        margin-left: 0.5rem;
       }
     }
   }
 
   .address-clipboard-wrapper {
-    margin-top: 1rrem;
-    margin-bottom: 1.5rrem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .desc-text {
-    margin-top: 1rrem;
-    margin-bottom: 1rrem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .address-wrapper {
@@ -172,7 +173,9 @@ $trader-height: 530px;
     margin-left: 1rem;
     .btc-address {
       height: 100%;
-      word-wrap: break-word;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
       font-size: 12.5px;
       font-weight: 400;
     }

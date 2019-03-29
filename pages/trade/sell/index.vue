@@ -87,6 +87,9 @@
         Continue
       </button>
     </template>
+    <template slot="helpText">
+      Input your personal information. All fields are required.
+    </template>
   </trader>
 </template>
 
