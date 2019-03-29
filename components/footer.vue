@@ -1,7 +1,7 @@
 <template>
   <footer class="footer2">
-    <div class="container">
-      <div class="level is-size-6" :class="{'is-size-7': $device.isMobile}">
+    <div class="container" style="">
+      <div class="level is-size-7 level-sm-margin" :class="{'is-size-7': $device.isMobile}">
         <div class="level-left">
           <div class="level-item">
             <span>&copy; 2019 - SenexPAY</span>
@@ -90,5 +90,9 @@ export default {
     line-height: 1rem;
     text-align: center;
   }
+}
+
+.level-sm-margin {
+  margin-bottom: 0.5rem !important;
 }
 </style>
