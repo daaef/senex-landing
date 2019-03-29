@@ -191,10 +191,9 @@ export default {
   methods: {
     handleContinue() {
       this.$validator.validateAll().then(validated => {
-        this.isLoading = true
         logger.debug(`Personal information: ${JSON.stringify(this.info)}`)
-
         if (validated) {
+          this.isLoading = true
           this.$router.push({
             path: '/trade/sell/account-info'
           })

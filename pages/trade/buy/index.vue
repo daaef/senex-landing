@@ -77,9 +77,17 @@
       </div>
     </template>
     <template slot="button">
-      <button type="submit" class="button" @click="handleContinue">
+      <button
+        type="submit"
+        class="button"
+        :class="{'is-loading': isLoading}"
+        @click="handleContinue"
+      >
         Continue
       </button>
+    </template>
+    <template slot="helpText">
+      Personal information is required for identity verification
     </template>
   </trader>
 </template>
@@ -119,6 +127,12 @@ export default {
   head() {
     return {
       title: 'Buy - SenexPay'
+    }
+  },
+
+  data() {
+    return {
+      isLoading: false
     }
   },
 
@@ -179,9 +193,9 @@ export default {
   methods: {
     handleContinue() {
       this.$validator.validateAll().then(validated => {
+        log.debug(`Personal information: ${JSON.stringify(this.info)}`)
         if (validated) {
-          log.debug(`Personal information: ${this.info}`)
-
+          this.isLoading = true
           this.$router.push({
             path: '/trade/buy/wallet'
           })

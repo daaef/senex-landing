@@ -10,31 +10,46 @@
       <div v-else-if="verified" class="has-text-centered">
         Transaction verification successful
       </div>
-      <div v-else class="has-text-centered">
-        You will be required to pay the sum of {{ amount|formatMoney }} using an accepted payment method
-        <span class="img">
-          <img
-            src="~assets/flutterwave.png"
-            alt="Flutterwave icon"
-            height="32"
-            width="32"
-            style="vertical-align: middle;"
-          >
-        </span>
-        <button class="button is-success" @click="payWithRave">
-          Pay now
-        </button>
+      <div v-else class="has-text-centered" style="margin-top: 4rem;">
+        <p>
+          You will be required to pay the sum of
+          {{ amount|formatMoney(currency) }} using an accepted payment method.
+        </p>
+        <p>
+          <span class="img">
+            <img
+              src="~assets/flutterwave.png"
+              alt="Flutterwave icon"
+              height="28"
+              width="28"
+              style="vertical-align: middle;"
+            >
+          </span>
+          <button class="button is-success" @click="payWithRave">
+            Pay now
+          </button>
+        </p>
+        <p class="is-size-6 has-font-weight-bold" style="margin-top: 2rem;">
+          This trade is valid till
+          <minute-countdown
+            :minutes="tradeTTL"
+            @timer-elapsed="handleTimerElapsed"
+          />
+        </p>
       </div>
     </template>
     <template slot="button">
       <button
         class="button"
         :class="{'is-loading': verifying}"
-        :disabled="waiting || verifying || !verified"
+        :disabled="verifying || !verified"
         @click="handleContinue"
       >
         Continue
       </button>
+    </template>
+    <template slot="helpText">
+      Pay the cash equivalent of the bitcoin you intent to buy
     </template>
   </trader>
 </template>
@@ -42,6 +57,7 @@
 <script>
 import log from '~/logger'
 import Trader from '~/components/trade/trader.vue'
+import MinuteCountdown from '~/components/minute-countdown.vue'
 import formatMoney from '~/filters/format-money'
 
 const _ERR_VERIFY_TRANSACTION_ = 'Unable to verify your transaction, try again'
@@ -65,7 +81,8 @@ export default {
   },
 
   components: {
-    Trader
+    Trader,
+    MinuteCountdown
   },
 
   data() {
@@ -93,10 +110,6 @@ export default {
       return this.$store.state.trade.create.personalInformation
     },
 
-    currency() {
-      return 'NGN'
-    },
-
     amount() {
       const {
         fiatAmount: amount,
@@ -112,6 +125,14 @@ export default {
 
     tradeId() {
       return this.$store.state.trade.create.metadata.id
+    },
+
+    currency() {
+      return this.$store.state.trade.create.currency
+    },
+
+    tradeTTL() {
+      return 15
     }
   },
 
@@ -124,7 +145,7 @@ export default {
         customer_email: this.personalInfo.email,
         amount: this.amount,
         customer_phone: this.personalInfo.mobileNumber,
-        currency: this.currency,
+        currency: 'NGN',
         onclose: function() {},
         callback: function(response) {
           log.debug(`rave response: ${JSON.stringify(response)}`)
@@ -199,6 +220,14 @@ export default {
     handleContinue() {
       this.$router.push({
         path: '/trade/buy/verify'
+      })
+    },
+
+    handleTimerElapsed() {
+      alert('Trade is now expired. Trade has been cancelled.')
+      this.$store.commit('trade/RESET_CREATE_TRADE')
+      this.$router.replace({
+        path: '/'
       })
     }
   }

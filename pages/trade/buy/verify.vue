@@ -5,7 +5,9 @@
     </template>
     <template v-if="shouldVerify" slot="content">
       <div class="user-verify">
-        <div>Upload ID</div>
+        <div class="has-text-weight-semibold">
+          Upload ID
+        </div>
         <div class="id-section">
           <img src="~assets/images/id-placeholder.png" alt="" class="upload-id">
           <div class="widget-grp">
@@ -34,7 +36,9 @@
             </span>
           </div>
         </div>
-        <p>Upload Selfie</p>
+        <div class="has-text-weight-semibold">
+          Upload Selfie
+        </div>
         <div class="selfie-section">
           <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie">
           <div class="widget-grp">
@@ -66,7 +70,7 @@
       </div>
     </template>
     <template v-else slot="content" class="user-verify">
-      <div>
+      <div style="margin-top: 4rem;">
         <p class="has-text-centered is-size-6">
           No verification required.
         </p>
@@ -80,6 +84,9 @@
       >
         Request Trade
       </button>
+    </template>
+    <template slot="helpText">
+      Verify your identity. This is required for large transactions.
     </template>
   </trader>
 </template>

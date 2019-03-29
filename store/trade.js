@@ -42,6 +42,7 @@ const getDefaultTrackTradeDataStructure = () => ({
 
 export const state = () => ({
   banks: [],
+  tradeCreationTTL: _TRADE_TTL_,
   create: getDefaultCreateDataStructure(),
   track: getDefaultTrackTradeDataStructure()
 })

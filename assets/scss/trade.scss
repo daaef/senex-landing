@@ -1,26 +1,25 @@
 @import './fonts.scss';
-$trader-height: 500px;
+$trader-height: 530px;
 
 .wrapper_trader {
   font-family: $font-avenir;
-  min-height: 480px;
   margin-bottom: 3rem;
 }
 
 .__title {
   margin-bottom: 2rem;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   font-family: $font-open-sans;
   color: #1b70cf;
   line-height: normal;
   .amount__btc {
     font-weight: bold;
     font-family: $font-avenir;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .amount__currency {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -36,7 +35,7 @@ $trader-height: 500px;
     padding: 1.2rem 0;
     display: flex;
     flex-direction: column;
-    align-itrems: center;
+    align-items: center;
     .icon-container {
       flex: 100%;
     }
@@ -52,12 +51,12 @@ $trader-height: 500px;
 }
 
 .content-area {
-  margin-left: 1rem;
   font-size: 0.9rem;
   position: relative;
   height: $trader-height;
+  width: 100%;
   .__title {
-    font-size: 1.2rem;
+    font-size: 1.45rem;
     margin-bottom: 1rem;
   }
 
@@ -73,8 +72,8 @@ $trader-height: 500px;
   .button-wrapper {
     text-align: right;
     position: absolute;
-    right: 0;
-    bottom: 50px;
+    right: 10px;
+    bottom: 40px;
     button {
       background: #1b70cf;
       color: #ffffff;
@@ -98,6 +97,7 @@ $trader-height: 500px;
   font-family: $font-avenir;
   .id-section,
   .selfie-section {
+    width: 70%;
     display: flex;
     height: 130px;
     img {
@@ -124,8 +124,14 @@ $trader-height: 500px;
       }
     }
   }
+
   .id-section {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .id-section img {
+    width: 55%;
+    height: auto;
   }
 }
 

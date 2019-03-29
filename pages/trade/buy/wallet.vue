@@ -51,6 +51,9 @@
         Proceed to Payment
       </button>
     </template>
+    <template slot="helpText">
+      This is the wallet address the bitcoin you buy will be sent to.
+    </template>
   </trader>
 </template>
 

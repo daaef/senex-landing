@@ -87,7 +87,6 @@
             style="margin-bottom: 7rem; padding-top: 3rem; padding-bottom: 3rem;"
           >
             <p
-              class="has-text-centere"
               :style="{
                 'font-size': '0.9rem',
               }"
@@ -99,7 +98,7 @@
                 <a href="" class="button is-small is-primary" style="background:#1b70cf;" @click.prevent="handleContinueTrade">Continue</a>
               </p>
               <p class="control">
-                <a href="" class="button is-small is-danger" @click.prevent="handleCancelTrade">Cancel</a>
+                <a href="" class="button is-small" @click.prevent="handleCancelTrade">Cancel</a>
               </p>
             </div>
           </div>
