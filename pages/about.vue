@@ -66,7 +66,7 @@
               <img src="~/assets/value-secure.png" alt="">
             </p>
             <p class="text">
-              FAST
+              SECURE
             </p>
           </div>
         </div>

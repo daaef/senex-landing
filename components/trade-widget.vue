@@ -2,7 +2,7 @@
   <section>
     <div class="">
       <div class="columns">
-        <div class="column is-9">
+        <div class="column is-9" style="height: 100%;">
           <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
             <div class="box trade-box">
               <div class="has-text-centered trade-selector-container">
@@ -27,7 +27,6 @@
                       type="number"
                       class="input blue-border"
                       :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
-                      placeholder="1.7329"
                       step="any"
                       min="0"
                       style="text-align: right;"
@@ -59,7 +58,6 @@
                       v-model="computedFiatAmount"
                       type="number"
                       class="input"
-                      placeholder="1000"
                       min="0"
                       step="any"
                       style="background: #f4f4f4; color: #707070; border: none;"
@@ -137,8 +135,8 @@ export default {
   data() {
     return {
       tradeType: 'buy',
-      fiatAmount: null,
-      cryptoAmount: null,
+      fiatAmount: 0,
+      cryptoAmount: 0,
       currency: 'NGN',
       fiatAmountIsDirty: false,
       cryptoAmountIsDirty: false,
@@ -167,10 +165,6 @@ export default {
           return this.cryptoAmount
         }
 
-        if (this.cryptoAmount == null) {
-          return null
-        }
-
         if (!this.rates) {
           rv = 0
         } else {
@@ -182,7 +176,7 @@ export default {
             rv = fiatAmount / rate.NGN
           }
         }
-        return rv.toFixed(2)
+        return rv === 0 ? 0 : rv.toFixed(8)
       }
     },
 
@@ -214,7 +208,7 @@ export default {
             rv = rate.NGN * cryptoAmount
           }
         }
-        return rv.toFixed(2)
+        return rv === 0 ? 0 : rv.toFixed(2)
       }
     },
 
@@ -411,8 +405,12 @@ div.trade-selector-container {
 }
 
 div.empty-grid-bg {
-  margin-top: 3em;
+  height: 100px;
+  position: relative;
+  bottom: -45px;
+  z-index: -9999;
   background-image: url('~assets/grid-bg.png');
-  min-height: 100px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 </style>
