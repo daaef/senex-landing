@@ -11,7 +11,7 @@
               There are no frequently asked questions yet.
             </p>
           </div>
-          <div v-for="item in items" :id="`qa-${i}`" :key="item.id" class="q-item">
+          <div v-for="(item, i) in items" :id="`qa-${i}`" :key="item.id" class="q-item">
             <p class="q" @click="toggleQuestionView(`qa-${i}`)">
               {{ item.question }}
               <span class="icon is-pulled-right icon-expand">
