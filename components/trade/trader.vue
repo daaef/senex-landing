@@ -26,7 +26,24 @@
                 class="icon-container"
               />
             </div>
-            <div class="column is-9 content-wrapper">
+            <div v-if="$device.isMobile" class="column is-9 content-wrapper">
+              <div class="columns">
+                <div class="column is-12">
+                  <div class="content-area">
+                    <p class="__title">
+                      <slot name="title" />
+                    </p>
+                    <div class="content">
+                      <slot name="content" />
+                    </div>
+                    <div class="button-wrapper">
+                      <slot name="button" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div v-else class="column is-9 content-wrapper">
               <div class="columns is-mobile">
                 <div class="column is-8">
                   <div class="content-area">

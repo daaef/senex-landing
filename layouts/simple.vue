@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <navbar theme="blue" logo-variant="blue" />
-    <div class="content">
+    <div class="content" style="margin-bottom: 0;">
       <nuxt />
     </div>
     <footer-comp />

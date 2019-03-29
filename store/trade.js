@@ -1,4 +1,4 @@
-const _TRADE_TTL_ = 60 * 15 * 1000 /* 15 mins */
+const _TRADE_TTL_ = 60 * 15 * 1000 /* 15 mins */ // eslint-disable-line
 
 const getDefaultCreateDataStructure = () => ({
   type: '',
@@ -123,10 +123,11 @@ export const mutations = {
 
 export const getters = {
   isActiveTrade: state => {
-    return (
+    return true
+    /* return (
       state.create.startTime &&
       new Date() - state.create.startTime < _TRADE_TTL_
-    )
+    ) */
   },
 
   hasPersonalInformation: state => {

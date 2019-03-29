@@ -2,7 +2,7 @@
   <section>
     <div class="">
       <div class="columns">
-        <div class="column is-9" style="height: 100%;">
+        <div class="column is-9 widget-column">
           <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
             <div class="box trade-box">
               <div class="has-text-centered trade-selector-container">
@@ -17,7 +17,11 @@
               <div style="margin-bottom: 1em;" class="columns">
                 <div class="field has-addons column">
                   <div class="control">
-                    <a href="" class="button" style="background: #1b70cf; color: #fff;">
+                    <a
+                      href=""
+                      class="button"
+                      style="background: #1b70cf; color: #fff; font-size: 1.03rem;"
+                    >
                       BTC
                     </a>
                   </div>
@@ -367,8 +371,8 @@ p.flutterwave-grp {
 }
 
 div.trade-box {
-  padding-bottom: 2em;
-  padding-top: 2em;
+  padding-bottom: 1em;
+  padding-top: 1.5em;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.54);
   font-family: $font-open-sans;
   select {
@@ -402,15 +406,5 @@ div.trade-selector-container {
       width: 100%;
     }
   }
-}
-
-div.empty-grid-bg {
-  height: 100px;
-  position: relative;
-  bottom: -45px;
-  z-index: -9999;
-  background-image: url('~assets/grid-bg.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 </style>

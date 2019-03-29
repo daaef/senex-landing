@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 70px; height: 70px; text-align: center;">
+  <div :class="{'ico-container': !$device.isMobile, 'ico-container-sm': $device.isMobile}">
     <img :src="computedIconSrc" :alt="name">
   </div>
 </template>
@@ -29,3 +29,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.ico-container {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
+.ico-container-sm {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+}
+</style>

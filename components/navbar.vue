@@ -6,7 +6,11 @@
           <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant">
           <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant">
         </a>
-        <span class="navbar-burger burger" :class="{'is-active': isActive}" @click="isActive = !isActive">
+        <span
+          class="navbar-burger burger"
+          :class="{'is-active': isActive, 'white-burger': logoVariant === 'white', 'blue-burger': logoVariant === 'blue'}"
+          @click="isActive = !isActive"
+        >
           <span /><span /><span />
         </span>
       </div>
@@ -16,7 +20,8 @@
         class="navbar-menu"
         :class="{'is-active': isActive,
                  'white-theme': theme === 'white',
-                 'blue-theme': theme === 'blue'}"
+                 'blue-theme': theme === 'blue',
+                 'nav-link-blue': $device.isMobile}"
       >
         <div class="navbar-end">
           <nuxt-link class="navbar-item" to="/" :class="{'is-active': isActiveNavItem('/')}">
@@ -67,6 +72,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.header-menu {
+  min-width: 120px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 100;
+}
+</style>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/colors.scss';
@@ -123,5 +138,19 @@ export default {
       }
     }
   }
+}
+
+.nav-link-blue {
+  a {
+    color: #0c5db2;
+  }
+}
+
+.blue-burger {
+  color: blue;
+}
+
+.white-burger {
+  color: #fff;
 }
 </style>

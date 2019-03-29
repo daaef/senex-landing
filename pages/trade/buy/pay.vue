@@ -11,8 +11,18 @@
         Transaction verification successful
       </div>
       <div v-else class="has-text-centered">
+        You will be required to pay the sum of {{ amount|formatMoney }} using an accepted payment method
+        <span class="img">
+          <img
+            src="~assets/flutterwave.png"
+            alt="Flutterwave icon"
+            height="32"
+            width="32"
+            style="vertical-align: middle;"
+          >
+        </span>
         <button class="button is-success" @click="payWithRave">
-          Pay with Flutterwave
+          Pay now
         </button>
       </div>
     </template>
@@ -32,12 +42,17 @@
 <script>
 import log from '~/logger'
 import Trader from '~/components/trade/trader.vue'
+import formatMoney from '~/filters/format-money'
 
 const _ERR_VERIFY_TRANSACTION_ = 'Unable to verify your transaction, try again'
 const _STR_INVALID_TRANSACTION_ = 'Transaction failed or invalid'
 
 export default {
   layout: 'simple',
+
+  filters: {
+    formatMoney
+  },
 
   validate({ store }) {
     if (!store.getters['trade/isActiveTrade']) {
