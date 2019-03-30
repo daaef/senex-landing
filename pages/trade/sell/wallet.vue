@@ -42,13 +42,13 @@
           </p>
         </div>
         <div class="status-wrapper">
-          <p v-if="verifying">
+          <p v-show="verifying">
             Verifying transaction...
           </p>
-          <p v-else-if="transactions.length > 0">
+          <p v-show="transactions.length > 0">
             Transaction complete; please proceed.
           </p>
-          <p v-else class="is-size-6">
+          <p v-show="!verifying && transactions.length === 0" class="is-size-6">
             Trade pending; this trade is valid till
             <minute-countdown
               :minutes="tradeTTL"
