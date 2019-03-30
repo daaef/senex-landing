@@ -232,7 +232,7 @@ export default {
     async createTrade() {
       const data = this.$store.state.trade.create
       const payload = {
-        type: 'buy',
+        type: 'sell',
         cryptoAmount: data.cryptoAmount,
         fiatAmount:
           data.currency === 'NGN'
