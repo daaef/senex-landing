@@ -13,7 +13,7 @@
       <div v-else class="has-text-centered" style="margin-top: 4rem;">
         <p>
           You will be required to pay the sum of
-          {{ amount|formatMoney(currency) }} using an accepted payment method.
+          {{ amount|formatMoney('NGN') }} using an accepted payment method.
         </p>
         <p>
           <span class="img">
