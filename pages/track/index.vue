@@ -2,10 +2,10 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-3 is-offset-4">
+        <div class="column is-4 is-offset-4">
           <p class="has-text-weight-semibold p-heading has-text-centered">
             Tracking
-            <span class="is-block  has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
+            <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
           </p>
 
           <div v-if="step === 'trackid'" class="trackid-wrapper">
@@ -16,11 +16,11 @@
                   <p class="control">
                     <input
                       v-model="tradeId"
-                      v-validate="'required|alpha_dash|length:16'"
+                      v-validate="'required|alpha_dash|length:12'"
                       type="text"
                       name="trade id"
                       class="input is-rounded"
-                      placeholder="#12345"
+                      placeholder="12345"
                     >
                   </p>
                 </div>

@@ -5,7 +5,7 @@
       <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
     </p>
     <div class="columns is-centered content-wrapper">
-      <div class="column is-one-fifth status-area">
+      <div class="column is-one-quarter status-area">
         <div class="grey-header-area">
           <p class="status">
             <span v-if="tradeData.status === 'pending'">Pending</span>
@@ -67,7 +67,7 @@
           </p>
         </div>
       </div>
-      <div class="column is-one-fifth message-area">
+      <div class="column is-one-quarter message-area">
         <div class="title-area columns is-mobile is-gapless">
           <div class="column is-3">
             <img src="~/assets/chat-support-message.png" alt="">
