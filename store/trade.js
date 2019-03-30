@@ -124,11 +124,10 @@ export const mutations = {
 
 export const getters = {
   isActiveTrade: state => {
-    return true
-    /* return (
+    return (
       state.create.startTime &&
       new Date() - state.create.startTime < _TRADE_TTL_
-    ) */
+    )
   },
 
   hasPersonalInformation: state => {

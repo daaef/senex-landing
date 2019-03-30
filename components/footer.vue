@@ -1,13 +1,13 @@
 <template>
   <footer class="footer2">
     <div class="container" style="">
-      <div class="level is-size-7 level-sm-margin" :class="{'is-size-7': $device.isMobile}">
+      <div class="level is-size-6 level-sm-margin" :class="{'is-size-7': $device.isMobile}">
         <div class="level-left">
           <div class="level-item">
             <span>&copy; 2019 - SenexPAY</span>
           </div>
         </div>
-
+        <contact-form-modal />
         <div class="level-right">
           <div class="level is-mobile">
             <p class="level-item">
@@ -28,7 +28,11 @@
           </div>
         </div>
       </div>
-      <a v-if="displayContactFab" class="contact-support-container has-text-centered is-block">
+      <a
+        v-if="displayContactFab"
+        class="contact-support-container has-text-centered is-block"
+        @click.prevent="showContactFormModal"
+      >
         <img src="~/assets/contact-support.png" alt="contact support image">
         <span class="text">Contact <br> Support</span>
       </a>
@@ -37,11 +41,22 @@
 </template>
 
 <script>
+import ContactFormModal from './contact-form-modal.vue'
+
 export default {
+  components: {
+    ContactFormModal
+  },
   props: {
     displayContactFab: {
       type: Boolean,
       default: true
+    }
+  },
+
+  methods: {
+    showContactFormModal() {
+      this.$modal.show('contact')
     }
   }
 }
@@ -71,8 +86,8 @@ export default {
 
 .contact-support-container {
   position: absolute;
-  right: 30px;
-  bottom: 150px;
+  right: 10px;
+  bottom: 80px;
   text-align: center;
   img,
   span {
