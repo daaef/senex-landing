@@ -109,7 +109,6 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 div.wrapper {
-  min-height: 100vh;
   font-family: $font-avenir;
   .about {
     margin-top: 7px;

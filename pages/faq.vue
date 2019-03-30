@@ -64,6 +64,7 @@ export default {
 
 div.wrapper {
   margin-bottom: 3em;
+  margin-top: 2rem;
   font-family: $font-avenir;
   .title {
     font-size: 1.7em;
