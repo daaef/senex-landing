@@ -124,7 +124,7 @@ export default {
     }),
 
     tradeTTL() {
-      return 15
+      return 20
     }
   },
 

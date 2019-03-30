@@ -82,7 +82,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://senexpay.herokuapp.com',
+    baseURL: '138.68.175.88:8000',
     proxyHeaders: false,
     credentials: false
   },
