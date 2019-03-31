@@ -89,7 +89,13 @@ export default {
 
   head() {
     return {
-      title: 'Buy - SenexPay'
+      title: 'Buy - SenexPay',
+      script: [
+        {
+          src:
+            'https://cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js'
+        }
+      ]
     }
   },
 
@@ -125,6 +131,29 @@ export default {
   },
 
   methods: {
+    getDeviceInfo() {
+      const client = new window.ClientJS()
+      return {
+        userAgent: client.getUserAgent(),
+        browser: client.getBrowser(),
+        os: client.getOS(),
+        device: client.getDevice(),
+        deviceType: client.getDeviceType(),
+        deviceVendor: client.getDeviceVendor(),
+        cpu: client.getCPU(),
+        screenPrint: client.getScreenPrint(),
+        colorDepth: client.getColorDepth(),
+        resolution: client.getCurrentResolution(),
+        getAvailableResolution: client.getAvailableResolution(),
+        deviceXDPI: client.getDeviceXDPI(),
+        deviceYDPI: client.getDeviceYDPI(),
+        fingerprint: '' + client.getFingerprint(),
+        timezone: client.getTimezone(),
+        language: client.getLanguage(),
+        systemLanguage: client.getSystemLanguage()
+      }
+    },
+
     handleRequestTrade() {
       this.$validator.validateAll().then(validated => {
         if (validated) {
@@ -144,7 +173,7 @@ export default {
             : data.fiatAmount * data.conversionRate.USD_NGN,
         ...data.personalInformation,
         ...data.walletInfo,
-        deviceInfo: {},
+        deviceInfo: this.getDeviceInfo(),
         networkInfo: {}
       }
       log.debug(

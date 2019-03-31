@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section" style="margin-bottom: 3rem;">
     <div class="container wrapper_trader">
       <p class="__title has-text-centered">
         <span v-if="tradeType === 'buy'">Buying </span>

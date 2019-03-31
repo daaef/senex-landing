@@ -118,7 +118,13 @@ export default {
 
   head() {
     return {
-      title: 'Sell - SenexPay'
+      title: 'Sell - SenexPay',
+      script: [
+        {
+          src:
+            'https://cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js'
+        }
+      ]
     }
   },
 
@@ -229,6 +235,29 @@ export default {
       }
     },
 
+    getDeviceInfo() {
+      const client = new window.ClientJS()
+      return {
+        userAgent: client.getUserAgent(),
+        browser: client.getBrowser(),
+        os: client.getOS(),
+        device: client.getDevice(),
+        deviceType: client.getDeviceType(),
+        deviceVendor: client.getDeviceVendor(),
+        cpu: client.getCPU(),
+        screenPrint: client.getScreenPrint(),
+        colorDepth: client.getColorDepth(),
+        resolution: client.getCurrentResolution(),
+        getAvailableResolution: client.getAvailableResolution(),
+        deviceXDPI: client.getDeviceXDPI(),
+        deviceYDPI: client.getDeviceYDPI(),
+        fingerprint: '' + client.getFingerprint(),
+        timezone: client.getTimezone(),
+        language: client.getLanguage(),
+        systemLanguage: client.getSystemLanguage()
+      }
+    },
+
     async createTrade() {
       const data = this.$store.state.trade.create
       const payload = {
@@ -240,8 +269,8 @@ export default {
             : data.fiatAmount * data.conversionRate.USD_NGN,
         ...data.personalInformation,
         ...data.bankDetails,
-        deviceInfo: {}, // FIXME
-        networkInfo: {} // FIXME
+        deviceInfo: this.getDeviceInfo(),
+        networkInfo: {}
       }
       payload.bank = payload.bankCode
       delete payload.bankCode
