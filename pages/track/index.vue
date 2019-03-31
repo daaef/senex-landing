@@ -10,7 +10,7 @@
 
           <div v-if="step === 'trackid'" class="trackid-wrapper">
             <form action="">
-              <div class="card trackid-container">
+              <div class="card trackid-container" style="padding-top: 5rem; padding-bottom: 5rem;">
                 <div class="field">
                   <label for="" class="label has-text-weight-normal">Trade ID</label>
                   <p class="control">

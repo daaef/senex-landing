@@ -2,10 +2,12 @@
   <div class="container wrapper">
     <p class="has-text-weight-semibold p-heading has-text-centered">
       Trade Status
-      <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
+      <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">
+        Track status of your pending trade
+      </span>
     </p>
     <div class="columns is-centered content-wrapper">
-      <div class="column is-one-quarter status-area">
+      <div class="column is-4 status-area">
         <div class="grey-header-area">
           <p class="status">
             <span v-if="tradeData.status === 'pending'">Pending</span>
@@ -67,7 +69,7 @@
           </p>
         </div>
       </div>
-      <div class="column is-one-quarter message-area">
+      <div class="column is-4 message-area">
         <div class="title-area columns is-mobile is-gapless">
           <div class="column is-3">
             <img src="~/assets/chat-support-message.png" alt="">
@@ -352,7 +354,7 @@ div.wrapper {
       margin: 0;
       overflow: auto;
       .chat {
-        font-size: 0.7rem;
+        font-size: 0.95rem;
         line-height: 1;
         width: 80%;
         height: auto;
@@ -365,6 +367,7 @@ div.wrapper {
         background: #abcaeb;
         float: right;
         .time-info {
+          font-size: 0.7rem;
           margin-top: 0.65rem;
           font-weight: 500;
           float: right;
@@ -377,6 +380,7 @@ div.wrapper {
         background: #f4f4f4;
         float: left;
         .time-info {
+          font-size: 0.7rem;
           margin-top: 0.65rem;
           font-weight: 500;
           float: left;

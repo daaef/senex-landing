@@ -406,4 +406,12 @@ div.trade-selector-container {
     }
   }
 }
+
+.empty-grid-bg {
+  margin-top: 3.5rem;
+  height: 100px;
+  width: 100%;
+  background-image: url('~assets/grid-bg.png');
+  background-repeat: no-repeat;
+}
 </style>
