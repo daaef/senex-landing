@@ -252,7 +252,7 @@ export default {
         deviceXDPI: client.getDeviceXDPI(),
         deviceYDPI: client.getDeviceYDPI(),
         fingerprint: '' + client.getFingerprint(),
-        timezone: client.getTimezone(),
+        timezone: client.getTimeZone(),
         language: client.getLanguage(),
         systemLanguage: client.getSystemLanguage()
       }
