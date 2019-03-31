@@ -74,7 +74,6 @@
 
 <script>
 import logger from '~/logger'
-import { setInterval } from 'timers'
 import { mapState } from 'vuex'
 import Trader from '~/components/trade/trader.vue'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
@@ -107,7 +106,8 @@ export default {
     return {
       verifying: false,
       checkTradeIntervalTimer: null,
-      copyText: 'copy'
+      copyText: 'copy',
+      timeoutId: null
     }
   },
 
@@ -125,6 +125,10 @@ export default {
 
     tradeTTL() {
       return 20
+    },
+
+    isActive() {
+      return this.$store.getters['trade/isActiveTrade']
     }
   },
 
@@ -137,13 +141,30 @@ export default {
   },
 
   created() {
-    const self = this
-    this.checkTradeIntervalTimer = setInterval(() => {
-      self.fetchTradeItem()
-    }, _TRADE_VERIFY_INTERVAL_)
+    this.pollUntil()
   },
 
   methods: {
+    async pollUntil() {
+      if (!this.isActive) {
+        if (this.timeoutId) {
+          clearTimeout(this.timeoutId)
+        }
+        return
+      }
+
+      const prevTimeoutId = this.timeoutId
+      const shouldPoll = await this.fetchTradeItem()
+      if (shouldPoll) {
+        this.timeoutId = setTimeout(
+          this.pollUntil.bind(this),
+          _TRADE_VERIFY_INTERVAL_
+        )
+      }
+
+      clearTimeout(prevTimeoutId)
+    },
+
     toggleCopyText() {
       this.copyText = 'copied'
       const vm = this
@@ -169,18 +190,28 @@ export default {
 
         this.$store.commit('trade/SET_TRADE_METADATA', resp.data)
       } catch (err) {
-        this.$swal({
-          title: 'Error:',
-          type: 'error',
-          position: 'top-end',
-          text: _STR_CANNOT_VERIFY_,
-          timer: 7 * 1000,
-          toast: true,
-          showConfirmButton: false
-        })
+        if (err.response) {
+          if (err.response.status === 404) {
+            this.handleTimerElapsed()
+            return false
+          }
+        } else {
+          this.$swal({
+            title: 'Error:',
+            type: 'error',
+            position: 'top-end',
+            text: _STR_CANNOT_VERIFY_,
+            timer: 7 * 1000,
+            toast: true,
+            showConfirmButton: false
+          })
+        }
       } finally {
         this.verifying = false
       }
+
+      // We can safely poll next time
+      return true
     },
 
     handleRequestTrade() {

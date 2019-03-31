@@ -83,8 +83,8 @@
           </form>
           <div
             v-else
-            class="box trade-box"
-            style="margin-bottom: 7rem; padding-top: 3rem; padding-bottom: 3rem;"
+            class="box trade-box has-text-centered"
+            style="margin-bottom: 7rem; padding: 5rem 0;"
           >
             <p
               :style="{
@@ -93,8 +93,8 @@
             >
               You have a pending trade session.
             </p>
-            <div class="field is-grouped is-centered">
-              <p class="control">
+            <div class="field is-grouped is-grouped-centered">
+              <p class="control has-text-centered">
                 <a href="" class="button is-small is-primary" style="background:#1b70cf;" @click.prevent="handleContinueTrade">Continue</a>
               </p>
               <p class="control">
