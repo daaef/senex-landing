@@ -36,8 +36,7 @@ const getDefaultCreateDataStructure = () => ({
 })
 
 const getDefaultTrackTradeDataStructure = () => ({
-  tradeId: '',
-  trade: null
+  tradeId: ''
 })
 
 export const state = () => ({

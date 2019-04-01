@@ -51,8 +51,9 @@
           <p v-show="!verifying && transactions.length === 0" class="is-size-6">
             Trade pending; this trade is valid till
             <minute-countdown
+              ref="countdownTimer"
               :minutes="tradeTTL"
-              @timer-elapsed="handleTimerElapsed"
+              @timer-elapsed="handleTradeTimeElapsed"
             />
           </p>
           <p />
@@ -192,7 +193,7 @@ export default {
       } catch (err) {
         if (err.response) {
           if (err.response.status === 404) {
-            this.handleTimerElapsed()
+            this.handleTradeTimeElapsed()
             return false
           }
         } else {
@@ -218,6 +219,8 @@ export default {
       const self = this
       const onClose = () => {
         self.$store.commit('trade/RESET_CREATE_TRADE')
+        this.$refs.countdownTimer.stop()
+
         self.$router.replace({
           path: '/track'
         })
@@ -232,7 +235,9 @@ export default {
       })
     },
 
-    handleTimerElapsed() {
+    handleTradeTimeElapsed() {
+      this.$refs.countdownTimer.stop()
+
       alert('Trade is now expired. Trade has been cancelled.')
       this.$store.commit('trade/RESET_CREATE_TRADE')
       this.$router.replace({

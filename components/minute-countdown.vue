@@ -22,28 +22,33 @@ export default {
   data() {
     return {
       m: this.$props.minutes,
-      s: 0
+      s: 0,
+      active: false
     }
   },
 
   mounted() {
-    this.doTimer()
+    this.start()
   },
 
   methods: {
-    doTimer() {
+    start() {
+      if (!this.active) {
+        return
+      }
+
       let m = this.m
       const s = this.checkSeconds(this.s - 1)
       if (s === 59) {
         m -= 1
       }
 
-      if (m < 0) {
+      if (m < 0 && this.active) {
         this.$emit('timer-elapsed')
       } else {
         this.m = m
         this.s = s
-        setTimeout(this.doTimer.bind(this), 1000)
+        setTimeout(this.start.bind(this), 1000)
       }
     },
 
@@ -52,6 +57,10 @@ export default {
         sec = 59
       }
       return sec
+    },
+
+    stop() {
+      this.active = false
     }
   }
 }

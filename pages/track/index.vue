@@ -5,7 +5,12 @@
         <div class="column is-4 is-offset-4">
           <p class="has-text-weight-semibold p-heading has-text-centered">
             Tracking
-            <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">Track status of your pending trade</span>
+            <span
+              class="is-block has-text-centered has-text-weight-normal"
+              style="font-size: 0.95rem; color: #d5d5d5;"
+            >
+              Track status of your pending trade
+            </span>
           </p>
 
           <div v-if="step === 'trackid'" class="trackid-wrapper">
@@ -125,6 +130,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      tradeId: '',
       pin1: '',
       pin2: '',
       pin3: '',
@@ -133,21 +139,6 @@ export default {
       // This is used to determine which section of the UI to show.
       // Valid values are trackid | pinverification
       step: 'trackid'
-    }
-  },
-
-  computed: {
-    trade() {
-      return this.$store.state.trade.track.trade
-    },
-
-    tradeId: {
-      get() {
-        return this.$store.state.trade.track.tradeId
-      },
-      set(value) {
-        this.$store.commit('trade/SET_TRACK_TRADE_ID', value)
-      }
     }
   },
 
@@ -180,9 +171,7 @@ export default {
       try {
         this.isLoading = true
         const resp = await this.$axios.get(`/trade/${this.tradeId}/`)
-        if (resp.data) {
-          this.$store.commit('trade/SET_TRACK_TRADE_INFO', resp.data)
-        }
+        this.tradeData = resp.data
       } catch (err) {
         this.$swal({
           title: '',
