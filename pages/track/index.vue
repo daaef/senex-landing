@@ -190,6 +190,7 @@ export default {
     handlePinSubmit() {
       const pin = `${this.pin1}${this.pin2}${this.pin3}${this.pin4}`
       if ('' + this.trade.pin === pin) {
+        this.$store.commit('trade/SET_TRACK_TRADE_ID', this.tradeId)
         this.$router.replace({
           path: '/track/verify',
           query: {

@@ -2,9 +2,9 @@
   <nav class="navbar is-transparent">
     <div class="container" style="margin-top: 0.5rem; padding-top: 0;">
       <div class="navbar-brand">
-        <a class="navbar-item" @click.prevent="$router.push('/')">
-          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant">
-          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant">
+        <a class="" @click.prevent="$router.push('/')">
+          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant" style="height: 43px;">
+          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant" style="height: 43px;">
         </a>
         <span
           class="navbar-burger burger"

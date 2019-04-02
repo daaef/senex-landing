@@ -151,7 +151,7 @@ export default {
       return false
     }
 
-    if (!store.state.trade.track.trade || !store.state.trade.track.tradeId) {
+    if (!store.state.trade.track.tradeId) {
       return false
     }
 
@@ -171,16 +171,15 @@ export default {
     }
   },
 
-  computed: {
-    tradeData() {
-      return this.$store.state.trade.track.trade
-    }
-  },
-
   async asyncData({ query, app: { $axios } }) {
-    const resp = await $axios.get(`/trade/${query.trade_id}/messages`)
+    const [tradeResp, messageResp] = await Promise.all([
+      $axios.get(`/trade/${query.trade_id}/`),
+      $axios.get(`/trade/${query.trade_id}/messages/`)
+    ])
+
     return {
-      messages: resp.data.sort((a, b) => a.id - b.id)
+      tradeData: tradeResp.data,
+      messages: messageResp.data.sort((a, b) => a.id - b.id)
     }
   },
 

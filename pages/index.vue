@@ -85,19 +85,19 @@ div.info {
   line-height: normal;
   color: #707070;
   p.text-exchanging {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-family: $font-open-sans;
     font-weight: 300;
   }
 
   span.text-crypto {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     font-weight: bold;
     color: #0c5db2;
   }
 
   span.text-made-easy {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-left: 0.6rem;
   }
 }

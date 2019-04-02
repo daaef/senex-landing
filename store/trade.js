@@ -55,7 +55,6 @@ export const mutationTypes = {
   SET_BANK_LIST: 'SET_BANK_LIST',
   SET_TRADE_METADATA: 'SET_TRADE_METADATA',
   SET_TRACK_TRADE_ID: 'SET_TRACK_TRADE_ID',
-  SET_TRACK_TRADE_INFO: 'SET_TRACK_TRADE_INFO',
   SET_PAYMENT_DONE: 'SET_PAYMENT_DONE',
   RESET_CREATE_TRADE: 'RESET_CREATE_TRADE',
   RESET_TRACK_TRADE: 'RESET_TRACK_TRADE'
@@ -102,10 +101,6 @@ export const mutations = {
 
   [mutationTypes.SET_TRACK_TRADE_ID](state, tradeId) {
     state.track.tradeId = tradeId
-  },
-
-  [mutationTypes.SET_TRACK_TRADE_INFO](state, info) {
-    state.track.trade = info
   },
 
   [mutationTypes.SET_PAYMENT_DONE](state, done) {

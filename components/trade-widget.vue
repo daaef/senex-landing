@@ -14,7 +14,22 @@
                   <div class="inner" />
                 </div>
               </div>
-              <div style="margin-bottom: 1em;" class="columns">
+
+              <div v-if="activeRates" class="rates-container">
+                <div>
+                  <span class="rate-label">BTC/USD: </span>
+                  <span class="amount has-text-weight-semibold">{{ activeRates.USD|formatMoney('USD') }}</span>
+                </div>
+                <div>
+                  <span class="rate-label">USD/NGN: </span>
+                  <span class="amount has-text-weight-semibold">{{ activeRates.USD_NGN }}</span>
+                </div>
+              </div>
+              <div v-else-if="isFetchingRates" class="rates-container">
+                fetching current rates...
+              </div>
+
+              <div style="margin-bottom: 0.5em;" class="columns">
                 <div class="field has-addons column">
                   <div class="control">
                     <a
@@ -38,15 +53,20 @@
                   </div>
                 </div>
               </div>
-              <div class="columns is-gapless is-mobile" style="margin-bottom: 2rem;">
-                <div class="column is-2 has-text-centered">
-                  <span class="icon" style="color: #c4c4c4; vertical-align: middle;">
-                    <i class="fas fa-exchange-alt" />
-                  </span>
-                </div>
-                <div class="column is-5">
-                  <div class="select">
-                    <select id="" v-model="currency" name="currency" class="currency-select">
+              <div style="margin-bottom: 0.5rem;">
+                <div class="field is-grouped">
+                  <p class="control has-text-centered">
+                    <span class="icon" style="color: #c4c4c4; vertical-align: center;">
+                      <i class="fas fa-exchange-alt" />
+                    </span>
+                  </p>
+                  <p class="control" /><div class="select">
+                    <select
+                      id=""
+                      v-model="currency"
+                      name="currency"
+                      class="currency-select"
+                    >
                       <option value="NGN">
                         NGN
                       </option>
@@ -55,21 +75,28 @@
                       </option>
                     </select>
                   </div>
-                </div>
-                <div class="column is-5">
-                  <div class="control" :class="{'is-loading': isFetchingRates}">
+                  </p>
+                  <p class="control is-expanded" :class="{'is-loading': isFetchingRates}">
                     <input
                       v-model="computedFiatAmount"
                       type="number"
                       class="input"
                       min="0"
                       step="any"
-                      style="background: #f4f4f4; color: #707070; border: none;"
+                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem;"
                     >
-                  </div>
+                  </p>
                 </div>
               </div>
+              <div
+                v-if="computedFiatAmountReversed"
+                class="has-text-right is-italic is-size-6"
+                style="margin-bottom: 1.5rem; color: #707070;"
+              >
+                {{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}
+              </div>
             </div>
+
             <div class="button-container">
               <button
                 class="button is-fullwidth trade-button is-medium"
@@ -126,13 +153,18 @@
 import _ from 'lodash'
 import FluidSwitch from './fluid-switch'
 import log from '~/logger'
+import formatMoney from '~/filters/format-money'
 
-const FETCH_RATES_INTERVAL = 1000
+const FETCH_RATES_INTERVAL = 1500
 const FETCH_RATES_ERR = 'Error fetching rates; try again later'
 
 export default {
   components: {
     FluidSwitch
+  },
+
+  filters: {
+    formatMoney
   },
 
   data() {
@@ -153,6 +185,14 @@ export default {
   computed: {
     hasActiveTrade() {
       return this.$store.getters['trade/isActiveTrade']
+    },
+
+    activeRates() {
+      if (!this.rates) {
+        return null
+      } else {
+        return this.rates[this.tradeType]
+      }
     },
 
     computedCryptoAmount: {
@@ -203,7 +243,7 @@ export default {
         if (!this.rates) {
           rv = 0
         } else {
-          const rate = this.rates[this.tradeType]
+          const rate = this.activeRates
           const cryptoAmount = this.cryptoAmount
           if (this.currency === 'USD') {
             rv = rate.USD * cryptoAmount
@@ -213,6 +253,30 @@ export default {
         }
         return rv === 0 ? 0 : rv.toFixed(2)
       }
+    },
+
+    computedFiatAmountReversed() {
+      if (this.fiatAmountIsDirty) {
+        return this.fiatAmount
+      }
+
+      if (this.fiatAmount == null) {
+        return null
+      }
+
+      let rv
+      if (!this.rates) {
+        rv = 0
+      } else {
+        const rate = this.activeRates
+        const cryptoAmount = this.cryptoAmount
+        if (this.currency === 'USD') {
+          rv = rate.NGN * cryptoAmount
+        } else {
+          rv = rate.USD * cryptoAmount
+        }
+      }
+      return rv === 0 ? 0 : rv.toFixed(2)
     },
 
     canSubmit() {
@@ -236,6 +300,10 @@ export default {
         this.fetchCryptoRates()
       }
     }
+  },
+
+  created() {
+    this.fetchCryptoRatesRequest()
   },
 
   methods: {
@@ -278,18 +346,21 @@ export default {
       this.tradeType = this.tradeType === 'buy' ? 'sell' : 'buy'
     },
 
+    async fetchCryptoRatesRequest() {
+      try {
+        this.isFetchingRates = true
+        const resp = await this.$axios.get('/rates/')
+        this.rates = resp.data
+      } catch (err) {
+        this.errorFetchRates = FETCH_RATES_ERR
+        this.isFetchingRates = false
+      } finally {
+        this.isFetchingRates = false
+      }
+    },
+
     fetchCryptoRates: _.debounce(function() {
-      this.isFetchingRates = true
-      this.$axios
-        .get('/rates/')
-        .then(resp => {
-          this.rates = resp.data
-          this.isFetchingRates = false
-        })
-        .catch(err => { // eslint-disable-line
-          this.errorFetchRates = FETCH_RATES_ERR
-          this.isFetchingRates = false
-        })
+      this.fetchCryptoRatesRequest()
     }, FETCH_RATES_INTERVAL),
 
     async doTrade() {
@@ -370,8 +441,8 @@ p.flutterwave-grp {
 }
 
 div.trade-box {
-  padding-bottom: 1em;
-  padding-top: 1.5em;
+  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.54);
   font-family: $font-open-sans;
   select {
@@ -391,7 +462,7 @@ div.trade-box {
 }
 
 div.trade-selector-container {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   margin-top: 1rem;
   text-align: center;
   display: flex;
@@ -405,6 +476,19 @@ div.trade-selector-container {
       width: 100%;
     }
   }
+}
+
+div.rates-container {
+  color: #707070;
+  display: flex;
+  border: 1px solid #d5d5d5;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  justify-content: space-around;
 }
 
 .empty-grid-bg {
