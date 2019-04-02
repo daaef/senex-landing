@@ -91,7 +91,7 @@
               <div
                 v-show="computedFiatAmountReversed"
                 class="has-text-right is-italic is-size-6"
-                style="margin-bottom: 1.5rem; color: #707070;"
+                style="margin-bottom: 1.5rem; color: #707070; font-size: 0.9rem;"
               >
                 {{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}
               </div>
