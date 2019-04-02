@@ -136,7 +136,7 @@
               </nuxt-link>
             </p>
             <p class="flutterwave-grp">
-              <span class="text">Payment powered by </span>
+              <span class="text">Payment by </span>
               <a href="https://flutterwave.com">
                 <span class="img"><img src="~assets/flutterwave.png" alt="Flutterwave icon" height="32" width="32" style="vertical-align: middle;"></span>
               </a>
