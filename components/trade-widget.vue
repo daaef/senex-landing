@@ -89,7 +89,7 @@
                 </div>
               </div>
               <div
-                v-if="computedFiatAmountReversed"
+                v-show="computedFiatAmountReversed"
                 class="has-text-right is-italic is-size-6"
                 style="margin-bottom: 1.5rem; color: #707070;"
               >

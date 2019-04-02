@@ -8,7 +8,7 @@
         </span>
       </p>
       <div class="columns is-centered content-wrapper">
-        <div class="column is-4 status-area" style="margin-bottom: 2rem;">
+        <div class="column is-4 status-area" style="margin-bottom: 1.5rem;">
           <div class="grey-header-area">
             <p class="status">
               <span v-if="tradeData.status === 'pending'">Pending</span>
@@ -81,7 +81,7 @@
             </p>
           </div>
         </div>
-        <div class="column is-4 message-area" style="margin-top: 2rem;">
+        <div class="column is-4 message-area" style="margin-top: 1.5rem;">
           <div class="title-area columns is-mobile is-gapless">
             <div class="column is-3">
               <img src="~/assets/chat-support-message.png" alt="">
