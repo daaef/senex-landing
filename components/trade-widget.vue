@@ -485,7 +485,7 @@ div.rates-container {
   border-radius: 12px;
   font-size: 0.85rem;
   padding: 0.5rem;
-  width: 95%;
+  width: 98%;
   margin: 0 auto;
   margin-bottom: 2rem;
   justify-content: space-around;

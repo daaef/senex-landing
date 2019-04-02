@@ -14,7 +14,7 @@
             <span v-if="tradeData.status === 'paid'">Paid</span>
             <span v-if="tradeData.status === 'kyc_passed'">ID Verification</span>
             <span v-if="tradeData.status === 'disbursed'">Disbursement</span>
-            <span v-if="tradeData.status === 'complete'">Complete</span>
+            <span v-if="tradeData.status === 'completed'">Complete</span>
           </p>
           <div class="progress-bar">
             <span
@@ -24,7 +24,7 @@
                 'percent-40': tradeData.status === 'paid',
                 'percent-60': tradeData.status === 'kyc_passed',
                 'percent-80': tradeData.status === 'disbursed',
-                'percent-100': tradeData.status === 'complete'
+                'percent-100': tradeData.status === 'completed'
               }"
             />
           </div>
@@ -35,11 +35,22 @@
             <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> {{ tradeData.cryptoAmount }}BTC
           </p>
           <p>
+            <span class="_title">Transaction amount</span>
+            <span class="_item">
+              {{ tradeData.fiatAmount|formatMoney('NGN') }}
+            </span>
+          </p>
+          <p v-if="tradeData.walletAddress">
             <span class="_title">BTC Address</span>
-            <span v-if="tradeData.walletAddress" class="_item">
+            <span class="_item">
               {{ tradeData.walletAddress }}
             </span>
-            <span v-else>nil</span>
+          </p>
+          <p v-else>
+            <span class="_title">Account Number</span>
+            <span class="_item">
+              {{ tradeData.accountNumber }}
+            </span>
           </p>
           <p>
             <span class="_title">Payment Status</span>
@@ -56,7 +67,7 @@
 
           <p class="date">
             <svg
-              width="80"
+              width="100"
               height="2"
               style="vertical-align: middle"
               viewBox="0 0 69 2"
@@ -65,7 +76,7 @@
             >
               <path d="M3.05176e-05 1H69" stroke="#0C5DB2" />
             </svg>
-            <span>{{ tradeData.created|prettydate(false) }}</span>
+            <span>{{ tradeData.created|prettydate(true) }}</span>
           </p>
         </div>
       </div>
@@ -109,14 +120,13 @@
           </div>
         </div>
 
-        <div class="send-input-container">
+        <form class="send-input-container">
           <div class="field is-grouped">
             <p class="control is-expanded">
               <input
                 v-model="messageText"
                 v-validate="'required'"
                 class="input"
-                :class="{ 'is-danger': errors.has('message text') }"
                 type="text"
                 name="message text"
                 placeholder="Type message"
@@ -132,7 +142,7 @@
               </button>
             </p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -140,6 +150,7 @@
 
 <script>
 import hd from 'human-date'
+import formatMoney from '~/filters/format-money'
 
 const _SEND_MESSAGE_ERROR_ = "Couldn't send message; try again"
 
@@ -159,6 +170,7 @@ export default {
   },
 
   filters: {
+    formatMoney,
     prettydate(dateStr, showTime = true) {
       return hd.prettyPrint(dateStr, { showTime })
     }
@@ -185,6 +197,7 @@ export default {
 
   methods: {
     async handleSendMessage() {
+      console.log(JSON.stringify(this.tradeData)) // eslint-disable-line
       const validated = await this.$validator.validateAll()
       if (validated) {
         try {
@@ -235,7 +248,7 @@ div.wrapper {
 }
 
 .content-wrapper {
-  $item-height: 290px;
+  $item-height: 350px;
   margin: 1rem 0;
   .status-area,
   .message-area {
@@ -348,7 +361,7 @@ div.wrapper {
       background: #ffffff;
       border-radius: 6px;
       padding: 0.2rem 0.1rem;
-      height: 65%;
+      height: 70%;
       width: 100%;
       margin: 0;
       overflow: auto;
@@ -360,6 +373,7 @@ div.wrapper {
         padding: 0.3rem;
         color: #4b4b4b;
         border-radius: 6px;
+        padding: 0.4rem;
         margin: 0.4rem 0;
       }
       .chat-sent {
@@ -367,8 +381,9 @@ div.wrapper {
         float: right;
         .time-info {
           font-size: 0.7rem;
-          margin-top: 0.65rem;
+          margin-top: 0.7rem;
           font-weight: 500;
+          padding-top: 0.8rem;
           float: right;
           .name {
             font-weight: normal;
@@ -380,7 +395,7 @@ div.wrapper {
         float: left;
         .time-info {
           font-size: 0.7rem;
-          margin-top: 0.65rem;
+          margin-top: 0.7rem;
           font-weight: 500;
           float: left;
           .name {
@@ -404,5 +419,9 @@ div.wrapper {
       }
     }
   }
+}
+
+.success {
+  color: #58c13d;
 }
 </style>

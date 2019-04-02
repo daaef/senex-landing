@@ -25,7 +25,7 @@
                       type="text"
                       name="trade id"
                       class="input is-rounded"
-                      placeholder="12345"
+                      placeholder="caJESHXlbaes"
                     >
                   </p>
                 </div>
@@ -135,6 +135,7 @@ export default {
       pin2: '',
       pin3: '',
       pin4: '',
+      tradeData: null,
 
       // This is used to determine which section of the UI to show.
       // Valid values are trackid | pinverification
@@ -160,7 +161,7 @@ export default {
       this.$validator.validateAll().then(async validated => {
         if (validated) {
           await this.getTrade()
-          if (this.trade) {
+          if (this.tradeData) {
             this.step = 'pinverification'
           }
         }
@@ -189,7 +190,7 @@ export default {
 
     handlePinSubmit() {
       const pin = `${this.pin1}${this.pin2}${this.pin3}${this.pin4}`
-      if ('' + this.trade.pin === pin) {
+      if ('' + this.tradeData.pin === pin) {
         this.$store.commit('trade/SET_TRACK_TRADE_ID', this.tradeId)
         this.$router.replace({
           path: '/track/verify',
