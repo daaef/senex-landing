@@ -256,10 +256,6 @@ export default {
     },
 
     computedFiatAmountReversed() {
-      if (this.fiatAmountIsDirty) {
-        return this.fiatAmount
-      }
-
       if (this.fiatAmount == null) {
         return null
       }
@@ -269,11 +265,11 @@ export default {
         rv = 0
       } else {
         const rate = this.activeRates
-        const cryptoAmount = this.cryptoAmount
+        const fiatAmount = this.fiatAmount
         if (this.currency === 'USD') {
-          rv = rate.NGN * cryptoAmount
+          rv = rate.USD_NGN * fiatAmount
         } else {
-          rv = rate.USD * cryptoAmount
+          rv = fiatAmount / rate.USD_NGN
         }
       }
       return rv === 0 ? 0 : rv.toFixed(2)
