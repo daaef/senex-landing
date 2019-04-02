@@ -88,12 +88,14 @@
                   </p>
                 </div>
               </div>
-              <div
-                v-show="computedFiatAmountReversed"
-                class="has-text-right is-italic is-size-6"
-                style="margin-bottom: 1.5rem; color: #707070; font-size: 0.9rem;"
-              >
-                {{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}
+              <div style="margin-bottom: 1.5rem;">
+                <div
+                  v-show="computedFiatAmountReversed"
+                  class="has-text-right is-size-6"
+                  style="color: #707070; font-size: 0.9rem;"
+                >
+                  {{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}
+                </div>
               </div>
             </div>
 
@@ -256,7 +258,7 @@ export default {
     },
 
     computedFiatAmountReversed() {
-      if (this.fiatAmount == null) {
+      if (this.computedFiatAmount == null) {
         return null
       }
 
@@ -265,7 +267,7 @@ export default {
         rv = 0
       } else {
         const rate = this.activeRates
-        const fiatAmount = this.fiatAmount
+        const fiatAmount = this.computedFiatAmount
         if (this.currency === 'USD') {
           rv = rate.USD_NGN * fiatAmount
         } else {
