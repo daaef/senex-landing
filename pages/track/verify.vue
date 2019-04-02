@@ -1,151 +1,153 @@
 <template>
-  <div class="container wrapper">
-    <p class="has-text-weight-semibold p-heading has-text-centered">
-      Trade Status
-      <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">
-        Track status of your pending trade
-      </span>
-    </p>
-    <div class="columns is-centered content-wrapper">
-      <div class="column is-4 status-area">
-        <div class="grey-header-area">
-          <p class="status">
-            <span v-if="tradeData.status === 'pending'">Pending</span>
-            <span v-if="tradeData.status === 'paid'">Paid</span>
-            <span v-if="tradeData.status === 'kyc_passed'">ID Verification</span>
-            <span v-if="tradeData.status === 'disbursed'">Disbursement</span>
-            <span v-if="tradeData.status === 'completed'">Complete</span>
-          </p>
-          <div class="progress-bar">
-            <span
-              class="percent"
-              :class="{
-                'percent-20': tradeData.status === 'pending',
-                'percent-40': tradeData.status === 'paid',
-                'percent-60': tradeData.status === 'kyc_passed',
-                'percent-80': tradeData.status === 'disbursed',
-                'percent-100': tradeData.status === 'completed'
-              }"
-            />
-          </div>
-        </div>
-        <div class="content">
-          <p class="brief">
-            {{ tradeData.firstName }} {{ tradeData.lastName }},
-            <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> {{ tradeData.cryptoAmount }}BTC
-          </p>
-          <p>
-            <span class="_title">Transaction amount</span>
-            <span class="_item">
-              {{ tradeData.fiatAmount|formatMoney('NGN') }}
-            </span>
-          </p>
-          <p v-if="tradeData.walletAddress">
-            <span class="_title">BTC Address</span>
-            <span class="_item">
-              {{ tradeData.walletAddress }}
-            </span>
-          </p>
-          <p v-else>
-            <span class="_title">Account Number</span>
-            <span class="_item">
-              {{ tradeData.accountNumber }}
-            </span>
-          </p>
-          <p>
-            <span class="_title">Payment Status</span>
-            <span
-              v-if="tradeData.status !== 'pending'"
-              class="_item"
-            >
-              Paid
-            </span>
-            <span v-else>
-              Pending
-            </span>
-          </p>
-
-          <p class="date">
-            <svg
-              width="100"
-              height="2"
-              style="vertical-align: middle"
-              viewBox="0 0 69 2"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M3.05176e-05 1H69" stroke="#0C5DB2" />
-            </svg>
-            <span>{{ tradeData.created|prettydate(true) }}</span>
-          </p>
-        </div>
-      </div>
-      <div class="column is-4 message-area">
-        <div class="title-area columns is-mobile is-gapless">
-          <div class="column is-3">
-            <img src="~/assets/chat-support-message.png" alt="">
-          </div>
-          <div class="column is-9">
-            <span class="text is-block">SenexPAY Support</span>
-            <span v-if="tradeData.status === 'pending'" class="status is-block">
-              Pending
-            </span>
-            <span v-else-if="tradeData.status === 'paid'" class="status is-block">
-              Paid
-            </span>
-            <span v-else-if="tradeData.status === 'completed'" class="status is-block success">
-              Completed
-            </span>
-            <span v-else-if="tradeData.status === 'disbursed'" class="status is-block">
-              Disbursed
-            </span>
-            <span v-else-if="tradeData.status === 'kyc_passed'">
-              KYC
-            </span>
-          </div>
-        </div>
-        <div class="chat-container">
-          <div
-            v-for="message in messages"
-            :key="message.id"
-            class="chat"
-            :class="{'chat-sent': !message.admin, 'chat-received': message.admin}"
-          >
-            {{ message.body }}
-            <p class="time-info">
-              <span v-if="!message.admin" class="name">You - </span>
-              <span v-else class="name">Admin - </span>
-              {{ message.created|prettydate }}
+  <section class="section">
+    <div class="container wrapper">
+      <p class="has-text-weight-semibold p-heading has-text-centered">
+        Trade Status
+        <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">
+          Track status of your pending trade
+        </span>
+      </p>
+      <div class="columns is-centered content-wrapper">
+        <div class="column is-4 status-area">
+          <div class="grey-header-area">
+            <p class="status">
+              <span v-if="tradeData.status === 'pending'">Pending</span>
+              <span v-if="tradeData.status === 'paid'">Paid</span>
+              <span v-if="tradeData.status === 'kyc_passed'">ID Verification</span>
+              <span v-if="tradeData.status === 'disbursed'">Disbursement</span>
+              <span v-if="tradeData.status === 'completed'">Complete</span>
             </p>
+            <div class="progress-bar">
+              <span
+                class="percent"
+                :class="{
+                  'percent-20': tradeData.status === 'pending',
+                  'percent-40': tradeData.status === 'paid',
+                  'percent-60': tradeData.status === 'kyc_passed',
+                  'percent-80': tradeData.status === 'disbursed',
+                  'percent-100': tradeData.status === 'completed'
+                }"
+              />
+            </div>
           </div>
-        </div>
-
-        <form class="send-input-container">
-          <div class="field is-grouped">
-            <p class="control is-expanded">
-              <input
-                v-model="messageText"
-                v-validate="'required'"
-                class="input"
-                type="text"
-                name="message text"
-                placeholder="Type message"
+          <div class="content">
+            <p class="brief">
+              {{ tradeData.firstName }} {{ tradeData.lastName }},
+              <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> {{ tradeData.cryptoAmount }}BTC
+            </p>
+            <p>
+              <span class="_title">Transaction amount</span>
+              <span class="_item">
+                {{ tradeData.fiatAmount|formatMoney('NGN') }}
+              </span>
+            </p>
+            <p v-if="tradeData.walletAddress">
+              <span class="_title">BTC Address</span>
+              <span class="_item">
+                {{ tradeData.walletAddress }}
+              </span>
+            </p>
+            <p v-else>
+              <span class="_title">Account Number</span>
+              <span class="_item">
+                {{ tradeData.accountNumber }}
+              </span>
+            </p>
+            <p>
+              <span class="_title">Payment Status</span>
+              <span
+                v-if="tradeData.status !== 'pending'"
+                class="_item"
               >
+                Paid
+              </span>
+              <span v-else>
+                Pending
+              </span>
             </p>
-            <p class="control">
-              <button
-                class="button is-info"
-                :class="{'is-loading': sendingMessage}"
-                @click.prevent="handleSendMessage"
+
+            <p class="date">
+              <svg
+                width="100"
+                height="2"
+                style="vertical-align: middle"
+                viewBox="0 0 69 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Send
-              </button>
+                <path d="M3.05176e-05 1H69" stroke="#0C5DB2" />
+              </svg>
+              <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
           </div>
-        </form>
+        </div>
+        <div class="column is-4 message-area">
+          <div class="title-area columns is-mobile is-gapless">
+            <div class="column is-3">
+              <img src="~/assets/chat-support-message.png" alt="">
+            </div>
+            <div class="column is-9">
+              <span class="text is-block">SenexPAY Support</span>
+              <span v-if="tradeData.status === 'pending'" class="status is-block">
+                Pending
+              </span>
+              <span v-else-if="tradeData.status === 'paid'" class="status is-block">
+                Paid
+              </span>
+              <span v-else-if="tradeData.status === 'completed'" class="status is-block success">
+                Completed
+              </span>
+              <span v-else-if="tradeData.status === 'disbursed'" class="status is-block">
+                Disbursed
+              </span>
+              <span v-else-if="tradeData.status === 'kyc_passed'">
+                KYC
+              </span>
+            </div>
+          </div>
+          <div class="chat-container">
+            <div
+              v-for="message in messages"
+              :key="message.id"
+              class="chat"
+              :class="{'chat-sent': !message.admin, 'chat-received': message.admin}"
+            >
+              {{ message.body }}
+              <p class="time-info">
+                <span v-if="!message.admin" class="name">You - </span>
+                <span v-else class="name">Admin - </span>
+                {{ message.created|prettydate }}
+              </p>
+            </div>
+          </div>
+
+          <form class="send-input-container">
+            <div class="field is-grouped">
+              <p class="control is-expanded">
+                <input
+                  v-model="messageText"
+                  v-validate="'required'"
+                  class="input"
+                  type="text"
+                  name="message text"
+                  placeholder="Type message"
+                >
+              </p>
+              <p class="control">
+                <button
+                  class="button is-info"
+                  :class="{'is-loading': sendingMessage}"
+                  @click.prevent="handleSendMessage"
+                >
+                  Send
+                </button>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
