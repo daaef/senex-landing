@@ -20,10 +20,6 @@
                   <span class="rate-label">BTC/USD: </span>
                   <span class="amount has-text-weight-semibold">{{ activeRates.USD|formatMoney('USD') }}</span>
                 </div>
-                <div>
-                  <span class="rate-label">USD/NGN: </span>
-                  <span class="amount has-text-weight-semibold">{{ activeRates.USD_NGN }}</span>
-                </div>
               </div>
               <div v-else-if="isFetchingRates" class="rates-container">
                 fetching current rates...
@@ -483,7 +479,7 @@ div.rates-container {
   border-radius: 12px;
   font-size: 0.85rem;
   padding: 0.5rem;
-  width: 98%;
+  width: 70%;
   margin: 0 auto;
   margin-bottom: 2rem;
   justify-content: space-around;
