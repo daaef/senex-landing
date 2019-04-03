@@ -23,7 +23,7 @@ export default {
     return {
       m: this.$props.minutes,
       s: 0,
-      active: false
+      active: true
     }
   },
 
