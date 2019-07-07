@@ -4,7 +4,7 @@
   "engines": {
     "node": "10.3.0"
   },
-  "description": "SenexPay cryptocurrency exchange platform",
+  "description": "SenexPAY cryptocurrency exchange platform",
   "author": "cantell",
   "private": true,
   "scripts": {
@@ -21,6 +21,8 @@
     "@chenfengyuan/vue-qrcode": "^1.0.0",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/bulma": "^1.2.1",
+    "@nuxtjs/google-analytics": "^2.2.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/recaptcha": "^0.2.2",
     "awesome-phonenumber": "^2.6.0",
     "consola": "^2.5.7",
@@ -30,6 +32,7 @@
     "lodash": "^4.17.11",
     "nuxt": "^2.4.0",
     "nuxt-device-detect": "^1.1.4",
+    "nuxt-facebook-pixel-module": "^1.3.0",
     "nuxt-validate": "^0.1.2",
     "v-clipboard": "^2.2.1",
     "v-money": "^0.8.1",
