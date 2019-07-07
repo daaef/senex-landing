@@ -2,7 +2,7 @@
   <section>
     <div class="">
       <div class="columns">
-        <div class="column is-9 widget-column">
+        <div class="column is-9-desktop widget-column">
           <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
             <div class="box trade-box">
               <div class="has-text-centered trade-selector-container">
@@ -56,22 +56,26 @@
                       <i class="fas fa-exchange-alt" />
                     </span>
                   </p>
-                  <p class="control" /><div class="select">
-                    <select
-                      id=""
-                      v-model="currency"
-                      name="currency"
-                      class="currency-select"
-                    >
-                      <option value="NGN">
-                        NGN
-                      </option>
-                      <option value="USD">
-                        USD
-                      </option>
-                    </select>
+                  <div class="control has-icons-left">
+                    <div class="select">
+                      <select
+                        id=""
+                        v-model="currency"
+                        name="currency"
+                        class="currency-select"
+                      >
+                        <option value="NGN">
+                          NGN
+                        </option>
+                        <option value="USD">
+                          USD
+                        </option>
+                      </select>
+                      <span class="icon is-large is-left">
+                        <img :src="computedFlags" alt="flag" width="20">
+                      </span>
+                    </div>
                   </div>
-                  </p>
                   <p class="control is-expanded" :class="{'is-loading': isFetchingRates}">
                     <input
                       v-model="computedFiatAmount"
@@ -134,10 +138,9 @@
               </nuxt-link>
             </p>
             <p class="flutterwave-grp">
-              <span class="text">Payment by </span>
-              <a href="https://flutterwave.com">
-                <span class="img"><img src="~assets/flutterwave.png" alt="Flutterwave icon" height="32" width="32" style="vertical-align: middle;"></span>
-              </a>
+              <span class="text">Pay with: </span>
+              <span class="cc-icon"><i class="fab fa-cc-mastercard fa-3x" /></span>
+              <span class="cc-icon"><i class="fab fa-cc-visa fa-3x" /></span>
             </p>
           </div>
           <div class="empty-grid-bg" />
@@ -191,6 +194,10 @@ export default {
       } else {
         return this.rates[this.tradeType]
       }
+    },
+
+    computedFlags() {
+      return this.currency === 'NGN' ? 'nigeria.png' : 'america.png'
     },
 
     computedCryptoAmount: {
@@ -414,8 +421,8 @@ div.button-container {
 }
 
 div.track-trade {
-  color: #d5d5d5;
-  font-size: 0.9em;
+  color: #c0c0c0;
+  font-size: 0.95rem;
   font-family: $font-roboto;
   a {
     font-weight: bold;
@@ -426,18 +433,22 @@ p.flutterwave-grp {
   margin-top: 2.5em;
 
   .text {
-    vertical-align: text-bottom;
+    vertical-align: middle;
   }
 
   .img {
     vertical-align: middle;
+  }
+
+  .cc-icon {
+    color: #0c5db2;
   }
 }
 
 div.trade-box {
   padding-bottom: 0.5rem;
   padding-top: 1.5rem;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.54);
+  box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.1);
   font-family: $font-open-sans;
   select {
     color: #707070;
@@ -451,6 +462,10 @@ div.trade-box {
   input.blue-border,
   select.blue-border {
     border: 1px solid #1b70cf;
+    color: #1b70cf;
+  }
+
+  .amount {
     color: #1b70cf;
   }
 }

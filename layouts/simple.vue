@@ -25,6 +25,7 @@ export default {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-image: url('~assets/bg-pattern.png');
   .content {
     flex: 1;
   }

@@ -4,7 +4,7 @@
       <div class="level is-size-6 level-sm-margin" :class="{'is-size-7': $device.isMobile}">
         <div class="level-left">
           <div class="level-item">
-            <span>&copy; 2019 - SenexPAY</span>
+            <span>&copy; {{ new Date().getFullYear() }} - SenexPAY LLC</span>
           </div>
         </div>
         <contact-form-modal />
