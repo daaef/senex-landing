@@ -30,9 +30,9 @@
             </p>
             <span>_____</span>
             <p class="social-handle">
-              <span><a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x fb" /></a></span>
-              <span><a href="https://instagram.com"><i class="fab fa-instagram fa-2x in" /></a></span>
-              <span><a href="https://twitter.com"><i class="fab fa-twitter-square fa-2x tw" /></a></span>
+              <span><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-2x fb" /></a></span>
+              <span><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x in" /></a></span>
+              <span><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x tw" /></a></span>
             </p>
           </div>
           <!-- <div class="image-illustration-container">
@@ -80,6 +80,7 @@ export default {
 .get-started {
   font-weight: bold;
   color: #0c5db2;
+  cursor: pointer;
 }
 </style>
 
@@ -128,14 +129,7 @@ div.info {
     }
 
     .in {
-      color: radial-gradient(
-        circle at 30% 107%,
-        #fdf497 0%,
-        #fdf497 5%,
-        #fd5949 45%,
-        #d6249f 60%,
-        #285aeb 90%
-      );
+      color: #fd5949;
     }
 
     .tw {

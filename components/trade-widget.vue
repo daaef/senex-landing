@@ -138,7 +138,7 @@
               </nuxt-link>
             </p>
             <p class="flutterwave-grp">
-              <span class="text">Pay with: </span>
+              <span class="text">Pay with: </span><br>
               <span class="cc-icon"><i class="fab fa-cc-mastercard fa-3x" /></span>
               <span class="cc-icon"><i class="fab fa-cc-visa fa-3x" /></span>
             </p>
@@ -421,7 +421,7 @@ div.button-container {
 }
 
 div.track-trade {
-  color: #c0c0c0;
+  color: #adadad;
   font-size: 0.95rem;
   font-family: $font-roboto;
   a {
