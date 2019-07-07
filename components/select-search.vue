@@ -207,12 +207,12 @@ export default {
 </script>
 
 <style lang="sass">
-// Import bulma stuff
+
 @import '~bulma/sass/utilities/_all'
 @import "~bulma/sass/elements/button"
-@import "~bulma/sass/elements/form"
+@import "~bulma/sass/form/_all"
 
-//
+
 .bulma-select
   &__container
     @extend .select

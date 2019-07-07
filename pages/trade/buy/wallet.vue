@@ -58,9 +58,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import log from '~/logger'
 import Trader from '~/components/trade/trader.vue'
-import { mapState } from 'vuex'
 
 const _CREATE_TRADE_ERROR_ = 'Something bad happened; try again'
 

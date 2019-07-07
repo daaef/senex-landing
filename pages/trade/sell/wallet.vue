@@ -74,10 +74,10 @@
 </template>
 
 <script>
-import logger from '~/logger'
 import { mapState } from 'vuex'
-import Trader from '~/components/trade/trader.vue'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
+import logger from '~/logger'
+import Trader from '~/components/trade/trader.vue'
 import MinuteCountdown from '~/components/minute-countdown.vue'
 
 const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min */

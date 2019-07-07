@@ -93,10 +93,10 @@
 </template>
 
 <script>
-import log from '~/logger'
 import { Validator } from 'vee-validate'
 import PhoneNumber from 'awesome-phonenumber'
 import { mapState } from 'vuex'
+import log from '~/logger'
 import Trader from '~/components/trade/trader.vue'
 
 const phoneNumber = {
