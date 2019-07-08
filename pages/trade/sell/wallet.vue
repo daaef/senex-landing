@@ -67,7 +67,7 @@
       <button
         class="button"
         :class="{'is-loading': verifying}"
-        :disabled="transactions.length === 0 || isOtc"
+        :disabled="isOtc ? !isOtc : transactions.length === 0"
         @click="handleRequestTrade"
       >
         Request trade

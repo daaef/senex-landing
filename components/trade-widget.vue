@@ -38,7 +38,7 @@
                   </div>
                   <div class="control is-expanded">
                     <input
-                      v-model="computedCryptoAmount"
+                      v-model.number="computedCryptoAmount"
                       type="number"
                       class="input blue-border"
                       :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
@@ -78,7 +78,7 @@
                   </div>
                   <p class="control is-expanded" :class="{'is-loading': isFetchingRates}">
                     <input
-                      v-model="computedFiatAmount"
+                      v-model.number="computedFiatAmount"
                       type="number"
                       class="input"
                       min="0"
@@ -224,7 +224,7 @@ export default {
             rv = fiatAmount / rate.NGN
           }
         }
-        return rv === 0 ? 0 : rv.toFixed(8)
+        return rv === 0 ? 0 : +rv.toFixed(8)
       }
     },
 
@@ -256,7 +256,7 @@ export default {
             rv = rate.NGN * cryptoAmount
           }
         }
-        return rv === 0 ? 0 : rv.toFixed(2)
+        return rv === 0 ? 0 : +rv.toFixed(2)
       }
     },
 
@@ -277,7 +277,7 @@ export default {
           rv = fiatAmount / rate.USD_NGN
         }
       }
-      return rv === 0 ? 0 : rv.toFixed(2)
+      return rv === 0 ? 0 : +rv.toFixed(2)
     },
 
     canSubmit() {
@@ -408,6 +408,13 @@ select:focus {
   outline: none;
   outline-style: none;
   box-shadow: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield; /* Firefox */
+  margin: 0;
 }
 
 div.button-container {

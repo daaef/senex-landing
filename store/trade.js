@@ -100,7 +100,7 @@ export const mutations = {
       ...(state.create.metadata || {}),
       ...metadata
     }
-    state.create.isOtc = metadata.isOtc
+    state.create.isOtc = metadata.isOtc === undefined ? false : metadata.isOtc
     state.create.otcInstructions =
       metadata.otcInstructions === undefined ? null : metadata.otcInstructions
   },

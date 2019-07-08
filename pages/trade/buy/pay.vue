@@ -10,7 +10,7 @@
       <div v-else-if="verified" class="has-text-centered">
         Transaction verification successful
       </div>
-      <div v-else class="has-text-centered" style="margin-top: 4rem;">
+      <div v-else class="" style="margin-top: 4rem;">
         <p>
           You will be required to pay the sum of
           {{ amount|formatMoney('NGN') }} using an accepted payment method.
@@ -149,7 +149,7 @@ export default {
     }
   },
   mounted() {
-    this.isOtc()
+    // this.isOtc()
   },
   methods: {
     payWithRave() {

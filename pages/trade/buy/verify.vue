@@ -9,7 +9,8 @@
           Upload ID
         </div>
         <div class="id-section">
-          <img src="~assets/images/id-placeholder.png" alt="" class="upload-id">
+          <!-- <img src="~assets/images/id-placeholder.png" alt="" class="upload-id"> -->
+          <i class="fas fa-id-card fa-5x" style="padding-top:10px"></i>
           <div class="widget-grp">
             <input
               ref="idCardVer"
@@ -40,7 +41,8 @@
           Upload Selfie
         </div>
         <div class="selfie-section">
-          <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie">
+          <!-- <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie"> -->
+          <i class="fas fa-camera-retro fa-5x" style="padding-top:10px"></i>
           <div class="widget-grp">
             <input
               ref="selfieVer"
@@ -79,7 +81,7 @@
     <template slot="button">
       <button
         class="button"
-        :class="{'is-loading': loading}"
+        :class="{'disabled': loading}"
         @click="handleSubmit"
       >
         Request Trade
@@ -124,7 +126,7 @@ export default {
 
   filters: {
     formatFilename(filename) {
-      return truncate(filename, { length: 7 })
+      return truncate(filename, { length: 12 })
     }
   },
 
@@ -242,11 +244,7 @@ export default {
           selfieWithId: this.selfie.url
         }
         this.loading = true
-        await this.$axios.post(`/trade/${this.tradeId}/kyc/`, requestBody, {
-          headers: {
-            'content-type': 'application/x-www-form-urlencoded'
-          }
-        })
+        await this.$axios.post(`/trade/${this.tradeId}/kyc/`, requestBody)
         this.requestTrade()
       } catch (err) {
         this.$swal({
