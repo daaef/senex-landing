@@ -3,7 +3,7 @@
     <template slot="title">
       Payment
     </template>
-    <template slot="content">
+    <template v-if="isOtc == false" slot="content">
       <div v-if="verifying" class="has-text-centered">
         Verifying your payment; please wait...
       </div>
@@ -37,6 +37,9 @@
           />
         </p>
       </div>
+    </template>
+    <template v-else slot="content">
+      <div v-html="$store.state.trade.create.otcInstructions" />
     </template>
     <template slot="button">
       <button
@@ -123,6 +126,16 @@ export default {
       }
     },
 
+    isOtc() {
+      const vm = this
+      const otc = this.$store.state.trade.create.isOtc
+      if (otc) {
+        vm.verifying = false
+        vm.verified = true
+      }
+      return otc
+    },
+
     tradeId() {
       return this.$store.state.trade.create.metadata.id
     },
@@ -135,7 +148,9 @@ export default {
       return 20
     }
   },
-
+  mounted() {
+    this.isOtc()
+  },
   methods: {
     payWithRave() {
       const vm = this

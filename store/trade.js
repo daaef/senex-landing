@@ -30,6 +30,9 @@ const getDefaultCreateDataStructure = () => ({
     accountName: ''
   },
 
+  isOtc: false,
+  otcInstructions: null,
+
   metadata: {},
 
   paymentDone: false
@@ -97,6 +100,9 @@ export const mutations = {
       ...(state.create.metadata || {}),
       ...metadata
     }
+    state.create.isOtc = metadata.isOtc
+    state.create.otcInstructions =
+      metadata.otcInstructions === undefined ? null : metadata.otcInstructions
   },
 
   [mutationTypes.SET_TRACK_TRADE_ID](state, tradeId) {

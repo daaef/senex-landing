@@ -96,7 +96,7 @@ import { mapState } from 'vuex'
 import { truncate } from 'lodash'
 import Trader from '~/components/trade/trader.vue'
 
-const _TRADE_VERIFY_AMOUNT_CONDITION_ = 1000.0 // in dollars
+const _TRADE_VERIFY_AMOUNT_CONDITION_ = 250.0 // in dollars
 const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
 const _STR_REQUIRED_FIELDS_ = 'You must upload both a selfie & an identity'
 const _ERR_KYC_UPDATE_ = 'Unable to update; try again'

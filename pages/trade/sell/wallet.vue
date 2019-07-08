@@ -3,7 +3,7 @@
     <template slot="title">
       Transfer BTC
     </template>
-    <template slot="content" class="wallet_deposit">
+    <template v-if="isOtc == false" slot="content" class="wallet_deposit">
       <div class="wallet_deposit">
         <p class="desc-text">
           Send {{ cryptoAmount }} BTC to the BTC address Below
@@ -60,11 +60,14 @@
         </div>
       </div>
     </template>
+    <template v-else slot="content">
+      <div v-html="$store.state.trade.create.otcInstructions" />
+    </template>
     <template slot="button">
       <button
         class="button"
         :class="{'is-loading': verifying}"
-        :disabled="transactions.length === 0"
+        :disabled="transactions.length === 0 || isOtc"
         @click="handleRequestTrade"
       >
         Request trade
@@ -126,6 +129,15 @@ export default {
 
     tradeTTL() {
       return 20
+    },
+
+    isOtc() {
+      const vm = this
+      const otc = this.$store.state.trade.create.isOtc
+      if (otc) {
+        vm.verifying = false
+      }
+      return otc
     },
 
     isActive() {

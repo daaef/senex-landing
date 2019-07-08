@@ -9,7 +9,7 @@
         <div class="control">
           <input
             v-model="address"
-            v-validate="'required'"
+            v-validate="'required|alpha_num|max:36'"
             type="text"
             placeholder="Paste here"
             name="wallet address"
