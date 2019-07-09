@@ -10,7 +10,7 @@
         </div>
         <div class="id-section">
           <!-- <img src="~assets/images/id-placeholder.png" alt="" class="upload-id"> -->
-          <i class="fas fa-id-card fa-5x" style="padding-top:10px"></i>
+          <i class="fas fa-id-card fa-5x" style="padding-top:10px" />
           <div class="widget-grp">
             <input
               ref="idCardVer"
@@ -42,7 +42,7 @@
         </div>
         <div class="selfie-section">
           <!-- <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie"> -->
-          <i class="fas fa-camera-retro fa-5x" style="padding-top:10px"></i>
+          <i class="fas fa-camera-retro fa-5x" style="padding-top:10px" />
           <div class="widget-grp">
             <input
               ref="selfieVer"
@@ -264,6 +264,7 @@ export default {
     requestTrade() {
       const self = this
       const onClose = () => {
+        self.$store.commit('trade/SET_TRACK_TRADE_ID', this.tradeId)
         self.$store.commit('trade/RESET_CREATE_TRADE')
         self.$router.replace({
           path: '/track'

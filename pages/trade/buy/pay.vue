@@ -32,6 +32,7 @@
         <p class="is-size-6 has-font-weight-bold" style="margin-top: 2rem;">
           This trade is valid till
           <minute-countdown
+            ref="countdownTimer"
             :minutes="tradeTTL"
             @timer-elapsed="handleTimerElapsed"
           />
@@ -204,6 +205,7 @@ export default {
         if (verificationResp.data.status === 'successful') {
           this.verified = true
           this.$store.commit('trade/SET_PAYMENT_DONE', true)
+          this.$refs.countdownTimer.stop()
         } else {
           this.$swal({
             title: '',

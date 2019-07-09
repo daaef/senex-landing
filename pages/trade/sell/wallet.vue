@@ -4,9 +4,9 @@
       Transfer BTC
     </template>
     <template v-if="isOtc == false" slot="content" class="wallet_deposit">
-      <div class="wallet_deposit">
+      <div v-if="receiveAddress" class="wallet_deposit">
         <p class="desc-text">
-          Send {{ cryptoAmount }} BTC to the BTC address Below
+          Send {{ cryptoAmount }} BTC to the wallet address below
         </p>
         <div class="columns address-clipboard-wrapper is-mobile">
           <div class="column is-8 address-wrapper">
@@ -19,7 +19,7 @@
             v-clipboard:success="toggleCopyText"
             class="column is-2 clipboard-wrapper"
           >
-            {{ copyText }}
+            {{ copyText }} <i class="fas fa-copy" />
           </a>
         </div>
         <div class="qrcode-wrapper">
@@ -32,10 +32,11 @@
           </p>
           <p class="text-wrapper">
             <span class="text is-block">
-              Scan wallet address directly.
+              Scan wallet address directly OR
             </span>
             <a href="" @click.prevent="downloadQrCode">
               <span class="icon is-block">
+                Download QR_Code.
                 <i class="fas fa-download" />
               </span>
             </a>
@@ -59,9 +60,36 @@
           <p />
         </div>
       </div>
+      <div v-else class="wallet_deposit">
+        <h4>Please read carefully</h4>
+        <p class="help is-danger">
+          <i class="fas fa-exclamation-circle" /> 
+          You will be required to deposit {{ cryptoAmount }} BTC into an address that will be generated for you by the system. 
+          Do make sure you have this amount and more in your wallet to cover for network fees. 
+          You only have 20 mins to make payment this for transaction once an address is generated.
+        </p>
+        <div>
+          <label class="checkbox">
+            <input v-model="activeGenerate" type="checkbox">
+            I am ready to generate address for payment
+          </label>
+          <br>
+          <button 
+            class="button is-primary is-rounded" 
+            :class="{'is-loading': addressing}" 
+            :disabled="!activeGenerate" 
+            @click="getAddress"
+          >
+            <span class="icon">
+              <i class="fas fa-qrcode" />
+            </span>
+            <span>Generate</span>
+          </button>
+        </div>
+      </div>
     </template>
-    <template v-else slot="content">
-      <div v-html="$store.state.trade.create.otcInstructions" />
+    <template v-else slot="content" class="wallet_deposit">
+      <div class="wallet_deposit" v-html="$store.state.trade.create.otcInstructions" />
     </template>
     <template slot="button">
       <button
@@ -84,6 +112,8 @@ import Trader from '~/components/trade/trader.vue'
 import MinuteCountdown from '~/components/minute-countdown.vue'
 
 const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min */
+const _STR_CANNOT_ADDRESS_ =
+  'Failed to generate address, please try again after some time'
 const _STR_CANNOT_VERIFY_ = "Couldn't verify trade. retrying..."
 const _STR_TRADE_REQUESTED_ = 'Trade request successful.'
 
@@ -111,7 +141,10 @@ export default {
       verifying: false,
       checkTradeIntervalTimer: null,
       copyText: 'copy',
-      timeoutId: null
+      timeoutId: null,
+      activeGenerate: false,
+      addressing: false,
+      rAdd: ''
     }
   },
 
@@ -119,12 +152,13 @@ export default {
     ...mapState({
       cryptoAmount: state => state.trade.create.metadata.cryptoAmount,
       fiatAmount: state => state.trade.create.metadata.fiatAmount,
-      tradeId: state => state.trade.create.metadata.id,
+      tradeId: state =>
+        state.trade.create.metadata.id || localStorage.getItem('trade'),
       pin: state => state.trade.create.metadata.pin,
       transactions: state => state.trade.create.metadata.transactions || [],
       tradeStatus: state => state.trade.create.metadata.status,
       expires: state => state.trade.create.metadata.expires,
-      receiveAddress: state => state.trade.create.metadata.receiveAddress
+      receiveAddress: state => state.trade.create.receiveAddress
     }),
 
     tradeTTL() {
@@ -154,10 +188,35 @@ export default {
   },
 
   created() {
-    this.pollUntil()
+    // this.pollUntil()
   },
 
   methods: {
+    async getAddress() {
+      this.addressing = true
+      try {
+        const addr = await this.$axios.get('/get_address/', {
+          params: { tradeId: this.tradeId }
+        })
+        logger.debug(`[sell/wallet] resp data: ${JSON.stringify(addr.data)}`)
+        this.$store.commit('trade/UPDATE_RECEIVE_ADDRESS', addr.data.address)
+        this.rAdd = addr.data
+        this.pollUntil()
+      } catch (err) {
+        this.$swal({
+          title: 'Error:',
+          type: 'error',
+          position: 'top-end',
+          text: _STR_CANNOT_ADDRESS_,
+          timer: 9 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } finally {
+        this.addressing = false
+      }
+    },
+
     async pollUntil() {
       if (!this.isActive) {
         if (this.timeoutId) {
@@ -230,6 +289,7 @@ export default {
     handleRequestTrade() {
       const self = this
       const onClose = () => {
+        self.$store.commit('trade/SET_TRACK_TRADE_ID', this.tradeId)
         self.$store.commit('trade/RESET_CREATE_TRADE')
         this.$refs.countdownTimer.stop()
 

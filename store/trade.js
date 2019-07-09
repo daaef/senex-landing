@@ -30,6 +30,8 @@ const getDefaultCreateDataStructure = () => ({
     accountName: ''
   },
 
+  receiveAddress: '',
+
   isOtc: false,
   otcInstructions: null,
 
@@ -53,6 +55,7 @@ export const mutationTypes = {
   UPDATE_PERSONAL_INFO: 'UPDATE_PERSONAL_INFO',
   UPDATE_WALLET_INFO: 'UPDATE_WALLET_INFO',
   UPDATE_BANK_DETAILS: 'UPDATE_BANK_DETAILS',
+  UPDATE_RECEIVE_ADDRESS: 'UPDATE_RECEIVE_ADDRESS',
   UPDATE_PAYMENT: 'UPDATE_PAYMENT',
   START_TRADE: 'START_TRADE',
   SET_BANK_LIST: 'SET_BANK_LIST',
@@ -68,12 +71,16 @@ export const mutations = {
     state.create.personalInformation[opts.prop] = opts.value
   },
 
+  [mutationTypes.UPDATE_WALLET_INFO](state, opts) {
+    state.create.walletInfo[opts.prop] = opts.value
+  },
+
   [mutationTypes.UPDATE_BANK_DETAILS](state, opts) {
     state.create.bankDetails[opts.prop] = opts.value
   },
 
-  [mutationTypes.UPDATE_WALLET_INFO](state, opts) {
-    state.create.walletInfo[opts.prop] = opts.value
+  [mutationTypes.UPDATE_RECEIVE_ADDRESS](state, opts) {
+    state.create.receiveAddress = opts
   },
 
   [mutationTypes.UPDATE_PAYMENT](state, opts) {
@@ -96,13 +103,19 @@ export const mutations = {
   },
 
   [mutationTypes.SET_TRADE_METADATA](state, metadata) {
-    state.create.metadata = {
-      ...(state.create.metadata || {}),
-      ...metadata
+    if (metadata.hasOwnProperty('otcInstructions')) {
+      state.create.metadata = {
+        ...(state.create.metadata || {}),
+        ...metadata.trade
+      }
+      state.create.isOtc = metadata.trade.isOtc
+      state.create.otcInstructions = metadata.otcInstructions
+    } else {
+      state.create.metadata = {
+        ...(state.create.metadata || {}),
+        ...metadata
+      }
     }
-    state.create.isOtc = metadata.isOtc === undefined ? false : metadata.isOtc
-    state.create.otcInstructions =
-      metadata.otcInstructions === undefined ? null : metadata.otcInstructions
   },
 
   [mutationTypes.SET_TRACK_TRADE_ID](state, tradeId) {

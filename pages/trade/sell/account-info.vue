@@ -7,10 +7,12 @@
       <div class="field">
         <select-search
           v-model="selectedBank"
+          v-validate="'required'"
           label="Name"
           placeholder="Select your bank"
           :search="true"
           :options="filteredBanks"
+          name="bank"
           @type="setBankSearchString"
         />
 
@@ -37,17 +39,23 @@
       </div>
       <div class="field">
         <label for="" class="label">Account Name</label>
-        <div class="control">
+        <div 
+          class="control"
+          :class="{ 'is-loading': fetching }"
+        >
           <input
-            v-model="bankAccountName"
             v-validate="'required'"
+            :value="details.accountName"
             type="text"
             class="input"
             name="account name"
-            placeholder="Bruce"
-            readonly
+            placeholder="Bruce Wayne"
+            disabled
           >
         </div>
+        <p class="help is-danger">
+          <i class="fas fa-exclamation-circle" /> Be sure to use a bank account with the name <b>{{ `${info.firstName.toUpperCase()} ${info.lastName.toUpperCase()}` }}</b> to avoid issues with payout.
+        </p>
       </div>
 
       <div class="field">
@@ -72,6 +80,7 @@
       <button
         class="button"
         :class="{'is-loading': loading}"
+        :disabled="!proceed"
         @click="handleRequestTrade"
       >
         Proceed to Payment
@@ -83,11 +92,13 @@
 <script>
 import _ from 'lodash'
 import { mapState } from 'vuex'
+import { mapFields } from 'vee-validate'
 import logger from '~/logger'
 import Trader from '~/components/trade/trader.vue'
 import SelectSearch from '~/components/select-search.vue'
 
 const _ERR_CREATE_TRADE_ = 'Something bad happened; try again'
+const _ERR_FETCH_ACCOUNT_ = 'Unable to resolve account'
 
 export default {
   layout: 'simple',
@@ -112,7 +123,9 @@ export default {
       loading: false,
       selectedBank: null,
       bankSearchString: '',
-      showErrors: false
+      showErrors: false,
+      fetching: false,
+      proceed: false
     }
   },
 
@@ -145,16 +158,20 @@ export default {
       banks: state => state.trade.banks
     }),
 
-    bankAccountName: {
-      get() {
-        return `${this.info.firstName} ${this.info.lastName}`
-      },
-      set(value) {
-        this.$store.commit('trade/UPDATE_BANK_DETAILS', {
-          prop: 'accountName',
-          value
-        })
+    ...mapFields({
+      acctNo: 'account number',
+      myBank: 'bank'
+    }),
+
+    validateBankAccountName() {
+      let ans = false
+      if (this.myBank.valid && this.acctNo.valid) {
+        this.accountVerification()
+        ans = true
+      } else {
+        ans = false
       }
+      return ans
     },
 
     bankAccountNumber: {
@@ -210,17 +227,56 @@ export default {
     })
     store.commit('trade/SET_BANK_LIST', sortedBanks)
   },
-
+  /*
   created() {
     this.$store.commit('trade/UPDATE_BANK_DETAILS', {
       prop: 'accountName',
-      value: this.bankAccountName
+      value: `${this.info.firstName} ${this.info.lastName}`
     })
   },
-
+  */
   methods: {
     setBankSearchString(text) {
       this.bankSearchString = text
+    },
+
+    async accountVerification() {
+      this.fetching = true
+      try {
+        const resp = await this.$axios.post(
+          `${process.env.FLW_BASE_URL}/flwv3-pug/getpaidx/api/resolve_account`,
+          {
+            recipientaccount: this.details.accountNumber,
+            destbankcode: this.details.bankCode,
+            PBFPubKey: process.env.FLW_PUB_KEY
+          }
+        )
+        await this.$store.commit('trade/UPDATE_BANK_DETAILS', {
+          prop: 'accountName',
+          value: resp.data.data.data.accountname
+        })
+        const respName = resp.data.data.data.accountname
+        this.proceed =
+          respName.includes(this.info.firstName.toUpperCase()) &&
+          respName.includes(this.info.lastName.toUpperCase())
+      } catch (error) {
+        this.proceed = false
+        await this.$store.commit('trade/UPDATE_BANK_DETAILS', {
+          prop: 'accountName',
+          value: 'INVALID ACCOUNT'
+        })
+        this.$swal({
+          title: 'Error:',
+          type: 'error',
+          position: 'top-end',
+          text: _ERR_FETCH_ACCOUNT_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } finally {
+        this.fetching = false
+      }
     },
 
     handleRequestTrade() {
@@ -283,8 +339,8 @@ export default {
           `[sell/account-info] resp data: ${JSON.stringify(resp.data)}`
         )
 
-        const trade = resp.data.trade
-        trade.receiveAddress = resp.data.receiveAddress
+        const trade = resp.data
+        localStorage.setItem('trade', trade.id)
         this.$store.commit('trade/SET_TRADE_METADATA', trade)
         this.$router.replace({
           path: '/trade/sell/wallet'

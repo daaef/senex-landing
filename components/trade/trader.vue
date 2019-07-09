@@ -59,7 +59,7 @@
                   </div>
                 </div>
 
-                <div class="column is-4 help">
+                <div class="column is-3 help">
                   <a href="" class="tooltip-a" @click.prevent="showHelpText = !showHelpText">
                     <img
                       src="~assets/helptext-tooltip.png"
