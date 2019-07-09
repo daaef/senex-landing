@@ -13,9 +13,10 @@
             <p class="status">
               <span v-if="tradeData.status === 'pending'">Pending</span>
               <span v-if="tradeData.status === 'paid'">Paid</span>
-              <span v-if="tradeData.status === 'kyc_passed'">ID Verification</span>
-              <span v-if="tradeData.status === 'disbursed'">Disbursement</span>
+              <span v-if="tradeData.status === 'kyc_passed'">KYC Approved</span>
+              <span v-if="tradeData.status === 'disbursed'">Disbursed</span>
               <span v-if="tradeData.status === 'completed'">Complete</span>
+              <span v-if="tradeData.status === 'expired'">Expired</span>
             </p>
             <div class="progress-bar">
               <span
@@ -25,7 +26,8 @@
                   'percent-40': tradeData.status === 'paid',
                   'percent-60': tradeData.status === 'kyc_passed',
                   'percent-80': tradeData.status === 'disbursed',
-                  'percent-100': tradeData.status === 'completed'
+                  'percent-100': tradeData.status === 'completed',
+                  'percent-101': tradeData.status === 'expired'
                 }"
               />
             </div>
@@ -33,36 +35,33 @@
           <div class="content">
             <p class="brief">
               {{ tradeData.firstName }} {{ tradeData.lastName }},
-              <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> {{ tradeData.cryptoAmount }}BTC
+              <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> <b>{{ tradeData.cryptoAmount }}</b>BTC
             </p>
             <p>
-              <span class="_title">Transaction amount</span>
+              <span class="_title">{{ tradeData.type == 'buy' ? 'We Receive' : 'Your are Paid' }}</span>
               <span class="_item">
-                {{ tradeData.fiatAmount|formatMoney('NGN') }}
+                <b>{{ tradeData.fiatAmount|formatMoney('NGN') }}</b>
               </span>
             </p>
             <p v-if="tradeData.walletAddress">
-              <span class="_title">BTC Address</span>
+              <span class="_title">Payout to Wallet</span>
               <span class="_item">
                 {{ tradeData.walletAddress }}
               </span>
             </p>
             <p v-else>
-              <span class="_title">Account Number</span>
+              <span class="_title">Deposit to Bank</span>
               <span class="_item">
                 {{ tradeData.accountNumber }}
               </span>
             </p>
             <p>
-              <span class="_title">Payment Status</span>
-              <span
-                v-if="tradeData.status !== 'pending'"
-                class="_item"
-              >
-                Paid
+              <span class="_title">KYC Status</span>
+              <span v-if="tradeData.kyc == null" class="_item">
+                Not Required
               </span>
-              <span v-else>
-                Pending
+              <span v-else class="_item">
+                {{ tradeData.kyc.status }}
               </span>
             </p>
 
@@ -80,7 +79,7 @@
               <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
           </div>
-        </div>
+        </div><br>
         <div class="column is-4 message-area" :style="$device.isMobile ? 'margin-top: 1.5rem;' : ''">
           <div class="title-area columns is-mobile is-gapless">
             <div class="column is-3">
@@ -88,20 +87,8 @@
             </div>
             <div class="column is-9">
               <span class="text is-block">SenexPAY Support</span>
-              <span v-if="tradeData.status === 'pending'" class="status is-block">
-                Pending
-              </span>
-              <span v-else-if="tradeData.status === 'paid'" class="status is-block">
-                Paid
-              </span>
-              <span v-else-if="tradeData.status === 'completed'" class="status is-block success">
-                Completed
-              </span>
-              <span v-else-if="tradeData.status === 'disbursed'" class="status is-block">
-                Disbursed
-              </span>
-              <span v-else-if="tradeData.status === 'kyc_passed'">
-                KYC
+              <span class="status is-block">
+                <i class="fas fa-users" /> Opened
               </span>
             </div>
           </div>
@@ -146,6 +133,51 @@
           </form>
         </div>
       </div>
+      <br>
+      <div v-if="tradeData.kyc != null && tradeData.kyc.status == 'failed'" class="columns is-centered">
+        <div class="field">
+          <div class="file is-dark is-small is-boxed has-name">
+            <label class="file-label">
+              <input class="file-input" type="file" name="resume">
+              <span class="file-cta">
+                <span style="margin-bottom: 8px;">
+                  <b>Govt. ID</b>
+                </span>
+                <span class="file-icon" style="margin-bottom: 8px;">
+                  <i class="fas fa-id-card fa-3x" />
+                </span>
+                <span class="file-label">
+                  Choose file…
+                </span>
+              </span>
+              <span class="file-name">
+                Screen Sho.png
+              </span>
+            </label>
+          </div>
+        </div> &nbsp;
+        <div class="field">
+          <div class="file is-dark is-small is-boxed has-name">
+            <label class="file-label">
+              <input class="file-input" type="file" name="resume">
+              <span class="file-cta">
+                <span style="margin-bottom: 8px;">
+                  <b>Selfie</b>
+                </span>
+                <span class="file-icon" style="margin-bottom: 8px;">
+                  <i class="fas fa-camera-retro fa-3x" />
+                </span>
+                <span class="file-label">
+                  Choose file…
+                </span>
+              </span>
+              <span class="file-name">
+                Screen S.png
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -181,7 +213,8 @@ export default {
   data() {
     return {
       messageText: '',
-      sendingMessage: false
+      sendingMessage: false,
+      interval1: null
     }
   },
 
@@ -196,8 +229,25 @@ export default {
       messages: messageResp.data.sort((a, b) => a.id - b.id)
     }
   },
+  mounted() {
+    this.interval1 = setInterval(this.pollMessages, 5000)
+  },
+  beforeDestroy() {
+    clearInterval(this.interval1)
+  },
 
   methods: {
+    async pollMessages() {
+      try {
+        const response = await this.$axios.get(
+          `/trade/${this.query.trade_id}/messages/`
+        )
+        this.messageResp = response.data.sort((a, b) => a.id - b.id)
+      } catch (e) {
+        // const errors = e
+      } finally {
+      }
+    },
     async handleSendMessage() {
       console.log(JSON.stringify(this.tradeData)) // eslint-disable-line
       const validated = await this.$validator.validateAll()
@@ -251,7 +301,7 @@ div.wrapper {
 
 .content-wrapper {
   $item-height: 350px;
-  margin: 1rem 0;
+  // margin: 1rem 0;
   .status-area,
   .message-area {
     height: $item-height;
@@ -294,16 +344,22 @@ div.wrapper {
           }
           &.percent-40 {
             width: 40%;
+            background: #00d1b1;
           }
           &.percent-60 {
             width: 60%;
           }
           &.percent-80 {
             width: 80%;
+            background: #fedd56;
           }
           &.percent-100 {
             width: 100%;
             background: #58c13d;
+          }
+          &.percent-101 {
+            width: 100%;
+            background: #fe385f;
           }
         }
       }
@@ -314,7 +370,7 @@ div.wrapper {
       flex-direction: column;
       padding: 0.7rem 0.8rem 1rem 0.8rem;
       text-align: left;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       p {
         margin: 0.3rem 0;
         span._title {
@@ -324,7 +380,7 @@ div.wrapper {
         }
         span._item {
           display: block;
-          color: #d5d5d5;
+          color: #838383;
           word-wrap: break-word;
         }
       }

@@ -19,7 +19,7 @@
             v-clipboard:success="toggleCopyText"
             class="column is-2 clipboard-wrapper"
           >
-            {{ copyText }} <i class="fas fa-copy" />
+            {{ copyText }}
           </a>
         </div>
         <div class="qrcode-wrapper">
@@ -61,19 +61,23 @@
         </div>
       </div>
       <div v-else class="wallet_deposit">
-        <h4>Please read carefully</h4>
+        <h4>Please read carefully:</h4>
         <p class="help is-danger">
           <i class="fas fa-exclamation-circle" /> 
-          You will be required to deposit {{ cryptoAmount }} BTC into an address that will be generated for you by the system. 
+          You are required to deposit {{ cryptoAmount }} BTC into an address that will be generated for you by the system. 
           Do make sure you have this amount and more in your wallet to cover for network fees. 
-          You only have 20 mins to make payment this for transaction once an address is generated.
+          You only have 20 mins to make payment this for transaction once an address is generated after which this trade expires.
+        </p>
+        <p>
+          If you are ready to make payment and wish to proceed, please check the box below and click on the generate button. <br>
+          <b>NB:</b> We will not be held responsible for losses resulting from issues relating to wrongly copied address or non-exact amount of BTC paid.
         </p>
         <div>
           <label class="checkbox">
             <input v-model="activeGenerate" type="checkbox">
-            I am ready to generate address for payment
+            I am ready to make payment
           </label>
-          <br>
+          <br><br>
           <button 
             class="button is-primary is-rounded" 
             :class="{'is-loading': addressing}" 

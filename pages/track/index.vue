@@ -121,6 +121,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 const _ERR_FETCH_TRADE_ = "Couldn't fetch trade; try again"
 const _STR_INVALID_PIN_ = 'Invalid pin; please enter correct trade pin'
 
@@ -130,7 +132,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      tradeId: '',
+      // tradeId: '',
       pin1: '',
       pin2: '',
       pin3: '',
@@ -140,6 +142,21 @@ export default {
       // This is used to determine which section of the UI to show.
       // Valid values are trackid | pinverification
       step: 'trackid'
+    }
+  },
+
+  computed: {
+    ...mapState({
+      trade: state => state.trade.track.tradeId
+    }),
+
+    tradeId: {
+      get() {
+        return this.trade
+      },
+      set(value) {
+        this.$store.commit('trade/SET_TRACK_TRADE_ID', value)
+      }
     }
   },
 
