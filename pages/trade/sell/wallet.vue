@@ -200,7 +200,7 @@ export default {
       this.addressing = true
       try {
         const addr = await this.$axios.get('/get_address/', {
-          params: { tradeId: this.tradeId }
+          params: { trade_id: this.tradeId }
         })
         logger.debug(`[sell/wallet] resp data: ${JSON.stringify(addr.data)}`)
         this.$store.commit('trade/UPDATE_RECEIVE_ADDRESS', addr.data.address)
