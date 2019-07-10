@@ -11,6 +11,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_googleanalytics_28c6c626 from 'nuxt_plugin_googleanalytics_28c6c626' // Source: ./google-analytics.js (mode: 'client')
 import nuxt_plugin_recaptcha_5b83e8f0 from 'nuxt_plugin_recaptcha_5b83e8f0' // Source: ./recaptcha.js (mode: 'all')
 import nuxt_plugin_vuesweetalert2_6b2ba7f0 from 'nuxt_plugin_vuesweetalert2_6b2ba7f0' // Source: ./vue-sweetalert2.js (mode: 'client')
 import nuxt_plugin_nuxtdevicedetectplugin551fce20_8ed6efa6 from 'nuxt_plugin_nuxtdevicedetectplugin551fce20_8ed6efa6' // Source: ./nuxt-device-detect.plugin.551fce20.js (mode: 'all')
@@ -156,6 +157,10 @@ async function createApp(ssrContext) {
   }
 
   // Plugin execution
+
+  if (process.client && typeof nuxt_plugin_googleanalytics_28c6c626 === 'function') {
+    await nuxt_plugin_googleanalytics_28c6c626(app.context, inject)
+  }
 
   if (typeof nuxt_plugin_recaptcha_5b83e8f0 === 'function') {
     await nuxt_plugin_recaptcha_5b83e8f0(app.context, inject)

@@ -1,4 +1,5 @@
 const pkg = require('./package')
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -25,11 +26,6 @@ module.exports = {
     ]
   },
 
-  env: {
-    FLW_PUB_KEY: 'FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X',
-    FLW_BASE_URL: 'https://api.ravepay.co'
-  },
-
   /*
   ** Customize the progress-bar color
   */
@@ -49,9 +45,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     [
       'nuxt-validate',
@@ -71,9 +65,22 @@ module.exports = {
       '@nuxtjs/recaptcha',
       {
         hideBadge: true,
-        siteKey: '6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY',
-
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
         version: 3
+      }
+    ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.ANALYTICS_ID,
+        dev: false
+      }
+    ],
+    [
+      '@nuxtjs/dotenv',
+      {
+        systemvars: true,
+        only: []
       }
     ]
   ],
@@ -81,8 +88,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://138.68.175.88',
+    baseURL: process.env.AXIOS_BASE_URL,
     proxyHeaders: false,
     credentials: false
   },
