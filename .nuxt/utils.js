@@ -131,14 +131,14 @@ export async function setContext(app, context) {
   if (!app.context) {
     app.context = {
       isStatic: process.static,
-      isDev: false,
+      isDev: true,
       isHMR: false,
       app,
       store: app.store,
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"AXIOS_BASE_URL":"http://138.68.175.88","FLW_PUB_KEY":"FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X","FLW_BASE_URL":"https://api.ravepay.co","ANALYTICS_ID":"UA-143592303-1","RECAPTCHA_SITE_KEY":"6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY"}
+      env: {"AXIOS_BASE_URL":"http://138.68.175.88","FLW_PUB_KEY":"FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X","FLW_BASE_URL":"https://api.ravepay.co","ANALYTICS_ID":"UA-143592303-1","RECAPTCHA_SITE_KEY":"6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY","FACEBOOK_URL":"https://facebook.com","TWITTER_URL":"https://twitter.com","INSTAGRAM_URL":"https://instagram.com"}
     }
     // Only set once
     if (context.req) {
@@ -233,6 +233,9 @@ export function middlewareSeries(promises, appContext) {
 export function promisify(fn, context) {
   let promise
   if (fn.length === 2) {
+      console.warn('Callback-based asyncData, fetch or middleware calls are deprecated. ' +
+        'Please switch to promises or async/await syntax')
+
     // fn(context, callback)
     promise = new Promise((resolve) => {
       fn(context, function (err, data) {

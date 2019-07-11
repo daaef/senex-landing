@@ -38,7 +38,14 @@ export default {
 
   head() {
     return {
-      title: 'Frequently asked question - SenexPay'
+      title: 'Frequently Asked Question - SenexPAY',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Abeg ask any question when you feel'
+        }
+      ]
     }
   },
 

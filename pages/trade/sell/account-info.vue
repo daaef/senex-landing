@@ -5,21 +5,24 @@
     </template>
     <template slot="content">
       <div class="field">
-        <select-search
-          v-model="selectedBank"
-          v-validate="'required'"
-          label="Name"
-          placeholder="Select your bank"
-          :search="true"
-          :options="filteredBanks"
-          name="bank"
-          @type="setBankSearchString"
-        />
-
+        <field label="Bank Name">
+          <autocomplete
+            v-model="selectedBankName"
+            v-validate="'required'"
+            placeholder="e.g. Zenith Bank"
+            keep-first
+            open-on-focus
+            :data="filteredBanks"
+            field="Name"
+            name="Bank"
+            @select="option => selectedBank = option"
+          />
+        </field>
         <p v-show="showErrors && !details.bankCode" class="help is-danger">
           Please select your bank
-        </p>
+        </p>        
       </div>
+
       <div class="field">
         <label for="" class="label">Account Number</label>
         <div class="control">
@@ -28,13 +31,13 @@
             v-validate="'required|numeric|length:10'"
             type="text"
             class="input"
-            :class="{ 'is-danger': errors.has('account number') }"
+            :class="{ 'is-danger': errors.has('BAN') }"
             placeholder="0000000000"
-            name="account number"
+            name="BAN"
           >
         </div>
-        <p v-show="errors.has('account number')" class="help is-danger">
-          {{ errors.first('account number') }}
+        <p v-show="errors.has('BAN')" class="help is-danger">
+          {{ errors.first('BAN') }}
         </p>
       </div>
       <div class="field">
@@ -49,7 +52,7 @@
             type="text"
             class="input"
             name="account name"
-            placeholder="Bruce Wayne"
+            placeholder="Dennis Pat"
             disabled
           >
         </div>
@@ -93,9 +96,12 @@
 import _ from 'lodash'
 import { mapState } from 'vuex'
 import { mapFields } from 'vee-validate'
+import { Field } from 'buefy/dist/components/field'
+import { Autocomplete } from 'buefy/dist/components/autocomplete'
 import logger from '~/logger'
 import Trader from '~/components/trade/trader.vue'
-import SelectSearch from '~/components/select-search.vue'
+
+import 'buefy/dist/buefy.css'
 
 const _ERR_CREATE_TRADE_ = 'Something bad happened; try again'
 const _ERR_FETCH_ACCOUNT_ = 'Unable to resolve account'
@@ -114,7 +120,8 @@ export default {
   },
 
   components: {
-    SelectSearch,
+    Autocomplete,
+    Field,
     Trader
   },
 
@@ -122,7 +129,7 @@ export default {
     return {
       loading: false,
       selectedBank: null,
-      bankSearchString: '',
+      selectedBankName: '',
       showErrors: false,
       fetching: false,
       proceed: false
@@ -146,7 +153,7 @@ export default {
       return _.filter(this.banks, bank => {
         return (
           bank.Name.toLowerCase().indexOf(
-            this.bankSearchString.toLowerCase()
+            this.selectedBankName.toLowerCase()
           ) !== -1
         )
       })
@@ -159,19 +166,12 @@ export default {
     }),
 
     ...mapFields({
-      acctNo: 'account number',
-      myBank: 'bank'
+      bank: 'Bank',
+      ban: 'BAN'
     }),
 
     validateBankAccountName() {
-      let ans = false
-      if (this.myBank.valid && this.acctNo.valid) {
-        this.accountVerification()
-        ans = true
-      } else {
-        ans = false
-      }
-      return ans
+      return this.bank.valid && this.ban.valid
     },
 
     bankAccountNumber: {
@@ -207,6 +207,25 @@ export default {
           value: value.Code
         })
       }
+    },
+    validateBankAccountName(value) {
+      if (value === true) {
+        this.accountVerification()
+      } else {
+        this.fetching = false
+        this.proceed = false
+        this.$store.commit('trade/UPDATE_BANK_DETAILS', {
+          prop: 'accountName',
+          value: 'UNRESOLVED'
+        })
+      }
+    },
+    selectedBankName(value) {
+      this.proceed = false
+      this.$store.commit('trade/UPDATE_BANK_DETAILS', {
+        prop: 'accountNumber',
+        value: null
+      })
     }
   },
 

@@ -30,9 +30,9 @@
             </p>
             <span>_____</span>
             <p class="social-handle">
-              <span><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-2x fb" /></a></span>
-              <span><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x in" /></a></span>
-              <span><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x tw" /></a></span>
+              <span><a :href="facebookUrl" target="_blank"><i class="fab fa-facebook-f fa-2x fb" /></a></span>
+              <span><a :href="instagramUrl" target="_blank"><i class="fab fa-instagram fa-2x in" /></a></span>
+              <span><a :href="twitterUrl" target="_blank"><i class="fab fa-twitter fa-2x tw" /></a></span>
             </p>
           </div>
           <!-- <div class="image-illustration-container">
@@ -58,7 +58,15 @@ export default {
 
   head() {
     return {
-      title: 'Home - SenexPay'
+      title: 'SenexPAY - Buy and Sell Bitcoins in Minutes'
+    }
+  },
+
+  data() {
+    return {
+      facebookUrl: process.env.FACEBOOK_URL,
+      instagramUrl: process.env.INSTAGRAM_URL,
+      twitterUrl: process.env.TWITTER_URL
     }
   }
 }

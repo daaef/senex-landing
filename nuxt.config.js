@@ -8,11 +8,12 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'SenexPay',
+    title: 'SenexPAY',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
+      { name: 'theme-color', content: '#0c5db2' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -22,6 +23,11 @@ module.exports = {
         crossorigin: 'anonymous',
         integrity:
           'sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          '//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css'
       }
     ]
   },
@@ -82,8 +88,11 @@ module.exports = {
         systemvars: true,
         only: []
       }
-    ]
+    ],
+    '@nuxtjs/onesignal',
+    '@nuxtjs/pwa'
   ],
+
   /*
   ** Axios module configuration
   */
@@ -91,6 +100,23 @@ module.exports = {
     baseURL: process.env.AXIOS_BASE_URL,
     proxyHeaders: false,
     credentials: false
+  },
+
+  oneSignal: {
+    init: {
+      appId: process.env.ONE_SIGNAL_APP_ID,
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true
+      }
+    },
+    cdn: true,
+    OneSignalSDK: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js'
+  },
+
+  manifest: {
+    name: 'SenexPAY',
+    lang: 'en'
   },
 
   /*

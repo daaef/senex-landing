@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
+import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/scss/main.scss'
 
@@ -15,7 +16,7 @@ import _6f6c098b from './layouts/default.vue'
 const layouts = { "_blank": _77180f1e,"_blue": _2d21d150,"_fullblue": _b1eaad42,"_simple": _ee7125b0,"_watermark": _dd401da4,"_default": _6f6c098b }
 
 export default {
-  head: {"title":"SenexPay","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"SenexPAY cryptocurrency exchange platform"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.fontawesome.com\u002Freleases\u002Fv5.7.2\u002Fcss\u002Fall.css","crossorigin":"anonymous","integrity":"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"}],"style":[],"script":[]},
+  head: {"title":"SenexPAY","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"SenexPAY cryptocurrency exchange platform"},{"name":"theme-color","content":"#0c5db2"},{"hid":"mobile-web-app-capable","name":"mobile-web-app-capable","content":"yes"},{"hid":"apple-mobile-web-app-title","name":"apple-mobile-web-app-title","content":"senexpay"},{"hid":"author","name":"author","content":"cantell"},{"hid":"og:type","name":"og:type","property":"og:type","content":"website"},{"hid":"og:title","name":"og:title","property":"og:title","content":"senexpay"},{"hid":"og:site_name","name":"og:site_name","property":"og:site_name","content":"senexpay"},{"hid":"og:description","name":"og:description","property":"og:description","content":"SenexPAY cryptocurrency exchange platform"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.fontawesome.com\u002Freleases\u002Fv5.7.2\u002Fcss\u002Fall.css","crossorigin":"anonymous","integrity":"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"},{"rel":"stylesheet","href":"\u002F\u002Fcdn.materialdesignicons.com\u002F3.7.95\u002Fcss\u002Fmaterialdesignicons.min.css"},{"rel":"manifest","href":"\u002F_nuxt\u002Fmanifest.c9ec591a.json"}],"style":[],"script":[{"async":true,"src":"https:\u002F\u002Fcdn.onesignal.com\u002Fsdks\u002FOneSignalSDK.js","hid":"onesignal"}],"htmlAttrs":{"lang":"en"}},
 
   render(h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
@@ -46,7 +47,7 @@ export default {
       domProps: {
         id: '__nuxt'
       }
-    }, [loadingEl, transitionEl])
+    }, [loadingEl, h(NuxtBuildIndicator), transitionEl])
   },
   data: () => ({
     isOnline: true,
@@ -105,6 +106,8 @@ export default {
     },
 
     setLayout(layout) {
+      if(layout && typeof layout !== 'string') throw new Error('[nuxt] Avoid using non-string value as layout property.')
+
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }

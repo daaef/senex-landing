@@ -145,6 +145,19 @@ export default {
     }
   },
 
+  head() {
+    return {
+      title: 'Track a Trade - SenexPAY',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Find a way to track'
+        }
+      ]
+    }
+  },
+
   computed: {
     ...mapState({
       trade: state => state.trade.track.tradeId

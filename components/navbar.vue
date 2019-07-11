@@ -97,7 +97,15 @@ export default {
     background-image: none;
   }
 }
-
+/*
+.navbar-menu {
+  min-width: 250px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 100;
+}
+*/
 .white-theme {
   a {
     color: $white;
