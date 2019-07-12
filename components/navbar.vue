@@ -33,12 +33,12 @@
           <nuxt-link class="navbar-item" to="/track" :class="{'is-active': isActiveNavItem('/track')}">
             <span>Tracking</span>
           </nuxt-link>
-          <a href="#" class="navbar-item">
-            <span>Blog</span>
-          </a>
           <nuxt-link class="navbar-item" to="/faq" :class="{'is-active': isActiveNavItem('/faq')}">
             <span>FAQ</span>
           </nuxt-link>
+          <a href="mailto:info@senexpay.com" class="button">
+            <span><i class="fas fa-envelope" /></span>
+          </a>
         </div>
       </div>
     </div>
@@ -111,6 +111,11 @@ export default {
     color: $white;
     font-family: $font-roboto;
     font-weight: normal;
+
+    &.button {
+      color: #0c5db2;
+      margin: 0.2rem 0 0 1.5rem;
+    }
   }
 
   .navbar-item {
@@ -132,6 +137,12 @@ export default {
     color: $blue;
     font-family: $font-roboto;
     font-weight: normal;
+
+    &.button {
+      background-color: #0c5db2;
+      color: #fff;
+      margin: 0.2rem 0 0 1.5rem;
+    }
   }
 
   .navbar-item {
@@ -155,7 +166,7 @@ export default {
 }
 
 .blue-burger {
-  color: blue;
+  color: #0c5db2;
 }
 
 .white-burger {

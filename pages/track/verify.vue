@@ -138,7 +138,7 @@
         <div class="field">
           <div class="file is-dark is-small is-boxed has-name">
             <label class="file-label">
-              <input class="file-input" type="file" name="resume">
+              <input class="file-input" type="file" accept="image/*" name="idcard" @change="uploadDoc($event, 'idCard')">
               <span class="file-cta">
                 <span style="margin-bottom: 8px;">
                   <b>Govt. ID</b>
@@ -159,7 +159,7 @@
         <div class="field">
           <div class="file is-dark is-small is-boxed has-name">
             <label class="file-label">
-              <input class="file-input" type="file" name="resume">
+              <input class="file-input" type="file" accept="image/*" name="selfie" @change="uploadDoc($event, 'selfie')">
               <span class="file-cta">
                 <span style="margin-bottom: 8px;">
                   <b>Selfie</b>
@@ -187,6 +187,8 @@ import hd from 'human-date'
 import formatMoney from '~/filters/format-money'
 
 const _SEND_MESSAGE_ERROR_ = "Couldn't send message; try again"
+const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
+const _SUC_FILE_UPLOAD_ = 'Your document was uploaded successfully'
 
 export default {
   layout: 'blue',
@@ -278,6 +280,50 @@ export default {
           this.messageText = ''
         }
       }
+    },
+    async uploadDoc(e, fileType) {
+      const files = e.target.files || e.dataTransfer.files
+      if (files.length === 0) return
+      const formData = new FormData()
+      formData.append('datafile', files[0])
+      try {
+        const resp = await this.$axios.post('/upload/', formData, {
+          headers: {
+            'content-type': 'multipart/form-data'
+          }
+        })
+        const requestBody = {
+          trade: this.tradeData.id
+        }
+        fileType === 'idCard'
+          ? (requestBody.govtIssuedId = resp.data.datafile)
+          : (requestBody.selfieWithId = resp.data.datafile)
+        await this.$axios.put(
+          `/trade/${this.requestBody.trade}/kyc/`,
+          requestBody
+        )
+        this.$swal({
+          title: 'Done:',
+          type: 'success',
+          position: 'top-end',
+          text: _SUC_FILE_UPLOAD_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } catch (e) {
+        this.$swal({
+          title: 'Error:',
+          type: 'error',
+          position: 'top-end',
+          text: _ERR_FILE_UPLOAD_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } finally {
+        // this.$nuxt.$loading.finish()
+      }
     }
   }
 }
@@ -287,7 +333,7 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 div.wrapper {
-  min-height: 480px;
+  min-height: 580px;
   margin-bottom: 3rem;
   margin-top: 2rem;
   font-family: $font-avenir;

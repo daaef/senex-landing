@@ -58,7 +58,15 @@ export default {
 
   head() {
     return {
-      title: 'SenexPAY - Buy and Sell Bitcoins in Minutes'
+      title: 'SenexPAY - Buy and Sell Bitcoins in Minutes',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Buy and sell Bitcoin securely with SenexPAY, a Nigeria based crypto exchange platform that is faster, cheaper and stress-free.'
+        }
+      ]
     }
   },
 

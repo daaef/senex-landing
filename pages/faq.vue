@@ -38,12 +38,13 @@ export default {
 
   head() {
     return {
-      title: 'Frequently Asked Question - SenexPAY',
+      title: 'FAQs - SenexPAY',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Abeg ask any question when you feel'
+          content:
+            'Find out more about SenexPAY, see a range of frequently asked questions and possible answers that might be of help in exchanging your bitcoins'
         }
       ]
     }
