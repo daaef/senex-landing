@@ -138,7 +138,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"AXIOS_BASE_URL":"http://138.68.175.88","FLW_PUB_KEY":"FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X","FLW_BASE_URL":"https://api.ravepay.co","ANALYTICS_ID":"UA-143592303-1","ONE_SIGNAL_APP_ID":"e8e15880-b1f2-4969-b161-7ecc0c504f8a","RECAPTCHA_SITE_KEY":"6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY","FACEBOOK_URL":"https://web.facebook.com/senexng/","TWITTER_URL":"https://twitter.com/senexng/","INSTAGRAM_URL":"https://www.instagram.com/senexng/"}
+      env: {"AXIOS_BASE_URL":"api.rikozone.com","FLW_PUB_KEY":"FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X","FLW_BASE_URL":"https://api.ravepay.co","ANALYTICS_ID":"UA-143592303-1","FACEBOOK_PIXEL_ID":"1844665658924515","ONE_SIGNAL_APP_ID":"e8e15880-b1f2-4969-b161-7ecc0c504f8a","RECAPTCHA_SITE_KEY":"6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY","FACEBOOK_URL":"https://web.facebook.com/senexng/","TWITTER_URL":"https://twitter.com/senexng/","INSTAGRAM_URL":"https://www.instagram.com/senexng/"}
     }
     // Only set once
     if (context.req) {

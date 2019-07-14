@@ -14,6 +14,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_workbox_e5ff3716 from 'nuxt_plugin_workbox_e5ff3716' // Source: ./workbox.js (mode: 'client')
 import nuxt_plugin_nuxticons_56f94f4f from 'nuxt_plugin_nuxticons_56f94f4f' // Source: ./nuxt-icons.js (mode: 'all')
 import nuxt_plugin_onesignal_4fb6fafe from 'nuxt_plugin_onesignal_4fb6fafe' // Source: ./onesignal.js (mode: 'client')
+import nuxt_plugin_templatesplugin3504f250_6feaaf88 from 'nuxt_plugin_templatesplugin3504f250_6feaaf88' // Source: ./templates.plugin.3504f250.js (mode: 'client')
 import nuxt_plugin_googleanalytics_28c6c626 from 'nuxt_plugin_googleanalytics_28c6c626' // Source: ./google-analytics.js (mode: 'client')
 import nuxt_plugin_recaptcha_5b83e8f0 from 'nuxt_plugin_recaptcha_5b83e8f0' // Source: ./recaptcha.js (mode: 'all')
 import nuxt_plugin_vuesweetalert2_6b2ba7f0 from 'nuxt_plugin_vuesweetalert2_6b2ba7f0' // Source: ./vue-sweetalert2.js (mode: 'client')
@@ -171,6 +172,10 @@ async function createApp(ssrContext) {
 
   if (process.client && typeof nuxt_plugin_onesignal_4fb6fafe === 'function') {
     await nuxt_plugin_onesignal_4fb6fafe(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_templatesplugin3504f250_6feaaf88 === 'function') {
+    await nuxt_plugin_templatesplugin3504f250_6feaaf88(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_googleanalytics_28c6c626 === 'function') {

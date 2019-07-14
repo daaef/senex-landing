@@ -2,9 +2,9 @@
   <section class="section">
     <div class="container wrapper">
       <p class="has-text-weight-semibold p-heading has-text-centered">
-        Trade Status
+        Trade Lookup
         <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">
-          Track status of your pending trade
+          Quickly track and manage your trade
         </span>
       </p>
       <div class="columns is-centered content-wrapper">
@@ -38,7 +38,7 @@
               <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> <b>{{ tradeData.cryptoAmount }}</b>BTC
             </p>
             <p>
-              <span class="_title">{{ tradeData.type == 'buy' ? 'We Receive' : 'Your are Paid' }}</span>
+              <span class="_title">{{ tradeData.type == 'buy' ? 'We Received' : 'Your are Paid' }}</span>
               <span class="_item">
                 <b>{{ tradeData.fiatAmount|formatMoney('NGN') }}</b>
               </span>
@@ -61,7 +61,7 @@
                 Not Required
               </span>
               <span v-else class="_item">
-                {{ tradeData.kyc.status }}
+                {{ tradeData.kyc.status === 'failed' ? 'Declined, please re-upload documents' : tradeData.kyc.status }}
               </span>
             </p>
 
@@ -78,8 +78,40 @@
               </svg>
               <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
+            <div v-if="tradeData.kyc != null && tradeData.kyc.status == 'failed'" class="field is-grouped is-grouped-multiline">
+              <div class="control">
+                <div class="tags has-addons" style="cursor:pointer;" @click="$refs.idBrowse.click()">
+                  <span class="tag is-dark is-medium">Govt. ID</span>
+                  <span class="tag is-info is-medium"><i class="fas fa-file-upload" /></span>
+                  <input
+                    ref="idBrowse"
+                    class="file-input"
+                    type="file"
+                    accept="image/*"
+                    name="idcard"
+                    hidden
+                    @change="uploadDoc($event, 'idCard')"
+                  >
+                </div>
+              </div>
+              <div class="control">
+                <div class="tags has-addons" style="cursor:pointer;" @click="$refs.selfieBrowse.click()">
+                  <span class="tag is-dark is-medium">Selfie</span>
+                  <span class="tag is-info is-medium"><i class="fas fa-file-upload" /></span>
+                  <input
+                    ref="selfieBrowse"
+                    class="file-input"
+                    type="file"
+                    accept="image/*"
+                    name="selfie"
+                    hidden
+                    @change="uploadDoc($event, 'selfie')"
+                  >     
+                </div>
+              </div>
+            </div>
           </div>
-        </div><br>
+        </div><br><br>
         <div class="column is-4 message-area" :style="$device.isMobile ? 'margin-top: 1.5rem;' : ''">
           <div class="title-area columns is-mobile is-gapless">
             <div class="column is-3">
@@ -131,51 +163,6 @@
               </p>
             </div>
           </form>
-        </div>
-      </div>
-      <br>
-      <div v-if="tradeData.kyc != null && tradeData.kyc.status == 'failed'" class="columns is-centered">
-        <div class="field">
-          <div class="file is-dark is-small is-boxed has-name">
-            <label class="file-label">
-              <input class="file-input" type="file" accept="image/*" name="idcard" @change="uploadDoc($event, 'idCard')">
-              <span class="file-cta">
-                <span style="margin-bottom: 8px;">
-                  <b>Govt. ID</b>
-                </span>
-                <span class="file-icon" style="margin-bottom: 8px;">
-                  <i class="fas fa-id-card fa-3x" />
-                </span>
-                <span class="file-label">
-                  Choose file…
-                </span>
-              </span>
-              <span class="file-name">
-                Screen Sho.png
-              </span>
-            </label>
-          </div>
-        </div> &nbsp;
-        <div class="field">
-          <div class="file is-dark is-small is-boxed has-name">
-            <label class="file-label">
-              <input class="file-input" type="file" accept="image/*" name="selfie" @change="uploadDoc($event, 'selfie')">
-              <span class="file-cta">
-                <span style="margin-bottom: 8px;">
-                  <b>Selfie</b>
-                </span>
-                <span class="file-icon" style="margin-bottom: 8px;">
-                  <i class="fas fa-camera-retro fa-3x" />
-                </span>
-                <span class="file-label">
-                  Choose file…
-                </span>
-              </span>
-              <span class="file-name">
-                Screen S.png
-              </span>
-            </label>
-          </div>
         </div>
       </div>
     </div>

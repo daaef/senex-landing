@@ -83,6 +83,12 @@ module.exports = {
       }
     ],
     [
+      'nuxt-facebook-pixel-module',
+      {
+        pixelId: process.env.FACEBOOK_PIXEL_ID
+      }
+    ],
+    [
       '@nuxtjs/dotenv',
       {
         systemvars: true,
@@ -90,7 +96,8 @@ module.exports = {
       }
     ],
     '@nuxtjs/onesignal',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
 
   /*
@@ -117,6 +124,11 @@ module.exports = {
   manifest: {
     name: 'SenexPAY',
     lang: 'en'
+  },
+
+  sitemap: {
+    // routes: [],
+    exclude: ['/trade/**', '/track/verify']
   },
 
   /*
