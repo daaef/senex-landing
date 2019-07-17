@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths is-vcentered">
+        <div class="column is-three-fifths">
           <div class="info">
             <p class="text-exchanging is-uppercase is-marginless	">
               Exchanging
@@ -25,7 +25,7 @@
               <span>Buy and Sell securely  with SenexPAY</span>
             </p>
             <br>
-            <p class="get-started">
+            <p class="get-started" @click="getStarted">
               Get started now &nbsp; <i class="fas fa-arrow-right" />
             </p>
             <span>_____</span>
@@ -35,12 +35,12 @@
               <span><a :href="twitterUrl" target="_blank"><i class="fab fa-twitter fa-2x tw" /></a></span>
             </p>
           </div>
-          <!-- <div class="image-illustration-container">
-            <img src="~assets/illustration.png" alt="An image containing a trader operating a laptop">
-          </div> -->
+          <div class="image-illustration-container">
+            <img src="~assets/creatives-11.png" alt="senexpay">
+          </div>
         </div>
         <div class="column is-fullheight">
-          <trade-widget />
+          <trade-widget ref="tradeWidget" />
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'Buy and sell Bitcoin securely with SenexPAY, a Nigeria based crypto exchange platform that is faster, cheaper and stress-free.'
+            'Buy and sell Bitcoin securely with SenexPAY, a Nigeria based crypto exchange platform that is much faster, cheaper and stress-free.'
         }
       ]
     }
@@ -76,11 +76,22 @@ export default {
       instagramUrl: process.env.INSTAGRAM_URL,
       twitterUrl: process.env.TWITTER_URL
     }
+  },
+
+  methods: {
+    getStarted() {
+      if (process.client) {
+        this.$refs.tradeWidget.$refs.btcInput.focus()
+      }
+    }
   }
 }
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 .section {
   padding-top: 0;
   padding-bottom: 0;
@@ -108,8 +119,7 @@ div.wrapper {
 }
 
 div.image-illustration-container {
-  width: 80%;
-  margin-top: 2em;
+  max-width: 350px;
 
   img.image {
     max-width: 100%;
@@ -118,18 +128,19 @@ div.image-illustration-container {
 }
 
 div.info {
-  font-family: $font-avenir;
+  font-family: $font-nunito;
   line-height: normal;
   color: #707070;
+  padding-top: 50px;
   p.text-exchanging {
-    font-size: 2.2rem;
-    font-family: $font-open-sans;
+    font-size: 2rem;
+    // font-family: $font-open-sans;
     font-weight: 300;
   }
 
   span.text-crypto {
-    font-size: 2.6rem;
-    font-weight: bold;
+    font-size: 2.7rem;
+    font-weight: 700;
     color: #0c5db2;
   }
 
@@ -137,6 +148,11 @@ div.info {
     font-size: 2rem;
     margin-left: 0.6rem;
   }
+
+  .social-handle {
+    margin-top: 15px;
+  }
+
   .social-handle span {
     padding-right: 10px;
 

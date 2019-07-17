@@ -38,6 +38,7 @@
                   </div>
                   <div class="control is-expanded">
                     <input
+                      ref="btcInput"
                       v-model.number="computedCryptoAmount"
                       type="number"
                       class="input blue-border"

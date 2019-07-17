@@ -131,8 +131,7 @@ export default {
       const vm = this
       const otc = this.$store.state.trade.create.isOtc
       if (otc) {
-        vm.verifying = false
-        vm.verified = true
+        vm.pushOTC()
       }
       return otc
     },
@@ -153,6 +152,12 @@ export default {
     // this.isOtc()
   },
   methods: {
+    pushOTC() {
+      this.$refs.countdownTimer.stop()
+      this.verifying = false
+      this.verified = true
+    },
+
     payWithRave() {
       const vm = this
       const x = window.getpaidSetup({
@@ -190,6 +195,7 @@ export default {
 
       try {
         this.verifying = true
+        this.verified = false
         const verificationResp = await this.$axios.get('/verify/rave/', {
           params: {
             txref: response.tx.txRef
@@ -203,6 +209,7 @@ export default {
         )
 
         if (verificationResp.data.status === 'successful') {
+          this.verifying = false
           this.verified = true
           this.$store.commit('trade/SET_PAYMENT_DONE', true)
           this.$refs.countdownTimer.stop()

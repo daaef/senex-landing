@@ -82,7 +82,7 @@
               <div class="control">
                 <div class="tags has-addons" style="cursor:pointer;" @click="$refs.idBrowse.click()">
                   <span class="tag is-dark is-medium">Govt. ID</span>
-                  <span class="tag is-info is-medium"><i class="fas fa-file-upload" /></span>
+                  <span class="tag is-medium" :class="{ 'is-info': !upload1, 'is-success': upload1 }"><i class="fas" :class="{ 'fa-file-upload': !upload1, 'fa-check-circle': upload1 }" /></span>
                   <input
                     ref="idBrowse"
                     class="file-input"
@@ -97,7 +97,7 @@
               <div class="control">
                 <div class="tags has-addons" style="cursor:pointer;" @click="$refs.selfieBrowse.click()">
                   <span class="tag is-dark is-medium">Selfie</span>
-                  <span class="tag is-info is-medium"><i class="fas fa-file-upload" /></span>
+                  <span class="tag is-medium" :class="{ 'is-info': !upload2, 'is-success': upload2 }"><i class="fas" :class="{ 'fa-file-upload': !upload2, 'fa-check-circle': upload2 }" /></span>
                   <input
                     ref="selfieBrowse"
                     class="file-input"
@@ -203,7 +203,9 @@ export default {
     return {
       messageText: '',
       sendingMessage: false,
-      interval1: null
+      interval1: null,
+      upload1: false,
+      upload2: false
     }
   },
 
@@ -289,6 +291,7 @@ export default {
           `/trade/${this.requestBody.trade}/kyc/`,
           requestBody
         )
+        fileType === 'idCard' ? (this.upload1 = true) : (this.upload2 = true)
         this.$swal({
           title: 'Done:',
           type: 'success',
@@ -333,7 +336,7 @@ div.wrapper {
 }
 
 .content-wrapper {
-  $item-height: 350px;
+  $item-height: 400px;
   // margin: 1rem 0;
   .status-area,
   .message-area {

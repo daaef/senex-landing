@@ -70,7 +70,7 @@
         </p>
         <p>
           If you are ready to make payment and wish to proceed, please check the box below and click on the generate button. <br>
-          <b>NB:</b> We will not be held responsible for losses resulting from issues relating to wrongly copied address or non-exact amount of BTC paid.
+          <b>NB:</b> We will not be held responsible for losses due to negligences.
         </p>
         <div>
           <label class="checkbox">
@@ -173,7 +173,7 @@ export default {
       const vm = this
       const otc = this.$store.state.trade.create.isOtc
       if (otc) {
-        vm.verifying = false
+        vm.pushOTC()
       }
       return otc
     },
@@ -196,6 +196,12 @@ export default {
   },
 
   methods: {
+    pushOTC() {
+      this.$refs.countdownTimer.stop()
+      this.verifying = false
+      this.verified = true
+    },
+
     async getAddress() {
       this.addressing = true
       try {
