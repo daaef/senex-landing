@@ -29,7 +29,7 @@
           <input
             v-model="bankAccountNumber"
             v-validate="'required|numeric|length:10'"
-            type="text"
+            type="number"
             class="input"
             :class="{ 'is-danger': errors.has('BAN') }"
             placeholder="0000000000"
@@ -381,3 +381,11 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield; /* Firefox */
+  margin: 0;
+}
+</style>
