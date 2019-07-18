@@ -14,7 +14,7 @@
 
       <div class="columns vision-wrapper is-centered">
         <div class="column is-7 text">
-          Founded in 2016, SenexPAY (initially known as solely Senex) started as a traditional (over-the-counter) bitcoin to naira exchange service and has upgraded to become the most user-friendly, fasted, secure and fully-automated platform in Africa. The company is fully registered with the Corporate Affairs Commission of Nigeria and backed by some prestigious financial investors across Africa.
+          Founded in 2016, SenexPAY (initially known as solely Senex) started as a traditional (over-the-counter) bitcoin to naira exchange service and has upgraded to become the most user-friendly, fast, secure and fully-automated platform in Africa. The company is fully registered with the Corporate Affairs Commission of Nigeria and backed by some prestigious financial investors across Africa.
         </div>
       </div>
 
