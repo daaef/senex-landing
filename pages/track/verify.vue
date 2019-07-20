@@ -38,7 +38,7 @@
               <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> <b>{{ tradeData.cryptoAmount }}</b>BTC
             </p>
             <p>
-              <span class="_title">{{ tradeData.type == 'buy' ? 'We Received' : 'Your are Paid' }}</span>
+              <span class="_title">{{ tradeData.type == 'buy' ? 'We Receive' : 'Your are Paid' }}</span>
               <span class="_item">
                 <b>{{ tradeData.fiatAmount|formatMoney('NGN') }}</b>
               </span>
@@ -204,6 +204,7 @@ export default {
       messageText: '',
       sendingMessage: false,
       interval1: null,
+      interval2: null,
       upload1: false,
       upload2: false
     }
@@ -221,13 +222,23 @@ export default {
     }
   },
   mounted() {
-    this.interval1 = setInterval(this.pollMessages, 5000)
+    this.interval1 = setInterval(this.pollMessages, 4000)
+    this.interval2 = setInterval(this.polldTrade, 15000)
   },
   beforeDestroy() {
     clearInterval(this.interval1)
+    clearInterval(this.interval2)
   },
 
   methods: {
+    async polldTrade() {
+      try {
+        const response = await this.$axios.get(`/trade/${this.query.trade_id}/`)
+        this.tradeData = response.data
+      } catch (e) {
+        // const errors = e
+      }
+    },
     async pollMessages() {
       try {
         const response = await this.$axios.get(
@@ -236,7 +247,6 @@ export default {
         this.messageResp = response.data.sort((a, b) => a.id - b.id)
       } catch (e) {
         // const errors = e
-      } finally {
       }
     },
     async handleSendMessage() {

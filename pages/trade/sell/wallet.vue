@@ -32,11 +32,11 @@
           </p>
           <p class="text-wrapper">
             <span class="text is-block">
-              Scan wallet address directly OR
+              Scan QR Code OR
             </span>
-            <a href="" @click.prevent="downloadQrCode">
+            <a :href="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`">
               <span class="icon is-block">
-                Download QR_Code.
+                Pay with wallet
                 <i class="fas fa-download" />
               </span>
             </a>
@@ -44,10 +44,10 @@
         </div>
         <div class="status-wrapper">
           <p v-show="verifying">
-            Verifying transaction...
+            Waiting to receive 0 confirmations...
           </p>
           <p v-show="transactions.length > 0">
-            Transaction complete; please proceed.
+            BTC payment confirmed; please proceed.
           </p>
           <p v-show="!verifying && transactions.length === 0" class="is-size-6">
             Trade pending; this trade is valid till
@@ -69,8 +69,7 @@
           You only have 20 mins to make payment this for transaction once an address is generated after which this trade expires.
         </p>
         <p>
-          If you are ready to make payment and wish to proceed, please check the box below and click on the generate button. <br>
-          <b>NB:</b> We will not be held responsible for losses due to negligences.
+          Once ready to make payment, please check the box below then click on the generate button.
         </p>
         <div>
           <label class="checkbox">
@@ -197,7 +196,7 @@ export default {
 
   methods: {
     pushOTC() {
-      this.$refs.countdownTimer.stop()
+      // this.$refs.countdownTimer.active = false
       this.verifying = false
       this.verified = true
     },

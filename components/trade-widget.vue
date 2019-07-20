@@ -40,13 +40,18 @@
                     <input
                       ref="btcInput"
                       v-model.number="computedCryptoAmount"
+                      v-validate="'decimal:8'"
                       type="number"
                       class="input blue-border"
                       :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
                       step="any"
                       min="0"
                       style="text-align: right;"
+                      name="BTC"
                     >
+                    <p v-show="errors.has('BTC')" class="help is-danger">
+                      {{ errors.first('BTC') }}
+                    </p>
                   </div>
                 </div>
               </div>

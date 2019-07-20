@@ -108,16 +108,20 @@ export default {
   layout: 'simple',
 
   validate({ store }) {
-    if (!store.getters['trade/isActiveTrade']) {
-      return false
+    if (store.state.trade.create.isOtc) {
+      return true
+    } else {
+      if (!store.getters['trade/isActiveTrade']) {
+        return false
+      }
+      if (!store.getters['trade/hasCreatedTrade']) {
+        return false
+      }
+      if (!store.getters['trade/isPaid']) {
+        return false
+      }
+      return true
     }
-    if (!store.getters['trade/hasCreatedTrade']) {
-      return false
-    }
-    if (!store.getters['trade/isPaid']) {
-      return false
-    }
-    return true
   },
 
   components: {
@@ -157,13 +161,19 @@ export default {
     }),
 
     shouldVerify() {
-      let tradeAmount
-      if (this.currency === 'USD') {
-        tradeAmount = this.fiatAmount
+      if (this.$store.state.trade.create.isOtc) {
+        return false
       } else {
-        tradeAmount = (this.fiatAmount / this.conversionRate.USD_NGN).toFixed(2)
+        let tradeAmount
+        if (this.currency === 'USD') {
+          tradeAmount = this.fiatAmount
+        } else {
+          tradeAmount = (this.fiatAmount / this.conversionRate.USD_NGN).toFixed(
+            2
+          )
+        }
+        return tradeAmount >= _TRADE_VERIFY_AMOUNT_CONDITION_
       }
-      return tradeAmount >= _TRADE_VERIFY_AMOUNT_CONDITION_
     },
 
     canSubmit() {
