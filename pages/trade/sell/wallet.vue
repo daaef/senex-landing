@@ -300,7 +300,7 @@ export default {
       const onClose = () => {
         self.$store.commit('trade/SET_TRACK_TRADE_ID', this.tradeId)
         self.$store.commit('trade/RESET_CREATE_TRADE')
-        this.$refs.countdownTimer.stop()
+        // this.$refs.countdownTimer.stop()
 
         self.$router.replace({
           path: '/track'

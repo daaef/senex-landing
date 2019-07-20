@@ -171,6 +171,7 @@
 
 <script>
 import hd from 'human-date'
+import log from '~/logger'
 import formatMoney from '~/filters/format-money'
 
 const _SEND_MESSAGE_ERROR_ = "Couldn't send message; try again"
@@ -203,8 +204,8 @@ export default {
     return {
       messageText: '',
       sendingMessage: false,
-      interval1: null,
-      interval2: null,
+      clms: null,
+      cltr: null,
       upload1: false,
       upload2: false
     }
@@ -221,13 +222,14 @@ export default {
       messages: messageResp.data.sort((a, b) => a.id - b.id)
     }
   },
-  mounted() {
-    this.interval1 = setInterval(this.pollMessages, 4000)
-    this.interval2 = setInterval(this.polldTrade, 15000)
+
+  created() {
+    this.cltr = setInterval(this.polldTrade, 15000)
+    this.clms = setInterval(this.pollMessages, 4000)
   },
   beforeDestroy() {
-    clearInterval(this.interval1)
-    clearInterval(this.interval2)
+    clearInterval(this.cltr)
+    clearInterval(this.clms)
   },
 
   methods: {
@@ -237,6 +239,7 @@ export default {
         this.tradeData = response.data
       } catch (e) {
         // const errors = e
+        log.debug(`[error] /track/verify ${JSON.stringify(e.response)}`)
       }
     },
     async pollMessages() {
@@ -247,6 +250,7 @@ export default {
         this.messageResp = response.data.sort((a, b) => a.id - b.id)
       } catch (e) {
         // const errors = e
+        log.debug(`[error] /track/verify ${JSON.stringify(e.response)}`)
       }
     },
     async handleSendMessage() {
