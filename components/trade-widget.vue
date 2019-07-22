@@ -48,6 +48,7 @@
                       min="0"
                       style="text-align: right;"
                       name="BTC"
+                      aria-label="BTC"
                     >
                     <p v-show="errors.has('BTC')" class="help is-danger">
                       {{ errors.first('BTC') }}
@@ -65,10 +66,10 @@
                   <div class="control has-icons-left">
                     <div class="select">
                       <select
-                        id=""
                         v-model="currency"
                         name="currency"
                         class="currency-select"
+                        aria-label="Currency"
                       >
                         <option value="NGN">
                           NGN
@@ -90,6 +91,7 @@
                       min="0"
                       step="any"
                       style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem;"
+                      aria-label="NGN-USD"
                     >
                   </p>
                 </div>

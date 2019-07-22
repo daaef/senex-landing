@@ -30,9 +30,9 @@
             </p>
             <span>_____</span>
             <p class="social-handle">
-              <span><a :href="facebookUrl" target="_blank"><i class="fab fa-facebook-f fa-2x fb" /></a></span>
-              <span><a :href="instagramUrl" target="_blank"><i class="fab fa-instagram fa-2x in" /></a></span>
-              <span><a :href="twitterUrl" target="_blank"><i class="fab fa-twitter fa-2x tw" /></a></span>
+              <span><a :href="facebookUrl" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-2x fb" /></a></span>
+              <span><a :href="instagramUrl" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram fa-2x in" /></a></span>
+              <span><a :href="twitterUrl" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter fa-2x tw" /></a></span>
             </p>
           </div>
           <div class="image-illustration-container">

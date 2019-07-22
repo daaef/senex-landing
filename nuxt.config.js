@@ -8,6 +8,10 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      lang: 'en',
+      'data-n-head': 'lang'
+    },
     title: 'SenexPAY',
     meta: [
       { charset: 'utf-8' },
@@ -23,12 +27,14 @@ module.exports = {
         crossorigin: 'anonymous',
         integrity:
           'sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr'
-      },
+      }
+      /*
       {
         rel: 'stylesheet',
         href:
           '//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css'
       }
+      */
     ]
   },
 
@@ -123,7 +129,18 @@ module.exports = {
 
   manifest: {
     name: 'SenexPAY',
-    lang: 'en'
+    lang: 'en',
+    author: 'Rikozone Technology',
+    categories: ['finance', 'money', 'exchange']
+  },
+
+  workbox: {
+    // options
+    offlineAnalytics: true,
+    // dev: true,
+    config: {
+      // debug: true
+    }
   },
 
   sitemap: {
