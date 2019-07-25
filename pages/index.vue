@@ -36,7 +36,11 @@
             </p>
           </div>
           <div class="image-illustration-container">
-            <img src="~assets/creatives-11.png" alt="senexpay">
+            <picture>
+              <source srcset="~assets/creatives-11.webp" type="image/webp">
+              <source srcset="~assets/creatives-11.png" type="image/png"> 
+              <img src="~assets/creatives-11.png" alt="senexpay">
+            </picture>
           </div>
         </div>
         <div class="column is-fullheight">

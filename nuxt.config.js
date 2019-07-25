@@ -17,6 +17,11 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description },
+      {
+        name: 'keywords',
+        content:
+          'bitcoin, exchange, trade, btc, sell, buy, nigeria, sell bitcoin, buy bitcoin, otc, buy bitcoins in nigeria, sell bitcoins in nigeria, fast, secure, reliable, senex, senexpay, senex payment services, money, credit card, debit card, payment, buy bitcoin with card, blockchain, network, block, hash, confirmations, KYC'
+      },
       { name: 'theme-color', content: '#0c5db2' }
     ],
     link: [
@@ -136,8 +141,8 @@ module.exports = {
 
   workbox: {
     // options
-    offlineAnalytics: true,
     // dev: true,
+    offlineAnalytics: true,
     config: {
       // debug: true
     }
