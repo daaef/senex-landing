@@ -28,10 +28,21 @@
           </div>
         </div>
       </div>
-      <a
+      <!-- <a
         v-if="displayContactFab"
         class="contact-support-container has-text-centered is-block"
         @click.prevent="showContactFormModal"
+      >
+        <img src="~/assets/contact-support.png" alt="contact support image">
+        <span class="text">Contact <br> Support</span>
+      </a> -->
+      <a
+        v-if="displayContactFab"
+        href="https://api.whatsapp.com/send?phone=2348184899239" 
+        aria-label="Whatsapp"
+        class="contact-support-container has-text-centered is-block"
+        target="_blank" 
+        rel="noopener"
       >
         <img src="~/assets/contact-support.png" alt="contact support image">
         <span class="text">Contact <br> Support</span>

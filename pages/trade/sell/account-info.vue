@@ -57,7 +57,8 @@
           >
         </div>
         <p class="help is-danger">
-          <i class="fas fa-exclamation-circle" /> Be sure to use a bank account with the name <b>{{ `${info.firstName.toUpperCase()} ${info.lastName.toUpperCase()}` }}</b> to avoid issues with payout.
+          <!-- <i class="fas fa-exclamation-circle" /> Be sure to use a bank account with the name <b>{{ `${info.firstName.toUpperCase()} ${info.lastName.toUpperCase()}` }}</b> to avoid issues with payout. -->
+          <i class="fas fa-exclamation-circle" /> Verify your bank information to avoid issues with payout.
         </p>
       </div>
 
@@ -274,10 +275,10 @@ export default {
           prop: 'accountName',
           value: resp.data.data.data.accountname
         })
-        const respName = resp.data.data.data.accountname
-        this.proceed =
-          respName.includes(this.info.firstName.toUpperCase()) &&
-          respName.includes(this.info.lastName.toUpperCase())
+        // const respName = resp.data.data.data.accountname
+        this.proceed = true
+        // respName.includes(this.info.firstName.toUpperCase()) &&
+        // respName.includes(this.info.lastName.toUpperCase())
       } catch (error) {
         this.proceed = false
         await this.$store.commit('trade/UPDATE_BANK_DETAILS', {
