@@ -56,7 +56,11 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/v-clipboard', '~plugins/vue-js-modal'],
+  plugins: [
+    '~/plugins/v-clipboard',
+    '~plugins/vue-js-modal',
+    { src: '~plugins/vue-tawk', mode: 'client' }
+  ],
 
   /*
   ** Nuxt.js modules

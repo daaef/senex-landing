@@ -2,18 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _6b8212c0 = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
-const _68bff469 = () => interopDefault(import('../pages/faq.vue' /* webpackChunkName: "pages/faq" */))
-const _0859853e = () => interopDefault(import('../pages/track/index.vue' /* webpackChunkName: "pages/track/index" */))
-const _17199a7a = () => interopDefault(import('../pages/track/verify.vue' /* webpackChunkName: "pages/track/verify" */))
-const _51acc41e = () => interopDefault(import('../pages/trade/buy/index.vue' /* webpackChunkName: "pages/trade/buy/index" */))
-const _8901ebc6 = () => interopDefault(import('../pages/trade/sell/index.vue' /* webpackChunkName: "pages/trade/sell/index" */))
-const _2a838087 = () => interopDefault(import('../pages/trade/buy/pay.vue' /* webpackChunkName: "pages/trade/buy/pay" */))
-const _b2e1682c = () => interopDefault(import('../pages/trade/buy/verify.vue' /* webpackChunkName: "pages/trade/buy/verify" */))
-const _7737576a = () => interopDefault(import('../pages/trade/buy/wallet.vue' /* webpackChunkName: "pages/trade/buy/wallet" */))
-const _59be765a = () => interopDefault(import('../pages/trade/sell/account-info.vue' /* webpackChunkName: "pages/trade/sell/account-info" */))
-const _1d8f70be = () => interopDefault(import('../pages/trade/sell/wallet.vue' /* webpackChunkName: "pages/trade/sell/wallet" */))
-const _2c125d36 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _1c37cf72 = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
+const _a3464c8a = () => interopDefault(import('../pages/faq.vue' /* webpackChunkName: "pages/faq" */))
+const _cab29e9a = () => interopDefault(import('../pages/track/index.vue' /* webpackChunkName: "pages/track/index" */))
+const _52b49168 = () => interopDefault(import('../pages/track/verify.vue' /* webpackChunkName: "pages/track/verify" */))
+const _2d8f1843 = () => interopDefault(import('../pages/trade/buy/index.vue' /* webpackChunkName: "pages/trade/buy/index" */))
+const _31c8da0b = () => interopDefault(import('../pages/trade/sell/index.vue' /* webpackChunkName: "pages/trade/sell/index" */))
+const _62476759 = () => interopDefault(import('../pages/trade/buy/pay.vue' /* webpackChunkName: "pages/trade/buy/pay" */))
+const _1cd91bd8 = () => interopDefault(import('../pages/trade/buy/verify.vue' /* webpackChunkName: "pages/trade/buy/verify" */))
+const _24fdb150 = () => interopDefault(import('../pages/trade/buy/wallet.vue' /* webpackChunkName: "pages/trade/buy/wallet" */))
+const _0f57cd25 = () => interopDefault(import('../pages/trade/sell/account-info.vue' /* webpackChunkName: "pages/trade/sell/account-info" */))
+const _707f9e90 = () => interopDefault(import('../pages/trade/sell/wallet.vue' /* webpackChunkName: "pages/trade/sell/wallet" */))
+const _3befaa37 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
 
@@ -91,51 +91,51 @@ export function createRouter() {
 
     routes: [{
       path: "/about",
-      component: _6b8212c0,
+      component: _1c37cf72,
       name: "about"
     }, {
       path: "/faq",
-      component: _68bff469,
+      component: _a3464c8a,
       name: "faq"
     }, {
       path: "/track",
-      component: _0859853e,
+      component: _cab29e9a,
       name: "track"
     }, {
       path: "/track/verify",
-      component: _17199a7a,
+      component: _52b49168,
       name: "track-verify"
     }, {
       path: "/trade/buy",
-      component: _51acc41e,
+      component: _2d8f1843,
       name: "trade-buy"
     }, {
       path: "/trade/sell",
-      component: _8901ebc6,
+      component: _31c8da0b,
       name: "trade-sell"
     }, {
       path: "/trade/buy/pay",
-      component: _2a838087,
+      component: _62476759,
       name: "trade-buy-pay"
     }, {
       path: "/trade/buy/verify",
-      component: _b2e1682c,
+      component: _1cd91bd8,
       name: "trade-buy-verify"
     }, {
       path: "/trade/buy/wallet",
-      component: _7737576a,
+      component: _24fdb150,
       name: "trade-buy-wallet"
     }, {
       path: "/trade/sell/account-info",
-      component: _59be765a,
+      component: _0f57cd25,
       name: "trade-sell-account-info"
     }, {
       path: "/trade/sell/wallet",
-      component: _1d8f70be,
+      component: _707f9e90,
       name: "trade-sell-wallet"
     }, {
       path: "/",
-      component: _2c125d36,
+      component: _3befaa37,
       name: "index"
     }],
 
