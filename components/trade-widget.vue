@@ -232,11 +232,11 @@ export default {
             rv = fiatAmount / rate.NGN
           }
 
-          if (rv < rate.minimum / rate.USD) {
-            // this.errors.add({
-            //   field: 'BTC',
-            //   msg: `Please enter a value not less than $${rate.minimum}`
-            // })
+          if (rv < rate.minimum / rate.USD && this.fiatAmountIsDirty) {
+            this.errors.add({
+              field: 'BTC',
+              msg: `Please enter a value not less than $${rate.minimum}`
+            })
           }
         }
         return rv === 0 ? 0 : +rv.toFixed(8)
@@ -269,6 +269,16 @@ export default {
             rv = rate.USD * cryptoAmount
           } else {
             rv = rate.NGN * cryptoAmount
+          }
+
+          if (
+            cryptoAmount < rate.minimum / rate.USD &&
+            this.cryptoAmountIsDirty
+          ) {
+            this.errors.add({
+              field: 'BTC',
+              msg: `Please enter a value not less than $${rate.minimum}`
+            })
           }
         }
         return rv === 0 ? 0 : +rv.toFixed(2)
@@ -315,10 +325,6 @@ export default {
     cryptoAmount: function(newAmount) {
       if (this.cryptoAmountIsDirty) {
         this.fetchCryptoRates()
-        const myrate = this.rates[this.tradeType]
-        if (newAmount < myrate.minimum / myrate.USD) {
-          this.minimumTradeAlert(myrate.minimum)
-        }
       }
     }
   },
@@ -414,14 +420,6 @@ export default {
       } finally {
         this.isLoading = false
       }
-    },
-
-    minimumTradeAlert(min) {
-      this.errors.add({
-        field: 'BTC',
-        msg: `Please enter a value not less than $${min}`
-      })
-      log.debug(min)
     }
   }
 }
