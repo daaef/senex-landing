@@ -40,6 +40,13 @@ module.exports = {
           '//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css'
       }
       */
+    ],
+    script: [
+      /* {
+        src: 'https://cdn.widgetwhats.com/script.min.js',
+        'data-id': '14644',
+        async: true
+      } */
     ]
   },
 
@@ -58,8 +65,8 @@ module.exports = {
   */
   plugins: [
     '~/plugins/v-clipboard',
-    '~plugins/vue-js-modal',
-    { src: '~plugins/vue-tawk', mode: 'client' }
+    '~plugins/vue-js-modal'
+    // { src: '~plugins/vue-tawk', mode: 'client' }
   ],
 
   /*

@@ -1,5 +1,5 @@
 import consola from 'consola'
 
 export default consola.create({
-  level: 5
+  level: 0
 })

@@ -23,7 +23,6 @@ import nuxt_plugin_veevalidate_65e479e4 from 'nuxt_plugin_veevalidate_65e479e4' 
 import nuxt_plugin_axios_1ae5b687 from 'nuxt_plugin_axios_1ae5b687' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_vclipboard_17e9386e from 'nuxt_plugin_vclipboard_17e9386e' // Source: ../plugins/v-clipboard (mode: 'all')
 import nuxt_plugin_vuejsmodal_26c7eee7 from 'nuxt_plugin_vuejsmodal_26c7eee7' // Source: ../plugins/vue-js-modal (mode: 'all')
-import nuxt_plugin_vuetawk_9c411a82 from 'nuxt_plugin_vuetawk_9c411a82' // Source: ../plugins/vue-tawk (mode: 'client')
 
 // Component: <NoSsr>
 Vue.component(NoSsr.name, NoSsr)
@@ -209,10 +208,6 @@ async function createApp(ssrContext) {
 
   if (typeof nuxt_plugin_vuejsmodal_26c7eee7 === 'function') {
     await nuxt_plugin_vuejsmodal_26c7eee7(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_vuetawk_9c411a82 === 'function') {
-    await nuxt_plugin_vuetawk_9c411a82(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first
