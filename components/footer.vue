@@ -38,7 +38,7 @@
       </a> -->
       <a
         v-if="displayContactFab"
-        href="https://api.whatsapp.com/send?phone=+2348184899239&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." 
+        href="https://api.whatsapp.com/send?phone=+2348184899239&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin" 
         aria-label="Whatsapp"
         class="float tooltip is-tooltip-left is-tooltip-active"
         data-tooltip="Need help? Chat with us!"
