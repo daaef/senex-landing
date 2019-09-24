@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <p class="title has-text-centered has-text-weight-semibold">
-        FAQ
+        FAQs
       </p>
       <div class="columns">
         <div class="column is-6 is-offset-3 q-wrapper">

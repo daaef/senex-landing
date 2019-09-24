@@ -4,12 +4,12 @@
       <div class="columns">
         <div class="column is-three-fifths">
           <div class="info">
-            <p class="text-exchanging is-uppercase is-marginless	">
-              Exchanging
+            <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
+              ex<i class="fas fa-sync-alt is-size-4-tablet is-size-5-touch" />hanging
             </p>
             <p>
-              <span class="text-crypto">Cryptocurrencies</span>
-              <span class="text-made-easy">made easy!</span>
+              <span class="text-crypto is-size-1-tablet is-size-2-touch">Cryptocurrencies</span>
+              <span class="text-made-easy is-size-2-tablet is-size-3-touch">made easy!</span>
             </p>
             <p style="margin: 0.5rem 0; vertical-align: bottom;">
               <svg
@@ -36,10 +36,10 @@
             </p>
           </div>
           <div class="image-illustration-container">
-            <picture>
-              <source srcset="~assets/creatives-11.webp" type="image/webp">
-              <source srcset="~assets/creatives-11.png" type="image/png"> 
-              <img src="~assets/creatives-11.png" alt="senexpay">
+            <picture class="illustration bounce-2">
+              <source srcset="~assets/creatives-12.webp" type="image/webp">
+              <source srcset="~assets/creatives-12.png" type="image/png"> 
+              <img src="~assets/creatives-12.png" alt="senexpay">
             </picture>
           </div>
         </div>
@@ -47,17 +47,28 @@
           <trade-widget ref="tradeWidget" />
         </div>
       </div>
+      <!-- <no-ssr class="shape">
+        <div
+          v-for="n in 50"          
+          :key="n"
+          :class="`shape-container--${n} shape-animation`"
+        >
+          <div class="random-shape" />
+        </div>        
+      </no-ssr> -->
     </div>
   </section>
 </template>
 
 <script>
+// import NoSSR from 'vue-no-ssr'
 import TradeWidget from '@/components/trade-widget.vue'
 
 export default {
   layout: 'simple',
   components: {
     TradeWidget
+    // 'no-ssr': NoSSR
   },
 
   head() {
@@ -123,7 +134,8 @@ div.wrapper {
 }
 
 div.image-illustration-container {
-  max-width: 350px;
+  max-width: 380px;
+  margin: 0px auto;
 
   img.image {
     max-width: 100%;
@@ -133,23 +145,22 @@ div.image-illustration-container {
 
 div.info {
   font-family: $font-nunito;
-  line-height: normal;
-  color: #707070;
+  line-height: 1.1;
+  color: #000000;
+  // color: #707070;
   padding-top: 50px;
   p.text-exchanging {
-    font-size: 2rem;
+    font-size: 2.8rem;
     // font-family: $font-open-sans;
     font-weight: 300;
   }
 
   span.text-crypto {
-    font-size: 2.7rem;
     font-weight: 700;
     color: #0c5db2;
   }
 
   span.text-made-easy {
-    font-size: 2rem;
     margin-left: 0.6rem;
   }
 
@@ -170,6 +181,84 @@ div.info {
 
     .tw {
       color: #00acee;
+    }
+  }
+}
+
+/* bounce animation
+.stage {
+  border-bottom: 3px solid #444;
+  display: flex;
+  height: 330px;
+  width: 100%;
+}
+.illustration {
+  align-self: flex-end;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  display: block;
+}
+.bounce-2 {
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+}
+@keyframes bounce-2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+*/
+// shapes animation
+.shape {
+  position: absolute;
+  // overflow: hidden;
+  height: 100vh;
+}
+.random-shape:after {
+  font-family: FontAwesome;
+  content: '\f005';
+}
+
+$circle-size: 10px;
+$colors: #ffd700, #fff8dc, #db7093, #c2b7fe, #95a9ff;
+$shapes: '\f005', '\f0c8', '\f1db', '\f096', '\f1d8', '\f1cb';
+$shape-count: 50;
+
+@for $i from 1 through $shape-count {
+  $shape-size: random(10);
+  $rotation: random(360);
+  $speed: 40 + random(10);
+  $color-key: random(length($colors));
+  $shape-color: nth($colors, $color-key);
+  $shape-key: random(length($shapes));
+  $shape-type: nth($shapes, $shape-key);
+  $text: random(10);
+
+  @keyframes shape-#{$i} {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(#{$rotation + 0}deg);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotate(#{$rotation + 360}deg);
+    }
+  }
+
+  .shape-container--#{$i} {
+    animation: shape-#{$i} #{$speed}s linear infinite;
+
+    .random-shape:after {
+      margin: #{$shape-size}rem;
+      color: $shape-color;
+      font-size: #{$shape-size * 0.2}rem;
+      content: $shape-type;
     }
   }
 }

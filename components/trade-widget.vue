@@ -2,7 +2,7 @@
   <section>
     <div class="">
       <div class="columns">
-        <div class="column is-9-desktop widget-column">
+        <div class="column is-10-desktop is-offset-2 widget-column">
           <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
             <div class="box trade-box">
               <div class="has-text-centered trade-selector-container">
@@ -27,22 +27,21 @@
 
               <div style="margin-bottom: 0.5em;" class="columns">
                 <div class="field has-addons column">
-                  <div class="control">
+                  <!-- <div class="control">
                     <a
-                      href=""
-                      class="button"
-                      style="background: #1b70cf; color: #fff; font-size: 1.03rem;"
+                      class="button is-large"
+                      style="background: #1b70cf; color: #fff;"
                     >
                       BTC
                     </a>
-                  </div>
-                  <div class="control is-expanded">
+                  </div> -->
+                  <div class="control is-expanded has-icons-left">
                     <input
                       ref="btcInput"
                       v-model.number="computedCryptoAmount"
                       v-validate="'decimal:8'"
                       type="number"
-                      class="input blue-border"
+                      class="input is-large blue-border"
                       :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
                       step="any"
                       min="0"
@@ -51,6 +50,9 @@
                       name="BTC"
                       aria-label="BTC"
                     >
+                    <span class="icon is-left norm" style="">
+                      <i class="fab fa-bitcoin fa-2x" />
+                    </span>
                     <p v-show="errors.has('BTC')" class="help is-danger">
                       {{ errors.first('BTC') }}
                     </p>
@@ -58,14 +60,14 @@
                 </div>
               </div>
               <div style="margin-bottom: 0.5rem;">
-                <div class="field is-grouped">
-                  <p class="control has-text-centered">
-                    <span class="icon" style="color: #c4c4c4; vertical-align: center;">
-                      <i class="fas fa-exchange-alt" />
-                    </span>
-                  </p>
+                <!-- <p class="control has-text-centered">
+                  <span class="icon" style="color: #1b70cf; vertical-align: center;">
+                    <i class="fas fa-exchange-alt" />
+                  </span>
+                </p> -->
+                <div class="field has-addons">
                   <div class="control has-icons-left">
-                    <div class="select">
+                    <div class="select is-medium">
                       <select
                         v-model="currency"
                         name="currency"
@@ -73,10 +75,10 @@
                         aria-label="Currency"
                       >
                         <option value="NGN">
-                          NGN
+                          &#8358;
                         </option>
                         <option value="USD">
-                          USD
+                          &#36;
                         </option>
                       </select>
                       <span class="icon is-large is-left">
@@ -88,7 +90,7 @@
                     <input
                       v-model.number="computedFiatAmount"
                       type="number"
-                      class="input"
+                      class="input is-medium"
                       min="0"
                       step="any"
                       style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem;"
@@ -97,7 +99,7 @@
                   </p>
                 </div>
               </div>
-              <div style="margin-bottom: 1.5rem;">
+              <div style="margin-bottom: 0.5rem;">
                 <div
                   v-show="computedFiatAmountReversed"
                   class="has-text-right is-size-6"
@@ -454,9 +456,9 @@ div.button-container {
 }
 
 div.track-trade {
-  color: #adadad;
   font-size: 0.95rem;
   font-family: $font-roboto;
+  margin-bottom: 3rem;
   a {
     font-weight: bold;
   }
@@ -479,9 +481,9 @@ p.flutterwave-grp {
 }
 
 div.trade-box {
-  padding-bottom: 0.5rem;
-  padding-top: 1.5rem;
-  box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem 2.2rem;
+  // padding-top: 1.5rem;
+  box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.3);
   font-family: $font-open-sans;
   select {
     color: #707070;
@@ -499,6 +501,10 @@ div.trade-box {
   }
 
   .amount {
+    color: #1b70cf;
+  }
+
+  .norm {
     color: #1b70cf;
   }
 }
@@ -534,7 +540,9 @@ div.rates-container {
 }
 
 .empty-grid-bg {
-  margin-top: 3.5rem;
+  position: absolute;
+  // z-index: -1;
+  margin: 0.1rem auto;
   height: 100px;
   width: 100%;
   background-image: url('~assets/grid-bg.png');
