@@ -25,6 +25,8 @@
                 fetching current rates...
               </div>
 
+              <p class="is-size-7">{{ tradeType == 'buy' ? 'I have Naira/Dollar and want to buy BTC' : 'I want to give out BTC and get paid Naira/Dollar' }}</p>
+
               <div style="margin-bottom: 0.5em;" class="columns">
                 <div class="field has-addons column">
                   <!-- <div class="control">
@@ -43,9 +45,10 @@
                       type="number"
                       class="input is-large blue-border"
                       :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
+                      placeholder="0.00000000"
                       step="any"
                       min="0"
-                      maxlength="13"
+                      maxlength="12"
                       style="text-align: right;"
                       name="BTC"
                       aria-label="BTC"
@@ -91,6 +94,7 @@
                       v-model.number="computedFiatAmount"
                       type="number"
                       class="input is-medium"
+                      placeholder="0.00"
                       min="0"
                       step="any"
                       style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem;"
@@ -115,9 +119,9 @@
                 class="button is-fullwidth trade-button is-medium"
                 :class="{'disabled': !canSubmit, 'is-loading': isLoading}"
                 :disabled="!canSubmit"
-                style="font-weight: 500;"
+                style="font-weight: 500; padding-top: 9px;"
               >
-                TRADE
+                EXCHANGE
               </button>
             </div>
           </form>
@@ -241,7 +245,7 @@ export default {
             })
           }
         }
-        return rv === 0 ? 0 : +rv.toFixed(8)
+        return rv === 0 ? null : +rv.toFixed(8)
       }
     },
 
@@ -283,7 +287,7 @@ export default {
             })
           }
         }
-        return rv === 0 ? 0 : +rv.toFixed(2)
+        return rv === 0 ? null : +rv.toFixed(2)
       }
     },
 

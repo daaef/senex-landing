@@ -141,7 +141,7 @@ div.wrapper {
     }
     .text {
       font-family: $font-roboto;
-      color: #b9b9b9;
+      color: #000000;
       font-weight: normal;
       font-style: normal;
       line-height: 1.5;

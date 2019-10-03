@@ -8,7 +8,7 @@
               Tracking
               <span
                 class="is-block has-text-centered has-text-weight-normal"
-                style="font-size: 0.95rem; color: #d5d5d5;"
+                style="font-size: 0.95rem;"
               >
                 Track status of your pending trade
               </span>
@@ -308,7 +308,7 @@ div.wrapper {
     div.has-no-trade {
       margin-top: 2.5rem;
       // margin-bottom: 10rem;
-      color: #d5d5d5;
+      color: #000000;
     }
   }
 
