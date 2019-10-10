@@ -10,12 +10,21 @@
         <div class="level-right">
           <div class="level is-mobile">
             <p class="level-item has-text-centered">
-              <a @click="openModal('tac')">Terms &amp; conditions</a>&nbsp;|&nbsp; 
-              <a @click="openModal('pp')"> Privacy Policy</a>&nbsp;|&nbsp;
-              <a @click="openModal('dis')"> Disclaimer</a>
+              <router-link to="/legal/terms">
+                TOS
+              </router-link>&nbsp;|&nbsp; 
+              <router-link to="/legal/privacy-policy">
+                Privacy Policy
+              </router-link>&nbsp;|&nbsp;
+              <router-link to="/legal/disclaimer">
+                Disclaimer
+              </router-link>
             </p>
           </div>
         </div>
+      </div>
+      <div class="is-hidden-desktop">
+        <br>
       </div>
       <a
         href="https://api.whatsapp.com/send?phone=+2348184899239&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin" 

@@ -25,7 +25,9 @@
                 fetching current rates...
               </div>
 
-              <p class="is-size-7">{{ tradeType == 'buy' ? 'I have Naira/Dollar and want to buy BTC' : 'I want to give out BTC and get paid Naira/Dollar' }}</p>
+              <p class="is-size-7">
+                {{ tradeType == 'buy' ? 'I have Naira/Dollar and want to buy BTC' : 'I want to give out BTC and get paid Naira/Dollar' }}
+              </p>
 
               <div style="margin-bottom: 0.5em;" class="columns">
                 <div class="field has-addons column">

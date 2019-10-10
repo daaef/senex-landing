@@ -32,16 +32,20 @@ module.exports = {
         crossorigin: 'anonymous',
         integrity:
           'sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr'
-      }
-      /*
+      },
       {
         rel: 'stylesheet',
         href:
-          '//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css'
+          'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css'
       }
-      */
     ],
     script: [
+      {
+        src:
+          'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
+        'data-cfasync': 'false',
+        async: true
+      }
       /* {
         src: 'https://cdn.widgetwhats.com/script.min.js',
         'data-id': '14644',
@@ -65,8 +69,8 @@ module.exports = {
   */
   plugins: [
     '~/plugins/v-clipboard',
-    '~plugins/vue-js-modal'
-    // { src: '~plugins/vue-tawk', mode: 'client' }
+    '~plugins/vue-js-modal',
+    { src: '~plugins/cookie', mode: 'client' }
   ],
 
   /*
