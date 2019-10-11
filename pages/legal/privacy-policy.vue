@@ -9,7 +9,7 @@
           <p>
             Please note that SenexPAY is owned and managed by Senex Payment Services
             Limited, Nigeria. The objective of this Privacy Policy is to set out in an accountable
-            and transparent way the way SenexPAY collects and uses your Personal Information.
+            and transparent way the process in which SenexPAY collects and uses your Personal Information.
           </p>
           <ol>
             <li>
@@ -97,8 +97,20 @@
 
 <script>
 export default {
-  layout: 'simple'
-  // ddd
+  layout: 'simple',
+  head() {
+    return {
+      title: 'Privacy Policy - SenexPAY',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'This is to set out in an accountable and transparent way the process in which SenexPAY collects and uses your Personal Information.'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -106,8 +118,8 @@ export default {
 @import '~assets/scss/fonts.scss';
 
 div.wrapper {
-  margin-bottom: 3em;
-  margin-top: 2rem;
+  margin-bottom: 2.2em;
+  margin-top: 1.5rem;
   font-family: $font-avenir;
   .title {
     font-size: 1.7em;

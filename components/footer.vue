@@ -10,14 +10,14 @@
         <div class="level-right">
           <div class="level is-mobile">
             <p class="level-item has-text-centered">
-              <router-link to="/legal/terms">
+              <!-- <router-link to="/legal/terms">
                 TOS
-              </router-link>&nbsp;|&nbsp; 
+              </router-link>&nbsp;|&nbsp;  -->
               <router-link to="/legal/privacy-policy">
                 Privacy Policy
               </router-link>&nbsp;|&nbsp;
-              <router-link to="/legal/disclaimer">
-                Disclaimer
+              <router-link to="/legal/risk-disclosure">
+                Risk Disclosure
               </router-link>
             </p>
           </div>

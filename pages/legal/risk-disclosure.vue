@@ -80,8 +80,20 @@
 
 <script>
 export default {
-  layout: 'simple'
-  // ddd
+  layout: 'simple',
+  head() {
+    return {
+      title: 'Risk Disclosure - SenexPAY',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Dealing with cryptocurrencies, in general, entails specific risks. This risk disclosure statement cannot and does not disclose all risks and other aspects ...'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -89,8 +101,8 @@ export default {
 @import '~assets/scss/fonts.scss';
 
 div.wrapper {
-  margin-bottom: 3em;
-  margin-top: 2rem;
+  margin-bottom: 2.2em;
+  margin-top: 1.5rem;
   font-family: $font-avenir;
   .title {
     font-size: 1.7em;
