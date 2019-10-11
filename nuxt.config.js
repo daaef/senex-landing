@@ -165,7 +165,7 @@ module.exports = {
 
   sitemap: {
     // routes: [],
-    exclude: ['/trade/**', '/track/verify']
+    exclude: ['/trade/**', '/track/verify', '/legal/terms']
   },
 
   /*
