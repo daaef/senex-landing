@@ -81,9 +81,9 @@
             <div class="columns">
               <div class="column has-text-centered">
                 <div class="column partner-img-container">
-                  <a href="https://flutterwave.com" target="_blank">
+                  <!-- <a href="https://flutterwave.com" target="_blank">
                     <img src="~assets/flutterwave.png" alt="" class="Flutterwave partner">
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
