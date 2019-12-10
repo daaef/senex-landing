@@ -1,7 +1,7 @@
 <template>
   <trader step="wallet_deposit">
     <template slot="title">
-      Transfer BTC
+      Make payments
     </template>
     <template v-if="isOtc == false" slot="content" class="wallet_deposit">
       <div v-if="receiveAddress" class="wallet_deposit">

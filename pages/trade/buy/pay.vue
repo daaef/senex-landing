@@ -1,7 +1,7 @@
 <template>
   <trader step="credit_card">
     <template slot="title">
-      Payment {{ isOtc ? '(OTC)' : 'Card' }}
+      Make payments
     </template>
     <template v-if="isOtc == false" slot="content">
       <div v-if="verifying" class="has-text-centered">
