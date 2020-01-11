@@ -32,6 +32,7 @@ const getDefaultCreateDataStructure = () => ({
 
   receiveAddress: '',
 
+  isKyc: false,
   isOtc: false,
   otcInstructions: null,
 
