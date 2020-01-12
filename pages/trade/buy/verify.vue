@@ -3,7 +3,7 @@
     <template slot="title">
       Verification
     </template>
-    <template v-if="shouldVerify" slot="content">
+    <template v-if="kyc" slot="content">
       <div class="user-verify">
         <div class="has-text-weight-semibold">
           Upload ID
@@ -157,12 +157,13 @@ export default {
       currency: state => state.trade.create.currency,
       conversionRate: state => state.trade.create.conversionRate,
       tradeId: state => state.trade.create.metadata.id,
-      pin: state => state.trade.create.metadata.pin
+      pin: state => state.trade.create.metadata.pin,
+      kyc: state => state.trade.create.metadata.isKyc
     }),
 
+    /*
     shouldVerify() {
       return this.$store.state.trade.create.isKyc
-      /*
       if (this.$store.state.trade.create.isOtc) {
         return false
       } else {
@@ -176,8 +177,8 @@ export default {
         }
         return tradeAmount >= _TRADE_VERIFY_AMOUNT_CONDITION_
       }
-      */
     },
+    */
 
     canSubmit() {
       return this.selfie.url && this.idCard.url
@@ -233,7 +234,7 @@ export default {
     },
 
     async handleSubmit() {
-      if (!this.shouldVerify) {
+      if (!this.kyc) {
         return this.requestTrade()
       }
 

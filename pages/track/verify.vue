@@ -58,7 +58,7 @@
             <p>
               <span class="_title">KYC Status</span>
               <span v-if="tradeData.kyc == null" class="_item">
-                Not Required
+                Not Uploaded
               </span>
               <span v-else class="_item">
                 {{ tradeData.kyc.status === 'failed' ? 'Declined, please re-upload documents' : tradeData.kyc.status }}
@@ -301,11 +301,11 @@ export default {
         fileType === 'idCard'
           ? (requestBody.govtIssuedId = resp.data.datafile)
           : (requestBody.selfieWithId = resp.data.datafile)
-        await this.$axios.put(
-          `/trade/${this.requestBody.trade}/kyc/`,
-          requestBody
-        )
+
+        await this.$axios.put(`/trade/${requestBody.trade}/kyc/`, requestBody)
+
         fileType === 'idCard' ? (this.upload1 = true) : (this.upload2 = true)
+
         this.$swal({
           title: 'Done:',
           type: 'success',
