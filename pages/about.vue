@@ -14,7 +14,7 @@
 
       <div class="columns vision-wrapper is-centered">
         <div class="column is-7 text">
-          Founded in 2016, SenexPAY (initially known as solely Senex) started as a traditional (over-the-counter) bitcoin to naira exchange service and has upgraded to become the most user-friendly, fasted, secure and fully-automated platform in Africa. The company is fully registered with the Corporate Affairs Commission of Nigeria and backed by some prestigious financial investors across Africa.
+          Founded in 2016, SenexPAY (initially known as solely Senex) started as a traditional (over-the-counter) bitcoin to naira exchange service and has upgraded to become the most user-friendly, fast, secure and fully-automated platform in Africa. The company is fully registered with the Corporate Affairs Commission of Nigeria and backed by some prestigious financial investors across Africa.
         </div>
       </div>
 
@@ -81,9 +81,9 @@
             <div class="columns">
               <div class="column has-text-centered">
                 <div class="column partner-img-container">
-                  <a href="https://flutterwave.com" target="_blank">
+                  <!-- <a href="https://flutterwave.com" target="_blank">
                     <img src="~assets/flutterwave.png" alt="" class="Flutterwave partner">
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -99,7 +99,15 @@ export default {
   layout: 'fullblue',
   head() {
     return {
-      title: 'About SenexPay'
+      title: 'About Us - SenexPAY',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'SenexPAY is a multi-fiat to bitcoin exchange platform which is owned and managed by Senex Payment Services Limited in Lekki, Nigeria.'
+        }
+      ]
     }
   }
 }
@@ -133,7 +141,7 @@ div.wrapper {
     }
     .text {
       font-family: $font-roboto;
-      color: #b9b9b9;
+      color: #000000;
       font-weight: normal;
       font-style: normal;
       line-height: 1.5;

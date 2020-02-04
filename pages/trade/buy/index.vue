@@ -50,7 +50,7 @@
             type="text"
             class="input"
             :class="{ 'is-danger': errors.has('email') }"
-            placeholder="batman@brucewayne.com"
+            placeholder="example@mail.com"
           >
         </div>
         <p v-show="errors.has('email')" class="is-danger help">
@@ -68,7 +68,7 @@
             type="text"
             class="input"
             :class="{ 'is-danger': errors.has('mobile number') }"
-            placeholder="+2340000000000"
+            placeholder="ex. +1 5342340596"
           >
         </div>
         <p v-show="errors.has('mobile number')" class="help is-danger">

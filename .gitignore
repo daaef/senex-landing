@@ -81,4 +81,4 @@ dist
 .idea
 
 # Service worker
-sw.*
+#sw.*

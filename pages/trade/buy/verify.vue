@@ -3,13 +3,14 @@
     <template slot="title">
       Verification
     </template>
-    <template v-if="shouldVerify" slot="content">
+    <template v-if="kyc" slot="content">
       <div class="user-verify">
         <div class="has-text-weight-semibold">
           Upload ID
         </div>
         <div class="id-section">
-          <img src="~assets/images/id-placeholder.png" alt="" class="upload-id">
+          <!-- <img src="~assets/images/id-placeholder.png" alt="" class="upload-id"> -->
+          <i class="fas fa-id-card fa-5x" style="padding-top:10px" />
           <div class="widget-grp">
             <input
               ref="idCardVer"
@@ -40,7 +41,8 @@
           Upload Selfie
         </div>
         <div class="selfie-section">
-          <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie">
+          <!-- <img src="~assets/images/selfie-placeholder.png" alt="" class="upload-selfie"> -->
+          <i class="fas fa-camera-retro fa-5x" style="padding-top:10px" />
           <div class="widget-grp">
             <input
               ref="selfieVer"
@@ -79,7 +81,7 @@
     <template slot="button">
       <button
         class="button"
-        :class="{'is-loading': loading}"
+        :class="{'disabled': loading}"
         @click="handleSubmit"
       >
         Request Trade
@@ -96,7 +98,7 @@ import { mapState } from 'vuex'
 import { truncate } from 'lodash'
 import Trader from '~/components/trade/trader.vue'
 
-const _TRADE_VERIFY_AMOUNT_CONDITION_ = 250.0 // in dollars
+// const _TRADE_VERIFY_AMOUNT_CONDITION_ = 250.0 // in dollars
 const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
 const _STR_REQUIRED_FIELDS_ = 'You must upload both a selfie & an identity'
 const _ERR_KYC_UPDATE_ = 'Unable to update; try again'
@@ -106,16 +108,20 @@ export default {
   layout: 'simple',
 
   validate({ store }) {
-    if (!store.getters['trade/isActiveTrade']) {
-      return false
+    if (store.state.trade.create.isOtc) {
+      return true
+    } else {
+      if (!store.getters['trade/isActiveTrade']) {
+        return false
+      }
+      if (!store.getters['trade/hasCreatedTrade']) {
+        return false
+      }
+      if (!store.getters['trade/isPaid']) {
+        return false
+      }
+      return true
     }
-    if (!store.getters['trade/hasCreatedTrade']) {
-      return false
-    }
-    if (!store.getters['trade/isPaid']) {
-      return false
-    }
-    return true
   },
 
   components: {
@@ -124,7 +130,7 @@ export default {
 
   filters: {
     formatFilename(filename) {
-      return truncate(filename, { length: 7 })
+      return truncate(filename, { length: 12 })
     }
   },
 
@@ -151,18 +157,28 @@ export default {
       currency: state => state.trade.create.currency,
       conversionRate: state => state.trade.create.conversionRate,
       tradeId: state => state.trade.create.metadata.id,
-      pin: state => state.trade.create.metadata.pin
+      pin: state => state.trade.create.metadata.pin,
+      kyc: state => state.trade.create.metadata.isKyc
     }),
 
+    /*
     shouldVerify() {
-      let tradeAmount
-      if (this.currency === 'USD') {
-        tradeAmount = this.fiatAmount
+      return this.$store.state.trade.create.isKyc
+      if (this.$store.state.trade.create.isOtc) {
+        return false
       } else {
-        tradeAmount = (this.fiatAmount / this.conversionRate.USD_NGN).toFixed(2)
+        let tradeAmount
+        if (this.currency === 'USD') {
+          tradeAmount = this.fiatAmount
+        } else {
+          tradeAmount = (this.fiatAmount / this.conversionRate.USD_NGN).toFixed(
+            2
+          )
+        }
+        return tradeAmount >= _TRADE_VERIFY_AMOUNT_CONDITION_
       }
-      return tradeAmount >= _TRADE_VERIFY_AMOUNT_CONDITION_
     },
+    */
 
     canSubmit() {
       return this.selfie.url && this.idCard.url
@@ -218,7 +234,7 @@ export default {
     },
 
     async handleSubmit() {
-      if (!this.shouldVerify) {
+      if (!this.kyc) {
         return this.requestTrade()
       }
 
@@ -242,11 +258,7 @@ export default {
           selfieWithId: this.selfie.url
         }
         this.loading = true
-        await this.$axios.post(`/trade/${this.tradeId}/kyc/`, requestBody, {
-          headers: {
-            'content-type': 'application/x-www-form-urlencoded'
-          }
-        })
+        await this.$axios.post(`/trade/${this.tradeId}/kyc/`, requestBody)
         this.requestTrade()
       } catch (err) {
         this.$swal({
@@ -266,6 +278,7 @@ export default {
     requestTrade() {
       const self = this
       const onClose = () => {
+        self.$store.commit('trade/SET_TRACK_TRADE_ID', this.tradeId)
         self.$store.commit('trade/RESET_CREATE_TRADE')
         self.$router.replace({
           path: '/track'

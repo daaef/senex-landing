@@ -1,4 +1,5 @@
 const pkg = require('./package')
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -7,11 +8,21 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'SenexPay',
+    htmlAttrs: {
+      lang: 'en',
+      'data-n-head': 'lang'
+    },
+    title: 'SenexPAY',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
+      {
+        name: 'keywords',
+        content:
+          'bitcoin, exchange, trade, btc, sell, buy, nigeria, sell bitcoin, buy bitcoin, otc, buy bitcoins in nigeria, sell bitcoins in nigeria, fast, secure, reliable, senex, senexpay, senex payment services, money, credit card, debit card, payment, buy bitcoin with card, blockchain, network, block, hash, confirmations, KYC'
+      },
+      { name: 'theme-color', content: '#0c5db2' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -21,13 +32,26 @@ module.exports = {
         crossorigin: 'anonymous',
         integrity:
           'sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css'
       }
+    ],
+    script: [
+      {
+        src:
+          'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
+        'data-cfasync': 'false',
+        async: true
+      }
+      /* {
+        src: 'https://cdn.widgetwhats.com/script.min.js',
+        'data-id': '14644',
+        async: true
+      } */
     ]
-  },
-
-  env: {
-    FLW_PUB_KEY: 'FLWPUBK-17b62ccd816c6b2fdd007d4f81eb4973-X',
-    FLW_BASE_URL: 'https://api.ravepay.co'
   },
 
   /*
@@ -43,15 +67,17 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/v-clipboard', '~plugins/vue-js-modal'],
+  plugins: [
+    '~/plugins/v-clipboard',
+    '~plugins/vue-js-modal',
+    { src: '~plugins/cookie', mode: 'client' }
+  ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     [
       'nuxt-validate',
@@ -71,20 +97,75 @@ module.exports = {
       '@nuxtjs/recaptcha',
       {
         hideBadge: true,
-        siteKey: '6Lf9qZYUAAAAAKTXp_ftiF_8kMLksFjFLn3XGfPY',
-
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
         version: 3
       }
-    ]
+    ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.ANALYTICS_ID,
+        dev: false
+      }
+    ],
+    [
+      'nuxt-facebook-pixel-module',
+      {
+        pixelId: process.env.FACEBOOK_PIXEL_ID
+      }
+    ],
+    [
+      '@nuxtjs/dotenv',
+      {
+        systemvars: true,
+        only: []
+      }
+    ],
+    '@nuxtjs/onesignal',
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
+
   /*
   ** Axios module configuration
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://138.68.175.88',
+    baseURL: process.env.AXIOS_BASE_URL,
     proxyHeaders: false,
     credentials: false
+  },
+
+  oneSignal: {
+    init: {
+      appId: process.env.ONE_SIGNAL_APP_ID,
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true
+      }
+    },
+    cdn: true,
+    OneSignalSDK: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js'
+  },
+
+  manifest: {
+    name: 'SenexPAY',
+    lang: 'en',
+    author: 'Rikozone Technology',
+    categories: ['finance', 'money', 'exchange']
+  },
+
+  workbox: {
+    // options
+    // dev: true,
+    offlineAnalytics: true,
+    config: {
+      // debug: true
+    }
+  },
+
+  sitemap: {
+    // routes: [],
+    exclude: ['/trade/**', '/track/verify', '/legal/terms']
   },
 
   /*

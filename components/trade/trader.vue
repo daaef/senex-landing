@@ -45,12 +45,12 @@
             </div>
             <div v-else class="column is-9 content-wrapper">
               <div class="columns is-mobile">
-                <div class="column is-8">
+                <div class="column is-10 is-offset-1">
                   <div class="content-area">
                     <p class="__title">
                       <slot name="title" />
                     </p>
-                    <div class="content">
+                    <div class="content" style="overflow-y: auto">
                       <slot name="content" />
                     </div>
                     <div class="button-wrapper">
@@ -59,7 +59,7 @@
                   </div>
                 </div>
 
-                <div class="column is-4 help">
+                <!-- <div class="column is-3 help">
                   <a href="" class="tooltip-a" @click.prevent="showHelpText = !showHelpText">
                     <img
                       src="~assets/helptext-tooltip.png"
@@ -71,7 +71,7 @@
                   <p v-if="showHelpText" class="text">
                     <slot name="helpText" />
                   </p>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

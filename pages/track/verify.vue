@@ -2,9 +2,9 @@
   <section class="section">
     <div class="container wrapper">
       <p class="has-text-weight-semibold p-heading has-text-centered">
-        Trade Status
+        Trade Lookup
         <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">
-          Track status of your pending trade
+          Quickly track and manage your trade
         </span>
       </p>
       <div class="columns is-centered content-wrapper">
@@ -13,9 +13,10 @@
             <p class="status">
               <span v-if="tradeData.status === 'pending'">Pending</span>
               <span v-if="tradeData.status === 'paid'">Paid</span>
-              <span v-if="tradeData.status === 'kyc_passed'">ID Verification</span>
-              <span v-if="tradeData.status === 'disbursed'">Disbursement</span>
+              <span v-if="tradeData.status === 'kyc_passed'">KYC Approved</span>
+              <span v-if="tradeData.status === 'disbursed'">Disbursed</span>
               <span v-if="tradeData.status === 'completed'">Complete</span>
+              <span v-if="tradeData.status === 'expired'">Expired</span>
             </p>
             <div class="progress-bar">
               <span
@@ -25,7 +26,8 @@
                   'percent-40': tradeData.status === 'paid',
                   'percent-60': tradeData.status === 'kyc_passed',
                   'percent-80': tradeData.status === 'disbursed',
-                  'percent-100': tradeData.status === 'completed'
+                  'percent-100': tradeData.status === 'completed',
+                  'percent-101': tradeData.status === 'expired'
                 }"
               />
             </div>
@@ -33,36 +35,33 @@
           <div class="content">
             <p class="brief">
               {{ tradeData.firstName }} {{ tradeData.lastName }},
-              <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> {{ tradeData.cryptoAmount }}BTC
+              <span v-if="tradeData.type === 'buy'">Buying</span><span v-else>Selling</span> <b>{{ tradeData.cryptoAmount }}</b>BTC
             </p>
             <p>
-              <span class="_title">Transaction amount</span>
+              <span class="_title">{{ tradeData.type == 'buy' ? 'We Receive' : 'Your are Paid' }}</span>
               <span class="_item">
-                {{ tradeData.fiatAmount|formatMoney('NGN') }}
+                <b>{{ tradeData.fiatAmount|formatMoney('NGN') }}</b>
               </span>
             </p>
             <p v-if="tradeData.walletAddress">
-              <span class="_title">BTC Address</span>
+              <span class="_title">Payout to Wallet</span>
               <span class="_item">
                 {{ tradeData.walletAddress }}
               </span>
             </p>
             <p v-else>
-              <span class="_title">Account Number</span>
+              <span class="_title">Deposit to Bank</span>
               <span class="_item">
                 {{ tradeData.accountNumber }}
               </span>
             </p>
             <p>
-              <span class="_title">Payment Status</span>
-              <span
-                v-if="tradeData.status !== 'pending'"
-                class="_item"
-              >
-                Paid
+              <span class="_title">KYC Status</span>
+              <span v-if="tradeData.kyc == null" class="_item">
+                Not Uploaded
               </span>
-              <span v-else>
-                Pending
+              <span v-else class="_item">
+                {{ tradeData.kyc.status === 'failed' ? 'Declined, please re-upload documents' : tradeData.kyc.status }}
               </span>
             </p>
 
@@ -79,8 +78,40 @@
               </svg>
               <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
+            <div v-if="tradeData.kyc != null && tradeData.kyc.status == 'failed'" class="field is-grouped is-grouped-multiline">
+              <div class="control">
+                <div class="tags has-addons" style="cursor:pointer;" @click="$refs.idBrowse.click()">
+                  <span class="tag is-dark is-medium">Govt. ID</span>
+                  <span class="tag is-medium" :class="{ 'is-info': !upload1, 'is-success': upload1 }"><i class="fas" :class="{ 'fa-file-upload': !upload1, 'fa-check-circle': upload1 }" /></span>
+                  <input
+                    ref="idBrowse"
+                    class="file-input"
+                    type="file"
+                    accept="image/*"
+                    name="idcard"
+                    hidden
+                    @change="uploadDoc($event, 'idCard')"
+                  >
+                </div>
+              </div>
+              <div class="control">
+                <div class="tags has-addons" style="cursor:pointer;" @click="$refs.selfieBrowse.click()">
+                  <span class="tag is-dark is-medium">Selfie</span>
+                  <span class="tag is-medium" :class="{ 'is-info': !upload2, 'is-success': upload2 }"><i class="fas" :class="{ 'fa-file-upload': !upload2, 'fa-check-circle': upload2 }" /></span>
+                  <input
+                    ref="selfieBrowse"
+                    class="file-input"
+                    type="file"
+                    accept="image/*"
+                    name="selfie"
+                    hidden
+                    @change="uploadDoc($event, 'selfie')"
+                  >     
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </div><br><br>
         <div class="column is-4 message-area" :style="$device.isMobile ? 'margin-top: 1.5rem;' : ''">
           <div class="title-area columns is-mobile is-gapless">
             <div class="column is-3">
@@ -88,20 +119,8 @@
             </div>
             <div class="column is-9">
               <span class="text is-block">SenexPAY Support</span>
-              <span v-if="tradeData.status === 'pending'" class="status is-block">
-                Pending
-              </span>
-              <span v-else-if="tradeData.status === 'paid'" class="status is-block">
-                Paid
-              </span>
-              <span v-else-if="tradeData.status === 'completed'" class="status is-block success">
-                Completed
-              </span>
-              <span v-else-if="tradeData.status === 'disbursed'" class="status is-block">
-                Disbursed
-              </span>
-              <span v-else-if="tradeData.status === 'kyc_passed'">
-                KYC
+              <span class="status is-block">
+                <i class="fas fa-users" /> Opened
               </span>
             </div>
           </div>
@@ -152,9 +171,12 @@
 
 <script>
 import hd from 'human-date'
+import log from '~/logger'
 import formatMoney from '~/filters/format-money'
 
 const _SEND_MESSAGE_ERROR_ = "Couldn't send message; try again"
+const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
+const _SUC_FILE_UPLOAD_ = 'Your document was uploaded successfully'
 
 export default {
   layout: 'blue',
@@ -181,7 +203,11 @@ export default {
   data() {
     return {
       messageText: '',
-      sendingMessage: false
+      sendingMessage: false,
+      clms: null,
+      cltr: null,
+      upload1: false,
+      upload2: false
     }
   },
 
@@ -197,7 +223,36 @@ export default {
     }
   },
 
+  created() {
+    this.cltr = setInterval(this.polldTrade, 15000)
+    this.clms = setInterval(this.pollMessages, 4000)
+  },
+  beforeDestroy() {
+    clearInterval(this.cltr)
+    clearInterval(this.clms)
+  },
+
   methods: {
+    async polldTrade() {
+      try {
+        const response = await this.$axios.get(`/trade/${this.query.trade_id}/`)
+        this.tradeData = response.data
+      } catch (e) {
+        // const errors = e
+        log.debug(`[error] /track/verify ${JSON.stringify(e.response)}`)
+      }
+    },
+    async pollMessages() {
+      try {
+        const response = await this.$axios.get(
+          `/trade/${this.query.trade_id}/messages/`
+        )
+        this.messageResp = response.data.sort((a, b) => a.id - b.id)
+      } catch (e) {
+        // const errors = e
+        log.debug(`[error] /track/verify ${JSON.stringify(e.response)}`)
+      }
+    },
     async handleSendMessage() {
       console.log(JSON.stringify(this.tradeData)) // eslint-disable-line
       const validated = await this.$validator.validateAll()
@@ -228,6 +283,51 @@ export default {
           this.messageText = ''
         }
       }
+    },
+    async uploadDoc(e, fileType) {
+      const files = e.target.files || e.dataTransfer.files
+      if (files.length === 0) return
+      const formData = new FormData()
+      formData.append('datafile', files[0])
+      try {
+        const resp = await this.$axios.post('/upload/', formData, {
+          headers: {
+            'content-type': 'multipart/form-data'
+          }
+        })
+        const requestBody = {
+          trade: this.tradeData.id
+        }
+        fileType === 'idCard'
+          ? (requestBody.govtIssuedId = resp.data.datafile)
+          : (requestBody.selfieWithId = resp.data.datafile)
+
+        await this.$axios.put(`/trade/${requestBody.trade}/kyc/`, requestBody)
+
+        fileType === 'idCard' ? (this.upload1 = true) : (this.upload2 = true)
+
+        this.$swal({
+          title: 'Done:',
+          type: 'success',
+          position: 'top-end',
+          text: _SUC_FILE_UPLOAD_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } catch (e) {
+        this.$swal({
+          title: 'Error:',
+          type: 'error',
+          position: 'top-end',
+          text: _ERR_FILE_UPLOAD_,
+          timer: 7 * 1000,
+          toast: true,
+          showConfirmButton: false
+        })
+      } finally {
+        // this.$nuxt.$loading.finish()
+      }
     }
   }
 }
@@ -237,7 +337,7 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 div.wrapper {
-  min-height: 480px;
+  min-height: 580px;
   margin-bottom: 3rem;
   margin-top: 2rem;
   font-family: $font-avenir;
@@ -250,8 +350,8 @@ div.wrapper {
 }
 
 .content-wrapper {
-  $item-height: 350px;
-  margin: 1rem 0;
+  $item-height: 400px;
+  // margin: 1rem 0;
   .status-area,
   .message-area {
     height: $item-height;
@@ -294,16 +394,22 @@ div.wrapper {
           }
           &.percent-40 {
             width: 40%;
+            background: #00d1b1;
           }
           &.percent-60 {
             width: 60%;
           }
           &.percent-80 {
             width: 80%;
+            background: #fedd56;
           }
           &.percent-100 {
             width: 100%;
             background: #58c13d;
+          }
+          &.percent-101 {
+            width: 100%;
+            background: #fe385f;
           }
         }
       }
@@ -314,7 +420,7 @@ div.wrapper {
       flex-direction: column;
       padding: 0.7rem 0.8rem 1rem 0.8rem;
       text-align: left;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       p {
         margin: 0.3rem 0;
         span._title {
@@ -324,7 +430,7 @@ div.wrapper {
         }
         span._item {
           display: block;
-          color: #d5d5d5;
+          color: #838383;
           word-wrap: break-word;
         }
       }

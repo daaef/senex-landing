@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
+
 @font-face {
   font-family: "Avenir Next Lt Pro";
+  font-display: auto;
   src: url("~assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Avenir Next Lt Pro";
+  font-display: auto;
   src: url("~assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Avenir Next Lt Pro";
+  font-display: auto;
   src: url("~assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 500;
 }
@@ -22,4 +27,5 @@ $font-roboto: 'Roboto', sans-serif;
 $font-avenir: "Avenir Next Lt Pro", sans-serif;
 $family-sans-serif: $font-avenir;
 $font-open-sans: 'Open Sans', sans-serif;
+$font-nunito: 'Nunito', sans-serif;
 

@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <p class="title has-text-centered has-text-weight-semibold">
-        FAQ
+        FAQs
       </p>
       <div class="columns">
         <div class="column is-6 is-offset-3 q-wrapper">
@@ -38,7 +38,15 @@ export default {
 
   head() {
     return {
-      title: 'Frequently asked question - SenexPay'
+      title: 'FAQs - SenexPAY',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Find out more about SenexPAY, see a range of frequently asked questions and possible answers that might be of help in exchanging your bitcoins'
+        }
+      ]
     }
   },
 

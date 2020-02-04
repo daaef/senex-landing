@@ -2,7 +2,7 @@
   <section>
     <div class="">
       <div class="columns">
-        <div class="column is-9-desktop widget-column">
+        <div class="column is-10-desktop is-offset-2 widget-column">
           <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
             <div class="box trade-box">
               <div class="has-text-centered trade-selector-container">
@@ -25,50 +25,65 @@
                 fetching current rates...
               </div>
 
+              <p class="is-size-7">
+                {{ tradeType == 'buy' ? 'I have Naira/Dollar and want to buy BTC' : 'I want to give out BTC and get paid Naira/Dollar' }}
+              </p>
+
               <div style="margin-bottom: 0.5em;" class="columns">
                 <div class="field has-addons column">
-                  <div class="control">
+                  <!-- <div class="control">
                     <a
-                      href=""
-                      class="button"
-                      style="background: #1b70cf; color: #fff; font-size: 1.03rem;"
+                      class="button is-large"
+                      style="background: #1b70cf; color: #fff;"
                     >
                       BTC
                     </a>
-                  </div>
-                  <div class="control is-expanded">
+                  </div> -->
+                  <div class="control is-expanded has-icons-left">
                     <input
-                      v-model="computedCryptoAmount"
+                      ref="btcInput"
+                      v-model.number="computedCryptoAmount"
+                      v-validate="'decimal:8'"
                       type="number"
-                      class="input blue-border"
+                      class="input is-large blue-border"
                       :class="{'is-loading': isFetchingRates && !cryptoAmountIsDirty}"
+                      placeholder="0.00000000"
                       step="any"
                       min="0"
+                      maxlength="12"
                       style="text-align: right;"
+                      name="BTC"
+                      aria-label="BTC"
                     >
+                    <span class="icon is-left norm" style="">
+                      <i class="fab fa-bitcoin fa-2x" />
+                    </span>
+                    <p v-show="errors.has('BTC')" class="help is-danger">
+                      {{ errors.first('BTC') }}
+                    </p>
                   </div>
                 </div>
               </div>
               <div style="margin-bottom: 0.5rem;">
-                <div class="field is-grouped">
-                  <p class="control has-text-centered">
-                    <span class="icon" style="color: #c4c4c4; vertical-align: center;">
-                      <i class="fas fa-exchange-alt" />
-                    </span>
-                  </p>
+                <!-- <p class="control has-text-centered">
+                  <span class="icon" style="color: #1b70cf; vertical-align: center;">
+                    <i class="fas fa-exchange-alt" />
+                  </span>
+                </p> -->
+                <div class="field has-addons">
                   <div class="control has-icons-left">
-                    <div class="select">
+                    <div class="select is-medium">
                       <select
-                        id=""
                         v-model="currency"
                         name="currency"
                         class="currency-select"
+                        aria-label="Currency"
                       >
                         <option value="NGN">
-                          NGN
+                          &#8358;
                         </option>
                         <option value="USD">
-                          USD
+                          &#36;
                         </option>
                       </select>
                       <span class="icon is-large is-left">
@@ -78,17 +93,19 @@
                   </div>
                   <p class="control is-expanded" :class="{'is-loading': isFetchingRates}">
                     <input
-                      v-model="computedFiatAmount"
+                      v-model.number="computedFiatAmount"
                       type="number"
-                      class="input"
+                      class="input is-medium"
+                      placeholder="0.00"
                       min="0"
                       step="any"
                       style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem;"
+                      aria-label="NGN-USD"
                     >
                   </p>
                 </div>
               </div>
-              <div style="margin-bottom: 1.5rem;">
+              <div style="margin-bottom: 0.5rem;">
                 <div
                   v-show="computedFiatAmountReversed"
                   class="has-text-right is-size-6"
@@ -104,9 +121,9 @@
                 class="button is-fullwidth trade-button is-medium"
                 :class="{'disabled': !canSubmit, 'is-loading': isLoading}"
                 :disabled="!canSubmit"
-                style="font-weight: 500;"
+                style="font-weight: 500; padding-top: 9px;"
               >
-                TRADE
+                EXCHANGE
               </button>
             </div>
           </form>
@@ -212,7 +229,6 @@ export default {
         if (this.cryptoAmountIsDirty) {
           return this.cryptoAmount
         }
-
         if (!this.rates) {
           rv = 0
         } else {
@@ -223,8 +239,15 @@ export default {
           } else {
             rv = fiatAmount / rate.NGN
           }
+
+          if (rv < rate.minimum / rate.USD && this.fiatAmountIsDirty) {
+            this.errors.add({
+              field: 'BTC',
+              msg: `Please enter a value not less than $${rate.minimum}`
+            })
+          }
         }
-        return rv === 0 ? 0 : rv.toFixed(8)
+        return rv === 0 ? null : +rv.toFixed(8)
       }
     },
 
@@ -255,8 +278,18 @@ export default {
           } else {
             rv = rate.NGN * cryptoAmount
           }
+
+          if (
+            cryptoAmount < rate.minimum / rate.USD &&
+            this.cryptoAmountIsDirty
+          ) {
+            this.errors.add({
+              field: 'BTC',
+              msg: `Please enter a value not less than $${rate.minimum}`
+            })
+          }
         }
-        return rv === 0 ? 0 : rv.toFixed(2)
+        return rv === 0 ? null : +rv.toFixed(2)
       }
     },
 
@@ -277,14 +310,15 @@ export default {
           rv = fiatAmount / rate.USD_NGN
         }
       }
-      return rv === 0 ? 0 : rv.toFixed(2)
+      return rv === 0 ? 0 : +rv.toFixed(2)
     },
 
     canSubmit() {
       const rv =
         !this.isFetchingRates &&
         !!parseFloat(this.computedCryptoAmount) &&
-        !!parseFloat(this.computedFiatAmount)
+        !!parseFloat(this.computedFiatAmount) &&
+        !this.errors.has('BTC')
       return rv
     }
   },
@@ -296,7 +330,7 @@ export default {
       }
     },
 
-    cryptoAmount: function() {
+    cryptoAmount: function(newAmount) {
       if (this.cryptoAmountIsDirty) {
         this.fetchCryptoRates()
       }
@@ -410,6 +444,13 @@ select:focus {
   box-shadow: none;
 }
 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield; /* Firefox */
+  margin: 0;
+}
+
 div.button-container {
   margin-top: 1em;
   margin-bottom: 2em;
@@ -421,9 +462,9 @@ div.button-container {
 }
 
 div.track-trade {
-  color: #adadad;
   font-size: 0.95rem;
   font-family: $font-roboto;
+  margin-bottom: 3rem;
   a {
     font-weight: bold;
   }
@@ -446,9 +487,9 @@ p.flutterwave-grp {
 }
 
 div.trade-box {
-  padding-bottom: 0.5rem;
-  padding-top: 1.5rem;
-  box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem 2.2rem;
+  // padding-top: 1.5rem;
+  box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.3);
   font-family: $font-open-sans;
   select {
     color: #707070;
@@ -466,6 +507,10 @@ div.trade-box {
   }
 
   .amount {
+    color: #1b70cf;
+  }
+
+  .norm {
     color: #1b70cf;
   }
 }
@@ -501,7 +546,9 @@ div.rates-container {
 }
 
 .empty-grid-bg {
-  margin-top: 3.5rem;
+  position: absolute;
+  // z-index: -1;
+  margin: 0.1rem auto;
   height: 100px;
   width: 100%;
   background-image: url('~assets/grid-bg.png');

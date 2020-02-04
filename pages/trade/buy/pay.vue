@@ -1,16 +1,48 @@
 <template>
   <trader step="credit_card">
     <template slot="title">
-      Payment
+      Make payments
     </template>
     <template v-if="isOtc == false" slot="content">
       <div v-if="verifying" class="has-text-centered">
-        Verifying your payment; please wait...
+        <div class="polk">          
+          <i class="fa fa-spinner fa-5x fa-spin" /><br>
+          <p><i class="fa fa-cofee" /> Payment verified..</p>
+        </div> 
       </div>
       <div v-else-if="verified" class="has-text-centered">
-        Transaction verification successful
+        <div class="polk">
+          <div 
+            :class="{ 'drawn': tick }" 
+            class="trigger"
+          />
+          <svg
+            id="tick"
+            width="80px"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 37 37"
+            style="enable-background:new 0 0 37 37;"
+            xml:space="preserve"
+          >
+            <path
+              class="circ path"
+              style="fill:none;stroke:#32CD32;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:10;"
+              d="M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+            />
+            <polyline
+              class="tick path"
+              style="fill:none;stroke:#32CD32;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;"
+              points="11.6,20 15.9,24.2 26.4,13.8 "
+            />
+          </svg><br>
+          <p>Payment verified..</p>
+        </div> 
       </div>
-      <div v-else class="has-text-centered" style="margin-top: 4rem;">
+      <div v-else class="" style="margin-top: 4rem;">
         <p>
           You will be required to pay the sum of
           {{ amount|formatMoney('NGN') }} using an accepted payment method.
@@ -32,6 +64,7 @@
         <p class="is-size-6 has-font-weight-bold" style="margin-top: 2rem;">
           This trade is valid till
           <minute-countdown
+            ref="countdownTimer"
             :minutes="tradeTTL"
             @timer-elapsed="handleTimerElapsed"
           />
@@ -39,7 +72,7 @@
       </div>
     </template>
     <template v-else slot="content">
-      <div v-html="$store.state.trade.create.otcInstructions" />
+      <div v-html="$store.state.trade.create.otcInstructions" />     
     </template>
     <template slot="button">
       <button
@@ -91,7 +124,8 @@ export default {
   data() {
     return {
       verifying: false,
-      verified: false
+      verified: false,
+      tick: false
     }
   },
 
@@ -130,8 +164,7 @@ export default {
       const vm = this
       const otc = this.$store.state.trade.create.isOtc
       if (otc) {
-        vm.verifying = false
-        vm.verified = true
+        vm.pushOTC()
       }
       return otc
     },
@@ -149,9 +182,15 @@ export default {
     }
   },
   mounted() {
-    this.isOtc()
+    // this.isOtc()
   },
   methods: {
+    pushOTC() {
+      // this.$refs.countdownTimer.active = false
+      this.verifying = false
+      this.verified = true
+    },
+
     payWithRave() {
       const vm = this
       const x = window.getpaidSetup({
@@ -175,20 +214,12 @@ export default {
         !(response.tx.chargeResponseCode === '00') &&
         !(response.tx.chargeResponseCode === '0')
       ) {
-        this.$swal({
-          title: '',
-          type: 'info',
-          position: 'top-end',
-          text: 'Transaction failed; try again',
-          timer: 5 * 1000,
-          toast: true,
-          showConfirmButton: false
-        })
         return
       }
 
       try {
         this.verifying = true
+        this.verified = false
         const verificationResp = await this.$axios.get('/verify/rave/', {
           params: {
             txref: response.tx.txRef
@@ -202,8 +233,13 @@ export default {
         )
 
         if (verificationResp.data.status === 'successful') {
+          this.verifying = false
           this.verified = true
           this.$store.commit('trade/SET_PAYMENT_DONE', true)
+          this.$refs.countdownTimer.stop()
+          setTimeout(function() {
+            this.tick = true
+          }, 1000)
         } else {
           this.$swal({
             title: '',
@@ -249,8 +285,41 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.polk {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+}
+
 iframe {
   height: 100vh !important;
+}
+.circ {
+  opacity: 0;
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.tick {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+  -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+  -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+  -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+  transition: stroke-dashoffset 1s 0.5s ease-out;
+}
+.drawn + svg .path {
+  opacity: 1;
+  stroke-dashoffset: 0;
 }
 </style>

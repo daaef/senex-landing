@@ -7,56 +7,53 @@
             <span>&copy; {{ new Date().getFullYear() }} - SenexPAY LLC</span>
           </div>
         </div>
-        <contact-form-modal />
         <div class="level-right">
           <div class="level is-mobile">
-            <p class="level-item">
-              <a href="#">Terms &amp; conditions</a>
-            </p>
-            <p class="level-item">
-              |
-            </p>
-            <p class="level-item">
-              <a href="#"> Privacy Policy</a>
-            </p>
-            <p class="level-item">
-              |
-            </p>
-            <p class="level-item">
-              <a href="#"> Disclaimer</a>
+            <p class="level-item has-text-centered">
+              <!-- <router-link to="/legal/terms">
+                TOS
+              </router-link>&nbsp;|&nbsp;  -->
+              <router-link to="/legal/privacy-policy">
+                Privacy Policy
+              </router-link>&nbsp;|&nbsp;
+              <router-link to="/legal/risk-disclosure">
+                Risk Disclosure
+              </router-link>
             </p>
           </div>
         </div>
       </div>
+      <div class="is-hidden-desktop">
+        <br>
+      </div>
       <a
-        v-if="displayContactFab"
-        class="contact-support-container has-text-centered is-block"
-        @click.prevent="showContactFormModal"
+        href="https://api.whatsapp.com/send?phone=+2348184899239&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin" 
+        aria-label="Whatsapp"
+        class="float tooltip is-tooltip-left is-tooltip-active"
+        data-tooltip="Need help? Chat with us!"
+        target="_blank" 
+        rel="noopener"
       >
-        <img src="~/assets/contact-support.png" alt="contact support image">
-        <span class="text">Contact <br> Support</span>
+        <i class="fab fa-whatsapp my-float" />
       </a>
     </div>
+    <footer-links-modal />
   </footer>
 </template>
 
 <script>
-import ContactFormModal from './contact-form-modal.vue'
+import FooterLinksModal from './footer-links-modal.vue'
 
 export default {
   components: {
-    ContactFormModal
+    FooterLinksModal
   },
-  props: {
-    displayContactFab: {
-      type: Boolean,
-      default: true
-    }
+  data() {
+    return {}
   },
-
   methods: {
-    showContactFormModal() {
-      this.$modal.show('contact')
+    openModal(val) {
+      // this.$modal.show(val)
     }
   }
 }
@@ -76,6 +73,7 @@ export default {
   margin-bottom: 0;
   width: 100%;
   font-size: 0.6em;
+  z-index: 2;
 }
 
 .item-with-sep {
@@ -109,5 +107,24 @@ export default {
 
 .level-sm-margin {
   margin-bottom: 0.5rem !important;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0dc152;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.my-float {
+  margin-top: 16px;
 }
 </style>

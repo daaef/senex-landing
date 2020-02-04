@@ -2,115 +2,117 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-4 is-offset-4">
-          <p class="has-text-weight-semibold p-heading has-text-centered">
-            Tracking
-            <span
-              class="is-block has-text-centered has-text-weight-normal"
-              style="font-size: 0.95rem; color: #d5d5d5;"
-            >
-              Track status of your pending trade
-            </span>
-          </p>
+        <div class="column is-4 is-offset-4 is-vcentered">
+          <div class="boxp">
+            <p class="has-text-weight-semibold p-heading has-text-centered">
+              Tracking
+              <span
+                class="is-block has-text-centered has-text-weight-normal"
+                style="font-size: 0.95rem;"
+              >
+                Track status of your pending trade
+              </span>
+            </p>
 
-          <div v-if="step === 'trackid'" class="trackid-wrapper">
-            <form action="">
-              <div class="card trackid-container" style="padding-top: 5rem; padding-bottom: 5rem;">
-                <div class="field">
-                  <label for="" class="label has-text-weight-normal">Trade ID</label>
-                  <p class="control">
-                    <input
-                      v-model="tradeId"
-                      v-validate="'required|alpha_dash|length:12'"
-                      type="text"
-                      name="trade id"
-                      class="input is-rounded"
-                      placeholder="caJESHXlbaes"
-                    >
+            <div v-if="step === 'trackid'" class="trackid-wrapper">
+              <form action="">
+                <div class="card trackid-container" style="padding-top: 5rem; padding-bottom: 5rem;">
+                  <div class="field">
+                    <label for="" class="label has-text-weight-normal">Trade ID</label>
+                    <p class="control">
+                      <input
+                        v-model="tradeId"
+                        v-validate="'required|alpha_dash|length:12'"
+                        type="text"
+                        name="trade id"
+                        class="input is-rounded"
+                        placeholder="caJESHXlbaes"
+                      >
+                    </p>
+                  </div>
+                  <p v-show="errors.has('trade id')" class="help is-danger">
+                    {{ errors.first('trade id') }}
                   </p>
                 </div>
-                <p v-show="errors.has('trade id')" class="help is-danger">
-                  {{ errors.first('trade id') }}
+                <div class="button-container">
+                  <button
+                    class="button is-fullwidth track-button"
+                    :class="{'is-loading': isLoading}"
+                    @click.prevent="handleContinue"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </form>
+              <div class="has-no-trade has-text-centered">
+                <p>Haven't started a trade?</p>
+                <p>
+                  <nuxt-link to="/" class="is-size-5 trade-link">
+                    Start Trade
+                  </nuxt-link>
                 </p>
               </div>
-              <div class="button-container">
-                <button
-                  class="button is-fullwidth track-button"
-                  :class="{'is-loading': isLoading}"
-                  @click.prevent="handleContinue"
-                >
-                  Continue
-                </button>
-              </div>
-            </form>
-            <div class="has-no-trade has-text-centered">
-              <p>Haven't started a trade?</p>
-              <p>
-                <nuxt-link to="/" class="is-size-5 trade-link">
-                  Start Trade
-                </nuxt-link>
-              </p>
             </div>
-          </div>
 
-          <div v-else-if="step === 'pinverification'" class="otpverification-wrapper">
-            <div class="card otpverification-container">
-              <p class="subheading has-text-centered">
-                Pin Verification
-              </p>
-              <p class="text-info has-text-centered">
-                Enter the pin for this trade
-              </p>
-              <div class="columns is-mobile">
-                <div class="column is-3">
-                  <input
-                    ref="pin1"
-                    v-model="pin1"
-                    type="text"
-                    class="input"
-                    maxlength="1"
-                    @keyup="handleKeyUp($event, 1)"
-                  >
+            <div v-else-if="step === 'pinverification'" class="otpverification-wrapper">
+              <div class="card otpverification-container">
+                <p class="subheading has-text-centered">
+                  Pin Verification
+                </p>
+                <p class="text-info has-text-centered">
+                  Enter the pin for this trade
+                </p>
+                <div class="columns is-mobile">
+                  <div class="column is-3">
+                    <input
+                      ref="pin1"
+                      v-model="pin1"
+                      type="text"
+                      class="input"
+                      maxlength="1"
+                      @keyup="handleKeyUp($event, 1)"
+                    >
+                  </div>
+                  <div class="column is-3">
+                    <input
+                      ref="pin2"
+                      v-model="pin2"
+                      type="text"
+                      class="input"
+                      maxlength="1"
+                      @keyup="handleKeyUp($event, 2)"
+                    >
+                  </div>
+                  <div class="column is-3">
+                    <input
+                      ref="pin3"
+                      v-model="pin3"
+                      type="text"
+                      class="input"
+                      maxlength="1"
+                      @keyup="handleKeyUp($event, 3)"
+                    >
+                  </div>
+                  <div class="column is-3">
+                    <input
+                      ref="pin4"
+                      v-model="pin4"
+                      type="text"
+                      class="input"
+                      @keyup="handleKeyUp($event, 4)"
+                    >
+                  </div>
                 </div>
-                <div class="column is-3">
-                  <input
-                    ref="pin2"
-                    v-model="pin2"
-                    type="text"
-                    class="input"
-                    maxlength="1"
-                    @keyup="handleKeyUp($event, 2)"
+                <div class="btn-container">
+                  <button
+                    ref="submitPin"
+                    class="button"
+                    :disabled="!pin1 || !pin2 || !pin3 || !pin4"
+                    @click="handlePinSubmit"
                   >
+                    Track
+                  </button>
                 </div>
-                <div class="column is-3">
-                  <input
-                    ref="pin3"
-                    v-model="pin3"
-                    type="text"
-                    class="input"
-                    maxlength="1"
-                    @keyup="handleKeyUp($event, 3)"
-                  >
-                </div>
-                <div class="column is-3">
-                  <input
-                    ref="pin4"
-                    v-model="pin4"
-                    type="text"
-                    class="input"
-                    @keyup="handleKeyUp($event, 4)"
-                  >
-                </div>
-              </div>
-              <div class="btn-container">
-                <button
-                  ref="submitPin"
-                  class="button"
-                  :disabled="!pin1 || !pin2 || !pin3 || !pin4"
-                  @click="handlePinSubmit"
-                >
-                  Track
-                </button>
               </div>
             </div>
           </div>
@@ -121,6 +123,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 const _ERR_FETCH_TRADE_ = "Couldn't fetch trade; try again"
 const _STR_INVALID_PIN_ = 'Invalid pin; please enter correct trade pin'
 
@@ -130,7 +134,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      tradeId: '',
+      // tradeId: '',
       pin1: '',
       pin2: '',
       pin3: '',
@@ -140,6 +144,35 @@ export default {
       // This is used to determine which section of the UI to show.
       // Valid values are trackid | pinverification
       step: 'trackid'
+    }
+  },
+
+  head() {
+    return {
+      title: 'Track a Trade - SenexPAY',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'SenexPAY Tracking helps you lookup the status of your trade/transaction and enable you log complaints/inquiries about that trade. Track your trade now!'
+        }
+      ]
+    }
+  },
+
+  computed: {
+    ...mapState({
+      trade: state => state.trade.track.tradeId
+    }),
+
+    tradeId: {
+      get() {
+        return this.trade
+      },
+      set(value) {
+        this.$store.commit('trade/SET_TRACK_TRADE_ID', value)
+      }
     }
   },
 
@@ -217,6 +250,19 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/fonts.scss';
 
+.is-vcentered {
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.boxp {
+  display: block;
+  width: 100%;
+}
+
 div.wrapper {
   min-height: 480px;
   margin-bottom: 3rem;
@@ -260,9 +306,9 @@ div.wrapper {
     }
 
     div.has-no-trade {
-      margin-top: 3.5rem;
-      margin-bottom: 10rem;
-      color: #d5d5d5;
+      margin-top: 2.5rem;
+      // margin-bottom: 10rem;
+      color: #000000;
     }
   }
 
