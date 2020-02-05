@@ -6,7 +6,7 @@
     <template v-if="isOtc == false" slot="content" class="wallet_deposit">
       <div v-if="receiveAddress" class="wallet_deposit">
         <p class="desc-text">
-          Send {{ cryptoAmount }} BTC to the wallet address below
+          Send {{ cryptoAmount }} BTC to the wallet address below.
         </p>
         <div class="columns address-clipboard-wrapper is-mobile">
           <div class="column is-8 address-wrapper">
@@ -64,9 +64,9 @@
         <h4>Please read carefully:</h4>
         <p class="help is-danger">
           <i class="fas fa-exclamation-circle" /> 
-          You are required to deposit {{ cryptoAmount }} BTC into an address that will be generated for you by the system. 
-          Do make sure you have this amount and more in your wallet to cover for network fees. 
-          You only have 20 mins to make payment this for transaction once an address is generated after which this trade expires.
+          Deposit {{ cryptoAmount }} BTC into the address that will be generated shortly.
+          To make confirmations faster, <b>send Bitcoins using high network fees.</b>
+          Trade expires exactly 20mins after address is generated.
         </p>
         <p>
           Once ready to make payment, please check the box below then click on the generate button.
