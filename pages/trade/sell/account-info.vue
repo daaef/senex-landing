@@ -63,7 +63,7 @@
       </div>
 
       <div class="field">
-        <label for="" class="label">Trade Pin</label>
+        <label for="" class="label">Set trade PIN</label>
         <div class="control">
           <input
             v-model="pin"
@@ -75,9 +75,10 @@
             :class="{ 'is-danger': errors.has('trade pin') }"
           >
         </div>
-        <p v-show="errors.has('trade pin')" class="help is-danger">
+        <span v-show="errors.has('trade pin')" class="help is-danger">
           {{ errors.first('trade pin') }}
-        </p>
+        </span>
+        <span>Take note of this PIN. It would be used to track your trade.</span>
       </div>
     </template>
     <template slot="button">
