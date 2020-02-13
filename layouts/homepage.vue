@@ -1,18 +1,21 @@
 <template>
-  <div class="main bg-wrapper">
+  <div class="main">
     <navbar theme="blue" logo-variant="blue" />
-    <div class="content">
+    <div class="content" style="margin-bottom: 0;">
       <nuxt />
     </div>
+    <footer-comp />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/navbar.vue'
+import Footer from '@/components/footer.vue'
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    FooterComp: Footer
   }
 }
 </script>
@@ -22,6 +25,7 @@ export default {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-image: url('~assets/bg-pattern.png');
   .content {
     flex: 1;
   }
