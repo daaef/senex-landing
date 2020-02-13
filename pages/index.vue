@@ -6,7 +6,9 @@
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
               <!-- Easiest and Fastest  -->
-              <vue-typer :text="['Easiest', 'Fastest', 'Secure']" /> way to
+              <no-ssr>
+                <vue-typer name="riko" :text="['Easiest', 'Fastest', 'Secure']" /> way to
+              </no-ssr>
             </p>
             <span class="text-crypto is-size-1-tablet is-size-2-touch">
               Buy &amp; Sell Bitcoins
@@ -104,6 +106,7 @@ html {
 }
 .get-started {
   font-weight: bold;
+  margin: 15px auto;
   color: #0c5db2;
   cursor: pointer;
 }

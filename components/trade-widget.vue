@@ -154,11 +154,6 @@
                 Track
               </nuxt-link>
             </p>
-            <p class="flutterwave-grp">
-              <span class="text">Pay with: </span><br>
-              <span class="cc-icon"><i class="fab fa-cc-mastercard fa-3x" /></span>
-              <span class="cc-icon"><i class="fab fa-cc-visa fa-3x" /></span>
-            </p>
           </div>
           <div class="empty-grid-bg" />
         </div>
@@ -469,7 +464,7 @@ div.track-trade {
     font-weight: bold;
   }
 }
-
+/*
 p.flutterwave-grp {
   margin-top: 2.5em;
 
@@ -485,7 +480,7 @@ p.flutterwave-grp {
     color: #0c5db2;
   }
 }
-
+*/
 div.trade-box {
   padding: 1.8rem 2.2rem;
   // padding-top: 1.5rem;
