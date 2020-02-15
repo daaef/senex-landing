@@ -33,7 +33,7 @@ export default {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.8);
   .content {
     flex: 1;
   }
