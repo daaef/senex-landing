@@ -88,7 +88,7 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 .container {
-  padding: 2.5rem;
+  padding: 2.5rem 0rem;
 }
 
 .navbar {
