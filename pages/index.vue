@@ -43,6 +43,9 @@
         </div>
       </div>
     </div>
+    <div class="is-hidden-touch mockup">
+      <img src="~assets/senex-mockup.png" height="200px" alt="" >
+    </div>
   </section>
 </template>
 
@@ -109,6 +112,14 @@ html {
   margin: 15px auto;
   color: #0c5db2;
   cursor: pointer;
+}
+.mockup {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+}
+.mockup img {
+  max-height: 500px;
 }
 </style>
 

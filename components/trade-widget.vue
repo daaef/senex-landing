@@ -544,7 +544,7 @@ div.rates-container {
   position: absolute;
   // z-index: -1;
   margin: 0.1rem auto;
-  height: 100px;
+  height: 50px;
   width: 100%;
   background-image: url('~assets/grid-bg.png');
   background-repeat: no-repeat;
