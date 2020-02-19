@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths">
+        <div class="column is-three-fifths is-vcentered">
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
               <!-- Easiest and Fastest  -->
@@ -43,9 +43,9 @@
         </div>
       </div>
     </div>
-    <div class="is-hidden-touch mockup">
+    <!-- <div class="is-hidden-touch mockup">
       <img src="~assets/senex-mockup.png" height="200px" alt="" >
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -145,7 +145,7 @@ div.info {
   line-height: 1.1;
   color: #000000;
   // color: #707070;
-  padding-top: 50px;
+  // padding-top: 50px;
   p.text-exchanging {
     font-family: $font-poppins;
     font-size: 2.8rem;
