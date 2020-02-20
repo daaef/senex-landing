@@ -25,6 +25,7 @@
                 <path d="M3.05176e-05 1H69" stroke="#707070" />
               </svg>
               <span>Instant payout with SenexPAY</span>
+              <i class="is-size-7" style="vertical-align: middle;">(No signup required)</i>
             </p>
             <br>
             <p class="get-started" @click="getStarted">

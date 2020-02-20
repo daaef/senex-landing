@@ -3,14 +3,13 @@
     <video
       id="bgvid"
       class=""
-      poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg"
       playsinline
       autoplay
       muted
       loop
     >
-      <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-      <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+      <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
+      <source src="~assets/bg/senex-getty.mp4" type="video/mp4">
     </video>
     <div class="main">
       <navbar theme="blue" logo-variant="blue" />
