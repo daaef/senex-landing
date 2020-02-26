@@ -1,6 +1,6 @@
 <template>
   <div class="bg">
-    <video
+    <!-- <video
       id="bgvid"
       class=""
       playsinline
@@ -8,9 +8,9 @@
       muted
       loop
     >
-      <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
+      <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
       <source src="~assets/bg/senex-getty.mp4" type="video/mp4">
-    </video>
+    </video> -->
     <div class="main">
       <navbar theme="blue" logo-variant="blue" />
       <div class="content" style="margin-bottom: 0;">
@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  // background: url('~assets/bg/bg-13.jpg');
+  background: url('~assets/bg/bg-13.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
