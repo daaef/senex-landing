@@ -1,10 +1,12 @@
 <template>
-  <div class="main bg-wrapper">
-    <navbar theme="white" logo-variant="blue" />
-    <div class="content">
-      <nuxt />
+  <div class="bg">
+    <div class="main bg-wrapper">
+      <navbar theme="white" logo-variant="blue" />
+      <div class="content">
+        <nuxt />
+      </div>
+      <footer-comp />
     </div>
-    <footer-comp />
   </div>
 </template>
 
@@ -21,6 +23,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bg {
+  background: url('~assets/bg/bg-13.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .main {
   display: flex;
   min-height: 100vh;
@@ -33,5 +41,6 @@ export default {
 div.bg-wrapper {
   background-image: url('~assets/blue-bg.png');
   background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 </style>

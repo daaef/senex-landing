@@ -25,13 +25,15 @@
                 <path d="M3.05176e-05 1H69" stroke="#707070" />
               </svg>
               <span>Instant payout with SenexPAY</span><br>
-              <i class="is-size-7" style="vertical-align: middle;">(No signup required)</i>
             </p>
             <br>
-            <p class="get-started" @click="getStarted">
-              Get started now &nbsp; <i class="fas fa-arrow-right" />
-            </p>
-            <span>_____</span>
+            <div class="get-started">
+              <i class="is-size-7" style="vertical-align: middle;">(No signup required)</i>
+              <p class="g-text" @click="getStarted">
+                Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
+              </p>
+            </div>
+            <span>_____ We accept _____</span>
             <p class="accepted-cards">
               <span><img src="~assets/verve-card.png" alt="verve"></span>
               <span><img src="~assets/master-card.png" alt="master"></span>
@@ -76,9 +78,7 @@ export default {
 
   data() {
     return {
-      facebookUrl: process.env.FACEBOOK_URL,
-      instagramUrl: process.env.INSTAGRAM_URL,
-      twitterUrl: process.env.TWITTER_URL
+      // something
     }
   },
 
@@ -109,10 +109,16 @@ html {
   align-items: center;
 }
 .get-started {
+  margin: 10px 0px 40px 0px;
+  line-height: 1.5;
+}
+.g-text {
   font-weight: bold;
-  margin: 15px auto;
+  font-size: 1.2rem;
+  padding: 5px 0px;
   color: #0c5db2;
   cursor: pointer;
+  width: auto;
 }
 .mockup {
   position: absolute;

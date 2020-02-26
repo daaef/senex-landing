@@ -154,6 +154,11 @@
                 Track
               </nuxt-link>
             </p>
+            <p class="socials is-size-5">
+              <span><a :href="socialLinks.facebookUrl" aria-label="Facebook" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f fb" /></a></span>
+              <span><a :href="socialLinks.instagramUrl" aria-label="Instagram" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram in" /></a></span>
+              <span><a :href="socialLinks.twitterUrl" aria-label="Twitter" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter tw" /></a></span>
+            </p>
           </div>
           <div class="empty-grid-bg" />
         </div>
@@ -191,7 +196,12 @@ export default {
       isFetchingRates: false,
       errorFetchRates: '',
       rates: null,
-      isLoading: false
+      isLoading: false,
+      socialLinks: {
+        facebookUrl: process.env.FACEBOOK_URL,
+        instagramUrl: process.env.INSTAGRAM_URL,
+        twitterUrl: process.env.TWITTER_URL
+      }
     }
   },
 
@@ -459,7 +469,7 @@ div.button-container {
 div.track-trade {
   font-size: 0.95rem;
   font-family: $font-roboto;
-  margin-bottom: 3rem;
+  margin-bottom: 1.6rem;
   a {
     font-weight: bold;
   }
@@ -548,5 +558,21 @@ div.rates-container {
   width: 100%;
   background-image: url('~assets/grid-bg.png');
   background-repeat: no-repeat;
+}
+
+.socials span {
+  padding: 0px 7px;
+
+  .fb {
+    color: #3b5998;
+  }
+
+  .in {
+    color: #fd5949;
+  }
+
+  .tw {
+    color: #00acee;
+  }
 }
 </style>
