@@ -1,4 +1,4 @@
-Sitemap: https://deploy.rikozone.com/sitemap.xml
+Sitemap: https://senexpay.com/sitemap.xml
 
 User-agent: Googlebot
 Disallow:
