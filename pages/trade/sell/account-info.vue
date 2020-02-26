@@ -80,6 +80,24 @@
         </span>
         <span>Take note of this PIN. It would be used to track your trade.</span>
       </div>
+
+      <div class="field">
+        <label for="" class="label">Passkey (optional)</label>
+        <div class="control">
+          <input
+            v-model="passkey"
+            v-validate="'alpha_num'"
+            type="text"
+            class="input"
+            placeholder="VIP only"
+            name="passkey"
+            :class="{ 'is-danger': errors.has('passkey') }"
+          >
+        </div>
+        <span v-show="errors.has('passkey')" class="help is-danger">
+          {{ errors.first('passkey') }}
+        </span>
+      </div>
     </template>
     <template slot="button">
       <button
@@ -195,6 +213,18 @@ export default {
       set(value) {
         this.$store.commit('trade/UPDATE_PERSONAL_INFO', {
           prop: 'pin',
+          value
+        })
+      }
+    },
+
+    passkey: {
+      get() {
+        return this.details.passkey
+      },
+      set(value) {
+        this.$store.commit('trade/UPDATE_BANK_DETAILS', {
+          prop: 'passkey',
           value
         })
       }

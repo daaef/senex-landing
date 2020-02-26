@@ -154,10 +154,10 @@
                 Track
               </nuxt-link>
             </p>
-            <p class="flutterwave-grp">
-              <span class="text">Pay with: </span><br>
-              <span class="cc-icon"><i class="fab fa-cc-mastercard fa-3x" /></span>
-              <span class="cc-icon"><i class="fab fa-cc-visa fa-3x" /></span>
+            <p class="socials is-size-5">
+              <span><a :href="socialLinks.facebookUrl" aria-label="Facebook" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f fb" /></a></span>
+              <span><a :href="socialLinks.instagramUrl" aria-label="Instagram" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram in" /></a></span>
+              <span><a :href="socialLinks.twitterUrl" aria-label="Twitter" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter tw" /></a></span>
             </p>
           </div>
           <div class="empty-grid-bg" />
@@ -196,7 +196,12 @@ export default {
       isFetchingRates: false,
       errorFetchRates: '',
       rates: null,
-      isLoading: false
+      isLoading: false,
+      socialLinks: {
+        facebookUrl: process.env.FACEBOOK_URL,
+        instagramUrl: process.env.INSTAGRAM_URL,
+        twitterUrl: process.env.TWITTER_URL
+      }
     }
   },
 
@@ -464,12 +469,12 @@ div.button-container {
 div.track-trade {
   font-size: 0.95rem;
   font-family: $font-roboto;
-  margin-bottom: 3rem;
+  margin-bottom: 1.6rem;
   a {
     font-weight: bold;
   }
 }
-
+/*
 p.flutterwave-grp {
   margin-top: 2.5em;
 
@@ -485,7 +490,7 @@ p.flutterwave-grp {
     color: #0c5db2;
   }
 }
-
+*/
 div.trade-box {
   padding: 1.8rem 2.2rem;
   // padding-top: 1.5rem;
@@ -549,9 +554,25 @@ div.rates-container {
   position: absolute;
   // z-index: -1;
   margin: 0.1rem auto;
-  height: 100px;
+  height: 50px;
   width: 100%;
   background-image: url('~assets/grid-bg.png');
   background-repeat: no-repeat;
+}
+
+.socials span {
+  padding: 0px 7px;
+
+  .fb {
+    color: #3b5998;
+  }
+
+  .in {
+    color: #fd5949;
+  }
+
+  .tw {
+    color: #00acee;
+  }
 }
 </style>

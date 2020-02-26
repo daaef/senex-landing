@@ -2,15 +2,17 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths">
+        <div class="column is-three-fifths is-vcentered">
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
-              ex<i class="fas fa-sync-alt is-size-4-tablet is-size-5-touch" />hanging
+              <!-- Easiest and Fastest  -->
+              <no-ssr>
+                <vue-typer name="riko" :text="['Easiest', 'Fastest', 'Secure']" /> way to
+              </no-ssr>
             </p>
-            <p>
-              <span class="text-crypto is-size-1-tablet is-size-2-touch">Cryptocurrencies</span>
-              <span class="text-made-easy is-size-2-tablet is-size-3-touch">made easy!</span>
-            </p>
+            <span class="text-crypto is-size-1-tablet is-size-2-touch">
+              Buy &amp; Sell Bitcoins
+            </span>
             <p style="margin: 0.5rem 0; vertical-align: bottom;">
               <svg
                 width="40"
@@ -22,53 +24,42 @@
               >
                 <path d="M3.05176e-05 1H69" stroke="#707070" />
               </svg>
-              <span>Buy and Sell securely  with SenexPAY</span>
+              <span>Instant payout with SenexPAY</span><br>
             </p>
             <br>
-            <p class="get-started" @click="getStarted">
-              Get started now &nbsp; <i class="fas fa-arrow-right" />
+            <div class="get-started">
+              <i class="is-size-7" style="vertical-align: middle;">(No signup required)</i>
+              <p class="g-text" @click="getStarted">
+                Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
+              </p>
+            </div>
+            <span>_____ We accept _____</span>
+            <p class="accepted-cards">
+              <span><img src="~assets/verve-card.png" alt="verve"></span>
+              <span><img src="~assets/master-card.png" alt="master"></span>
+              <span><img src="~assets/visa-card.png" alt="visa"></span>
             </p>
-            <span>_____</span>
-            <p class="social-handle">
-              <span><a :href="facebookUrl" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-2x fb" /></a></span>
-              <span><a :href="instagramUrl" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram fa-2x in" /></a></span>
-              <span><a :href="twitterUrl" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter fa-2x tw" /></a></span>
-            </p>
-          </div>
-          <div class="image-illustration-container">
-            <picture class="illustration bounce-2">
-              <source srcset="~assets/creatives-12.webp" type="image/webp">
-              <source srcset="~assets/creatives-12.png" type="image/png"> 
-              <img src="~assets/creatives-12.png" alt="senexpay">
-            </picture>
           </div>
         </div>
         <div class="column is-fullheight">
           <trade-widget ref="tradeWidget" />
         </div>
       </div>
-      <!-- <no-ssr class="shape">
-        <div
-          v-for="n in 50"          
-          :key="n"
-          :class="`shape-container--${n} shape-animation`"
-        >
-          <div class="random-shape" />
-        </div>        
-      </no-ssr> -->
     </div>
+    <!-- <div class="is-hidden-touch mockup">
+      <img src="~assets/senex-mockup.png" height="200px" alt="" >
+    </div> -->
   </section>
 </template>
 
 <script>
-// import NoSSR from 'vue-no-ssr'
+// import { VueTyper } from 'vue-typer'
 import TradeWidget from '@/components/trade-widget.vue'
 
 export default {
-  layout: 'simple',
+  layout: 'homepage',
   components: {
     TradeWidget
-    // 'no-ssr': NoSSR
   },
 
   head() {
@@ -87,9 +78,7 @@ export default {
 
   data() {
     return {
-      facebookUrl: process.env.FACEBOOK_URL,
-      instagramUrl: process.env.INSTAGRAM_URL,
-      twitterUrl: process.env.TWITTER_URL
+      // something
     }
   },
 
@@ -120,9 +109,24 @@ html {
   align-items: center;
 }
 .get-started {
+  margin: 10px 0px 40px 0px;
+  line-height: 1.5;
+}
+.g-text {
   font-weight: bold;
+  font-size: 1.2rem;
+  padding: 5px 0px;
   color: #0c5db2;
   cursor: pointer;
+  width: auto;
+}
+.mockup {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+}
+.mockup img {
+  max-height: 500px;
 }
 </style>
 
@@ -148,117 +152,35 @@ div.info {
   line-height: 1.1;
   color: #000000;
   // color: #707070;
-  padding-top: 50px;
+  // padding-top: 50px;
   p.text-exchanging {
+    font-family: $font-poppins;
     font-size: 2.8rem;
-    // font-family: $font-open-sans;
     font-weight: 300;
   }
 
   span.text-crypto {
+    font-family: $font-poppins;
     font-weight: 700;
-    color: #0c5db2;
+    line-height: 1;
+    margin: 0;
+    // color: #0c5db2;
   }
 
   span.text-made-easy {
     margin-left: 0.6rem;
   }
 
-  .social-handle {
+  .accepted-cards {
     margin-top: 15px;
   }
 
-  .social-handle span {
+  .accepted-cards span {
     padding-right: 10px;
+    height: 20px;
 
-    .fb {
-      color: #3b5998;
-    }
-
-    .in {
-      color: #fd5949;
-    }
-
-    .tw {
-      color: #00acee;
-    }
-  }
-}
-
-/* bounce animation
-.stage {
-  border-bottom: 3px solid #444;
-  display: flex;
-  height: 330px;
-  width: 100%;
-}
-.illustration {
-  align-self: flex-end;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  margin: 0 auto 0 auto;
-  transform-origin: bottom;
-  display: block;
-}
-.bounce-2 {
-  animation-name: bounce-2;
-  animation-timing-function: ease;
-}
-@keyframes bounce-2 {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-*/
-// shapes animation
-.shape {
-  position: absolute;
-  // overflow: hidden;
-  height: 100vh;
-}
-.random-shape:after {
-  font-family: FontAwesome;
-  content: '\f005';
-}
-
-$circle-size: 10px;
-$colors: #ffd700, #fff8dc, #db7093, #c2b7fe, #95a9ff;
-$shapes: '\f005', '\f0c8', '\f1db', '\f096', '\f1d8', '\f1cb';
-$shape-count: 50;
-
-@for $i from 1 through $shape-count {
-  $shape-size: random(10);
-  $rotation: random(360);
-  $speed: 40 + random(10);
-  $color-key: random(length($colors));
-  $shape-color: nth($colors, $color-key);
-  $shape-key: random(length($shapes));
-  $shape-type: nth($shapes, $shape-key);
-  $text: random(10);
-
-  @keyframes shape-#{$i} {
-    0% {
-      transform: translate3d(0, 0, 0) rotate(#{$rotation + 0}deg);
-    }
-    100% {
-      transform: translate3d(0, 0, 0) rotate(#{$rotation + 360}deg);
-    }
-  }
-
-  .shape-container--#{$i} {
-    animation: shape-#{$i} #{$speed}s linear infinite;
-
-    .random-shape:after {
-      margin: #{$shape-size}rem;
-      color: $shape-color;
-      font-size: #{$shape-size * 0.2}rem;
-      content: $shape-type;
+    img {
+      height: 25px;
     }
   }
 }

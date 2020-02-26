@@ -27,7 +27,8 @@ const getDefaultCreateDataStructure = () => ({
   bankDetails: {
     bankCode: null,
     accountNumber: '',
-    accountName: ''
+    accountName: '',
+    passkey: ''
   },
 
   receiveAddress: '',

@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar is-transparent">
-    <div class="container" style="margin-top: 0.5rem; padding-top: 0;">
+    <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
-          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant" style="height: 40px;">
-          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant" style="height: 40px;">
+          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant" style="height: 35px;">
+          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant" style="height: 35px;">
         </a>
         <span
           class="navbar-burger burger"
@@ -88,7 +88,7 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 .container {
-  padding: 2.5rem;
+  padding: 2.5rem 0.5rem;
 }
 
 .navbar {
