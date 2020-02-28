@@ -25,7 +25,7 @@
                         v-validate="'required|alpha_dash|length:12'"
                         type="text"
                         name="trade id"
-                        class="input is-rounded"
+                        class="input is-large"
                         placeholder="caJESHXlbaes"
                       >
                     </p>
