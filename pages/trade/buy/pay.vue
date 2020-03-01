@@ -1,7 +1,7 @@
 <template>
   <trader step="credit_card">
     <template slot="title">
-      Make payments
+      Make payment
     </template>
     <template v-if="isOtc == false" slot="content">
       <div v-if="verifying" class="has-text-centered">
