@@ -1,78 +1,54 @@
 <template>
-  <section class="section" style="margin-bottom: 3rem;">
+  <section class="" style="margin-bottom: 3rem;">
     <div class="container wrapper_trader">
-      <p class="__title has-text-centered">
+      <p class="__title has-text-centered is-size-4">
         <span v-if="tradeType === 'buy'">Buying </span>
         <span v-else>Selling </span>
         <span class="amount__btc">{{ cryptoAmount }} BTC</span> at <span class="amount__currency">{{ fiatAmount|formatMoney(currency) }}</span>
-        <span style="margin-left: 1.5rem;">
+        <span style="margin-left: 0.5rem; vertical-align: top;">
           <a
             href="#"
-            style="color: #d50b1f; font-size: 0.8rem;"
+            style="color: #d50b1f; font-size: 0.95rem; vertical-align: middle"
             @click.prevent="handleCancelTrade"
-          >cancel</a>
+          ><i class="far fa-times-circle" /></a>
         </span>
       </p>
-
-      <div class="columns">
-        <div class="column is-three-fifths is-offset-one-fifth">
-          <div class="columns is-mobile trader">
-            <div class="column is-2 icons-wrapper has-text-centered">
-              <trade-icon
-                v-for="(icon, i) in iconNameList"
-                :key="i"
-                :name="icon"
-                :active="isIconActive(icon)"
-                class="icon-container"
-              />
-            </div>
-            <div v-if="$device.isMobile" class="column is-9 content-wrapper">
-              <div class="columns">
-                <div class="column is-12">
-                  <div class="content-area">
-                    <p class="__title">
-                      <slot name="title" />
-                    </p>
-                    <div class="content">
-                      <slot name="content" />
-                    </div>
-                    <div class="button-wrapper">
-                      <slot name="button" />
-                    </div>
-                  </div>
-                </div>
+      <div class="column is-6 is-offset-3 trader">
+        <div class="content-wrapper">
+          <div class="senexp is-hidden-desktop">
+            <progress
+              class="progress is-small is-info"
+              :value="percentDone"
+              max="100"
+            />
+          </div>
+          <div class="steps senex is-hidden-touch">
+            <div
+              v-for="(checkout, i) in iconNameList"
+              :key="i"
+              class="step-item"
+              :class="{
+                'is-active': isStepActive(checkout.step),
+                'is-completed': isStepDone(checkout.step),
+                'is-success': isStepDone(checkout.step)
+              }"
+            >
+              <div class="step-marker">
+                <span class="icon">
+                  <i :class="`fa fa-${isStepDone(checkout.step) ? 'check' : checkout.icon}`" />
+                </span>
               </div>
             </div>
-            <div v-else class="column is-9 content-wrapper">
-              <div class="columns is-mobile">
-                <div class="column is-10 is-offset-1">
-                  <div class="content-area">
-                    <p class="__title">
-                      <slot name="title" />
-                    </p>
-                    <div class="content" style="overflow-y: auto">
-                      <slot name="content" />
-                    </div>
-                    <div class="button-wrapper">
-                      <slot name="button" />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- <div class="column is-3 help">
-                  <a href="" class="tooltip-a" @click.prevent="showHelpText = !showHelpText">
-                    <img
-                      src="~assets/helptext-tooltip.png"
-                      alt="Help text tool tip"
-                      height="30"
-                      width="30"
-                    >
-                  </a>
-                  <p v-if="showHelpText" class="text">
-                    <slot name="helpText" />
-                  </p>
-                </div> -->
-              </div>
+          </div>
+          <div class="content-area column is-10 is-offset-1">
+            <p class="__title has-text-centered">
+              <slot name="title" />
+            </p>
+            <div class="content" style="overflow-y: auto">
+              <slot name="content" />
+            </div>
+            <div class="button-wrapper">
+              <slot name="button" />
             </div>
           </div>
         </div>
@@ -83,13 +59,13 @@
 
 <script>
 import { mapState } from 'vuex'
-import TradeIcon from '@/components/trade-icon'
+// import TradeIcon from '@/components/trade-icon'
 import formatMoney from '~/filters/format-money'
 
 export default {
-  components: {
-    TradeIcon
-  },
+  // components: {
+  //   TradeIcon
+  // },
 
   filters: {
     formatMoney
@@ -117,21 +93,52 @@ export default {
 
     iconNameList() {
       if (this.tradeType === 'sell') {
-        return ['user_info', 'user_finance', 'wallet_deposit']
+        return [
+          { step: 'user_info', icon: 'user' },
+          { step: 'user_finance', icon: 'university' },
+          { step: 'wallet_deposit', icon: 'credit-card' }
+        ]
       } else {
-        return ['user_info', 'wallet', 'credit_card', 'user_verify']
+        return [
+          { step: 'user_info', icon: 'user' },
+          { step: 'wallet', icon: 'wallet' },
+          { step: 'credit_card', icon: 'credit-card' },
+          { step: 'user_verify', icon: 'key' }
+        ]
       }
+    },
+
+    percentDone() {
+      const currentStepIndex = this.iconNameList.findIndex(
+        i => i.step === this.step
+      )
+      return Math.floor(
+        ((currentStepIndex + 1) / this.iconNameList.length) * 100
+      )
     }
   },
 
   methods: {
-    isIconActive(iconName) {
-      const index = this.iconNameList.indexOf(iconName)
-      const currentStepIndex = this.iconNameList.indexOf(this.step)
+    isStepActive(stage) {
+      const index = this.iconNameList.findIndex(i => i.step === stage)
+      const currentStepIndex = this.iconNameList.findIndex(
+        i => i.step === this.step
+      )
       if (index < 0 || !currentStepIndex < 0) {
         return false
       }
-      return index <= currentStepIndex
+      return index === currentStepIndex
+    },
+
+    isStepDone(stage) {
+      const index = this.iconNameList.findIndex(i => i.step === stage)
+      const currentStepIndex = this.iconNameList.findIndex(
+        i => i.step === this.step
+      )
+      if (index < 0 || !currentStepIndex < 0) {
+        return false
+      }
+      return index < currentStepIndex
     },
 
     handleCancelTrade() {
@@ -149,4 +156,36 @@ export default {
 
 <style lang="scss">
 @import '~assets/scss/trade.scss';
+.senex {
+  padding-top: 1rem;
+}
+.senexp {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 1.3rem;
+}
+.is-active {
+  // color: $blue;
+  :after {
+    animation: none;
+    display: none;
+  }
+
+  :before {
+    // border: 4px solid $grey;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(33, 131, 221, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(33, 131, 221, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(33, 131, 221, 0);
+  }
+}
 </style>

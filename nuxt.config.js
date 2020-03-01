@@ -37,6 +37,11 @@ module.exports = {
         rel: 'stylesheet',
         href:
           'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.rawgit.com/octoshrimpy/bulma-o-steps/master/bulma-steps.css'
       }
     ],
     script: [
@@ -124,7 +129,8 @@ module.exports = {
     ],
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/moment'
   ],
 
   /*

@@ -5,42 +5,42 @@
     </template>
     <template v-if="isOtc == false" slot="content" class="wallet_deposit">
       <div v-if="receiveAddress" class="wallet_deposit">
-        <p class="desc-text">
-          Send {{ cryptoAmount }} BTC to the wallet address below.
-        </p>
-        <div class="columns address-clipboard-wrapper is-mobile">
-          <div class="column is-8 address-wrapper">
-            <p class="btc-address">
-              {{ receiveAddress }}
-            </p>
-          </div>
-          <a
-            v-clipboard="receiveAddress"
-            v-clipboard:success="toggleCopyText"
-            class="column is-2 clipboard-wrapper"
-          >
-            {{ copyText }}
-          </a>
-        </div>
-        <div class="qrcode-wrapper">
-          <p class="qrcode">
-            <vue-qrcode
-              :value="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`"
-              tag="img"
-              :options="{width: 160}"
-            />
-          </p>
-          <p class="text-wrapper">
-            <span class="text is-block">
-              Scan QR Code OR
+        <div class="card" style="width: 230px; margin: 3px auto;">
+          <header class="card-header is-size-6">
+            <span class="card-header-title">
+              {{ cryptoAmount }} BTC
             </span>
-            <a :href="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`">
-              <span class="icon is-block">
-                Pay with wallet
-                <i class="fas fa-download" />
+            <a 
+              v-clipboard="receiveAddress"
+              v-clipboard:success="toggleCopyText"
+              class="card-header-icon button is-light is-medium"
+              aria-label="more options"
+            >
+              <span class="icon">
+                <i class="far fa-copy" aria-hidden="true" />
               </span>
             </a>
-          </p>
+          </header>
+          <div class="">
+            <div class="content">
+              <vue-qrcode
+                :value="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`"
+                tag="img"
+                :options="{width: 250}"
+              />
+              <p v-show="!verifying && transactions.length === 0" class="has-text-weight-bold is-size-7 has-text-danger blink">
+                Expires: {{ $moment(expires).subtract(10, 'm').format('h:mm A') }}
+              </p>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a
+              :href="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`"
+              class="card-footer-item button is-info has-text-weight-bold"
+            >
+              Pay in wallet
+            </a>
+          </footer>
         </div>
         <div class="status-wrapper">
           <p v-show="verifying">
@@ -49,14 +49,14 @@
           <p v-show="transactions.length > 0">
             BTC payment confirmed; please proceed.
           </p>
-          <p v-show="!verifying && transactions.length === 0" class="is-size-6">
-            Trade pending; this trade is valid till
+          <!-- <p v-show="!verifying && transactions.length === 0" class="is-size-6">
+            Expires: {{ $moment(expires).format('h:mm A') }}
             <minute-countdown
               ref="countdownTimer"
               :minutes="tradeTTL"
               @timer-elapsed="handleTradeTimeElapsed"
             />
-          </p>
+          </p> -->
           <p />
         </div>
       </div>
@@ -112,7 +112,7 @@ import { mapState } from 'vuex'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
 import logger from '~/logger'
 import Trader from '~/components/trade/trader.vue'
-import MinuteCountdown from '~/components/minute-countdown.vue'
+// import MinuteCountdown from '~/components/minute-countdown.vue'
 
 const _TRADE_VERIFY_INTERVAL_ = 60 * 1000 /* 1min */
 const _STR_CANNOT_ADDRESS_ =
@@ -135,8 +135,8 @@ export default {
 
   components: {
     Trader,
-    VueQrcode,
-    MinuteCountdown
+    VueQrcode
+    // MinuteCountdown
   },
 
   data() {
@@ -328,3 +328,19 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.card {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+}
+.blink {
+  animation: blinker 1.5s linear infinite;
+  padding-left: 10px;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+</style>

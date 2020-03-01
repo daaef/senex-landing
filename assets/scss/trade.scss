@@ -1,5 +1,6 @@
 @import './fonts.scss';
 $trader-height: 530px;
+$content-height: 480px;
 
 .wrapper_trader {
   font-family: $font-avenir;
@@ -15,11 +16,11 @@ $trader-height: 530px;
   .amount__btc {
     font-weight: bold;
     font-family: $font-avenir;
-    font-size: 2rem;
+    // font-size: 2rem;
   }
   .amount__currency {
     font-weight: 500;
-    font-size: 2rem;
+    // font-size: 2rem;
   }
 }
 
@@ -43,20 +44,19 @@ $trader-height: 530px;
   .content-wrapper {
     background-color: #fbfbfb;
     width: 100%;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+    border-radius: 2px;
     height: $trader-height;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.161);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.161);
   }
 }
 
 .content-area {
   font-size: 0.9rem;
   position: relative;
-  height: $trader-height;
+  height: $content-height;
   width: 100%;
   .__title {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
   }
 
@@ -141,7 +141,7 @@ $trader-height: 530px;
 
 .wallet_deposit {
   .qrcode-wrapper {
-    display: inline-flex;
+    // display: inline-flex;
     margin-top: 1.2rem;
     p.qrcode {
       margin-right: 1rem;
