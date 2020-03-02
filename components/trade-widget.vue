@@ -2,7 +2,7 @@
   <section>
     <div class="">
       <div class="columns">
-        <div class="column is-10-desktop is-offset-2 widget-column">
+        <div class="column is-10-widescreen is-offset-2-widescreen widget-column">
           <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
             <div class="box trade-box">
               <div class="has-text-centered trade-selector-container">

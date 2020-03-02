@@ -13,16 +13,16 @@
           ><i class="far fa-times-circle" /></a>
         </span>
       </p>
-      <div class="column is-6 is-offset-3 trader">
+      <div class="column is-6 is-offset-3 is-4-widescreen is-offset-4-widescreen trader">
         <div class="content-wrapper">
-          <div class="senexp is-hidden-desktop">
+          <div class="senexp is-hidden-tablet">
             <progress
               class="progress is-small is-info"
               :value="percentDone"
               max="100"
             />
           </div>
-          <div class="steps senex is-hidden-touch">
+          <div class="steps senex is-hidden-mobile">
             <div
               v-for="(checkout, i) in iconNameList"
               :key="i"
