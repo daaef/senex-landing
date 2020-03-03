@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-4 is-offset-4 is-vcentered">
+        <div class="column is-6 is-4-widescreen is-offset-3 is-offset-4-widescreen is-vcentered">
           <div class="boxp">
             <p class="has-text-weight-semibold p-heading has-text-centered">
               Tracking
