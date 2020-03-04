@@ -34,7 +34,13 @@
             </div>
           </div>
           <footer class="card-footer">
+            <span
+              v-if="transactions.length > 0"
+              class="card-footer-item button is-info is-inverted has-text-weight-bold">
+              <i class="far fa-check-circle" />&nbsp; Paid
+            </span>
             <a
+              v-else
               :href="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`"
               class="card-footer-item button is-info has-text-weight-bold"
             >
@@ -43,12 +49,12 @@
           </footer>
         </div>
         <div class="status-wrapper">
-          <p v-show="verifying">
+          <p v-show="verifying" class="is-size-7">
             Waiting to receive 0 confirmations...
           </p>
-          <p v-show="transactions.length > 0">
+          <!-- <p v-show="transactions.length > 0">
             BTC payment confirmed; please proceed.
-          </p>
+          </p> -->
           <!-- <p v-show="!verifying && transactions.length === 0" class="is-size-6">
             Expires: {{ $moment(expires).format('h:mm A') }}
             <minute-countdown

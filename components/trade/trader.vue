@@ -44,7 +44,7 @@
             <p class="__title has-text-centered">
               <slot name="title" />
             </p>
-            <div class="content" style="overflow-y: auto">
+            <div class="content" style="">
               <slot name="content" />
             </div>
             <div class="button-wrapper">
