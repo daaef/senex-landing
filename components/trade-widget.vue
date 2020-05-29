@@ -116,6 +116,11 @@
               </div>
             </div>
 
+            <label class="checkbox is-size-6">
+              <input v-model="consent" type="checkbox">
+              I agree to senexpay's <nuxt-link to="/legal/privacy-policy">terms of service</nuxt-link>
+            </label>
+
             <div class="button-container">
               <button
                 class="button is-fullwidth trade-button is-medium"
@@ -150,7 +155,7 @@
           </div>
           <div class="track-trade has-text-centered">
             <p>
-              Already have a trade? <nuxt-link to="/track">
+              Already have a transaction? <nuxt-link to="/track">
                 Track
               </nuxt-link>
             </p>
@@ -160,7 +165,7 @@
               <span><a :href="socialLinks.twitterUrl" aria-label="Twitter" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter tw" /></a></span>
             </p>
           </div>
-          <div class="empty-grid-bg" />
+          <!-- <div class="empty-grid-bg" /> -->
         </div>
       </div>
     </div>
@@ -197,6 +202,7 @@ export default {
       errorFetchRates: '',
       rates: null,
       isLoading: false,
+      consent: false,
       socialLinks: {
         facebookUrl: process.env.FACEBOOK_URL,
         instagramUrl: process.env.INSTAGRAM_URL,
@@ -323,7 +329,8 @@ export default {
         !this.isFetchingRates &&
         !!parseFloat(this.computedCryptoAmount) &&
         !!parseFloat(this.computedFiatAmount) &&
-        !this.errors.has('BTC')
+        !this.errors.has('BTC') &&
+        this.consent
       return rv
     }
   },
@@ -457,7 +464,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 div.button-container {
-  margin-top: 1em;
+  margin-top: 0.2em;
   margin-bottom: 2em;
   button.trade-button {
     background-color: #0c5db2;
@@ -469,7 +476,7 @@ div.button-container {
 div.track-trade {
   font-size: 0.95rem;
   font-family: $font-roboto;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.8rem;
   a {
     font-weight: bold;
   }

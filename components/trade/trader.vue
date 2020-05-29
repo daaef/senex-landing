@@ -8,7 +8,7 @@
         <span style="margin-left: 0.5rem; vertical-align: top;">
           <a
             href="#"
-            style="color: #d50b1f; font-size: 0.95rem; vertical-align: middle"
+            style="color: #d50b1f; font-size: 1.4rem; vertical-align: middle"
             @click.prevent="handleCancelTrade"
           ><i class="far fa-times-circle" /></a>
         </span>

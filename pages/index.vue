@@ -28,7 +28,7 @@
             </p>
             <br>
             <div class="get-started">
-              <i class="is-size-7" style="vertical-align: middle;">(No signup required)</i>
+              <span class="" style="vertical-align: middle;">(No signup required)</span>
               <p class="g-text" @click="getStarted">
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
               </p>
@@ -114,7 +114,7 @@ html {
 }
 .g-text {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 5px 0px;
   color: #0c5db2;
   cursor: pointer;

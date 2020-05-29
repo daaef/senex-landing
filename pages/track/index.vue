@@ -10,7 +10,7 @@
                 class="is-block has-text-centered has-text-weight-normal"
                 style="font-size: 0.95rem;"
               >
-                Track status of your pending trade
+                Track status of your pending transaction
               </span>
             </p>
 
@@ -45,10 +45,10 @@
                 </div>
               </form>
               <div class="has-no-trade has-text-centered">
-                <p>Haven't started a trade?</p>
+                <p>Haven't started your order?</p>
                 <p>
                   <nuxt-link to="/" class="is-size-5 trade-link">
-                    Start Trade
+                    Start Transaction
                   </nuxt-link>
                 </p>
               </div>
@@ -60,7 +60,7 @@
                   Pin Verification
                 </p>
                 <p class="text-info has-text-centered">
-                  Enter the pin for this trade
+                  Enter the pin for this transaction
                 </p>
                 <div class="columns is-mobile">
                   <div class="column is-3">
@@ -125,8 +125,8 @@
 <script>
 import { mapState } from 'vuex'
 
-const _ERR_FETCH_TRADE_ = "Couldn't fetch trade; try again"
-const _STR_INVALID_PIN_ = 'Invalid pin; please enter correct trade pin'
+const _ERR_FETCH_TRADE_ = "Couldn't fetch transaction; try again"
+const _STR_INVALID_PIN_ = 'Invalid pin; please enter correct transaction pin'
 
 export default {
   layout: 'blue',
@@ -155,7 +155,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'SenexPAY Tracking helps you lookup the status of your trade/transaction and enable you log complaints/inquiries about that trade. Track your trade now!'
+            'SenexPAY Tracking helps you lookup the status of your transaction and enable you log complaints/inquiries about that transaction. Track your transaction now!'
         }
       ]
     }

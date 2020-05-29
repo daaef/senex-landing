@@ -84,7 +84,7 @@
         :class="{'disabled': loading}"
         @click="handleSubmit"
       >
-        Request Trade
+        Complete
       </button>
     </template>
     <template slot="helpText">

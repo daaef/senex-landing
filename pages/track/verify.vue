@@ -4,7 +4,7 @@
       <p class="has-text-weight-semibold p-heading has-text-centered">
         Trade Lookup
         <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">
-          Quickly track and manage your trade
+          Quickly track and manage your transaction
         </span>
       </p>
       <div class="columns is-centered content-wrapper">

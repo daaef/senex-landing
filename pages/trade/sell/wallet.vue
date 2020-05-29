@@ -36,7 +36,8 @@
           <footer class="card-footer">
             <span
               v-if="transactions.length > 0"
-              class="card-footer-item button is-info is-inverted has-text-weight-bold">
+              class="card-footer-item button is-info is-inverted has-text-weight-bold"
+            >
               <i class="far fa-check-circle" />&nbsp; Paid
             </span>
             <a
@@ -68,11 +69,11 @@
       </div>
       <div v-else class="wallet_deposit">
         <h4>Please read carefully:</h4>
-        <p class="help is-danger">
+        <p class="help is-danger" style="font-size: 0.81rem;">
           <i class="fas fa-exclamation-circle" /> 
-          Deposit {{ cryptoAmount }} BTC into the address that will be generated shortly.
+          Deposit exactly {{ cryptoAmount }} BTC into the address that will be generated shortly.
           To make confirmations faster, <b>send Bitcoins using high network fees.</b>
-          Trade expires exactly 20mins after address is generated.
+          Trade expires in less than 20mins after address is generated.
         </p>
         <p>
           Once ready to make payment, please check the box below then click on the generate button.
@@ -84,7 +85,7 @@
           </label>
           <br><br>
           <button 
-            class="button is-primary is-rounded" 
+            class="button is-warning is-small" 
             :class="{'is-loading': addressing}" 
             :disabled="!activeGenerate" 
             @click="getAddress"
@@ -92,7 +93,7 @@
             <span class="icon">
               <i class="fas fa-qrcode" />
             </span>
-            <span>Generate</span>
+            <span class="has-text-weight-bold">Get Wallet Address</span>
           </button>
         </div>
       </div>
@@ -107,7 +108,7 @@
         :disabled="isOtc ? !isOtc : transactions.length === 0"
         @click="handleRequestTrade"
       >
-        Request trade
+        Complete
       </button>
     </template>
   </trader>
