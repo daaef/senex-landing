@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths">
+        <div class="column is-three-fifths" style="margin-top: 1.6rem;">
           <!-- is-vcentered -->
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
@@ -137,6 +137,7 @@ html {
 
 div.wrapper {
   margin-top: 2em;
+  text-decoration: inherit;
 }
 
 div.image-illustration-container {

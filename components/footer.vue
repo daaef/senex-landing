@@ -26,7 +26,7 @@
       <div class="is-hidden-desktop">
         <br>
       </div>
-      <a
+      <!-- <a
         href="https://api.whatsapp.com/send?phone=+2348184899239&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin" 
         aria-label="Whatsapp"
         class="float tooltip is-tooltip-left is-tooltip-active"
@@ -35,7 +35,7 @@
         rel="noopener"
       >
         <i class="fab fa-whatsapp my-float" />
-      </a>
+      </a> -->
     </div>
     <footer-links-modal />
   </footer>
