@@ -13,7 +13,7 @@
     </video> -->
     <div class="main">
       <navbar theme="blue" logo-variant="blue" />
-      <div class="content" style="margin-bottom: 0;">
+      <div class="content" style="">
         <nuxt />
       </div>
       <footer-comp />
@@ -58,6 +58,9 @@ video {
   background-color: rgba(228, 255, 255, 0.8);
   .content {
     flex: 1;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
   }
 }
 /*

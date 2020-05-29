@@ -2,7 +2,8 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths is-vcentered">
+        <div class="column is-three-fifths">
+          <!-- is-vcentered -->
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
               <!-- Easiest and Fastest  -->
@@ -101,6 +102,7 @@ html {
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
+  width: 100%;
 }
 .is-vcentered {
   display: flex;
