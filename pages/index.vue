@@ -48,7 +48,7 @@
       </div>
     </div>
     <!-- <div class="is-hidden-touch mockup">
-      <img src="~assets/senex-mockup.png" height="200px" alt="" >
+      <img src="~assets/senex-mockup.png" height="210px" alt="" >
     </div> -->
   </section>
 </template>
