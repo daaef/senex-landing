@@ -75,6 +75,7 @@ module.exports = {
   plugins: [
     '~/plugins/v-clipboard',
     '~plugins/vue-js-modal',
+    { src: '~plugins/vue-tawk', mode: 'client' },
     { src: '~plugins/cookie', mode: 'client' },
     { src: '~plugins/vue-typer', mode: 'client' }
   ],

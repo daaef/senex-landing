@@ -25,8 +25,11 @@
                 fetching current rates...
               </div>
 
-              <p class="is-size-7">
-                {{ tradeType == 'buy' ? 'I have Naira/Dollar and want to buy BTC' : 'I want to sell my Bitcoins' }}
+              <p v-if="tradeType == 'buy'" class="is-size-7" :class="activeRates && activeRates.disabled ? 'help is-danger' : ''">
+                {{ activeRates && activeRates.disabled ? 'BTC purchase is currently unavailable' : 'I wish to purchase Bitcoins' }}
+              </p>
+              <p v-else class="is-size-7">
+                I wish to sell my Bitcoins
               </p>
 
               <div style="margin-bottom: 0.5em;" class="columns">
@@ -163,7 +166,7 @@
               <span><a :href="socialLinks.facebookUrl" aria-label="Facebook" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f fb" /></a></span>
               <span><a :href="socialLinks.instagramUrl" aria-label="Instagram" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram in" /></a></span>
               <span><a :href="socialLinks.twitterUrl" aria-label="Twitter" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter tw" /></a></span>
-              <span><a :href="socialLinks.twitterUrl" aria-label="Whatsapp" target="_blank" rel="noreferrer noopener"><i class="fab fa-whatsapp wa" /></a></span>
+              <span><a :href="socialLinks.whatsappUrl" aria-label="Whatsapp" target="_blank" rel="noreferrer noopener"><i class="fab fa-whatsapp wa" /></a></span>
             </p>
           </div>
           <!-- <div class="empty-grid-bg" /> -->
@@ -208,12 +211,12 @@ export default {
         facebookUrl: process.env.FACEBOOK_URL,
         instagramUrl: process.env.INSTAGRAM_URL,
         twitterUrl: process.env.TWITTER_URL,
-        whatsappUrl:
-          'https://api.whatsapp.com/send?phone=+2348184899239&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin'
+        whatsappUrl: `https://api.whatsapp.com/send?phone=+${
+          process.env.WHATSAPP_ID
+        }&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin`
       }
     }
   },
-
   computed: {
     hasActiveTrade() {
       return this.$store.getters['trade/isActiveTrade']
