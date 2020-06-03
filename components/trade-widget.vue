@@ -26,7 +26,7 @@
               </div>
 
               <p v-if="tradeType == 'buy'" class="is-size-7" :class="activeRates && activeRates.disabled ? 'help is-danger' : ''">
-                {{ activeRates && activeRates.disabled ? 'BTC purchase is currently unavailable' : 'I wish to purchase Bitcoins' }}
+                {{ activeRates && activeRates.disabled ? 'Bitcoin purchase is currently unavailable' : 'I wish to purchase Bitcoins' }}
               </p>
               <p v-else class="is-size-7">
                 I wish to sell my Bitcoins
@@ -119,9 +119,9 @@
               </div>
             </div>
 
-            <label class="checkbox is-size-6">
+            <label class="checkbox">
               <input v-model="consent" type="checkbox">
-              I agree to senexpay's <nuxt-link to="/legal/privacy-policy">terms of service</nuxt-link>
+              I agree to the <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a> and <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a>
             </label>
 
             <div class="button-container">
@@ -337,7 +337,10 @@ export default {
         !!parseFloat(this.computedFiatAmount) &&
         !this.errors.has('BTC') &&
         this.consent
-      return rv
+
+      const disab =
+        this.tradeType === 'buy' ? rv && !this.activeRates.disabled : rv
+      return disab
     }
   },
 
@@ -469,6 +472,10 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.checkbox {
+  font-size: 0.9rem;
+}
+
 div.button-container {
   margin-top: 0.2em;
   margin-bottom: 2em;
@@ -559,7 +566,7 @@ div.rates-container {
   padding: 0.5rem;
   width: 85%;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
   justify-content: space-around;
 }
 
