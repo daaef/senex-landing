@@ -121,8 +121,12 @@
 
             <label class="checkbox">
               <input v-model="consent" type="checkbox">
-              I agree to the <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a> and <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a>
+              I agree to the <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a> and <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a>
             </label>
+            <!-- <label class="checkbox">
+              <input v-model="consent" type="checkbox">
+              I agree to the <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a> and <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a>
+            </label> -->
 
             <div class="button-container">
               <button
@@ -473,12 +477,12 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .checkbox {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 div.button-container {
-  margin-top: 0.2em;
-  margin-bottom: 2em;
+  margin-top: 0.8em;
+  margin-bottom: 1.8em;
   button.trade-button {
     background-color: #0c5db2;
     font-family: $font-avenir;
