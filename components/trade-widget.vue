@@ -26,10 +26,10 @@
               </div>
 
               <p v-if="tradeType == 'buy'" class="is-size-7" :class="activeRates && activeRates.disabled ? 'help is-danger' : ''">
-                {{ activeRates && activeRates.disabled ? 'Bitcoin purchase is currently unavailable' : 'I wish to purchase Bitcoins' }}
+                {{ activeRates && activeRates.disabled ? 'Bitcoin purchase is currently unavailable' : 'I want to purchase Bitcoins' }}
               </p>
               <p v-else class="is-size-7">
-                I wish to sell my Bitcoins
+                I want to sell my Bitcoins
               </p>
 
               <div style="margin-bottom: 0.5em;" class="columns">

@@ -120,11 +120,11 @@
             <div class="column is-9">
               <span class="text is-block">SenexPAY Support</span>
               <span class="status is-block">
-                <i class="fas fa-users" /> Opened
+                <i class="fas fa-users" /> Closed
               </span>
             </div>
           </div>
-          <div class="chat-container">
+          <!-- <div class="chat-container">
             <div
               v-for="message in messages"
               :key="message.id"
@@ -138,11 +138,24 @@
                 {{ message.created|prettydate }}
               </p>
             </div>
+          </div> -->
+          <div class="chat-container">
+            <div class="chat chat-received">
+              <p>
+                Hi {{ tradeData.firstName }},<br>
+                This chatbox is currently deactivated. 
+                Kindly lay your complaints using our live chat by clicking the button below.
+              </p>
+              <p class="time-info">
+                <span class="name">Agent - </span>
+                A short while ago
+              </p>
+            </div>
           </div>
 
           <form class="send-input-container">
             <div class="field is-grouped">
-              <p class="control is-expanded">
+              <!-- <p class="control is-expanded">
                 <input
                   v-model="messageText"
                   v-validate="'required'"
@@ -151,17 +164,17 @@
                   name="message text"
                   placeholder="Type message"
                 >
-              </p>
-              <p class="control">
-                <button
-                  class="button is-info"
-                  :class="{'is-loading': sendingMessage}"
-                  @click.prevent="handleSendMessage"
-                >
-                  Send
-                </button>
-              </p>
+              </p> -->
             </div>
+            <p class="control">
+              <button
+                class="button is-info is-fullwidth"
+                :class="{'is-loading': sendingMessage}"
+                @click.prevent="openLiveChat()"
+              >
+                Open live chat !
+              </button>
+            </p>
           </form>
         </div>
       </div>
@@ -328,6 +341,10 @@ export default {
       } finally {
         // this.$nuxt.$loading.finish()
       }
+    },
+    openLiveChat() {
+      window.Tawk_API.maximize()
+      // this.sendingMessage = true
     }
   }
 }
@@ -475,7 +492,7 @@ div.wrapper {
       overflow: auto;
       .chat {
         font-size: 0.95rem;
-        line-height: 1;
+        line-height: 1.3;
         width: 80%;
         height: auto;
         padding: 0.3rem;
