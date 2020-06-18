@@ -14,7 +14,7 @@
             <span class="text-crypto is-size-1-tablet is-size-2-touch">
               Buy &amp; Sell Bitcoins
             </span>
-            <p style="margin: 0.5rem 0; vertical-align: bottom;">
+            <!-- <p style="margin: 0.5rem 0; vertical-align: bottom;">
               <svg
                 width="40"
                 height="2"
@@ -26,19 +26,56 @@
                 <path d="M3.05176e-05 1H69" stroke="#707070" />
               </svg>
               <span>Instant payout with SenexPAY</span><br>
-            </p>
+            </p> -->
             <br>
             <div class="get-started">
-              <span class="" style="vertical-align: middle;">(No signup required)</span>
+              <p style="margin: 1.5rem 0 0.2rem; vertical-align: bottom;">
+                <svg
+                  width="30"
+                  height="2"
+                  style="vertical-align: middle"
+                  viewBox="0 0 69 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3.05176e-05 1H69" stroke="#707070" />
+                </svg>
+                <span>Instant payouts</span><br>
+              </p>
+              <p style="margin: 0.2rem 0 1.5rem; vertical-align: bottom;">
+                <svg
+                  width="30"
+                  height="2"
+                  style="vertical-align: middle"
+                  viewBox="0 0 69 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3.05176e-05 1H69" stroke="#707070" />
+                </svg>
+                <span>No signups required</span><br>
+              </p>
+              <!-- <ul>
+                <li>No signups required</li>
+                <li>Best exchange rates</li>
+                <li>Instant payouts</li>
+                <li>No debit card charges</li>
+              </ul>
+              <span class="" style="vertical-align: middle;">(No signup required)</span> -->
               <p class="g-text" @click="getStarted">
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
               </p>
             </div>
-            <span>_____ We accept _____</span>
+            <span>_____ Pay using _____</span>
             <p class="accepted-cards">
               <span><img src="~assets/verve-card.png" alt="verve"></span>
               <span><img src="~assets/master-card.png" alt="master"></span>
               <span><img src="~assets/visa-card.png" alt="visa"></span>
+              <span class="extra"><img src="~assets/bank-transfers.png" alt="transfer"></span>
+              <span class="last"><img src="~assets/ussd-code.png" alt="ussd"></span>
+            </p>
+            <p class="accepted-text">
+              We accept <b>Debit/Credit cards</b>, <b>Direct Bank Transfers</b> and even <b>USSD payments</b> from customers in 140+ countries.
             </p>
           </div>
         </div>
@@ -179,12 +216,24 @@ div.info {
   }
 
   .accepted-cards span {
-    padding-right: 10px;
+    padding-right: 8px;
     height: 20px;
 
     img {
       height: 25px;
     }
+  }
+  .accepted-cards .extra {
+    padding-right: 10px;
+    height: 30px;
+  }
+  .accepted-cards .last {
+    height: 30px;
+  }
+  .accepted-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 450px;
   }
 }
 </style>
