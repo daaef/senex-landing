@@ -121,25 +121,25 @@
 
             <div class="is-hidden-mobile">
               <div class="field checkbox">
-                <input id="consent" v-model="consent" class="is-checkradio has-background-color is-dark" type="checkbox">
+                <input id="consent" v-model="consent" class="is-checkradio is-dark" type="checkbox">
                 <label for="consent">
                   I agree to the <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a> and <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a>
                 </label>
               </div>
               <div class="field checkbox">
-                <input id="marketing" v-model="marketing" class="is-checkradio has-background-color is-dark" type="checkbox">
+                <input id="marketing" v-model="marketing" class="is-checkradio is-dark" type="checkbox">
                 <label for="marketing">Keep me updated via email</label>
               </div>
             </div>
             <div class="is-hidden-tablet">
               <div class="field checkbox">
-                <input id="consent" v-model="consent" class="is-checkradio has-background-color is-dark is-small" type="checkbox">
+                <input id="consent" v-model="consent" class="is-checkradio is-dark is-small" type="checkbox">
                 <label for="consent">
                   I agree to the <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a> and <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a>
                 </label>
               </div>
               <div class="field checkbox">
-                <input id="marketing" v-model="marketing" class="is-checkradio has-background-color is-dark is-small" type="checkbox">
+                <input id="marketing" v-model="marketing" class="is-checkradio is-dark is-small" type="checkbox">
                 <label for="marketing">Keep me updated via email</label>
               </div>
             </div>
