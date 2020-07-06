@@ -57,8 +57,8 @@
             </p>
             <p>
               <span class="_title">KYC Status</span>
-              <span v-if="tradeData.kyc == null" class="_item">
-                Not Uploaded
+              <span v-if="tradeData.kyc == null" class="_item has-text-danger">
+                Please upload documents below!
               </span>
               <span v-else class="_item">
                 {{ tradeData.kyc.status === 'failed' ? 'Declined, please re-upload documents' : tradeData.kyc.status }}
@@ -78,7 +78,7 @@
               </svg>
               <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
-            <div v-if="tradeData.kyc != null && tradeData.kyc.status == 'failed'" class="field is-grouped is-grouped-multiline">
+            <div v-if="tradeData.kyc == null || tradeData.kyc.status == 'failed'" class="field is-grouped is-grouped-multiline" style="padding-top: 10px;">
               <div class="control">
                 <div class="tags has-addons" style="cursor:pointer;" @click="$refs.idBrowse.click()">
                   <span class="tag is-dark is-medium">Govt. ID</span>
@@ -108,6 +108,16 @@
                     @change="uploadDoc($event, 'selfie')"
                   >     
                 </div>
+              </div>
+              <div class="control">
+                <button
+                  class="button is-info"
+                  :class="{'is-loading': loading}"
+                  :disabled="!canSave"
+                  @click.prevent="saveDoc"
+                >
+                  Save
+                </button>
               </div>
             </div>
           </div>
@@ -189,7 +199,7 @@ import formatMoney from '~/filters/format-money'
 
 const _SEND_MESSAGE_ERROR_ = "Couldn't send message; try again"
 const _ERR_FILE_UPLOAD_ = 'Failed to upload; try again'
-const _SUC_FILE_UPLOAD_ = 'Your document was uploaded successfully'
+const _SUC_FILE_UPLOAD_ = 'Document uploaded'
 
 export default {
   layout: 'blue',
@@ -219,8 +229,17 @@ export default {
       sendingMessage: false,
       clms: null,
       cltr: null,
+      doc1: null,
       upload1: false,
-      upload2: false
+      doc2: null,
+      upload2: false,
+      loading: false
+    }
+  },
+
+  computed: {
+    canSave() {
+      return this.doc1 && this.doc2
     }
   },
 
@@ -236,13 +255,13 @@ export default {
     }
   },
 
-  created() {
+  mounted() {
     this.cltr = setInterval(this.polldTrade, 15000)
-    this.clms = setInterval(this.pollMessages, 4000)
+    // this.clms = setInterval(this.pollMessages, 4000)
   },
   beforeDestroy() {
     clearInterval(this.cltr)
-    clearInterval(this.clms)
+    // clearInterval(this.clms)
   },
 
   methods: {
@@ -252,7 +271,7 @@ export default {
         this.tradeData = response.data
       } catch (e) {
         // const errors = e
-        log.debug(`[error] /track/verify ${JSON.stringify(e.response)}`)
+        log.debug(`[error] /track/verify ${JSON.stringify(e)}`)
       }
     },
     async pollMessages() {
@@ -263,7 +282,7 @@ export default {
         this.messageResp = response.data.sort((a, b) => a.id - b.id)
       } catch (e) {
         // const errors = e
-        log.debug(`[error] /track/verify ${JSON.stringify(e.response)}`)
+        log.debug(`[error] /track/verify ${JSON.stringify(e)}`)
       }
     },
     async handleSendMessage() {
@@ -298,6 +317,7 @@ export default {
       }
     },
     async uploadDoc(e, fileType) {
+      // fileType === 'idCard' ? (this.upload1 = true) : (this.upload2 = true)
       const files = e.target.files || e.dataTransfer.files
       if (files.length === 0) return
       const formData = new FormData()
@@ -308,6 +328,7 @@ export default {
             'content-type': 'multipart/form-data'
           }
         })
+        /*
         const requestBody = {
           trade: this.tradeData.id
         }
@@ -316,11 +337,13 @@ export default {
           : (requestBody.selfieWithId = resp.data.datafile)
 
         await this.$axios.put(`/trade/${requestBody.trade}/kyc/`, requestBody)
-
-        fileType === 'idCard' ? (this.upload1 = true) : (this.upload2 = true)
+        */
+        fileType === 'idCard'
+          ? (this.doc1 = resp.data.datafile)((this.upload1 = true))
+          : (this.doc2 = resp.data.datafile)((this.upload2 = true))
 
         this.$swal({
-          title: 'Done:',
+          title: 'Document uploaded',
           type: 'success',
           position: 'top-end',
           text: _SUC_FILE_UPLOAD_,
@@ -329,17 +352,52 @@ export default {
           showConfirmButton: false
         })
       } catch (e) {
+        if (e && e.response) {
+          this.$swal({
+            title: 'Error:',
+            type: 'error',
+            position: 'top-end',
+            text: _ERR_FILE_UPLOAD_,
+            timer: 7 * 1000,
+            toast: true,
+            showConfirmButton: false
+          })
+        }
+      } finally {
+        // this.$nuxt.$loading.finish()
+      }
+    },
+    async saveDoc() {
+      try {
+        const requestBody = {
+          trade: this.tradeData.id,
+          govtIssuedId: this.doc1,
+          selfieWithId: this.doc2
+        }
+        await this.$axios.put(`/trade/${requestBody.trade}/kyc/`, requestBody)
+        this.polldTrade()
+
         this.$swal({
-          title: 'Error:',
-          type: 'error',
+          title: 'Saved:',
+          type: 'success',
           position: 'top-end',
-          text: _ERR_FILE_UPLOAD_,
+          text: _SUC_FILE_UPLOAD_,
           timer: 7 * 1000,
           toast: true,
           showConfirmButton: false
         })
-      } finally {
-        // this.$nuxt.$loading.finish()
+      } catch (e) {
+        if (e && e.response) {
+          this.$swal({
+            title: 'Error:',
+            type: 'error',
+            position: 'top-end',
+            text: _ERR_FILE_UPLOAD_,
+            timer: 7 * 1000,
+            toast: true,
+            showConfirmButton: false
+          })
+        }
       }
     },
     openLiveChat() {
@@ -367,7 +425,7 @@ div.wrapper {
 }
 
 .content-wrapper {
-  $item-height: 400px;
+  $item-height: auto;
   // margin: 1rem 0;
   .status-area,
   .message-area {
@@ -458,6 +516,11 @@ div.wrapper {
       }
       .date {
         color: #1b70cf;
+      }
+      .button {
+        font-size: 0.92rem;
+        color: #ffffff;
+        background: #0c5db2;
       }
     }
   }

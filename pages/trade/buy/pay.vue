@@ -252,17 +252,18 @@ export default {
           })
         }
       } catch (err) {
-        log.debug(`[error] /verify/rave ${JSON.stringify(err.response)}`)
-
-        this.$swal({
-          title: '',
-          type: 'error',
-          position: 'top-end',
-          text: _ERR_VERIFY_TRANSACTION_,
-          timer: 5 * 1000,
-          toast: true,
-          showConfirmButton: false
-        })
+        if (err && err.response) {
+          log.debug(`[error] /verify/rave ${JSON.stringify(err.response)}`)
+          this.$swal({
+            title: '',
+            type: 'error',
+            position: 'top-end',
+            text: _ERR_VERIFY_TRANSACTION_,
+            timer: 5 * 1000,
+            toast: true,
+            showConfirmButton: false
+          })
+        }
       } finally {
         this.verifying = false
       }
