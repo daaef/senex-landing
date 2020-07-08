@@ -78,46 +78,48 @@
               </svg>
               <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
-            <div v-if="tradeData.kyc == null || tradeData.kyc.status == 'failed'" class="field is-grouped is-grouped-multiline" style="padding-top: 10px;">
-              <div class="control">
-                <div class="tags has-addons" style="cursor:pointer;" @click="$refs.idBrowse.click()">
-                  <span class="tag is-dark is-medium">Govt. ID</span>
-                  <span class="tag is-medium" :class="{ 'is-info': !upload1, 'is-success': upload1 }"><i class="fas" :class="{ 'fa-file-upload': !upload1, 'fa-check-circle': upload1 }" /></span>
-                  <input
-                    ref="idBrowse"
-                    class="file-input"
-                    type="file"
-                    accept="image/*"
-                    name="idcard"
-                    hidden
-                    @change="uploadDoc($event, 'idCard')"
+            <div v-if="tradeData.isKyc">
+              <div v-if="tradeData.kyc == null || tradeData.kyc.status == 'failed'" class="field is-grouped is-grouped-multiline" style="padding-top: 10px;">
+                <div class="control">
+                  <div class="tags has-addons" style="cursor:pointer;" @click="$refs.idBrowse.click()">
+                    <span class="tag is-dark is-medium">Govt. ID</span>
+                    <span class="tag is-medium" :class="{ 'is-info': !upload1, 'is-success': upload1 }"><i class="fas" :class="{ 'fa-file-upload': !upload1, 'fa-check-circle': upload1 }" /></span>
+                    <input
+                      ref="idBrowse"
+                      class="file-input"
+                      type="file"
+                      accept="image/*"
+                      name="idcard"
+                      hidden
+                      @change="uploadDoc($event, 'idCard')"
+                    >
+                  </div>
+                </div>
+                <div class="control">
+                  <div class="tags has-addons" style="cursor:pointer;" @click="$refs.selfieBrowse.click()">
+                    <span class="tag is-dark is-medium">Selfie</span>
+                    <span class="tag is-medium" :class="{ 'is-info': !upload2, 'is-success': upload2 }"><i class="fas" :class="{ 'fa-file-upload': !upload2, 'fa-check-circle': upload2 }" /></span>
+                    <input
+                      ref="selfieBrowse"
+                      class="file-input"
+                      type="file"
+                      accept="image/*"
+                      name="selfie"
+                      hidden
+                      @change="uploadDoc($event, 'selfie')"
+                    >     
+                  </div>
+                </div>
+                <div class="control">
+                  <button
+                    class="button is-info"
+                    :class="{'is-loading': loading}"
+                    :disabled="!canSave"
+                    @click.prevent="saveDoc"
                   >
+                    Save
+                  </button>
                 </div>
-              </div>
-              <div class="control">
-                <div class="tags has-addons" style="cursor:pointer;" @click="$refs.selfieBrowse.click()">
-                  <span class="tag is-dark is-medium">Selfie</span>
-                  <span class="tag is-medium" :class="{ 'is-info': !upload2, 'is-success': upload2 }"><i class="fas" :class="{ 'fa-file-upload': !upload2, 'fa-check-circle': upload2 }" /></span>
-                  <input
-                    ref="selfieBrowse"
-                    class="file-input"
-                    type="file"
-                    accept="image/*"
-                    name="selfie"
-                    hidden
-                    @change="uploadDoc($event, 'selfie')"
-                  >     
-                </div>
-              </div>
-              <div class="control">
-                <button
-                  class="button is-info"
-                  :class="{'is-loading': loading}"
-                  :disabled="!canSave"
-                  @click.prevent="saveDoc"
-                >
-                  Save
-                </button>
               </div>
             </div>
           </div>
