@@ -108,6 +108,9 @@ export default {
           content:
             'This is to set out in an accountable and transparent way the process in which SenexPAY collects and uses your Personal Information.'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://senexpay.com/legal/privacy-policy' }
       ]
     }
   }

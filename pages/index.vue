@@ -110,7 +110,8 @@ export default {
           content:
             'Buy and sell Bitcoin securely with SenexPAY, a Nigeria based crypto exchange platform that is much faster, cheaper and stress-free.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://senexpay.com' }]
     }
   },
 

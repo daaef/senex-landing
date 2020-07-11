@@ -91,6 +91,9 @@ export default {
           content:
             'Dealing with cryptocurrencies, in general, entails specific risks. This risk disclosure statement cannot and does not disclose all risks and other aspects ...'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://senexpay.com/legal/risk-disclosure' }
       ]
     }
   }

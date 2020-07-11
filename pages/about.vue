@@ -107,7 +107,8 @@ export default {
           content:
             'SenexPAY is a multi-fiat to bitcoin exchange platform which is owned and managed by Senex Payment Services Limited in Lekki, Nigeria.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://senexpay.com/about' }]
     }
   }
 }
