@@ -93,7 +93,10 @@ export default {
         }
       ],
       link: [
-        { rel: 'canonical', href: 'https://senexpay.com/legal/risk-disclosure' }
+        {
+          rel: 'canonical',
+          href: 'https://www.senexpay.com/legal/risk-disclosure'
+        }
       ]
     }
   }

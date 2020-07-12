@@ -172,6 +172,7 @@ module.exports = {
   },
 
   sitemap: {
+    hostname: 'https://www.senexpay.com',
     // routes: [],
     exclude: ['/trade/**', '/track/verify', '/legal/terms']
   },
