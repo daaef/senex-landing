@@ -158,7 +158,7 @@ export default {
             'SenexPAY Tracking helps you lookup the status of your transaction and enable you log complaints/inquiries about that transaction. Track your transaction now!'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/track' }]
+      link: [{ rel: 'canonical', href: 'https://senexpay.com/track' }]
     }
   },
 

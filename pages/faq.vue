@@ -47,7 +47,7 @@ export default {
             'Find out more about SenexPAY, see a range of frequently asked questions and possible answers that might be of help in exchanging your bitcoins'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/faq' }]
+      link: [{ rel: 'canonical', href: 'https://senexpay.com/faq' }]
     }
   },
 

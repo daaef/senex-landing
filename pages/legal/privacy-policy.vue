@@ -112,7 +112,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://www.senexpay.com/legal/privacy-policy'
+          href: 'https://senexpay.com/legal/privacy-policy'
         }
       ]
     }
