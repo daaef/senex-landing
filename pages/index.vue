@@ -66,6 +66,7 @@
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
               </p>
             </div>
+            <!--googleoff: index-->
             <span>_____ Pay using _____</span>
             <p class="accepted-cards">
               <span><img src="~assets/verve-card.png" alt="verve"></span>
@@ -74,6 +75,7 @@
               <span class="extra"><img src="~assets/bank-transfers.png" alt="transfer"></span>
               <span class="last"><img src="~assets/ussd-code.png" alt="ussd"></span>
             </p>
+            <!--googleon: index-->
             <p class="accepted-text">
               We accept <b>Debit/Credit cards</b>, <b>Direct Bank Transfers</b> and even <b>USSD payments</b> from customers in 140+ countries.
             </p>
