@@ -55,18 +55,11 @@
                 </svg>
                 <span>No signups required</span><br>
               </p>
-              <!-- <ul>
-                <li>No signups required</li>
-                <li>Best exchange rates</li>
-                <li>Instant payouts</li>
-                <li>No debit card charges</li>
-              </ul>
-              <span class="" style="vertical-align: middle;">(No signup required)</span> -->
               <p class="g-text" @click="getStarted">
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
               </p>
             </div>
-            <!--googleoff: index-->
+            <!--googleoff: all-->
             <span>_____ Pay using _____</span>
             <p class="accepted-cards">
               <span><img src="~assets/verve-card.png" alt="verve"></span>
@@ -75,7 +68,7 @@
               <span class="extra"><img src="~assets/bank-transfers.png" alt="transfer"></span>
               <span class="last"><img src="~assets/ussd-code.png" alt="ussd"></span>
             </p>
-            <!--googleon: index-->
+            <!--googleon: all-->
             <p class="accepted-text">
               We accept <b>Debit/Credit cards</b>, <b>Direct Bank Transfers</b> and even <b>USSD payments</b> from customers in 140+ countries.
             </p>
