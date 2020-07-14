@@ -5,6 +5,22 @@
         <div class="column is-10-widescreen is-offset-2-widescreen widget-column">
           <form v-if="!hasActiveTrade" @submit.prevent="doTrade">
             <div class="box trade-box">
+              <div v-if="rates" class="rates-2">
+                <div class="has-text-centered">
+                  <span>&#8358;</span>
+                  <span class="is-size-4 has-text-weight-bold">{{ rates.buy.USD_NGN }}</span>
+                  <p class="is-size-7">
+                    Buy
+                  </p>
+                </div>
+                <div class="has-text-centered">
+                  <span>&#8358;</span>
+                  <span class="is-size-4 has-text-weight-bold">{{ rates.sell.USD_NGN }}</span>
+                  <p class="is-size-7">
+                    Sell
+                  </p>
+                </div>
+              </div>
               <div class="has-text-centered trade-selector-container">
                 <div class="b-v-centered">
                   <div class="inner" />
@@ -97,7 +113,7 @@
                   <p class="control is-expanded" :class="{'is-loading': isFetchingRates}">
                     <input
                       v-model.number="computedFiatAmount"
-                      type="number"
+                      type="tel"
                       class="input is-medium"
                       placeholder="0.00"
                       min="0"
@@ -561,9 +577,15 @@ div.trade-box {
   }
 }
 
+div.rates-2 {
+  display: flex;
+  justify-content: space-around;
+  color: #707070;
+}
+
 div.trade-selector-container {
-  margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -587,7 +609,7 @@ div.rates-container {
   padding: 0.5rem;
   width: 85%;
   margin: 0 auto;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.4rem;
   justify-content: space-around;
 }
 
