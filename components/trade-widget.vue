@@ -118,20 +118,21 @@
                       placeholder="0.00"
                       min="0"
                       step="any"
-                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem;"
+                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right;"
                       aria-label="NGN-USD"
+                      @focus="clearField()"
                     >
                   </p>
                 </div>
               </div>
               <div style="margin-bottom: 0.5rem;">
-                <div
+                <!-- <div
                   v-show="computedFiatAmountReversed"
                   class="has-text-right is-size-6"
                   style="color: #707070; font-size: 0.9rem;"
                 >
                   {{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}
-                </div>
+                </div> -->
               </div>
             </div>
 
@@ -287,7 +288,10 @@ export default {
           rv = 0
         } else {
           const rate = this.rates[this.tradeType]
-          const fiatAmount = this.fiatAmount
+          let fiatAmount = this.fiatAmount
+          if (fiatAmount.length > 0) {
+            fiatAmount = parseFloat(fiatAmount.replace(/\D/g, ''))
+          }
           if (this.currency === 'USD') {
             rv = fiatAmount / rate.USD
           } else {
@@ -307,6 +311,13 @@ export default {
 
     computedFiatAmount: {
       set: function(val) {
+        // if (val.length > 0) {
+        //   log.debug(val)
+        //   const result = val
+        //     .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        // }
+        // const kz = val.toLocaleString(undefined)
+        // this.$nextTick(() => (this.fiatAmount = kz))
         this.fiatAmount = val
         this.cryptoAmountIsDirty = false
         this.fiatAmountIsDirty = true
@@ -343,7 +354,12 @@ export default {
             })
           }
         }
-        return rv === 0 ? null : +rv.toFixed(2)
+        return rv === 0
+          ? null
+          : rv.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            })
       }
     },
 
@@ -357,7 +373,10 @@ export default {
         rv = 0
       } else {
         const rate = this.activeRates
-        const fiatAmount = this.computedFiatAmount
+        let fiatAmount = this.computedFiatAmount
+        if (fiatAmount.length > 0) {
+          fiatAmount = parseFloat(fiatAmount.replace(/\D/g, ''))
+        }
         if (this.currency === 'USD') {
           rv = rate.USD_NGN * fiatAmount
         } else {
@@ -382,7 +401,7 @@ export default {
   },
 
   watch: {
-    fiatAmount: function() {
+    fiatAmount: function(newValue) {
       if (this.fiatAmountIsDirty) {
         this.fetchCryptoRates()
       }
@@ -400,6 +419,12 @@ export default {
   },
 
   methods: {
+    clearField() {
+      if (this.cryptoAmountIsDirty) {
+        this.cryptoAmount = 0
+      }
+    },
+
     handleCancelTrade() {
       const shouldCancel = confirm('Really cancel trade?')
       if (shouldCancel) {

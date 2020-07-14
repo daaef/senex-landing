@@ -42,7 +42,7 @@
                 </svg>
                 <span>Instant payouts</span><br>
               </p>
-              <p style="margin: 0.2rem 0 1.5rem; vertical-align: bottom;">
+              <p style="margin: 0.2rem 0; vertical-align: bottom;">
                 <svg
                   width="30"
                   height="2"
@@ -54,6 +54,19 @@
                   <path d="M3.05176e-05 1H69" stroke="#707070" />
                 </svg>
                 <span>No signups required</span><br>
+              </p>
+              <p style="margin: 0.2rem 0 1.5rem; vertical-align: bottom;">
+                <svg
+                  width="30"
+                  height="2"
+                  style="vertical-align: middle"
+                  viewBox="0 0 69 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3.05176e-05 1H69" stroke="#707070" />
+                </svg>
+                <span>No debit card charges</span><br>
               </p>
               <p class="g-text" @click="getStarted">
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />

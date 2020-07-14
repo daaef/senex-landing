@@ -57,11 +57,16 @@
             </p>
             <p>
               <span class="_title">KYC Status</span>
-              <span v-if="tradeData.kyc == null" class="_item has-text-danger">
-                Please upload documents below!
+              <span v-if="tradeData.isKyc" class="_item">
+                <span v-if="tradeData.kyc !== null">
+                  {{ tradeData.kyc.status === 'failed' ? 'Declined, please re-upload documents' : tradeData.kyc.status }}
+                </span>
+                <span class="has-text-danger">
+                  Please upload documents below!
+                </span>
               </span>
               <span v-else class="_item">
-                {{ tradeData.kyc.status === 'failed' ? 'Declined, please re-upload documents' : tradeData.kyc.status }}
+                No ID required.
               </span>
             </p>
 
