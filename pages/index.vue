@@ -73,13 +73,13 @@
               </p>
             </div>
             <!--googleoff: all-->
-            <span>_____ Pay using _____</span>
+            <!-- <span>_____ Pay using _____</span> -->
             <p class="accepted-cards">
-              <span><img src="~assets/verve-card.png" alt="verve"></span>
-              <span><img src="~assets/master-card.png" alt="master"></span>
-              <span><img src="~assets/visa-card.png" alt="visa"></span>
-              <span class="extra"><img src="~assets/bank-transfers.png" alt="transfer"></span>
-              <span class="last"><img src="~assets/ussd-code.png" alt="ussd"></span>
+              <span><img src="~assets/verve-card.png" alt="Senex PAY"></span>
+              <span><img src="~assets/master-card.png" alt=""></span>
+              <span><img src="~assets/visa-card.png" alt=""></span>
+              <span class="extra"><img src="~assets/bank-transfers.png" alt=""></span>
+              <span class="last"><img src="~assets/ussd-code.png" alt=""></span>
             </p>
             <!--googleon: all-->
             <p class="accepted-text">
