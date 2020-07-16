@@ -21,6 +21,11 @@
                   </p>
                 </div>
               </div>
+              <div class="has-text-centered" style="margin-top: 0.5rem;">
+                <p class="has-text-weight-bold">
+                  I want to
+                </p>
+              </div>
               <div class="has-text-centered trade-selector-container">
                 <div class="b-v-centered">
                   <div class="inner" />
@@ -42,10 +47,7 @@
               </div>
 
               <p v-if="tradeType == 'buy'" class="is-size-7" :class="activeRates && activeRates.disabled ? 'help is-danger' : ''">
-                {{ activeRates && activeRates.disabled ? 'Bitcoin purchase is currently unavailable' : 'I want to purchase Bitcoins' }}
-              </p>
-              <p v-else class="is-size-7">
-                I want to sell my Bitcoins
+                {{ activeRates && activeRates.disabled ? 'Bitcoin purchase is currently unavailable' : '' }}
               </p>
 
               <div style="margin-bottom: 0.5em;" class="columns">
@@ -112,7 +114,8 @@
                   </div>
                   <p class="control is-expanded" :class="{'is-loading': isFetchingRates}">
                     <input
-                      v-model.number="computedFiatAmount"
+                      v-model.lazy="computedFiatAmount"
+                      v-money="money"
                       type="tel"
                       class="input is-medium"
                       placeholder="0.00"
@@ -120,7 +123,6 @@
                       step="any"
                       style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right;"
                       aria-label="NGN-USD"
-                      @focus="clearField()"
                     >
                   </p>
                 </div>
@@ -215,6 +217,8 @@
 
 <script>
 import _ from 'lodash'
+import { VMoney } from 'v-money'
+
 import FluidSwitch from './fluid-switch'
 import log from '~/logger'
 import formatMoney from '~/filters/format-money'
@@ -230,6 +234,7 @@ export default {
   filters: {
     formatMoney
   },
+  directives: { money: VMoney },
 
   data() {
     return {
@@ -252,6 +257,13 @@ export default {
         whatsappUrl: `https://api.whatsapp.com/send?phone=+${
           process.env.WHATSAPP_ID
         }&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin`
+      },
+      money: {
+        decimal: '.',
+        thousands: ',',
+        prefix: '',
+        suffix: '',
+        precision: 2
       }
     }
   },
@@ -290,7 +302,10 @@ export default {
           const rate = this.rates[this.tradeType]
           let fiatAmount = this.fiatAmount
           if (fiatAmount.length > 0) {
-            fiatAmount = parseFloat(fiatAmount.replace(/\D/g, ''))
+            fiatAmount = fiatAmount.split('.')
+            fiatAmount[0] = fiatAmount[0].replace(/\D/g, '')
+            fiatAmount = fiatAmount.join('.')
+            fiatAmount = parseFloat(fiatAmount)
           }
           if (this.currency === 'USD') {
             rv = fiatAmount / rate.USD
@@ -311,14 +326,19 @@ export default {
 
     computedFiatAmount: {
       set: function(val) {
-        // if (val.length > 0) {
-        //   log.debug(val)
-        //   const result = val
+        // let result = null
+        // if (val !== null) {
+        //   result = val.split('.')
+        //   result[0] = result[0]
+        //     .replace(/\D/g, '')
         //     .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        //   result = result.join('.')
+        //   this.$nextTick(() => (this.fiatAmount = result))
+        // } else {
+        //   this.$nextTick(() => (this.fiatAmount = val))
         // }
-        // const kz = val.toLocaleString(undefined)
-        // this.$nextTick(() => (this.fiatAmount = kz))
-        this.fiatAmount = val
+        // this.fiatAmount = val
+        this.$nextTick(() => (this.fiatAmount = val))
         this.cryptoAmountIsDirty = false
         this.fiatAmountIsDirty = true
       },
@@ -419,11 +439,11 @@ export default {
   },
 
   methods: {
-    clearField() {
-      if (this.cryptoAmountIsDirty) {
-        this.cryptoAmount = 0
-      }
-    },
+    // clearField() {
+    //   if (this.cryptoAmountIsDirty) {
+    //     this.cryptoAmount = 0
+    //   }
+    // },
 
     handleCancelTrade() {
       const shouldCancel = confirm('Really cancel trade?')
@@ -609,7 +629,7 @@ div.rates-2 {
 }
 
 div.trade-selector-container {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   margin-top: 0.5rem;
   text-align: center;
   display: flex;
