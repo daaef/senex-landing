@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths" style="margin-top: 1.6rem;">
+        <div class="column is-three-fifths" style="margin-top: 2rem;">
           <!-- is-vcentered -->
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
@@ -164,7 +164,7 @@ html {
   font-weight: bold;
   font-size: 1.3rem;
   padding: 5px 0px;
-  color: #0c5db2;
+  color: #a2bedd;
   cursor: pointer;
   width: auto;
 }
@@ -175,6 +175,14 @@ html {
 }
 .mockup img {
   max-height: 500px;
+}
+
+.vue-typer .custom.char {
+  color: #ffffff;
+}
+
+.vue-typer .custom.char.typed {
+  color: #ffffff;
 }
 </style>
 
@@ -199,7 +207,7 @@ div.image-illustration-container {
 div.info {
   font-family: $font-nunito;
   line-height: 1.1;
-  color: #000000;
+  color: #ffffff;
   // color: #707070;
   // padding-top: 50px;
   p.text-exchanging {

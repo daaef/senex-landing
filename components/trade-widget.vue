@@ -131,13 +131,13 @@
 
             <div class="is-hidden-mobile">
               <div class="field checkbox">
-                <input id="consent" v-model="consent" class="is-checkradio is-dark" type="checkbox">
+                <input id="consent" v-model="consent" class="is-checkradio has-background-color is-white" type="checkbox">
                 <label for="consent">
                   I agree to the <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a> and <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a>
                 </label>
               </div>
               <div class="field checkbox">
-                <input id="marketing" v-model="marketing" class="is-checkradio is-dark" type="checkbox">
+                <input id="marketing" v-model="marketing" class="is-checkradio has-background-color is-white" type="checkbox">
                 <label for="marketing">Keep me updated via email</label>
               </div>
             </div>
@@ -537,22 +537,28 @@ input[type='number']::-webkit-outer-spin-button {
 
 .checkbox {
   font-size: 0.88rem;
+  color: #ffffff;
+
+  label a {
+    color: #a2bedd;
+  }
 }
 
 div.button-container {
   margin-top: 0.8em;
   margin-bottom: 1.8em;
   button.trade-button {
-    background-color: #0c5db2;
+    background-color: #ffffff;
     font-family: $font-avenir;
-    color: #fff;
+    color: #0c5db2;
   }
 }
 
 div.track-trade {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-family: $font-roboto;
   margin-bottom: 0.8rem;
+  color: #ffffff;
   a {
     font-weight: bold;
   }
@@ -652,6 +658,10 @@ div.rates-container {
 .socials span {
   padding: 0px 7px;
 
+  i {
+    color: #fff;
+  }
+  /*
   .fb {
     color: #3b5998;
   }
@@ -667,5 +677,6 @@ div.rates-container {
   .wa {
     color: #25d366;
   }
+  */
 }
 </style>

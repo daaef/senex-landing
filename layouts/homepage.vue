@@ -12,7 +12,7 @@
       <source src="~assets/bg/senex-getty.mp4" type="video/mp4">
     </video> -->
     <div class="main">
-      <navbar theme="blue" logo-variant="blue" />
+      <navbar theme="white" logo-variant="white" />
       <div class="content" style="">
         <nuxt />
       </div>
@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background: url('~assets/bg/bg-13.jpg');
+  background: url('~assets/bg/giveaway-966june.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,7 +55,7 @@ video {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: rgba(228, 255, 255, 0.8);
+  // background-color: rgba(228, 255, 255, 0.8);
   .content {
     flex: 1;
     margin-bottom: 0;
