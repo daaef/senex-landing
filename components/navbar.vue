@@ -3,8 +3,8 @@
     <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
-          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant" style="height: 35px;">
-          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant" style="height: 35px;">
+          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant" style="height: 30px; margin-top: 5px;">
+          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant" style="height: 30px; margin-top: 5px;">
         </a>
         <span
           class="navbar-burger burger"
@@ -75,7 +75,7 @@ export default {
 
 <style>
 .header-menu {
-  min-width: 120px;
+  min-width: 130px;
   position: absolute;
   right: 0;
   top: 50px;
@@ -95,6 +95,16 @@ export default {
   &.is-transparent {
     background-color: transparent;
     background-image: none;
+  }
+}
+.navbar-burger {
+  span {
+    height: 2px;
+    width: 16px;
+    margin: -2px auto;
+  }
+  span:nth-child(2) {
+    width: 25px;
   }
 }
 /*

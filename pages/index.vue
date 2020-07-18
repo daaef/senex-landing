@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths" style="margin-top: 2rem;">
+        <div class="column is-three-fifths" style="margin-top: 2.5rem;">
           <!-- is-vcentered -->
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
@@ -14,19 +14,6 @@
             <span class="text-crypto is-size-1-tablet is-size-2-touch">
               Buy &amp; Sell Bitcoins
             </span>
-            <!-- <p style="margin: 0.5rem 0; vertical-align: bottom;">
-              <svg
-                width="40"
-                height="2"
-                style="vertical-align: middle"
-                viewBox="0 0 69 2"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M3.05176e-05 1H69" stroke="#707070" />
-              </svg>
-              <span>Instant payout with SenexPAY</span><br>
-            </p> -->
             <br>
             <div class="get-started">
               <p style="margin: 1.5rem 0 0.2rem; vertical-align: bottom;">
@@ -38,7 +25,7 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M3.05176e-05 1H69" stroke="#707070" />
+                  <path d="M3.05176e-05 1H69" stroke="#ffffff" />
                 </svg>
                 <span>Instant payouts</span><br>
               </p>
@@ -51,7 +38,7 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M3.05176e-05 1H69" stroke="#707070" />
+                  <path d="M3.05176e-05 1H69" stroke="#ffffff" />
                 </svg>
                 <span>No signups required</span><br>
               </p>
@@ -64,7 +51,7 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M3.05176e-05 1H69" stroke="#707070" />
+                  <path d="M3.05176e-05 1H69" stroke="#ffffff" />
                 </svg>
                 <span>No debit card charges</span><br>
               </p>
@@ -233,11 +220,11 @@ div.info {
   }
 
   .accepted-cards span {
-    padding-right: 8px;
-    height: 20px;
+    padding-right: 4px;
+    height: 25px;
 
     img {
-      height: 25px;
+      height: 28px;
     }
   }
   .accepted-cards .extra {
