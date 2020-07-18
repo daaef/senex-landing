@@ -118,20 +118,11 @@
                   </p>
                 </div>
               </div>
-              <div class="">
-                <div class="control">
-                  <div class="tags has-addons is-right">
-                    <span class="tag is-dark">&asymp;</span>
-                    <span class="tag is-link">{{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}</span>
-                  </div>
+              <div class="control rev-amt">
+                <div class="tags has-addons is-right">
+                  <span class="tag is-dark">&asymp;</span>
+                  <span class="tag is-link">{{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}</span>
                 </div>
-                <!-- <div
-                  v-show="computedFiatAmountReversed"
-                  class="has-text-right is-size-6"
-                  style="color: #707070; font-size: 0.9rem;"
-                >
-                  {{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}
-                </div> -->
               </div>
             </div>
 
@@ -665,22 +656,14 @@ div.rates-container {
   i {
     color: #fff;
   }
-  /*
-  .fb {
-    color: #3b5998;
-  }
+}
 
-  .in {
-    color: #fd5949;
+.rev-amt {
+  .tag {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    padding: 0px 8px;
+    font-weight: bold;
   }
-
-  .tw {
-    color: #00acee;
-  }
-
-  .wa {
-    color: #25d366;
-  }
-  */
 }
 </style>

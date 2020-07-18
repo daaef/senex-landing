@@ -183,4 +183,22 @@ export default {
 .white-burger {
   color: #fff;
 }
+
+@media screen and (max-width: 600px) {
+  .navbar-item {
+    text-align: center;
+    margin: 0.5rem;
+    span {
+      padding-bottom: none;
+    }
+
+    &.is-active {
+      color: #ffffff;
+      background: #0c5db2;
+      span {
+        border: none;
+      }
+    }
+  }
+}
 </style>
