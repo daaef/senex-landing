@@ -63,7 +63,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '@/assets/scss/fonts.scss';
+
+.rappa {
+  font-family: $font-nunito;
+}
+
 .options {
   position: relative;
   height: 40px;

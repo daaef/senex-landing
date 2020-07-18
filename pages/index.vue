@@ -195,8 +195,7 @@ div.info {
   font-family: $font-nunito;
   line-height: 1.1;
   color: #ffffff;
-  // color: #707070;
-  // padding-top: 50px;
+
   p.text-exchanging {
     font-family: $font-poppins;
     font-size: 2.8rem;

@@ -92,6 +92,7 @@ export default {
 }
 
 .navbar {
+  font-family: $font-nunito;
   &.is-transparent {
     background-color: transparent;
     background-image: none;

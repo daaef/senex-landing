@@ -111,14 +111,20 @@
                       min="0"
                       step="any"
                       :maxlength="currency === 'NGN' ? 13 : 9"
-                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right;"
+                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right; direction: rtl"
                       aria-label="NGN-USD"
                       @focus="isDirty(false)"
                     >
                   </p>
                 </div>
               </div>
-              <div style="margin-bottom: 0.5rem;">
+              <div class="">
+                <div class="control">
+                  <div class="tags has-addons is-right">
+                    <span class="tag is-dark">&asymp;</span>
+                    <span class="tag is-link">{{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}</span>
+                  </div>
+                </div>
                 <!-- <div
                   v-show="computedFiatAmountReversed"
                   class="has-text-right is-size-6"
@@ -374,7 +380,10 @@ export default {
         const rate = this.activeRates
         let fiatAmount = this.computedFiatAmount
         if (fiatAmount.length > 0) {
-          fiatAmount = parseFloat(fiatAmount.replace(/\D/g, ''))
+          fiatAmount = fiatAmount.split('.')
+          fiatAmount[0] = fiatAmount[0].replace(/\D/g, '')
+          fiatAmount = fiatAmount.join('.')
+          fiatAmount = parseFloat(fiatAmount)
         }
         if (this.currency === 'USD') {
           rv = rate.USD_NGN * fiatAmount
@@ -424,6 +433,15 @@ export default {
       if (option === false) {
         this.cryptoAmount = 0
       }
+    },
+
+    fiatConvert(opt) {
+      let fiatAmount = opt
+      fiatAmount = fiatAmount.split('.')
+      fiatAmount[0] = fiatAmount[0].replace(/\D/g, '')
+      fiatAmount = fiatAmount.join('.')
+      fiatAmount = parseFloat(fiatAmount)
+      return fiatAmount
     },
 
     handleCancelTrade() {
@@ -489,9 +507,11 @@ export default {
         const token = await this.$recaptcha.execute('trade')
         log.debug(`[trade start recaptcha token]: ${token}`)
 
+        const fiatValue = this.computedFiatAmount
+
         this.$store.commit('trade/START_TRADE', {
           currency: this.currency,
-          fiatAmount: this.computedFiatAmount,
+          fiatAmount: this.fiatConvert(fiatValue),
           tradeType: this.tradeType,
           cryptoAmount: this.computedCryptoAmount,
           rates: this.tradeType === 'buy' ? this.rates.buy : this.rates.sell
@@ -549,42 +569,25 @@ div.button-container {
   margin-bottom: 1.8em;
   button.trade-button {
     background-color: #ffffff;
-    font-family: $font-avenir;
+    font-family: $font-nunito;
     color: #0c5db2;
   }
 }
 
 div.track-trade {
   font-size: 1.1rem;
-  font-family: $font-roboto;
+  font-family: $font-nunito;
   margin-bottom: 0.8rem;
   color: #ffffff;
   a {
     font-weight: bold;
   }
 }
-/*
-p.flutterwave-grp {
-  margin-top: 2.5em;
-
-  .text {
-    vertical-align: middle;
-  }
-
-  .img {
-    vertical-align: middle;
-  }
-
-  .cc-icon {
-    color: #0c5db2;
-  }
-}
-*/
 div.trade-box {
   padding: 1.8rem 2.2rem;
   // padding-top: 1.5rem;
   box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.3);
-  font-family: $font-open-sans;
+  font-family: $font-nunito;
   select {
     color: #707070;
   }
@@ -613,6 +616,7 @@ div.rates-2 {
   display: flex;
   justify-content: space-around;
   color: #707070;
+  line-height: 1.3;
 }
 
 div.trade-selector-container {
