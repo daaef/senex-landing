@@ -52,14 +52,6 @@
 
               <div style="margin-bottom: 0.5em;" class="columns">
                 <div class="field has-addons column">
-                  <!-- <div class="control">
-                    <a
-                      class="button is-large"
-                      style="background: #1b70cf; color: #fff;"
-                    >
-                      BTC
-                    </a>
-                  </div> -->
                   <div class="control is-expanded has-icons-left">
                     <input
                       ref="btcInput"
@@ -71,10 +63,12 @@
                       placeholder="0.00000000"
                       step="any"
                       min="0"
+                      max="10"
                       maxlength="12"
                       style="text-align: right;"
                       name="BTC"
                       aria-label="BTC"
+                      @focus="isDirty(true)"
                     >
                     <span class="icon is-left norm" style="">
                       <i class="fab fa-bitcoin fa-2x" />
@@ -86,11 +80,6 @@
                 </div>
               </div>
               <div style="margin-bottom: 0.5rem;">
-                <!-- <p class="control has-text-centered">
-                  <span class="icon" style="color: #1b70cf; vertical-align: center;">
-                    <i class="fas fa-exchange-alt" />
-                  </span>
-                </p> -->
                 <div class="field has-addons">
                   <div class="control has-icons-left">
                     <div class="select is-medium">
@@ -114,15 +103,17 @@
                   </div>
                   <p class="control is-expanded" :class="{'is-loading': isFetchingRates}">
                     <input
-                      v-model.lazy="computedFiatAmount"
+                      v-model="computedFiatAmount"
                       v-money="money"
                       type="tel"
                       class="input is-medium"
                       placeholder="0.00"
                       min="0"
                       step="any"
+                      :maxlength="currency === 'NGN' ? 13 : 9"
                       style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right;"
                       aria-label="NGN-USD"
+                      @focus="isDirty(false)"
                     >
                   </p>
                 </div>
@@ -287,8 +278,6 @@ export default {
     computedCryptoAmount: {
       set: function(val) {
         this.cryptoAmount = val
-        this.fiatAmountIsDirty = false
-        this.cryptoAmountIsDirty = true
       },
 
       get: function() {
@@ -313,7 +302,11 @@ export default {
             rv = fiatAmount / rate.NGN
           }
 
-          if (rv < rate.minimum / rate.USD && this.fiatAmountIsDirty) {
+          if (
+            rv < rate.minimum / rate.USD &&
+            this.fiatAmountIsDirty &&
+            this.fiatAmount > 0
+          ) {
             this.errors.add({
               field: 'BTC',
               msg: `Please enter a value not less than $${rate.minimum}`
@@ -326,21 +319,7 @@ export default {
 
     computedFiatAmount: {
       set: function(val) {
-        // let result = null
-        // if (val !== null) {
-        //   result = val.split('.')
-        //   result[0] = result[0]
-        //     .replace(/\D/g, '')
-        //     .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-        //   result = result.join('.')
-        //   this.$nextTick(() => (this.fiatAmount = result))
-        // } else {
-        //   this.$nextTick(() => (this.fiatAmount = val))
-        // }
-        // this.fiatAmount = val
         this.$nextTick(() => (this.fiatAmount = val))
-        this.cryptoAmountIsDirty = false
-        this.fiatAmountIsDirty = true
       },
 
       get: function() {
@@ -439,11 +418,13 @@ export default {
   },
 
   methods: {
-    // clearField() {
-    //   if (this.cryptoAmountIsDirty) {
-    //     this.cryptoAmount = 0
-    //   }
-    // },
+    isDirty(option) {
+      this.fiatAmountIsDirty = !option
+      this.cryptoAmountIsDirty = option
+      if (option === false) {
+        this.cryptoAmount = 0
+      }
+    },
 
     handleCancelTrade() {
       const shouldCancel = confirm('Really cancel trade?')
