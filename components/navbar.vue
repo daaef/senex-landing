@@ -3,8 +3,8 @@
     <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
-          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant" style="height: 30px; margin-top: 5px;">
-          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant" style="height: 30px; margin-top: 5px;">
+          <img v-if="logoVariant === 'white'" src="~assets/senexpay-logo-light.png" alt="SenexPAY" style="height: 32px; margin-top: 5px;">
+          <img v-else src="~assets/senexpay-logo.png" alt="SenexPAY" style="height: 32px; margin-top: 5px;">
         </a>
         <span
           class="navbar-burger burger"
@@ -124,7 +124,7 @@ export default {
     font-weight: normal;
 
     &.button {
-      color: #0c5db2;
+      color: #0a2c5f;
       margin: 0.2rem 0 0 1.5rem;
     }
   }
@@ -150,7 +150,7 @@ export default {
     font-weight: normal;
 
     &.button {
-      background-color: #0c5db2;
+      background-color: #254882;
       color: #fff;
       margin: 0.2rem 0 0 1.5rem;
     }
@@ -164,7 +164,7 @@ export default {
 
     &.is-active {
       span {
-        border-bottom: 3px solid #0c5db2;
+        border-bottom: 3px solid #0a2c5f;
       }
     }
   }
@@ -172,12 +172,12 @@ export default {
 
 .nav-link-blue {
   a {
-    color: #0c5db2;
+    color: #0a2c5f;
   }
 }
 
 .blue-burger {
-  color: #0c5db2;
+  color: #0a2c5f;
 }
 
 .white-burger {
@@ -188,15 +188,16 @@ export default {
   .navbar-item {
     text-align: center;
     margin: 0.5rem;
+    color: #0a2c5f;
     span {
       padding-bottom: none;
     }
 
     &.is-active {
       color: #ffffff;
-      background: #0c5db2;
+      background: #0a2c5f;
       span {
-        border: none;
+        border-bottom: 0px;
       }
     }
   }

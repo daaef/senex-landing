@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div v-if="error.statusCode === 404" class="content wrapper">
-      <img src="~assets/logo_white.png" alt="Senex logo - white variant" class="logo" :class="{'mobile-logo': $device.isMobile}">
+      <img src="~assets/senexpay-logo-light.png" alt="Senex logo - white variant" class="logo" :class="{'mobile-logo': $device.isMobile}">
       <img src="~assets/error-404.png" alt="error 404 art image" class="error-404" :class="{'mobile-error-404': $device.isMobile}">
       <div class="text-content">
         <p class="broken-link">

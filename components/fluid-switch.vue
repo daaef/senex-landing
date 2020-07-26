@@ -103,7 +103,7 @@ export default {
   left: 0px;
   height: 100%;
   width: 50%;
-  background: #1b70cf;
+  background: #254882;
   z-index: 1;
   border-radius: 50px;
   -webkit-transition: 0.4s;

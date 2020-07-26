@@ -35,11 +35,14 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background: url('~assets/bg/giveaway-966june.jpg');
+  background: url('~assets/bg/bg-13.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(10, 44, 95, 0.93);
+  background-blend-mode: multiply;
 }
+/*
 video {
   position: fixed;
   object-fit: cover;
@@ -51,6 +54,7 @@ video {
   background-size: cover;
   transition: 1s opacity;
 }
+*/
 .main {
   display: flex;
   min-height: 100vh;
@@ -80,6 +84,17 @@ video {
   video {
     width: auto;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg {
+    background: url('~assets/bg/bg-13-mobile.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(10, 44, 95, 0.93);
+    background-blend-mode: multiply;
   }
 }
 </style>

@@ -2,8 +2,20 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths" style="margin-top: 2.5rem;">
+        <div class="column is-three-fifths" style="margin-bottom: 2.5rem;">
           <!-- is-vcentered -->
+          <!-- <video
+            id="bgvid"
+            width="380"
+            playsinline
+            autoplay
+            muted
+            loop
+          >
+            <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+            <source src="~assets/webty.mp4" type="video/mp4">
+          </video> -->
+          <img src="~assets/senex-ani.png">
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
               <!-- Easiest and Fastest  -->
@@ -14,8 +26,8 @@
             <span class="text-crypto is-size-1-tablet is-size-2-touch">
               Buy &amp; Sell Bitcoins
             </span>
-            <br>
-            <div class="get-started">
+            <br><br>
+            <!-- <div class="get-started">
               <p style="margin: 1.5rem 0 0.2rem; vertical-align: bottom;">
                 <svg
                   width="30"
@@ -58,7 +70,7 @@
               <p class="g-text" @click="getStarted">
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
               </p>
-            </div>
+            </div> -->
             <!--googleoff: all-->
             <!-- <span>_____ Pay using _____</span> -->
             <p class="accepted-cards">
@@ -70,7 +82,8 @@
             </p>
             <!--googleon: all-->
             <p class="accepted-text">
-              We accept <b>Debit/Credit cards</b>, <b>Direct Bank Transfers</b> and even <b>USSD payments</b> from customers in 140+ countries.
+              We accept <b>Debit/Credit cards</b>, <b>Direct Bank Transfers</b> and even <b>USSD payments</b> from customers in 140+ countries. 
+              SenexPAY offers <b>instant payouts</b> with <b>no signup</b> required.
             </p>
           </div>
         </div>
@@ -236,7 +249,7 @@ div.info {
   .accepted-text {
     font-size: 0.95rem;
     line-height: 1.5;
-    max-width: 450px;
+    max-width: 480px;
   }
 }
 </style>

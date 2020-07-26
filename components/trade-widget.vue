@@ -121,7 +121,7 @@
               <div class="control rev-amt">
                 <div class="tags has-addons is-right">
                   <span class="tag is-dark">&asymp;</span>
-                  <span class="tag is-link">{{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}</span>
+                  <span class="tag norm-b">{{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}</span>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@
             </p>
             <div class="field is-grouped is-grouped-centered">
               <p class="control has-text-centered">
-                <a href="" class="button is-small is-primary" style="background:#1b70cf;" @click.prevent="handleContinueTrade">Continue</a>
+                <a href="" class="button is-small is-primary" style="background:#254882;" @click.prevent="handleContinueTrade">Continue</a>
               </p>
               <p class="control">
                 <a href="" class="button is-small" @click.prevent="handleCancelTrade">Cancel</a>
@@ -578,28 +578,33 @@ div.trade-box {
   padding: 1.8rem 2.2rem;
   // padding-top: 1.5rem;
   box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.3);
-  font-family: $font-nunito;
+  // font-family: $font-nunito;
   select {
     color: #707070;
   }
 
   select.crypto {
-    background: #1b70cf;
+    background: #254882;
     color: #fff;
   }
 
   input.blue-border,
   select.blue-border {
-    border: 1px solid #1b70cf;
-    color: #1b70cf;
+    border: 1px solid #254882;
+    color: #254882;
   }
 
   .amount {
-    color: #1b70cf;
+    color: #254882;
   }
 
   .norm {
-    color: #1b70cf;
+    color: #254882;
+  }
+
+  .norm-b {
+    color: #ffffff;
+    background: #254882;
   }
 }
 
@@ -640,6 +645,7 @@ div.rates-container {
   justify-content: space-around;
 }
 
+/*
 .empty-grid-bg {
   position: absolute;
   // z-index: -1;
@@ -649,6 +655,7 @@ div.rates-container {
   background-image: url('~assets/grid-bg.png');
   background-repeat: no-repeat;
 }
+*/
 
 .socials span {
   padding: 0px 7px;
