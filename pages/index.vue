@@ -4,19 +4,6 @@
       <div class="columns">
         <div class="column is-three-fifths sect1" style="margin-bottom: 2.5rem;">
           <!-- is-vcentered -->
-          <video
-            id="bgvid"
-            width="380"
-            class="vid"
-            playsinline
-            autoplay
-            muted
-            loop
-            poster="/vid-poster.png"
-          >
-            <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
-            <source src="~assets/final2.mp4" type="video/mp4">
-          </video>
           <!-- <img src="~assets/senex-ani.png"> -->
           <div class="info">
             <p class="text-exchanging is-marginless	is-size-2-tablet is-size-4-touch">
@@ -88,6 +75,19 @@
               SenexPAY offers <b>instant payouts</b> with <b>no signup</b> required.
             </p>
           </div>
+          <video
+            id="bgvid"
+            width="380"
+            class="vid"
+            playsinline
+            autoplay
+            muted
+            loop
+            poster="/vid-poster.png"
+          >
+            <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
+            <source src="~assets/final2.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="column is-fullheight">
           <trade-widget ref="tradeWidget" />
@@ -196,7 +196,7 @@ html {
 @import '@/assets/scss/fonts.scss';
 
 div.wrapper {
-  margin-top: 2em;
+  margin-top: 1.5em;
   text-decoration: inherit;
 }
 
@@ -268,5 +268,11 @@ div.info {
   .accepted-text {
     margin: 0 auto;
   }
+}
+
+@media screen and (min-width: 992px) {
+  // div.wrapper {
+  //   margin-top: 0;
+  // }
 }
 </style>
