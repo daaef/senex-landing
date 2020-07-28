@@ -35,11 +35,12 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background: url('~assets/bg/bg-13.jpg');
+  background: url('~assets/bg/1.jpg');
+  // background: url('~assets/bg/bg-13.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(10, 44, 95, 0.93);
+  background-color: rgba(10, 44, 95, 0.93); // rgb(24, 40, 125)
   background-blend-mode: multiply;
 }
 /*
@@ -67,13 +68,6 @@ video {
     align-items: center;
   }
 }
-/*
-@media screen and (max-width: 900px) {
-  .bg {
-    background: url('~assets/bg/bg-13.jpg');
-  }
-}
-*/
 @media (min-aspect-ratio: 16/9) {
   video {
     width: 100%;
@@ -89,11 +83,12 @@ video {
 
 @media screen and (max-width: 768px) {
   .bg {
-    background: url('~assets/bg/bg-13-mobile.jpg');
+    background: url('~assets/bg/mob2.jpg');
+    // background: url('~assets/bg/bg-13-mobile.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgba(10, 44, 95, 0.93);
+    background-color: rgba(10, 44, 95, 0.93); // rgb(24, 40, 125)
     background-blend-mode: multiply;
   }
 }

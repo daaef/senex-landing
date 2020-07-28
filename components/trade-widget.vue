@@ -572,6 +572,7 @@ div.track-trade {
   color: #ffffff;
   a {
     font-weight: bold;
+    color: #a1b3c4;
   }
 }
 div.trade-box {

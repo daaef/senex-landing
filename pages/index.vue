@@ -2,28 +2,30 @@
   <section class="section">
     <div class="container wrapper">
       <div class="columns">
-        <div class="column is-three-fifths" style="margin-bottom: 2.5rem;">
+        <div class="column is-three-fifths sect1" style="margin-bottom: 2.5rem;">
           <!-- is-vcentered -->
-          <!-- <video
+          <video
             id="bgvid"
             width="380"
+            class="vid"
             playsinline
             autoplay
             muted
             loop
+            poster="/vid-poster.png"
           >
-            <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-            <source src="~assets/webty.mp4" type="video/mp4">
-          </video> -->
-          <img src="~assets/senex-ani.png">
+            <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
+            <source src="~assets/final2.mp4" type="video/mp4">
+          </video>
+          <!-- <img src="~assets/senex-ani.png"> -->
           <div class="info">
-            <p class="text-exchanging is-marginless	is-size-2-tablet is-size-3-touch">
+            <p class="text-exchanging is-marginless	is-size-2-tablet is-size-4-touch">
               <!-- Easiest and Fastest  -->
               <no-ssr>
                 <vue-typer name="riko" :text="['Easiest', 'Fastest', 'Secure']" /> way to
               </no-ssr>
             </p>
-            <span class="text-crypto is-size-1-tablet is-size-2-touch">
+            <span class="text-crypto is-size-1-tablet is-size-3-touch">
               Buy &amp; Sell Bitcoins
             </span>
             <br><br>
@@ -156,6 +158,10 @@ html {
   -ms-flex-align: center;
   align-items: center;
 }
+.vid {
+  /* box-shadow: 0px 0px 80px 30px #183158; */
+  box-shadow: 35px 35px 50px 0 #172f56, -35px -35px 50px 0 #172f56;
+}
 .get-started {
   margin: 10px 0px 40px 0px;
   line-height: 1.5;
@@ -208,6 +214,8 @@ div.info {
   font-family: $font-nunito;
   line-height: 1.1;
   color: #ffffff;
+  position: relative;
+  z-index: 1;
 
   p.text-exchanging {
     font-family: $font-poppins;
@@ -250,6 +258,15 @@ div.info {
     font-size: 0.95rem;
     line-height: 1.5;
     max-width: 480px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sect1 {
+    text-align: center;
+  }
+  .accepted-text {
+    margin: 0 auto;
   }
 }
 </style>
