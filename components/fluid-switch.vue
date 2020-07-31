@@ -33,12 +33,12 @@ export default {
     const clickHandler = e => {
       if (e.currentTarget === options[0]) {
         slider.style.left = '0'
-        options[1].style.color = '#626567'
+        options[1].style.color = '#254882'
         options[0].style.color = '#fff'
         self.$emit('switched', { label: self.labelLeft })
       } else {
         slider.style.left = `${slider.offsetWidth}px`
-        options[0].style.color = '#626567'
+        options[0].style.color = '#254882'
         options[1].style.color = '#fff'
         self.$emit('switched', { label: self.labelRight })
       }
@@ -77,6 +77,7 @@ export default {
   width: 100%;
   border-radius: 4px;
   background: #fff;
+  color: #254882;
   text-align: center;
   display: flex;
   border: 1px solid #254882;

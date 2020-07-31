@@ -6,7 +6,7 @@
       </p>
       <div class="columns">
         <div class="column is-6 is-offset-3 q-wrapper">
-          <div v-if="items.length === 0">
+          <div v-if="items.length === 0" class="">
             <p class="has-text-centered">
               There are no frequently asked questions yet.
             </p>
@@ -73,11 +73,11 @@ export default {
 
 div.wrapper {
   margin-bottom: 3em;
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-family: $font-avenir;
   .title {
     font-size: 1.7em;
-    color: #1b70cf;
+    color: #254882;
   }
   .q-wrapper {
     .q-item {
@@ -102,7 +102,7 @@ div.wrapper {
       }
       .q {
         padding: 0.8em 1.5em;
-        background-color: #0c5db2;
+        background-color: #254882;
         color: #fff;
         line-height: normal;
         border-radius: 2px;

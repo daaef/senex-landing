@@ -3,7 +3,7 @@
     <div class="container wrapper">
       <p class="has-text-weight-semibold p-heading has-text-centered">
         Trade Lookup
-        <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #d5d5d5;">
+        <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #254882;">
           Quickly track and manage your transaction
         </span>
       </p>
@@ -79,7 +79,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M3.05176e-05 1H69" stroke="#0C5DB2" />
+                <path d="M3.05176e-05 1H69" stroke="#254882" />
               </svg>
               <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
@@ -216,9 +216,9 @@ export default {
       return false
     }
 
-    if (!store.state.trade.track.tradeId) {
-      return false
-    }
+    // if (!store.state.trade.track.tradeId) {
+    //   return false
+    // }
 
     return true
   },
@@ -421,11 +421,11 @@ export default {
 div.wrapper {
   min-height: 580px;
   margin-bottom: 3rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-family: $font-avenir;
 
   p.p-heading {
-    color: #1b70cf;
+    color: #254882;
     font-size: 1.7rem;
     margin-bottom: 1.5rem;
   }
@@ -451,7 +451,7 @@ div.wrapper {
       text-align: center;
       padding: 0.9rem 0;
       .status {
-        color: #1b70cf;
+        color: #254882;
         font-size: 1.159rem;
       }
       .progress-bar {
@@ -467,7 +467,7 @@ div.wrapper {
           display: inline-block;
           text-align: left;
           height: inherit;
-          background: #1b70cf;
+          background: #254882;
           margin: 0;
           padding: 0;
           border-radius: inherit;
@@ -503,11 +503,12 @@ div.wrapper {
       padding: 0.7rem 0.8rem 1rem 0.8rem;
       text-align: left;
       font-size: 0.95rem;
+      background: #fff;
       p {
         margin: 0.3rem 0;
         span._title {
           display: block;
-          color: #1b70cf;
+          color: #254882;
           margin-bottom: 0.2rem;
         }
         span._item {
@@ -517,17 +518,17 @@ div.wrapper {
         }
       }
       .brief {
-        border-bottom: 1px solid #0c5db2;
+        border-bottom: 1px solid #254882;
         padding-bottom: 0.3rem;
-        color: #1b70cf;
+        color: #254882;
       }
       .date {
-        color: #1b70cf;
+        color: #254882;
       }
       .button {
         font-size: 0.92rem;
         color: #ffffff;
-        background: #0c5db2;
+        background: #254882;
       }
     }
   }
@@ -610,7 +611,7 @@ div.wrapper {
         font-size: 0.8rem;
         border-radius: 12px;
         color: #ffffff;
-        background: #0c5db2;
+        background: #254882;
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer2">
+  <footer :class="$route.path === '/' ? 'footer2' : 'footer3'">
     <div class="container" style="">
       <div class="level is-size-6 level-sm-margin" :class="{'is-size-7': $device.isMobile}">
         <div class="level-left">
@@ -9,15 +9,15 @@
         </div>
         <div class="level-right">
           <div class="level is-mobile">
-            <p class="level-item has-text-centered">
+            <p class="level-item has-text-centered legal-links">
               <!-- <router-link to="/legal/terms">
                 TOS
               </router-link>&nbsp;|&nbsp;  -->
               <router-link to="/legal/privacy-policy">
-                Privacy Policy
+                Privacy policy
               </router-link>&nbsp;|&nbsp;
               <router-link to="/legal/risk-disclosure">
-                Risk Disclosure
+                Risk disclosure
               </router-link>
             </p>
           </div>
@@ -64,8 +64,8 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 .footer2 {
-  background: #ffffff;
-  color: $blue;
+  background: #153467;
+  color: #fff;
   font-family: $font-avenir;
   box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.25);
   padding-top: 1rem;
@@ -74,6 +74,28 @@ export default {
   width: 100%;
   font-size: 0.6em;
   z-index: 2;
+
+  .legal-links a {
+    color: #ffffff;
+    margin: 0 5px;
+  }
+}
+.footer3 {
+  background: #ffffff;
+  color: #254882;
+  font-family: $font-avenir;
+  box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+  font-size: 0.6em;
+  z-index: 2;
+
+  .legal-links a {
+    margin: 0 5px;
+    color: #254882;
+  }
 }
 
 .item-with-sep {

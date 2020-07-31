@@ -125,7 +125,7 @@ export default {
     font-weight: bold;
 
     &.button {
-      color: #0a2c5f;
+      color: #254882;
       margin: 0.2rem 0 0 1.5rem;
     }
   }
@@ -166,7 +166,7 @@ export default {
 
     &.is-active {
       span {
-        border-bottom: 3px solid #0a2c5f;
+        border-bottom: 3px solid #254882;
       }
     }
   }
@@ -174,12 +174,12 @@ export default {
 
 .nav-link-blue {
   a {
-    color: #0a2c5f;
+    color: #254882;
   }
 }
 
 .blue-burger {
-  color: #0a2c5f;
+  color: #254882;
 }
 
 .white-burger {
@@ -190,14 +190,14 @@ export default {
   .navbar-item {
     text-align: center;
     margin: 0.5rem;
-    color: #0a2c5f;
+    color: #254882;
     span {
       padding-bottom: none;
     }
 
     &.is-active {
       color: #ffffff;
-      background: #0a2c5f;
+      background: #254882;
       span {
         border-bottom: 0px;
       }

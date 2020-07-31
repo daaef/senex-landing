@@ -34,7 +34,8 @@ export default {
   min-height: 100vh;
   flex-direction: column;
   // background-image: url('~assets/bg-pattern.png');
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: screen;
   .content {
     flex: 1;
   }
