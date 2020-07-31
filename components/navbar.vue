@@ -92,7 +92,7 @@ export default {
 }
 
 .navbar {
-  font-family: $font-nunito;
+  font-family: $font-inter;
   &.is-transparent {
     background-color: transparent;
     background-image: none;
@@ -120,8 +120,9 @@ export default {
 .white-theme {
   a {
     color: $white;
-    font-family: $font-roboto;
+    font-family: $font-inter;
     font-weight: normal;
+    font-weight: bold;
 
     &.button {
       color: #0a2c5f;
@@ -146,8 +147,9 @@ export default {
 .blue-theme {
   a {
     color: $blue;
-    font-family: $font-roboto;
+    font-family: $font-inter;
     font-weight: normal;
+    font-weight: bold;
 
     &.button {
       background-color: #254882;

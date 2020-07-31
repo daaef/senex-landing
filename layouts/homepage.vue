@@ -35,8 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background: url('~assets/bg/1.jpg');
-  // background: url('~assets/bg/bg-13.jpg');
+  background: url('~assets/bg/bg-13.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,8 +82,7 @@ video {
 
 @media screen and (max-width: 768px) {
   .bg {
-    background: url('~assets/bg/mob2.jpg');
-    // background: url('~assets/bg/bg-13-mobile.jpg');
+    background: url('~assets/bg/bg-13-mobile.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

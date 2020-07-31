@@ -8,32 +8,32 @@
               <div v-if="rates" class="rates-2">
                 <div class="has-text-centered">
                   <span>&#8358;</span>
-                  <span class="is-size-4 has-text-weight-bold">{{ rates.buy.USD_NGN }}</span>
-                  <p class="is-size-7">
+                  <span class="is-size-4">{{ rates.buy.USD_NGN }}</span>
+                  <p class="is-size-6">
                     Buy
                   </p>
                 </div>
                 <div class="has-text-centered">
                   <span>&#8358;</span>
-                  <span class="is-size-4 has-text-weight-bold">{{ rates.sell.USD_NGN }}</span>
-                  <p class="is-size-7">
+                  <span class="is-size-4">{{ rates.sell.USD_NGN }}</span>
+                  <p class="is-size-6">
                     Sell
                   </p>
                 </div>
               </div>
               <div class="has-text-centered" style="margin-top: 0.5rem;">
-                <p class="has-text-weight-bold">
+                <p class="">
                   I want to
                 </p>
               </div>
               <div class="has-text-centered trade-selector-container">
-                <div class="b-v-centered">
+                <!-- <div class="b-v-centered">
                   <div class="inner" />
-                </div>
-                <fluid-switch label-left="Buy" label-right="Sell" @switched="toggleTradeType" />
-                <div class="b-v-centered">
+                </div> -->
+                <fluid-switch label-left="Buy" label-right="Sell" style="width: 100%;" @switched="toggleTradeType" />
+                <!-- <div class="b-v-centered">
                   <div class="inner" />
-                </div>
+                </div> -->
               </div>
 
               <div v-if="activeRates" class="rates-container">
@@ -169,7 +169,7 @@
           >
             <p
               :style="{
-                'font-size': '0.9rem',
+                'font-size': '1rem',
               }"
             >
               You have a pending trade session.
@@ -547,7 +547,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .checkbox {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: #ffffff;
 
   label a {
@@ -560,14 +560,14 @@ div.button-container {
   margin-bottom: 1.8em;
   button.trade-button {
     background-color: #ffffff;
-    font-family: $font-nunito;
+    font-family: $font-inter;
     color: #0c5db2;
   }
 }
 
 div.track-trade {
   font-size: 1.1rem;
-  font-family: $font-nunito;
+  font-family: $font-inter;
   margin-bottom: 0.8rem;
   color: #ffffff;
   a {
@@ -579,9 +579,10 @@ div.trade-box {
   padding: 1.8rem 2.2rem;
   // padding-top: 1.5rem;
   box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.3);
-  // font-family: $font-nunito;
+  font-family: $font-inter;
+  color: #000000;
   select {
-    color: #707070;
+    color: #000000;
   }
 
   select.crypto {
@@ -612,7 +613,7 @@ div.trade-box {
 div.rates-2 {
   display: flex;
   justify-content: space-around;
-  color: #707070;
+  color: #000000;
   line-height: 1.3;
 }
 
@@ -637,8 +638,8 @@ div.rates-container {
   color: #707070;
   display: flex;
   border: 1px solid #d5d5d5;
-  border-radius: 12px;
-  font-size: 0.85rem;
+  border-radius: 6px;
+  font-size: 1rem;
   padding: 0.5rem;
   width: 85%;
   margin: 0 auto;
@@ -668,7 +669,7 @@ div.rates-container {
 
 .rev-amt {
   .tag {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0;
     padding: 0px 8px;
     font-weight: bold;
