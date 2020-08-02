@@ -17,7 +17,7 @@
             </span>
             <br><br>
             <div class="get-started">
-              <p style="margin: 1.5rem 0 0.2rem; vertical-align: bottom;">
+              <p style="margin: 1rem 0 0.2rem; vertical-align: bottom;">
                 <svg
                   width="30"
                   height="2"
@@ -274,7 +274,7 @@ div.subinfo {
 
   .accepted-cards {
     margin-top: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .accepted-cards span {
