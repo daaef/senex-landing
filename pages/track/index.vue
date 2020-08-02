@@ -10,7 +10,7 @@
                 class="is-block has-text-centered has-text-weight-normal"
                 style="font-size: 0.95rem;"
               >
-                Track status of your pending transaction
+                Track status of your transaction
               </span>
             </p>
 
@@ -277,10 +277,10 @@ div.wrapper {
   }
 
   margin-top: 2rem;
-  font-family: $font-avenir;
+  font-family: $font-inter;
 
   p.p-heading {
-    color: #1b70cf;
+    color: #162e55;
     font-size: 1.7rem;
     margin-bottom: 1.5rem;
   }
@@ -300,8 +300,8 @@ div.wrapper {
       margin-top: 1rem;
       margin-bottom: 2rem;
       button.track-button {
-        background-color: #0c5db2;
-        font-family: $font-avenir;
+        background-color: #162e55;
+        font-family: $font-inter;
         color: #fff;
       }
     }
@@ -314,7 +314,7 @@ div.wrapper {
   }
 
   div.otpverification-wrapper {
-    font-family: $font-avenir;
+    font-family: $font-inter;
     input {
       font-weight: bold;
       text-align: center;
@@ -327,7 +327,7 @@ div.wrapper {
 
       p.subheading {
         text-align: center;
-        color: #0c5db2;
+        color: #162e55;
         margin: 0.8rem 0;
       }
 
@@ -341,7 +341,7 @@ div.wrapper {
         text-align: center;
         button {
           color: #ffffff;
-          background-color: #0c5db2;
+          background-color: #162e55;
         }
       }
 
@@ -354,12 +354,12 @@ div.wrapper {
   }
 
   div.trade-status-wrapper {
-    font-family: $font-avenir;
+    font-family: $font-inter;
 
     div.trade-status-container {
       .subheading {
         text-align: center;
-        color: #1b70cf;
+        color: #162e55;
         padding: 1rem 0;
         font-size: 1.3rem;
       }
@@ -369,7 +369,7 @@ div.wrapper {
         .trade-info-item {
           margin: 0.7rem 0;
           .item-heading {
-            color: #1b70cf;
+            color: #162e55;
             margin-bottom: 0.5rem;
           }
 

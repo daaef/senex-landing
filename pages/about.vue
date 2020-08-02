@@ -1,93 +1,91 @@
 <template>
-  <section class="section">
-    <div class="container wrapper">
-      <div class="columns">
-        <div class="column is-6 is-offset-3 has-text-centered about">
-          <p class="title has-text-weight-semibold">
-            About Us
-          </p>
-          <p>
-            SenexPAY is a multi-fiat to bitcoin exchange platform which is owned and managed by Senex Payment Services Limited in Lekki, Nigeria.
-          </p>
-        </div>
-      </div>
-
-      <div class="columns vision-wrapper is-centered">
-        <div class="column is-7 text">
-          Founded in 2016, SenexPAY (initially known as solely Senex) started as a traditional (over-the-counter) bitcoin to naira exchange service and has upgraded to become the most user-friendly, fast, secure and fully-automated platform in Africa. The company is fully registered with the Corporate Affairs Commission of Nigeria and backed by some prestigious financial investors across Africa.
-        </div>
-      </div>
-
-      <div class="columns is-centered extended-info">
-        <div class="column is-3 item">
-          <div class="image-wrapper">
-            <img src="~/assets/card-ai.png" alt="">
-          </div>
-          <p class="item-text">
-            SenexPAY ushers-in a revolutionary, AI integrated technology which ensures customer's ease of use, security and reliability of its network. The platform also offers a third-party API endpoint for interested businesses to easily integrate our service as a bitcoin payment processor for their company.
-          </p>
-        </div>
-
-        <div
-          class="column is-3 item"
-          :style="!$device.isMobile ? {'margin-left': '1rem'} : ''"
-        >
-          <div class="image-wrapper">
-            <img src="~/assets/card-user.png" alt="">
-          </div>
-          <p class="item-text">
-            SenexPAY remains trusted by thousands of customers across the world and can boast of the fastest and most secure service delivery in this venture. The platform is consistently seeking improvements to guarantee exceptional digital asset exchange experience.
-          </p>
-        </div>
-      </div>
-      <div class="core-values-wrapper">
-        <p class="_title has-text-centered">
-          Core Values
-        </p>
-        <div class="columns is-centered content">
-          <div class="column value-item">
-            <p class="image-wrappa">
-              <img src="~/assets/value-fast.png" alt="">
-            </p>
-            <p class="text">
-              FAST
-            </p>
-          </div>
-          <div class="column value-item">
-            <p class="image-wrappa">
-              <img src="~/assets/value-reliable.png" alt="">
-            </p>
-            <p class="text">
-              RELIABLE
-            </p>
-          </div>
-          <div class="column value-item">
-            <p class="image-wrappa">
-              <img src="~/assets/value-secure.png" alt="">
-            </p>
-            <p class="text">
-              SECURE
+  <section class="about">
+    <div class="has-text-centered section-one">
+      <h1 class="title">
+        About
+      </h1>
+      <p class="bod">
+        <!-- Bitcoin - Naira instant exchange -->
+        Senexpay is a bitcoin to naira instant exchange platform which ensures a 
+        client's ease of use, protection, and network reliability. Users can buy 
+        and sell bitcoins within minutes irrespective of the time, place, and 
+        transaction volume.
+      </p>
+    </div>
+    <div class="section-two wrapper">
+      <div class="container">
+        <h3 class="title">
+          The Company
+        </h3>
+        <div class="">
+          <!-- <div>
+            <img src="~assets/about-senexpay.jpg" alt="" srcset="">
+          </div> -->
+          <div class="company-text">
+            <p>
+              Senex Payment Services Limited is a company that offers digital 
+              currency exchange and payment solutions. Its pioneering product 
+              is the SenexPAY – an online bitcoin to naira instant exchange platform. 
+              This company is in business to contribute to bridging the gap in digital 
+              trust, offering easy, fast, and secure means to exchange bitcoins to naira 
+              for the least knowledgeable individual and new users.
+              <br><br>
+              Senex Payment Services Limited was founded in December 2016 by Okeoghene 
+              Orhosere and is headquartered in Lekki, Lagos State. The company is registered 
+              and incorporated in 2018 with the Cooperate Affairs Commission and is backed 
+              by some investors in Africa. Formerly known solely as Senex in 2016, the 
+              company has risen to a multi-departmental company which now serves thousands 
+              of clients globally.
             </p>
           </div>
         </div>
       </div>
+    </div>
+    <div class="section-three wrapper">
+      <div class="container">
+        <!-- <h1>_</h1> -->
+        <div class="mission">
+          <h3 class="title">
+            Our Mission
+          </h3>
+          <h5>
+            Our mission is to establish a fully automated, fast, easy, 
+            decentralized, and secure digital payment infrastructure and 
+            solutions across Africa. The company’s mission is also to become 
+            unrivaled in the cryptocurrency exchange service business in 
+            Africa and at per with other major similar global organizations.
+          </h5>
+        </div>
+        <h1>_</h1>
+        <div class="vision">
+          <h3 class="title">
+            Our vision
+          </h3>
+          <h5>It is our vision to be at the forefront of the next financial revolution</h5>
+        </div>
+      </div>
+    </div>
+    <div class="section-four wrapper">
+      <div class="container">
+        <!-- <h3 class="title">
+          Our values
+        </h3> -->
+        <div class="is-flex cta">
+          <h4>Buy/Sell your bitcoins today!</h4>
+          <nuxt-link to="/">
+            Start
+            <i aria-hidden="true" class="is-hidden-mobile fas fa-long-arrow-alt-right" />
+          </nuxt-link>
+        </div>
 
-      <div class="partners-wrapper">
-        <p class="_title has-text-centered">
-          Our partners
-        </p>
-        <div class="columns has-text-centered">
-          <div class="column is-6 is-offset-3">
-            <div class="columns">
-              <div class="column has-text-centered">
-                <div class="column partner-img-container">
-                  <!-- <a href="https://flutterwave.com" target="_blank">
-                    <img src="~assets/flutterwave.png" alt="" class="Flutterwave partner">
-                  </a> -->
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="follow">
+          <p>Let's connect!</p>
+          <p class="socials is-size-3">
+            <span><a :href="socialLinks.facebookUrl" aria-label="Facebook" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f" /></a></span>
+            <span><a :href="socialLinks.instagramUrl" aria-label="Instagram" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram" /></a></span>
+            <span><a :href="socialLinks.twitterUrl" aria-label="Twitter" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter" /></a></span>
+            <span><a :href="socialLinks.whatsappUrl" aria-label="Whatsapp" target="_blank" rel="noreferrer noopener"><i class="fab fa-whatsapp" /></a></span>
+          </p>
         </div>
       </div>
     </div>
@@ -110,133 +108,121 @@ export default {
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/about' }]
     }
+  },
+  data() {
+    return {
+      socialLinks: {
+        facebookUrl: process.env.FACEBOOK_URL,
+        instagramUrl: process.env.INSTAGRAM_URL,
+        twitterUrl: process.env.TWITTER_URL,
+        whatsappUrl: `https://api.whatsapp.com/send?phone=+${
+          process.env.WHATSAPP_ID
+        }&text=Hello%21%20I%20want%20to%20buy/sell%20Bitcoin`
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/fonts.scss';
+.about {
+  font-family: $font-inter;
+  font-size: 18px;
+  color: #000000;
 
-div.wrapper {
-  font-family: $font-avenir;
-  .about {
-    margin-top: 7px;
+  .wrapper {
+    padding: 40px 10px;
+  }
+
+  .wrapper:last-child {
+    padding: 40px 10px 0px;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    color: #162e55;
+    text-align: center;
+  }
+
+  .section-one {
+    padding: 50px 10px 40px;
     color: #ffffff;
-    font-family: $font-avenir;
+    background: #162e55;
     .title {
       margin-bottom: 1rem;
-      font-size: 1.7rem;
       color: #ffffff;
     }
-  }
-  .vision-wrapper {
-    margin-top: 5em;
-    margin-bottom: 2em;
-    .image-vision {
-      max-width: 95%;
-      max-height: auto;
-      width: 403px;
-      height: 191px;
-      background-color: #c4c4c4;
-      border-radius: 10px;
+
+    .bod {
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .text {
-      font-family: $font-roboto;
-      color: #000000;
-      font-weight: normal;
-      font-style: normal;
-      line-height: 1.5;
-      font-size: 1rem;
-      margin-top: 1.2rem;
+  }
+
+  .section-two {
+    .company-text {
+      // padding: 15px;
+      max-width: 800px;
       text-align: center;
-      ._title {
-        font-family: $font-avenir;
-        font-size: 1.2em;
-        color: #1c70c8;
-        margin-bottom: 1rem;
-        font-weight: 500;
-      }
-    }
-  }
-  .core-values-wrapper {
-    margin: auto;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    width: 50%;
-    ._title {
-      font-size: 1.4rem;
-      color: #1c70c8;
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-    .content {
-      margin-top: 1.5rem;
-      .value-item {
-        text-align: center;
-        width: 100%;
-        margin: 0 auto;
-        .image-wrappa {
-          width: 72px;
-          height: 72px;
-          margin: 0 auto;
-          vertical-align: center;
-          image {
-            max-width: 100%;
-            height: auto;
-          }
-        }
-
-        .text {
-          margin-top: 2rem;
-          color: #1c70c8;
-          font-weight: 500;
-        }
-      }
+      margin: 0 auto;
     }
   }
 
-  div.partners-wrapper {
-    margin: 2.5rem 0;
-    margin-bottom: 3rem;
-    ._title {
-      font-size: 1.4rem;
-      color: #1c70c8;
-      font-weight: 500;
+  .section-three {
+    background: #efefef;
+    text-align: center;
+
+    h1 {
+      margin-top: 0;
+    }
+
+    h5 {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
   }
 
-  div.extended-info {
-    margin: 2.5rem 0;
-    .item {
-      height: 350px;
-      position: relative;
-      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  .section-four {
+    .cta {
+      background: #162e55;
+      color: #ffffff;
       border-radius: 10px;
-      line-height: 1.5;
-      margin-top: 3rem;
-      z-index: -9999;
-      .image-wrapper {
-        position: absolute;
-        top: -10%;
-        left: 35%;
-        box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.25);
-        border-radius: 50%;
-        width: 74px;
-        height: 74px;
-        padding: 1rem;
-        z-index: 2000;
-        image {
-          max-width: auto;
-          height: auto;
-        }
+      padding: 30px;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+
+      h4 {
+        margin: 0;
+        line-height: 1.5;
+        color: #ffffff;
       }
-      .item-text {
-        color: #1c70c8;
-        padding: 3rem 1.5rem;
-        font-size: 0.95rem;
-        display: flex;
-        text-align: center;
-        align-items: center;
+
+      a {
+        // color: #162e55;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        padding: 8px 22px;
+        border-radius: 6px;
+        display: inline;
+      }
+    }
+
+    .follow {
+      text-align: center;
+      padding: 30px 10px;
+      color: #5f5f5f;
+
+      p {
+        margin: 0;
+      }
+
+      i {
+        color: #162e55;
+        margin: 10px;
       }
     }
   }

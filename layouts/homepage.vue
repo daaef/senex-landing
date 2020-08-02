@@ -12,7 +12,7 @@
       <source src="~assets/bg/senex-getty.mp4" type="video/mp4">
     </video> -->
     <div class="main">
-      <navbar theme="blue" logo-variant="blue" />
+      <navbar theme="white" logo-variant="white" />
       <div class="content" style="">
         <nuxt />
       </div>
@@ -39,7 +39,10 @@ export default {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(10, 44, 95, 0.93); // rgb(24, 40, 125)
+  background-blend-mode: multiply;
 }
+/*
 video {
   position: fixed;
   object-fit: cover;
@@ -51,11 +54,12 @@ video {
   background-size: cover;
   transition: 1s opacity;
 }
+*/
 .main {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: rgba(228, 255, 255, 0.8);
+  // background-color: rgba(228, 255, 255, 0.8);
   .content {
     flex: 1;
     margin-bottom: 0;
@@ -63,13 +67,6 @@ video {
     align-items: center;
   }
 }
-/*
-@media screen and (max-width: 900px) {
-  .bg {
-    background: url('~assets/bg/bg-13.jpg');
-  }
-}
-*/
 @media (min-aspect-ratio: 16/9) {
   video {
     width: 100%;
@@ -80,6 +77,17 @@ video {
   video {
     width: auto;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg {
+    background: url('~assets/bg/bg-13-mobile.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(10, 44, 95, 0.93); // rgb(24, 40, 125)
+    background-blend-mode: multiply;
   }
 }
 </style>

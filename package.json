@@ -4,7 +4,7 @@
   "engines": {
     "node": "10.3.0"
   },
-  "description": "SenexPAY cryptocurrency exchange platform",
+  "description": "Buy and Sell your bitcoins fast and easy",
   "author": "cantell",
   "private": true,
   "scripts": {

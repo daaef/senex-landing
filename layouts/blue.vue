@@ -41,6 +41,6 @@ export default {
 div.bg-wrapper {
   background-image: url('~assets/blue-bg.png');
   background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 </style>

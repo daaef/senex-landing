@@ -1,10 +1,10 @@
 <template>
-  <nav class="navbar is-transparent">
+  <nav class="navbar" :class="$route.path == '/about' ? 'bg' : 'is-transparent'">
     <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
-          <img v-if="logoVariant === 'white'" src="~assets/logo_white.png" alt="SenexPay logo white-variant" style="height: 35px;">
-          <img v-else src="~assets/logo_blue.png" alt="SenexPay logo blue-variant" style="height: 35px;">
+          <img v-if="logoVariant === 'white'" src="~assets/senexpay-logo-light.png" alt="SenexPAY" style="height: 32px; margin-top: 5px;">
+          <img v-else src="~assets/senexpay-logo.png" alt="SenexPAY" style="height: 32px; margin-top: 5px;">
         </a>
         <span
           class="navbar-burger burger"
@@ -36,7 +36,7 @@
           <nuxt-link class="navbar-item" to="/faq" :class="{'is-active': isActiveNavItem('/faq')}">
             <span>FAQ</span>
           </nuxt-link>
-          <a href="mailto:info@senexpay.com" class="button">
+          <a href="mailto:info@senexpay.com" class="button" target="_blank" rel="noreferrer noopener">
             <span><i class="fas fa-envelope" /></span>
           </a>
         </div>
@@ -75,7 +75,7 @@ export default {
 
 <style>
 .header-menu {
-  min-width: 120px;
+  min-width: 130px;
   position: absolute;
   right: 0;
   top: 50px;
@@ -88,13 +88,35 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 .container {
-  padding: 2.5rem 0.5rem;
+  padding: 1.5rem 0.5rem;
+}
+
+.bg {
+  background: #162e55;
+
+  a:hover {
+    background: none;
+  }
+  .button:hover {
+    background: #e6eefa;
+  }
 }
 
 .navbar {
+  font-family: $font-inter;
   &.is-transparent {
     background-color: transparent;
     background-image: none;
+  }
+}
+.navbar-burger {
+  span {
+    height: 2px;
+    width: 16px;
+    margin: -2px auto;
+  }
+  span:nth-child(2) {
+    width: 25px;
   }
 }
 /*
@@ -109,11 +131,12 @@ export default {
 .white-theme {
   a {
     color: $white;
-    font-family: $font-roboto;
+    font-family: $font-inter;
     font-weight: normal;
+    font-weight: bold;
 
     &.button {
-      color: #0c5db2;
+      color: #162e55;
       margin: 0.2rem 0 0 1.5rem;
     }
   }
@@ -135,11 +158,12 @@ export default {
 .blue-theme {
   a {
     color: $blue;
-    font-family: $font-roboto;
+    font-family: $font-inter;
     font-weight: normal;
+    font-weight: bold;
 
     &.button {
-      background-color: #0c5db2;
+      background-color: #162e55;
       color: #fff;
       margin: 0.2rem 0 0 1.5rem;
     }
@@ -153,7 +177,7 @@ export default {
 
     &.is-active {
       span {
-        border-bottom: 3px solid #0c5db2;
+        border-bottom: 3px solid #162e55;
       }
     }
   }
@@ -161,15 +185,34 @@ export default {
 
 .nav-link-blue {
   a {
-    color: #0c5db2;
+    color: #162e55;
   }
 }
 
 .blue-burger {
-  color: #0c5db2;
+  color: #162e55;
 }
 
 .white-burger {
   color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-item {
+    text-align: center;
+    margin: 0.5rem;
+    color: #162e55;
+    span {
+      padding-bottom: none;
+    }
+
+    &.is-active {
+      color: #ffffff;
+      background: #162e55;
+      span {
+        border-bottom: 0px;
+      }
+    }
+  }
 }
 </style>

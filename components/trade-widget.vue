@@ -8,32 +8,32 @@
               <div v-if="rates" class="rates-2">
                 <div class="has-text-centered">
                   <span>&#8358;</span>
-                  <span class="is-size-4 has-text-weight-bold">{{ rates.buy.USD_NGN }}</span>
-                  <p class="is-size-7">
+                  <span class="is-size-4">{{ rates.buy.USD_NGN }}</span>
+                  <p class="is-size-6">
                     Buy
                   </p>
                 </div>
                 <div class="has-text-centered">
                   <span>&#8358;</span>
-                  <span class="is-size-4 has-text-weight-bold">{{ rates.sell.USD_NGN }}</span>
-                  <p class="is-size-7">
+                  <span class="is-size-4">{{ rates.sell.USD_NGN }}</span>
+                  <p class="is-size-6">
                     Sell
                   </p>
                 </div>
               </div>
               <div class="has-text-centered" style="margin-top: 0.5rem;">
-                <p class="has-text-weight-bold">
+                <p class="">
                   I want to
                 </p>
               </div>
               <div class="has-text-centered trade-selector-container">
-                <div class="b-v-centered">
+                <!-- <div class="b-v-centered">
                   <div class="inner" />
-                </div>
-                <fluid-switch label-left="Buy" label-right="Sell" @switched="toggleTradeType" />
-                <div class="b-v-centered">
+                </div> -->
+                <fluid-switch label-left="Buy" label-right="Sell" style="width: 100%;" @switched="toggleTradeType" />
+                <!-- <div class="b-v-centered">
                   <div class="inner" />
-                </div>
+                </div> -->
               </div>
 
               <div v-if="activeRates" class="rates-container">
@@ -111,45 +111,42 @@
                       min="0"
                       step="any"
                       :maxlength="currency === 'NGN' ? 13 : 9"
-                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right;"
+                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right; direction: rtl"
                       aria-label="NGN-USD"
                       @focus="isDirty(false)"
                     >
                   </p>
                 </div>
               </div>
-              <div style="margin-bottom: 0.5rem;">
-                <!-- <div
-                  v-show="computedFiatAmountReversed"
-                  class="has-text-right is-size-6"
-                  style="color: #707070; font-size: 0.9rem;"
-                >
-                  {{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}
-                </div> -->
+              <div class="control rev-amt">
+                <div class="tags has-addons is-right">
+                  <span class="tag is-dark">&asymp;</span>
+                  <span class="tag norm-b">{{ computedFiatAmountReversed|formatMoney(currency === 'USD' ? 'NGN' : 'USD') }}</span>
+                </div>
               </div>
             </div>
 
             <div class="is-hidden-mobile">
               <div class="field checkbox">
-                <input id="consent" v-model="consent" class="is-checkradio is-dark" type="checkbox">
+                <input id="consent" v-model="consent" class="is-checkradio has-background-color is-white" type="checkbox">
                 <label for="consent">
                   I agree to the <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a> and <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a>
                 </label>
               </div>
               <div class="field checkbox">
-                <input id="marketing" v-model="marketing" class="is-checkradio is-dark" type="checkbox">
+                <input id="marketing" v-model="marketing" class="is-checkradio has-background-color is-white" type="checkbox">
                 <label for="marketing">Keep me updated via email</label>
               </div>
             </div>
             <div class="is-hidden-tablet">
               <div class="field checkbox">
-                <input id="consent" v-model="consent" class="is-checkradio is-dark is-small" type="checkbox">
+                <input id="consent" v-model="consent" class="is-checkradio has-background-color is-white is-small" type="checkbox">
                 <label for="consent">
                   I agree to the <a href="/legal/privacy-policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a> and <a href="/legal/risk-disclosure" aria-label="Risk Disclosure" target="_blank" rel="noreferrer noopener">Risk Disclosure</a>
                 </label>
               </div>
               <div class="field checkbox">
-                <input id="marketing" v-model="marketing" class="is-checkradio is-dark is-small" type="checkbox">
+                <input id="marketing" v-model="marketing" class="is-checkradio has-background-color is-white is-small" type="checkbox">
                 <label for="marketing">Keep me updated via email</label>
               </div>
             </div>
@@ -172,14 +169,14 @@
           >
             <p
               :style="{
-                'font-size': '0.9rem',
+                'font-size': '1rem',
               }"
             >
               You have a pending trade session.
             </p>
             <div class="field is-grouped is-grouped-centered">
               <p class="control has-text-centered">
-                <a href="" class="button is-small is-primary" style="background:#1b70cf;" @click.prevent="handleContinueTrade">Continue</a>
+                <a href="" class="button is-small is-primary" style="background:#254882;" @click.prevent="handleContinueTrade">Continue</a>
               </p>
               <p class="control">
                 <a href="" class="button is-small" @click.prevent="handleCancelTrade">Cancel</a>
@@ -374,7 +371,10 @@ export default {
         const rate = this.activeRates
         let fiatAmount = this.computedFiatAmount
         if (fiatAmount.length > 0) {
-          fiatAmount = parseFloat(fiatAmount.replace(/\D/g, ''))
+          fiatAmount = fiatAmount.split('.')
+          fiatAmount[0] = fiatAmount[0].replace(/\D/g, '')
+          fiatAmount = fiatAmount.join('.')
+          fiatAmount = parseFloat(fiatAmount)
         }
         if (this.currency === 'USD') {
           rv = rate.USD_NGN * fiatAmount
@@ -424,6 +424,15 @@ export default {
       if (option === false) {
         this.cryptoAmount = 0
       }
+    },
+
+    fiatConvert(opt) {
+      let fiatAmount = opt
+      fiatAmount = fiatAmount.split('.')
+      fiatAmount[0] = fiatAmount[0].replace(/\D/g, '')
+      fiatAmount = fiatAmount.join('.')
+      fiatAmount = parseFloat(fiatAmount)
+      return fiatAmount
     },
 
     handleCancelTrade() {
@@ -489,9 +498,11 @@ export default {
         const token = await this.$recaptcha.execute('trade')
         log.debug(`[trade start recaptcha token]: ${token}`)
 
+        const fiatValue = this.computedFiatAmount
+
         this.$store.commit('trade/START_TRADE', {
           currency: this.currency,
-          fiatAmount: this.computedFiatAmount,
+          fiatAmount: this.fiatConvert(fiatValue),
           tradeType: this.tradeType,
           cryptoAmount: this.computedCryptoAmount,
           rates: this.tradeType === 'buy' ? this.rates.buy : this.rates.sell
@@ -536,77 +547,74 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .checkbox {
-  font-size: 0.88rem;
+  font-size: 1rem;
+  color: #ffffff;
+
+  label a {
+    color: #a2bedd;
+  }
 }
 
 div.button-container {
   margin-top: 0.8em;
   margin-bottom: 1.8em;
   button.trade-button {
-    background-color: #0c5db2;
-    font-family: $font-avenir;
-    color: #fff;
+    background-color: #ffffff;
+    font-family: $font-inter;
+    color: #0c5db2;
   }
 }
 
 div.track-trade {
-  font-size: 0.95rem;
-  font-family: $font-roboto;
+  font-size: 1.1rem;
+  font-family: $font-inter;
   margin-bottom: 0.8rem;
+  color: #ffffff;
   a {
     font-weight: bold;
+    color: #a1b3c4;
   }
 }
-/*
-p.flutterwave-grp {
-  margin-top: 2.5em;
-
-  .text {
-    vertical-align: middle;
-  }
-
-  .img {
-    vertical-align: middle;
-  }
-
-  .cc-icon {
-    color: #0c5db2;
-  }
-}
-*/
 div.trade-box {
   padding: 1.8rem 2.2rem;
   // padding-top: 1.5rem;
   box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.3);
-  font-family: $font-open-sans;
+  font-family: $font-inter;
+  color: #000000;
   select {
-    color: #707070;
+    color: #000000;
   }
 
   select.crypto {
-    background: #1b70cf;
+    background: #254882;
     color: #fff;
   }
 
   input.blue-border,
   select.blue-border {
-    border: 1px solid #1b70cf;
-    color: #1b70cf;
+    border: 1px solid #254882;
+    color: #254882;
   }
 
   .amount {
-    color: #1b70cf;
+    color: #254882;
   }
 
   .norm {
-    color: #1b70cf;
+    color: #254882;
+  }
+
+  .norm-b {
+    color: #ffffff;
+    background: #254882;
   }
 }
 
 div.rates-2 {
   display: flex;
   justify-content: space-around;
-  color: #707070;
+  color: #000000;
+  line-height: 1.3;
 }
 
 div.trade-selector-container {
@@ -630,8 +638,8 @@ div.rates-container {
   color: #707070;
   display: flex;
   border: 1px solid #d5d5d5;
-  border-radius: 12px;
-  font-size: 0.85rem;
+  border-radius: 6px;
+  font-size: 1rem;
   padding: 0.5rem;
   width: 85%;
   margin: 0 auto;
@@ -639,6 +647,7 @@ div.rates-container {
   justify-content: space-around;
 }
 
+/*
 .empty-grid-bg {
   position: absolute;
   // z-index: -1;
@@ -648,24 +657,22 @@ div.rates-container {
   background-image: url('~assets/grid-bg.png');
   background-repeat: no-repeat;
 }
+*/
 
 .socials span {
   padding: 0px 7px;
 
-  .fb {
-    color: #3b5998;
+  i {
+    color: #fff;
   }
+}
 
-  .in {
-    color: #fd5949;
-  }
-
-  .tw {
-    color: #00acee;
-  }
-
-  .wa {
-    color: #25d366;
+.rev-amt {
+  .tag {
+    font-size: 1rem;
+    margin-bottom: 0;
+    padding: 0px 8px;
+    font-weight: bold;
   }
 }
 </style>

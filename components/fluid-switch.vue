@@ -33,12 +33,12 @@ export default {
     const clickHandler = e => {
       if (e.currentTarget === options[0]) {
         slider.style.left = '0'
-        options[1].style.color = '#626567'
+        options[1].style.color = '#254882'
         options[0].style.color = '#fff'
         self.$emit('switched', { label: self.labelLeft })
       } else {
         slider.style.left = `${slider.offsetWidth}px`
-        options[0].style.color = '#626567'
+        options[0].style.color = '#254882'
         options[1].style.color = '#fff'
         self.$emit('switched', { label: self.labelRight })
       }
@@ -51,11 +51,11 @@ export default {
   methods: {
     handleSwitch(ev) {
       if (ev.currentTarget === this.$refs.option1) {
-        this.$refs.option2.style.color = '#1b70cf'
+        this.$refs.option2.style.color = '#254882'
         this.$refs.option1.style.color = '#fff'
       } else {
         this.$refs.slider.left = `${this.$refs.slider.offsetWidth}px`
-        this.$refs.option1.style.color = '#1b70cf'
+        this.$refs.option1.style.color = '#254882'
         this.$refs.option2.style.color = '#fff'
       }
     }
@@ -63,16 +63,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '@/assets/scss/fonts.scss';
+
+.rappa {
+  font-family: $font-inter;
+  // font-weight: bold;
+}
+
 .options {
   position: relative;
   height: 40px;
-  width: 120px;
-  border-radius: 50px;
+  width: 100%;
+  border-radius: 4px;
   background: #fff;
+  color: #254882;
   text-align: center;
   display: flex;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #254882;
 }
 
 .option {
@@ -97,9 +105,9 @@ export default {
   left: 0px;
   height: 100%;
   width: 50%;
-  background: #1b70cf;
+  background: #254882;
   z-index: 1;
-  border-radius: 50px;
+  border-radius: 4px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
