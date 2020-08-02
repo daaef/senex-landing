@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-transparent">
+  <nav class="navbar" :class="$route.path == '/about' ? 'bg' : 'is-transparent'">
     <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
@@ -91,6 +91,17 @@ export default {
   padding: 1.5rem 0.5rem;
 }
 
+.bg {
+  background: #162e55;
+
+  a:hover {
+    background: none;
+  }
+  .button:hover {
+    background: #e6eefa;
+  }
+}
+
 .navbar {
   font-family: $font-inter;
   &.is-transparent {
@@ -125,7 +136,7 @@ export default {
     font-weight: bold;
 
     &.button {
-      color: #254882;
+      color: #162e55;
       margin: 0.2rem 0 0 1.5rem;
     }
   }
@@ -152,7 +163,7 @@ export default {
     font-weight: bold;
 
     &.button {
-      background-color: #254882;
+      background-color: #162e55;
       color: #fff;
       margin: 0.2rem 0 0 1.5rem;
     }
@@ -166,7 +177,7 @@ export default {
 
     &.is-active {
       span {
-        border-bottom: 3px solid #254882;
+        border-bottom: 3px solid #162e55;
       }
     }
   }
@@ -174,12 +185,12 @@ export default {
 
 .nav-link-blue {
   a {
-    color: #254882;
+    color: #162e55;
   }
 }
 
 .blue-burger {
-  color: #254882;
+  color: #162e55;
 }
 
 .white-burger {
@@ -190,14 +201,14 @@ export default {
   .navbar-item {
     text-align: center;
     margin: 0.5rem;
-    color: #254882;
+    color: #162e55;
     span {
       padding-bottom: none;
     }
 
     &.is-active {
       color: #ffffff;
-      background: #254882;
+      background: #162e55;
       span {
         border-bottom: 0px;
       }

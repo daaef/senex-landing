@@ -1,7 +1,8 @@
 <template>
   <footer :class="$route.path === '/' ? 'footer2' : 'footer3'">
     <div class="container" style="">
-      <div class="level is-size-6 level-sm-margin" :class="{'is-size-7': $device.isMobile}">
+      <div class="level is-size-6 level-sm-margin">
+        <!-- :class="{'is-size-7': $device.isMobile}" -->
         <div class="level-left">
           <div class="level-item">
             <span>&copy; {{ new Date().getFullYear() }} - SENEXPAY LLC. All Rights Reserved.</span>
@@ -83,7 +84,7 @@ export default {
 .footer3 {
   background: #ffffff;
   color: #254882;
-  font-family: $font-avenir;
+  font-family: $font-inter;
   box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.25);
   padding-top: 1rem;
   padding-bottom: 0;

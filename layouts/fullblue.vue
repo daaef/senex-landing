@@ -1,5 +1,5 @@
 <template>
-  <div class="main bg-wrapper">
+  <div class="main">
     <navbar theme="white" logo-variant="white" />
     <div class="content">
       <nuxt />
