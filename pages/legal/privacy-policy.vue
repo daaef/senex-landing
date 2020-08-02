@@ -129,7 +129,7 @@ div.wrapper {
   font-family: $font-avenir;
   .title {
     font-size: 1.7em;
-    color: #1b70cf;
+    color: #162e55;
   }
 }
 .card {
