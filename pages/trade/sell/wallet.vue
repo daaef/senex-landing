@@ -5,7 +5,8 @@
     </template>
     <template v-if="isOtc == false" slot="content" class="wallet_deposit">
       <div v-if="receiveAddress" class="wallet_deposit">
-        <div class="card" style="width: 230px; margin: 3px auto;">
+        <div class="card" style="margin: 3px auto;">
+          <!-- width: 230px;  -->
           <header class="card-header is-size-6">
             <span class="card-header-title">
               {{ cryptoAmount }} BTC
@@ -21,7 +22,7 @@
               </span>
             </a>
           </header>
-          <div class="">
+          <div class="has-text-centered">
             <div class="content">
               <vue-qrcode
                 :value="`bitcoin:${receiveAddress}?amount=${cryptoAmount}`"
