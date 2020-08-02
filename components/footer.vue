@@ -65,7 +65,7 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 .footer2 {
-  background: #153467;
+  background: #142f5a;
   color: #fff;
   font-family: $font-avenir;
   box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.25);

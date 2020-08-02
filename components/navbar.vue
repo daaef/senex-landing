@@ -36,7 +36,7 @@
           <nuxt-link class="navbar-item" to="/faq" :class="{'is-active': isActiveNavItem('/faq')}">
             <span>FAQ</span>
           </nuxt-link>
-          <a href="mailto:info@senexpay.com" class="button">
+          <a href="mailto:info@senexpay.com" class="button" target="_blank" rel="noreferrer noopener">
             <span><i class="fas fa-envelope" /></span>
           </a>
         </div>

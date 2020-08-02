@@ -2,10 +2,14 @@
   <section class="about">
     <div class="has-text-centered section-one">
       <h1 class="title">
-        About Us
+        About
       </h1>
       <p class="bod">
-        Bitcoin - Naira instant exchange
+        <!-- Bitcoin - Naira instant exchange -->
+        Senexpay is a bitcoin to naira instant exchange platform which ensures a 
+        client's ease of use, protection, and network reliability. Users can buy 
+        and sell bitcoins within minutes irrespective of the time, place, and 
+        transaction volume.
       </p>
     </div>
     <div class="section-two wrapper">
@@ -26,7 +30,7 @@
               trust, offering easy, fast, and secure means to exchange bitcoins to naira 
               for the least knowledgeable individual and new users.
               <br><br>
-              Senex Payment Services Limited was founded in December 2016 by Mr Okeoghene 
+              Senex Payment Services Limited was founded in December 2016 by Okeoghene 
               Orhosere and is headquartered in Lekki, Lagos State. The company is registered 
               and incorporated in 2018 with the Cooperate Affairs Commission and is backed 
               by some investors in Africa. Formerly known solely as Senex in 2016, the 
@@ -142,7 +146,7 @@ export default {
   }
 
   .section-one {
-    padding: 60px 20px;
+    padding: 50px 10px 40px;
     color: #ffffff;
     background: #162e55;
     .title {
@@ -151,14 +155,14 @@ export default {
     }
 
     .bod {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
     }
   }
 
   .section-two {
     .company-text {
-      padding: 15px;
+      // padding: 15px;
       max-width: 800px;
       text-align: center;
       margin: 0 auto;

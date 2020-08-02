@@ -3,7 +3,7 @@
     <div class="container wrapper">
       <p class="has-text-weight-semibold p-heading has-text-centered">
         Trade Lookup
-        <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #254882;">
+        <span class="is-block has-text-centered has-text-weight-normal" style="font-size: 0.95rem; color: #162e55;">
           Quickly track and manage your transaction
         </span>
       </p>
@@ -79,7 +79,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M3.05176e-05 1H69" stroke="#254882" />
+                <path d="M3.05176e-05 1H69" stroke="#162e55" />
               </svg>
               <span>{{ tradeData.created|prettydate(true) }}</span>
             </p>
@@ -422,10 +422,10 @@ div.wrapper {
   min-height: 580px;
   margin-bottom: 3rem;
   margin-top: 3rem;
-  font-family: $font-avenir;
+  font-family: $font-inter;
 
   p.p-heading {
-    color: #254882;
+    color: #162e55;
     font-size: 1.7rem;
     margin-bottom: 1.5rem;
   }
@@ -451,7 +451,7 @@ div.wrapper {
       text-align: center;
       padding: 0.9rem 0;
       .status {
-        color: #254882;
+        color: #162e55;
         font-size: 1.159rem;
       }
       .progress-bar {
@@ -467,7 +467,7 @@ div.wrapper {
           display: inline-block;
           text-align: left;
           height: inherit;
-          background: #254882;
+          background: #162e55;
           margin: 0;
           padding: 0;
           border-radius: inherit;
@@ -508,7 +508,7 @@ div.wrapper {
         margin: 0.3rem 0;
         span._title {
           display: block;
-          color: #254882;
+          color: #162e55;
           margin-bottom: 0.2rem;
         }
         span._item {
@@ -518,17 +518,17 @@ div.wrapper {
         }
       }
       .brief {
-        border-bottom: 1px solid #254882;
+        border-bottom: 1px solid #162e55;
         padding-bottom: 0.3rem;
-        color: #254882;
+        color: #162e55;
       }
       .date {
-        color: #254882;
+        color: #162e55;
       }
       .button {
         font-size: 0.92rem;
         color: #ffffff;
-        background: #254882;
+        background: #162e55;
       }
     }
   }
@@ -611,7 +611,7 @@ div.wrapper {
         font-size: 0.8rem;
         border-radius: 12px;
         color: #ffffff;
-        background: #254882;
+        background: #162e55;
       }
     }
   }

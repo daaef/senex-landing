@@ -28,7 +28,20 @@
                 >
                   <path d="M3.05176e-05 1H69" stroke="#ffffff" />
                 </svg>
-                <span>Instant payouts</span><br>
+                <span class="pointers">Instant payouts</span><br>
+              </p>
+              <p style="margin: 0.2rem 0; vertical-align: middle;">
+                <svg
+                  width="30"
+                  height="2"
+                  style="vertical-align: middle"
+                  viewBox="0 0 69 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3.05176e-05 1H69" stroke="#ffffff" />
+                </svg>
+                <span class="pointers">No signups required</span><br>
               </p>
               <p style="margin: 0.2rem 0; vertical-align: bottom;">
                 <svg
@@ -41,20 +54,7 @@
                 >
                   <path d="M3.05176e-05 1H69" stroke="#ffffff" />
                 </svg>
-                <span>No signups required</span><br>
-              </p>
-              <p style="margin: 0.2rem 0; vertical-align: bottom;">
-                <svg
-                  width="30"
-                  height="2"
-                  style="vertical-align: middle"
-                  viewBox="0 0 69 2"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M3.05176e-05 1H69" stroke="#ffffff" />
-                </svg>
-                <span>No debit card charges</span><br>
+                <span class="pointers">No debit card charges</span><br>
               </p>
               <p style="margin: 0.2rem 0 1rem; vertical-align: bottom;">
                 <svg
@@ -67,7 +67,7 @@
                 >
                   <path d="M3.05176e-05 1H69" stroke="#ffffff" />
                 </svg>
-                <span>Best exchange rates</span><br>
+                <span class="pointers">Best exchange rates</span><br>
               </p>
               <p class="g-text" @click="getStarted">
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
@@ -184,6 +184,13 @@ html {
   line-height: 1.5;
   font-size: 1.1rem;
 }
+/*
+.pointers:before {
+  content: url('~assets/check.png');
+  vertical-align: middle;
+  margin-right: 10px;
+}
+*/
 .g-text {
   font-weight: bold;
   font-size: 1.3rem;
