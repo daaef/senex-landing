@@ -111,7 +111,7 @@
                       min="0"
                       step="any"
                       :maxlength="currency === 'NGN' ? 13 : 9"
-                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right; direction: rtl"
+                      style="background: #f4f4f4; color: #707070; border: none; margin-left: 0.2rem; text-align: right;"
                       aria-label="NGN-USD"
                       @focus="isDirty(false)"
                     >

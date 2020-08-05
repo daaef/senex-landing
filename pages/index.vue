@@ -69,12 +69,13 @@
                 </svg>
                 <span class="pointers">Best exchange rates</span><br>
               </p>
+              <!--googleoff: all-->
               <p class="g-text" @click="getStarted">
                 Get started now <i class="fas fa-chevron-circle-right" style="vertical-align: middle;" />
               </p>
+              <!--googleon: all-->
             </div>
             <!--googleoff: all-->
-            <!-- <span>_____ Pay using _____</span> -->
           </div>
           <!-- <video
             id="bgvid"
@@ -91,7 +92,8 @@
           </video> -->
           <div class="subinfo">
             <p class="accepted-cards">
-              <span><img src="~assets/verve-card.png" alt="Senex payments."></span>
+              <!-- Senex payment services offer secure and instant Bitcoin settlements -->
+              <span><img src="~assets/verve-card.png" alt="Senex Payment Services"></span>
               <span><img src="~assets/master-card.png" alt=""></span>
               <span><img src="~assets/visa-card.png" alt=""></span>
               <span class="extra"><img src="~assets/bank-transfers.png" alt=""></span>
