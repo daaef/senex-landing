@@ -72,7 +72,31 @@
       </div>
     </template>
     <template v-else slot="content">
-      <div v-html="$store.state.trade.create.otcInstructions" />     
+      <div class="content">
+        <h6>Please Read Carefully</h6>
+        This trade will be handled manually over the counter due to the amount being transacted.
+        <ol>
+          <li>
+            Send payments to the following bank account and take a screenshot of your successful transaction.
+            <p>
+              Send the exact or more amount to:
+            </p>
+            <blockquote>
+              <div>SENEX PAYMENT SERVICES</div>
+              <div>ACCESS/DIAMOND</div>
+              <div>0106418511</div>
+            </blockquote>
+          </li>
+          <li>
+            <p style="margin-top: 15px;">
+              Send payment proof via whatsapp using <b><a :href="`https://api.whatsapp.com/send?phone=+2348184899239&amp;text=Hello%21%20I%20just%20bought%20%E2%82%A6${amount}%20worth%20of%20Bitcoins.%20Here%20is%20my%20proof%20of%20transaction`" aria-label="OTC link" target="_blank" rel="noopener">this link</a></b>.
+            </p>
+          </li>
+        </ol>
+
+        You may now continue and complete this trade
+      </div>
+      <!-- <div v-html="$store.state.trade.create.otcInstructions" />      -->
     </template>
     <template slot="button">
       <button
