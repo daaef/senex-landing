@@ -184,7 +184,7 @@ html {
 .get-started {
   margin: 10px 0px 40px 0px;
   line-height: 1.5;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
 }
 /*
 .pointers:before {
@@ -195,7 +195,7 @@ html {
 */
 .g-text {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 5px 0px;
   color: #a2bedd;
   cursor: pointer;
@@ -284,15 +284,15 @@ div.subinfo {
     height: 25px;
 
     img {
-      height: 28px;
+      height: 30px;
     }
   }
   .accepted-cards .extra {
     padding-right: 10px;
-    height: 30px;
+    height: 32px;
   }
   .accepted-cards .last {
-    height: 30px;
+    height: 32px;
   }
   .accepted-text {
     font-size: 1rem;

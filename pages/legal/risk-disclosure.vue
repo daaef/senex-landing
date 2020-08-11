@@ -70,6 +70,15 @@
                 Participants should know all the terms of any transaction they enter and how
                 other market and risk factors can affect their financing obligations.
               </p>
+            </li><br>
+            <li>
+              <span class="subtitle">Risks Associated with Third-Party Wallets</span>
+              <p>
+                Senexpay does NOT store user funds and as such, does NOT control the user
+                data, conduct, or offer support of(for) any wallet. As of present, Senexpay does
+                NOT own or partner with any bitcoin wallet. Your usage of any preferred wallet
+                is subject is the terms of use of the owner.
+              </p>
             </li>
           </ol>
         </div>

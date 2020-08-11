@@ -75,7 +75,7 @@ export default {
   position: relative;
   height: 40px;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 5px;
   background: #fff;
   color: #254882;
   text-align: center;
