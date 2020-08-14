@@ -66,11 +66,11 @@
       <div class="container">
         <h3>Send Us A Message!</h3>
         <p>We would love to hear from you!</p>
-        <div class="form">
+        <form class="form" @submit.prevent="sendMessage">
           <div class="field">
             <div class="control">
               <input
-                v-model="formMessage.fromname"
+                v-model="formMessage.name"
                 v-validate="'required|alpha_spaces|min:5|max:20'"
                 name="name"
                 type="text"
@@ -86,7 +86,7 @@
           <div class="field">
             <div class="control">
               <input
-                v-model="formMessage.from"
+                v-model="formMessage.email"
                 v-validate="'required'"
                 name="email"
                 type="email"
@@ -103,7 +103,7 @@
             <div class="control">
               <input
                 v-model="formMessage.subject"
-                v-validate="'required|min:10|max:50'"
+                v-validate="'required|min:15|max:50'"
                 name="subject"
                 type="text"
                 class="input is-medium"
@@ -116,17 +116,28 @@
             </p>
           </div>
           <div class="field">
-            <textarea v-model="formMessage.text" class="textarea is-medium" placeholder="This is my message" />
+            <textarea
+              v-model="formMessage.body"
+              v-validate="'required|min:25'"
+              name="message"
+              class="textarea is-medium"
+              :class="{ 'is-danger': errors.has('message') }"
+              placeholder="This is my message"
+            />
+            <p v-show="errors.has('message')" class="help is-danger">
+              {{ errors.first('message') }}
+            </p>
           </div>
           <button
             class="button is-fullwidth is-medium"
             :class="{ 'is-loading': loading }"
+            :disabled="errors.any()"
             style="font-weight: 700; padding-top: 9px; background: #162e55; color: #fff;"
             @click="sendMessage"
           >
             Send
           </button>
-        </div>
+        </form>
       </div>
     </div>
     <div class="section-four wrapper">
@@ -189,54 +200,55 @@ export default {
       },
       loading: false,
       formMessage: {
-        to: 'info@senexpay.com',
-        toname: 'SenexPAY',
-        from: '',
-        fromname: '',
+        name: '',
+        email: '',
         subject: '',
-        text: ''
+        body: ''
       }
     }
   },
+  computed: {
+    canSend() {
+      const poer = this.formMessage
+      return poer.email && poer.subject && poer.body
+    }
+  },
   methods: {
-    beans() {
-      this.formMessage.fromname = 'Belike sent'
-    },
-    async sendMessage() {
-      this.loading = true
-      const headers = {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`
-      }
-      const payload = this.formMessage
+    sendMessage() {
+      this.$validator.validate().then(valid => {
+        if (valid) {
+          this.loading = true
+          const payload = this.formMessage
 
-      const resp = await this.$axios.post(
-        'https://api.sendgrid.com/api/mail.send.json',
-        payload,
-        { headers }
-      )
-      if (resp.message === 'success') {
-        this.formMessage = ''
-        this.$swal({
-          title: '',
-          type: 'success',
-          position: 'top-end',
-          text: 'Your message was sent successfully',
-          timer: 5 * 1000,
-          toast: true,
-          showConfirmButton: false
-        })
-      } else {
-        this.$swal({
-          title: '',
-          type: 'error',
-          position: 'top-end',
-          text: 'Message sending failed, Try again later!',
-          timer: 5 * 1000,
-          toast: true,
-          showConfirmButton: false
-        })
-      }
+          this.$axios
+            .post('/contact/', payload)
+            .then(resp => {
+              this.loading = false
+              this.formMessage = ''
+              this.$swal({
+                title: 'Success!',
+                type: 'success',
+                position: 'top-end',
+                text: resp.message,
+                timer: 5 * 1000,
+                toast: true,
+                showConfirmButton: false
+              })
+            })
+            .catch(() => {
+              this.loading = false
+              this.$swal({
+                title: '',
+                type: 'error',
+                position: 'top-end',
+                text: 'Message sending failed, Try again later!',
+                timer: 5 * 1000,
+                toast: true,
+                showConfirmButton: false
+              })
+            })
+        }
+      })
     },
     openLiveChat() {
       window.Tawk_API.maximize()
