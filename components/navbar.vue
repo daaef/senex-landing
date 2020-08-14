@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" :class="$route.path == '/about' ? 'bg' : 'is-transparent'">
+  <nav class="navbar" :class="$route.path == '/about' || $route.path == '/contact' ? 'bg' : 'is-transparent'">
     <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
@@ -36,9 +36,9 @@
           <nuxt-link class="navbar-item" to="/faq" :class="{'is-active': isActiveNavItem('/faq')}">
             <span>FAQ</span>
           </nuxt-link>
-          <a href="mailto:info@senexpay.com" class="button" target="_blank" rel="noreferrer noopener">
-            <span><i class="fas fa-envelope" /></span>
-          </a>
+          <nuxt-link class="navbar-item" to="/contact" :class="{'is-active': isActiveNavItem('/contact')}">
+            <span>Contact</span>
+          </nuxt-link>
         </div>
       </div>
     </div>

@@ -71,7 +71,7 @@
           Our values
         </h3> -->
         <div class="is-flex cta">
-          <h4>Buy/Sell your bitcoins today!</h4>
+          <h4>Buy/Sell your Bitcoins today!</h4>
           <nuxt-link to="/">
             Start
             <i aria-hidden="true" class="is-hidden-mobile fas fa-long-arrow-alt-right" />
@@ -206,7 +206,7 @@ export default {
         color: #ffffff;
         border: 1px solid #ffffff;
         padding: 8px 22px;
-        border-radius: 6px;
+        border-radius: 28px;
         display: inline;
       }
     }

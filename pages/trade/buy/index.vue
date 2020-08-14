@@ -68,7 +68,7 @@
             type="text"
             class="input"
             :class="{ 'is-danger': errors.has('mobile number') }"
-            placeholder="ex. +1 5342340596"
+            placeholder="ex. +2348100009990"
           >
         </div>
         <p v-show="errors.has('mobile number')" class="help is-danger">
