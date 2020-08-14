@@ -8,14 +8,14 @@
               <div v-if="rates" class="rates-2">
                 <div class="has-text-centered">
                   <span>&#8358;</span>
-                  <span class="is-size-4 has-text-weight-bold">{{ rates.buy.USD_NGN }}</span>
+                  <span class="is-size-4 has-text-weight-medium">{{ rates.buy.USD_NGN }}</span>
                   <p class="is-size-6">
                     Buy
                   </p>
                 </div>
                 <div class="has-text-centered">
                   <span>&#8358;</span>
-                  <span class="is-size-4 has-text-weight-bold">{{ rates.sell.USD_NGN }}</span>
+                  <span class="is-size-4 has-text-weight-medium">{{ rates.sell.USD_NGN }}</span>
                   <p class="is-size-6">
                     Sell
                   </p>
@@ -299,11 +299,7 @@ export default {
             rv = fiatAmount / rate.NGN
           }
 
-          if (
-            rv < rate.minimum / rate.USD &&
-            this.fiatAmountIsDirty &&
-            this.fiatAmount > 0
-          ) {
+          if (rv < rate.minimum / rate.USD && this.fiatAmountIsDirty) {
             this.errors.add({
               field: 'BTC',
               msg: `Please enter a value not less than $${rate.minimum}`
