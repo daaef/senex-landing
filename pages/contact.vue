@@ -5,7 +5,7 @@
         Contact Us
       </h1>
       <p class="bod">
-        We are available 24/7 to respond to your request
+        We are available 24/7.
       </p>
       <p class="loc">
         Nigeria | Ghana | South Africa
