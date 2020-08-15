@@ -230,6 +230,7 @@ export default {
                 subject: '',
                 body: ''
               }
+              this.errors.clear()
               this.$swal({
                 title: 'Success!',
                 type: 'success',
