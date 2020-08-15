@@ -59,7 +59,7 @@
         <h1>_</h1>
         <div class="vision">
           <h3 class="title">
-            Our vision
+            Our Vision
           </h3>
           <h5>It is our vision to be at the forefront of the next financial revolution</h5>
         </div>
