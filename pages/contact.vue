@@ -5,7 +5,7 @@
         Contact Us
       </h1>
       <p class="bod">
-        Get in touch with us.
+        We are available 24/7 to respond to your request
       </p>
       <p class="loc">
         Nigeria | Ghana | South Africa
@@ -21,7 +21,7 @@
                   <i aria-hidden="true" class="fas fa-map-marker-alt" />
                 </div>
                 <h4>
-                  Our Office
+                  Head Office
                 </h4>
                 <p>
                   Lekki, Lagos, Nigeria.
