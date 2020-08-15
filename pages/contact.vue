@@ -103,7 +103,7 @@
             <div class="control">
               <input
                 v-model="formMessage.subject"
-                v-validate="'required|min:15|max:50'"
+                v-validate="'required|min:10|max:50'"
                 name="subject"
                 type="text"
                 class="input is-medium"
@@ -118,7 +118,7 @@
           <div class="field">
             <textarea
               v-model="formMessage.body"
-              v-validate="'required|min:25'"
+              v-validate="'required|min:20'"
               name="message"
               class="textarea is-medium"
               :class="{ 'is-danger': errors.has('message') }"
@@ -224,7 +224,12 @@ export default {
             .post('/contact/', payload)
             .then(resp => {
               this.loading = false
-              this.formMessage = ''
+              this.formMessage = {
+                name: '',
+                email: '',
+                subject: '',
+                body: ''
+              }
               this.$swal({
                 title: 'Success!',
                 type: 'success',
