@@ -17,7 +17,7 @@
             </span>
             <br><br>
             <div class="get-started">
-              <p style="margin: 1rem 0 0.2rem; vertical-align: bottom;">
+              <p style="margin: 0 0 0.2rem; vertical-align: bottom;">
                 <svg
                   width="30"
                   height="2"
@@ -56,7 +56,7 @@
                 </svg>
                 <span class="pointers">No debit card charges</span><br>
               </p>
-              <p style="margin: 0.2rem 0 1.8rem; vertical-align: bottom;">
+              <p style="margin: 0.2rem 0 2rem; vertical-align: bottom;">
                 <svg
                   width="30"
                   height="2"
@@ -182,7 +182,7 @@ html {
   margin-bottom: -15px;
 }
 .get-started {
-  margin: 10px 0px 50px 0px;
+  margin-bottom: 60px;
   line-height: 1.5;
   font-size: 1.25rem;
 }
@@ -276,7 +276,7 @@ div.subinfo {
 
   .accepted-cards {
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .accepted-cards span {

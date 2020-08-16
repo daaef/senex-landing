@@ -81,6 +81,7 @@ export default {
   text-align: center;
   display: flex;
   border: 1px solid #254882;
+  font-weight: bold;
 }
 
 .option {
