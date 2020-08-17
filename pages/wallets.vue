@@ -208,6 +208,7 @@ export default {
     text-align: center;
 
     .title {
+      min-width: 300px;
       h6,
       p {
         color: #ffffff;
