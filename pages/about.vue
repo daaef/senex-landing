@@ -74,7 +74,7 @@
           <h4>Buy/Sell your Bitcoins today!</h4>
           <nuxt-link to="/">
             Start
-            <i aria-hidden="true" class="is-hidden-mobile fas fa-long-arrow-alt-right" />
+            <i aria-hidden="true" class="is-hidden-mobile fas fa-caret-right" />
           </nuxt-link>
         </div>
 

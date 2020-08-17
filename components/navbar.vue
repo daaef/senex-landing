@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" :class="$route.path == '/about' || $route.path == '/contact' ? 'bg' : 'is-transparent'">
+  <nav class="navbar" :class="$route.path == '/about' || $route.path == '/wallets' || $route.path == '/contact' ? 'bg' : 'is-transparent'">
     <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
@@ -29,6 +29,9 @@
           </nuxt-link>
           <nuxt-link class="navbar-item" to="/about" :class="{'is-active': isActiveNavItem('/about')}">
             <span>About</span>
+          </nuxt-link>
+          <nuxt-link class="navbar-item" to="/wallets" :class="{'is-active': isActiveNavItem('/wallets')}">
+            <span>Wallets</span>
           </nuxt-link>
           <nuxt-link class="navbar-item" to="/track" :class="{'is-active': isActiveNavItem('/track')}">
             <span>Tracking</span>
@@ -142,7 +145,7 @@ export default {
   }
 
   .navbar-item {
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.1rem;
     span {
       padding-bottom: 0.5rem;
     }
