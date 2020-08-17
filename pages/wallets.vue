@@ -9,7 +9,7 @@
         Ready to get you started quickly
       </p>
       <p class="bodi">
-        We have put together some recommended wallets based on personal choices.
+        We have put together some recommended wallets based on preferred choices.
       </p>
     </div>
     <div class="section-two wrapper">
