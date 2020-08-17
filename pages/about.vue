@@ -157,6 +157,7 @@ export default {
     .bod {
       max-width: 800px;
       margin: 0 auto;
+      font-size: 0.95rem;
     }
   }
 
