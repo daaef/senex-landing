@@ -79,7 +79,7 @@
           <li>
             Send payments to the following bank account and take a screenshot of your successful transaction.
             <p>
-              Send the exact or more amount to:
+              Send the exact amount to:
             </p>
             <blockquote>
               <div>SENEX PAYMENT SERVICES</div>

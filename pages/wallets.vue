@@ -36,8 +36,8 @@
     </div>
     <div class="section-three wrapper">
       <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column">
+        <div class="columns">
+          <div class="column is-6-desktop align-well">
             <div class="title">
               <img src="~assets/blockchain.png" alt="Blockchain logo" width="80">
               <h6>
@@ -53,7 +53,7 @@
               </a>
             </div>
           </div>
-          <div class="column">
+          <div class="column is-6-desktop">
             <div class="blockchain">
               <img src="~assets/blockchain_wallet.png" alt="Blockchain wallet" with="50">
             </div>
@@ -98,13 +98,13 @@ export default {
   layout: 'fullblue',
   head() {
     return {
-      title: 'About Us - SenexPAY',
+      title: 'Wallets - SenexPAY',
       meta: [
         {
           hid: 'description',
           name: 'description',
           content:
-            'SenexPAY is a multi-fiat to bitcoin exchange platform which is owned and managed by Senex Payment Services Limited in Lekki, Nigeria.'
+            'Ready to get you started quickly, We have put together some recommended wallets based on preferred choices.'
         }
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/wallets' }]
@@ -207,8 +207,16 @@ export default {
     color: #ffffff;
     text-align: center;
 
+    .align-well {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     .title {
-      min-width: 300px;
+      // min-width: 300px;
+
       h6,
       p {
         color: #ffffff;
@@ -217,7 +225,7 @@ export default {
 
     .blockchain {
       padding-top: 30px;
-      min-width: 280px;
+      // min-width: 280px;
       img {
         min-height: 400px;
         max-height: 550px;
