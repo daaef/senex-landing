@@ -215,16 +215,11 @@ export default {
       }
     }
 
-    .massz {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
     .blockchain {
       padding-top: 30px;
+      min-width: 280px;
       img {
+        min-height: 400px;
         max-height: 550px;
         margin-bottom: -35px;
       }
