@@ -150,7 +150,7 @@ const _STR_CANNOT_VERIFY_ = "Couldn't verify trade. retrying..."
 const _STR_TRADE_REQUESTED_ = 'Trade request successful.'
 
 export default {
-  layout: 'simple',
+  layout: 'stepper',
 
   validate({ store }) {
     if (!store.getters['trade/isActiveTrade']) {

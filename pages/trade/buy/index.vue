@@ -111,7 +111,7 @@ const phoneNumber = {
 Validator.extend('phoneNumber', phoneNumber)
 
 export default {
-  layout: 'simple',
+  layout: 'stepper',
 
   validate({ store }) {
     if (!store.getters['trade/isActiveTrade']) {

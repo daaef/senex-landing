@@ -124,7 +124,7 @@ const _ERR_VERIFY_TRANSACTION_ = 'Unable to verify your transaction, try again'
 const _STR_INVALID_TRANSACTION_ = 'Transaction failed or invalid'
 
 export default {
-  layout: 'simple',
+  layout: 'stepper',
 
   filters: {
     formatMoney

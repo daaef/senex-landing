@@ -105,7 +105,7 @@ const _ERR_KYC_UPDATE_ = 'Unable to update; try again'
 const _STR_TRADE_REQUESTED_ = 'Trade request successful.'
 
 export default {
-  layout: 'simple',
+  layout: 'stepper',
 
   validate({ store }) {
     if (store.state.trade.create.isOtc) {

@@ -66,7 +66,7 @@ import Trader from '~/components/trade/trader.vue'
 const _CREATE_TRADE_ERROR_ = 'Something bad happened; try again'
 
 export default {
-  layout: 'simple',
+  layout: 'stepper',
 
   validate({ store }) {
     if (!store.getters['trade/isActiveTrade']) {

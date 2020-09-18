@@ -127,7 +127,7 @@ const _ERR_CREATE_TRADE_ = 'Something bad happened; try again'
 const _ERR_FETCH_ACCOUNT_ = 'Unable to resolve account'
 
 export default {
-  layout: 'simple',
+  layout: 'stepper',
 
   validate({ store }) {
     if (!store.getters['trade/isActiveTrade']) {
