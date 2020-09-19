@@ -69,6 +69,9 @@
             @timer-elapsed="handleTimerElapsed"
           />
         </p>
+        <p class="help is-danger">
+          <i class="fas fa-exclamation-circle" /> Please do not reload this page.
+        </p>
       </div>
     </template>
     <template v-else slot="content">

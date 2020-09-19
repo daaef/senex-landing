@@ -32,6 +32,9 @@
               <p v-show="!verifying && transactions.length === 0" class="has-text-weight-bold is-size-7 has-text-danger blink">
                 Expires: {{ $moment(expires).subtract(10, 'm').format('h:mm A') }}
               </p>
+              <p class="help is-danger">
+                <i class="fas fa-exclamation-circle" /> Please do not reload this page.
+              </p>
             </div>
           </div>
           <footer class="card-footer">

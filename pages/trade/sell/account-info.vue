@@ -57,7 +57,6 @@
           >
         </div>
         <p class="help is-danger">
-          <!-- <i class="fas fa-exclamation-circle" /> Be sure to use a bank account with the name <b>{{ `${info.firstName.toUpperCase()} ${info.lastName.toUpperCase()}` }}</b> to avoid issues with payout. -->
           <i class="fas fa-exclamation-circle" /> Verify your bank information to avoid issues with payout.
         </p>
       </div>
