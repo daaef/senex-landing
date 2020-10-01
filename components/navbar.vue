@@ -3,8 +3,8 @@
     <div class="container" style="margin-top: 0.8rem; padding-top: 0;">
       <div class="navbar-brand">
         <a class="" @click.prevent="$router.push('/')">
-          <img v-if="logoVariant === 'white'" src="~assets/senexpay-logo-light.png" alt="SenexPAY" style="height: 36px; margin-top: 5px;">
-          <img v-else src="~assets/senexpay-logo.png" alt="SenexPAY" style="height: 36px; margin-top: 5px;">
+          <img v-if="logoVariant === 'white'" src="~assets/senexpay-nigeria-at-60-independence.png" alt="SenexPAY" style="height: 33px; margin-top: 5px;">
+          <img v-else src="~assets/senexpay-nigeria-at-60-independence-dark.png" alt="SenexPAY" style="height: 33px; margin-top: 5px;">
         </a>
         <span
           class="navbar-burger burger"
