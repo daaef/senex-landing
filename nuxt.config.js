@@ -52,11 +52,6 @@ module.exports = {
         'data-cfasync': 'false',
         async: true
       }
-      /* {
-        src: 'https://cdn.widgetwhats.com/script.min.js',
-        'data-id': '14644',
-        async: true
-      } */
     ]
   },
 
@@ -130,6 +125,7 @@ module.exports = {
       }
     ],
     '@nuxtjs/onesignal',
+    '@nuxtjs/sentry',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/moment'
@@ -154,6 +150,11 @@ module.exports = {
     },
     cdn: true,
     OneSignalSDK: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js'
+  },
+
+  sentry: {
+    dsn: process.env.SENTRY_DSN,
+    config: {}
   },
 
   manifest: {

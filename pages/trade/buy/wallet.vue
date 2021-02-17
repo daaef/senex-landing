@@ -40,7 +40,17 @@
         <span v-show="errors.has('trade pin')" class="help is-danger">
           {{ errors.first('trade pin') }}
         </span>
-        <span>Take note of this PIN. It would be used to track your trade.</span>
+        <p>Take note of this PIN. It would be used to track your trade.</p>
+        <p v-if="rates_changed" class="rate-changed">
+          Sorry rates have changed from the last time, as such you will now 
+          receive {{ newCryptoAmt }}BTC for {{ fiatAmount|formatMoney(currency) }}. Please proceed with this process to accept 
+          these changes or close this trade to decline and restart this process.
+        </p>
+        <p class="delay">
+          Kindly note that due to the recent govt. regulations, our system no longer 
+          issues automatic payments. All transaction request will be handled manually over 
+          the counter and as such payouts will not be instant on this platform.
+        </p>
       </div>
     </template>
     <template slot="button">
@@ -62,8 +72,9 @@
 import { mapState } from 'vuex'
 import log from '~/logger'
 import Trader from '~/components/trade/trader.vue'
+import formatMoney from '~/filters/format-money'
 
-const _CREATE_TRADE_ERROR_ = 'Something bad happened; try again'
+const _CREATE_TRADE_ERROR_ = 'Something happened; try again'
 
 export default {
   layout: 'stepper',
@@ -78,13 +89,19 @@ export default {
     return true
   },
 
+  filters: {
+    formatMoney
+  },
+
   components: {
     Trader
   },
 
   data() {
     return {
-      loading: false
+      loading: false,
+      rates_changed: false,
+      newCryptoAmt: 0.004532
     }
   },
 
@@ -103,7 +120,10 @@ export default {
   computed: {
     ...mapState({
       info: state => state.trade.create.walletInfo,
-      personalInfo: state => state.trade.create.personalInformation
+      personalInfo: state => state.trade.create.personalInformation,
+      cryptoAmount: state => state.trade.create.cryptoAmount,
+      fiatAmount: state => state.trade.create.fiatAmount,
+      currency: state => state.trade.create.currency
     }),
 
     address: {
@@ -164,6 +184,9 @@ export default {
     },
 
     async createTrade() {
+      if (this.rates_changed && this.newCryptoAmt) {
+        this.$store.commit('trade/UPDATE_CRYPTO', this.newCryptoAmt)
+      }
       const data = this.$store.state.trade.create
       const payload = {
         type: 'buy',
@@ -211,3 +234,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '@/assets/scss/colors.scss';
+
+.rate-changed {
+  padding: 8px;
+  border: 1px solid $blue;
+  border-radius: 6px;
+  color: $blue;
+}
+.delay {
+  padding: 8px;
+  border: 1px solid hsl(348, 100%, 61%);
+  border-radius: 6px;
+  color: hsl(348, 100%, 61%);
+}
+</style>

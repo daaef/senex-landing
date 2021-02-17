@@ -478,6 +478,7 @@ export default {
       } catch (err) {
         this.errorFetchRates = FETCH_RATES_ERR
         this.isFetchingRates = false
+        this.$sentry.captureException(err)
       } finally {
         this.isFetchingRates = false
       }

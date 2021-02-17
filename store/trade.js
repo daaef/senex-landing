@@ -60,6 +60,7 @@ export const mutationTypes = {
   UPDATE_RECEIVE_ADDRESS: 'UPDATE_RECEIVE_ADDRESS',
   UPDATE_PAYMENT: 'UPDATE_PAYMENT',
   START_TRADE: 'START_TRADE',
+  UPDATE_CRYPTO: 'UPDATE_CRYPTO',
   SET_BANK_LIST: 'SET_BANK_LIST',
   SET_TRADE_METADATA: 'SET_TRADE_METADATA',
   SET_TRACK_TRADE_ID: 'SET_TRACK_TRADE_ID',
@@ -98,6 +99,10 @@ export const mutations = {
     state.create.conversionRate.USD = opts.rates.USD
     state.create.conversionRate.USD_NGN = opts.rates.USD_NGN
     state.create.startTime = new Date()
+  },
+
+  [mutationTypes.UPDATE_CRYPTO](state, value) {
+    state.create.cryptoAmount = value
   },
 
   [mutationTypes.SET_BANK_LIST](state, bankList) {
