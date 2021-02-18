@@ -47,9 +47,8 @@
           these changes or close this trade to decline and restart this process.
         </p>
         <p class="delay">
-          Kindly note that due to the recent govt. regulations, our system no longer 
-          issues automatic payments. All transaction request will be handled manually over 
-          the counter and as such payouts will not be instant on this platform.
+          Dear customer, due to the CBN ban on cryptocurrencies, we have suspended all automated payments. 
+          Please be patient while we manually complete your transaction (within 10 minutes to an hour). Thank you.
         </p>
       </div>
     </template>
