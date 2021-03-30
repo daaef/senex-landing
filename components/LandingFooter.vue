@@ -30,7 +30,8 @@
                 <h1>Legal</h1>
                 <ul>
                   <li>
-                    <router-link to="/terms">Terms & Privacy</router-link>
+                    <router-link to="/privacy">Privacy</router-link>
+                    <router-link to="/terms">& Terms</router-link>
                   </li>
                   <li><router-link to="/faq">FAQ</router-link></li>
                   <li><router-link to="/faq">FAQ</router-link></li>
