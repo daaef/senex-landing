@@ -5,7 +5,49 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'SenexPay Dashboard',
+        name: 'SenexPay',
+        content: 'SenexPay Dashboard'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'SenexPay Dashboard'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/img/senepay-og.png'
+      },
+      {
+        property: 'og:image:width',
+        content: '740'
+      },
+      {
+        property: 'og:image:height',
+        content: '300'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Buy and sell Cryptocurrency the easy way'
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Senexpay Dashboard'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Buy and sell Cryptocurrency the easy way'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: '/img/senepay-og.png'
+      }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -33,8 +75,28 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/sentry',
+    'nuxt-i18n'
   ],
 
+  i18n: {
+    locales: ['en', 'fr', 'es'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          welcome: 'Welcome'
+        },
+        fr: {
+          welcome: 'Bienvenue'
+        },
+        es: {
+          welcome: 'Bienvenido'
+        }
+      }
+    }
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
@@ -43,6 +105,12 @@ export default {
     manifest: {
       lang: 'en',
     },
+  },
+
+  sentry: {
+    dsn: process.env.SENTRY_DSN || '',
+    disabled: process.env.NODE_ENV === 'development',
+    config: {}
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -1,0 +1,51 @@
+@mixin flexcon($align, $justify, $direction){
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin custom-btn($bgcolor, $textcolor, $bordercolor){
+  // height: 42px!important;
+  background: $bgcolor!important;
+  color: $textcolor !important;
+  border-color: $bordercolor!important;
+  transition: all 0.6s ease-in-out;
+}
+
+@mixin custom-btn-hover($bgcolor, $textcolor, $bordercolor){
+  background: $bgcolor!important;
+  border-color: $bordercolor!important;
+  color: $textcolor!important;
+}
+
+@mixin heading-with-line($fontZ, $color){
+  font-size: $fontZ;
+  color: $color;
+  font-weight: bold;
+}
+
+@mixin heading-with-line-before($width, $height, $display, $bgcolor){
+  content: "";
+  width: $width;
+  height: $height; 
+  margin: 0px 6px 12px 0;
+  display: $display;
+  background: $bgcolor;
+}
+
+
+@mixin icon-placement($width, $top, $right, $bottom, $left) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  width: $width;
+}
+
+@mixin font-pros($fontsize, $fontweight, $fontcolor){
+  font-size: $fontsize;
+  font-weight: $fontweight;
+  color: $fontcolor;
+}
