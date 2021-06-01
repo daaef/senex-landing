@@ -38,9 +38,14 @@
     margin-left: auto;
   }
   
+  .logo-con {
+    min-width: 220px;
+    display: inline-block;
+  }
+
   .logo {
-    min-width: 184px;
-    height: 35px;
+    // min-width: 211.23px;
+    height: 40px;
   }
 
   .register-btn {
@@ -48,5 +53,9 @@
     padding: 8px 16px;
     font-size: 18px;
     border-radius: 6px;
+  }
+
+  .register-btn:hover {
+    @include custom-btn(#9daaf7,$primary_color,transparent);
   }
 }

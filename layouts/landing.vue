@@ -2,9 +2,12 @@
   <div class="">
     <div class="landing-nav">
       <div class="nav-holder container">
-        <router-link to="/" class="logo-con"
-          ><img src="/img/senexpay-logo-light.png" class="logo"
-        /></router-link>
+        <span class="logo-con"
+          ><router-link to="/"
+            ><img
+              src="/img/senexpay-logo-light.png"
+              class="logo" /></router-link
+        ></span>
         <div class="nav-con">
           <nav class="hidden lg:flex nav">
             <div class="link-con">

@@ -1,7 +1,27 @@
 <template>
   <div class="snx-hero-banner">
     <div class="container">
-      <div>This</div>
+      <div class="flex">
+        <div class="lg:w-1/2">
+          <div class="snx-hero-content">
+            <h1 class="snx-hero-content__title">Buy and Sell Crypto</h1>
+            <h1 class="snx-hero-content__title">the easy way.</h1>
+            <p class="snx-hero-content__subtitle">
+              SenexPay offers you a secure and easy way to make crypto-fiat
+              exchange without any hassle.
+            </p>
+            <div class="snx-hero-content__btn_holder">
+              <router-link to="/register" class="register_btn"
+                >Create your account</router-link
+              >
+              <router-link to="/trading" class="trading_btn"
+                >Start trading</router-link
+              >
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2"></div>
+      </div>
     </div>
   </div>
 </template>

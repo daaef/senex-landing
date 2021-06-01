@@ -1,20 +1,81 @@
 .snx-hero-banner {
   background-color: $primary_color;
   color: $color_white;
-  margin-top: 74px;
+  margin-top: 70px;
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 550px;
+  min-height: 650px;
   overflow-y: auto;
   @include flexcon(center, left, row);
 }
 
-@media screen and(max-height: 880px) {
+.snx-hero-content {
+  width: 100%;
+  // min-height: 100%;
+  height: auto;
+  overflow: auto;
+  height: auto;
+
+  &__title{
+    text-align: left;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
+  &__title:last-of-type {
+    margin-bottom: 30px;
+    line-height: 1em;
+  }
+
+  &__subtitle{
+    text-align: left;
+    font-size: $font18;
+    font-weight: 500;
+    max-width: 500px;
+  }
+
+  &__subtitle:last-of-type {
+    margin-bottom: 30px;
+  }
+
+  &__btn_holder {
+    display: flex;
+    width: 100%;
+
+    .register_btn {
+      @include custom-btn($secondary_color,$color_white,$secondary_color);
+      padding: 8px 16px;
+      font-size: 18px;
+      border-radius: 6px;
+      margin-right: 20px;
+    }
+
+    .register_btn:hover {
+      @include custom-btn(#9daaf7,$primary_color,transparent);
+    }
+
+    .trading_btn {
+      @include custom-btn($nobg,$color_white,$color_white);
+      border: 1px solid;
+      padding: 8px 16px;
+      font-size: 18px;
+      border-radius: 6px;
+    }
+
+    .trading_btn:hover {
+      @include custom-btn(#a2ffff,$primary_color,transparent);
+    }
+
+  }
+
+}
+
+@media screen and(max-height: 800px) {
   .snx-hero-banner {
     width: 100%;
     height: auto;
     overflow: auto;
-    // min-height: 550px!important;
+    min-height: 550px !important;
   }
 }

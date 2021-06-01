@@ -1,6 +1,7 @@
 @import 'abstract/color';
 @import 'abstract/font';
 @import 'abstract/mixins';
+@import 'abstract/variable';
 
 @import 'components/buttons';
 
@@ -21,40 +22,40 @@ body{
   font-family: 'SFPro' !important;
 }
 
-// .container {
-//   width: 100%;
-//   margin: 0 auto;
-// }
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
 
-// @media screen and (min-width: 450px) {
-//   .container {
-//     width: 100%;
-//   }
-// }
+@media screen and (min-width: 450px) {
+  .container {
+    width: 100%;
+  }
+}
 
-// @media screen and (min-width: 576px) {
-//   .container {
-//     max-width: 540px;
-//   }
-// }
+@media screen and (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
 
-// @media screen and (min-width: 768px) {
-//   .container {
-//     max-width: 720px;
-//   }
-// }
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
 
-// @media screen and (min-width: 992px) {
-//   .container {
-//     max-width: 960px;
-//   }
-// }
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
 
-// @media screen and (min-width: 1200px) {
-//   .container {
-//     max-width: 1140px;
-//   }
-// }
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
 
 // @media screen and (min-width: 1440px) {
 //   .container {

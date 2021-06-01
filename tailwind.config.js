@@ -8,7 +8,9 @@ module.exports = {
         padding: {
           DEFAULT: theme('spacing.4'),
           sm: theme('spacing.6'),
-          lg: theme('spacing.6')
+          md: theme('spacing.6'),
+          lg: theme('spacing.6'),
+          xl: theme('spacing.6')
         }
       })
     },

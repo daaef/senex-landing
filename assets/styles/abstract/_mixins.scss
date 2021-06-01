@@ -10,7 +10,7 @@
   background: $bgcolor!important;
   color: $textcolor !important;
   border-color: $bordercolor!important;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 @mixin custom-btn-hover($bgcolor, $textcolor, $bordercolor){
