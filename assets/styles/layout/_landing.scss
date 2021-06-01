@@ -1,0 +1,52 @@
+@import '../abstract/color';
+@import '../abstract/mixins';
+
+.landing-nav{
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background-color: $primary_color;
+  color: $color_white;
+  font-size: 18px;
+  @include flexcon(center, left, row);
+
+  .nav-holder {
+    @include flexcon(center, left, row);
+  }
+
+  .nav-con {
+    width: 100%;
+  }
+
+  .nav {
+    // @include flexcon(center, none, row);
+    align-items: center;
+
+    .link-con {
+      margin-left: auto;
+    }
+
+    .link {
+      margin-right: 40px;
+    }
+  }
+
+  .register-con {
+    margin-left: auto;
+  }
+  
+  .logo {
+    min-width: 184px;
+    height: 35px;
+  }
+
+  .register-btn {
+    @include custom-btn($secondary_color,$color_white,$secondary_color);
+    padding: 8px 16px;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+}

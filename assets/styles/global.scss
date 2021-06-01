@@ -1,0 +1,63 @@
+@import 'abstract/color';
+@import 'abstract/font';
+@import 'abstract/mixins';
+
+@import 'components/buttons';
+
+@import 'layout/footer';
+@import 'layout/landing';
+
+@import 'pages/home';
+
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+
+body{
+  font-family: 'SFPro' !important;
+}
+
+// .container {
+//   width: 100%;
+//   margin: 0 auto;
+// }
+
+// @media screen and (min-width: 450px) {
+//   .container {
+//     width: 100%;
+//   }
+// }
+
+// @media screen and (min-width: 576px) {
+//   .container {
+//     max-width: 540px;
+//   }
+// }
+
+// @media screen and (min-width: 768px) {
+//   .container {
+//     max-width: 720px;
+//   }
+// }
+
+// @media screen and (min-width: 992px) {
+//   .container {
+//     max-width: 960px;
+//   }
+// }
+
+// @media screen and (min-width: 1200px) {
+//   .container {
+//     max-width: 1140px;
+//   }
+// }
+
+// @media screen and (min-width: 1440px) {
+//   .container {
+//     max-width: 1400px;
+//   }
+// }
