@@ -1,26 +1,75 @@
 <template>
-  <div class="snx-hero-banner">
-    <div class="container">
-      <div class="flex">
-        <div class="lg:w-1/2">
-          <div class="snx-hero-content">
-            <h1 class="snx-hero-content__title">Buy and Sell Crypto</h1>
-            <h1 class="snx-hero-content__title">the easy way.</h1>
-            <p class="snx-hero-content__subtitle">
-              SenexPay offers you a secure and easy way to make crypto-fiat
-              exchange without any hassle.
-            </p>
-            <div class="snx-hero-content__btn_holder">
-              <router-link to="/register" class="register_btn"
-                >Create your account</router-link
+  <div>
+    <div class="snx-hero-banner">
+      <div class="container">
+        <div class="block lg:flex">
+          <div class="w-full lg:w-3/5 snx-hero-content-holder">
+            <div class="snx-hero-content">
+              <h1 class="snx-hero-content__title">Buy and Sell Crypto</h1>
+              <h1 class="snx-hero-content__title">the easy way.</h1>
+              <p class="snx-hero-content__subtitle">
+                SenexPay offers you a secure and easy way to make crypto-fiat
+                exchange without any hassle.
+              </p>
+              <div class="snx-hero-content__btn_holder">
+                <router-link to="/register" class="register_btn"
+                  >Create your account</router-link
+                >
+                <router-link to="/trading" class="trading_btn"
+                  >Start trading</router-link
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-2/5 flex snx-hero-atom-holder">
+            <div class="atom-holder mx-auto lg:ml-auto lg:mr-0">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1000 1000"
+                width="500"
+                class="atom"
               >
-              <router-link to="/trading" class="trading_btn"
-                >Start trading</router-link
-              >
+                <circle
+                  class="ring"
+                  r="120"
+                  cx="500"
+                  cy="500"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="3"
+                />
+                <circle
+                  class="ring"
+                  r="240"
+                  cx="500"
+                  cy="500"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="3"
+                />
+                <circle
+                  class="ring"
+                  r="360"
+                  cx="500"
+                  cy="500"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="3"
+                />
+                <circle
+                  class="ring"
+                  r="480"
+                  cx="500"
+                  cy="500"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="3"
+                />
+              </svg>
             </div>
           </div>
         </div>
-        <div class="lg:w-1/2"></div>
       </div>
     </div>
   </div>

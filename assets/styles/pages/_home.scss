@@ -5,8 +5,12 @@
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 650px;
+  min-height: calc(100vh - 70px);
   overflow-y: auto;
+  @include flexcon(center, left, row);
+}
+
+.snx-hero-content-holder {
   @include flexcon(center, left, row);
 }
 
@@ -71,11 +75,50 @@
 
 }
 
+.snx-hero-atom-holder {
+  position: relative;
+  display: flex;
+  justify-content: right;
+}
+
+.atom-holder {
+  // border: 1px solid yellow;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-height: 400px;
+}
+
+.atom {
+  height: 100%;
+  width: 100%;
+  // border: 1px solid green;
+}
+
 @media screen and(max-height: 800px) {
   .snx-hero-banner {
     width: 100%;
     height: auto;
     overflow: auto;
-    min-height: 550px !important;
+    // min-height: 550px !important;
+  }
+}
+
+@media screen and(min-height: 890px) {
+  .snx-hero-atom-holder {
+    padding: 108px 0;
+  }
+  .atom-holder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-height: 800px;
+  }
+
+  .atom {
+    height: 100%;
+    // width: 100%;
   }
 }
