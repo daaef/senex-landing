@@ -21,7 +21,9 @@
               </div>
             </div>
           </div>
-          <div class="w-full lg:w-2/5 flex snx-hero-atom-holder">
+          <div
+            class="w-full lg:w-2/5 mt-2 mb-8 lg:my-0 flex snx-hero-atom-holder"
+          >
             <div class="atom-holder mx-auto lg:ml-auto lg:mr-0">
               <svg
                 version="1.1"
@@ -72,11 +74,22 @@
         </div>
       </div>
     </div>
+    <!-- Crypocurrencies and amounts -->
+    <div class="coin-section">
+      <div class="container overflow-con">
+        <coin-price></coin-price>
+        <coin-price></coin-price>
+        <coin-price></coin-price>
+        <coin-price></coin-price>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import CoinPrice from '~/components/home/CoinPrice.vue'
 export default {
+  components: { CoinPrice },
   layout: 'landing'
 }
 </script>

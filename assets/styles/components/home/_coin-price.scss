@@ -1,0 +1,117 @@
+.coin-holder {
+  background-color: #1c3e71;
+  color: $color_white;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow-x: auto;
+  @include flexcon(center, left, row);
+
+  &__coin-image-con {
+    display: block;
+    margin-right: 10px;
+    min-width: 50px;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  &__coin-name-con {
+    @include flexcon(center, center, column);
+
+    .title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+
+  &__coin-price-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 20px;
+
+    .amount {
+      font-size: $font18;
+      font-weight: 500;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+    .action-buy {
+      @include custom-btn(#06a84b,$color_white,#06a84b);
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+
+    .action-sell {
+      @include custom-btn(#ff5f24,$color_white,#ff5f24);
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media screen and(max-width: 500px) {
+  .coin-holder{
+    padding: 20px 5px;
+
+    &__coin-image-con {
+      display: block;
+      margin-right: 5px;
+      min-width: 25px;
+  
+      img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+      }
+    }
+
+    &__coin-name-con {
+      .title {
+        font-size: 12px;
+        font-weight: 500;
+      }
+  
+      .subtitle {
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+
+    &__coin-price-con {
+      margin: 0 10px;
+  
+      .amount {
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-right: 5px;
+      }
+  
+      .action-buy {
+        @include custom-btn(#06a84b,$color_white,#06a84b);
+        padding: 10px;
+        margin-top: 10px;
+      }
+  
+      .action-sell {
+        @include custom-btn(#ff5f24,$color_white,#ff5f24);
+        padding: 10px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
