@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="snx-hero-banner">
-      <div class="container">
+      <div class="container mx-auto">
         <div class="block lg:flex">
           <div class="w-full lg:w-3/5 snx-hero-content-holder">
             <div class="snx-hero-content">
@@ -40,6 +40,7 @@
                   fill="none"
                   stroke="#fff"
                   stroke-width="3"
+                  opacity="0.3"
                 />
                 <circle
                   class="ring"
@@ -49,6 +50,7 @@
                   fill="none"
                   stroke="#fff"
                   stroke-width="3"
+                  opacity="0.3"
                 />
                 <circle
                   class="ring"
@@ -58,6 +60,7 @@
                   fill="none"
                   stroke="#fff"
                   stroke-width="3"
+                  opacity="0.3"
                 />
                 <circle
                   class="ring"
@@ -67,6 +70,7 @@
                   fill="none"
                   stroke="#fff"
                   stroke-width="3"
+                  opacity="0.3"
                 />
               </svg>
             </div>
@@ -76,11 +80,91 @@
     </div>
     <!-- Crypocurrencies and amounts -->
     <div class="coin-section">
-      <div class="container overflow-con">
+      <div class="container mx-auto overflow-con">
         <coin-price></coin-price>
         <coin-price></coin-price>
         <coin-price></coin-price>
         <coin-price></coin-price>
+      </div>
+    </div>
+    <!-- Descriptions -->
+    <div>
+      <!-- Description 1 -->
+      <div class="block snx-description-con container lg:flex lg:pr-0">
+        <div class="lg:w-1/2">
+          <div class="snx-description lg:w-4/5">
+            <p class="snx-description__title">
+              It’s so easy, you can do it on the floor
+            </p>
+            <p class="snx-description__subtitle">
+              Trading your Cryptocurrency on Senexpay is so easy that you do not
+              need to be a Crypto guru to do it yourself. We believe life should
+              be as easy as it can be.
+            </p>
+          </div>
+        </div>
+        <div class="lg:w-1/2 snx-description-img-con">
+          <img src="/img/senepay-og.png" />
+        </div>
+      </div>
+      <!-- Description 2 -->
+      <div class="bg-grey">
+        <!-- Large screen -->
+        <div class="block snx-description-con container hidden lg:flex">
+          <div class="lg:w-1/2 snx-description-img-con">
+            <img src="/img/senepay-og.png" />
+          </div>
+          <div class="lg:w-1/2">
+            <div class="snx-description lg:w-4/5 mx-auto">
+              <p class="snx-description__title">
+                The most trusted crypto platform.
+              </p>
+              <p class="snx-description__subtitle">
+                We make it possible for you to accept airtime as payment on your
+                website and we convert it into cash for you - straight to your
+                wallet.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Small Screen -->
+        <div class="block snx-description-con container lg:hidden">
+          <div class="lg:w-1/2">
+            <div class="snx-description lg:w-4/5 mx-auto">
+              <p class="snx-description__title">
+                The most trusted crypto platform.
+              </p>
+              <p class="snx-description__subtitle">
+                We make it possible for you to accept airtime as payment on your
+                website and we convert it into cash for you - straight to your
+                wallet.
+              </p>
+            </div>
+          </div>
+          <div class="lg:w-1/2 snx-description-img-con">
+            <img src="/img/senepay-og.png" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Description 3 -->
+
+      <div class="block snx-description-con container lg:flex lg:pr-0">
+        <div class="lg:w-1/2">
+          <div class="snx-description lg:w-4/5">
+            <p class="snx-description__title">We are serious about Security.</p>
+            <p class="snx-description__subtitle">
+              Candy lets you sell your airtime online in no time with just a
+              little discount. Get paid in your Candy wallet and send to your
+              bank account anytime you wish.
+            </p>
+          </div>
+        </div>
+        <div class="lg:w-1/2 flex">
+          <div class="lg:w-2/3 m-auto snx-description-img-con">
+            <img src="/img/senepay-og.png" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
