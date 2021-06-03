@@ -90,7 +90,7 @@
     <!-- Descriptions -->
     <div>
       <!-- Description 1 -->
-      <div class="block snx-description-con container lg:flex lg:pr-0">
+      <div class="block snx-description-con sdc-pb container lg:flex lg:pr-0">
         <div class="lg:w-1/2">
           <div class="snx-description lg:w-4/5">
             <p class="snx-description__title">
@@ -149,7 +149,7 @@
 
       <!-- Description 3 -->
 
-      <div class="block snx-description-con container lg:flex lg:pr-0">
+      <div class="block snx-description-con sdc-pb container lg:flex lg:pr-0">
         <div class="lg:w-1/2">
           <div class="snx-description lg:w-4/5">
             <p class="snx-description__title">We are serious about Security.</p>
@@ -167,13 +167,16 @@
         </div>
       </div>
     </div>
+    <!-- Footer -->
+    <landing-footer></landing-footer>
   </div>
 </template>
 
 <script>
 import CoinPrice from '~/components/home/CoinPrice.vue'
+import LandingFooter from '~/components/LandingFooter.vue'
 export default {
-  components: { CoinPrice },
+  components: { CoinPrice, LandingFooter },
   layout: 'landing'
 }
 </script>
