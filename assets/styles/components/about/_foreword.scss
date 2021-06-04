@@ -1,0 +1,11 @@
+.foreword-con {
+  @include flexcon(left, flex-start, column);
+  border: 1px solid red;
+
+  h1 {
+    font-size: 48px;
+    line-height: 1em;
+    color: $primary_color;
+    font-weight: bold;
+  }
+}

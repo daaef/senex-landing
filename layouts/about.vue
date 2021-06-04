@@ -1,7 +1,9 @@
 <template>
   <div>
     <Nav />
-    <Nuxt />
+    <div class="nav-margin-top">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -27,5 +29,9 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.nav-margin-top {
+  margin-top: 75px;
 }
 </style>
