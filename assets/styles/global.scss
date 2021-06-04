@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'abstract/color';
 @import 'abstract/font';
 @import 'abstract/mixins';
@@ -31,28 +32,53 @@ body{
   // margin: 0 auto;
 }
 
+// .container-R {
+//   width: 100%;
+// }
+
 @media screen and (min-width: 450px) {
   .container {
     width: 100%;
   }
+  // .container-R {
+  //   width: 100%;
+  // }
 }
 
 @media screen and (min-width: 640px) {
   .container {
     max-width: 640px;
   }
+  // .container-R {
+  //   margin-left: calc(100vw / 640px);
+  //   width: 100%;
+  // }
 }
 
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
+  // .container-R {
+  //   margin-left: calc(100vw / 768px);
+  //   width: 100%;
+  // }
 }
 
 @media screen and (min-width: 1024px) {
   .container {
     max-width: 1024px;
   }
+  // $w: 100px;
+  // $v: 100vw;
+  // .container-R {
+  //   $a: calc(100vw + 1px);// calc(#{math.div(1024, 100vw)});
+  //   $b: calc(#{math.div($a, 2)});
+  //   max-width: calc(100px * #{math.div(100vw, 1vw)});
+  //   // max-width: 1024px;
+  //   border: 1px solid red;
+  //   // width: 100%
+  // }
 }
 
 @media screen and (min-width: 1280px) {

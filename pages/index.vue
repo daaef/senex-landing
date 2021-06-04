@@ -104,7 +104,7 @@
           </div>
         </div>
         <div class="lg:w-1/2 snx-description-img-con">
-          <img src="/img/senepay-og.png" />
+          <img src="/img/landing-page-girl.png" />
         </div>
       </div>
       <!-- Description 2 -->
@@ -112,7 +112,7 @@
         <!-- Large screen -->
         <div class="block snx-description-con container hidden lg:flex">
           <div class="lg:w-1/2 snx-description-img-con">
-            <img src="/img/senepay-og.png" />
+            <img src="/img/landing-page-boy.png" />
           </div>
           <div class="lg:w-1/2">
             <div class="snx-description lg:w-4/5 mx-auto">
@@ -142,7 +142,7 @@
             </div>
           </div>
           <div class="lg:w-1/2 snx-description-img-con">
-            <img src="/img/senepay-og.png" />
+            <img src="/img/landing-page-boy.png" />
           </div>
         </div>
       </div>
@@ -161,8 +161,8 @@
           </div>
         </div>
         <div class="lg:w-1/2 flex">
-          <div class="lg:w-2/3 m-auto snx-description-img-con">
-            <img src="/img/senepay-og.png" />
+          <div class="lg:w-1/2 m-auto snx-description-img-con">
+            <img src="/img/landing-password.png" />
           </div>
         </div>
       </div>
