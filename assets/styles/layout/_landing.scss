@@ -8,8 +8,6 @@
   left: 0;
   right: 0;
   height: 75px;
-  background-color: $primary_color;
-  color: $color_white;
   font-size: 18px;
   @include flexcon(center, left, row);
 

@@ -167,6 +167,10 @@
         </div>
       </div>
     </div>
+    <!-- Reviews -->
+    <review></review>
+    <!-- Mobile App Banner -->
+    <mobile-app-banner></mobile-app-banner>
     <!-- Footer -->
     <landing-footer></landing-footer>
   </div>
@@ -174,9 +178,11 @@
 
 <script>
 import CoinPrice from '~/components/home/CoinPrice.vue'
+import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
+import Review from '~/components/home/Review.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 export default {
-  components: { CoinPrice, LandingFooter },
+  components: { CoinPrice, LandingFooter, Review, MobileAppBanner },
   layout: 'landing'
 }
 </script>

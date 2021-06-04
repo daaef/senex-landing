@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <Nav :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }" />
+  <div>
+    <Nav />
     <Nuxt />
   </div>
 </template>
