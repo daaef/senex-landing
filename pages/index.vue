@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="snx-hero-banner">
-      <div class="container mx-auto">
+      <div class="container">
         <div class="block lg:flex">
           <div class="w-full lg:w-3/5 snx-hero-content-holder">
             <div class="snx-hero-content">
@@ -90,8 +90,8 @@
     <!-- Descriptions -->
     <div>
       <!-- Description 1 -->
-      <div class="block snx-description-con sdc-pb container lg:flex lg:pr-0">
-        <div class="lg:w-1/2">
+      <div class="block snx-description-con sdc-pb container-R lg:flex lg:pr-0">
+        <div class="lg:w-1/2 container-R__padding">
           <div class="snx-description lg:w-4/5">
             <p class="snx-description__title">
               It’s so easy, you can do it on the floor
