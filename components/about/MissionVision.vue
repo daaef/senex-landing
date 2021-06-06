@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <div class="container">
+  <div class="container">
+    <div class="mission-container">
       <div class="lg:flex">
-        <div class="our-mission-con lg:w-1/2">
-          <img src="atom.svg" alt="skip" />
-          <h3>Our Mission</h3>
+        <div class="our-mission-con">
+          <div class="double-arrow">
+            <img src="img/about/double-right-arrow.svg" alt="skip" />
+          </div>
           <span>
+            <h2>Our Mission</h2>
             <p>
               Our mission is to establish a fully automated, fast, easy,
               decentralized, and secure digital payment infrastructure and
@@ -13,9 +15,12 @@
             </p>
           </span>
         </div>
-        <div class="our-vision lg:w-1/2">
-          <h3>Our Vision</h3>
+        <div class="our-vision-con">
+          <div class="green-eye">
+            <img src="img/about/green-eye.svg" alt="eye" />
+          </div>
           <span>
+            <h2>Our Vision</h2>
             <p>
               Our mission is to establish a fully automated, fast, easy,
               decentralized, and secure digital payment infrastructure and

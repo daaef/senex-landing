@@ -1,6 +1,10 @@
+.foreword-holder {
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
 .foreword-con {
-  @include flexcon(left, flex-start, column);
-  border: 1px solid red;
+  @include flexcon(left, flex-end, column);
 
   h1 {
     font-size: 48px;
@@ -26,29 +30,36 @@
   }
 
   .first-para {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
   }
 }
 
 .foreword-img {
-  @include flexcon(right, flex-start, column);
-  border: 1px solid blue; 
-  position: relative;
+  @include flexcon(right, flex-start, column);  
+  margin-top: 30px;
 
-  .dotted-img {
-    position: absolute;
-    top: -10px;
-    right:-20px;
-    border: 1px solid green;
-    width: 50%;
-    height: 50%;
-  }
+  .forward-img-con {
+    position: relative;
+    padding-top: 8.5%;
+    .dotted-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+  
+      img {
+        width: 100%;
+      }
+    }
 
-  .C.E.O-img {
-    position: absolute;
-    top: 0;
-    border: greenyellow;
-    width: 100%;
-    height: 100%;
+    .ceo-img {
+      position: relative;
+      width: 88%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }

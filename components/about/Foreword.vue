@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="lg:flex">
+      <div class="lg:flex foreword-holder">
         <div class="foreword-con lg:w-1/2">
           <h1>From our C.E.O</h1>
           <span>
@@ -22,11 +22,13 @@
           </span>
         </div>
         <div class="foreword-img lg:w-1/2">
-          <div class="dotted-img">
-            <img src="/img/dotted-grid.png" alt="img-design" />
-          </div>
-          <div class="C.E.O-img">
-            <img src="/img/landing-page-boy.png" alt="C.E.O" />
+          <div class="lg:w-4/5 forward-img-con ml-auto">
+            <div class="dotted-img">
+              <img src="/img/dotted-grid.png" alt="img-design" />
+            </div>
+            <div class="ceo-img">
+              <img src="/img/about/ceo.png" alt="C.E.O" />
+            </div>
           </div>
         </div>
       </div>
