@@ -167,8 +167,12 @@
         </div>
       </div>
     </div>
+    <!-- Why Senex -->
+    <why-senex></why-senex>
     <!-- Reviews -->
     <review></review>
+    <!-- Landing video -->
+    <div class="container-full"></div>
     <!-- Mobile App Banner -->
     <mobile-app-banner></mobile-app-banner>
     <!-- Footer -->
@@ -180,9 +184,10 @@
 import CoinPrice from '~/components/home/CoinPrice.vue'
 import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
 import Review from '~/components/home/Review.vue'
+import WhySenex from '~/components/home/WhySenex.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 export default {
-  components: { CoinPrice, LandingFooter, Review, MobileAppBanner },
+  components: { CoinPrice, LandingFooter, Review, MobileAppBanner, WhySenex },
   layout: 'landing'
 }
 </script>
