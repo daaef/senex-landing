@@ -1,11 +1,65 @@
+.foreword-holder {
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
 .foreword-con {
-  @include flexcon(left, flex-start, column);
-  border: 1px solid red;
+  @include flexcon(left, flex-end, column);
 
   h1 {
     font-size: 48px;
     line-height: 1em;
     color: $primary_color;
     font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    color: $primary_color;
+    font-weight: bold;
+  }
+
+  h5 {
+    color: #4D6B9B;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $primary_color;
+  }
+
+  .first-para {
+    margin-bottom: 50px;
+  }
+}
+
+.foreword-img {
+  @include flexcon(right, flex-start, column);  
+  margin-top: 30px;
+
+  .forward-img-con {
+    position: relative;
+    padding-top: 8.5%;
+    .dotted-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+  
+      img {
+        width: 100%;
+      }
+    }
+
+    .ceo-img {
+      position: relative;
+      width: 88%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }
