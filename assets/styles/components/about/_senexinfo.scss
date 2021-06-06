@@ -1,0 +1,17 @@
+.info-words {
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 550px;
+}
+
+.info-statistics {
+  font-size: x-large;
+  font-weight: bold;
+
+  .year, .employees, .transactions, .countries {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}
