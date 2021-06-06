@@ -9,6 +9,7 @@
 @import 'components/home/reviews';
 @import 'components/home/mobile-app-banner';
 @import 'components/home/coin-price';
+@import 'components/home/why-senex';
 @import 'components/about/foreword';
 @import 'components/about/mission-vision';
 @import 'components/about/senexinfo';
@@ -37,6 +38,11 @@ body{
   // margin: 0 auto;
 }
 
+.container-full {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .container-R {
   width: 100%;
 
@@ -59,6 +65,9 @@ body{
   .container {
     width: 100%;
   }
+  .container-full {
+    width: 100%;
+  }
   .container-R {
     width: 100%;
     padding-left: 0;
@@ -76,6 +85,11 @@ body{
   .container {
     max-width: 640px;
   }
+
+  .container-full {
+    max-width: 640px;
+  }
+
   .container-R {
     max-width: calc(640px + ((98.5vw - 640px) / 2));
     margin-left: calc((99vw - 640px) / 2);
@@ -106,6 +120,11 @@ body{
   .container {
     max-width: 768px;
   }
+
+  .container-full {
+    max-width: 768px;
+  }
+
   .container-R {
     max-width: calc(768px + ((98.5vw - 768px) / 2));
     margin-left: calc((99vw - 768px) / 2);
@@ -123,6 +142,10 @@ body{
     max-width: 1024px;
   }
 
+  .container-full {
+    max-width: 1024px;
+  }
+
   .container-R {
     max-width: calc(1024px + ((98.5vw - 1024px) / 2));
     margin-left: calc((99vw - 1024px) / 2);
@@ -137,6 +160,10 @@ body{
 
 @media screen and (min-width: 1280px) {
   .container {
+    max-width: 1280px;
+  }
+
+  .container-full {
     max-width: 1280px;
   }
 
