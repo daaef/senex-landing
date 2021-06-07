@@ -51,14 +51,25 @@
 
     .action-buy {
       @include custom-btn(#06a84b,$color_white,#06a84b);
+      opacity: 0.9;
       padding: 10px 20px;
+      // margin-top: 10px;
+    }
+
+    .action-buy:hover {
+      opacity: 1;
       // margin-top: 10px;
     }
 
     .action-sell {
       @include custom-btn(#ff5f24,$color_white,#ff5f24);
       padding: 10px 20px;
+      opacity: 0.9;
       // margin-top: 10px;
+    }
+
+    .action-sell:hover {
+      opacity: 1;
     }
   }
 }

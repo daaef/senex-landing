@@ -34,10 +34,17 @@
     }
 
     &__arrow-con {
-      display: block;
-      border: 1px solid white;
+      display: flex;
       height: 30px;
       margin-top: 5px;
+
+      img {
+        cursor: pointer;
+      }
+
+      .right-img {
+        margin-left: auto;
+      }
     }
   }
 }
