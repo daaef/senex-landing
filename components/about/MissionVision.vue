@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="mission-container">
-      <div class="lg:flex">
-        <div class="our-mission-con">
+      <div class="lg:flex justify-center">
+        <div class="our-mission-con lg:mr-12">
           <div class="double-arrow">
             <img src="img/about/double-right-arrow.svg" alt="skip" />
           </div>
@@ -15,8 +15,8 @@
             </p>
           </span>
         </div>
-        <div class="our-vision-con">
-          <div class="green-eye">
+        <div class="our-mission-con">
+          <div class="double-arrow">
             <img src="img/about/green-eye.svg" alt="eye" />
           </div>
           <span>
