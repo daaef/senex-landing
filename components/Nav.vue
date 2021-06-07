@@ -46,7 +46,7 @@
             </div>
           </nav>
         </div>
-        <span class="hamburger-con inline-block lg:hidden"
+        <span class="hamburger-con inline-block lg:hidden" @click="openSide"
           ><img src="/img/hamburger.svg"
         /></span>
       </div>
@@ -69,6 +69,11 @@ export default {
   },
   data() {
     return {}
+  },
+  methods: {
+    openSide() {
+      this.$emit('toggle-side')
+    }
   }
 }
 </script>

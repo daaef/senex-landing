@@ -1,12 +1,29 @@
 <template>
   <div class="">
-    <Nav :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }" />
-    <Nuxt />
+    <SideNav v-if="showSide" @toggle-side="toggleSide" />
+    <div v-else>
+      <Nav
+        :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
+        @toggle-side="toggleSide"
+      />
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      showSide: false
+    }
+  },
+  methods: {
+    toggleSide() {
+      this.showSide = !this.showSide
+    }
+  }
+}
 </script>
 
 <style>
