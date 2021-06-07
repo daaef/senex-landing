@@ -12,40 +12,50 @@
               <div class="links-and-headers w-1/2 md:w-1/3">
                 <h1 class="header">Company</h1>
                 <ul>
-                  <li><router-link to="/">About</router-link></li>
-                  <li><router-link to="/">Press</router-link></li>
-                  <li><router-link to="/">Blog</router-link></li>
-                  <li><router-link to="/">Careers</router-link></li>
+                  <li><router-link to="/about">About</router-link></li>
+                  <li><router-link to="/press">Press</router-link></li>
+                  <li><router-link to="/blog">Blog</router-link></li>
+                  <li><router-link to="/careers">Careers</router-link></li>
                 </ul>
               </div>
               <div class="links-and-headers w-1/2 md:w-1/3">
                 <h1>Support</h1>
                 <ul>
-                  <li><router-link to="/">FAQ</router-link></li>
-                  <li><router-link to="/">Contact</router-link></li>
-                  <li><router-link to="/">Learn</router-link></li>
+                  <li><router-link to="/faq">FAQ</router-link></li>
+                  <li><router-link to="/contact">Contact</router-link></li>
+                  <li><router-link to="/learn">Learn</router-link></li>
                 </ul>
               </div>
               <div class="links-and-headers w-1/2 md:w-1/3">
                 <h1>Legal</h1>
                 <ul>
-                  <li><router-link to="/">Terms & Privacy</router-link></li>
-                  <li><router-link to="/">FAQ</router-link></li>
-                  <li><router-link to="/">FAQ</router-link></li>
+                  <li>
+                    <router-link to="/terms">Terms & Privacy</router-link>
+                  </li>
+                  <li><router-link to="/faq">FAQ</router-link></li>
+                  <li><router-link to="/faq">FAQ</router-link></li>
                 </ul>
               </div>
               <div class="links-and-headers w-1/2 md:w-1/3">
                 <h1>Knowledge</h1>
                 <ul>
-                  <li><router-link to="/">Fee & Charges</router-link></li>
-                  <li><router-link to="/">Affiliates</router-link></li>
+                  <li>
+                    <router-link to="/charges">Fee & Charges</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/affiliates">Affiliates</router-link>
+                  </li>
                 </ul>
               </div>
               <div class="links-and-headers w-1/2 md:w-1/3">
                 <h1>Conglomerates</h1>
                 <ul>
-                  <li><router-link to="/">Senex Smart Homes</router-link></li>
-                  <li><router-link to="/">Senex Autos</router-link></li>
+                  <li>
+                    <router-link to="/smart-homes"
+                      >Senex Smart Homes</router-link
+                    >
+                  </li>
+                  <li><router-link to="/autos">Senex Autos</router-link></li>
                 </ul>
               </div>
             </div>
@@ -59,8 +69,8 @@
               /></span>
               <span class="copyright">Senexpay © 2021</span>
               <div>
-                <router-link to="/">Terms of Service | </router-link>
-                <router-link to="/">Privacy Policy</router-link>
+                <router-link to="/terms">Terms of Service | </router-link>
+                <router-link to="/privacy">Privacy Policy</router-link>
               </div>
             </div>
           </div>
