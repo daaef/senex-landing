@@ -5,6 +5,7 @@
     <senex-info></senex-info>
     <gallery></gallery>
     <join-learn></join-learn>
+    <crypto-buddy></crypto-buddy>
     <landing-footer></landing-footer>
   </div>
 </template>
@@ -13,16 +14,18 @@
 import Foreword from '~/components/about/Foreword.vue'
 import MissionVision from '~/components/about/MissionVision.vue'
 import SenexInfo from '~/components/about/SenexInfo.vue'
-import gallery from '~/components/about/Gallery.vue'
+import Gallery from '~/components/about/Gallery.vue'
 import JoinLearn from '~/components/about/JoinLearn.vue'
+import CryptoBuddy from '~/components/about/CryptoBuddy.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 export default {
   components: {
     Foreword,
     MissionVision,
     SenexInfo,
-    gallery,
+    Gallery,
     JoinLearn,
+    CryptoBuddy,
     LandingFooter
   },
   layout: 'about'

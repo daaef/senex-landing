@@ -1,0 +1,42 @@
+.register-btn-abt {
+  @include custom-btn(#ffffff,#2E4AE7,$secondary_color);
+  padding: 8px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+  margin-bottom: 50px;
+}
+
+.register-btn-abt:hover {
+  @include custom-btn(#ffffff,#234684,transparent);
+}
+
+.background-blue {
+  background-color: #2E4AE7;
+}
+
+.word-con-abt {
+  color: #FFFFFF;
+  text-align: center;
+
+  h2 {
+    font-weight: bold;
+    font-size: 45px;
+
+  }
+
+  .cap-abt {
+    padding-top: 35px;
+  }
+
+  .lower-case-abt {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+
+  span {
+    max-width: 675px;
+    display: block;
+    margin: auto;
+  }
+}

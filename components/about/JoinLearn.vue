@@ -15,6 +15,9 @@
               </p>
             </span>
           </div>
+          <div class="arrow">
+            <img src="img/awesome-arrow-right.svg" alt="arrow" />
+          </div>
         </div>
         <div class="join green">
           <div class="diamond">
@@ -28,6 +31,9 @@
                 decentralized, and secure digital payment
               </p>
             </span>
+          </div>
+          <div class="arrow">
+            <img src="img/awesome-arrow-right.svg" alt="arrow" />
           </div>
         </div>
       </div>

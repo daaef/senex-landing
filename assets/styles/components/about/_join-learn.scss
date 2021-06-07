@@ -8,8 +8,10 @@
   padding: 20px;
   color: white;
   margin: 0 auto;
+  margin-bottom: 20px;
   width: 100%;
   max-width: 480px;
+  position: relative;
 
   h2 {
     font-weight: bold;
@@ -39,4 +41,16 @@
 
 .green {
   background-color: #09AD87;
+}
+
+.arrow {
+  max-width: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
 }
