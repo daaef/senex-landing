@@ -15,7 +15,7 @@
                   <li><router-link to="/">About</router-link></li>
                   <li><router-link to="/">Press</router-link></li>
                   <li><router-link to="/">Blog</router-link></li>
-                  <li><router-link to="/">Careers</router-link></li>
+                  <li><router-link to="/careers">Careers</router-link></li>
                 </ul>
               </div>
               <div class="links-and-headers w-1/2 md:w-1/3">
