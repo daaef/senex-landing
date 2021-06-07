@@ -1,0 +1,81 @@
+.car-star {
+  width: 20px;
+  height: 20px;
+
+
+  img {
+    width: 100%;
+  }
+}
+.foreword-holder-car {
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.foreword-con-car {
+  @include flexcon(left, flex-start, column);
+  
+  h3 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  h2 {
+    font-size: 48px;
+    line-height: 1em;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .words-car {
+    max-width: 500px;
+    color: #242426;
+    margin-top: 100px;
+  }
+
+  .img-word-car {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.foreword-img-car {
+  @include flexcon(right, flex-start, column);  
+  margin-top: 30px;
+
+  .forward-img-con-car {
+    position: relative;
+    padding-top: 8.5%;
+
+    .dotted-img-car {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+  
+      img {
+        width: 100%;
+      }
+    }
+
+    .ceo-img-car {
+      position: relative;
+      width: 88%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.register-btn-car {
+  @include custom-btn(linear-gradient(to right, #162F55, #2D5491),#ffffff,$secondary_color);
+  padding: 8px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+  margin-bottom: 50px;
+  max-width: 200px;
+}

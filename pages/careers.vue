@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import CoreValues from '~/components/careers/CoreValues'
+import CoreValues from '~/components/careers/CoreValues.vue'
 export default {
   components: { CoreValues },
   layout: 'about'
