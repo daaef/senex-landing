@@ -1,7 +1,7 @@
 <template>
   <div>
     <SideNav :is-open="showSide" @toggle-side="toggleSide" />
-    <div>
+    <div :class="showSide ? 'lock-scroll' : ''">
       <Nav
         :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
         @toggle-side="toggleSide"

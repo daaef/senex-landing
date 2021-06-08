@@ -11,7 +11,11 @@
               <h3>Careers at Senexpay</h3>
             </div>
             <h2>Empower people to bring their creative visions to life.</h2>
-            <button type="button" class="btn register-btn-car">
+            <button
+              type="button"
+              class="btn register-btn-car"
+              @click="openModal"
+            >
               View open positions
             </button>
           </div>
@@ -32,7 +36,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    openModal() {
+      this.$emit('open-modal')
+    }
+  }
+}
 </script>
 
 <style></style>

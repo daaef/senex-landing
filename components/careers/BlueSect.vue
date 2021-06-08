@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="blue-background-bs">
-        <button type="button" class="btn register-btn-bs">
+        <button type="button" class="btn register-btn-bs" @click="openModal">
           View open positions
         </button>
       </div>
@@ -11,7 +11,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    openModal() {
+      this.$emit('open-modal')
+    }
+  }
+}
 </script>
 
 <style></style>

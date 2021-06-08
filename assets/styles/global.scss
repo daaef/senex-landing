@@ -22,8 +22,10 @@
 @import 'components/careers/impactful-work';
 @import 'components/careers/senex-job';
 @import 'components/careers/blue-sect';
-@import 'components/faq/faq-item';
 @import 'components/careers/job-position';
+@import 'components/careers/job-modal';
+@import 'components/faq/faq-item';
+
 
 @import 'layout/footer';
 @import 'layout/landing';
@@ -41,6 +43,11 @@
 
 body{
   font-family: 'SFPro' !important;
+}
+
+.lock-scroll {
+  height: 50vh !important;
+  overflow: hidden;
 }
 
 .container {

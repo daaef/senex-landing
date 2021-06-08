@@ -1,0 +1,36 @@
+.job-modal-show {
+  bottom: 0 !important;
+}
+
+.job-modal-con {
+  background-color: $primary_color;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  bottom: -100vh;
+  overflow: auto;
+  position: fixed;
+  z-index: 1000;
+  transition: bottom 1s;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__header {
+    background-color: $primary_color;
+    .arrow-down {
+      display: inline-block;
+      width: 25px;
+      margin-bottom: 25px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+  }
+}
