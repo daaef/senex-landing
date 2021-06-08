@@ -5,17 +5,65 @@
         <h2>Working at Senexpay</h2>
       </div>
       <div class="grid lg:grid-cols-2 lg:gap-14">
-        <div class="my-4 lg:my-0">
+        <div class="my-4 lg:my-0 snx-jobs-img-con">
           <img src="img/careers/working-1.png" alt="work" />
+          <div class="img-overlay">
+            <div class="impact-iw">
+              <h2>Impactful work</h2>
+              <span>
+                <p>
+                  Our mission is to establish a fully automated, fast, easy,
+                  decentralized, and secure digital payment infrastructure and
+                  solutions across Africa.
+                </p>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="my-4 lg:my-0">
+        <div class="my-4 lg:my-0 snx-jobs-img-con">
           <img src="img/careers/working-2.png" alt="work" />
+          <div class="img-overlay">
+            <div class="impact-iw">
+              <h2>Impactful work</h2>
+              <span>
+                <p>
+                  Our mission is to establish a fully automated, fast, easy,
+                  decentralized, and secure digital payment infrastructure and
+                  solutions across Africa.
+                </p>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="my-4 lg:my-0">
+        <div class="my-4 lg:my-0 snx-jobs-img-con">
           <img src="img/careers/working-3.png" alt="work" />
+          <div class="img-overlay">
+            <div class="impact-iw">
+              <h2>Impactful work</h2>
+              <span>
+                <p>
+                  Our mission is to establish a fully automated, fast, easy,
+                  decentralized, and secure digital payment infrastructure and
+                  solutions across Africa.
+                </p>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="my-4 lg:my-0">
+        <div class="my-4 lg:my-0 snx-jobs-img-con">
           <img src="img/careers/working-4.png" alt="work" />
+          <div class="img-overlay">
+            <div class="impact-iw">
+              <h2>Impactful work</h2>
+              <span>
+                <p>
+                  Our mission is to establish a fully automated, fast, easy,
+                  decentralized, and secure digital payment infrastructure and
+                  solutions across Africa.
+                </p>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

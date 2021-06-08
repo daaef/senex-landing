@@ -1,14 +1,29 @@
 <template>
   <div>
-    <Nav />
+    <SideNav :is-open="showSide" @toggle-side="toggleSide" />
     <div class="nav-margin-top">
+      <Nav
+        :theme="{ backgroundColor: '#FFFFFF', color: '#162F55' }"
+        @toggle-side="toggleSide"
+      />
       <Nuxt />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      showSide: false
+    }
+  },
+  methods: {
+    toggleSide() {
+      this.showSide = !this.showSide
+    }
+  }
+}
 </script>
 
 <style>

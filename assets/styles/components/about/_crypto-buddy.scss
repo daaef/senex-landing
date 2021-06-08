@@ -10,13 +10,21 @@
   @include custom-btn(#ffffff,#234684,transparent);
 }
 
-.background-blue {
+.crypto-buddy-background {
   background-color: #2E4AE7;
+  overflow: hidden;
 }
 
 .word-con-abt {
   color: #FFFFFF;
   text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__content {
+    margin: 0 auto;
+    max-width: 675px;
+  }
 
   h2 {
     font-weight: bold;
@@ -33,10 +41,34 @@
     margin-top: 15px;
     margin-bottom: 25px;
   }
+}
 
-  span {
-    max-width: 675px;
-    display: block;
-    margin: auto;
+.crypto-buddy-mobile {
+  transform: rotate(36deg);
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  top: -32%;
+  right: -2%;
+  width: 200px;
+  // overflow: hidden;
+  .up {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    
+    img {
+      width: 100%;
+    }
+  }
+
+  .down {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    
+    img {
+      width: 100%;
+    }
   }
 }

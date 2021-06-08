@@ -1,7 +1,7 @@
 <template>
-  <div class="">
-    <SideNav v-if="showSide" @toggle-side="toggleSide" />
-    <div v-else>
+  <div>
+    <SideNav :is-open="showSide" @toggle-side="toggleSide" />
+    <div>
       <Nav
         :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
         @toggle-side="toggleSide"

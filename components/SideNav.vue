@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="side-nav-con">
+    <div class="side-nav-con" :class="isOpen ? 'side-nav-show' : ''">
       <div class="container">
         <span class="close-con" @click="closeSide"
           ><img src="/img/close.svg"
@@ -40,6 +40,12 @@
 
 <script>
 export default {
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false
+    }
+  },
   methods: {
     closeSide() {
       this.$emit('toggle-side')

@@ -47,8 +47,40 @@
           </nav>
         </div>
         <span class="hamburger-con inline-block lg:hidden" @click="openSide"
-          ><img src="/img/hamburger.svg"
-        /></span>
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="19"
+            viewBox="0 0 28 19"
+          >
+            <g
+              id="hamburger"
+              data-name="hamburger"
+              transform="translate(-249 -17)"
+            >
+              <rect
+                width="28"
+                height="5"
+                rx="1"
+                transform="translate(249 17)"
+                :fill="theme.color"
+              />
+              <rect
+                width="28"
+                height="5"
+                rx="1"
+                transform="translate(249 24)"
+                :fill="theme.color"
+              />
+              <rect
+                width="28"
+                height="5"
+                rx="1"
+                transform="translate(249 31)"
+                :fill="theme.color"
+              />
+            </g></svg
+        ></span>
       </div>
     </div>
   </div>
