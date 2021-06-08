@@ -19,11 +19,13 @@
 @import 'components/about/join-learn';
 @import 'components/about/crypto-buddy';
 @import 'components/careers/core-values';
+@import 'components/faq/faq-item';
 
 @import 'layout/footer';
 @import 'layout/landing';
 
 @import 'pages/home';
+@import 'pages/faq';
 
 *{
   box-sizing: border-box;

@@ -1,0 +1,36 @@
+.faq-item-con {
+  background-color: #D1D1D8;
+  padding: 20px;
+  border-radius: 8px;
+  color: #242426;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  &__title-con {
+    @include flexcon(center, left, row);
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      margin-right: 5px;
+    }
+
+    .arrow-con {
+      display: inline-block;
+      width: 20px;
+      min-width: 20px;
+      cursor: pointer;
+      margin-left: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    font-size: 18px;
+    margin-top: 15px;
+    width: 95%;
+  }
+}
