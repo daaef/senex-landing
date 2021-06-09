@@ -245,7 +245,7 @@
             platforms, newsletters, galleries, media players, mobile apps and
             other online and mobile online and mobile applications, tools and
             services. The online and mobile websites and platforms created by
-            Users are collectively referred to herein as (“User Platform(s)”)
+            Users are collectively referred to herein as (“User Platform(s)”).
           </p>
         </div>
       </div>
