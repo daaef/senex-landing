@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="">
-      <div class="con-tou">
-        <div class="main-header-tou">
+      <div class="con-tp">
+        <div class="main-header-tp">
           <h1>Contact Us</h1>
           <p>
             Get in touch with the right people at Senexpay, we’re here to help.

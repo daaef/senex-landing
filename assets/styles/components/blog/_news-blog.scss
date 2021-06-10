@@ -1,0 +1,42 @@
+.top-h-nb {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: left;
+}
+
+.img-word-con-nb {
+  margin-bottom: 25px;
+
+  .img-con-nb {
+    width: 100%;
+    margin-bottom: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  
+
+  .word-con-nb {
+
+    h2 {
+      font-size: xx-large;
+      font-weight: bold;
+      margin-bottom: 25px;
+      line-height: 1em;
+    }
+  
+    p {
+      margin-bottom: 30px;
+    }
+  
+    span {
+      font-size: smaller;
+      margin-bottom: 25px;
+    }
+  }
+ 
+}
+

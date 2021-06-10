@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <div class="con-tou">
-        <div class="main-header-tou">
+      <div class="con-tp">
+        <div class="main-header-tp">
           <h1>Senexpay Terms Of Use</h1>
           <p>Last Revised: March 28, 2021</p>
         </div>
@@ -10,7 +10,7 @@
           Welcome to Senexpay’s Terms of Use! We are truly excited to have you
           aboard.Thank you for choosing to use our services.
         </p>
-        <p class="second-para-tou">
+        <p class="first-para-tp">
           Below we have listed important legal terms that apply to anyone who
           visits our website or uses our services. These terms are necessary in
           order to protect both you and us, and to make our services possible

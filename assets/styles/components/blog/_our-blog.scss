@@ -1,0 +1,40 @@
+h1 {
+  text-align: left;
+}
+
+.con-ob {
+  margin-bottom: 25px;
+
+  .img-con-ob {
+    max-width: 400px;
+    margin-right: 25px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+.word-con-nb {
+
+  h2 {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1em;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  span {
+    font-size: smaller;
+    margin-bottom: 25px;
+  }
+}
+
+.cry-ob {
+  margin-right: 60px;
+}
