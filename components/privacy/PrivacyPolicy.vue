@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="container">
-      <div class="con-pp">
-        <div class="main-header-pp">
+      <div class="con-tp">
+        <div class="main-header-tp">
           <h1>Senexpay Privacy Policy</h1>
           <p>Effective from March 28, 2021</p>
         </div>
         <div class="content-main-pp">
-          <p class="first-para-pp">Welcome to Senexpay’s Privacy Policy</p>
+          <p class="first-para-tp">Welcome to Senexpay’s Privacy Policy</p>
           <h3>1. Please read carefully</h3>
           <h4>1.1. Our Purpose</h4>
           <p>

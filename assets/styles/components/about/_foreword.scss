@@ -4,7 +4,7 @@
 }
 
 .foreword-con {
-  @include flexcon(left, flex-end, column);
+  @include flexcon(left, center, column);
 
   h1 {
     font-size: 48px;
