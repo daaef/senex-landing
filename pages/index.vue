@@ -236,11 +236,27 @@ export default {
   layout: 'landing',
   data() {
     return {
-      loading: true
+      loading: true,
+      scrollPosition: 0,
+      ticking: false
     }
   },
   mounted() {
     this.loading = false
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.updateScrollPosition)
+  },
+  methods: {
+    updateScrollPosition() {
+      this.scrollPosition = window.scrollY
+      if (!this.ticking) {
+        window.requestAnimationFrame(function () {
+          this.ticking = false
+        })
+        this.ticking = true
+      }
+    }
   }
 }
 </script>
