@@ -1,12 +1,16 @@
 .main-header-tp {
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 60px;
   padding-top: 60px;
 
   h1 {
     font-size: 46px;
     text-align: center;
+  }
+
+  p {
+    font-weight: normal;
   }
 }
 

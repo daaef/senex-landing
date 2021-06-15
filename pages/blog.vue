@@ -9,7 +9,7 @@
       </div>
       <div class="top-stories">
         <h3 class="container">Top stories In the news</h3>
-        <div class="lg:flex">
+        <div class="lg:flex container-full">
           <news-blog></news-blog>
           <news-blog></news-blog>
           <news-blog></news-blog>

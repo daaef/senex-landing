@@ -8,26 +8,31 @@
   }
 }
 
+.impact-iw-con {
+  justify-content: space-around;
+}
+
 .impact-iw {
   background-color: #F8F8FD;
   width: 100%;
+  // max-width: 350px;
   margin: 25px 0;
-  padding: 30px 25px;
+  padding: 30px;
 
   h2 {
     font-size: x-large;
-    font-weight: bold;
+    font-weight: 500;
     margin: 30px 0;
   }
 
   p {
-    font-weight: bold;
+    font-weight: 400;
   }
 }
 
 .words-iw {
   font-size: 42px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin: 30px 0;
 }

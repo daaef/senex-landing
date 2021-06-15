@@ -1,5 +1,5 @@
 .info-words {
-  font-weight: bold;
+  font-weight: 500;
   font-size: x-large;
   margin-bottom: 30px;
   width: 100%;
@@ -8,10 +8,17 @@
 
 .info-statistics {
   font-size: x-large;
-  font-weight: bold;
 
   .year, .employees, .transactions, .countries {
+
     margin-right: 30px;
     margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 400;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
 }

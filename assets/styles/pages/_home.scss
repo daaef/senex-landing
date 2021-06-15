@@ -35,7 +35,7 @@
   &__subtitle{
     text-align: left;
     font-size: $font18;
-    font-weight: 500;
+    font-weight: 400;
     max-width: 500px;
   }
 
@@ -136,7 +136,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px;
+    width: 0;
   }
 
   .circle-girl {
@@ -144,7 +144,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 50px;
+    width: 0;
   }
 }
 
@@ -188,7 +188,7 @@
     text-align: left;
     font-size: 44px;
     font-weight: 600;
-    line-height: 1em;
+    line-height: 1.2em;
     margin-bottom: 30px;
     width: 90%;
   }
@@ -196,7 +196,7 @@
   &__subtitle{
     text-align: left;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 
