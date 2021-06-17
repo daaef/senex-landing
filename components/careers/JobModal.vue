@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="job-modal-con" :class="isOpen ? 'job-modal-show' : ''">
+  <div class="side-nav-div">
+    <div>
       <div class="container">
         <div class="job-modal-con__header">
           <span class="arrow-down" @click="closeModal"

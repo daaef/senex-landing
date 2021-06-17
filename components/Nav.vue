@@ -26,7 +26,10 @@
                 >Create your account</router-link
               >
               <div class="country-con">
-                <span class="country-icon"><img src="/img/nigeria.svg" /></span>
+                <span class="country-icon"
+                  ><img src="/img/nigeria.svg" /><span class="other-countries"
+                    ><img src="/img/south-africa.svg" /></span
+                ></span>
                 <span class="caret-icon"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"

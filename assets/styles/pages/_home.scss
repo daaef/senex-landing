@@ -167,6 +167,7 @@
 .snx-description-con {
   min-height: 400px;
   padding-top: 50px;
+  overflow: hidden;
   //padding-bottom: 50px;
 }
 
@@ -193,7 +194,7 @@
     width: 90%;
   }
 
-  &__subtitle{
+  &__subtitle {
     text-align: left;
     font-size: 20px;
     font-weight: 400;
@@ -226,6 +227,14 @@
   animation-name: lemon-anim;
   animation-duration: 4s;
   animation-delay: 1s;
+}
+
+.up-anim {
+  transition: transform 0.75s;
+}
+
+.up-anim:hover {
+  transform: translateY(-5px);
 }
 
 @media screen and(max-width: 991px) {
@@ -333,18 +342,6 @@
 @media screen and(max-width: 768px) {
   .atom-holder {
     width: 100%;
-
-    .circle-boy {
-      width: 150px;
-    }
-  
-    .circle-girl {
-      width: 150px;
-    }
-  }
-
-  .landing-animation {
-    animation-name: landing-anim-small;
   }
 
   .atom {
@@ -409,14 +406,5 @@
   }
   100% {
     width: 52%;
-  }
-}
-
-@keyframes landing-anim-small {
-  0% {
-    width: 50px;
-  }
-  100% {
-    width: 50%;
   }
 }

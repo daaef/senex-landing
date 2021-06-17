@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="lg:flex join-con">
-        <div class="purple lg:mr-4">
+        <div class="purple mb-4 lg:mb-0 lg:mr-4">
           <div class="join">
             <div class="diamond">
               <img src="img/about/arrow-up-down.svg" alt="arrow" />

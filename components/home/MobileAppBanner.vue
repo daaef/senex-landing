@@ -8,8 +8,12 @@
               Download our mobile and trade on the go!
             </h1>
             <div class="hidden lg:block app-icon-con">
-              <span class="icon-con"><img src="/img/google-play.png" /></span>
-              <span class="icon-con"><img src="/img/app-store.png" /></span>
+              <span class="icon-con up-anim"
+                ><img src="/img/google-play.png"
+              /></span>
+              <span class="icon-con up-anim"
+                ><img src="/img/app-store.png"
+              /></span>
             </div>
           </div>
           <div class="lg:w-1/2 mx-auto">

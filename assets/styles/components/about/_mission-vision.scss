@@ -7,7 +7,6 @@
   @include flexcon(center, center, column);
   background-color: #F5F5F7;
   width: 100%;
-  max-width: 400px;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 40px;
@@ -65,5 +64,11 @@
       width: 100%;
     }
 
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .our-mission-con {
+    max-width: 400px;
   }
 }

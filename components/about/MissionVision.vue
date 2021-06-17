@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="mission-container">
-      <div class="lg:flex justify-center">
-        <div class="our-mission-con lg:mr-12">
+      <div class="sm:flex justify-center">
+        <div class="our-mission-con sm:mr-12">
           <div class="double-arrow">
             <img src="img/about/double-right-arrow.svg" alt="skip" />
           </div>

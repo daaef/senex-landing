@@ -118,10 +118,30 @@
     <!-- Crypocurrencies and amounts -->
     <div class="coin-section">
       <div class="container mx-auto overflow-con">
-        <coin-price></coin-price>
-        <coin-price></coin-price>
-        <coin-price></coin-price>
-        <coin-price></coin-price>
+        <coin-price
+          name="Bitcoin"
+          abbr="BTC"
+          image="/img/btc.svg"
+          :buy="450000"
+          :sell="450000"
+        >
+        </coin-price>
+        <coin-price
+          name="USDT"
+          abbr="USDT"
+          image="/img/t-coin.svg"
+          :buy="450000"
+          :sell="450000"
+        >
+        </coin-price>
+        <coin-price
+          name="DOGE COIN"
+          abbr="DOGE"
+          image="/img/doge-coin.svg"
+          :buy="450000"
+          :sell="450000"
+        >
+        </coin-price>
       </div>
     </div>
     <!-- Descriptions -->
@@ -140,7 +160,14 @@
             </p>
           </div>
         </div>
-        <div class="lg:w-1/2 snx-description-img-con">
+        <div
+          v-scroll-reveal.reset="{
+            origin: 'right',
+            distance: '200px',
+            easing: 'ease-in'
+          }"
+          class="lg:w-1/2 snx-description-img-con"
+        >
           <img src="/img/landing-page-girl.png" />
         </div>
       </div>
@@ -148,7 +175,14 @@
       <div class="bg-grey">
         <!-- Large screen -->
         <div class="block snx-description-con container hidden lg:flex">
-          <div class="lg:w-1/2 snx-description-img-con">
+          <div
+            v-scroll-reveal.reset="{
+              origin: 'bottom',
+              distance: '200px',
+              easing: 'ease-in'
+            }"
+            class="lg:w-1/2 snx-description-img-con"
+          >
             <img src="/img/landing-page-boy.png" />
           </div>
           <div class="lg:w-1/2">
@@ -178,7 +212,14 @@
               </p>
             </div>
           </div>
-          <div class="lg:w-1/2 snx-description-img-con">
+          <div
+            v-scroll-reveal.reset="{
+              origin: 'bottom',
+              distance: '200px',
+              easing: 'ease-in'
+            }"
+            class="lg:w-1/2 snx-description-img-con"
+          >
             <img src="/img/landing-page-boy.png" />
           </div>
         </div>
@@ -243,20 +284,6 @@ export default {
   },
   mounted() {
     this.loading = false
-  },
-  beforeMount() {
-    window.addEventListener('scroll', this.updateScrollPosition)
-  },
-  methods: {
-    updateScrollPosition() {
-      this.scrollPosition = window.scrollY
-      if (!this.ticking) {
-        window.requestAnimationFrame(function () {
-          this.ticking = false
-        })
-        this.ticking = true
-      }
-    }
   }
 }
 </script>

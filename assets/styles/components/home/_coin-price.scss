@@ -3,7 +3,7 @@
   color: $color_white;
   padding: 20px;
   width: 100%;
-  max-width: 800px;
+  max-width: 750px;
   margin: 20px auto;
   border-radius: 8px;
   overflow-x: auto;
@@ -35,6 +35,13 @@
     }
   }
 
+
+  .sell {
+    min-width: 100px;
+    //justify-content: flex-end;
+    text-align: right;
+  }
+
   &__coin-price-con {
     display: flex;
     justify-content: center;
@@ -53,6 +60,7 @@
       @include custom-btn(#06a84b,$color_white,#06a84b);
       opacity: 0.9;
       padding: 10px 20px;
+      min-width: 80px;
       // margin-top: 10px;
     }
 
@@ -65,6 +73,7 @@
       @include custom-btn(#ff5f24,$color_white,#ff5f24);
       padding: 10px 20px;
       opacity: 0.9;
+      min-width: 80px;
       // margin-top: 10px;
     }
 
