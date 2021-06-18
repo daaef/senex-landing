@@ -7,7 +7,7 @@
       <div class="container">
         <p class="why">Why people love Senexpay</p>
         <h2>We just wanna to make crypto exchange stress-free.</h2>
-        <div class="lg:flex reason-con">
+        <div v-scroll-reveal.reset class="lg:flex reason-con">
           <div class="reason">
             <span class="icon up-anim"><img src="/img/why-senex-1.png" /></span>
             <p class="title">Simple to use</p>

@@ -43,6 +43,18 @@
   }
 }
 
+.dancing-people {
+  position: absolute;
+  overflow: hidden;
+  width: 100px;
+  top: 15%;
+  left: 15%;
+
+  img {
+    width: 100%;
+  }
+}
+
 .crypto-buddy-mobile {
   transform: rotate(36deg);
   flex-direction: column;

@@ -11,7 +11,7 @@
           </span>
         </div>
         <div class="info-statistics">
-          <div class="lg:flex">
+          <div class="grid grid-cols-2 lg:flex">
             <div class="year">
               <span>
                 <h2>2019</h2>

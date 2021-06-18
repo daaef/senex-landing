@@ -23,6 +23,7 @@
 
   &__coin-name-con {
     @include flexcon(left, center, column);
+    min-width: 100px;
 
     .title {
       font-size: 14px;
@@ -39,7 +40,7 @@
   .sell {
     min-width: 100px;
     //justify-content: flex-end;
-    text-align: right;
+    text-align: center;
   }
 
   &__coin-price-con {
@@ -60,7 +61,7 @@
       @include custom-btn(#06a84b,$color_white,#06a84b);
       opacity: 0.9;
       padding: 10px 20px;
-      min-width: 80px;
+      width: 80px;
       // margin-top: 10px;
     }
 
@@ -73,7 +74,7 @@
       @include custom-btn(#ff5f24,$color_white,#ff5f24);
       padding: 10px 20px;
       opacity: 0.9;
-      min-width: 80px;
+      width: 80px;
       // margin-top: 10px;
     }
 

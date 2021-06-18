@@ -122,8 +122,8 @@
           name="Bitcoin"
           abbr="BTC"
           image="/img/btc.svg"
-          :buy="450000"
-          :sell="450000"
+          :buy="450000000"
+          :sell="45000000"
         >
         </coin-price>
         <coin-price
@@ -149,7 +149,7 @@
       <!-- Description 1 -->
       <div class="block snx-description-con sdc-pb container-R lg:flex lg:pr-0">
         <div class="lg:w-1/2 container-R__padding">
-          <div class="snx-description lg:w-4/5">
+          <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
               It’s so easy, you can do it on the floor
             </p>
@@ -162,9 +162,7 @@
         </div>
         <div
           v-scroll-reveal.reset="{
-            origin: 'right',
-            distance: '200px',
-            easing: 'ease-in'
+            origin: 'right'
           }"
           class="lg:w-1/2 snx-description-img-con"
         >
@@ -174,15 +172,11 @@
       <!-- Description 2 -->
       <div class="bg-grey">
         <!-- Large screen -->
-        <div class="block snx-description-con container hidden lg:flex">
-          <div
-            v-scroll-reveal.reset="{
-              origin: 'bottom',
-              distance: '200px',
-              easing: 'ease-in'
-            }"
-            class="lg:w-1/2 snx-description-img-con"
-          >
+        <div
+          v-scroll-reveal.reset
+          class="block snx-description-con container hidden lg:flex"
+        >
+          <div class="lg:w-1/2 snx-description-img-con">
             <img src="/img/landing-page-boy.png" />
           </div>
           <div class="lg:w-1/2">
@@ -201,7 +195,7 @@
         <!-- Small Screen -->
         <div class="block snx-description-con container lg:hidden">
           <div class="lg:w-1/2">
-            <div class="snx-description lg:w-4/5 mx-auto">
+            <div v-scroll-reveal.reset class="snx-description lg:w-4/5 mx-auto">
               <p class="snx-description__title">
                 The most trusted crypto platform.
               </p>
@@ -212,14 +206,7 @@
               </p>
             </div>
           </div>
-          <div
-            v-scroll-reveal.reset="{
-              origin: 'bottom',
-              distance: '200px',
-              easing: 'ease-in'
-            }"
-            class="lg:w-1/2 snx-description-img-con"
-          >
+          <div v-scroll-reveal.reset class="lg:w-1/2 snx-description-img-con">
             <img src="/img/landing-page-boy.png" />
           </div>
         </div>
@@ -227,7 +214,10 @@
 
       <!-- Description 3 -->
 
-      <div class="block snx-description-con sdc-pb container lg:flex lg:pr-0">
+      <div
+        v-scroll-reveal.reset
+        class="block snx-description-con sdc-pb container lg:flex lg:pr-0"
+      >
         <div class="lg:w-1/2">
           <div class="snx-description lg:w-4/5">
             <p class="snx-description__title">We are serious about Security.</p>
@@ -245,16 +235,18 @@
         </div>
       </div>
     </div>
-    <!-- Why Senex -->
-    <why-senex></why-senex>
-    <!-- Reviews -->
-    <review></review>
-    <!-- Landing video -->
-    <intro-video></intro-video>
-    <!-- Mobile App Banner -->
-    <mobile-app-banner></mobile-app-banner>
-    <!-- Footer -->
-    <landing-footer></landing-footer>
+    <div class="overflow-hidden">
+      <!-- Why Senex -->
+      <why-senex></why-senex>
+      <!-- Reviews -->
+      <review></review>
+      <!-- Landing video -->
+      <intro-video></intro-video>
+      <!-- Mobile App Banner -->
+      <mobile-app-banner></mobile-app-banner>
+      <!-- Footer -->
+      <landing-footer></landing-footer>
+    </div>
   </div>
 </template>
 

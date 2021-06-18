@@ -2,18 +2,27 @@
   // height: 400px;
   width: 100%;
   overflow-x: hidden;
-  white-space: nowrap;
+  scroll-snap-align: center;
+  // white-space: nowrap;
+  // display: flex;
 }
 
 .carousel-1 {
-  display: inline-block;
+  // display: inline-block;
   margin-right: 25px;
+  min-width: 50%;
   // width: 40%;
-  height: 400px;
+  height: 350px;
 
   img {
     height: 100%;
-    // width: 100%;
+    width: 100%;
     object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .carousel-1 {
+    min-width: 100%;
   }
 }
