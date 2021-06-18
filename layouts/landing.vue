@@ -12,7 +12,9 @@
         :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
         @toggle-side="toggleSide"
       />
-      <Nuxt />
+      <div style="background-color: #162f55">
+        <Nuxt />
+      </div>
     </div>
   </div>
 </template>

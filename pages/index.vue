@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white">
     <div class="snx-hero-banner">
       <div class="container">
         <div class="block lg:flex">
@@ -145,7 +145,7 @@
       </div>
     </div>
     <!-- Descriptions -->
-    <div>
+    <div class="">
       <!-- Description 1 -->
       <div class="block snx-description-con sdc-pb container-R lg:flex lg:pr-0">
         <div class="lg:w-1/2 container-R__padding">
