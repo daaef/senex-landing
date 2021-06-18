@@ -1,6 +1,10 @@
 @import '../abstract/color';
 @import '../abstract/mixins';
 
+.landing-bg {
+  background-color: $primary_color !important;
+}
+
 .landing-nav{
   position: fixed;
   z-index: 500;
@@ -57,10 +61,28 @@
       .country-icon {
         display: inline-block;
         width: 40px;
+        position: relative;
 
         img {
           width: 100%;
         }
+
+        .other-countries {
+          display: none;
+          position: absolute;
+          padding-top: 3px;
+          opacity: 0.7;
+          // bottom: -120%;
+          z-index: 10;
+
+          img {
+            margin-top: 5px;
+          }
+        }
+      }
+
+      &:hover .other-countries {
+        display: inline-block;
       }
 
       .caret-icon {

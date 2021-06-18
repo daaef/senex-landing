@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-full">
+    <div class="">
       <div class="home-intro-video">
         <img src="/img/video-img.png" class="video-placeholder" />
         <img src="/img/play-btn.svg" class="play-btn" />

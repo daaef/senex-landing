@@ -1,12 +1,18 @@
 <template>
   <div>
-    <div :class="modalOpen ? 'lock-scroll' : ''">
+    <div>
       <core-values @open-modal="openModal"></core-values>
       <impactful-work></impactful-work>
       <senex-job></senex-job>
       <blue-sect @open-modal="openModal"></blue-sect>
       <!-- <job-position></job-position> -->
-      <job-modal :is-open="modalOpen" @close-modal="closeModal"></job-modal>
+      <app-modal
+        :v-modal="modalOpen"
+        initial-class-state="job-modal-con"
+        final-class-state="job-modal-show"
+      >
+        <job-modal @close-modal="closeModal"></job-modal>
+      </app-modal>
       <landing-footer></landing-footer>
     </div>
   </div>
@@ -20,6 +26,7 @@ import BlueSect from '~/components/careers/BlueSect.vue'
 // import JobPosition from '~/components/careers/JobPosition.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 import JobModal from '~/components/careers/JobModal.vue'
+import AppModal from '~/components/custom/AppModal.vue'
 export default {
   components: {
     CoreValues,
@@ -28,7 +35,8 @@ export default {
     BlueSect,
     // JobPosition,
     LandingFooter,
-    JobModal
+    JobModal,
+    AppModal
   },
   layout: 'about',
   data() {

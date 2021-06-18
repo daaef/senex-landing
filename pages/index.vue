@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="bg-white">
     <div class="snx-hero-banner">
       <div class="container">
         <div class="block lg:flex">
-          <div class="w-full lg:w-3/5 snx-hero-content-holder">
+          <div class="w-full lg:w-1/2 snx-hero-content-holder">
             <div class="snx-hero-content">
               <h1 class="snx-hero-content__title">Buy and Sell Crypto</h1>
               <h1 class="snx-hero-content__title">the easy way.</h1>
@@ -22,56 +22,93 @@
             </div>
           </div>
           <div
-            class="w-full lg:w-2/5 mt-2 mb-8 lg:my-0 flex snx-hero-atom-holder"
+            class="w-full lg:w-1/2 mt-2 mb-8 lg:my-0 flex snx-hero-atom-holder"
           >
             <div class="atom-holder mx-auto lg:ml-auto lg:mr-0">
+              <span
+                class="lemon-arrow"
+                :class="loading ? '' : 'lemon-arrow-animation'"
+                ><img src="/img/lemon-double-arrow.svg"
+              /></span>
+              <span
+                class="purple-arrow"
+                :class="loading ? '' : 'purple-arrow-animation'"
+                ><img src="/img/purple-double-arrow.svg"
+              /></span>
+              <span class="circle-boy-small"
+                ><img src="/img/landing-circle-boy-small.png"
+              /></span>
+              <span class="circle-girl-small"
+                ><img src="/img/landing-circle-girl-small.png"
+              /></span>
+              <span
+                class="circle-boy"
+                :class="loading ? '' : 'landing-animation'"
+                ><img src="/img/landing-circle-boy.png"
+              /></span>
+              <span
+                class="circle-girl"
+                :class="loading ? '' : 'landing-animation'"
+                ><img src="/img/landing-circle-girl.png"
+              /></span>
               <svg
-                version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1000 1000"
-                width="500"
+                width="671"
+                height="671"
+                viewBox="0 0 671 671"
                 class="atom"
               >
-                <circle
-                  class="ring"
-                  r="120"
-                  cx="500"
-                  cy="500"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="3"
-                  opacity="0.3"
-                />
-                <circle
-                  class="ring"
-                  r="240"
-                  cx="500"
-                  cy="500"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="3"
-                  opacity="0.3"
-                />
-                <circle
-                  class="ring"
-                  r="360"
-                  cx="500"
-                  cy="500"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="3"
-                  opacity="0.3"
-                />
-                <circle
-                  class="ring"
-                  r="480"
-                  cx="500"
-                  cy="500"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="3"
-                  opacity="0.3"
-                />
+                <g
+                  id="Group_355"
+                  data-name="Group 355"
+                  transform="translate(-468 21162)"
+                  opacity="0.5"
+                >
+                  <g
+                    id="Ellipse_57"
+                    data-name="Ellipse 57"
+                    transform="translate(468 -21162)"
+                    fill="none"
+                    stroke="#5694fc"
+                    stroke-width="1"
+                  >
+                    <circle cx="335.5" cy="335.5" r="335.5" stroke="none" />
+                    <circle cx="335.5" cy="335.5" r="335" fill="none" />
+                  </g>
+                  <g
+                    id="Ellipse_58"
+                    data-name="Ellipse 58"
+                    transform="translate(554 -21076)"
+                    fill="none"
+                    stroke="#5694fc"
+                    stroke-width="1"
+                  >
+                    <circle cx="249.5" cy="249.5" r="249.5" stroke="none" />
+                    <circle cx="249.5" cy="249.5" r="249" fill="none" />
+                  </g>
+                  <g
+                    id="Ellipse_59"
+                    data-name="Ellipse 59"
+                    transform="translate(630 -21000)"
+                    fill="none"
+                    stroke="#5694fc"
+                    stroke-width="1"
+                  >
+                    <circle cx="174" cy="174" r="174" stroke="none" />
+                    <circle cx="174" cy="174" r="173.5" fill="none" />
+                  </g>
+                  <g
+                    id="Ellipse_60"
+                    data-name="Ellipse 60"
+                    transform="translate(720 -20911)"
+                    fill="none"
+                    stroke="#5694fc"
+                    stroke-width="1"
+                  >
+                    <circle cx="84.5" cy="84.5" r="84.5" stroke="none" />
+                    <circle cx="84.5" cy="84.5" r="84" fill="none" />
+                  </g>
+                </g>
               </svg>
             </div>
           </div>
@@ -81,18 +118,38 @@
     <!-- Crypocurrencies and amounts -->
     <div class="coin-section">
       <div class="container mx-auto overflow-con">
-        <coin-price></coin-price>
-        <coin-price></coin-price>
-        <coin-price></coin-price>
-        <coin-price></coin-price>
+        <coin-price
+          name="Bitcoin"
+          abbr="BTC"
+          image="/img/btc.svg"
+          :buy="450000000"
+          :sell="45000000"
+        >
+        </coin-price>
+        <coin-price
+          name="USDT"
+          abbr="USDT"
+          image="/img/t-coin.svg"
+          :buy="450000"
+          :sell="450000"
+        >
+        </coin-price>
+        <coin-price
+          name="DOGE COIN"
+          abbr="DOGE"
+          image="/img/doge-coin.svg"
+          :buy="450000"
+          :sell="450000"
+        >
+        </coin-price>
       </div>
     </div>
     <!-- Descriptions -->
-    <div>
+    <div class="">
       <!-- Description 1 -->
       <div class="block snx-description-con sdc-pb container-R lg:flex lg:pr-0">
         <div class="lg:w-1/2 container-R__padding">
-          <div class="snx-description lg:w-4/5">
+          <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
               It’s so easy, you can do it on the floor
             </p>
@@ -103,14 +160,22 @@
             </p>
           </div>
         </div>
-        <div class="lg:w-1/2 snx-description-img-con">
+        <div
+          v-scroll-reveal.reset="{
+            origin: 'right'
+          }"
+          class="lg:w-1/2 snx-description-img-con"
+        >
           <img src="/img/landing-page-girl.png" />
         </div>
       </div>
       <!-- Description 2 -->
       <div class="bg-grey">
         <!-- Large screen -->
-        <div class="block snx-description-con container hidden lg:flex">
+        <div
+          v-scroll-reveal.reset
+          class="block snx-description-con container hidden lg:flex"
+        >
           <div class="lg:w-1/2 snx-description-img-con">
             <img src="/img/landing-page-boy.png" />
           </div>
@@ -130,7 +195,7 @@
         <!-- Small Screen -->
         <div class="block snx-description-con container lg:hidden">
           <div class="lg:w-1/2">
-            <div class="snx-description lg:w-4/5 mx-auto">
+            <div v-scroll-reveal.reset class="snx-description lg:w-4/5 mx-auto">
               <p class="snx-description__title">
                 The most trusted crypto platform.
               </p>
@@ -141,7 +206,7 @@
               </p>
             </div>
           </div>
-          <div class="lg:w-1/2 snx-description-img-con">
+          <div v-scroll-reveal.reset class="lg:w-1/2 snx-description-img-con">
             <img src="/img/landing-page-boy.png" />
           </div>
         </div>
@@ -149,7 +214,10 @@
 
       <!-- Description 3 -->
 
-      <div class="block snx-description-con sdc-pb container lg:flex lg:pr-0">
+      <div
+        v-scroll-reveal.reset
+        class="block snx-description-con sdc-pb container lg:flex lg:pr-0"
+      >
         <div class="lg:w-1/2">
           <div class="snx-description lg:w-4/5">
             <p class="snx-description__title">We are serious about Security.</p>
@@ -167,16 +235,18 @@
         </div>
       </div>
     </div>
-    <!-- Why Senex -->
-    <why-senex></why-senex>
-    <!-- Reviews -->
-    <review></review>
-    <!-- Landing video -->
-    <intro-video></intro-video>
-    <!-- Mobile App Banner -->
-    <mobile-app-banner></mobile-app-banner>
-    <!-- Footer -->
-    <landing-footer></landing-footer>
+    <div class="overflow-hidden">
+      <!-- Why Senex -->
+      <why-senex></why-senex>
+      <!-- Reviews -->
+      <review></review>
+      <!-- Landing video -->
+      <intro-video></intro-video>
+      <!-- Mobile App Banner -->
+      <mobile-app-banner></mobile-app-banner>
+      <!-- Footer -->
+      <landing-footer></landing-footer>
+    </div>
   </div>
 </template>
 
@@ -196,7 +266,17 @@ export default {
     WhySenex,
     IntroVideo
   },
-  layout: 'landing'
+  layout: 'landing',
+  data() {
+    return {
+      loading: true,
+      scrollPosition: 0,
+      ticking: false
+    }
+  },
+  mounted() {
+    this.loading = false
+  }
 }
 </script>
 

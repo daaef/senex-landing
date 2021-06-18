@@ -1,3 +1,10 @@
+.triangle-bottom-right {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #E8FFF2;
+  border-left: 100vw solid transparent;
+  overflow: hidden !important;
+}
 
 .why-senex {
   background-color: #E8FFF2;
@@ -14,7 +21,7 @@
   h2 {
     color: #222122;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 500;
     max-width: 800px;
     line-height: 1em;
   }

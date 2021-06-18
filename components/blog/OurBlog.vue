@@ -1,132 +1,26 @@
 <template>
   <div>
     <div class="container">
-      <div class="main-header-tp">
-        <h1>On Our Blog</h1>
-      </div>
-      <div class="grid lg:grid-rows-7 lg:gap-10">
-        <div class="lg:flex con-ob">
-          <div class="img-con-ob lg:w-1/2">
-            <img src="img/careers/dollar-boy.png" alt="blog" />
-          </div>
-          <div class="word-con-nb">
-            <span>5 mins</span>
-            <h2>
+      <div class="our-blog-con md:rounded-l-3xl">
+        <div class="md:flex our-blog-holder">
+          <span class="our-blog-holder__img lg:w-1/2"
+            ><img class="md:rounded-l-3xl" src="/img/about/ceo.png"
+          /></span>
+          <div class="our-blog-holder__content lg:w-1/2 md:p-5">
+            <span class="time-elapsed">5 mins</span>
+            <h3>
               An Unprecedented Season: How We Are Driving Employee Productivity
               During A Pandemic
-            </h2>
-            <p>
+            </h3>
+            <span class="blog-content">
               Our mission is to establish a fully automated, fast, easy,
               decentralized, and secure digital payment infrastructure and
-              solutions across
-            </p>
-            <span class="cry-ob">Crypto</span>
-            <span>Sep 12, 2021</span>
-          </div>
-        </div>
-        <div class="lg:flex con-ob">
-          <div class="img-con-ob lg:w-1/2">
-            <img src="img/about/ceo.png" alt="blog" />
-          </div>
-          <div class="word-con-nb">
-            <span>5 mins</span>
-            <h2>Learning Continuity In The Midst of Disruptions</h2>
-            <p>
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across
-            </p>
-            <span class="cry-ob">Crypto</span>
-            <span>Sep 12, 2021</span>
-          </div>
-        </div>
-        <div class="lg:flex con-ob">
-          <div class="img-con-ob lg:w-1/2">
-            <img src="img/careers/dollar-boy.png" alt="blog" />
-          </div>
-          <div class="word-con-nb">
-            <span>5 mins</span>
-            <h2>
-              An Unprecedented Season: How We Are Driving Employee Productivity
-              During A Pandemic
-            </h2>
-            <p>
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across
-            </p>
-            <span class="cry-ob">Crypto</span>
-            <span>Sep 12, 2021</span>
-          </div>
-        </div>
-        <div class="lg:flex con-ob">
-          <div class="img-con-ob lg:w-1/2">
-            <img src="img/about/ceo.png" alt="blog" />
-          </div>
-          <div class="word-con-nb">
-            <span>5 mins</span>
-            <h2>Learning Continuity In The Midst of Disruptions</h2>
-            <p>
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across
-            </p>
-            <span class="cry-ob">Crypto</span>
-            <span>Sep 12, 2021</span>
-          </div>
-        </div>
-        <div class="lg:flex con-ob">
-          <div class="img-con-ob lg:w-1/2">
-            <img src="img/careers/dollar-boy.png" alt="blog" />
-          </div>
-          <div class="word-con-nb">
-            <span>5 mins</span>
-            <h2>
-              An Unprecedented Season: How We Are Driving Employee Productivity
-              During A Pandemic
-            </h2>
-            <p>
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across
-            </p>
-            <span class="cry-ob">Crypto</span>
-            <span>Sep 12, 2021</span>
-          </div>
-        </div>
-        <div class="lg:flex con-ob">
-          <div class="img-con-ob lg:w-1/2">
-            <img src="img/about/ceo.png" alt="blog" />
-          </div>
-          <div class="word-con-nb">
-            <span>5 mins</span>
-            <h2>Learning Continuity In The Midst of Disruptions</h2>
-            <p>
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across
-            </p>
-            <span class="cry-ob">Crypto</span>
-            <span>Sep 12, 2021</span>
-          </div>
-        </div>
-        <div class="lg:flex con-ob">
-          <div class="img-con-ob lg:w-1/2">
-            <img src="img/careers/dollar-boy.png" alt="blog" />
-          </div>
-          <div class="word-con-nb">
-            <span>5 mins</span>
-            <h2>
-              An Unprecedented Season: How We Are Driving Employee Productivity
-              During A Pandemic
-            </h2>
-            <p>
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across
-            </p>
-            <span class="cry-ob">Crypto</span>
-            <span>Sep 12, 2021</span>
+              solutions across</span
+            >
+            <div class="blog-footer">
+              <span>Crypto</span>
+              <span class="blog-footer__date">Sep 12, 2021</span>
+            </div>
           </div>
         </div>
       </div>

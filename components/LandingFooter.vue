@@ -76,7 +76,7 @@
             </div>
           </div>
           <div class="lg:w-2/3 w-full ml-auto">
-            <div class="social-con lg:w-3/4 lg:ml-auto">
+            <div class="footer-social-con lg:w-3/4 lg:flex lg:ml-auto">
               <router-link to="/" class="block lg:inline-block"
                 >Facebook</router-link
               >

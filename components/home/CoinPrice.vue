@@ -1,20 +1,18 @@
 <template>
   <div>
     <div class="coin-holder">
-      <span class="coin-holder__coin-image-con"
-        ><img src="/img/senepay-og.png"
-      /></span>
+      <span class="coin-holder__coin-image-con"><img :src="image" /></span>
       <div class="coin-holder__coin-name-con">
-        <span class="title">Bitcoin</span>
-        <span class="subtitle">BTC</span>
+        <span class="title">{{ name }}</span>
+        <span class="subtitle">{{ abbr }}</span>
       </div>
       <div class="flex align-center ml-auto">
         <div class="coin-holder__coin-price-con">
-          <span class="amount">N450,000</span>
+          <span class="amount sell">N{{ buy }}</span>
           <span class="btn action-buy">Buy</span>
         </div>
         <div class="coin-holder__coin-price-con">
-          <span class="amount">N450,000</span>
+          <span class="amount sell">N {{ sell }}</span>
           <span class="btn action-sell">Sell</span>
         </div>
       </div>
@@ -23,7 +21,34 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    isComingSoon: {
+      type: Boolean,
+      default: false
+    },
+    image: {
+      type: String,
+      default: '/img/senepay-og.png'
+    },
+    name: {
+      type: String,
+      default: ''
+    },
+    abbr: {
+      type: String,
+      default: ''
+    },
+    buy: {
+      type: Number,
+      default: 0
+    },
+    sell: {
+      type: Number,
+      default: 0
+    }
+  }
+}
 </script>
 
 <style></style>

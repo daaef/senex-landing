@@ -1,23 +1,37 @@
 @font-face {
   font-family: 'SFPro';
+  src: url('assets/fonts/SFPro-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('assets/fonts/SFPro-Ultralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('assets/fonts/SFPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
   src: url('assets/fonts/SFPro-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-// @font-face {
-//   font-family: 'SFPro';
-//   src: url('assets/fonts/SFPro-Light.ttf') format('truetype');
-//   font-weight: 300;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: 'SFPro';
-//   src: url('assets/fonts/SFPro-ExtraBold.ttf') format('truetype');
-//   font-weight: 800;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'SFPro';
+  src: url('assets/fonts/SFPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'SFPro';
@@ -25,6 +39,28 @@
   font-weight: 600;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('assets/fonts/SFPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('assets/fonts/SFPro-Heavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('assets/fonts/SFPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 
 // @font-face {
 //   font-family: 'SFPro';

@@ -1,7 +1,13 @@
 <template>
   <div>
-    <SideNav :is-open="showSide" @toggle-side="toggleSide" />
-    <div :class="showSide ? 'lock-scroll' : ''">
+    <app-modal
+      :v-modal="showSide"
+      initial-class-state="side-nav-con"
+      final-class-state="side-nav-show"
+    >
+      <SideNav :is-open="showSide" @toggle-side="toggleSide" />
+    </app-modal>
+    <div>
       <Nav
         :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
         @toggle-side="toggleSide"
@@ -12,7 +18,9 @@
 </template>
 
 <script>
+import AppModal from '~/components/custom/AppModal.vue'
 export default {
+  components: { AppModal },
   data() {
     return {
       showSide: false

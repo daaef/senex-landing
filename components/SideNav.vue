@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="side-nav-con" :class="isOpen ? 'side-nav-show' : ''">
+  <div class="side-nav-div">
+    <div>
       <div class="container">
         <span class="close-con" @click="closeSide"
           ><img src="/img/close.svg"
@@ -39,7 +39,9 @@
 </template>
 
 <script>
+// import AppModal from './custom/AppModal.vue'
 export default {
+  // components: { AppModal },
   props: {
     isOpen: {
       type: Boolean,

@@ -2,7 +2,10 @@
   <div>
     <div class="crypto-buddy-background relative">
       <div class="container-full">
-        <div class="word-con-abt">
+        <div class="word-con-abt relative">
+          <span class="hidden lg:inline-block dancing-people"
+            ><img src="/img/about/dancing-people.png"
+          /></span>
           <div class="lg:w-3/5 word-con-abt__content">
             <p class="cap-abt">SECURITY AND SMOOTHNESS</p>
             <h2>The Perfect Crypto Buddy</h2>

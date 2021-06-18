@@ -18,6 +18,7 @@ import Gallery from '~/components/about/Gallery.vue'
 import JoinLearn from '~/components/about/JoinLearn.vue'
 import CryptoBuddy from '~/components/about/CryptoBuddy.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
+// import AppModal from '~/components/custom/AppModal.vue'
 export default {
   components: {
     Foreword,
@@ -27,9 +28,20 @@ export default {
     JoinLearn,
     CryptoBuddy,
     LandingFooter
+    // AppModal
   },
-  layout: 'about'
+  layout: 'about',
+  data() {
+    return {
+      open: false
+    }
+  }
 }
 </script>
 
-<style></style>
+<style>
+.show-btn {
+  background-color: red;
+  widows: 15px;
+}
+</style>
