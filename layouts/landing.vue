@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #162f55">
+  <div>
     <app-modal
       :v-modal="showSide"
       initial-class-state="side-nav-con"
@@ -7,14 +7,12 @@
     >
       <SideNav :is-open="showSide" @toggle-side="toggleSide" />
     </app-modal>
-    <div class="landing-bg">
+    <div>
       <Nav
         :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
         @toggle-side="toggleSide"
       />
-      <div>
-        <Nuxt />
-      </div>
+      <Nuxt />
     </div>
   </div>
 </template>
