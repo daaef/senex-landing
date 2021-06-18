@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="relative">
       <div ref="gallery" class="carousel-con flex">
         <div class="carousel-1">
           <img src="img/about/carousel-3.png" alt="group-pic" />
@@ -11,6 +11,12 @@
         <div class="carousel-1">
           <img src="img/about/carousel-2.png" alt="group-pic" />
         </div>
+        <span class="btn scroll-btn left"
+          ><img src="/img/about/caret-left.svg"
+        /></span>
+        <span class="btn scroll-btn right"
+          ><img src="/img/about/caret-right.svg"
+        /></span>
       </div>
     </div>
   </div>

@@ -101,6 +101,7 @@
     }
 
     &__coin-name-con {
+      min-width: 80px;
       .title {
         font-size: 12px;
         font-weight: 500;
@@ -116,11 +117,11 @@
       margin: 0 10px;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
   
       .amount {
         font-size: 12px;
         font-weight: 500;
-        margin-right: 5px;
       }
   
       .action-buy {

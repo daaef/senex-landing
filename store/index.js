@@ -1,15 +1,19 @@
 export const state = () => ({
-  country: 'NG'
+  country: {
+    name: 'Nigeria',
+    imageSource: '/img/nigeria.svg',
+    code: 'NG'
+  }
 })
 
 export const mutations = {
-  changeCountry(state, c) {
-    state.country = c
+  changeCountry(state, payload) {
+    state.country = payload.country
   }
 }
 
 export const actions = {
-  changeCountry({ commit }) {
-    commit('changeCountry')
+  changeCountry({ commit }, payload) {
+    commit('changeCountry', payload)
   }
 }

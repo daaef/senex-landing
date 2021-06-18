@@ -26,10 +26,16 @@
                 >Create your account</router-link
               >
               <div class="country-con">
-                <span class="country-icon"
-                  ><img src="/img/nigeria.svg" /><span class="other-countries"
-                    ><img src="/img/south-africa.svg" /></span
-                ></span>
+                <div class="country-icon">
+                  <img :src="selectedCountry.imageSource" />
+                  <div
+                    v-for="c in otherCountries()"
+                    :key="c.code"
+                    class="other-countries"
+                  >
+                    <img :src="c.imageSource" @click="countryChange(c)" />
+                  </div>
+                </div>
                 <span class="caret-icon"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -90,6 +96,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import countries from '@/data/senexCountries'
 export default {
   props: {
     theme: {
@@ -103,11 +111,26 @@ export default {
     }
   },
   data() {
-    return {}
+    return {
+      countries
+    }
+  },
+  computed: {
+    ...mapState({
+      selectedCountry: 'country'
+    })
   },
   methods: {
     openSide() {
       this.$emit('toggle-side')
+    },
+    countryChange(c) {
+      this.$store.dispatch('changeCountry', {
+        country: c
+      })
+    },
+    otherCountries() {
+      return this.countries.filter((c) => c.code !== this.selectedCountry.code)
     }
   }
 }

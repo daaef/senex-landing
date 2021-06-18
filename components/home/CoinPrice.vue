@@ -8,7 +8,7 @@
       </div>
       <div class="flex align-center ml-auto">
         <div class="coin-holder__coin-price-con">
-          <span class="amount">N {{ buy }}</span>
+          <span class="amount sell">N{{ buy }}</span>
           <span class="btn action-buy">Buy</span>
         </div>
         <div class="coin-holder__coin-price-con">

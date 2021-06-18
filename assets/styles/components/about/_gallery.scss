@@ -2,9 +2,40 @@
   // height: 400px;
   width: 100%;
   overflow-x: hidden;
-  scroll-snap-align: center;
+  // scroll-snap-align: center;
   // white-space: nowrap;
   // display: flex;
+
+  .scroll-btn {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0850C6;
+    position: absolute;
+    z-index: 300;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 !important;
+
+    img {
+      width: 10px;
+    }
+  }
+
+  &:hover {
+    .scroll-btn {
+      @include flexcon(center, center, row)
+    }
+  }
+
+  .left {
+    left: 5%;
+  }
+
+  .right {
+    right: 5%;
+  }
 }
 
 .carousel-1 {
@@ -12,7 +43,7 @@
   margin-right: 25px;
   min-width: 50%;
   // width: 40%;
-  height: 350px;
+  height: 400px;
 
   img {
     height: 100%;
@@ -22,6 +53,15 @@
 }
 
 @media screen and (max-width: 640px) {
+  .carousel-con {
+    overflow-x: auto;
+
+    &:hover {
+      .scroll-btn {
+        display: none;
+      }
+    }
+  }
   .carousel-1 {
     min-width: 100%;
   }
