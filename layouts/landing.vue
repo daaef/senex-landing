@@ -7,7 +7,7 @@
     >
       <SideNav :is-open="showSide" @toggle-side="toggleSide" />
     </app-modal>
-    <div :class="showSide ? 'lock-scroll' : ''">
+    <div class="landing-bg">
       <Nav
         :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
         @toggle-side="toggleSide"

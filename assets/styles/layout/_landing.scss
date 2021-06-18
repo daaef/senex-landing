@@ -1,6 +1,10 @@
 @import '../abstract/color';
 @import '../abstract/mixins';
 
+.landing-bg {
+  background-color: $primary_color !important;
+}
+
 .landing-nav{
   position: fixed;
   z-index: 500;
