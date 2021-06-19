@@ -8,8 +8,8 @@
             <span class="btn brand-con__register-btn">Create account</span>
           </div>
           <div class="links-con lg:w-2/3">
-            <div class="flex flex-wrap lg:w-3/4 ml-auto">
-              <div class="links-and-headers w-1/2 md:w-1/3">
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/5 ml-auto">
+              <div class="links-and-headers">
                 <h1 class="header">Company</h1>
                 <ul>
                   <li><router-link to="/about">About</router-link></li>
@@ -18,7 +18,7 @@
                   <li><router-link to="/careers">Careers</router-link></li>
                 </ul>
               </div>
-              <div class="links-and-headers w-1/2 md:w-1/3">
+              <div class="links-and-headers">
                 <h1>Support</h1>
                 <ul>
                   <li><router-link to="/faq">FAQ</router-link></li>
@@ -26,7 +26,7 @@
                   <li><router-link to="/learn">Learn</router-link></li>
                 </ul>
               </div>
-              <div class="links-and-headers w-1/2 md:w-1/3">
+              <div class="links-and-headers">
                 <h1>Legal</h1>
                 <ul>
                   <li>
@@ -37,7 +37,7 @@
                   <li><router-link to="/faq">FAQ</router-link></li>
                 </ul>
               </div>
-              <div class="links-and-headers w-1/2 md:w-1/3">
+              <div class="links-and-headers">
                 <h1>Knowledge</h1>
                 <ul>
                   <li>
@@ -48,7 +48,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="links-and-headers w-1/2 md:w-1/3">
+              <div class="links-and-headers">
                 <h1>Conglomerates</h1>
                 <ul>
                   <li>
@@ -75,20 +75,22 @@
               </div>
             </div>
           </div>
-          <div class="lg:w-2/3 w-full ml-auto">
-            <div class="footer-social-con lg:w-3/4 lg:flex lg:ml-auto">
-              <router-link to="/" class="block lg:inline-block"
-                >Facebook</router-link
-              >
-              <router-link to="/" class="block lg:inline-block"
-                >Twitter</router-link
-              >
-              <router-link to="/" class="block lg:inline-block"
-                >Instagram</router-link
-              >
-              <router-link to="/" class="block lg:inline-block"
-                >LinkedIn</router-link
-              >
+          <div class="lg:w-2/3 lg:flex justify-end w-full ml-auto">
+            <div class="lg:w-3/5">
+              <div class="lg:flex lg:w-4/5 footer-social-con">
+                <router-link to="/" class="block lg:inline-block"
+                  >Facebook</router-link
+                >
+                <router-link to="/" class="block lg:inline-block"
+                  >Twitter</router-link
+                >
+                <router-link to="/" class="block lg:inline-block"
+                  >Instagram</router-link
+                >
+                <router-link to="/" class="block lg:inline-block"
+                  >LinkedIn</router-link
+                >
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="overflow-hidden relative">
+      <!-- <div class="deep-blue-behind"></div> -->
       <div class="triangle-bottom-right"></div>
     </div>
     <div class="why-senex">

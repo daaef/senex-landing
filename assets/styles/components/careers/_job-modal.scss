@@ -11,7 +11,7 @@
   overflow: auto;
   // position: fixed;
   // z-index: 1000;
-  transition: bottom 1s;
+  transition: bottom 0.25s;
   padding-top: 50px;
   padding-bottom: 50px;
 
@@ -29,7 +29,7 @@
     }
 
     h3 {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: bold;
     }
   }

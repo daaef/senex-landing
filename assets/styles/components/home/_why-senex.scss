@@ -4,6 +4,40 @@
   border-bottom: 100px solid #E8FFF2;
   border-left: 100vw solid transparent;
   overflow: hidden !important;
+  position: relative;
+  // z-index: 3;
+}
+.triangle-bottom {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid $primary_color;
+  border-left: 100vw solid transparent;
+  overflow: hidden !important;
+  position: relative;
+  top: 100px;
+  // z-index: 3;
+}
+
+.deep-blue-behind {
+  overflow: hidden !important;
+  z-index: 2;
+  height: 100px;
+  width: 100vw;
+  clip-path: polygon(80% 0, 100% 0, 0 20%, 100% 0);
+  background-color: $primary_color;
+  
+  .rectangle {
+    height: 100px;
+    background-color: $primary_color;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid $primary_color;
+    border-left: 100vw solid transparent;
+    overflow: hidden !important;
+  }
 }
 
 .why-senex {

@@ -17,7 +17,7 @@
               </span>
             </div>
           </div>
-          <span class="arrow">
+          <span class="arrow right-anim">
             <img src="img/awesome-arrow-right.svg" alt="arrow" />
           </span>
         </div>
@@ -36,7 +36,7 @@
               </span>
             </div>
           </div>
-          <span class="arrow">
+          <span class="arrow right-anim">
             <img src="img/awesome-arrow-right.svg" alt="arrow" />
           </span>
         </div>

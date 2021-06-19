@@ -13,8 +13,11 @@
           >
           <h3 class="rvw-writer">Akinosho, from Lagos</h3>
           <span class="rvw-con__arrow-con md:w-1/6 md:ml-auto"
-            ><img src="/img/awesome-arrow-left.svg" />
-            <img src="/img/awesome-arrow-right.svg" class="right-img" />
+            ><img src="/img/awesome-arrow-left.svg" class="left-anim" />
+            <img
+              src="/img/awesome-arrow-right.svg"
+              class="right-img right-anim"
+            />
           </span>
         </div>
       </div>
