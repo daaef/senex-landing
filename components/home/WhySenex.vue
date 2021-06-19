@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="overflow-hidden relative">
-      <!-- <div class="deep-blue-behind"></div> -->
-      <div class="triangle-bottom-right"></div>
+    <div class="overflow-hidden">
+      <div class="why-blue-border"></div>
+      <div class="why-light-triangle"></div>
     </div>
     <div class="why-senex">
       <div class="container">

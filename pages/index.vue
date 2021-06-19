@@ -11,7 +11,10 @@
                 SenexPay offers you a secure and easy way to make crypto-fiat
                 exchange without any hassle.
               </p>
-              <div class="snx-hero-content__btn_holder">
+              <div
+                v-scroll-reveal.reset="{ delay: 400 }"
+                class="snx-hero-content__btn_holder"
+              >
                 <router-link to="/register" class="register_btn"
                   >Create your account</router-link
                 >
