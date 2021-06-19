@@ -2,16 +2,32 @@
   <div class="side-nav-div">
     <div>
       <div class="container">
-        <span class="close-con" @click="closeSide"
+        <span class="close-con" @click="showSide(false)"
           ><img src="/img/close.svg"
         /></span>
         <div class="side-nav">
-          <router-link class="link" to="/about">About</router-link>
-          <router-link class="link" to="/learn">Learn</router-link>
-          <router-link class="link" to="/faq">FAQ</router-link>
-          <router-link class="link" to="/support">Support</router-link>
-          <router-link class="link" to="/login">Log in</router-link>
-          <router-link to="/register" class="btn register-btn"
+          <router-link class="link" to="/about" @click.native="showSide(false)"
+            >About</router-link
+          >
+          <router-link class="link" to="/learn" @click.native="showSide(false)"
+            >Learn</router-link
+          >
+          <router-link class="link" to="/faq" @click.native="showSide(false)"
+            >FAQ</router-link
+          >
+          <router-link
+            class="link"
+            to="/support"
+            @click.native="showSide(false)"
+            >Support</router-link
+          >
+          <router-link class="link" to="/login" @click.native="showSide(false)"
+            >Log in</router-link
+          >
+          <router-link
+            to="/register"
+            class="btn register-btn"
+            @click.native="showSide(false)"
             >Create your account</router-link
           >
           <div class="country-con">
@@ -70,8 +86,8 @@ export default {
     })
   },
   methods: {
-    closeSide() {
-      this.$emit('toggle-side')
+    showSide(val) {
+      this.$emit('change-visibility', val)
     },
     countryChange(c) {
       this.$store.dispatch('changeCountry', {

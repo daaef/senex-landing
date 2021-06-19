@@ -5,7 +5,7 @@
       initial-class-state="side-nav-con"
       final-class-state="side-nav-show"
     >
-      <SideNav :is-open="showSide" @toggle-side="toggleSide" />
+      <SideNav :is-open="showSide" @change-visibility="changeVisibility" />
     </app-modal>
     <div class="nav-margin-top" :class="showSide ? 'lock-scroll' : ''">
       <Nav
@@ -29,6 +29,9 @@ export default {
   methods: {
     toggleSide() {
       this.showSide = !this.showSide
+    },
+    changeVisibility(val) {
+      this.showSide = val
     }
   }
 }
