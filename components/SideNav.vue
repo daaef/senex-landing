@@ -6,29 +6,13 @@
           ><img src="/img/close.svg"
         /></span>
         <div class="side-nav">
-          <router-link class="link" to="/about" @click.native="showSide(false)"
-            >About</router-link
-          >
-          <router-link class="link" to="/learn" @click.native="showSide(false)"
-            >Learn</router-link
-          >
-          <router-link class="link" to="/faq" @click.native="showSide(false)"
-            >FAQ</router-link
-          >
-          <router-link
-            class="link"
-            to="/support"
-            @click.native="showSide(false)"
-            >Support</router-link
-          >
-          <router-link class="link" to="/login" @click.native="showSide(false)"
-            >Log in</router-link
-          >
-          <router-link
-            to="/register"
-            class="btn register-btn"
-            @click.native="showSide(false)"
-            >Create your account</router-link
+          <span class="link" @click="goTo('/about')">About</span>
+          <span class="link" @click="goTo('/learn')">Learn</span>
+          <span class="link" @click="goTo('/faq')">FAQ</span>
+          <span class="link" @click="goTo('/support')">Support</span>
+          <span class="link" @click="goTo('/login')">Log in</span>
+          <span class="link btn register-btn" @click="goTo('/register')"
+            >Create your account</span
           >
           <div class="country-con">
             <div class="country-icon">
@@ -87,7 +71,12 @@ export default {
   },
   methods: {
     showSide(val) {
-      this.$emit('change-visibility', val)
+      this.$emit('show', val)
+    },
+    goTo(path) {
+      this.$emit('show', false)
+      this.$emit('reset-scroll', true)
+      this.$router.push(path)
     },
     countryChange(c) {
       this.$store.dispatch('changeCountry', {

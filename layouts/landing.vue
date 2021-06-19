@@ -5,7 +5,7 @@
       initial-class-state="side-nav-con"
       final-class-state="side-nav-show"
     >
-      <SideNav :is-open="showSide" @change-visibility="changeVisibility" />
+      <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
     </app-modal>
     <div>
       <Nav
@@ -23,15 +23,19 @@ export default {
   components: { AppModal },
   data() {
     return {
-      showSide: false
+      showSide: false,
+      reset: false
     }
   },
   methods: {
     toggleSide() {
       this.showSide = !this.showSide
     },
-    changeVisibility(val) {
+    show(val) {
       this.showSide = val
+    },
+    resetScroll(val) {
+      this.reset = val
     }
   }
 }

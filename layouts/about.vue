@@ -2,12 +2,13 @@
   <div>
     <app-modal
       :v-modal="showSide"
+      :scroll-reset="reset"
       initial-class-state="side-nav-con"
       final-class-state="side-nav-show"
     >
-      <SideNav :is-open="showSide" @change-visibility="changeVisibility" />
+      <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
     </app-modal>
-    <div class="nav-margin-top" :class="showSide ? 'lock-scroll' : ''">
+    <div class="nav-margin-top">
       <Nav
         :theme="{ backgroundColor: '#FFFFFF', color: '#162F55' }"
         @toggle-side="toggleSide"
@@ -23,15 +24,19 @@ export default {
   components: { AppModal },
   data() {
     return {
-      showSide: false
+      showSide: false,
+      reset: false
     }
   },
   methods: {
     toggleSide() {
       this.showSide = !this.showSide
     },
-    changeVisibility(val) {
+    show(val) {
       this.showSide = val
+    },
+    resetScroll(val) {
+      this.reset = val
     }
   }
 }

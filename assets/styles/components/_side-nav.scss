@@ -34,7 +34,7 @@
   .side-nav {
     @include flexcon(center, center, column);
 
-    a {
+    .link {
       margin-top: 25px
     }
 

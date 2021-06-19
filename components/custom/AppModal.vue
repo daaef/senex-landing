@@ -15,6 +15,10 @@ export default {
       type: Boolean,
       default: false
     },
+    scrollReset: {
+      type: Boolean,
+      default: false
+    },
     initialClassState: {
       type: String,
       default: ''
@@ -27,6 +31,11 @@ export default {
   watch: {
     vModal(val) {
       this.showOrClose(val)
+    },
+    scrollReset(val) {
+      if (val) {
+        this.resetScroll()
+      }
     }
   },
   mounted() {
@@ -60,6 +69,9 @@ export default {
         this.closeModal()
         this.open = false
       }
+    },
+    resetScroll() {
+      window.scrollTo(0, 0)
     },
     close() {
       this.$emit('close-modal')
