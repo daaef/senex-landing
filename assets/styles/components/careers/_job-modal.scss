@@ -1,19 +1,15 @@
 .job-modal-show {
   bottom: 0 !important;
-}
-
-.job-modal-div {
-  height: 100% !important;
-  width: 100% !important;
-  // animation: fadeIn 2s;
+  //transform: translateY(200vh) !important;
 }
 
 .job-modal-holder {
   // position: absolute;
   // left: 0;
   // top: 0;
-  height: 100% !important;
-  width: 100% !important;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
 }
 
 .job-modal-con {
@@ -26,7 +22,7 @@
   left: 0;
   // position: fixed;
   z-index: 1000;
-  transition: bottom 0.25s;
+  transition: all 0.25s;
   padding-top: 50px;
 
   &__header {
