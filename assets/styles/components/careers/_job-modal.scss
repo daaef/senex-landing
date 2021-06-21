@@ -28,13 +28,13 @@
   z-index: 1000;
   transition: bottom 0.25s;
   padding-top: 50px;
-  padding-bottom: 50px;
 
   &__header {
     background-color: $primary_color;
     .arrow-down {
       display: inline-block;
       width: 25px;
+      margin-top: 25px;
       margin-bottom: 25px;
       cursor: pointer;
 
