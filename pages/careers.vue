@@ -8,8 +8,8 @@
       <!-- <job-position></job-position> -->
       <app-modal
         :v-modal="modalOpen"
-        initial-class-state="job-modal-con"
-        final-class-state="job-modal-show"
+        initial-class="job-modal-con"
+        final-class-open="job-modal-show"
       >
         <job-modal @close-modal="closeModal"></job-modal>
       </app-modal>

@@ -1,8 +1,10 @@
 <template>
   <div
-    ref="app-modal"
     class="app-modal"
-    :class="[initialClassState, vModal ? 'flex ' + finalClassState : '']"
+    :class="[
+      initialClass,
+      vModal ? 'flex ' + finalClassOpen : 'flex ' + finalClassClose
+    ]"
   >
     <slot></slot>
   </div>
@@ -19,11 +21,15 @@ export default {
       type: Boolean,
       default: false
     },
-    initialClassState: {
+    initialClass: {
       type: String,
       default: ''
     },
-    finalClassState: {
+    finalClassOpen: {
+      type: String,
+      default: ''
+    },
+    finalClassClose: {
       type: String,
       default: ''
     }
@@ -53,6 +59,7 @@ export default {
       const body = document.body
       body.style.position = 'fixed'
       body.style.top = `-${scrollY}`
+      body.style.maxWidth = '100vw'
     },
     closeModal() {
       const body = document.body
@@ -63,11 +70,11 @@ export default {
     },
     showOrClose(val) {
       if (val) {
-        this.showModal()
         this.open = true
+        this.showModal()
       } else {
-        this.closeModal()
         this.open = false
+        this.closeModal()
       }
     },
     resetScroll() {

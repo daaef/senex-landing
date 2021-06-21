@@ -1,22 +1,20 @@
 .side-nav-show {
-  top: 0 !important;
-  //animation: fadeIn 2s ease-in;
-  // z-index: 50000 !important;
-  // display: flex !important;
-  // animation-name: fadeIn;
-  // animation-duration: 2s;
-  // animation-fill-mode: forwards;
+  opacity: 1 !important;
+  // height: 100vh !important;
+  // transform: translateY(-50%);
+  // display: flex;
+  height: 100vh !important;
+  // animation: fadeIn 2s ease-in forwards;
 }
 
 .side-nav-hide {
-  top: 0 !important;
-  animation-name: fadeOut;
-  animation-duration: 2s;
+  display: none !important;
+  // animation: fadeOut 2s ease-in forwards;
   //animation-fill-mode: forwards;
 }
 
 .side-nav-div {
-  height: 100% !important;
+  height: 100vh !important;
   width: 100% !important;
   // animation: fadeIn 2s;
 }
@@ -27,42 +25,95 @@
   }
 
   1% {
-    top: 0;
+    height: 100vh;
+    transform: translateY(-50%);
   }
 
   100% {
     opacity: 1;
-    top: 0;
+    height: 100vh;
+    transform: translateY(-50%);
   }
 }
 
 @keyframes fadeOut {
   0% {
-    opacity: 1;
-    top: 0;
   }
 
   99% {
-    top: -100vh;
+    height: 100vh;
+    transform: translateY(-50%);
   }
 
   100% {
+    height: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.hide-modal {
+  opacity: 0;
+  animation: fade-out-side-bar 1s forwards;
+}
+
+.show-modal {
+  opacity: 1;
+  animation: fade-in-side-bar 1s forwards;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+@keyframes hide {
+  0% {
+    z-index: 2;
+    opacity: 1;
+  }
+
+  99% {
+    z-index: 1;
+  }
+  
+  100% {
+    z-index: -1;
     opacity: 0;
-    top: -100vh;
+  }
+}
+
+@keyframes show {
+  0% {
+    z-index: -1;
+    opacity: 0;
+  }
+
+  1% {
+    z-index: 1;
+  }
+  
+  100% {
+    z-index: 2;
+    opacity: 1;
   }
 }
 
 .side-nav-con {
   background-color: $primary_color;
   color: white;
-  width: 100%;
-  height: 100vh;
-  top: -100vh;
-  // top: 0;
+  // width: 100%;
+  // top: 50%;
   overflow: hidden;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  // height: 0;
   // position: fixed;
-  // z-index: 10000;
-  transition: top 1s;
+  transition: opacity 1s;
+  // animation: fadeOut 2s ease-in forwards;
 
   .close-con {
     display: block;

@@ -1,7 +1,7 @@
 <template>
-  <div class="side-nav-div">
+  <div class="job-modal-holder">
     <div>
-      <div class="container">
+      <div class="container relative">
         <div class="job-modal-con__header">
           <span class="arrow-down" @click="closeModal"
             ><img src="/img/awesome-chevron-circle-down.svg"
@@ -9,7 +9,7 @@
           <h3>OPEN POSITIONS</h3>
         </div>
       </div>
-      <div>
+      <div class="job-position-holder">
         <job-position></job-position>
       </div>
     </div>

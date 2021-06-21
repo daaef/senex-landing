@@ -3,11 +3,22 @@
     <app-modal
       :v-modal="showSide"
       :scroll-reset="reset"
-      initial-class-state="side-nav-con"
-      final-class-state="side-nav-show"
+      initial-class="side-nav-con"
+      final-class-open="side-nav-show"
+    >
+      <transition name="fade">
+        <SideNav v-if="showSide" @show="show" @reset-scroll="resetScroll" />
+      </transition>
+    </app-modal>
+    <!-- <app-modal
+      :v-modal="showSide"
+      :scroll-reset="reset"
+      initial-class="side-nav-con"
+      final-class-open="show-modal"
+      final-class-close="hide-modal"
     >
       <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
-    </app-modal>
+    </app-modal> -->
     <div class="nav-margin-top">
       <Nav
         :theme="{ backgroundColor: '#FFFFFF', color: '#162F55' }"

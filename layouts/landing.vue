@@ -2,10 +2,12 @@
   <div>
     <app-modal
       :v-modal="showSide"
-      initial-class-state="side-nav-con"
-      final-class-state="side-nav-show"
+      initial-class="side-nav-con"
+      final-class-open="side-nav-show"
     >
-      <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
+      <transition name="fade">
+        <SideNav v-if="showSide" @show="show" @reset-scroll="resetScroll" />
+      </transition>
     </app-modal>
     <div>
       <Nav
@@ -28,6 +30,13 @@ export default {
     }
   },
   methods: {
+    finalClass() {
+      if (this.showSide) {
+        return 'show-modal'
+      } else {
+        return 'hide-modal'
+      }
+    },
     toggleSide() {
       this.showSide = !this.showSide
     },
