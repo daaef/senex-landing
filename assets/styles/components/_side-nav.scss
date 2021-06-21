@@ -1,64 +1,15 @@
 .side-nav-show {
   opacity: 1 !important;
-  // height: 100vh !important;
-  // transform: translateY(-50%);
-  // display: flex;
   height: 100vh !important;
-  // animation: fadeIn 2s ease-in forwards;
 }
 
 .side-nav-hide {
   display: none !important;
-  // animation: fadeOut 2s ease-in forwards;
-  //animation-fill-mode: forwards;
 }
 
 .side-nav-div {
   height: 100vh !important;
   width: 100% !important;
-  // animation: fadeIn 2s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  1% {
-    height: 100vh;
-    transform: translateY(-50%);
-  }
-
-  100% {
-    opacity: 1;
-    height: 100vh;
-    transform: translateY(-50%);
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-  }
-
-  99% {
-    height: 100vh;
-    transform: translateY(-50%);
-  }
-
-  100% {
-    height: 0;
-    transform: translateY(-50%);
-  }
-}
-
-.hide-modal {
-  opacity: 0;
-  animation: fade-out-side-bar 1s forwards;
-}
-
-.show-modal {
-  opacity: 1;
-  animation: fade-in-side-bar 1s forwards;
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -66,38 +17,6 @@
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-}
-
-@keyframes hide {
-  0% {
-    z-index: 2;
-    opacity: 1;
-  }
-
-  99% {
-    z-index: 1;
-  }
-  
-  100% {
-    z-index: -1;
-    opacity: 0;
-  }
-}
-
-@keyframes show {
-  0% {
-    z-index: -1;
-    opacity: 0;
-  }
-
-  1% {
-    z-index: 1;
-  }
-  
-  100% {
-    z-index: 2;
-    opacity: 1;
-  }
 }
 
 .side-nav-con {
