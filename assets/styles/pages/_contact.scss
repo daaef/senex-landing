@@ -3,9 +3,9 @@
 
   .contact-type-con {
     &:first-child {
-      border-top: 2px solid black;
+      border-top: 2px solid $primary_color;
     }
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $primary_color;
     padding-top: 20px;
     padding-bottom: 20px;
   
@@ -55,9 +55,9 @@
       height: 150px;
       width: 150px;
       border-top: 1px solid $primary_color;
-      border-right: 1px solid $primary_color;
+      border-right: .5px solid $primary_color;
       border-bottom: 1px solid $primary_color;
-      border-left: 1px solid $primary_color;
+      border-left: .5px solid $primary_color;
 
       // &:first-child {
       //   border-left: 1px solid $primary_color;

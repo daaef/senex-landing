@@ -96,12 +96,14 @@
     position: absolute;
     display: inline-block;
     width: 60px;
+    height: 60px;
     top: 0;
     right: 0;
     // transition: top 2s, right 2s;
 
     img {
       width: 100%;
+      height: 100%;
     }
   }
 
@@ -109,11 +111,13 @@
     position: absolute;
     display: inline-block;
     width: 60px;
+    height: 60px;
     bottom: 0;
     left: 0;
 
     img {
       width: 100%;
+      height: 100%;
     }
   }
 
@@ -122,6 +126,11 @@
     position: absolute;
     left: 20%;
     bottom: 20%;
+    height: 50px;
+
+    img {
+      height: 100%;
+    }
   }
 
   .circle-girl-small {
@@ -129,6 +138,11 @@
     position: absolute;
     top: 20%;
     right: 20%;
+    height: 50px;
+
+    img {
+      height: 100%;
+    }
   }
 
   .circle-boy {
@@ -213,19 +227,19 @@
 .landing-animation {
   animation-name: landing-anim;
   animation-duration: 2s;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 
 .purple-arrow-animation {
   animation-name: purple-anim;
-  animation-duration: 4s;
+  animation-duration: 2s;
   // animation-delay: 1s;
 }
 
 .lemon-arrow-animation {
   animation-name: lemon-anim;
-  animation-duration: 4s;
+  animation-duration: 2s;
   // animation-delay: 1s;
 }
 
@@ -353,9 +367,9 @@
 }
 
 @media screen and(min-height: 890px) {
-  .snx-hero-atom-holder {
-    // padding: 108px 0;
-  }
+  // .snx-hero-atom-holder {
+  //   // padding: 108px 0;
+  // }
   .atom-holder {
     position: relative;
     display: flex;
@@ -364,10 +378,10 @@
     max-height: 800px;
   }
 
-  .atom {
-    // height: 100%;
-    // width: 100%;
-  }
+  // .atom {
+  //   // height: 100%;
+  //   // width: 100%;
+  // }
 }
 
 @keyframes lemon-anim{
@@ -376,8 +390,8 @@
     right: 0;
   }
   50% {
-    top: 12%;
-    right: 12%;
+    top: calc(20% - 37px);
+    right: calc(20% - 37px);
   }
   100% {
     top: 0;
@@ -391,8 +405,8 @@
     left: 0;
   }
   50% {
-    bottom: 12%;
-    left: 12%;
+    bottom: calc(20% - 37px);
+    left: calc(20% - 37px);
   }
   100% {
     bottom: 0;
