@@ -1,5 +1,5 @@
 .foreword-holder {
-  margin-top: 70px;
+  // margin-top: 70px;
   margin-bottom: 50px;
 }
 
@@ -61,5 +61,12 @@
         object-fit: cover;
       }
     }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .foreword-holder {
+    // margin-top: 70px;
+    padding-top: 60px;
   }
 }

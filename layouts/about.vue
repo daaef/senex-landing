@@ -1,13 +1,13 @@
 <template>
   <div>
     <app-modal
-      :v-modal="showSide"
-      :scroll-reset="reset"
+      :v-modal="sideBarOpen"
       initial-class="side-nav-con"
       final-class-open="side-nav-show"
+      final-class-close="side-nav-hide"
     >
       <transition name="fade">
-        <SideNav v-if="showSide" @show="show" @reset-scroll="resetScroll" />
+        <SideNav v-if="sideBarOpen" />
       </transition>
     </app-modal>
     <!-- <app-modal
@@ -19,37 +19,26 @@
     >
       <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
     </app-modal> -->
-    <div class="nav-margin-top">
-      <Nav
-        :theme="{ backgroundColor: '#FFFFFF', color: '#162F55' }"
-        @toggle-side="toggleSide"
-      />
-      <Nuxt />
+    <div class="">
+      <Nav :theme="{ backgroundColor: '#FFFFFF', color: '#162F55' }" />
+      <div class="nav-padding-top">
+        <Nuxt />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppModal from '~/components/custom/AppModal.vue'
 export default {
   components: { AppModal },
-  data() {
-    return {
-      showSide: false,
-      reset: false
-    }
+  computed: {
+    ...mapState({
+      sideBarOpen: 'sideBarOpen'
+    })
   },
-  methods: {
-    toggleSide() {
-      this.showSide = !this.showSide
-    },
-    show(val) {
-      this.showSide = val
-    },
-    resetScroll(val) {
-      this.reset = val
-    }
-  }
+  methods: {}
 }
 </script>
 
@@ -75,5 +64,9 @@ html {
 
 .nav-margin-top {
   margin-top: 75px;
+}
+
+.nav-padding-top {
+  padding-top: 100px;
 }
 </style>

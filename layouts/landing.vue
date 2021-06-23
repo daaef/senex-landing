@@ -1,52 +1,34 @@
 <template>
   <div>
     <app-modal
-      :v-modal="showSide"
+      :v-modal="sideBarOpen"
       initial-class="side-nav-con"
       final-class-open="side-nav-show"
+      final-class-close="side-nav-hide"
     >
+      <!-- <SideNav v-if="showSide" @show="show" @reset-scroll="resetScroll" /> -->
       <transition name="fade">
-        <SideNav v-if="showSide" @show="show" @reset-scroll="resetScroll" />
+        <SideNav v-if="sideBarOpen" />
       </transition>
     </app-modal>
     <div>
-      <Nav
-        :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }"
-        @toggle-side="toggleSide"
-      />
+      <Nav :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }" />
       <Nuxt />
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppModal from '~/components/custom/AppModal.vue'
 export default {
   components: { AppModal },
-  data() {
-    return {
-      showSide: false,
-      reset: false
-    }
+  computed: {
+    ...mapState({
+      sideBarOpen: 'sideBarOpen'
+    })
   },
-  methods: {
-    finalClass() {
-      if (this.showSide) {
-        return 'show-modal'
-      } else {
-        return 'hide-modal'
-      }
-    },
-    toggleSide() {
-      this.showSide = !this.showSide
-    },
-    show(val) {
-      this.showSide = val
-    },
-    resetScroll(val) {
-      this.reset = val
-    }
-  }
+  methods: {}
 }
 </script>
 

@@ -4,12 +4,8 @@
 }
 
 .job-modal-holder {
-  // position: absolute;
-  // left: 0;
-  // top: 0;
   height: 100%;
   width: 100%;
-  padding-top: 20px;
 }
 
 .job-modal-con {
@@ -20,6 +16,7 @@
   bottom: -100vh;
   overflow: hidden;
   left: 0;
+  // position: absolute !important;
   // position: fixed;
   z-index: 1000;
   transition: all 0.25s;
@@ -27,6 +24,7 @@
 
   &__header {
     background-color: $primary_color;
+    // height: 100px;
     .arrow-down {
       display: inline-block;
       width: 25px;

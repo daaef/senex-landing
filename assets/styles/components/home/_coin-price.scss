@@ -84,7 +84,7 @@
   }
 }
 
-@media screen and(max-width: 500px) {
+@media screen and(max-width: 640px) {
   .coin-holder{
     padding: 20px 20px;
 
@@ -122,6 +122,7 @@
       .amount {
         font-size: 12px;
         font-weight: 500;
+        margin-right: 0;
       }
   
       .action-buy {

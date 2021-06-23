@@ -69,21 +69,21 @@
             >
               <rect
                 width="28"
-                height="5"
+                height="3"
                 rx="1"
                 transform="translate(249 17)"
                 :fill="theme.color"
               />
               <rect
                 width="28"
-                height="5"
+                height="3"
                 rx="1"
                 transform="translate(249 24)"
                 :fill="theme.color"
               />
               <rect
                 width="28"
-                height="5"
+                height="3"
                 rx="1"
                 transform="translate(249 31)"
                 :fill="theme.color"
@@ -117,17 +117,21 @@ export default {
   },
   computed: {
     ...mapState({
-      selectedCountry: 'country'
+      selectedCountry: 'country',
+      sideBarOpen: 'sideBarOpen'
     })
   },
   methods: {
     openSide() {
-      this.$emit('toggle-side')
+      this.toggleSideBar()
     },
     countryChange(c) {
       this.$store.dispatch('changeCountry', {
         country: c
       })
+    },
+    toggleSideBar() {
+      this.$store.dispatch('toggleSideBar')
     },
     otherCountries() {
       return this.countries.filter((c) => c.code !== this.selectedCountry.code)

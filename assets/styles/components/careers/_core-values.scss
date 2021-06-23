@@ -7,13 +7,13 @@
     width: 100%;
   }
 }
+
 .foreword-holder-car {
-  margin-top: 70px;
   margin-bottom: 50px;
 }
 
 .foreword-con-car {
-  @include flexcon(left, flex-start, column);
+  @include flexcon(left, center, column);
   
   h3 {
     font-size: 32px;
@@ -31,7 +31,7 @@
   .words-car {
     max-width: 500px;
     color: #242426;
-    margin-top: 100px;
+    // margin-top: 100px;
   }
 
   .img-word-car {
@@ -78,4 +78,10 @@
   border-radius: 6px;
   margin-bottom: 50px;
   max-width: 200px;
+}
+
+@media screen and (max-width: 640px) {
+  .foreword-holder-car {
+    padding-top: 60px;
+  }
 }

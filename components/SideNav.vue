@@ -2,7 +2,7 @@
   <div class="side-nav-div">
     <div>
       <div class="container">
-        <span class="close-con" @click="showSide(false)"
+        <span class="close-con" @click="showSide()"
           ><img src="/img/close.svg"
         /></span>
         <div class="side-nav">
@@ -48,11 +48,9 @@
 </template>
 
 <script>
-// import AppModal from './custom/AppModal.vue'
 import { mapState } from 'vuex'
 import countries from '@/data/senexCountries'
 export default {
-  // components: { AppModal },
   props: {
     isOpen: {
       type: Boolean,
@@ -70,12 +68,14 @@ export default {
     })
   },
   methods: {
-    showSide(val) {
-      this.$emit('show', val)
+    showSide() {
+      this.toggleSideBar()
+    },
+    toggleSideBar() {
+      this.$store.dispatch('toggleSideBar')
     },
     goTo(path) {
-      this.$emit('show', false)
-      this.$emit('reset-scroll', true)
+      this.toggleSideBar()
       this.$router.push(path)
     },
     countryChange(c) {

@@ -12,7 +12,7 @@
           <span class="btn action-buy">Buy</span>
         </div>
         <div class="coin-holder__coin-price-con">
-          <span class="amount sell">N {{ sell }}</span>
+          <span class="amount sell">N{{ sell }}</span>
           <span class="btn action-sell">Sell</span>
         </div>
       </div>

@@ -19,7 +19,7 @@
                 </ul>
               </div>
               <div class="links-and-headers">
-                <h1>Support</h1>
+                <h1 class="header">Support</h1>
                 <ul>
                   <li><router-link to="/faq">FAQ</router-link></li>
                   <li><router-link to="/contact">Contact</router-link></li>
@@ -27,7 +27,7 @@
                 </ul>
               </div>
               <div class="links-and-headers">
-                <h1>Legal</h1>
+                <h1 class="header">Legal</h1>
                 <ul>
                   <li>
                     <router-link to="/privacy">Privacy</router-link>
@@ -38,7 +38,7 @@
                 </ul>
               </div>
               <div class="links-and-headers">
-                <h1>Knowledge</h1>
+                <h1 class="header">Knowledge</h1>
                 <ul>
                   <li>
                     <router-link to="/charges">Fee & Charges</router-link>
@@ -49,7 +49,7 @@
                 </ul>
               </div>
               <div class="links-and-headers">
-                <h1>Conglomerates</h1>
+                <h1 class="header">Conglomerates</h1>
                 <ul>
                   <li>
                     <router-link to="/smart-homes"

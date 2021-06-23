@@ -1,7 +1,7 @@
 <template>
   <div class="job-modal-holder">
     <div>
-      <div class="container relative">
+      <div class="container">
         <div class="job-modal-con__header">
           <span class="arrow-down" @click="closeModal"
             ><img src="/img/awesome-chevron-circle-down.svg"

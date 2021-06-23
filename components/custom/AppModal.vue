@@ -52,6 +52,9 @@ export default {
       )
     })
   },
+  beforeDestroy() {
+    // window.removeEventListener('scroll')
+  },
   methods: {
     showModal() {
       const scrollY =

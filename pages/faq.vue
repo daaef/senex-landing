@@ -3,9 +3,9 @@
     <div class="container">
       <div class="faq-search-con">
         <h3>Frequently Asked Questions.</h3>
-        <div class="search-con">
+        <div ref="faqSearchDiv" class="search-con">
           <span class="search-icon"><img src="/img/map-search.svg" /></span>
-          <input placeholder="Search for what you are looking for" />
+          <input :placeholder="searchPlaceholder" />
         </div>
       </div>
     </div>
@@ -34,7 +34,42 @@ import FaqItem from '~/components/faq/FaqItem.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 export default {
   components: { FaqItem, LandingFooter },
-  layout: 'about'
+  layout: 'about',
+  data() {
+    return {
+      searchPlaceholder: 'Search',
+      windowWidth: 0
+    }
+  },
+  watch: {
+    windowWidth(val) {
+      if (val >= 640) {
+        this.searchPlaceholder = 'Search for what you are looking for'
+      } else {
+        this.searchPlaceholder = 'Search'
+      }
+    }
+  },
+  mounted() {
+    if (window.innerWidth >= 640) {
+      this.searchPlaceholder = 'Search for what you are looking for'
+    } else {
+      this.searchPlaceholder = 'Search'
+    }
+
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize() {
+      this.windowWidth = window.innerWidth
+    }
+    // getPlaceHolder() {}
+  }
 }
 </script>
 
