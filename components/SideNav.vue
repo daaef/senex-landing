@@ -9,7 +9,7 @@
           <span class="link" @click="goTo('/about')">About</span>
           <span class="link" @click="goTo('/learn')">Learn</span>
           <span class="link" @click="goTo('/faq')">FAQ</span>
-          <span class="link" @click="goTo('/support')">Support</span>
+          <span class="link" @click="goTo('/contact')">Support</span>
           <span class="link" @click="goTo('/login')">Log in</span>
           <span class="link btn register-btn" @click="goTo('/register')"
             >Create your account</span

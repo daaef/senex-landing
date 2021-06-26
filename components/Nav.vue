@@ -18,7 +18,7 @@
               <router-link class="link" to="/about">About</router-link>
               <router-link class="link" to="/learn">Learn</router-link>
               <router-link class="link" to="/faq">FAQ</router-link>
-              <router-link class="link" to="/support">Support</router-link>
+              <router-link class="link" to="/contact">Support</router-link>
             </div>
             <div class="register-con">
               <router-link to="/login" class="log-in link">Log in</router-link>
