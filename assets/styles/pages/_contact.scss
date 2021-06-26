@@ -2,12 +2,13 @@
   margin-top: 50px;
 
   .contact-type-con {
-    &:first-child {
-      border-top: 2px solid $primary_color;
+    
+    border-top: 2px solid $primary_color;
+    &:last-child {
+      border-bottom: 2px solid $primary_color;
     }
-    border-bottom: 2px solid $primary_color;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
+    // padding-bottom: 20px;
   
     .title {
       font-size: 24px;

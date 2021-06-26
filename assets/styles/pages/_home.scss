@@ -18,10 +18,8 @@
   width: 100%;
   // min-height: 100%;
   height: auto;
-  // overflow: auto;
-  height: auto;
 
-  &__title{
+  &__title {
     text-align: left;
     font-size: 48px;
     font-weight: 600;
@@ -50,7 +48,7 @@
 
     .register_btn {
       @include custom-btn($secondary_color,$color_white,$secondary_color);
-      padding: 8px 16px;
+      padding: 10px 24px;
       font-size: 18px;
       border-radius: 6px;
       margin-right: 20px;
@@ -63,9 +61,11 @@
     .trading_btn {
       @include custom-btn($nobg,$color_white,$color_white);
       border: 1px solid;
-      padding: 8px 16px;
+      padding: 10px 24px;
       font-size: 18px;
       border-radius: 6px;
+      min-width: 180px;
+      text-align: center;
     }
 
     .trading_btn:hover {
@@ -81,6 +81,7 @@
   position: relative;
   display: flex;
   justify-content: right;
+  padding: 20px 0;
 }
 
 .atom-holder {
@@ -257,8 +258,6 @@
     padding: 50px 0;
     // min-height: 100%;
     height: auto;
-    // overflow: auto;
-    height: auto;
   
     &__title{
       text-align: left;
@@ -285,7 +284,6 @@
   
       .register_btn {
         @include custom-btn($secondary_color,$color_white,$secondary_color);
-        padding: 8px 16px;
         font-size: 18px;
         border-radius: 6px;
         margin-right: 20px;
@@ -299,7 +297,6 @@
       .trading_btn {
         @include custom-btn($nobg,$color_white,$color_white);
         border: 1px solid;
-        padding: 8px 16px;
         font-size: 18px;
         border-radius: 6px;
         margin-top: 20px;
@@ -344,14 +341,6 @@
   
 }
 
-@media screen and(max-height: 800px) {
-  .snx-hero-banner {
-    width: 100%;
-    height: auto;
-    // overflow: auto;
-    // min-height: 550px !important;
-  }
-}
 
 @media screen and(max-width: 768px) {
   .atom-holder {
@@ -366,22 +355,42 @@
 
 }
 
+@media screen and(min-width: 1600px) {
+  .snx-hero-content {
+    &__title {
+      font-size: 60px;
+    }
+  
+    &__subtitle{
+      font-size: 22px;
+    }
+  }
+
+  .snx-description {
+  
+    &__title{
+      font-size: 52px;
+    }
+  
+    &__subtitle {
+      font-size: 22px;
+    }
+  }
+}
+
 @media screen and(min-height: 890px) {
-  // .snx-hero-atom-holder {
-  //   // padding: 108px 0;
-  // }
   .atom-holder {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-    max-height: 800px;
+    max-height: 520px;
   }
 
-  // .atom {
-  //   // height: 100%;
-  //   // width: 100%;
-  // }
+  .atom {
+    max-height: 520px;
+    width: 100%;
+  }
 }
 
 @keyframes lemon-anim{

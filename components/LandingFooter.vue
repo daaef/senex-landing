@@ -69,7 +69,7 @@
                 ><img src="/img/senexpay-logo-light.png"
               /></span>
               <span class="copyright">Senexpay © 2021</span>
-              <div>
+              <div class="terms-link">
                 <router-link to="/terms">Terms of Service | </router-link>
                 <router-link to="/privacy">Privacy Policy</router-link>
               </div>

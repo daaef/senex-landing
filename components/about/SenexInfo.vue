@@ -11,26 +11,26 @@
           </span>
         </div>
         <div class="info-statistics">
-          <div class="grid grid-cols-2 lg:flex">
+          <div class="grid grid-cols-2 lg:flex stat-con">
             <div class="year">
               <span>
                 <h2>2019</h2>
                 <p>Senex Launched</p>
               </span>
             </div>
-            <div class="employees">
+            <div class="year">
               <span>
                 <h2>30+</h2>
                 <p>Employees</p>
               </span>
             </div>
-            <div class="transactions">
+            <div class="year">
               <span>
                 <h2>N22M</h2>
                 <p>Transactions till date</p>
               </span>
             </div>
-            <div class="countries">
+            <div class="year">
               <span>
                 <h2>140</h2>
                 <p>Countries</p>

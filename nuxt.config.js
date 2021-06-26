@@ -57,7 +57,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/vue-scroll-reveal', ssr: false }
+    { src: '~/plugins/vue-scroll-reveal', ssr: false },
+    { src: '~/plugins/api', ssr: true },
+    { src: '~/plugins/axios', ssr: true },
+    { src: '~/plugins/vue-notification', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -81,6 +84,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/sentry',
@@ -106,7 +110,40 @@ export default {
     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL:
+      process.env.NODE_ENV === 'development'
+        ? process.env.API_URL_DEV
+        : process.env.API_URL_PROD
+  },
+
+  auth: {
+    redirect: {
+      login: '/login/',
+      logout: '/login',
+      callback: '/login/',
+      home: false
+    },
+    watchLoggedIn: false,
+    fullPathRedirect: true,
+    strategies: {
+      local: {
+        token: {
+          property: 'access',
+          type: 'JWT'
+        },
+        user: {
+          property: false,
+          autoFetch: false
+        },
+        endpoints: {
+          login: { url: '/auth/login/', method: 'post' },
+          logout: false,
+          user: { url: '/auth/users/me/', method: 'get' }
+        }
+      }
+    }
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

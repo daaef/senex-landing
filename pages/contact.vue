@@ -9,35 +9,29 @@
           </p>
         </div>
         <div class="contact-list">
-          <div class="contact-type-con">
-            <div class="container">
+          <div class="container">
+            <div class="contact-type-con">
               <p class="title">Drop by our Head Office</p>
               <div class="location-con">
                 <span class="location">Lekki, Lagos, Nigeria.</span>
                 <span class="type">Find on Maps</span>
               </div>
             </div>
-          </div>
-          <div class="contact-type-con">
-            <div class="container">
+            <div class="contact-type-con">
               <p class="title">Send us an Email</p>
               <div class="location-con">
                 <span class="location">info@senexpay.com</span>
                 <span class="type">Send an Email</span>
               </div>
             </div>
-          </div>
-          <div class="contact-type-con">
-            <div class="container">
+            <div class="contact-type-con">
               <p class="title">Call us</p>
               <div class="location-con">
                 <span class="location">+234 705 274 4444</span>
                 <span class="type">Call now</span>
               </div>
             </div>
-          </div>
-          <div class="contact-type-con">
-            <div class="container">
+            <div class="contact-type-con">
               <p class="title">Chat us on Whatsapp</p>
               <div class="location-con">
                 <span class="location">+234 818 489 9239</span>
