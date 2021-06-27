@@ -43,6 +43,12 @@
       font-size: smaller;
       margin-bottom: 10px;
     }
+
+    &__footer {
+      display: flex;
+      width: 60%;
+      justify-content: space-between;
+    }
   }
  
 }
@@ -62,4 +68,17 @@
    
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .img-word-con-nb {
+    font-size: 22px;
+
+    .word-con-nb  {
+      h2 {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
 

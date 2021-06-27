@@ -60,3 +60,32 @@
     }
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .faq-search-con {
+    padding-top: 60px;
+    margin-bottom: 100px;
+    font-size: 22px;
+  
+    h3 {
+      font-size: 60px;
+    }
+  }
+
+  .faq-list-con {
+    margin-bottom: 25px;
+    font-size: 22px;
+    .faq-list {
+      margin-bottom: 25px;
+    }
+    
+    .faq-help {
+      font-weight: 500;
+      color: #242426;
+    
+      a {
+        color: #0850C6;
+      }
+    }
+  }
+}

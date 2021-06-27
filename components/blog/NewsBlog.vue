@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="">
       <div class="news-blog">
         <div class="img-word-con-nb">
           <div class="img-con-nb">
@@ -14,8 +14,11 @@
               decentralized, and secure digital payment infrastructure and
               solutions across
             </p>
-            <span>Sep 12, 2021 |</span>
-            <span>5 mins read</span>
+            <div class="word-con-nb__footer">
+              <span class="date">Sep 12, 2021</span>
+              <span class="divider">|</span>
+              <span class="duration">5 mins read</span>
+            </div>
           </div>
         </div>
       </div>

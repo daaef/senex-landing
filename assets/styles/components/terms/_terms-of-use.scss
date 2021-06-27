@@ -54,3 +54,41 @@
     }
   }
 }
+
+@media  screen and (min-width: 1600px) {
+  .main-header-tp {
+    font-size: 24px;
+    h1 {
+      font-size: 60px;
+    }
+  }
+
+  .con-tp {
+    font-size: 24px;
+    
+    .first-para-tou {
+      margin-bottom: 30px;
+    }
+  
+    .first-para-tp {
+      margin-bottom: 60px;
+    }
+  
+    h2 {
+      font-size: 40px;
+    }
+  
+    h3 {
+      font-size: 36px;
+    }
+  
+    h4 {
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+  
+    p {
+      margin-bottom: 25px;
+    }
+  }
+}
