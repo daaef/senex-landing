@@ -17,9 +17,9 @@
               </span>
             </div>
           </div>
-          <span class="arrow right-anim">
+          <router-link to="/careers" class="arrow right-anim">
             <img src="img/awesome-arrow-right.svg" alt="arrow" />
-          </span>
+          </router-link>
         </div>
         <div class="green lg:mr-4">
           <div class="join">
@@ -36,9 +36,9 @@
               </span>
             </div>
           </div>
-          <span class="arrow right-anim">
+          <router-link to="/careers" class="arrow right-anim">
             <img src="img/awesome-arrow-right.svg" alt="arrow" />
-          </span>
+          </router-link>
         </div>
       </div>
     </div>

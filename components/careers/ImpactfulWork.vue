@@ -4,7 +4,7 @@
       <div class="words-iw">
         <h2>Our Core Values</h2>
       </div>
-      <div class="grid lg:grid-cols-3 lg:gap-20">
+      <div class="grid lg:grid-cols-3 lg:gap-8">
         <div class="impact-iw">
           <div class="gold-badge-iw">
             <img src="img/careers/gold-badge.svg" alt="gold badge" />
