@@ -21,7 +21,7 @@
 
   h2 {
     font-size: x-large;
-    font-weight: 500;
+    font-weight: 600;
     margin: 30px 0;
   }
 
@@ -40,5 +40,34 @@
 @media screen and (max-width: 1024px) {
   .gold-badge-iw {
     margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .gold-badge-iw {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+  
+    img {
+      width: 100%;
+    }
+  }
+
+  .impact-iw {
+    padding: 30px;
+  
+    h2 {
+      font-size: 38px;
+    }
+  
+    p {
+      font-size: 22px;
+    }
+  }
+
+  .words-iw {
+    font-size: 60px;
+    margin: 70px 0;
   }
 }

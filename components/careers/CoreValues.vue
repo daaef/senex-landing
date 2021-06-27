@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="lg:flex foreword-holder-car">
-        <div class="foreword-con-car lg:w-2/5">
+        <div class="foreword-con-car lg:w-2/5 2xl:w-1/2">
           <div class="words-car">
             <div class="img-word-car">
               <div class="car-star">
@@ -20,8 +20,8 @@
             </button>
           </div>
         </div>
-        <div class="foreword-img-car lg:w-3/5">
-          <div class="lg:w-4/5 forward-img-con-car ml-auto">
+        <div class="foreword-img-car lg:w-3/5 2xl:w-1/2">
+          <div class="lg:w-4/5 2xl:w-full forward-img-con-car ml-auto">
             <div class="dotted-img-car">
               <img src="/img/dotted-grid.png" alt="img-design" />
             </div>

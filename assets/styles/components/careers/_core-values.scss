@@ -23,7 +23,7 @@
 
   h2 {
     font-size: 42px;
-    line-height: 1em;
+    line-height: 1.2em;
     font-weight: 600;
     margin-bottom: 40px;
   }
@@ -77,11 +77,38 @@
   font-size: 18px;
   border-radius: 6px;
   margin-bottom: 50px;
-  max-width: 200px;
+  //max-width: 200px;
 }
 
 @media screen and (max-width: 640px) {
   .foreword-holder-car {
     padding-top: 60px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .foreword-holder-car {
+    padding-top: 60px;
+
+    h3 {
+      font-size: 42px;
+    }
+  
+    h2 {
+      font-size: 60px;
+    }
+
+    .words-car {
+      max-width: 100%;
+      // margin-top: 100px;
+    }
+  }
+
+  .register-btn-car {
+    @include custom-btn(linear-gradient(to right, #162F55, #2D5491),#ffffff,$secondary_color);
+    padding: 16px 28px;
+    font-size: 22px;
+    max-width: none;
+    border-radius: 12px;
   }
 }

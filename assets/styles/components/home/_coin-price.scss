@@ -53,6 +53,7 @@
     .amount {
       font-size: $font18;
       font-weight: 500;
+      text-align: right;
       // margin-top: 10px;
       margin-right: 10px;
     }
@@ -136,4 +137,78 @@
       }
     }
   }
+}
+
+@media screen and (min-width: 1600px) {
+  .coin-holder {
+    max-width: 1000px;
+    padding: 30px;
+
+    &__coin-image-con {
+      min-width: 80px;
+  
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    &__coin-name-con {
+      @include flexcon(left, center, column);
+      // min-width: 100px;
+  
+      .title {
+        font-size: 22px;
+      }
+  
+      .subtitle {
+        font-size: 22px;
+      }
+    }
+
+    .sell {
+      min-width: 150px;
+    }
+
+    &__coin-price-con {
+      margin: 0 20px;
+  
+      .amount {
+        font-size: 22px;
+        // margin-top: 10px;
+        text-align: right;
+        margin-right: 10px;
+      }
+  
+      .action-buy {
+        @include custom-btn(#06a84b,$color_white,#06a84b);
+        width: 150px;
+        font-size: 20px;
+        padding: 20px 20px;
+        border-radius: 12px;
+        // margin-top: 10px;
+      }
+  
+      .action-buy:hover {
+        opacity: 1;
+        // margin-top: 10px;
+      }
+  
+      .action-sell {
+        @include custom-btn(#ff5f24,$color_white,#ff5f24);
+        width: 150px;
+        font-size: 20px;
+        padding: 20px 20px;
+        border-radius: 12px;
+        // margin-top: 10px;
+      }
+  
+      .action-sell:hover {
+        opacity: 1;
+      }
+    }
+
+    
+  }
+
 }
