@@ -80,3 +80,49 @@
     }
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .our-blog-con {
+    height: 400px;
+    margin-bottom: 60px;
+    // box-shadow: 1px 2px 8px #00000029;
+
+    .our-blog-holder {
+      height: 100%;
+      width: auto;
+
+      &__content {
+        font-size: 22px;
+
+        .time-elapsed {
+          display: block;
+          font-size: 18px;
+          margin-bottom: 15px;
+        }
+
+        h3 {
+          font-size: 36px;
+        }
+
+        .blog-content {
+          font-size: 22px;
+        }
+
+        .blog-footer {
+          font-size: 18px;
+        }
+      }
+
+      &__img {
+        display: block;
+        height: 100%;
+        margin-bottom: 10px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
