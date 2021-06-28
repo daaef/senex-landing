@@ -102,3 +102,25 @@
     }
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .lnd-review {
+    height: 300px;
+    max-width: 1000px;
+
+    .rvw-con {
+
+      .rvw-text {
+        font-size: 22px;
+      }
+
+      .rvw-writer {
+        font-size: 26px;
+      }
+
+      &__arrow-con {
+        height: 20px;
+      }
+    }
+  }
+}

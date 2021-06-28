@@ -8,7 +8,8 @@
 
   &__title-con {
     @include flexcon(center, left, row);
-
+    cursor: pointer;
+    
     .title {
       font-weight: bold;
       font-size: 24px;
@@ -19,7 +20,6 @@
       display: inline-block;
       width: 20px;
       min-width: 20px;
-      cursor: pointer;
       margin-left: auto;
 
       img {

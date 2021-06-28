@@ -182,9 +182,9 @@
   
       .action-buy {
         @include custom-btn(#06a84b,$color_white,#06a84b);
-        width: 150px;
+        width: 120px;
         font-size: 20px;
-        padding: 20px 20px;
+        padding: 16px 20px;
         border-radius: 12px;
         // margin-top: 10px;
       }
@@ -196,9 +196,9 @@
   
       .action-sell {
         @include custom-btn(#ff5f24,$color_white,#ff5f24);
-        width: 150px;
+        width: 120px;
         font-size: 20px;
-        padding: 20px 20px;
+        padding: 16px 20px;
         border-radius: 12px;
         // margin-top: 10px;
       }

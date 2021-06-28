@@ -8,11 +8,11 @@
       </div>
       <div class="flex align-center ml-auto">
         <div class="coin-holder__coin-price-con">
-          <span class="amount sell">N{{ buy }}</span>
+          <span class="amount sell">N{{ Number(buy).toLocaleString() }}</span>
           <span class="btn action-buy">Buy</span>
         </div>
         <div class="coin-holder__coin-price-con">
-          <span class="amount sell">N{{ sell }}</span>
+          <span class="amount sell">N{{ Number(sell).toLocaleString() }}</span>
           <span class="btn action-sell">Sell</span>
         </div>
       </div>

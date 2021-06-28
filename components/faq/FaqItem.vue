@@ -2,9 +2,9 @@
   <div>
     <div class="container">
       <div class="faq-item-con">
-        <div class="faq-item-con__title-con">
+        <div class="faq-item-con__title-con" @click="toggleOpen">
           <h3 class="title">{{ title }}</h3>
-          <span class="arrow-con" @click="toggleOpen"
+          <span class="arrow-con"
             ><img src="/img/awesome-arrow-down.svg"
           /></span>
         </div>

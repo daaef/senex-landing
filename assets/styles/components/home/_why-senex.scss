@@ -102,3 +102,49 @@
   }
   
 }
+
+
+@media screen and (min-width: 1600px) {
+  .why-senex {
+  
+    .why {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+  
+    h2 {
+      color: #222122;
+      font-size: 44px;
+      font-weight: 500;
+      max-width: 800px;
+      line-height: 1em;
+    }
+  
+    .reason-con {
+      padding-top: 20px;
+      .reason {
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+        .icon {
+          width: 70px;
+          height: 70px;
+          margin-bottom: 10px;
+          img {
+            width: 100%;
+          }
+        }
+  
+        .title {
+          margin-bottom: 12px;
+          font-size: 28px;
+        }
+
+        .content {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
