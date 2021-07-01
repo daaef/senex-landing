@@ -30,6 +30,17 @@
   }
 }
 
+@media  screen and (max-width: 640px) {
+  .blog-page-con{
+
+    .header {
+      .title {
+        font-size: 32px;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .blog-page-con {
     width: 75%;

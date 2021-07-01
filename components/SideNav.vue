@@ -2,7 +2,7 @@
   <div class="side-nav-div">
     <div>
       <div class="container">
-        <span class="close-con" @click="showSide()"
+        <span class="hidden" @click="showSide()"
           ><img src="/img/close.svg"
         /></span>
         <div class="side-nav">

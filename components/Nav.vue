@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="relative">
     <div class="landing-nav" :style="theme">
       <div class="nav-holder container">
-        <span class="logo-con"
+        <span class="logo-con" :class="sideBarOpen ? 'invisible-logo' : ''"
           ><router-link to="/"
             ><img
               :src="
@@ -55,43 +55,22 @@
             </div>
           </nav>
         </div>
-        <span class="hamburger-con inline-block lg:hidden" @click="openSide"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="19"
-            viewBox="0 0 28 19"
-          >
-            <g
-              id="hamburger"
-              data-name="hamburger"
-              transform="translate(-249 -17)"
-            >
-              <rect
-                width="28"
-                height="3"
-                rx="1"
-                transform="translate(249 17)"
-                :fill="theme.color"
-              />
-              <rect
-                width="28"
-                height="3"
-                rx="1"
-                transform="translate(249 24)"
-                :fill="theme.color"
-              />
-              <rect
-                width="28"
-                height="3"
-                rx="1"
-                transform="translate(249 31)"
-                :fill="theme.color"
-              />
-            </g></svg
-        ></span>
       </div>
     </div>
+    <span class="hamburger-con flex lg:hidden" @click="openSide"
+      ><span
+        class="hamburger-bars"
+        :class="[barColor(), sideBarOpen ? 'top-bar' : '']"
+      ></span
+      ><span
+        class="hamburger-bars"
+        :class="[barColor(), sideBarOpen ? 'middle-bar' : '']"
+      ></span
+      ><span
+        class="hamburger-bars"
+        :class="[barColor(), sideBarOpen ? 'bottom-bar' : '']"
+      ></span>
+    </span>
   </div>
 </template>
 
@@ -129,6 +108,15 @@ export default {
       this.$store.dispatch('changeCountry', {
         country: c
       })
+    },
+    barColor() {
+      if (this.sideBarOpen) {
+        return 'white-bar'
+      } else if (this.theme.color === '#162F55') {
+        return 'blue-bar'
+      } else {
+        return 'white-bar'
+      }
     },
     toggleSideBar() {
       this.$store.dispatch('toggleSideBar')

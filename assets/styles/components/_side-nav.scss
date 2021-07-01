@@ -52,6 +52,7 @@
 
   .side-nav {
     @include flexcon(center, center, column);
+    padding-top: 75px;
 
     .link {
       margin-top: 25px
