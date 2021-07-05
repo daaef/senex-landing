@@ -147,8 +147,32 @@
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
-      <div class="block snx-description-con sdc-pb container-R lg:flex lg:pr-0">
+      <div
+        class="hidden snx-description-con sdc-pb container-R lg:flex lg:pr-0"
+      >
         <div class="lg:w-1/2 container-R__padding">
+          <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
+            <p class="snx-description__title">
+              It’s so easy, you can do it on the floor
+            </p>
+            <p class="snx-description__subtitle">
+              Trading your Cryptocurrency on Senexpay is so easy that you do not
+              need to be a Crypto guru to do it yourself. We believe life should
+              be as easy as it can be.
+            </p>
+          </div>
+        </div>
+        <div
+          v-scroll-reveal.reset="{
+            origin: 'right'
+          }"
+          class="lg:w-1/2 snx-description-img-con"
+        >
+          <img src="/img/landing-page-girl.png" />
+        </div>
+      </div>
+      <div class="block lg:hidden snx-description-con sdc-pb container">
+        <div class="lg:w-1/2">
           <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
               It’s so easy, you can do it on the floor

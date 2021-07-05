@@ -19,13 +19,21 @@
   // position: relative;
   // z-index: 5010;
 
+  @media screen and (min-width: 640px) {
+    right: calc(((100% - 640px) / 2) + 30px);
+  }
+
+  @media screen and (min-width: 768px) {
+    right: calc(((100% - 768px) / 2) + 30px);
+  }
+
   img {
     width: 100%;
   }
 
   .hamburger-bars {
     // transform-origin: center center;
-    width: 100%;
+    width: 30px;
     height: 3px;
     display: block;
     transition: all .5s;
@@ -41,7 +49,7 @@
   }
 
   .top-bar {
-    transform: rotate(45deg) translate(9px, 9px);
+    transform: rotate(45deg) translateY(7.5px) translateX(8px);
   }
 
   .middle-bar {
@@ -49,7 +57,7 @@
   }
 
   .bottom-bar {
-    transform: rotate(-45deg) translate(4px, -4px);
+    transform: rotate(-45deg) translate(5px, -4px);
   }
 }
 
@@ -62,7 +70,7 @@
   height: 75px;
   font-size: 18px;
   z-index: 3;
-  transition: all 1s;
+  // transition: all 1s;
   @include flexcon(center, left, row);
 
   .nav-holder {
