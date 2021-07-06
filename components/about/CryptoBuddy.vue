@@ -3,18 +3,18 @@
     <div class="crypto-buddy-background relative">
       <div class="container-full">
         <div class="word-con-abt relative">
-          <span class="hidden lg:inline-block dancing-people"
+          <!-- <span class="hidden lg:inline-block dancing-people"
             ><img src="/img/about/dancing-people.png"
-          /></span>
+          /></span> -->
           <div class="lg:w-3/5 word-con-abt__content">
             <p class="cap-abt">SECURITY AND SMOOTHNESS</p>
             <h2>The Perfect Crypto Buddy</h2>
-            <p class="lower-case-abt px-4">
+            <!-- <p class="lower-case-abt px-4">
               Candy lets you sell your airtime online in no time with just a
               little discount. Get paid in your Candy wallet and send to your
               bank account anytime you wish. Candy lets you sell your airtime
               online in no time with just a little discount. Get paid in your C
-            </p>
+            </p> -->
           </div>
           <button type="button" class="register-btn-abt">
             Start Trading Bitcoin

@@ -147,13 +147,11 @@
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
-      <div
-        class="hidden snx-description-con sdc-pb container-R lg:flex lg:pr-0"
-      >
-        <div class="lg:w-1/2 container-R__padding">
+      <div class="hidden snx-description-con container lg:flex lg:pr-0">
+        <div class="lg:w-1/2">
           <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
-              It’s so easy, you can do it on the floor
+              It’s so easy, anyone can trade on it.
             </p>
             <p class="snx-description__subtitle">
               Trading your Cryptocurrency on Senexpay is so easy that you do not
@@ -166,16 +164,16 @@
           v-scroll-reveal.reset="{
             origin: 'right'
           }"
-          class="lg:w-1/2 snx-description-img-con"
+          class="lg:w-1/3 snx-description-img-con"
         >
-          <img src="/img/landing-page-girl.png" />
+          <img src="/img/landing-page-lady.png" />
         </div>
       </div>
       <div class="block lg:hidden snx-description-con sdc-pb container">
         <div class="lg:w-1/2">
           <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
-              It’s so easy, you can do it on the floor
+              It’s so easy, anyone can trade on it.
             </p>
             <p class="snx-description__subtitle">
               Trading your Cryptocurrency on Senexpay is so easy that you do not
@@ -190,7 +188,7 @@
           }"
           class="lg:w-1/2 snx-description-img-con"
         >
-          <img src="/img/landing-page-girl.png" />
+          <img src="/img/landing-page-lady.png" />
         </div>
       </div>
       <!-- Description 2 -->
@@ -209,9 +207,9 @@
                 The most trusted crypto platform.
               </p>
               <p class="snx-description__subtitle">
-                We make it possible for you to accept airtime as payment on your
-                website and we convert it into cash for you - straight to your
-                wallet.
+                Over the years, SenexPay has been able to build an unshakeable
+                trust in its customers due to our efficient and swift payout
+                process.
               </p>
             </div>
           </div>
@@ -224,9 +222,9 @@
                 The most trusted crypto platform.
               </p>
               <p class="snx-description__subtitle">
-                We make it possible for you to accept airtime as payment on your
-                website and we convert it into cash for you - straight to your
-                wallet.
+                Over the years, SenexPay has been able to build an unshakeable
+                trust in its customers due to our efficient and swift payout
+                process.
               </p>
             </div>
           </div>
@@ -246,15 +244,15 @@
           <div class="snx-description lg:w-4/5">
             <p class="snx-description__title">We are serious about Security.</p>
             <p class="snx-description__subtitle">
-              Candy lets you sell your airtime online in no time with just a
-              little discount. Get paid in your Candy wallet and send to your
-              bank account anytime you wish.
+              Buy and sell your Cryptocurrency safely and securely with peace of
+              mind. Your information is fully secure and you are protected to
+              the maximum.
             </p>
           </div>
         </div>
         <div class="lg:w-1/2 flex">
           <div class="lg:w-1/2 m-auto snx-description-img-con">
-            <img src="/img/landing-password.png" />
+            <img src="/img/secure.svg" />
           </div>
         </div>
       </div>

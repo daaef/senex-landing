@@ -11,8 +11,8 @@
               <span>
                 <h2>Join our 'A' team</h2>
                 <p>
-                  Our mission is to establish a fully automated, fast, easy,
-                  decentralized, and secure digital payment
+                  Our team is made up of very talented and innovative people who
+                  enjoy building solutions. Wanna join us?
                 </p>
               </span>
             </div>

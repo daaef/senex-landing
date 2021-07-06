@@ -18,8 +18,10 @@
 .word-con-abt {
   color: #FFFFFF;
   text-align: center;
+  min-height: 500px;
   padding-top: 50px;
   padding-bottom: 50px;
+  @include flexcon(center, center, column);
 
   &__content {
     margin: 0 auto;
@@ -92,6 +94,7 @@
     overflow: hidden;
     width: 100%;
     transition: transform .5s;
+    margin-top: 40px;
     
     img {
       width: 100%;
