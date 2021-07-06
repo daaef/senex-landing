@@ -11,7 +11,7 @@
           <span class="amount sell">N{{ Number(buy).toLocaleString() }}</span>
           <span class="btn action-buy">Buy</span>
         </div>
-        <div class="coin-holder__coin-price-con">
+        <div class="coin-holder__coin-price-con sell-con">
           <span class="amount sell">N{{ Number(sell).toLocaleString() }}</span>
           <span class="btn action-sell">Sell</span>
         </div>

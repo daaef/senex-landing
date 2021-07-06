@@ -43,6 +43,7 @@
     text-align: center;
   }
 
+
   &__coin-price-con {
     display: flex;
     justify-content: center;
@@ -140,6 +141,13 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .sell-con {
+    min-width: 210px;
+    justify-content: flex-end;
+  }
+}
+
 @media screen and (min-width: 1600px) {
   .coin-holder {
     max-width: 1000px;
@@ -173,6 +181,7 @@
 
     &__coin-price-con {
       margin: 0 20px;
+      // min-width: 210px;
   
       .amount {
         font-size: 22px;
