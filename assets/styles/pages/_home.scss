@@ -241,6 +241,53 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .secure-lock-svg {
+    transform-origin: center center;
+    transition: all .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #diagonal-1 {
+      transition: all .3s;
+    }
+
+    #diagonal-2 {
+      transition: all .3s;
+    }
+
+    #blue-circle-svg {
+      transition: all .3s;
+      transform-origin: center center;
+    }
+
+    #ios-lock {
+      transform-origin: center;
+      transform-box: fill-box;
+      transition: all .3s;
+      transform: translate(1310.755px, 4227.767px)
+    }
+  }
+
+  .secure-lock-svg:hover {
+    #ios-lock {
+      //transform-origin: center center;
+      transform: translate(1310.755px, 4227.767px) rotate(180deg);
+    }
+
+    #blue-circle-svg {
+      transform: scale(.9);
+    }
+
+    #diagonal-1 {
+      opacity: 0;
+    }
+
+    #diagonal-2 {
+      opacity: 0;
+    }
+  }
 }
 
 .snx-img-con-height {
