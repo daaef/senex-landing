@@ -5,7 +5,7 @@
   flex-direction: $direction;
 }
 
-@mixin custom-btn($bgcolor, $textcolor, $bordercolor){
+@mixin custom-btn($bgcolor, $textcolor, $bordercolor) {
   // height: 42px!important;
   background: $bgcolor!important;
   color: $textcolor !important;
@@ -13,10 +13,10 @@
   transition: all 0.4s ease-in-out;
 }
 
-@mixin custom-btn-hover($bgcolor, $textcolor, $bordercolor){
-  background: $bgcolor!important;
-  border-color: $bordercolor!important;
-  color: $textcolor!important;
+@mixin custom-btn-hover($bgcolor, $textcolor, $bordercolor) {
+  background: $bgcolor !important;
+  border-color: $bordercolor !important;
+  color: $textcolor !important;
 }
 
 @mixin heading-with-line($fontZ, $color){

@@ -248,6 +248,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+
+    .disappear {
+      transition: all .3s;
+    }
 
     #diagonal-1 {
       transition: all .3s;
@@ -278,6 +283,10 @@
 
     #blue-circle-svg {
       transform: scale(.9);
+    }
+
+    .disappear {
+      opacity: 0;
     }
 
     #diagonal-1 {

@@ -9,4 +9,9 @@
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 6px;
+  outline: 0;
+}
+
+.btn:active {
+  outline: 0;
 }

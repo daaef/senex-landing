@@ -270,6 +270,7 @@
                 rx="30"
                 transform="translate(54)"
                 fill="#e4edfc"
+                class="disappear"
               />
               <rect
                 id="Rectangle_831"
@@ -279,6 +280,7 @@
                 rx="30"
                 transform="translate(0 43)"
                 fill="#ddffeb"
+                class="disappear"
               />
               <g
                 id="Rectangle_829"
