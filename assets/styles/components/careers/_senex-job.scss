@@ -8,6 +8,10 @@
 .snx-jobs-img-con {
   position: relative;
 
+  img {
+    border-radius: 24px;
+  }
+
   .img-overlay {
     position: absolute;
     top: 0;
@@ -34,5 +38,18 @@
   .words-sj {
     font-size: 60px;
     margin: 70px 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .snx-jobs-img-con {
+    .img-overlay {
+  
+      .impact-iw {
+        width: 100%;
+        margin: 15px 0;
+        padding: 20px;
+      }
+    }
   }
 }
