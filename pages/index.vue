@@ -147,7 +147,7 @@
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
-      <div class="hidden snx-description-con container lg:flex lg:pr-0">
+      <div class="snx-description-con sdc-pb container lg:flex lg:pr-0">
         <div class="lg:w-1/2">
           <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
@@ -164,12 +164,15 @@
           v-scroll-reveal.reset="{
             origin: 'right'
           }"
-          class="lg:w-1/3 snx-description-img-con"
+          class="lg:w-1/2 snx-description-img-con"
         >
-          <img src="/img/landing-page-lady.png" />
+          <div class="holder m-auto">
+            <img class="up" src="/img/girl_using_senex.png" />
+            <img class="down" src="/img/boy_using_senex.png" />
+          </div>
         </div>
       </div>
-      <div class="block lg:hidden snx-description-con sdc-pb container">
+      <!-- <div class="block lg:hidden snx-description-con sdc-pb container">
         <div class="lg:w-1/2">
           <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
@@ -190,7 +193,7 @@
         >
           <img src="/img/landing-page-lady.png" />
         </div>
-      </div>
+      </div> -->
       <!-- Description 2 -->
       <div class="bg-grey">
         <!-- Large screen -->
