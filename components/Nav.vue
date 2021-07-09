@@ -15,10 +15,10 @@
         <div class="nav-con">
           <nav class="hidden lg:flex nav">
             <div class="link-con">
-              <router-link class="link" to="/about">About</router-link>
+              <router-link class="link" to="/about">About us</router-link>
               <router-link class="link" to="/learn">Learn</router-link>
               <router-link class="link" to="/faq">FAQ</router-link>
-              <router-link class="link" to="/contact">Support</router-link>
+              <router-link class="link" to="/contact">Contact us</router-link>
             </div>
             <div class="register-con">
               <router-link to="/login" class="log-in link">Log in</router-link>
