@@ -22,8 +22,9 @@
     }
 
     &__register-btn {
-      @include custom-btn(white,#242426,white);
+      @include custom-btn(#06A84B,white,#06A84B);
       padding: 8px 16px;
+      min-width: 160px;
       font-size: 18px;
       border-radius: 6px;
       margin-right: 20px;

@@ -5,7 +5,7 @@
         <div class="lg:flex">
           <div class="brand-con lg:w-1/3">
             <h1 class="brand-con__title">Buy and sell crypto on Senexpay</h1>
-            <span class="btn brand-con__register-btn">Create account</span>
+            <span class="btn brand-con__register-btn">Get started</span>
           </div>
           <div class="links-con lg:w-2/3">
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/5 ml-auto">
