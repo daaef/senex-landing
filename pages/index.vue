@@ -147,7 +147,7 @@
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
-      <div class="snx-description-con sdc-pb container lg:flex lg:pr-0">
+      <div class="snx-description-con sdc-pb container lg:flex">
         <div class="lg:w-1/2">
           <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
             <p class="snx-description__title">
@@ -166,7 +166,7 @@
           }"
           class="lg:w-1/2 snx-description-img-con"
         >
-          <div class="holder m-auto">
+          <div class="holder m-auto lg:mr-0">
             <img class="up" src="/img/girl_using_senex.png" />
             <img class="down" src="/img/boy_using_senex.png" />
           </div>
@@ -241,7 +241,7 @@
 
       <div
         v-scroll-reveal.reset
-        class="block snx-description-con sdc-pb container lg:flex lg:pr-0"
+        class="block snx-description-con sdc-pb container lg:flex"
       >
         <div class="lg:w-1/2">
           <div class="snx-description lg:w-4/5">
@@ -254,7 +254,7 @@
           </div>
         </div>
         <div class="lg:w-1/2 flex">
-          <div class="m-auto snx-description-img-con">
+          <div class="m-auto lg:mr-0 snx-description-img-con">
             <!-- <img src="/img/secure.svg" /> -->
             <svg
               id="Component_109_1"

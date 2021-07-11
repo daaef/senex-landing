@@ -21,6 +21,22 @@
           </div>
         </div>
         <div class="foreword-img-car lg:w-3/5 2xl:w-1/2">
+          <div class="lg:w-4/5 2xl:w-full forward-img-con-car m-auto lg:mr-0">
+            <div class="top-left">
+              <img src="/img/careers/career-boy-1.png" alt="img-design" />
+            </div>
+            <div class="top-right">
+              <img src="/img/careers/career-girl-1.png" alt="img-design" />
+            </div>
+            <div class="bottom-left">
+              <img src="/img/careers/career-boy-2.png" alt="img-design" />
+            </div>
+            <div class="bottom-right">
+              <img src="/img/careers/career-girl-2.png" alt="img-design" />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="foreword-img-car lg:w-3/5 2xl:w-1/2">
           <div class="lg:w-4/5 2xl:w-full forward-img-con-car ml-auto">
             <div class="dotted-img-car">
               <img src="/img/dotted-grid.png" alt="img-design" />
@@ -29,7 +45,7 @@
               <img src="/img/careers/dollar-boy.png" alt="Dollar boy" />
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

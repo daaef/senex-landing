@@ -262,7 +262,7 @@
   .holder {
     position: relative;
     // border: 1px solid $primary_color;
-    margin: auto;
+    // margin-left: auto;
     width: 580px;
     height: 580px;
     .up {
@@ -387,6 +387,7 @@
       // height: 100%;
       // width: 350px;
       // height: 350px;
+      // margin-right: auto;
       width: 80vw;
       height: 80vw;
       // max-height: 640px;

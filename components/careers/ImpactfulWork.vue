@@ -7,7 +7,7 @@
       <div class="grid lg:grid-cols-3 lg:gap-8">
         <div class="impact-iw">
           <div class="gold-badge-iw">
-            <img src="img/careers/gold-badge.svg" alt="gold badge" />
+            <img src="img/careers/impactful-work-1.svg" alt="gold badge" />
           </div>
           <h2>Impactful work</h2>
           <span>
@@ -20,7 +20,7 @@
         </div>
         <div class="impact-iw">
           <div class="gold-badge-iw">
-            <img src="img/careers/gold-badge.svg" alt="gold badge" />
+            <img src="img/careers/impactful-work-2.svg" alt="gold badge" />
           </div>
           <h2>Impactful work</h2>
           <span>
@@ -33,7 +33,7 @@
         </div>
         <div class="impact-iw">
           <div class="gold-badge-iw">
-            <img src="img/careers/gold-badge.svg" alt="gold badge" />
+            <img src="img/careers/impactful-work-3.svg" alt="gold badge" />
           </div>
           <h2>Impactful work</h2>
           <span>
