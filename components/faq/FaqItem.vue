@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="container">
-      <div class="faq-item-con">
+      <div
+        class="faq-item-con"
+        :class="isOpen ? 'faq-item-con--grey' : 'faq-item-con--white'"
+      >
         <div class="faq-item-con__title-con" @click="toggleOpen">
           <h3 class="title">{{ title }}</h3>
           <span class="arrow-con" :class="isOpen ? 'rotate-up' : ''"

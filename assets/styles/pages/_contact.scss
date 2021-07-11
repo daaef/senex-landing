@@ -75,11 +75,29 @@
     }
 
     .social:hover {
-      background-color: #0850C6;
-
       svg {
         fill: white;
       }
+    }
+
+    .fb:hover {
+      background-color: #0860C6;
+    }
+
+    .ig:hover {
+      background-color: #C60893;
+    }
+
+    .tw:hover {
+      background-color: #0693DE;
+    }
+
+    .yt:hover {
+      background-color: #F51313;
+    }
+
+    .li:hover {
+      background-color: #0B6EB7;
     }
   }
 }

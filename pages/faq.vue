@@ -21,7 +21,7 @@
       <div class="container">
         <span class="faq-help"
           >Can’t find it here? Check our our
-          <router-link to="/help">Help Centre</router-link>.</span
+          <router-link to="/contact">Help Centre</router-link>.</span
         >
       </div>
     </div>

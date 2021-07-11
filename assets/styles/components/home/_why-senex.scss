@@ -60,12 +60,18 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .why-blue-border {
+    margin-top: 0;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .why-senex {
   
     .why {
       color: #2E4AE7;
-      font-size: 32px;
+      font-size: 22px;
       font-weight: bold;
       margin-bottom: 30px;
     }

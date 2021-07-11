@@ -1,10 +1,19 @@
+
 .faq-item-con {
-  background-color: #D1D1D8;
   padding: 20px;
+  border: 1px solid #B2B2B2;
   border-radius: 8px;
   color: #242426;
   margin-top: 25px;
   margin-bottom: 25px;
+
+  &--grey {
+    background-color: #F5F5F7;
+  }
+
+  &--white {
+    background-color: white;
+  }
 
   &__title-con {
     @include flexcon(center, left, row);

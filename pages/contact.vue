@@ -47,7 +47,7 @@
       <div class="contact-get-social">
         <h3>Get Social With Us</h3>
         <div class="socials-con">
-          <div class="social">
+          <div class="social fb">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@
                 /></svg
             ></span>
           </div>
-          <div class="social">
+          <div class="social ig">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@
                 /></svg
             ></span>
           </div>
-          <div class="social">
+          <div class="social tw">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@
                 /></svg
             ></span>
           </div>
-          <div class="social">
+          <div class="social yt">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@
                 /></svg
             ></span>
           </div>
-          <div class="social">
+          <div class="social li">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -380,7 +380,22 @@
   transform: translateY(-5px);
 }
 
+@media screen and (max-width: 450px) {
+
+  .snx-description-img-con {
+
+    .secure-lock-svg {
+      max-height: 300px;
+    }
+  }
+}
+
 @media screen and (max-width: 640px) {
+
+  .sdc-pb {
+    padding-bottom: 20px;
+  }
+
   .snx-description-img-con {
     .holder {
       // width: 100%;
