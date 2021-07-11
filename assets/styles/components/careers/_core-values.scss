@@ -14,6 +14,7 @@
 
 .foreword-con-car {
   @include flexcon(left, center, column);
+  max-height: 80vh;
   
   h3 {
     font-size: 32px;
@@ -46,8 +47,8 @@
 
   .forward-img-con-car {
     position: relative;
-    width: 600px;
-    height: 500px;
+    width: 700px;
+    height: 583.33px;
 
     &:hover {
       .top-left {
@@ -168,7 +169,7 @@
   }
 }
 
-@media screen and (min-width: 1028px) {
+@media screen and (min-width: 640px) and (max-width: 1280px){
   .foreword-img-car {
     .forward-img-con-car {
       width: 560px;
