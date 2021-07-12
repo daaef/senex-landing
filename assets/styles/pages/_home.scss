@@ -392,9 +392,9 @@
 
 @media screen and (max-width: 640px) {
 
-  .landing-animation {
-    animation-name: landing-anim-sm;
-  }
+  // .landing-animation {
+  //   animation-name: landing-anim-sm;
+  // }
 
   .sdc-pb {
     padding-bottom: 20px;
@@ -535,6 +535,14 @@
     animation-name: landing-anim-sm;
   }
 
+  .purple-arrow-animation {
+    animation-name: purple-anim-sm;
+  }
+  
+  .lemon-arrow-animation {
+    animation-name: lemon-anim-sm;
+  }
+
   .atom-holder {
     width: 100%;
 
@@ -660,5 +668,37 @@
   }
   100% {
     width: 45%;
+  }
+}
+
+@keyframes lemon-anim-sm{
+  0% {
+    top: 0;
+    right: 0;
+  }
+  50% {
+    top: calc(18% - 20px);
+    right: calc(30% - 20px);
+    transform: rotate(25deg);
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes purple-anim-sm {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  50% {
+    bottom: calc(5% - 20px);
+    left: calc(25% - 20px);
+    transform: rotate(45deg);
+  }
+  100% {
+    bottom: 0;
+    left: 0;
   }
 }
