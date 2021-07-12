@@ -1,12 +1,17 @@
 <template>
   <div>
     <div class="">
-      <div class="con-tp">
-        <div class="main-header-tp">
-          <h1>Contact Us</h1>
-          <p>
-            Get in touch with the right people at Senexpay, we’re here to help.
-          </p>
+      <div class="">
+        <div class="container">
+          <div class="con-tp">
+            <div class="main-header-tp">
+              <h1>Contact Us</h1>
+              <p>
+                Get in touch with the right people at Senexpay, we’re here to
+                help.
+              </p>
+            </div>
+          </div>
         </div>
         <div class="contact-list">
           <div class="container">
