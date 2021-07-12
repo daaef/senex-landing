@@ -127,9 +127,9 @@
   .circle-boy-small {
     display: inline-block;
     position: absolute;
-    left: 20%;
-    bottom: 20%;
-    height: 50px;
+    left: 25%;
+    bottom: 2%;
+    height: 40px;
 
     img {
       height: 100%;
@@ -139,9 +139,9 @@
   .circle-girl-small {
     display: inline-block;
     position: absolute;
-    top: 20%;
-    right: 20%;
-    height: 50px;
+    top: 13%;
+    right: 30%;
+    height: 40px;
 
     img {
       height: 100%;
@@ -392,8 +392,28 @@
 
 @media screen and (max-width: 640px) {
 
+  .landing-animation {
+    animation-name: landing-anim-sm;
+  }
+
   .sdc-pb {
     padding-bottom: 20px;
+  }
+
+  .snx-hero-content {
+    &__btn_holder {
+      .register_btn {
+        padding: 10px 18px;
+        font-size: 16px;
+        margin-right: 15px;
+      }
+
+      .trading_btn {
+        padding: 10px 18px;
+        font-size: 16px;
+        min-width: 60px;
+      }
+    }
   }
 
   .snx-description-img-con {
@@ -510,9 +530,41 @@
 
 
 @media screen and(max-width: 768px) {
+
+  .landing-animation {
+    animation-name: landing-anim-sm;
+  }
+
   .atom-holder {
     width: 100%;
+
+    .lemon-arrow {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .purple-arrow {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .circle-boy-small {
+      // left: 17%;
+      bottom: 5%;
+      height: 20px;
+    }
+  
+    .circle-girl-small {
+      top: 18%;
+      right: 30%;
+      height: 20px;
+    }
+  
   }
+
+  // .atom-holder {
+  //   width: 100%;
+  // }
 
   .atom {
     // height: 100%;
@@ -545,20 +597,20 @@
   }
 }
 
-@media screen and(min-height: 890px) {
-  .atom-holder {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-height: 520px;
-  }
+// @media screen and(min-height: 890px) {
+//   .atom-holder {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     width: 100%;
+//     max-height: 520px;
+//   }
 
-  .atom {
-    max-height: 520px;
-    width: 100%;
-  }
-}
+//   .atom {
+//     max-height: 520px;
+//     width: 100%;
+//   }
+// }
 
 @keyframes lemon-anim{
   0% {
@@ -566,8 +618,9 @@
     right: 0;
   }
   50% {
-    top: calc(20% - 37px);
-    right: calc(20% - 37px);
+    top: calc(13% - 30px);
+    right: calc(30% - 30px);
+    transform: rotate(25deg);
   }
   100% {
     top: 0;
@@ -581,8 +634,9 @@
     left: 0;
   }
   50% {
-    bottom: calc(20% - 37px);
-    left: calc(20% - 37px);
+    bottom: calc(5% - 37px);
+    left: calc(25% - 37px);
+    transform: rotate(45deg);
   }
   100% {
     bottom: 0;
@@ -596,5 +650,15 @@
   }
   100% {
     width: 52%;
+  }
+}
+
+
+@keyframes landing-anim-sm {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 45%;
   }
 }
