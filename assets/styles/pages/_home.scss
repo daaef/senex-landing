@@ -257,6 +257,10 @@
         transform: translate(-5%, -5%);
       }
     }
+
+    .reduce-img {
+      transform: scale(.9);
+    }
   }
 
   .holder {
@@ -285,6 +289,13 @@
     }
   }
 
+  .reduce-img {
+    width: 37.5vw;
+    height: 37.5vw;
+    max-width: 552px;
+    max-height: 552px;
+    transition: transform .3s;
+  }
 
   img {
     width: 100%;

@@ -199,10 +199,10 @@
         <!-- Large screen -->
         <div
           v-scroll-reveal.reset
-          class="block snx-description-con container hidden lg:flex"
+          class="block snx-description-con sdc-pb container hidden lg:flex"
         >
           <div class="lg:w-1/2 snx-description-img-con">
-            <img src="/img/landing-page-boy.png" />
+            <img src="/img/landing-guy-btc.png" class="reduce-img" />
           </div>
           <div class="lg:w-1/2">
             <div class="snx-description lg:w-4/5 mx-auto">
@@ -218,7 +218,7 @@
           </div>
         </div>
         <!-- Small Screen -->
-        <div class="block snx-description-con container lg:hidden">
+        <div class="block snx-description-con sdc-pb container lg:hidden">
           <div class="lg:w-1/2">
             <div v-scroll-reveal.reset class="snx-description lg:w-4/5 mx-auto">
               <p class="snx-description__title">
@@ -232,7 +232,7 @@
             </div>
           </div>
           <div v-scroll-reveal.reset class="lg:w-1/2 snx-description-img-con">
-            <img src="/img/landing-page-boy.png" />
+            <img src="/img/landing-guy-btc.png" />
           </div>
         </div>
       </div>
