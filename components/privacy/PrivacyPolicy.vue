@@ -8,7 +8,7 @@
         </div>
         <div class="content-main-pp">
           <p class="first-para-tp">Welcome to Senexpay’s Privacy Policy</p>
-          <h3>1. Please read carefully</h3>
+          <h2>1. Please read carefully</h2>
           <h4>1.1. Our Purpose</h4>
           <p>
             Our services offer our users the ability to easily create beautiful

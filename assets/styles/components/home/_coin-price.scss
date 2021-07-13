@@ -157,8 +157,8 @@
       min-width: 80px;
   
       img {
-        width: 80px;
-        height: 80px;
+        width: 65px;
+        height: 65px;
       }
     }
 
@@ -167,11 +167,11 @@
       // min-width: 100px;
   
       .title {
-        font-size: 22px;
+        font-size: 20px;
       }
   
       .subtitle {
-        font-size: 22px;
+        font-size: 20px;
       }
     }
 
@@ -184,7 +184,7 @@
       // min-width: 210px;
   
       .amount {
-        font-size: 22px;
+        font-size: 20px;
         // margin-top: 10px;
         text-align: right;
         margin-right: 10px;
@@ -193,8 +193,8 @@
       .action-buy {
         @include custom-btn(#06a84b,$color_white,#06a84b);
         width: 120px;
-        font-size: 20px;
-        padding: 16px 20px;
+        font-size: 18px;
+        padding: 12px 20px;
         border-radius: 12px;
         // margin-top: 10px;
       }
@@ -207,8 +207,8 @@
       .action-sell {
         @include custom-btn(#ff5f24,$color_white,#ff5f24);
         width: 120px;
-        font-size: 20px;
-        padding: 16px 20px;
+        font-size: 18px;
+        padding: 12px 20px;
         border-radius: 12px;
         // margin-top: 10px;
       }

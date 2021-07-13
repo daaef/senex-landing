@@ -4,8 +4,9 @@
       <div
         class="faq-item-con"
         :class="isOpen ? 'faq-item-con--grey' : 'faq-item-con--white'"
+        @click="toggleOpen"
       >
-        <div class="faq-item-con__title-con" @click="toggleOpen">
+        <div class="faq-item-con__title-con">
           <h3 class="title">{{ title }}</h3>
           <span class="arrow-con" :class="isOpen ? 'rotate-up' : ''"
             ><img src="/img/awesome-arrow-down.svg"

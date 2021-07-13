@@ -52,9 +52,13 @@
       }
 
       .title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+
+      .content {
+        font-size: 18px;
       }
     }
   }
@@ -72,7 +76,7 @@
     .why {
       color: #2E4AE7;
       font-size: 22px;
-      font-weight: bold;
+      font-weight: 500;
       margin-bottom: 30px;
     }
   
@@ -114,7 +118,7 @@
   .why-senex {
   
     .why {
-      font-size: 36px;
+      font-size: 24px;
       margin-bottom: 30px;
     }
   
@@ -144,11 +148,11 @@
   
         .title {
           margin-bottom: 12px;
-          font-size: 28px;
+          font-size: 20px;
         }
 
         .content {
-          font-size: 22px;
+          font-size: 20px;
         }
       }
     }

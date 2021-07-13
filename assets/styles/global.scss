@@ -58,6 +58,10 @@ body{
   // max-width: 100vw;
   // width: calc(100vw - (100vw - 100%));
   // overflow-y: scroll;
+
+  @media screen and (min-width: 1600px) {
+    font-size: 18px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -90,6 +94,8 @@ body{
 
 .container-full {
   width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 0 auto;
 }
 

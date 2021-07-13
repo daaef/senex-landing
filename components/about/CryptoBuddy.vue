@@ -8,7 +8,7 @@
           /></span> -->
           <div class="lg:w-3/5 word-con-abt__content">
             <p class="cap-abt">SECURITY AND SMOOTHNESS</p>
-            <h2>The Perfect Crypto Buddy</h2>
+            <h2>Your Perfect Crypto Buddy</h2>
             <!-- <p class="lower-case-abt px-4">
               Candy lets you sell your airtime online in no time with just a
               little discount. Get paid in your Candy wallet and send to your
@@ -20,14 +20,14 @@
             Start Trading Bitcoin
           </button>
         </div>
-        <div class="hidden lg:flex crypto-buddy-mobile">
+        <!-- <div class="hidden lg:flex crypto-buddy-mobile">
           <span class="up"
             ><img src="/img/about/straight-mobile-app.png"
           /></span>
           <span class="down"
             ><img src="/img/about/straight-mobile-app.png"
           /></span>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

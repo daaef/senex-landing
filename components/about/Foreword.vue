@@ -3,7 +3,7 @@
     <div class="container">
       <div class="lg:flex foreword-holder">
         <div class="foreword-con lg:w-1/2">
-          <h1>From our C.E.O</h1>
+          <h1 class="ceo-title">From our C.E.O</h1>
           <span>
             <h4>Yomi Boyo,</h4>
             <h5>Chief Executive Officer.</h5>

@@ -56,11 +56,15 @@
   .carousel-con {
     overflow-x: auto;
 
-    &:hover {
-      .scroll-btn {
-        display: none;
-      }
+    .scroll-btn {
+      display: block;
     }
+
+    // &:hover {
+    //   .scroll-btn {
+    //     display: none;
+    //   }
+    // }
   }
   .carousel-1 {
     min-width: 100%;

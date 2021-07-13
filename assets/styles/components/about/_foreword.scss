@@ -7,9 +7,9 @@
   @include flexcon(left, center, column);
 
   h1 {
-    font-size: 48px;
+    font-size: 46px;
     line-height: 1em;
-    color: $primary_color;
+    color: #000000;
     font-weight: bold;
     margin-bottom: 15px;
   }
@@ -73,10 +73,10 @@
 
 @media screen and (min-width: 1600px) {
   .foreword-con {
-    font-size: 22px;
+    font-size: 20px;
 
     h1 {
-      font-size: 50px;
+      font-size: 48px;
     }
   }
 }
