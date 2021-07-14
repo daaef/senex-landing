@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container lnd-rvw-con">
+    <div class="container lnd-rvw-con hidden md:block">
       <div class="lnd-review md:flex">
         <transition name="slide-fade" mode="out-in">
           <span :key="current" class="img-con w-full md:w-1/3"
@@ -26,6 +26,37 @@
               @click="changeIndex(1)"
             />
           </span>
+        </div>
+      </div>
+    </div>
+    <div class="container lnd-rvw-con rvw-carousel-con flex md:hidden">
+      <div v-for="(rvw, i) in reviews" :key="i" class="rvw-carousel">
+        <div class="lnd-review md:flex">
+          <transition name="slide-fade" mode="out-in">
+            <span class="img-con w-full md:w-1/3"
+              ><img :src="rvw.image"
+            /></span>
+          </transition>
+          <div class="rvw-con md:w-2/3">
+            <transition name="slide-fade" mode="out-in">
+              <div class="rvw-text-con">
+                <span class="rvw-text">{{ rvw.text }}</span>
+                <h3 class="rvw-writer">{{ rvw.writer }}</h3>
+              </div>
+            </transition>
+            <!-- <span class="rvw-con__arrow-con md:w-1/6 md:ml-auto"
+              ><img
+                src="/img/awesome-arrow-left.svg"
+                class="left-anim"
+                @click="changeIndex(-1)"
+              />
+              <img
+                src="/img/awesome-arrow-right.svg"
+                class="right-img right-anim"
+                @click="changeIndex(1)"
+              />
+            </span> -->
+          </div>
         </div>
       </div>
     </div>
