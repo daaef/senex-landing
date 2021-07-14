@@ -4,7 +4,8 @@ export const state = () => ({
     imageSource: '/img/nigeria.svg',
     code: 'NG'
   },
-  sideBarOpen: false
+  sideBarOpen: false,
+  showCookies: true
 })
 
 export const mutations = {
@@ -13,6 +14,9 @@ export const mutations = {
   },
   toggleSideBar(state) {
     state.sideBarOpen = !state.sideBarOpen
+  },
+  toggleCookies(state) {
+    state.showCookies = !state.showCookies
   }
 }
 
@@ -22,5 +26,8 @@ export const actions = {
   },
   toggleSideBar({ commit }) {
     commit('toggleSideBar')
+  },
+  toggleCookies({ commit }) {
+    commit('toggleCookies')
   }
 }

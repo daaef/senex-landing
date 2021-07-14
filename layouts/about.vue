@@ -23,6 +23,19 @@
       <Nav :theme="{ backgroundColor: '#FFFFFF', color: '#162F55' }" />
       <div class="nav-padding-top">
         <Nuxt />
+        <div class="container">
+          <div v-if="showCookies" class="cookies">
+            <span class="close">
+              <img src="img/close-grey.svg" @click="toggleCookies()" />
+            </span>
+            <p>
+              We use cookies to improve your experience and for marketing. Learn
+              more in our <strong>cookie policy</strong>.
+            </p>
+            <div class="btn decline" @click="toggleCookies()">Decline</div>
+            <div class="btn accept" @click="toggleCookies()">Accept</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -35,10 +48,15 @@ export default {
   components: { AppModal },
   computed: {
     ...mapState({
-      sideBarOpen: 'sideBarOpen'
+      sideBarOpen: 'sideBarOpen',
+      showCookies: 'showCookies'
     })
   },
-  methods: {}
+  methods: {
+    toggleCookies() {
+      this.$store.dispatch('toggleCookies')
+    }
+  }
 }
 </script>
 
