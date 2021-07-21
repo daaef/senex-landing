@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="container">
-      <div class="our-blog-con md:rounded-l-3xl">
+      <div class="our-blog-con">
         <div class="md:flex our-blog-holder">
           <span class="our-blog-holder__img lg:w-1/2"
-            ><img class="md:rounded-l-3xl" src="/img/about/ceo.png"
+            ><img class="" src="/img/careers/career-boy-1.png"
           /></span>
           <div class="our-blog-holder__content lg:w-1/2 md:p-5">
             <span class="time-elapsed">5 mins</span>

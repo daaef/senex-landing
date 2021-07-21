@@ -3,6 +3,9 @@
   width: 100%;
   // max-width: 800px;
   margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 1px 2px 8px #00000029;
   // min-height: 300px;
   
   .our-blog-holder {
@@ -56,6 +59,17 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 767px) {
+  .our-blog-con {
+
+    .our-blog-holder {
+      &__content {
+        padding: 15px;
+      }
+    }
+  } 
 }
 
 @media screen and (min-width: 768px) {
