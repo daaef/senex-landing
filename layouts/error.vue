@@ -26,7 +26,7 @@ export default {
   layout: 'error',
   props: {
     error: {
-      type: Function,
+      type: Object,
       default: () => {}
     }
   },

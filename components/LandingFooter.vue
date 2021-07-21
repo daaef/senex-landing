@@ -13,7 +13,7 @@
                 <h1 class="header">Company</h1>
                 <ul>
                   <li><router-link to="/about">About</router-link></li>
-                  <li><router-link to="/press">Press</router-link></li>
+                  <!-- <li><router-link to="/press">Press</router-link></li> -->
                   <li><router-link to="/blog">Blog</router-link></li>
                   <li><router-link to="/careers">Careers</router-link></li>
                 </ul>
@@ -30,11 +30,11 @@
                 <h1 class="header">Legal</h1>
                 <ul>
                   <li>
-                    <router-link to="/privacy">Privacy</router-link>
-                    <router-link to="/terms">& Terms</router-link>
+                    <router-link to="/terms">Terms of Service</router-link>
                   </li>
-                  <li><router-link to="/faq">FAQ</router-link></li>
-                  <li><router-link to="/faq">FAQ</router-link></li>
+                  <li>
+                    <router-link to="/privacy">Privacy Policy</router-link>
+                  </li>
                 </ul>
               </div>
               <div class="links-and-headers">
