@@ -1,0 +1,58 @@
+.calc {
+  max-width: 450px;
+  background-color: transparent;
+
+  &__tab-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  &__tab {
+    flex: 0 0 48%;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+
+    &--buy {
+      background-color: #06A84B;
+    }
+
+    &--sell {
+      background-color: #FF5F24;
+    }
+  }
+
+  &__intent-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: black;
+    border-bottom: 1px solid grey;
+    padding-bottom: 5px;
+    padding: 5px 10px;
+
+  }
+
+  &__intent-choice-box {
+    display: flex;
+  }
+
+  &__intent-choice-text {
+    font-size: 16px;
+  }
+
+  &__intent-choice-item {
+    display: flex;
+    align-items: center;
+    
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__intent-choice-img {
+    width: 20px;
+  }
+}

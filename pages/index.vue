@@ -419,7 +419,30 @@
       <!-- Landing video -->
       <intro-video></intro-video>
       <!-- Mobile App Banner -->
-      <mobile-app-banner></mobile-app-banner>
+      <div class="mbl-app-banner">
+        <div class="container">
+          <div class="block lg:flex">
+            <div class="text-and-store-con self-center lg:w-1/2">
+              <h1 class="text-3xl text-center lg:text-left lg:text-5xl">
+                We are making crypto trading accessible to everyone.
+              </h1>
+              <!-- <div class="hidden lg:block app-icon-con">
+                <span class="icon-con up-anim"
+                  ><img src="/img/google-play.png"
+                /></span>
+                <span class="icon-con up-anim"
+                  ><img src="/img/app-store.png"
+                /></span>
+              </div> -->
+            </div>
+            <div class="lg:w-1/2 mx-auto">
+              <span class="mbl-img-con"
+                ><img src="/img/landing-mobileapp-banner.png"
+              /></span>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Footer -->
       <landing-footer></landing-footer>
     </div>
@@ -428,7 +451,7 @@
 
 <script>
 import CoinPrice from '~/components/home/CoinPrice.vue'
-import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
+// import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
 import Review from '~/components/home/Review.vue'
 import WhySenex from '~/components/home/WhySenex.vue'
 import IntroVideo from '~/components/home/IntroVideo.vue'
@@ -438,7 +461,7 @@ export default {
     CoinPrice,
     LandingFooter,
     Review,
-    MobileAppBanner,
+    // MobileAppBanner,
     WhySenex,
     IntroVideo
   },

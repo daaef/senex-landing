@@ -3,9 +3,17 @@
     <div class="footer-con">
       <div class="container">
         <div class="lg:flex">
-          <div class="brand-con lg:w-1/3">
-            <h1 class="brand-con__title">Buy and sell crypto on Senexpay</h1>
-            <span class="btn brand-con__register-btn">Get started</span>
+          <div class="mr-auto lg:w-1/3">
+            <div class="logo-copyright">
+              <span class="logo-con" @click="toHome()"
+                ><img src="/img/senexpay-logo-light.png"
+              /></span>
+              <span class="copyright">Senexpay © 2021</span>
+              <!-- <div class="terms-link">
+                <router-link to="/terms">Terms of Service | </router-link>
+                <router-link to="/privacy">Privacy Policy</router-link>
+              </div> -->
+            </div>
           </div>
           <div class="links-con lg:w-2/3">
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/5 ml-auto">
@@ -64,7 +72,7 @@
         </div>
         <div class="flex flex-col-reverse lg:flex-row items-end">
           <div class="mr-auto lg:w-1/3">
-            <div class="logo-copyright">
+            <!-- <div class="logo-copyright">
               <span class="logo-con"
                 ><img src="/img/senexpay-logo-light.png"
               /></span>
@@ -73,7 +81,7 @@
                 <router-link to="/terms">Terms of Service | </router-link>
                 <router-link to="/privacy">Privacy Policy</router-link>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="lg:w-2/3 lg:flex justify-end w-full ml-auto">
             <div class="lg:w-3/5">
@@ -100,7 +108,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    toHome() {
+      this.$router.push('/')
+    }
+  }
+}
 </script>
 
 <style></style>
