@@ -86,18 +86,25 @@
           <div class="lg:w-2/3 lg:flex justify-end w-full ml-auto">
             <div class="lg:w-3/5">
               <div class="lg:flex lg:w-4/5 footer-social-con">
-                <router-link to="/" class="block lg:inline-block"
-                  >Facebook</router-link
+                <a
+                  href="https://web.facebook.com/senexng/"
+                  class="block lg:inline-block"
+                  target="_blank"
+                  >Facebook</a
                 >
-                <router-link to="/" class="block lg:inline-block"
-                  >Twitter</router-link
+                <a
+                  href="https://twitter.com/senexng/"
+                  class="block lg:inline-block"
+                  target="_blank"
+                  >Twitter</a
                 >
-                <router-link to="/" class="block lg:inline-block"
-                  >Instagram</router-link
+                <a
+                  href="https://www.instagram.com/senexng/"
+                  class="block lg:inline-block"
+                  target="_blank"
+                  >Instagram</a
                 >
-                <router-link to="/" class="block lg:inline-block"
-                  >LinkedIn</router-link
-                >
+                <a href="/" class="block lg:inline-block">LinkedIn</a>
               </div>
             </div>
           </div>
