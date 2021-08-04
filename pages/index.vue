@@ -421,7 +421,7 @@
       <!-- Mobile App Banner -->
       <div class="mbl-app-banner">
         <div class="container">
-          <div class="block lg:flex">
+          <div class="block lg:flex py-24">
             <div class="text-and-store-con self-center lg:w-1/2">
               <h1 class="text-3xl text-center lg:text-left lg:text-5xl">
                 We are making crypto trading accessible to everyone.
@@ -437,7 +437,7 @@
             </div>
             <div class="lg:w-1/2 mx-auto">
               <span class="mbl-img-con"
-                ><img src="/img/landing-mobileapp-banner.png"
+                ><img src="/img/pablita-cryptocurrency.svg"
               /></span>
             </div>
           </div>
