@@ -44,7 +44,9 @@
                     <router-link to="/privacy">Privacy Policy</router-link>
                   </li>
                   <li>
-                    <router-link to="/cookie-policy">Cookies Policy</router-link>
+                    <router-link to="/cookie-policy"
+                      >Cookies Policy</router-link
+                    >
                   </li>
                 </ul>
               </div>
