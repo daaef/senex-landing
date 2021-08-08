@@ -23,16 +23,19 @@
         <div class="foreword-img-car lg:w-3/5 2xl:w-1/2">
           <div class="lg:w-4/5 2xl:w-full forward-img-con-car m-auto lg:mr-0">
             <div class="top-left">
-              <img src="/img/careers/career-boy-1.png" alt="img-design" />
+              <img
+                src="/img/careers/career-boy-1.png"
+                alt="Combination of four pictures of showing young people in working mode with laptops."
+              />
             </div>
             <div class="top-right">
-              <img src="/img/careers/career-girl-1.png" alt="img-design" />
+              <img src="/img/careers/career-girl-1.png" />
             </div>
             <div class="bottom-left">
-              <img src="/img/careers/career-boy-2.png" alt="img-design" />
+              <img src="/img/careers/career-boy-2.png" />
             </div>
             <div class="bottom-right">
-              <img src="/img/careers/career-girl-2.png" alt="img-design" />
+              <img src="/img/careers/career-girl-2.png" />
             </div>
           </div>
         </div>

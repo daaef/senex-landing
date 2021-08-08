@@ -167,8 +167,16 @@
           class="lg:w-1/2 snx-description-img-con"
         >
           <div class="holder m-auto lg:mr-0">
-            <img class="up" src="/img/girl_using_senex.png" />
-            <img class="down" src="/img/boy_using_senex.png" />
+            <img
+              class="up"
+              alt="A girl holding a phone in her hands and sitting on the floor."
+              src="/img/girl_using_senex.png"
+            />
+            <img
+              class="down"
+              alt="A man holding a phone to his ears and typing on a laptop."
+              src="/img/boy_using_senex.png"
+            />
           </div>
         </div>
       </div>
@@ -202,7 +210,11 @@
           class="block snx-description-con sdc-pb container hidden lg:flex"
         >
           <div class="lg:w-1/2 snx-description-img-con">
-            <img src="/img/landing-guy-btc.png" class="reduce-img" />
+            <img
+              alt="A young man holding a Bitcoin coin and making a signal."
+              src="/img/landing-guy-btc.png"
+              class="reduce-img"
+            />
           </div>
           <div class="lg:w-1/2">
             <div class="snx-description lg:w-4/5 mx-auto">
@@ -232,7 +244,10 @@
             </div>
           </div>
           <div v-scroll-reveal.reset class="lg:w-1/2 snx-description-img-con">
-            <img src="/img/landing-guy-btc.png" />
+            <img
+              alt="A young man holding a Bitcoin coin and making a signal."
+              src="/img/landing-guy-btc.png"
+            />
           </div>
         </div>
       </div>
@@ -437,7 +452,9 @@
             </div>
             <div class="lg:w-1/2 mx-auto">
               <span class="mbl-img-con"
-                ><img src="/img/pablita-cryptocurrency.svg"
+                ><img
+                  src="/img/pablita-cryptocurrency.svg"
+                  alt="An illustration of person typing on a laptop."
               /></span>
             </div>
           </div>

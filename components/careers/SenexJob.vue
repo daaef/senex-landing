@@ -6,7 +6,10 @@
       </div>
       <div class="grid lg:grid-cols-2 lg:gap-14">
         <div class="my-4 lg:my-0 snx-jobs-img-con">
-          <img src="img/careers/working-1.png" alt="work" />
+          <img
+            src="img/careers/working-2.png"
+            alt="A young lady working from home with a laptop at a table."
+          />
           <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
@@ -21,7 +24,10 @@
           </div>
         </div>
         <div class="my-4 lg:my-0 snx-jobs-img-con">
-          <img src="img/careers/working-2.png" alt="work" />
+          <img
+            src="img/careers/working-11.png"
+            alt="A young man working remotely from a workspace."
+          />
           <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
@@ -36,7 +42,10 @@
           </div>
         </div>
         <div class="my-4 lg:my-0 snx-jobs-img-con">
-          <img src="img/careers/working-3.png" alt="work" />
+          <img
+            src="img/careers/working-3.png"
+            alt="A young man working remotely from a lounge."
+          />
           <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
