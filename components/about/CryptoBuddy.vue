@@ -1,6 +1,10 @@
 <template>
   <div>
     <div class="crypto-buddy-background relative">
+      <span class="cbd__dot cbd__dot--1"></span>
+      <span class="cbd__dot cbd__dot--2"></span>
+      <span class="cbd__dot cbd__dot--3"></span>
+      <span class="cbd__dot cbd__dot--4"></span>
       <div class="container-full">
         <div class="word-con-abt relative">
           <!-- <span class="hidden lg:inline-block dancing-people"

@@ -134,16 +134,44 @@
         </div>
       </div>
     </div>
-    <mobile-app-banner></mobile-app-banner>
+    <!-- <mobile-app-banner></mobile-app-banner> -->
+    <div class="mbl-app-banner">
+      <div class="container">
+        <div class="block lg:flex py-24">
+          <div class="text-and-store-con self-center lg:w-1/2">
+            <h1 class="text-3xl text-center lg:text-left lg:text-5xl">
+              We are making crypto trading accessible to everyone.
+            </h1>
+            <!-- <div class="hidden lg:block app-icon-con">
+              <span class="icon-con up-anim"
+                ><img src="/img/google-play.png"
+              /></span>
+              <span class="icon-con up-anim"
+                ><img src="/img/app-store.png"
+              /></span>
+            </div> -->
+          </div>
+          <div class="lg:w-1/2 mx-auto">
+            <span class="mbl-img-con"
+              ><img
+                src="/img/pablita-cryptocurrency.svg"
+                alt="An illustration of person typing on a laptop."
+            /></span>
+          </div>
+        </div>
+      </div>
+    </div>
     <landing-footer></landing-footer>
   </div>
 </template>
 
 <script>
-import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
+// import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 export default {
-  components: { MobileAppBanner, LandingFooter },
+  components: {
+    LandingFooter
+  },
   layout: 'about'
 }
 </script>

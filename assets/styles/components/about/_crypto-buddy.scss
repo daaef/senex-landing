@@ -15,6 +15,39 @@
 .crypto-buddy-background {
   background-color: #2E4AE7;
   overflow: hidden;
+  position: relative;
+}
+
+.cbd__dot {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 4px;
+  position: absolute;
+
+  &--1 {
+    top: 20%;
+    right: 30%;
+    background-color: #A2FFFF;
+  }
+
+  &--2 {
+    top: 50%;
+    right: 10%;
+    background-color: #F5D974;
+  }
+
+  &--3 {
+    top: 30%;
+    left: 20%;
+    background-color: #FA8787;
+  }
+
+  &--4 {
+    left: 30%;
+    bottom: 10%;
+    background-color: #98B8ED;
+  }
 }
 
 .word-con-abt {
