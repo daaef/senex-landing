@@ -19,12 +19,13 @@
   .rvw-con {
     padding: 30px;
     padding-top: 50px;
-    background-color: $primary_color;
+    background-color: #053888;
     position: relative;
+    transition: background-color .5s;
     @include flexcon(left, center, column);
 
     &:hover {
-      background-color: #07214A;
+      background-color: darken(#053888, 4.5);
     }
 
     .rvw-text-con {
