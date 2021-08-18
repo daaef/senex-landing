@@ -5,7 +5,7 @@
 }
 
 .background-jp {
-  background-color: #162F55;
+  background-color: $primary_color;
   color: #ffffff;
 }
 
@@ -45,7 +45,7 @@
   }
 
   .register-btn-jp {
-    @include custom-btn(#ffffff,#162F55, $secondary_color);
+    @include custom-btn(#ffffff,$primary_color, $secondary_color);
     padding: 8px 16px;
     font-size: 18px;
     border-radius: 6px;

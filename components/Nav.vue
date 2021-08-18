@@ -84,7 +84,7 @@ export default {
       default: () => {
         return {
           backgroundColor: '#FFFFFF',
-          color: '#162F55'
+          color: '#053888'
         }
       }
     }
@@ -112,7 +112,7 @@ export default {
     barColor() {
       if (this.sideBarOpen) {
         return 'white-bar'
-      } else if (this.theme.color === '#162F55') {
+      } else if (this.theme.color === '#053888') {
         return 'blue-bar'
       } else {
         return 'white-bar'

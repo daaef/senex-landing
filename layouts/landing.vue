@@ -12,7 +12,7 @@
       </transition>
     </app-modal>
     <div>
-      <Nav :theme="{ backgroundColor: '#162F55', color: '#FFFFFF' }" />
+      <Nav :theme="{ backgroundColor: '#053888', color: '#FFFFFF' }" />
       <Nuxt />
       <div class="container">
         <div v-if="showCookies" class="cookies">

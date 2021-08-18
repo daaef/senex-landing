@@ -1,12 +1,12 @@
 .blue-background-bs {
   @include flexcon(center, center, row);
-  background-color: #162F55;
+  background-color: #053888;
   border-radius: 18px;
   margin: 80px 0;
   height: 250px;
 
   .register-btn-bs {
-    @include custom-btn(#ffffff,#162F55,$secondary_color);
+    @include custom-btn(#ffffff,#053888,$secondary_color);
     padding: 8px 16px;
     font-size: 18px;
     border-radius: 6px;
@@ -15,7 +15,7 @@
   }
   
   .register-btn-bs:hover {
-    @include custom-btn(#162F55,#ffffff, #ffffff);
+    @include custom-btn(#053888,#ffffff, #ffffff);
     border: #ffffff 1px solid;
   }  
   
@@ -24,7 +24,7 @@
 @media screen and (min-width: 1600px) {
   .blue-background-bs {
     .register-btn-bs {
-      @include custom-btn(#ffffff,#162F55,$secondary_color);
+      @include custom-btn(#ffffff,#053888,$secondary_color);
       padding: 10px 18px;
       font-size: 22px;
       max-width: none;

@@ -20,7 +20,7 @@
       <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
     </app-modal> -->
     <div class="">
-      <Nav :theme="{ backgroundColor: '#FFFFFF', color: '#162F55' }" />
+      <Nav :theme="{ backgroundColor: '#FFFFFF', color: '#053888' }" />
       <div class="nav-padding-top">
         <Nuxt />
         <div class="container">
