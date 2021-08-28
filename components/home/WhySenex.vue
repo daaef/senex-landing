@@ -5,6 +5,11 @@
       <div class="why-light-triangle"></div>
     </div>
     <div class="why-senex">
+      <img
+        src="/img/green-semi-circles.svg"
+        alt="Circles"
+        class="why-senex-circle"
+      />
       <div class="container">
         <p class="why">Why people love Senexpay</p>
         <h2>We just wanna to make crypto exchange stress-free.</h2>
@@ -43,4 +48,13 @@
 export default {}
 </script>
 
-<style></style>
+<style lang="scss">
+.why-senex-circle {
+  position: absolute;
+  top: calc(50% - 50px);
+  // top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 400px;
+}
+</style>

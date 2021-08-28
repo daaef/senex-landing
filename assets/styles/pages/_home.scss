@@ -115,8 +115,8 @@
     display: inline-block;
     width: 60px;
     height: 60px;
-    bottom: 0;
-    left: 0;
+    bottom: -20px;
+    left: -20px;
 
     img {
       width: 100%;
@@ -127,8 +127,8 @@
   .circle-boy-small {
     display: inline-block;
     position: absolute;
-    left: 25%;
-    bottom: 2%;
+    left: 12%;
+    bottom: 12%;
     height: 40px;
 
     img {
@@ -139,8 +139,8 @@
   .circle-girl-small {
     display: inline-block;
     position: absolute;
-    top: 13%;
-    right: 30%;
+    top: 20%;
+    right: 20%;
     height: 40px;
 
     img {
@@ -540,7 +540,7 @@
 }
 
 
-@media screen and(max-width: 768px) {
+@media screen and(max-width: 550px) {
 
   .landing-animation {
     animation-name: landing-anim-sm;
@@ -565,17 +565,19 @@
     .purple-arrow {
       width: 40px;
       height: 40px;
+      bottom: 0;
+      left: 0;
     }
   
     .circle-boy-small {
-      // left: 17%;
-      bottom: 5%;
+      left: 15%;
+      bottom: 15%;
       height: 20px;
     }
   
     .circle-girl-small {
-      top: 18%;
-      right: 30%;
+      top: 25%;
+      right: 25%;
       height: 20px;
     }
   
@@ -590,6 +592,10 @@
     width: 80%;
     margin: auto;
   }
+
+}
+
+@media screen and(max-width: 768px) {
 
 }
 
@@ -637,9 +643,9 @@
     right: 0;
   }
   50% {
-    top: calc(13% - 30px);
-    right: calc(30% - 30px);
-    transform: rotate(25deg);
+    top: calc(20% - 34px);
+    right: calc(20% - 34px);
+    // transform: rotate(25deg);
   }
   100% {
     top: 0;
@@ -653,13 +659,13 @@
     left: 0;
   }
   50% {
-    bottom: calc(5% - 37px);
-    left: calc(25% - 37px);
-    transform: rotate(45deg);
+    bottom: calc(12% - 34px);
+    left: calc(12% - 34px);
+    // transform: rotate(45deg);
   }
   100% {
-    bottom: 0;
-    left: 0;
+    bottom: -20px;
+    left: -20px;
   }
 }
 
@@ -688,9 +694,9 @@
     right: 0;
   }
   50% {
-    top: calc(18% - 20px);
-    right: calc(30% - 20px);
-    transform: rotate(25deg);
+    top: calc(25% - 30px);
+    right: calc(25% - 30px);
+    // transform: rotate(25deg);
   }
   100% {
     top: 0;
@@ -704,9 +710,9 @@
     left: 0;
   }
   50% {
-    bottom: calc(5% - 20px);
-    left: calc(25% - 20px);
-    transform: rotate(45deg);
+    bottom: calc(15% - 30px);
+    left: calc(15% - 30px);
+    // transform: rotate(45deg);
   }
   100% {
     bottom: 0;
