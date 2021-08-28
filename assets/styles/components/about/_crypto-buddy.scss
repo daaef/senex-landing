@@ -1,5 +1,5 @@
 .register-btn-abt {
-  @include custom-btn(#ffffff,#2E4AE7,$secondary_color);
+  @include custom-btn(#ffffff,#053888,$secondary_color);
   border: 1px solid;
   padding: 8px 16px;
   font-size: 18px;
@@ -8,12 +8,12 @@
 }
 
 .register-btn-abt:hover {
-  @include custom-btn(#2E4AE7,#ffffff,#ffffff);
+  @include custom-btn(#053888,#ffffff,#ffffff);
   border: 1px solid;
 }
 
 .crypto-buddy-background {
-  background-color: #2E4AE7;
+  background-color: #053888;
   overflow: hidden;
   position: relative;
 }

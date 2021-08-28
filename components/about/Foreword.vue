@@ -5,7 +5,7 @@
         <div class="foreword-con lg:w-1/2">
           <h1 class="ceo-title">From our C.E.O</h1>
           <span>
-            <h4>Yomi Boyo,</h4>
+            <h4>Orhosere Okeoghene,</h4>
             <h5>Chief Executive Officer.</h5>
             <p class="first-para">
               Senex Payment Services Limited is a company that offers digital
@@ -27,7 +27,7 @@
               <img src="/img/dotted-grid.png" alt="img-design" />
             </div>
             <div class="ceo-img">
-              <img src="/img/about/ceo.png" alt="C.E.O" />
+              <img src="/img/about/senexpay-ceo.png" alt="C.E.O" />
             </div>
           </div>
         </div>

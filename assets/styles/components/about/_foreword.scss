@@ -5,28 +5,29 @@
 
 .foreword-con {
   @include flexcon(left, center, column);
+  color: $tertiary_color;
 
   h1 {
     font-size: 46px;
     line-height: 1em;
-    color: #000000;
+    color: $tertiary_color;
     font-weight: bold;
     margin-bottom: 15px;
   }
 
   h4 {
-    color: $primary_color;
+    // color: $secondary_color;
     font-weight: bold;
   }
 
   h5 {
-    color: #4D6B9B;
+    color: #838384;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
   p {
-    color: $primary_color;
+    color: #3E3E41;
   }
 
   .first-para {

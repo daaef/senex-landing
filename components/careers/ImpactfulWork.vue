@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="words-iw">
-        <h2>Our Core Values</h2>
+        <h2>Our Culture</h2>
       </div>
       <div class="grid lg:grid-cols-3 lg:gap-12">
         <div class="impact-iw">
