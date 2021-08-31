@@ -430,7 +430,8 @@
       <!-- Why Senex -->
       <why-senex></why-senex>
       <!-- Reviews -->
-      <review></review>
+      <review-holder></review-holder>
+      <!-- <review></review> -->
       <!-- Landing video -->
       <!-- <intro-video></intro-video> -->
       <our-obsession></our-obsession>
@@ -471,7 +472,8 @@
 import OurObsession from '../components/home/OurObsession.vue'
 import CoinPrice from '~/components/home/CoinPrice.vue'
 // import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
-import Review from '~/components/home/Review.vue'
+// import Review from '~/components/home/Review.vue'
+import ReviewHolder from '~/components/home/ReviewHolder.vue'
 import WhySenex from '~/components/home/WhySenex.vue'
 // import IntroVideo from '~/components/home/IntroVideo.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
@@ -479,7 +481,8 @@ export default {
   components: {
     CoinPrice,
     LandingFooter,
-    Review,
+    ReviewHolder,
+    // Review,
     // MobileAppBanner,
     WhySenex,
     // IntroVideo,

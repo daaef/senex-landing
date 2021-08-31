@@ -16,8 +16,9 @@
           <nav class="hidden lg:flex nav">
             <div class="link-con">
               <router-link class="link" to="/about">About us</router-link>
-              <router-link class="link" to="/learn">Learn</router-link>
+              <!-- <router-link class="link" to="/learn">Learn</router-link> -->
               <router-link class="link" to="/faq">FAQ</router-link>
+              <router-link class="link" to="/careers">Careers</router-link>
               <router-link class="link" to="/contact">Contact us</router-link>
             </div>
             <div class="register-con">

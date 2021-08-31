@@ -41,7 +41,7 @@ export default {}
   width: 100%;
   max-width: 1000px;
   // height: 500px;
-  background: transparent linear-gradient(180deg, #053888 0%, #3985f6 100%) 0%
+  background: transparent linear-gradient(180deg, #1cbf4c 0%, #3985f6 100%) 0%
     0% no-repeat padding-box;
 
   margin: 50px auto;
