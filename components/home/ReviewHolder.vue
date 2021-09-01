@@ -20,6 +20,7 @@
           :key="i"
           class="review-holder__dot"
           :class="[current == i ? 'review-holder__dot--active' : '']"
+          @click="clickDot(i)"
         ></span>
         <!-- <span class="review-holder__dot review-holder__dot--active"></span>
         <span class="review-holder__dot"></span>
@@ -102,6 +103,20 @@ export default {
         this.current = 0
       }
     },
+    clickDot(i) {
+      const width = this.$refs.reviews.clientWidth * i
+      const scrollPoint = this.$refs.reviews.scrollLeft + width * 0.8 + 20
+      if (i !== 1) {
+        this.$refs.reviews.scrollTo({ left: scrollPoint, behavior: 'smooth' })
+        this.current = i
+      } else {
+        this.$refs.reviews.scrollTo({
+          left: 0,
+          behavior: 'smooth'
+        })
+        this.current = 1
+      }
+    },
     getPages() {
       // const w = 600
       // this.$nextTick(function () {
@@ -149,6 +164,7 @@ export default {
     border-radius: 50%;
     margin-right: 15px;
     background-color: #b2b2b2;
+    cursor: pointer;
 
     &--active {
       background-color: #3e3e41;
