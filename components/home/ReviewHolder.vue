@@ -104,7 +104,7 @@ export default {
       }
     },
     clickDot(i) {
-      const width = this.$refs.reviews.clientWidth * i
+      const width = this.$refs.reviews.clientWidth * (i - 1)
       const scrollPoint = this.$refs.reviews.scrollLeft + width * 0.8 + 20
       if (i !== 1) {
         this.$refs.reviews.scrollTo({ left: scrollPoint, behavior: 'smooth' })
