@@ -3,17 +3,19 @@
     <div class="container">
       <div class="lg:flex foreword-holder">
         <div class="foreword-con lg:w-1/2">
-          <h1 class="ceo-title">From our C.E.O</h1>
+          <h1 class="ceo-title heading-primary u-text-left">From our C.E.O</h1>
           <span>
-            <h4>Orhosere Okeoghene,</h4>
-            <h5>Chief Executive Officer.</h5>
-            <p class="first-para">
+            <h4 class="paragraph paragraph--700">Orhosere Okeoghene,</h4>
+            <h5 class="paragraph paragraph--700 u-mb-10">
+              Chief Executive Officer.
+            </h5>
+            <p class="paragraph u-mb-md">
               Senex Payment Services Limited is a company that offers digital
               currency exchange and payment solutions. Its pioneering product is
               the SenexPAY – an online bitcoin to naira instant exchange
               platform.
             </p>
-            <p>
+            <p class="paragraph">
               This company is in business to contribute to bridging the gap in
               digital trust, offering easy, fast, and secure means to exchange
               bitcoins to naira for the least knowledgeable individual and new

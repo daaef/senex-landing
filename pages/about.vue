@@ -2,6 +2,62 @@
   <div>
     <foreword></foreword>
     <mission-vision></mission-vision>
+    <div class="container u-mb-md">
+      <h1 class="heading-primary heading-primary--wt-500 u-mb-md">
+        Our core values
+      </h1>
+      <p class="paragraph u-text-center text-black u-mb-md">
+        These are the shining lights that guide everything we do inside
+        Senexpay.
+      </p>
+      <div class="our-core-box">
+        <div class="our-core-box__item">
+          <h3
+            class="
+              heading-tertiary--sm heading-tertiary--wt-500
+              our-core-box__title
+              u-mb-sm
+            "
+          >
+            Financial Inclusion
+          </h3>
+          <p class="paragraph">
+            Millions of Africans are still left out in the modern fin-tech
+            revolution, we want to bridge the gap for everyone.
+          </p>
+        </div>
+        <div class="our-core-box__item">
+          <h3
+            class="
+              heading-tertiary--sm heading-tertiary--wt-500
+              our-core-box__title
+              u-mb-sm
+            "
+          >
+            Equality
+          </h3>
+          <p class="paragraph">
+            The current financial system creates a lot of inequality. We are
+            using the power of technology to level the field.
+          </p>
+        </div>
+        <div class="our-core-box__item">
+          <h3
+            class="
+              heading-tertiary--sm heading-tertiary--wt-500
+              our-core-box__title
+              u-mb-sm
+            "
+          >
+            Client Obssesion
+          </h3>
+          <p class="paragraph">
+            Behind every great product lies ears that listens to customers. We
+            are stop at nothing to satisfy ours.
+          </p>
+        </div>
+      </div>
+    </div>
     <senex-info></senex-info>
     <gallery></gallery>
     <join-learn></join-learn>
@@ -39,9 +95,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .show-btn {
   background-color: red;
   widows: 15px;
+}
+
+.text-black {
+  color: #000;
 }
 </style>

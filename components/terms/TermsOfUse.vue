@@ -3,14 +3,16 @@
     <div class="container">
       <div class="con-tp">
         <div class="main-header-tp">
-          <h1>Senexpay Terms Of Use</h1>
-          <p>Last Revised: March 28, 2021</p>
+          <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
+            Senexpay Terms Of Use
+          </h1>
+          <p class="paragraph">Last Revised: March 28, 2021</p>
         </div>
-        <p class="first-para-tou">
+        <p class="first-para-tou paragraph">
           Welcome to Senexpay’s Terms of Use! We are truly excited to have you
           aboard.Thank you for choosing to use our services.
         </p>
-        <p class="first-para-tp">
+        <p class="first-para-tp paragraph">
           Below we have listed important legal terms that apply to anyone who
           visits our website or uses our services. These terms are necessary in
           order to protect both you and us, and to make our services possible
@@ -18,16 +20,16 @@
           services and features and part of the terms below may not be relevant
           to the specific services you use.
         </p>
-        <p>
+        <p class="paragraph">
           We understand that legal terms can be exhausting to read, and we’ve
           tried to make the experience more pleasant. If you have any
           suggestions on how we can improve them, you are more than welcome to
           contact us at support@Senexpay.com.
         </p>
-        <h2>1. Introduction</h2>
-        <h3>1. Introduction</h3>
-        <h4>1.1. Our Purpose</h4>
-        <p>
+        <h2 class="heading-tertiary--sm">1. Introduction</h2>
+        <h3 class="heading-tertiary--v-sm">1. Introduction</h3>
+        <h4 class="paragraph">1.1. Our Purpose</h4>
+        <p class="paragraph">
           Our services offer our users the ability to easily create beautiful
           and highly functional online presence, to manage and promote
           businesses, content and ideas, and have an overall great experience
@@ -39,8 +41,8 @@
           online and mobile websites and platforms created by Users are
           collectively referred to herein as (“User Platform(s)”).
         </p>
-        <h4>1.2. Legal Agreement</h4>
-        <div class="legal-para-tou">
+        <h4 class="paragraph">1.2. Legal Agreement</h4>
+        <div class="legal-para-tou paragraph">
           <p>
             Our services offer our users the ability to easily create beautiful
             and highly functional online presence, to manage and promote

@@ -1,12 +1,13 @@
 
 .faq-item-con {
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #B2B2B2;
   border-radius: 8px;
   color: #242426;
   margin-top: 25px;
   margin-bottom: 25px;
   cursor: pointer;
+  // transition: all 0.5s;
 
   &--grey {
     background-color: #F5F5F7;
@@ -21,14 +22,13 @@
 
     .title {
       font-weight: bold;
-      font-size: 24px;
       margin-right: 5px;
     }
 
     .arrow-con {
       display: inline-block;
-      width: 20px;
-      min-width: 20px;
+      width: 15px;
+      min-width: 15px;
       margin-left: auto;
       transition: all .2s;
 
@@ -43,7 +43,6 @@
   }
 
   &__content {
-    font-size: 18px;
     margin-top: 15px;
     width: 95%;
   }

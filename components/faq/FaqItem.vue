@@ -7,12 +7,15 @@
         @click="toggleOpen"
       >
         <div class="faq-item-con__title-con">
-          <h3 class="title">{{ title }}</h3>
+          <h3 class="title paragraph">{{ title }}</h3>
           <span class="arrow-con" :class="isOpen ? 'rotate-up' : ''"
             ><img src="/img/awesome-arrow-down.svg"
           /></span>
         </div>
-        <div class="faq-item-con__content" :class="isOpen ? 'block' : 'hidden'">
+        <div
+          class="faq-item-con__content paragraph"
+          :class="isOpen ? 'block' : 'hidden'"
+        >
           {{ content }}
         </div>
       </div>

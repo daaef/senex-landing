@@ -11,8 +11,8 @@
             ><img src="/img/about/dancing-people.png"
           /></span> -->
           <div class="lg:w-3/5 word-con-abt__content">
-            <p class="cap-abt">SECURITY AND SMOOTHNESS</p>
-            <h2>Your Perfect Crypto Buddy</h2>
+            <p class="cap-abt paragraph">SECURITY AND SMOOTHNESS</p>
+            <h2 class="heading-primary">Your Perfect Crypto Buddy</h2>
             <!-- <p class="lower-case-abt px-4">
               Candy lets you sell your airtime online in no time with just a
               little discount. Get paid in your Candy wallet and send to your

@@ -7,8 +7,8 @@
             <img src="img/about/double-right-arrow.svg" alt="skip" />
           </div>
           <span>
-            <h2>Our Mission</h2>
-            <p>
+            <h2 class="heading-tertiary">Our Mission</h2>
+            <p class="paragraph">
               Our mission is to establish a fully automated, fast, easy,
               decentralized, and secure digital payment infrastructure and
               solutions across Africa.
@@ -20,8 +20,8 @@
             <img src="img/about/green-eye.svg" alt="eye" />
           </div>
           <span>
-            <h2>Our Vision</h2>
-            <p>
+            <h2 class="heading-tertiary">Our Vision</h2>
+            <p class="paragraph">
               Our mission is to establish a fully automated, fast, easy,
               decentralized, and secure digital payment infrastructure and
               solutions across Africa.

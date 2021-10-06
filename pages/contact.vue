@@ -5,8 +5,10 @@
         <div class="container">
           <div class="con-tp">
             <div class="main-header-tp">
-              <h1>Contact Us</h1>
-              <p>
+              <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
+                Contact Us
+              </h1>
+              <p class="paragraph">
                 Get in touch with the right people at Senexpay, we’re here to
                 help.
               </p>
@@ -16,29 +18,31 @@
         <div class="contact-list">
           <div class="container">
             <div class="contact-type-con">
-              <p class="title">Drop by our Head Office</p>
-              <div class="location-con">
+              <p class="title heading-tertiary--v-sm">
+                Drop by our Head Office
+              </p>
+              <div class="location-con paragraph">
                 <span class="location">Lekki, Lagos, Nigeria.</span>
                 <span class="type">Find on Maps</span>
               </div>
             </div>
             <div class="contact-type-con">
-              <p class="title">Send us an Email</p>
-              <div class="location-con">
+              <p class="title heading-tertiary--v-sm">Send us an Email</p>
+              <div class="location-con paragraph">
                 <span class="location">info@senexpay.com</span>
                 <span class="type">Send an Email</span>
               </div>
             </div>
             <div class="contact-type-con">
-              <p class="title">Call us</p>
-              <div class="location-con">
+              <p class="title heading-tertiary--v-sm">Call us</p>
+              <div class="location-con paragraph">
                 <span class="location">+234 705 274 4444</span>
                 <span class="type">Call now</span>
               </div>
             </div>
             <div class="contact-type-con">
-              <p class="title">Chat us on Whatsapp</p>
-              <div class="location-con">
+              <p class="title heading-tertiary--v-sm">Chat us on Whatsapp</p>
+              <div class="location-con paragraph">
                 <span class="location">+234 818 489 9239</span>
                 <span class="type">Chat now</span>
               </div>
@@ -50,7 +54,9 @@
     <!-- Get Social -->
     <div class="container">
       <div class="contact-get-social">
-        <h3>Get Social With Us</h3>
+        <h3 class="heading-tertiary heading-tertiary--sm">
+          Get Social With Us
+        </h3>
         <div class="socials-con">
           <div class="social fb">
             <span class="icon-con"
@@ -139,17 +145,9 @@
       <div class="container">
         <div class="block lg:flex py-24">
           <div class="text-and-store-con self-center lg:w-1/2">
-            <h1 class="text-3xl text-center lg:text-left lg:text-5xl">
-              We are making crypto trading accessible to everyone.
+            <h1 class="heading-secondary u-text-left">
+              We are creating a unique financial revolution. Join us!
             </h1>
-            <!-- <div class="hidden lg:block app-icon-con">
-              <span class="icon-con up-anim"
-                ><img src="/img/google-play.png"
-              /></span>
-              <span class="icon-con up-anim"
-                ><img src="/img/app-store.png"
-              /></span>
-            </div> -->
           </div>
           <div class="lg:w-1/2 mx-auto">
             <span class="mbl-img-con"
@@ -161,6 +159,32 @@
         </div>
       </div>
     </div>
+    <!-- <div class="mbl-app-banner">
+      <div class="container">
+        <div class="block lg:flex py-24">
+          <div class="text-and-store-con self-center lg:w-1/2">
+            <h1 class="text-3xl text-center lg:text-left lg:text-5xl">
+              We are making crypto trading accessible to everyone.
+            </h1>
+            <div class="hidden lg:block app-icon-con">
+              <span class="icon-con up-anim"
+                ><img src="/img/google-play.png"
+              /></span>
+              <span class="icon-con up-anim"
+                ><img src="/img/app-store.png"
+              /></span>
+            </div>
+          </div>
+          <div class="lg:w-1/2 mx-auto">
+            <span class="mbl-img-con"
+              ><img
+                src="/img/pablita-cryptocurrency.svg"
+                alt="An illustration of person typing on a laptop."
+            /></span>
+          </div>
+        </div>
+      </div>
+    </div> -->
     <landing-footer></landing-footer>
   </div>
 </template>

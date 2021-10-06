@@ -2,7 +2,9 @@
   <div>
     <div class="container">
       <div class="words-sj">
-        <h2>Working at Senexpay</h2>
+        <h2 class="heading-primary heading-primary--wt-500 u-mb-md">
+          Working at Senexpay
+        </h2>
       </div>
       <div class="grid lg:grid-cols-2 lg:gap-14">
         <div class="my-4 lg:my-0 snx-jobs-img-con">
@@ -10,7 +12,7 @@
             src="img/careers/working-2.png"
             alt="A young lady working from home with a laptop at a table."
           />
-          <div class="img-overlay">
+          <!-- <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
               <span>
@@ -21,14 +23,14 @@
                 </p>
               </span>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="my-4 lg:my-0 snx-jobs-img-con">
           <img
             src="img/careers/working-11.png"
             alt="A young man working remotely from a workspace."
           />
-          <div class="img-overlay">
+          <!-- <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
               <span>
@@ -39,14 +41,14 @@
                 </p>
               </span>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="my-4 lg:my-0 snx-jobs-img-con">
           <img
             src="img/careers/working-3.png"
             alt="A young man working remotely from a lounge."
           />
-          <div class="img-overlay">
+          <!-- <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
               <span>
@@ -57,11 +59,11 @@
                 </p>
               </span>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="my-4 lg:my-0 snx-jobs-img-con">
           <img src="img/careers/working-4.png" alt="work" />
-          <div class="img-overlay">
+          <!-- <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
               <span>
@@ -72,7 +74,7 @@
                 </p>
               </span>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

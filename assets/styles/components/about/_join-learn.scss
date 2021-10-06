@@ -12,9 +12,13 @@
   position: relative;
   margin-bottom: 30px;
 
+  @include respond(big-desktop) {
+    max-width: 600px;
+  }
+
   h2 {
     font-weight: 500;
-    font-size: 36px;
+    // font-size: 36px;
     line-height: 1em;
     margin-bottom: 20px;
   }
@@ -29,6 +33,12 @@
     height: 50px;
     display: flex;
     align-self: center;
+
+    @include respond(big-desktop) {
+      width: 70px !important;
+      min-width: 70px;
+      height: 70px;
+    }
 
     img {
       width: 100%;
@@ -53,26 +63,5 @@
   margin-left: auto;
   img {
     width: 100%;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .join {
-    max-width: 600px;
-    font-size: 22px;
-
-    h2 {
-      font-size: 42px;
-    }
-
-    .diamond {
-      width: 70px !important;
-      min-width: 70px;
-      height: 70px;
-  
-      img {
-        width: 100%;
-      }
-    }
   }
 }

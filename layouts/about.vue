@@ -20,7 +20,13 @@
       <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
     </app-modal> -->
     <div class="">
-      <Nav :theme="{ backgroundColor: '#FFFFFF', color: '#053888' }" />
+      <Nav
+        :theme="{
+          backgroundColor: '#FFFFFF',
+          color: '#053888',
+          lightTheme: true
+        }"
+      />
       <div class="nav-padding-top">
         <Nuxt />
         <div class="container">
@@ -28,7 +34,7 @@
             <span class="close">
               <img src="img/close-grey.svg" @click="toggleCookies()" />
             </span>
-            <p>
+            <p class="paragraph">
               We use cookies to improve your experience and for marketing. Learn
               more in our <strong>cookie policy</strong>.
             </p>
@@ -64,7 +70,7 @@ export default {
 html {
   font-family: 'SFPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  /* font-size: 16px; */
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

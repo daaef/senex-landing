@@ -5,9 +5,22 @@
         <div class="block lg:flex">
           <div class="w-full lg:w-1/2 snx-hero-content-holder">
             <div class="snx-hero-content">
-              <h1 class="snx-hero-content__title">Buy and Sell Crypto</h1>
-              <h1 class="snx-hero-content__title">the easy way.</h1>
-              <p class="snx-hero-content__subtitle">
+              <h1 class="snx-hero-content__title heading-primary">
+                Buy and Sell
+                <span class="snx-hero-content__title--grad">
+                  <client-only>
+                    <vue-typer
+                      name="banner"
+                      :text="['Crypto', 'Bitcoin', 'USDT']"
+                      erase-style="clear"
+                    />
+                  </client-only>
+                </span>
+              </h1>
+              <h1 class="snx-hero-content__title heading-primary">
+                the easy way.
+              </h1>
+              <p class="snx-hero-content__subtitle paragraph">
                 SenexPay offers you a secure and easy way to make crypto-fiat
                 exchange without any hassle.
               </p>
@@ -21,7 +34,8 @@
               </div>
             </div>
           </div>
-          <div
+          <div></div>
+          <!-- <div
             class="w-full lg:w-1/2 mt-2 mb-8 lg:my-0 flex snx-hero-atom-holder"
           >
             <div class="atom-holder mx-auto lg:ml-auto lg:mr-0">
@@ -111,7 +125,7 @@
                 </g>
               </svg>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -148,25 +162,13 @@
     <div class="">
       <!-- Description 1 -->
       <div class="snx-description-con sdc-pb container lg:flex">
-        <div class="lg:w-1/2">
-          <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
-            <p class="snx-description__title">
-              It’s so easy, anyone can trade on it.
-            </p>
-            <p class="snx-description__subtitle">
-              Trading your Cryptocurrency on Senexpay is so easy that you do not
-              need to be a Crypto guru to do it yourself. We believe life should
-              be as easy as it can be.
-            </p>
-          </div>
-        </div>
         <div
           v-scroll-reveal.reset="{
             origin: 'right'
           }"
           class="lg:w-1/2 snx-description-img-con"
         >
-          <div class="holder m-auto lg:mr-0">
+          <div class="holder m-auto lg:ml-0">
             <img
               class="up"
               alt="A girl holding a phone in her hands and sitting on the floor."
@@ -177,6 +179,23 @@
               alt="A man holding a phone to his ears and typing on a laptop."
               src="/img/boy_using_senex.png"
             />
+          </div>
+        </div>
+        <div class="lg:w-1/2">
+          <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
+            <p
+              class="
+                snx-description__title
+                heading-primary heading-primary--wt-500
+              "
+            >
+              It’s so easy, anyone can trade on it.
+            </p>
+            <p class="snx-description__subtitle paragraph">
+              Trading your Cryptocurrency on SenexPay is so easy you do not need
+              to be a Crypto guru to do it yourself. We designed a truly smooth
+              and seamless experience that’s one of a kind.
+            </p>
           </div>
         </div>
       </div>
@@ -209,6 +228,23 @@
           v-scroll-reveal.reset
           class="block snx-description-con sdc-pb container hidden lg:flex"
         >
+          <div class="lg:w-1/2">
+            <div class="snx-description lg:w-4/5 mx-auto">
+              <p
+                class="
+                  snx-description__title
+                  heading-primary heading-primary--wt-500
+                "
+              >
+                The most trusted crypto platform.
+              </p>
+              <p class="snx-description__subtitle paragraph">
+                Over the years, SenexPay has been able to build an unshakeable
+                trust in its customers due to our efficient and swift payout
+                process. So fast our customers be like “Mad o!😳”
+              </p>
+            </div>
+          </div>
           <div class="lg:w-1/2 snx-description-img-con">
             <img
               alt="A young man holding a Bitcoin coin and making a signal."
@@ -216,30 +252,23 @@
               class="reduce-img"
             />
           </div>
-          <div class="lg:w-1/2">
-            <div class="snx-description lg:w-4/5 mx-auto">
-              <p class="snx-description__title">
-                The most trusted crypto platform.
-              </p>
-              <p class="snx-description__subtitle">
-                Over the years, SenexPay has been able to build an unshakeable
-                trust in its customers due to our efficient and swift payout
-                process.
-              </p>
-            </div>
-          </div>
         </div>
         <!-- Small Screen -->
         <div class="block snx-description-con sdc-pb container lg:hidden">
           <div class="lg:w-1/2">
             <div v-scroll-reveal.reset class="snx-description lg:w-4/5 mx-auto">
-              <p class="snx-description__title">
+              <p
+                class="
+                  snx-description__title
+                  heading-primary heading-primary--wt-500
+                "
+              >
                 The most trusted crypto platform.
               </p>
-              <p class="snx-description__subtitle">
+              <p class="snx-description__subtitle paragraph">
                 Over the years, SenexPay has been able to build an unshakeable
                 trust in its customers due to our efficient and swift payout
-                process.
+                process. So fast our customers be like “Mad o!😳”
               </p>
             </div>
           </div>
@@ -260,11 +289,18 @@
       >
         <div class="lg:w-1/2">
           <div class="snx-description lg:w-4/5">
-            <p class="snx-description__title">We are serious about Security.</p>
-            <p class="snx-description__subtitle">
+            <p
+              class="
+                snx-description__title
+                heading-primary heading-primary--wt-500
+              "
+            >
+              We are serious about Security.
+            </p>
+            <p class="snx-description__subtitle paragraph">
               Buy and sell your Cryptocurrency safely and securely with peace of
               mind. Your information is fully secure and you are protected to
-              the maximum.
+              the maximum. “My guy no shaking!💪🏼”
             </p>
           </div>
         </div>
@@ -440,17 +476,9 @@
         <div class="container">
           <div class="block lg:flex py-24">
             <div class="text-and-store-con self-center lg:w-1/2">
-              <h1 class="text-3xl text-center lg:text-left lg:text-5xl">
-                We are making crypto trading accessible to everyone.
+              <h1 class="heading-secondary u-text-left">
+                We are creating a unique financial revolution. Join us!
               </h1>
-              <!-- <div class="hidden lg:block app-icon-con">
-                <span class="icon-con up-anim"
-                  ><img src="/img/google-play.png"
-                /></span>
-                <span class="icon-con up-anim"
-                  ><img src="/img/app-store.png"
-                /></span>
-              </div> -->
             </div>
             <div class="lg:w-1/2 mx-auto">
               <span class="mbl-img-con"

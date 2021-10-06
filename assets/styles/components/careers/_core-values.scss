@@ -17,13 +17,12 @@
   max-height: 80vh;
   
   h3 {
-    font-size: 32px;
+    // font-size: 32px;
     font-weight: 500;
     margin-left: 5px;
   }
 
   h2 {
-    font-size: 46px;
     line-height: 1.2em;
     font-weight: 600;
     margin-bottom: 40px;
@@ -192,20 +191,6 @@
 @media screen and (min-width: 1600px) {
   .foreword-holder-car {
     padding-top: 60px;
-
-    .foreword-con-car {
-      h2 {
-        font-size: 56px;
-      }
-    }
-
-    h3 {
-      font-size: 34px;
-    }
-  
-    h2 {
-      font-size: 48px;
-    }
 
     .words-car {
       max-width: 100%;

@@ -2,9 +2,9 @@
   <div class="review-box">
     <div class="review-box__profile">
       <img :src="image" alt="Reviewer" class="review-box__img" />
-      <span class="review-box__name">{{ name }}</span>
+      <span class="review-box__name paragraph">{{ name }}</span>
     </div>
-    <p class="review-box__text">{{ content }}</p>
+    <p class="review-box__text paragraph">{{ content }}</p>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .review-box {
   background-color: #f5f5fd;
   padding: 20px;
@@ -36,6 +36,7 @@ export default {
   margin-right: 50px;
   color: #3e3e41;
   transition: all 0.5s;
+  min-height: 200px;
 
   &:hover {
     transform: translateX(10px);

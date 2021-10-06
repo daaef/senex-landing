@@ -4,17 +4,40 @@
       <h3 class="heading-secondary heading-secondary--weight-md u-my-md">
         What our customers are saying.
       </h3>
-      <div ref="reviews" class="review-holder__reviews u-mb-md">
-        <template v-for="(item, idx) in reviews">
+      <div class="review-holder__reviews u-mb-md">
+        <!-- ref="reviews"  -->
+        <!-- <template v-for="(item, idx) in reviews">
           <review-2
             :key="idx"
             :name="item.name"
             :image="item.image"
             :content="item.content"
           ></review-2>
-        </template>
+        </template> -->
+        <carousel
+          :scroll-per-page="false"
+          :autoplay="true"
+          pagination-position="left"
+          pagination-color="#B2B2B2"
+          pagination-active-aolor="#3E3E41"
+          :loop="true"
+          :center-mode="true"
+          :per-page-custom="[
+            [0, 1],
+            [760, 2],
+            [1024, 3]
+          ]"
+        >
+          <slide v-for="(item, idx) in reviews" :key="idx">
+            <review-2
+              :name="item.name"
+              :image="item.image"
+              :content="item.content"
+            ></review-2>
+          </slide>
+        </carousel>
       </div>
-      <div class="review-holder__dot-box">
+      <!-- <div class="review-holder__dot-box">
         <span
           v-for="i in getPages()"
           :key="i"
@@ -22,18 +45,25 @@
           :class="[current == i ? 'review-holder__dot--active' : '']"
           @click="clickDot(i)"
         ></span>
-        <!-- <span class="review-holder__dot review-holder__dot--active"></span>
+        
+      </div> -->
+      <!-- <span class="review-holder__dot review-holder__dot--active"></span>
         <span class="review-holder__dot"></span>
         <span class="review-holder__dot"></span> -->
-      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Carousel from 'vue-carousel/src/Carousel.vue'
+import Slide from 'vue-carousel/src/Slide.vue'
 import Review2 from './Review2.vue'
 export default {
-  components: { Review2 },
+  components: {
+    Review2,
+    Carousel,
+    Slide
+  },
   data() {
     return {
       reviews: [
@@ -71,23 +101,23 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      this.width = this.$refs.reviews.clientWidth
-    })
-    setInterval(() => {
-      const width = this.$refs.reviews.clientWidth
-      const scrollPoint = this.$refs.reviews.scrollLeft + width * 0.8 + 20
-      if (this.current < this.getPages()) {
-        this.$refs.reviews.scrollTo({ left: scrollPoint, behavior: 'smooth' })
-        this.current += 1
-      } else {
-        this.$refs.reviews.scrollTo({
-          left: 0,
-          behavior: 'smooth'
-        })
-        this.current = 1
-      }
-    }, 10000)
+    // this.$nextTick(() => {
+    //   this.width = this.$refs.reviews.clientWidth
+    // })
+    // setInterval(() => {
+    //   const width = this.$refs.reviews.clientWidth
+    //   const scrollPoint = this.$refs.reviews.scrollLeft + width * 0.8 + 20
+    //   if (this.current < this.getPages()) {
+    //     this.$refs.reviews.scrollTo({ left: scrollPoint, behavior: 'smooth' })
+    //     this.current += 1
+    //   } else {
+    //     this.$refs.reviews.scrollTo({
+    //       left: 0,
+    //       behavior: 'smooth'
+    //     })
+    //     this.current = 1
+    //   }
+    // }, 10000)
     // rightScroll() {
     //   const width = this.$refs.gallery.clientWidth
     //   const scrollPoint = this.$refs.gallery.scrollLeft + width / 4
@@ -103,20 +133,20 @@ export default {
         this.current = 0
       }
     },
-    clickDot(i) {
-      const width = this.$refs.reviews.clientWidth * (i - 1)
-      const scrollPoint = this.$refs.reviews.scrollLeft + width * 0.8 + 20
-      if (i !== 1) {
-        this.$refs.reviews.scrollTo({ left: scrollPoint, behavior: 'smooth' })
-        this.current = i
-      } else {
-        this.$refs.reviews.scrollTo({
-          left: 0,
-          behavior: 'smooth'
-        })
-        this.current = 1
-      }
-    },
+    // clickDot(i) {
+    //   const width = this.$refs.reviews.clientWidth * (i - 1)
+    //   const scrollPoint = this.$refs.reviews.scrollLeft + width * 0.8 + 20
+    //   if (i !== 1) {
+    //     this.$refs.reviews.scrollTo({ left: scrollPoint, behavior: 'smooth' })
+    //     this.current = i
+    //   } else {
+    //     this.$refs.reviews.scrollTo({
+    //       left: 0,
+    //       behavior: 'smooth'
+    //     })
+    //     this.current = 1
+    //   }
+    // },
     getPages() {
       // const w = 600
       // this.$nextTick(function () {
@@ -143,6 +173,10 @@ export default {
 </script>
 
 <style lang="scss">
+.VueCarousel-pagination[data-v-56de0554] {
+  width: 100%;
+  text-align: left !important;
+}
 .review-holder {
   // display: flex;
   margin: 50px 0;

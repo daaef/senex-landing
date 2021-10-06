@@ -9,8 +9,8 @@
             </div>
             <div class="">
               <span>
-                <h2>Join our 'A' team</h2>
-                <p>
+                <h2 class="heading-tertiary">Join our 'A' team</h2>
+                <p class="paragraph">
                   Our team is made up of very talented and innovative people who
                   enjoy building solutions. Wanna join us?
                 </p>
@@ -28,8 +28,8 @@
             </div>
             <div class="">
               <span>
-                <h2>Learn with Senex</h2>
-                <p>
+                <h2 class="heading-tertiary">Learn with Senex</h2>
+                <p class="paragraph">
                   Our mission is to establish a fully automated, fast, easy,
                   decentralized, and secure digital payment
                 </p>

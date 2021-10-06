@@ -4,24 +4,26 @@
       <div class="container">
         <div class="lg:flex android-developer-jp">
           <div class="ad-jp lg:w-1/2">
-            <p>Android Developer</p>
+            <h3 class="heading-tertiary u-text-left">Android Developer</h3>
           </div>
           <div class="ad-content-jp lg:w-1/2">
-            <p class="bold-paragraph-jp">About the Android Developer role</p>
-            <p>
+            <p class="bold-paragraph-jp paragraph">
+              About the Android Developer role
+            </p>
+            <p class="paragraph">
               We are looking for driven, passionate and committed individuals to
               join the team as we grow and expand across Africa and beyond.
             </p>
-            <p>
+            <p class="paragraph">
               As the Android Developer, you will be responsible for developing
               applications for devices powered by the Android operating system
               as well as the development of Android applications and their
               integration with back-end services.
             </p>
-            <p class="bold-para-jp">
+            <p class="bold-para-jp paragraph">
               What Your Day to Day Activities Will Be Like
             </p>
-            <ul>
+            <ul class="paragraph">
               <li>
                 Design and development of professional business applications for
                 the Android platform.

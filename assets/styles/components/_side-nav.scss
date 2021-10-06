@@ -53,6 +53,7 @@
   .side-nav {
     @include flexcon(center, center, column);
     padding-top: 75px;
+    font-size: $default-font-size;
 
     .link {
       margin-top: 25px
@@ -61,7 +62,7 @@
     .register-btn {
       @include custom-btn($secondary_color,$color_white,$secondary_color);
       padding: 10px 24px;
-      font-size: 18px;
+      font-size: 1.8rem;
       border-radius: 6px;
     }
   

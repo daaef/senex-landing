@@ -14,8 +14,8 @@
 }
 
 .ad-jp {
-  font-size: 36px;
-  font-weight: bold;
+  // font-size: 36px;
+  font-weight: 600;
 }
 
 .ad-content-jp {
@@ -47,7 +47,7 @@
   .register-btn-jp {
     @include custom-btn(#ffffff,$primary_color, $secondary_color);
     padding: 8px 16px;
-    font-size: 18px;
+    font-size: 1.8rem;
     border-radius: 6px;
     max-width: 200px;
   }

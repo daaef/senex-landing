@@ -169,11 +169,16 @@
   }
 
   .register-btn {
-    @include custom-btn($secondary_color,$color_white,$secondary_color);
+    @include custom-btn($primary_color,$color_white,$primary_color);
     padding: 10px 24px;
-    font-size: 18px;
+    font-size: 1.8rem;
     border-radius: 6px;
+
+    @include respond(phone) {
+      padding: 8px 16px;
+    }
   }
+
 
   .register-btn:hover {
     @include custom-btn(#9daaf7,$primary_color,transparent);

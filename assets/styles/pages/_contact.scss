@@ -11,8 +11,7 @@
     // padding-bottom: 20px;
   
     .title {
-      font-size: 24px;
-      font-weight: bold;
+      font-weight: 600;
       margin-bottom: 5px;
     }
   
@@ -41,7 +40,6 @@
   margin-bottom: 100px;
 
   h3 {
-    font-size: 24px;
     font-weight: bold;
     color: #242426;
     text-align: center;
@@ -63,12 +61,22 @@
       border-bottom: 1px solid $primary_color;
       border-left: .5px solid $primary_color;
 
+      @include respond(phone) {
+        max-height: 80px;
+        width: 80px;
+      }
+
       // &:first-child {
       //   border-left: 1px solid $primary_color;
       // }
       .icon-con {
         display: inline-block;
         height: 60px;
+
+        @include respond(phone) {
+          display: inline-block;
+          height: 30px;
+        }
 
         svg {
           width: 100%;
@@ -105,26 +113,3 @@
   }
 }
 
-@media screen and (max-width: 640px) {
-  .contact-list {
-    .contact-type-con{
-      .title {
-        font-size: 20px;
-      }
-    }
-  }
-
-  .contact-get-social {
-    .socials-con {
-      .social {
-        max-height: 80px;
-        width: 80px;
-
-        .icon-con {
-          display: inline-block;
-          height: 30px;
-        }
-      }
-    }
-  }
-}

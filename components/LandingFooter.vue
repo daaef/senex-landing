@@ -22,7 +22,7 @@
                 <ul>
                   <li><router-link to="/about">About</router-link></li>
                   <!-- <li><router-link to="/press">Press</router-link></li> -->
-                  <li><router-link to="/blog">Blog</router-link></li>
+                  <!-- <li><router-link to="/blog">Blog</router-link></li> -->
                   <li><router-link to="/careers">Careers</router-link></li>
                 </ul>
               </div>

@@ -2,24 +2,26 @@
   <div>
     <div class="container">
       <div class="faq-search-con">
-        <h3>Frequently Asked Questions.</h3>
+        <h3 class="heading-primary u-mb-md">Frequently Asked Questions.</h3>
         <div ref="faqSearchDiv" class="search-con">
           <span class="search-icon"><img src="/img/map-search.svg" /></span>
-          <input :placeholder="searchPlaceholder" />
+          <input v-model="search" :placeholder="searchPlaceholder" />
         </div>
       </div>
     </div>
     <div class="faq-list-con">
       <!-- FAQ List -->
-      <div class="faq-list">
+      <div v-if="searchedFAQs().length != 0" class="faq-list">
         <faq-item
-          title="Do I need to sign up to use Senex?"
-          content="Send professional invoices, track them in real time, and accept payments online—all from one place."
+          v-for="faq in searchedFAQs()"
+          :key="faq.id"
+          :title="faq.question"
+          :content="faq.answer"
         ></faq-item>
       </div>
       <!-- Check Help Center -->
       <div class="container">
-        <span class="faq-help"
+        <span class="faq-help paragraph"
           >Can’t find it here? Check our our
           <router-link to="/contact">Help Centre</router-link>.</span
         >
@@ -38,7 +40,16 @@ export default {
   data() {
     return {
       searchPlaceholder: 'Search',
-      windowWidth: 0
+      windowWidth: 0,
+      search: '',
+      faqs: [
+        // {
+        //   id: 0,
+        //   number: 0,
+        //   question: '',
+        //   answer: ''
+        // }
+      ]
     }
   },
   watch: {
@@ -50,7 +61,8 @@ export default {
       }
     }
   },
-  mounted() {
+  async mounted() {
+    await this.getFAQs()
     if (window.innerWidth >= 640) {
       this.searchPlaceholder = 'Search for what you are looking for'
     } else {
@@ -67,6 +79,28 @@ export default {
   methods: {
     onResize() {
       this.windowWidth = window.innerWidth
+    },
+    getFAQs() {
+      this.$axios.get('/faqs/').then((res) => {
+        this.faqs = res.data.results
+      })
+      // .catch((err) => {
+      //   // const {
+      //   //   response: { data }
+      //   // } = err
+      //   // console.log(data)
+      // })
+    },
+    searchedFAQs() {
+      if (this.search === '') {
+        return this.faqs
+      }
+
+      return this.faqs.filter(
+        (x) =>
+          x.question.toLowerCase().includes(this.search.toLowerCase()) ||
+          x.answer.toLowerCase().includes(this.search.toLowerCase())
+      )
     }
     // getPlaceHolder() {}
   }

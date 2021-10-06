@@ -12,14 +12,20 @@
       </transition>
     </app-modal>
     <div>
-      <Nav :theme="{ backgroundColor: '#053888', color: '#FFFFFF' }" />
+      <Nav
+        :theme="{
+          backgroundColor: '#F5F5FD',
+          color: '#282836',
+          lightTheme: true
+        }"
+      />
       <Nuxt />
       <div class="container">
         <div v-if="showCookies" class="cookies">
           <span class="close">
             <img src="img/close-grey.svg" @click="toggleCookies()" />
           </span>
-          <p>
+          <p class="paragraph">
             We use cookies to improve your experience and for marketing. Learn
             more in our <strong>cookie policy</strong>.
           </p>
@@ -54,7 +60,7 @@ export default {
 html {
   font-family: 'SFPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  /* font-size: 16px; */
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

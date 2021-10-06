@@ -6,7 +6,7 @@
           ><router-link to="/"
             ><img
               :src="
-                theme.backgroundColor === '#FFFFFF'
+                theme.lightTheme
                   ? '/img/senex-full-logo.png'
                   : '/img/senexpay-logo-light.png'
               "
@@ -85,7 +85,8 @@ export default {
       default: () => {
         return {
           backgroundColor: '#FFFFFF',
-          color: '#053888'
+          color: '#053888',
+          lightTheme: true
         }
       }
     }
@@ -113,7 +114,7 @@ export default {
     barColor() {
       if (this.sideBarOpen) {
         return 'white-bar'
-      } else if (this.theme.color === '#053888') {
+      } else if (this.theme.lightTheme) {
         return 'blue-bar'
       } else {
         return 'white-bar'

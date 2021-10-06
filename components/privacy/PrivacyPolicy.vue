@@ -3,12 +3,14 @@
     <div class="container">
       <div class="con-tp">
         <div class="main-header-tp">
-          <h1>Senexpay Privacy Policy</h1>
-          <p>Effective from March 28, 2021</p>
+          <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
+            Senexpay Privacy Policy
+          </h1>
+          <p class="paragraph">Effective from March 28, 2021</p>
         </div>
-        <div class="content-main-pp">
+        <div class="content-main-pp paragraph">
           <p class="first-para-tp">Welcome to Senexpay’s Privacy Policy</p>
-          <h2>1. Please read carefully</h2>
+          <h2 class="heading-tertiary--v-sm">1. Please read carefully</h2>
           <h4>1.1. Our Purpose</h4>
           <p>
             Our services offer our users the ability to easily create beautiful
