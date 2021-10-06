@@ -29,8 +29,10 @@
     &--grad {
       background: transparent linear-gradient(104deg, #7933FF 0%, #649AFF 100%) 0% 0% no-repeat padding-box;
       -webkit-background-clip: text;
+      -moz-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      display: inline;
     }
   }
   &__title:last-of-type {
@@ -96,9 +98,13 @@
 
 .snx-hero-img-con {
   position: relative;
-  padding: 50px 0;
+  // padding: 50px 0;
   margin-top: 50px;
   margin-bottom: 50px;
+
+  @include respond(phone) {
+    padding: 50px 0;
+  }
 
   .block-img {
     width: 80%;
@@ -112,6 +118,10 @@
     align-items: center;
     font-size: 14px;
     position: absolute;
+    background-color: white;
+    color: #3e3e41;
+    opacity: 0;
+    animation: fade-in-anim 1s linear 1s 1 forwards;
 
     &--blue {
       background-color: #d2e2fa;
@@ -290,8 +300,18 @@
 .snx-description-con {
   min-height: 400px;
   padding-top: 50px;
+  padding-bottom: 50px;
   overflow: hidden;
   //padding-bottom: 50px;
+
+  &__inside {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include respond(phone) {
+      padding: 0;
+    }
+  }
 
 }
 
@@ -330,6 +350,11 @@
   padding-bottom: 100px;
   height: 100%;
 
+  @include respond(phone) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   &__title{
     text-align: left;
     line-height: 1.2em;
@@ -349,7 +374,7 @@
 
   // position: relative;
   // border: 1px solid $primary_color;
-  width: 100%;
+  // width: 100%;
 
   &:hover {
     .holder {
@@ -371,19 +396,85 @@
 
   .holder {
     position: relative;
-    // border: 1px solid $primary_color;
-    // margin-left: auto;
-    // @include respond(phone) {
-    //   width: 100%;
-    //   height: 100%;
-    // }
+    left: 50px;
+    top: 50px;
+    background-color: $primary_color;
+    padding-bottom: 50px;
+    margin-bottom: 70px;
     width: 580px;
     height: 580px;
 
     @include respond(phone) {
-      width: 90vw;
-      height: 90vw;
+      width: 60vw;
+      height: 60vw;
+      left: 0;
+      top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 70px;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
+
+    // @include respond(phone) {
+    //   width: 90vw;
+    //   height: 90vw;
+    // }
+
+    .girl-with-phone {
+      position: absolute;
+      width: 100%;
+      bottom: 20px;
+      left: -20px;
+      z-index: 3;
+    }
+
+    .img-badge {
+      width: 150px;
+      height: auto;
+      position: absolute;
+      z-index: 5;
+      transform: scale(1.6);
+
+      @include respond(phone) {
+        width: 100px;
+      }
+
+      &--1 {
+        top: 0;
+        left: 80%;
+      }
+
+      &--2 {
+        bottom: 10%;
+        left: -20px;
+      }
+    }
+
+    .yellow-star {
+      width: 100px;
+      height: auto;
+      position: absolute;
+      z-index: 5;
+
+      &--1 {
+        top: 20%;
+        left: -20px;
+        // translate: -50% -50%;
+        animation: star-anim-yw-1 7s linear infinite;
+        z-index: 4;
+      }
+
+      &--2 {
+        bottom: 20px;
+        right: 0;
+        // translate: 50% 0;
+        animation: star-anim-yw-2 7s linear infinite;
+        // animation: star-anim 7s linear infinite;
+        z-index: 2;
+      }
+    }
+
     .up {
       width: 57%;
       height: 57%;
@@ -674,11 +765,38 @@
   }
 }
 
+@keyframes star-anim-yw-1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes star-anim-yw-2 {
+  from {
+    transform: translateX(50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(50%) rotate(360deg);
+  }
+}
+
 @keyframes circle-anim {
   from {
     transform: scale(0.5);
   }
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes fade-in-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

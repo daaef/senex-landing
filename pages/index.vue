@@ -75,97 +75,6 @@
               class="snx-hero-img-con__circle snx-hero-img-con__circle--green"
             />
           </div>
-          <!-- <div
-            class="w-full lg:w-1/2 mt-2 mb-8 lg:my-0 flex snx-hero-atom-holder"
-          >
-            <div class="atom-holder mx-auto lg:ml-auto lg:mr-0">
-              <span
-                class="lemon-arrow"
-                :class="loading ? '' : 'lemon-arrow-animation'"
-                ><img src="/img/lemon-double-arrow.svg"
-              /></span>
-              <span
-                class="purple-arrow"
-                :class="loading ? '' : 'purple-arrow-animation'"
-                ><img src="/img/purple-double-arrow.svg"
-              /></span>
-              <span class="circle-boy-small"
-                ><img src="/img/landing-circle-boy-small.png"
-              /></span>
-              <span class="circle-girl-small"
-                ><img src="/img/landing-circle-girl-small.png"
-              /></span>
-              <span
-                class="circle-boy"
-                :class="loading ? '' : 'landing-animation'"
-                ><img src="/img/landing-circle-boy.png"
-              /></span>
-              <span
-                class="circle-girl"
-                :class="loading ? '' : 'landing-animation'"
-                ><img src="/img/landing-circle-girl.png"
-              /></span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="671"
-                height="671"
-                viewBox="0 0 671 671"
-                class="atom"
-              >
-                <g
-                  id="Group_355"
-                  data-name="Group 355"
-                  transform="translate(-468 21162)"
-                  opacity="0.5"
-                >
-                  <g
-                    id="Ellipse_57"
-                    data-name="Ellipse 57"
-                    transform="translate(468 -21162)"
-                    fill="none"
-                    stroke="#5694fc"
-                    stroke-width="1"
-                  >
-                    <circle cx="335.5" cy="335.5" r="335.5" stroke="none" />
-                    <circle cx="335.5" cy="335.5" r="335" fill="none" />
-                  </g>
-                  <g
-                    id="Ellipse_58"
-                    data-name="Ellipse 58"
-                    transform="translate(554 -21076)"
-                    fill="none"
-                    stroke="#5694fc"
-                    stroke-width="1"
-                  >
-                    <circle cx="249.5" cy="249.5" r="249.5" stroke="none" />
-                    <circle cx="249.5" cy="249.5" r="249" fill="none" />
-                  </g>
-                  <g
-                    id="Ellipse_59"
-                    data-name="Ellipse 59"
-                    transform="translate(630 -21000)"
-                    fill="none"
-                    stroke="#5694fc"
-                    stroke-width="1"
-                  >
-                    <circle cx="174" cy="174" r="174" stroke="none" />
-                    <circle cx="174" cy="174" r="173.5" fill="none" />
-                  </g>
-                  <g
-                    id="Ellipse_60"
-                    data-name="Ellipse 60"
-                    transform="translate(720 -20911)"
-                    fill="none"
-                    stroke="#5694fc"
-                    stroke-width="1"
-                  >
-                    <circle cx="84.5" cy="84.5" r="84.5" stroke="none" />
-                    <circle cx="84.5" cy="84.5" r="84" fill="none" />
-                  </g>
-                </g>
-              </svg>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -201,28 +110,44 @@
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
-      <div class="snx-description-con sdc-pb container lg:flex">
+      <div class="snx-description-con__inside container lg:flex">
         <div
           v-scroll-reveal.reset="{
-            origin: 'right'
+            origin: 'left'
           }"
           class="lg:w-1/2 snx-description-img-con"
         >
           <div class="holder m-auto lg:ml-0">
             <img
-              class="up"
+              class="girl-with-phone"
               alt="A girl holding a phone in her hands and sitting on the floor."
-              src="/img/girl_using_senex.png"
+              src="/img/girl-with-phone-radius.png"
             />
             <img
+              class="yellow-star yellow-star--1"
+              alt="Yellow star"
+              src="/img/yellow-star.svg"
+            />
+            <img
+              class="yellow-star yellow-star--2"
+              alt="Yellow star"
+              src="/img/yellow-star.svg"
+            />
+            <img
+              src="/img/green-check-badge.svg"
+              class="img-badge img-badge--1"
+            />
+            <img src="/img/pink-badge.svg" class="img-badge img-badge--2" />
+
+            <!-- <img
               class="down"
               alt="A man holding a phone to his ears and typing on a laptop."
               src="/img/boy_using_senex.png"
-            />
+            /> -->
           </div>
         </div>
         <div class="lg:w-1/2">
-          <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
+          <div v-scroll-reveal.reset class="snx-description lg:w-4/5 ml-auto">
             <p
               class="
                 snx-description__title
@@ -266,7 +191,7 @@
         <!-- Large screen -->
         <div
           v-scroll-reveal.reset
-          class="block snx-description-con sdc-pb container hidden lg:flex"
+          class="block snx-description-con__inside container hidden lg:flex"
         >
           <div class="lg:w-1/2">
             <div class="snx-description lg:w-4/5 mx-auto">
@@ -289,12 +214,12 @@
             <img
               alt="A young man holding a Bitcoin coin and making a signal."
               src="/img/landing-guy-btc.png"
-              class="reduce-img"
+              class="reduce-img lg:ml-auto"
             />
           </div>
         </div>
         <!-- Small Screen -->
-        <div class="block snx-description-con sdc-pb container lg:hidden">
+        <div class="block sdc-pb container lg:hidden">
           <div class="lg:w-1/2">
             <div v-scroll-reveal.reset class="snx-description lg:w-4/5 mx-auto">
               <p
@@ -325,7 +250,7 @@
 
       <div
         v-scroll-reveal.reset
-        class="block snx-description-con sdc-pb container lg:flex"
+        class="block snx-description-con__inside container lg:flex"
       >
         <div class="lg:w-1/2">
           <div class="snx-description lg:w-4/5">

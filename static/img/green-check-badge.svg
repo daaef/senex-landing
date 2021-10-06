@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="417" height="219" viewBox="0 0 417 219">
+  <defs>
+    <filter id="Rectangle_979" x="0" y="0" width="417" height="219" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feFlood flood-color="#053888" flood-opacity="0.392"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_858" data-name="Group 858" transform="translate(-670 -2166)">
+    <g transform="matrix(1, 0, 0, 1, 670, 2166)" filter="url(#Rectangle_979)">
+      <rect id="Rectangle_979-2" data-name="Rectangle 979" width="297" height="99" rx="20" transform="translate(60 50)" fill="#fff"/>
+    </g>
+    <text id="Swift_payout" data-name="Swift payout" transform="translate(832 2277)" fill="#3e3e41" font-size="30" font-family="SFProDisplay-Regular, SF Pro Display"><tspan x="0" y="0">Swift payout</tspan></text>
+    <rect id="Rectangle_981" data-name="Rectangle 981" width="57" height="57" rx="10" transform="translate(760 2237)" fill="#05bf4c"/>
+    <g id="Group_857" data-name="Group 857" transform="translate(-51.145 -4.125)">
+      <path id="Icon_feather-check" data-name="Icon feather-check" d="M30,9,13.5,25.5,6,18" transform="translate(821.645 2248.25)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Icon_feather-check-2" data-name="Icon feather-check" d="M30,9,13.5,25.5,6,18" transform="translate(821.645 2256.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

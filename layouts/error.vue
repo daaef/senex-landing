@@ -5,7 +5,9 @@
         ><img class="not-found-img" src="/img/not-found-icon.svg"
       /></span>
       <div class="lost-holder">
-        <span>No sign of crypto here. You seem to be outta the world!</span>
+        <span class="paragraph">
+          No sign of crypto here. You seem to be outta the world!</span
+        >
       </div>
       <div class="input-sub-holder">
         <ButtonSpinner
