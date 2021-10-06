@@ -34,7 +34,47 @@
               </div>
             </div>
           </div>
-          <div></div>
+          <div class="snx-hero-img-con">
+            <img src="/img/block-img.svg" alt="block" class="block-img" />
+            <div class="snx-hero-img-con__badge snx-hero-img-con__badge--blue">
+              <span
+                class="
+                  snx-hero-img-con__badge-elc-box
+                  snx-hero-img-con__badge-elc-box--blue
+                "
+              ></span>
+              <span>Buy crypto from anywhere</span>
+            </div>
+            <div class="snx-hero-img-con__badge snx-hero-img-con__badge--green">
+              <span
+                class="
+                  snx-hero-img-con__badge-elc-box
+                  snx-hero-img-con__badge-elc-box--green
+                "
+              ></span>
+              <span>Sell crypto from anywhere</span>
+            </div>
+            <img
+              src="/img/purple-star.svg"
+              alt="purple star"
+              class="snx-hero-img-con__star snx-hero-img-con__star--purple"
+            />
+            <img
+              src="/img/green-star.svg"
+              alt="green star"
+              class="snx-hero-img-con__star snx-hero-img-con__star--green"
+            />
+            <img
+              src="/img/blue-circle.svg"
+              alt="blue circle"
+              class="snx-hero-img-con__circle snx-hero-img-con__circle--blue"
+            />
+            <img
+              src="/img/green-circle.svg"
+              alt="green circle"
+              class="snx-hero-img-con__circle snx-hero-img-con__circle--green"
+            />
+          </div>
           <!-- <div
             class="w-full lg:w-1/2 mt-2 mb-8 lg:my-0 flex snx-hero-atom-holder"
           >
