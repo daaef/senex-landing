@@ -119,12 +119,7 @@
     <div class="">
       <!-- Description 1 -->
       <div class="snx-description-con__inside container lg:flex">
-        <div
-          v-scroll-reveal.reset="{
-            origin: 'left'
-          }"
-          class="lg:w-1/2 snx-description-img-con"
-        >
+        <div class="lg:w-1/2 snx-description-img-con">
           <div class="holder m-auto lg:ml-0">
             <img
               class="girl-with-phone"
