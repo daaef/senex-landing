@@ -36,24 +36,6 @@
           </div>
           <div class="snx-hero-img-con">
             <img src="/img/block-img.svg" alt="block" class="block-img" />
-            <div class="snx-hero-img-con__badge snx-hero-img-con__badge--blue">
-              <span
-                class="
-                  snx-hero-img-con__badge-elc-box
-                  snx-hero-img-con__badge-elc-box--blue
-                "
-              ></span>
-              <span>Buy crypto from anywhere</span>
-            </div>
-            <div class="snx-hero-img-con__badge snx-hero-img-con__badge--green">
-              <span
-                class="
-                  snx-hero-img-con__badge-elc-box
-                  snx-hero-img-con__badge-elc-box--green
-                "
-              ></span>
-              <span>Sell crypto from anywhere</span>
-            </div>
             <img
               src="/img/purple-star.svg"
               alt="purple star"
@@ -68,12 +50,38 @@
               src="/img/blue-circle.svg"
               alt="blue circle"
               class="snx-hero-img-con__circle snx-hero-img-con__circle--blue"
+              @mouseover="buyBadge = true"
             />
             <img
               src="/img/green-circle.svg"
               alt="green circle"
               class="snx-hero-img-con__circle snx-hero-img-con__circle--green"
+              @mouseover="sellBadge = true"
             />
+            <div
+              class="snx-hero-img-con__badge snx-hero-img-con__badge--blue"
+              :class="[buyBadge ? 'snx-hero-img-con__badge--show' : '']"
+            >
+              <span
+                class="
+                  snx-hero-img-con__badge-elc-box
+                  snx-hero-img-con__badge-elc-box--blue
+                "
+              ></span>
+              <span>Buy crypto from anywhere</span>
+            </div>
+            <div
+              class="snx-hero-img-con__badge snx-hero-img-con__badge--green"
+              :class="[sellBadge ? 'snx-hero-img-con__badge--show' : '']"
+            >
+              <span
+                class="
+                  snx-hero-img-con__badge-elc-box
+                  snx-hero-img-con__badge-elc-box--green
+                "
+              ></span>
+              <span>Sell crypto from anywhere</span>
+            </div>
           </div>
         </div>
       </div>
@@ -486,7 +494,9 @@ export default {
     return {
       loading: true,
       scrollPosition: 0,
-      ticking: false
+      ticking: false,
+      buyBadge: false,
+      sellBadge: false
     }
   },
   mounted() {

@@ -122,7 +122,16 @@
     background-color: white;
     color: #3e3e41;
     opacity: 0;
-    animation: fade-in-anim 1s linear 1s 1 forwards;
+    transition: opacity 1s;
+    //animation: fade-in-anim 1s linear 1s 1 forwards;
+
+    @include respond(tab-land) {
+      animation: fade-in-anim 1s linear 1s 1 forwards;
+    }
+
+    // &:hover ~ .snx-hero-img-con__circle {
+    //   opacity: 0;
+    // }
 
     &--blue {
       background-color: #d2e2fa;
@@ -136,6 +145,10 @@
       color: #058856;
       bottom: 0;
       right: 20%;
+    }
+
+    &--show {
+      opacity: 1 !important;
     }
   }
 
@@ -161,7 +174,11 @@
     width: 50px;
     height: 50px;
     position: absolute;
-    animation: star-anim 6s linear infinite;
+    transition: animation;
+
+    &:hover {
+      animation: star-anim 4s linear infinite;
+    }
 
     &--purple {
       left: 0;
@@ -181,6 +198,10 @@
     position: absolute;
     animation: circle-anim 1s linear infinite;
     cursor: pointer;
+
+    // &:hover ~ .snx-hero-img-con__badge {
+    //   opacity: 1;
+    // }
 
     &--blue {
       left: 70%;

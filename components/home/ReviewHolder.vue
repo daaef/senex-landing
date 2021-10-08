@@ -16,7 +16,6 @@
         </template> -->
         <carousel
           :scroll-per-page="false"
-          :autoplay="true"
           pagination-position="left"
           pagination-color="#B2B2B2"
           pagination-active-aolor="#3E3E41"
@@ -24,8 +23,8 @@
           :center-mode="true"
           :per-page-custom="[
             [0, 1],
-            [760, 2],
-            [1024, 3]
+            [760, 1.5],
+            [1200, 2.5]
           ]"
         >
           <slide v-for="(item, idx) in reviews" :key="idx">
@@ -173,7 +172,7 @@ export default {
 </script>
 
 <style lang="scss">
-.VueCarousel-pagination[data-v-56de0554] {
+.VueCarousel-pagination {
   width: 100%;
   text-align: left !important;
 }
