@@ -7,15 +7,17 @@
             <div class="snx-hero-content">
               <h1 class="snx-hero-content__title heading-primary">
                 Buy and Sell
-                <span class="snx-hero-content__title--grad">
+                <!-- <span class="snx-hero-content__title--grad">
                   Crypto
-                  <!-- <client-only>
+                </span> -->
+                <span class="snx-hero-content__title--grad">
+                  <client-only>
                     <vue-typer
                       name="banner"
                       :text="['Crypto', 'Bitcoin', 'USDT']"
                       erase-style="clear"
                     />
-                  </client-only> -->
+                  </client-only>
                 </span>
               </h1>
               <h1 class="snx-hero-content__title heading-primary">
@@ -525,7 +527,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.vue-typer {
+  background: transparent linear-gradient(104deg, #7933ff 0%, #649aff 100%) 0%
+    0% no-repeat padding-box;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+  color: black;
+  .custom.char {
+    color: black;
+  }
+}
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
