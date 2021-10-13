@@ -30,8 +30,8 @@
                 <h1 class="header">Support</h1>
                 <ul>
                   <li><router-link to="/faq">FAQ</router-link></li>
-                  <li><router-link to="/contact">Contact</router-link></li>
-                  <li><router-link to="/learn">Learn</router-link></li>
+                  <li><router-link to="/contact">Contact Us</router-link></li>
+                  <!-- <li><router-link to="/learn">Learn</router-link></li> -->
                 </ul>
               </div>
               <div class="links-and-headers">
@@ -43,14 +43,14 @@
                   <li>
                     <router-link to="/privacy">Privacy Policy</router-link>
                   </li>
-                  <li>
+                  <!-- <li>
                     <router-link to="/cookie-policy"
                       >Cookies Policy</router-link
                     >
-                  </li>
+                  </li> -->
                 </ul>
               </div>
-              <div class="links-and-headers">
+              <!-- <div class="links-and-headers">
                 <h1 class="header">Knowledge</h1>
                 <ul>
                   <li>
@@ -60,8 +60,8 @@
                     <router-link to="/affiliates">Affiliates</router-link>
                   </li>
                 </ul>
-              </div>
-              <div class="links-and-headers">
+              </div> -->
+              <!-- <div class="links-and-headers">
                 <h1 class="header">Conglomerates</h1>
                 <ul>
                   <li>
@@ -71,7 +71,7 @@
                   </li>
                   <li><router-link to="/autos">Senex Autos</router-link></li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

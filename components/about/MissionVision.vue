@@ -9,9 +9,9 @@
           <span>
             <h2 class="heading-tertiary">Our Mission</h2>
             <p class="paragraph">
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across Africa.
+              Our mission is to be the brand of choice in the digital financial
+              ecosystem and be a major driver of modern financial innovation in
+              Africa.
             </p>
           </span>
         </div>
@@ -22,9 +22,9 @@
           <span>
             <h2 class="heading-tertiary">Our Vision</h2>
             <p class="paragraph">
-              Our mission is to establish a fully automated, fast, easy,
-              decentralized, and secure digital payment infrastructure and
-              solutions across Africa.
+              Our vision is to make financial services accessible to every
+              person on the African continent. We believe empowering people will
+              boundless inclusion.
             </p>
           </span>
         </div>

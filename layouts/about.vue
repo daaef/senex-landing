@@ -29,7 +29,7 @@
       />
       <div class="nav-padding-top">
         <Nuxt />
-        <div class="container">
+        <div class="container u-d-none">
           <div v-if="showCookies" class="cookies">
             <span class="close">
               <img src="img/close-grey.svg" @click="toggleCookies()" />

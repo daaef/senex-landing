@@ -8,13 +8,14 @@
               <h1 class="snx-hero-content__title heading-primary">
                 Buy and Sell
                 <span class="snx-hero-content__title--grad">
-                  <client-only>
+                  Crypto
+                  <!-- <client-only>
                     <vue-typer
                       name="banner"
                       :text="['Crypto', 'Bitcoin', 'USDT']"
                       erase-style="clear"
                     />
-                  </client-only>
+                  </client-only> -->
                 </span>
               </h1>
               <h1 class="snx-hero-content__title heading-primary">
@@ -67,7 +68,8 @@
                   snx-hero-img-con__badge-elc-box
                   snx-hero-img-con__badge-elc-box--blue
                 "
-              ></span>
+                ><img src="/img/electric-flash.svg" alt="flash"
+              /></span>
               <span>Buy crypto from anywhere</span>
             </div>
             <div
@@ -79,7 +81,8 @@
                   snx-hero-img-con__badge-elc-box
                   snx-hero-img-con__badge-elc-box--green
                 "
-              ></span>
+                ><img src="/img/electric-flash.svg" alt="flash"
+              /></span>
               <span>Sell crypto from anywhere</span>
             </div>
           </div>
@@ -194,7 +197,7 @@
         <!-- Large screen -->
         <div
           v-scroll-reveal.reset
-          class="block snx-description-con__inside container hidden lg:flex"
+          class="block snx-description-con__inside container lg:flex"
         >
           <div class="lg:w-1/2">
             <div class="snx-description lg:w-4/5 mx-auto">
@@ -214,15 +217,27 @@
             </div>
           </div>
           <div class="lg:w-1/2 snx-description-img-con">
-            <img
-              alt="A young man holding a Bitcoin coin and making a signal."
-              src="/img/landing-guy-btc.png"
-              class="reduce-img lg:ml-auto"
-            />
+            <div class="screenshot-con">
+              <img
+                alt="A young man holding a Bitcoin coin and making a signal."
+                src="/img/vp-3screenshot.png"
+                class="screenshot-img lg:ml-auto"
+              />
+              <img
+                src="/img/green-star.svg"
+                class="green-star green-star--up"
+                alt="green star"
+              />
+              <img
+                src="/img/green-star.svg"
+                class="green-star green-star--down"
+                alt="green star"
+              />
+            </div>
           </div>
         </div>
         <!-- Small Screen -->
-        <div class="block sdc-pb container lg:hidden">
+        <!-- <div class="block sdc-pb container lg:hidden">
           <div class="lg:w-1/2">
             <div v-scroll-reveal.reset class="snx-description lg:w-4/5 mx-auto">
               <p
@@ -243,10 +258,20 @@
           <div v-scroll-reveal.reset class="lg:w-1/2 snx-description-img-con">
             <img
               alt="A young man holding a Bitcoin coin and making a signal."
-              src="/img/landing-guy-btc.png"
+              src="/img/vp-3screenshot.png"
+            />
+            <img
+              src="/img/green-star.svg"
+              class="green-star green-star--up"
+              alt="green star"
+            />
+            <img
+              src="/img/green-star.svg"
+              class="green-star green-star--down"
+              alt="green star"
             />
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- Description 3 -->
