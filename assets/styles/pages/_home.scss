@@ -70,6 +70,7 @@
       @include respond(phone) {
         padding: 8px 16px;
       }
+
     }
 
     .register_btn:hover {
@@ -125,6 +126,7 @@
     transition: opacity 1s;
     //animation: fade-in-anim 1s linear 1s 1 forwards;
 
+
     // @include respond(tab-land) {
     //   animation: fade-in-anim 1s linear 1s 1 forwards;
     // }
@@ -138,6 +140,10 @@
       color: $primary_color;
       top: 0;
       left: 10%;
+
+      @include respond(small-phone) {
+        left: 0;
+      }
     }
 
     &--green {
@@ -145,6 +151,10 @@
       color: #058856;
       bottom: 0;
       right: 20%;
+
+      @include respond(small-phone) {
+        right: 0;
+      }
     }
 
     &--show {
@@ -215,6 +225,11 @@
     &--blue {
       left: 70%;
       top: 0;
+
+      @include respond(small-phone) {
+        right: 0;
+        left: auto;
+      }
     }
 
     &--green {
@@ -560,7 +575,11 @@
       // transform: scale(1.6);
 
       @include respond(phone) {
-        width: 100px;
+        width: 80px;
+      }
+
+      @include respond(small-phone) {
+        width: 60px;
       }
 
       &--1 {
