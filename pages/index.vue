@@ -6,11 +6,13 @@
           <div class="w-full lg:w-1/2 snx-hero-content-holder">
             <div class="snx-hero-content">
               <h1 class="snx-hero-content__title heading-primary">
-                Buy and Sell
+                <span class="snx-hero-content__title heading-primary"
+                  >Buy and Sell</span
+                >
                 <!-- <span class="snx-hero-content__title--grad">
                   Crypto
                 </span> -->
-                <span class="snx-hero-content__title--grad">
+                <p class="snx-hero-content__title--grad">
                   <client-only>
                     <vue-typer
                       name="banner"
@@ -18,7 +20,7 @@
                       erase-style="clear"
                     />
                   </client-only>
-                </span>
+                </p>
               </h1>
               <h1 class="snx-hero-content__title heading-primary">
                 the easy way.
@@ -54,12 +56,14 @@
               alt="blue circle"
               class="snx-hero-img-con__circle snx-hero-img-con__circle--blue"
               @mouseover="buyBadge = true"
+              @click="buyBadge = true"
             />
             <img
               src="/img/green-circle.svg"
               alt="green circle"
               class="snx-hero-img-con__circle snx-hero-img-con__circle--green"
               @mouseover="sellBadge = true"
+              @click="sellBadge = true"
             />
             <div
               class="snx-hero-img-con__badge snx-hero-img-con__badge--blue"
@@ -123,8 +127,8 @@
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
-      <div class="snx-description-con__inside container lg:flex">
-        <div class="lg:w-1/2 snx-description-img-con">
+      <div class="snx-description-con__inside container">
+        <div class="snx-description-img-con snx-description-con__child">
           <div class="holder m-auto lg:ml-0">
             <img
               class="girl-with-phone"
@@ -144,8 +148,13 @@
             <img
               src="/img/green-check-badge.svg"
               class="img-badge img-badge--1"
+              data-aos="badge-in"
             />
-            <img src="/img/pink-badge.svg" class="img-badge img-badge--2" />
+            <img
+              src="/img/pink-badge.svg"
+              class="img-badge img-badge--2"
+              data-aos="badge-in"
+            />
 
             <!-- <img
               class="down"
@@ -154,8 +163,8 @@
             /> -->
           </div>
         </div>
-        <div class="lg:w-1/2">
-          <div v-scroll-reveal.reset class="snx-description lg:w-4/5 ml-auto">
+        <div class="snx-description-con__child">
+          <div class="snx-description ml-auto" data-aos="slide-up">
             <p
               class="
                 snx-description__title
@@ -198,11 +207,14 @@
       <div class="bg-grey">
         <!-- Large screen -->
         <div
-          v-scroll-reveal.reset
-          class="block snx-description-con__inside container lg:flex"
+          class="
+            snx-description-con__inside snx-description-con__inside--reverse-sm
+            container
+          "
+          data-aos="slide-up"
         >
-          <div class="lg:w-1/2">
-            <div class="snx-description lg:w-4/5 mx-auto">
+          <div class="snx-description-con__child">
+            <div class="snx-description mx-auto">
               <p
                 class="
                   snx-description__title
@@ -218,7 +230,10 @@
               </p>
             </div>
           </div>
-          <div class="lg:w-1/2 snx-description-img-con">
+          <div
+            class="snx-description-img-con snx-description-con__child"
+            data-aos="zoom-in"
+          >
             <div class="screenshot-con">
               <img
                 alt="A young man holding a Bitcoin coin and making a signal."
@@ -279,11 +294,14 @@
       <!-- Description 3 -->
 
       <div
-        v-scroll-reveal.reset
-        class="block snx-description-con__inside container lg:flex"
+        class="
+          snx-description-con__inside snx-description-con__inside--reverse
+          container
+        "
+        data-aos="slide-up"
       >
-        <div class="lg:w-1/2">
-          <div class="snx-description lg:w-4/5">
+        <div class="snx-description-con__child">
+          <div class="snx-description">
             <p
               class="
                 snx-description__title
@@ -299,7 +317,7 @@
             </p>
           </div>
         </div>
-        <div class="lg:w-1/2 flex">
+        <div class="flex">
           <div class="m-auto lg:mr-0 snx-description-img-con">
             <!-- <img src="/img/secure.svg" /> -->
             <svg
@@ -492,6 +510,8 @@
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import OurObsession from '../components/home/OurObsession.vue'
 import CoinPrice from '~/components/home/CoinPrice.vue'
 // import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
@@ -522,12 +542,22 @@ export default {
     }
   },
   mounted() {
+    AOS.init()
     this.loading = false
   }
 }
 </script>
 
 <style lang="scss">
+[data-aos='badge-in'] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+/*  Animation ends here */
+[data-aos='badge-in'].aos-animate {
+  opacity: 1;
+  transform: translateZ(0) scale(1.6);
+}
 .vue-typer {
   background: transparent linear-gradient(104deg, #7933ff 0%, #649aff 100%) 0%
     0% no-repeat padding-box;
@@ -537,6 +567,7 @@ export default {
   -webkit-text-fill-color: transparent;
   display: inline;
   color: black;
+
   .custom.char {
     color: black;
   }

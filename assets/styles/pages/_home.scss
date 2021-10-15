@@ -125,9 +125,9 @@
     transition: opacity 1s;
     //animation: fade-in-anim 1s linear 1s 1 forwards;
 
-    @include respond(tab-land) {
-      animation: fade-in-anim 1s linear 1s 1 forwards;
-    }
+    // @include respond(tab-land) {
+    //   animation: fade-in-anim 1s linear 1s 1 forwards;
+    // }
 
     // &:hover ~ .snx-hero-img-con__circle {
     //   opacity: 0;
@@ -180,10 +180,13 @@
     width: 50px;
     height: 50px;
     position: absolute;
-    transition: animation;
+    transition: transform 1s linear;
+    backface-visibility: hidden;
 
     &:hover {
-      animation: star-anim 4s linear infinite;
+      // animation: star-anim 4s linear infinite;
+      transform: rotate(180deg);
+      backface-visibility: hidden;
     }
 
     &--purple {
@@ -202,7 +205,7 @@
     height: 40px;
     border-radius: 50%;
     position: absolute;
-    animation: circle-anim 1s linear infinite;
+    animation: circle-anim 1s ease-in-out infinite;
     cursor: pointer;
 
     // &:hover ~ .snx-hero-img-con__badge {
@@ -333,11 +336,46 @@
   //padding-bottom: 50px;
 
   &__inside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
 
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     @include respond(phone) {
       padding: 0;
+    }
+
+    &--reverse-sm {
+      @include respond(tab-port) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &--reverse {
+      flex-direction: row-reverse;
+
+      @include respond(tab-port) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__child {
+    flex: 0 0 45%;
+
+    @include respond(tab-land) {
+      flex: 0 0 40%;
+    }
+
+    @include respond(tab-port) {
+      flex: none;
     }
   }
 
@@ -346,23 +384,6 @@
 .sdc-pb {
   padding-bottom: 50px;
 }
-
-// .girl-con {
-//   width: 100%;
-//   padding-left: 0;
-//   padding-right: 0;
-
-//   @media screen and (min-width: 640px) and (max-width: 767px)  {
-//     max-width: 640px !important;
-//     margin-left: auto !important;
-//     margin-right: auto !important;
-//     padding-left: 0 !important;
-//     padding-right: 0 !important;
-//   }
-//   @media screen and (min-width: 768px) and (max-width: 1023px) {
-//     max-width: 768px !important;
-//   }
-// }
 
 .sdc-pb {
   padding-bottom: 50px;
@@ -378,7 +399,7 @@
   padding-bottom: 100px;
   height: 100%;
 
-  @include respond(phone) {
+  @include respond(tab-port) {
     padding-top: 50px;
     padding-bottom: 50px;
   }
@@ -436,6 +457,15 @@
     max-height: 552px;
     margin: 0 auto;
     margin-top: 30px;
+
+    @include respond(tab-land) {
+      width: 30vw;
+      // height: 30vw;
+    }
+
+    @include respond(tab-port) {
+      width: 80vw;
+    }
   }
 
   .screenshot-img {
@@ -466,12 +496,14 @@
       top: 0;
       right: 10%;
       transform: translateY(-50%);
+      animation: star-anim-gr-1 7s linear infinite;
     }
 
     &--down {
       left: 0;
       bottom: 20%;
       transform: translate(-50%, 50%);
+      animation: star-anim-gr-2 7s linear infinite;
     }
   }
 
@@ -482,8 +514,18 @@
     background-color: $primary_color;
     padding-bottom: 50px;
     margin-bottom: 70px;
-    width: 580px;
-    height: 580px;
+    width: 400px;
+    height: 400px;
+
+    @include respond(tab-land) {
+      width: 30vw;
+      height: 30vw;
+    }
+
+    @include respond(tab-port) {
+      width: 50vw;
+      height: 50vw;
+    }
 
     @include respond(phone) {
       width: 60vw;
@@ -515,7 +557,7 @@
       height: auto;
       position: absolute;
       z-index: 5;
-      transform: scale(1.6);
+      // transform: scale(1.6);
 
       @include respond(phone) {
         width: 100px;
@@ -542,7 +584,7 @@
         top: 20%;
         left: -20px;
         // translate: -50% -50%;
-        animation: star-anim-yw-1 7s linear infinite;
+        animation: star-anim-yw-1 7s ease-in infinite;
         z-index: 4;
       }
 
@@ -550,7 +592,7 @@
         bottom: 20px;
         right: 0;
         // translate: 50% 0;
-        animation: star-anim-yw-2 7s linear infinite;
+        animation: star-anim-yw-2 7s ease-in infinite;
         // animation: star-anim 7s linear infinite;
         z-index: 2;
       }
@@ -683,15 +725,6 @@
 
     .secure-lock-svg {
       max-height: 300px;
-    }
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .snx-description-img-con {
-    .holder {
-      width: 460px;
-      height: 460px;
     }
   }
 }
@@ -862,6 +895,25 @@
     transform: translateX(50%) rotate(360deg);
   }
 }
+
+@keyframes star-anim-gr-1 {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes star-anim-gr-2 {
+  from {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, 50%) rotate(360deg);
+  }
+}
+
 
 @keyframes circle-anim {
   from {

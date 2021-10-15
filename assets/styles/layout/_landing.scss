@@ -27,6 +27,10 @@
     right: calc(((100% - 768px) / 2) + 30px);
   }
 
+  @include respond(phone) {
+    right: 16px !important;
+  }
+
   img {
     width: 100%;
   }

@@ -6,20 +6,27 @@
           <h1 class="ceo-title heading-primary u-text-left">From our C.E.O</h1>
           <span>
             <h4 class="paragraph paragraph--700">Orhosere Okeoghene,</h4>
-            <h5 class="paragraph paragraph--700 u-mb-10">
+            <h5 class="paragraph--sm paragraph--700 u-mb-10">
               Chief Executive Officer.
             </h5>
             <p class="paragraph u-mb-md">
-              Senex Payment Services Limited is a company that offers digital
-              currency exchange and payment solutions. Its pioneering product is
-              the SenexPAY – an online bitcoin to naira instant exchange
-              platform.
+              At SenexPay, we believe equality in society is never complete
+              without financial equality. We are seeking to eliminate the
+              disenfranchisement of Africans in the global economy by focusing
+              on solving the problems associated with cryptocurrency access by
+              the average African. We are simplifying the way crypto is accessed
+              by everyone; from the Crypto-geek in the city to Grandma in the
+              village. We at SenexPay, believe everyone should have easy access
+              to Bitcoin and other digital currencies and that belief is
+              entrenched in what we do everyday -
+              <span class="paragraph paragraph--600"
+                >“making crypto as easy as ABC”.</span
+              >
             </p>
             <p class="paragraph">
-              This company is in business to contribute to bridging the gap in
-              digital trust, offering easy, fast, and secure means to exchange
-              bitcoins to naira for the least knowledgeable individual and new
-              users.
+              Join our
+              <span class="paragraph--600">#CryptoForAll campaign</span>
+              and be part of something truly revolutionary!
             </p>
           </span>
         </div>

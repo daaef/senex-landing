@@ -15,7 +15,7 @@
         <h2 class="heading-secondary u-text-left">
           We just wanna to make crypto exchange stress-free.
         </h2>
-        <div v-scroll-reveal.reset class="lg:flex reason-con">
+        <div class="lg:flex reason-con" data-aos="slide-up">
           <div class="reason">
             <span class="icon up-anim"><img src="/img/why-senex-1.png" /></span>
             <p class="paragraph paragraph--700 u-mb-10">Simple to use</p>
