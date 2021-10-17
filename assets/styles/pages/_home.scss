@@ -193,20 +193,26 @@
     transition: transform 1s linear;
     backface-visibility: hidden;
 
-    &:hover {
-      // animation: star-anim 4s linear infinite;
-      transform: rotate(180deg);
-      backface-visibility: hidden;
-    }
-
     &--purple {
       left: 0;
       top: 40%;
+
+      &:hover {
+        // animation: star-anim 4s linear infinite;
+        transform: rotate(180deg);
+        backface-visibility: hidden;
+      }
     }
 
     &--green {
       right: 0;
       top: 50%;
+
+      &:hover {
+        // animation: star-anim 4s linear infinite;
+        transform: rotate(180deg);
+        backface-visibility: hidden;
+      }
     }
   }
 
