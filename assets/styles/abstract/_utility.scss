@@ -14,8 +14,20 @@
   margin-bottom: 20px!important;
 }
 
+.u-mb-mini-md {
+  margin-bottom: 30px !important;
+}
+
 .u-mb-md {
   margin-bottom: 40px !important;
+}
+
+.u-mb-big {
+  margin-bottom: 80px !important;
+}
+
+.u-mb-huge {
+  margin-bottom: 100px !important;
 }
 
 .u-mt-md {
@@ -38,6 +50,14 @@
 
 .u-text-center {
   text-align: center !important;
+}
+
+.u-text-color {
+  color: $tertiary_color;
+
+  &--black {
+    color: #000000;
+  }
 }
 
 .u-d-none {

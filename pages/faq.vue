@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container u-mb-big">
       <div class="faq-search-con">
         <h3 class="heading-primary u-mb-md">Frequently Asked Questions.</h3>
         <div ref="faqSearchDiv" class="search-con">
@@ -82,7 +82,7 @@ export default {
     },
     getFAQs() {
       this.$axios.get('/faqs/').then((res) => {
-        this.faqs = res.data.results
+        this.faqs = res.data
       })
       // .catch((err) => {
       //   // const {

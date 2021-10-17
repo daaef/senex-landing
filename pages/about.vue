@@ -3,7 +3,7 @@
     <foreword></foreword>
     <mission-vision></mission-vision>
     <div class="container u-mb-md">
-      <h1 class="heading-primary heading-primary--wt-500 u-mb-md">
+      <h1 class="heading-primary heading-primary--wt-500 u-mb-mini-md">
         Our core values
       </h1>
       <p class="paragraph u-text-center text-black u-mb-md">

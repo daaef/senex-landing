@@ -5,7 +5,12 @@
         <div class="container">
           <div class="con-tp">
             <div class="main-header-tp">
-              <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
+              <h1
+                class="
+                  heading-primary heading-primary--wt-600
+                  u-text-color u-mb-sm
+                "
+              >
                 Contact Us
               </h1>
               <p class="paragraph">
@@ -16,7 +21,7 @@
           </div>
         </div>
         <div class="contact-list">
-          <div class="container">
+          <div class="container u-text-color">
             <div class="contact-type-con">
               <p class="title heading-tertiary--v-sm">
                 Drop by our Head Office
@@ -54,7 +59,7 @@
     <!-- Get Social -->
     <div class="container">
       <div class="contact-get-social">
-        <h3 class="heading-tertiary heading-tertiary--sm">
+        <h3 class="heading-tertiary heading-tertiary--sm u-mb-sm">
           Get Social With Us
         </h3>
         <div class="socials-con">

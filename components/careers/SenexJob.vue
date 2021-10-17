@@ -2,12 +2,14 @@
   <div>
     <div class="container">
       <div class="words-sj">
-        <h2 class="heading-primary heading-primary--wt-500 u-mb-md">
+        <h2
+          class="heading-primary heading-primary--wt-500 u-mb-md u-text-color"
+        >
           Working at Senexpay
         </h2>
       </div>
       <div class="grid lg:grid-cols-2 lg:gap-14">
-        <div class="my-4 lg:my-0 snx-jobs-img-con">
+        <div class="snx-jobs-img-con">
           <img
             src="img/careers/working-2.png"
             alt="A young lady working from home with a laptop at a table."
@@ -25,7 +27,7 @@
             </div>
           </div> -->
         </div>
-        <div class="my-4 lg:my-0 snx-jobs-img-con">
+        <div class="snx-jobs-img-con">
           <img
             src="img/careers/working-11.png"
             alt="A young man working remotely from a workspace."
@@ -43,7 +45,7 @@
             </div>
           </div> -->
         </div>
-        <div class="my-4 lg:my-0 snx-jobs-img-con">
+        <div class="snx-jobs-img-con">
           <img
             src="img/careers/working-3.png"
             alt="A young man working remotely from a lounge."
@@ -61,7 +63,7 @@
             </div>
           </div> -->
         </div>
-        <div class="my-4 lg:my-0 snx-jobs-img-con">
+        <div class="snx-jobs-img-con">
           <img src="img/careers/working-4.png" alt="work" />
           <!-- <div class="img-overlay">
             <div class="impact-iw">

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="container">
-      <div class="words-iw">
+    <div class="container u-mb-huge">
+      <div class="words-iw u-text-color">
         <h2 class="heading-primary heading-primary--wt-500 u-mb-md">
           Our Culture
         </h2>

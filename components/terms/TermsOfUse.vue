@@ -1,16 +1,18 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container u-text-color">
       <div class="con-tp">
         <div class="main-header-tp">
           <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
             Senexpay Terms Of Use
           </h1>
-          <p class="paragraph">Last Revised: March 28, 2021</p>
+          <p class="paragraph u-text-color--black">
+            Last Revised: March 28, 2021
+          </p>
         </div>
         <p class="first-para-tou paragraph">
           Welcome to Senexpay’s Terms of Use! We are truly excited to have you
-          aboard.Thank you for choosing to use our services.
+          aboard. Thank you for choosing to use our services.
         </p>
         <p class="first-para-tp paragraph">
           Below we have listed important legal terms that apply to anyone who

@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container u-text-color">
       <div class="con-tp">
         <div class="main-header-tp">
           <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
             Senexpay Privacy Policy
           </h1>
-          <p class="paragraph">Effective from March 28, 2021</p>
+          <p class="paragraph u-text-color--black">
+            Effective from March 28, 2021
+          </p>
         </div>
         <div class="content-main-pp paragraph">
           <p class="first-para-tp">Welcome to Senexpay’s Privacy Policy</p>

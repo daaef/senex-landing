@@ -3,7 +3,7 @@
     <div class="container">
       <div
         class="faq-item-con"
-        :class="isOpen ? 'faq-item-con--grey' : 'faq-item-con--white'"
+        :class="isOpen ? 'faq-item-con--grey' : 'faq-item-con--grey'"
         @click="toggleOpen"
       >
         <div class="faq-item-con__title-con">
