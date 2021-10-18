@@ -48,6 +48,11 @@
   .forward-img-con {
     position: relative;
     padding-top: 6%;
+
+    @include respond(tab-land) {
+      margin-bottom: 50px;
+      // right: 0;
+    }
     .dotted-img {
       position: absolute;
       top: 0;
@@ -68,7 +73,8 @@
       z-index: 3;
 
       @include respond(tab-port) {
-        margin-left: 0;
+        margin-left: auto;
+        // right: 0;
       }
       // right: 7.5%;
       img {
