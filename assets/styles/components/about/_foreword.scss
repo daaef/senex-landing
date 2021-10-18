@@ -1,11 +1,20 @@
 .foreword-holder {
   // margin-top: 70px;
   margin-bottom: 50px;
+  // min-height: 100vh
 }
 
 .foreword-con {
-  @include flexcon(left, center, column);
+  @include flexcon(left, flex-start, column);
   color: $tertiary_color;
+  padding-top: 5%;
+  width: 50%;
+
+  @include respond(tab-land) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  // align-self: flex-start;
 
   h1 {
     line-height: 1em;
@@ -19,16 +28,26 @@
 
   p {
     color: #3E3E41;
+    width: 80%;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
   }
 }
 
 .foreword-img {
   @include flexcon(right, flex-start, column);  
-  margin-top: 30px;
+  // margin-top: 30px;
+  width: 50%;
+
+  @include respond(tab-land) {
+    width: 100%;
+  }
 
   .forward-img-con {
     position: relative;
-    padding-top: 8.5%;
+    padding-top: 6%;
     .dotted-img {
       position: absolute;
       top: 0;
@@ -42,7 +61,30 @@
 
     .ceo-img {
       position: relative;
-      width: 88%;
+      width: 80%;
+      // top: 10%;
+      right: 7.5%;
+      margin-left: auto;
+      z-index: 3;
+
+      @include respond(tab-port) {
+        margin-left: 0;
+      }
+      // right: 7.5%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .ceo-arrow {
+      height: 200px;
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
       img {
         height: 100%;
         width: 100%;

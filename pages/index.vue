@@ -221,7 +221,7 @@
                   heading-primary heading-primary--wt-500
                 "
               >
-                The most trusted crypto platform.
+                The Most Trusted Crypto Platform.
               </p>
               <p class="snx-description__subtitle paragraph">
                 Over the years, SenexPay has been able to build an unshakeable
@@ -308,7 +308,7 @@
                 heading-primary heading-primary--wt-500
               "
             >
-              We are serious about Security.
+              We Are Serious About Security.
             </p>
             <p class="snx-description__subtitle paragraph">
               Buy and sell your Cryptocurrency safely and securely with peace of

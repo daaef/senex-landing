@@ -83,16 +83,6 @@ export default {
           image: '/img/about/ceo.png',
           content:
             'My day one exchanger! You guys rock. Senexpay has never disappointed me before. Awesome people.'
-        },
-        {
-          name: 'Unknown',
-          image: '/img/about/ceo.png',
-          content: 'None'
-        },
-        {
-          name: 'Unknown',
-          image: '/img/about/ceo.png',
-          content: 'None'
         }
       ],
       current: 1,

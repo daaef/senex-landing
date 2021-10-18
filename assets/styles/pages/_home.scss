@@ -44,8 +44,9 @@
   &__subtitle{
     text-align: left;
     // font-size: $font18;
+    width: 100%;
     font-weight: 400;
-    max-width: 500px;
+    max-width: 400px;
     color: $tertiary_color;
   }
 
@@ -62,7 +63,7 @@
 
     .register_btn {
       @include custom-btn($primary_color,$color_white,$primary_color);
-      padding: 10px 24px;
+      padding: 12px 24px;
       font-size: 1.8rem;
       border-radius: 6px;
       margin-right: 20px;
@@ -78,15 +79,17 @@
     }
 
     .trading_btn {
-      @include custom-btn($color_white,$primary_color,$primary_color);
+      @include custom-btn(transparent,$primary_color,$primary_color);
       border: 1px solid;
-      padding: 10px 24px;
+      padding: 12px 24px;
       font-size: 1.8rem;
       border-radius: 6px;
       text-align: center;
+      min-width: 180px;
 
       @include respond(phone) {
         padding: 8px 16px;
+        min-width: 0;
       }
     }
 
@@ -109,7 +112,7 @@
   }
 
   .block-img {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
   }
 
@@ -118,7 +121,7 @@
     border-radius: 8px;
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 12px;
     position: absolute;
     background-color: white;
     color: #3e3e41;
@@ -149,11 +152,12 @@
     &--green {
       background-color: #d2Faef;
       color: #058856;
-      bottom: 0;
-      right: 20%;
+      bottom: -25px;
+      right: 15%;
 
       @include respond(small-phone) {
         right: 0;
+        bottom: 0;
       }
     }
 
@@ -165,8 +169,8 @@
   &__badge-elc-box {
     display: inline-block;
     padding: 4px;
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     border-radius: 6px;
     margin-right: 8px;
 
@@ -194,8 +198,12 @@
     backface-visibility: hidden;
 
     &--purple {
-      left: 0;
+      left: 8%;
       top: 40%;
+
+      @include respond(phone) {
+        left: 0;
+      }
 
       &:hover {
         // animation: star-anim 4s linear infinite;
@@ -205,8 +213,13 @@
     }
 
     &--green {
-      right: 0;
-      top: 50%;
+      right: 6%;
+      top: 55%;
+
+      @include respond(phone) {
+        right: 0;
+        top: 50%;
+      }
 
       &:hover {
         // animation: star-anim 4s linear infinite;
@@ -239,8 +252,12 @@
     }
 
     &--green {
-      left: 0;
-      bottom: 0;
+      left: 10%;
+      bottom: -45px;
+
+      @include respond(phone) {
+        bottom: 0;
+      }
     }
   }
 }
@@ -429,7 +446,7 @@
     text-align: left;
     line-height: 1.2em;
     margin-bottom: 30px;
-    width: 90%;
+    width: 80%;
     color: $primary_color;
 
     @include respond(phone) {
@@ -516,7 +533,7 @@
     &--up {
       top: 0;
       right: 10%;
-      transform: translateY(-50%);
+      transform: translateY(-50%, -50%);
       animation: star-anim-gr-1 7s linear infinite;
     }
 
@@ -923,10 +940,10 @@
 
 @keyframes star-anim-gr-1 {
   from {
-    transform: translateY(-50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    transform: translateY(-50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 

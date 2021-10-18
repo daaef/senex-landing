@@ -18,7 +18,7 @@
         <div class="lg:flex reason-con" data-aos="slide-up">
           <div class="reason">
             <span class="icon up-anim"><img src="/img/why-senex-1.png" /></span>
-            <p class="paragraph paragraph--700 u-mb-10">Simple to use</p>
+            <p class="paragraph paragraph--700 u-my-10">Simple to use</p>
             <span class="paragraph"
               >Set up your account in minutes and start trading your crypto in
               the smoothest way possible.</span
@@ -26,7 +26,7 @@
           </div>
           <div class="reason">
             <span class="icon up-anim"><img src="/img/why-senex-2.png" /></span>
-            <p class="paragraph paragraph--700 u-mb-10">Quick Payouts</p>
+            <p class="paragraph paragraph--700 u-my-10">Quick Payouts</p>
             <span class="paragraph"
               >Senexpay pays directly to your account swiftly - no stories. Come
               in, cash out, easy!</span
@@ -34,7 +34,7 @@
           </div>
           <div class="reason">
             <span class="icon up-anim"><img src="/img/why-senex-3.png" /></span>
-            <p class="paragraph paragraph--700 u-mb-10">Safe and protected</p>
+            <p class="paragraph paragraph--700 u-my-10">Safe and protected</p>
             <span class="paragraph"
               >Our portal is highly secure end-to- end, with the highest
               security protocols possible.</span

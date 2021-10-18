@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="lg:flex foreword-holder">
-        <div class="foreword-con lg:w-1/2">
+        <div class="foreword-con">
           <h1 class="ceo-title heading-primary u-text-left">From our C.E.O</h1>
           <span>
             <h4 class="paragraph paragraph--700">Orhosere Okeoghene,</h4>
@@ -30,13 +30,16 @@
             </p>
           </span>
         </div>
-        <div class="foreword-img lg:w-1/2">
+        <div class="foreword-img">
           <div class="lg:w-4/5 forward-img-con ml-auto">
             <div class="dotted-img">
               <img src="/img/dotted-grid.png" alt="img-design" />
             </div>
             <div class="ceo-img">
               <img src="/img/about/senexpay-ceo.png" alt="C.E.O" />
+            </div>
+            <div class="ceo-arrow">
+              <img src="/img/arrow-ceo.svg" alt="arrow" />
             </div>
           </div>
         </div>

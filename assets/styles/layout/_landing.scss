@@ -71,7 +71,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 75px;
+  height: 80px;
   font-size: 18px;
   z-index: 6;
   // transition: all 1s;
@@ -174,9 +174,9 @@
 
   .register-btn {
     @include custom-btn($primary_color,$color_white,$primary_color);
-    padding: 10px 24px;
+    padding: 12px 24px;
     font-size: 1.8rem;
-    border-radius: 6px;
+    border-radius: 8px;
 
     @include respond(phone) {
       padding: 8px 16px;

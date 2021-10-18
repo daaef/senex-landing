@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="our-obsession">
       <div class="our-obsession__box">
         <img
