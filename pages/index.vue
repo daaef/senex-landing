@@ -122,6 +122,11 @@
           :sell="450000"
         >
         </coin-price>
+        <p class="paragraph u-mt-10 u-text-center u-white">
+          Senexpay Transaction fee is 1.5% pegged at N200.
+          <router-link to="/terms" class="u-sec-color">Learn more</router-link>
+          about our fees.
+        </p>
       </div>
     </div>
     <!-- Descriptions -->

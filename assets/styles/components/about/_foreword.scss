@@ -86,15 +86,16 @@
 
     .ceo-arrow {
       height: 200px;
+      width: 250px;
       position: absolute;
       top: 95%;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 1;
+      z-index: 3;
       img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
   }
