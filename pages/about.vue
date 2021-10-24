@@ -16,7 +16,7 @@
             class="
               heading-tertiary--sm heading-tertiary--wt-500
               our-core-box__title
-              u-mb-sm
+              u-mb-10
             "
           >
             Financial Inclusion
@@ -31,7 +31,7 @@
             class="
               heading-tertiary--sm heading-tertiary--wt-500
               our-core-box__title
-              u-mb-sm
+              u-mb-10
             "
           >
             Equality
@@ -46,7 +46,7 @@
             class="
               heading-tertiary--sm heading-tertiary--wt-500
               our-core-box__title
-              u-mb-sm
+              u-mb-10
             "
           >
             Client Obssesion
