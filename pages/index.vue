@@ -494,7 +494,7 @@
         <div class="container">
           <div class="block lg:flex py-24">
             <div class="text-and-store-con self-center lg:w-1/2">
-              <h1 class="heading-secondary heading-secondary--500 u-text-left">
+              <h1 class="heading-secondary heading-secondary--500">
                 We are creating a unique financial revolution. Join us!
               </h1>
             </div>

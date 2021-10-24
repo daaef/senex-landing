@@ -78,6 +78,18 @@
   color: $secondary_color;
 }
 
+.u-line-height-15 {
+  line-height: 1.5;
+}
+
+.u-left-center-sm {
+  text-align: start;
+
+  @include respond(phone) {
+    text-align: center;
+  }
+}
+
 .u-d-none {
   display: none;
 }

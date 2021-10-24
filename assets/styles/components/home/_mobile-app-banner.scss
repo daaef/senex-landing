@@ -9,6 +9,10 @@
       // font-size: $font48;
       line-height: 1em;
       margin-bottom: 20px;
+      text-align: left;
+      @include respond(phone) {
+        text-align: center;
+      }
     }
 
     .app-icon-con {
