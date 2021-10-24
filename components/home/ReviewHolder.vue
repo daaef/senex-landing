@@ -30,8 +30,8 @@
           <slide v-for="(item, idx) in reviews" :key="idx">
             <review-2
               :name="item.name"
-              :image="item.image"
-              :content="item.content"
+              :image="getImage(item.photo)"
+              :content="item.reviewText"
             ></review-2>
           </slide>
         </carousel>
@@ -65,31 +65,18 @@ export default {
   },
   data() {
     return {
-      reviews: [
-        {
-          name: 'Funmi',
-          image: '/img/about/ceo.png',
-          content:
-            'Senexpay is the most reliable and fastest Bitcoin exchanger I have ever used. It’s so easy I was wondering why I have not been using it since.'
-        },
-        {
-          name: 'Aminat',
-          image: '/img/about/ceo.png',
-          content:
-            'I love the new upgrade. It is much more simpler and faster to use. Keep it up Senexpay!'
-        },
-        {
-          name: 'Ebuka',
-          image: '/img/about/ceo.png',
-          content:
-            'My day one exchanger! You guys rock. Senexpay has never disappointed me before. Awesome people.'
-        }
-      ],
+      reviews: [],
       current: 1,
-      width: 1
+      width: 1,
+      apiUrl: ''
     }
   },
   mounted() {
+    this.apiUrl =
+      process.env.NODE_ENV === 'development'
+        ? process.env.API_URL_DEV
+        : process.env.API_URL_PROD
+    this.getTestimonials()
     // this.$nextTick(() => {
     //   this.width = this.$refs.reviews.clientWidth
     // })
@@ -156,6 +143,19 @@ export default {
       return Math.round(this.reviews.length / w)
       // console.log('width', w, this.width)
       // return Math.ceil(this.reviews.length / w) - 1
+    },
+    getTestimonials() {
+      this.$axios.get('/testimonials/').then((res) => {
+        this.reviews = res.data
+      })
+    },
+    getImage(photo) {
+      const apiUrl = this.apiUrl
+      const url =
+        this.apiUrl[apiUrl.length - 1] === '/'
+          ? apiUrl.slice(0, apiUrl.length - 1)
+          : apiUrl
+      return url + photo
     }
   }
 }

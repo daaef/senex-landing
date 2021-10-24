@@ -87,7 +87,8 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/sentry',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    '@nuxtjs/dotenv'
   ],
 
   i18n: {

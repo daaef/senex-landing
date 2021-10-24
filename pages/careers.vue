@@ -11,7 +11,7 @@
         initial-class="job-modal-con"
         final-class-open="job-modal-show"
       >
-        <job-modal @close-modal="closeModal"></job-modal>
+        <job-modal :jobs="jobs" @close-modal="closeModal"></job-modal>
       </app-modal>
       <landing-footer></landing-footer>
     </div>
@@ -41,8 +41,12 @@ export default {
   layout: 'about',
   data() {
     return {
-      modalOpen: false
+      modalOpen: false,
+      jobs: []
     }
+  },
+  mounted() {
+    this.getJobs()
   },
   methods: {
     closeModal() {
@@ -50,6 +54,11 @@ export default {
     },
     openModal() {
       this.modalOpen = true
+    },
+    getJobs() {
+      this.$axios.get('/jobs/').then((res) => {
+        this.jobs = res.data
+      })
     }
   }
 }

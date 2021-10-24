@@ -4,17 +4,16 @@
       <div class="container">
         <div class="lg:flex android-developer-jp">
           <div class="ad-jp lg:w-1/2">
-            <h3 class="heading-tertiary u-text-left">Android Developer</h3>
+            <h3 class="heading-tertiary u-text-left">{{ title }}</h3>
           </div>
           <div class="ad-content-jp lg:w-1/2">
             <p class="bold-paragraph-jp paragraph">
-              About the Android Developer role
+              About the {{ title }} role
             </p>
             <p class="paragraph">
-              We are looking for driven, passionate and committed individuals to
-              join the team as we grow and expand across Africa and beyond.
+              {{ description }}
             </p>
-            <p class="paragraph">
+            <!-- <p class="paragraph">
               As the Android Developer, you will be responsible for developing
               applications for devices powered by the Android operating system
               as well as the development of Android applications and their
@@ -45,8 +44,12 @@
                 Continuously discover, evaluate, and implement new technologies
                 to improve development efficiency.
               </li>
-            </ul>
-            <button type="button" class="btn register-btn-jp">Apply now</button>
+            </ul> -->
+            <a :href="applicationUrl" target="_blank">
+              <button type="button" class="btn register-btn-jp">
+                Apply now
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -55,7 +58,38 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    },
+    department: {
+      type: String,
+      default: ''
+    },
+    jobType: {
+      type: String,
+      default: ''
+    },
+    isRemote: {
+      type: String,
+      default: ''
+    },
+    applicationUrl: {
+      type: String,
+      default: ''
+    },
+    created: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 
 <style></style>

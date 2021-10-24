@@ -109,7 +109,7 @@ export default {}
     min-width: 160px;
     font-size: 16px;
     border-radius: 6px;
-    margin-right: 20px;
+    // margin-right: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
   }

@@ -2,6 +2,14 @@
   max-height: 80vh;
   overflow-y: auto;
   padding-bottom: 50px;
+
+  &--empty {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .background-jp {
