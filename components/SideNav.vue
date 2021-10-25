@@ -10,9 +10,9 @@
           <!-- <span class="link" @click="goTo('/learn')">Learn</span> -->
           <span class="link" @click="goTo('/faq')">FAQ</span>
           <span class="link" @click="goTo('/contact')">Contact us</span>
-          <span class="link" @click="goTo('/login')">Log in</span>
-          <span class="link btn register-btn" @click="goTo('/register')"
-            >Create your account</span
+          <span class="link"><a :href="appLink + '/login'">Sign in</a></span>
+          <span class="link btn register-btn"
+            ><a :href="appLink + '/register'">Create your account</a></span
           >
           <div class="country-con">
             <div class="country-icon">
@@ -59,13 +59,17 @@ export default {
   },
   data() {
     return {
-      countries
+      countries,
+      appLink: ''
     }
   },
   computed: {
     ...mapState({
       selectedCountry: 'country'
     })
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
   },
   methods: {
     showSide() {

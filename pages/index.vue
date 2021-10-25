@@ -30,11 +30,11 @@
                 exchange without any hassle.
               </p>
               <div class="snx-hero-content__btn_holder">
-                <router-link to="/register" class="register_btn"
-                  >Create your account</router-link
+                <a :href="appLink + '/register'" class="register_btn"
+                  >Create your account</a
                 >
-                <router-link to="/trading" class="trading_btn"
-                  >Start trading</router-link
+                <a :href="appLink + '/order/start'" class="trading_btn"
+                  >Start trading</a
                 >
               </div>
             </div>
@@ -544,6 +544,7 @@ export default {
   layout: 'landing',
   data() {
     return {
+      appLink: '',
       loading: true,
       scrollPosition: 0,
       ticking: false,
@@ -571,6 +572,7 @@ export default {
     })
   },
   mounted() {
+    this.appLink = process.env.APP_URL
     AOS.init()
     this.loading = false
     this.getRates()

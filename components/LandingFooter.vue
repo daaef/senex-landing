@@ -109,7 +109,12 @@
                   target="_blank"
                   >Instagram</a
                 >
-                <a href="/" class="block lg:inline-block">LinkedIn</a>
+                <a
+                  href="https://linkedin.com/company/senexpay/"
+                  class="block lg:inline-block"
+                  target="_blank"
+                  >LinkedIn</a
+                >
               </div>
             </div>
           </div>

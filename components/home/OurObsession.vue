@@ -24,8 +24,8 @@
           >Buy and sell Bitcoin and USDT easy and fast without hassles. It’s
           never been easier.</span
         >
-        <router-link to="/register" class="btn our-obsession__register-btn"
-          >Create your account</router-link
+        <a :href="appLink + '/register'" class="btn our-obsession__register-btn"
+          >Create your account</a
         >
       </div>
     </div>
@@ -33,7 +33,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      appLink: ''
+    }
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
+  }
+}
 </script>
 
 <style lang="scss">

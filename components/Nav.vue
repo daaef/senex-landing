@@ -22,9 +22,9 @@
               <router-link class="link" to="/contact">Contact us</router-link>
             </div>
             <div class="register-con">
-              <router-link to="/login" class="log-in link">Log in</router-link>
-              <router-link to="/register" class="btn register-btn"
-                >Create your account</router-link
+              <a :href="appLink + '/login'" class="log-in link">Sign in</a>
+              <a :href="appLink + '/register'" class="btn register-btn"
+                >Create your account</a
               >
               <div class="country-con">
                 <div class="country-icon">
@@ -93,7 +93,8 @@ export default {
   },
   data() {
     return {
-      countries
+      countries,
+      appLink: ''
     }
   },
   computed: {
@@ -101,6 +102,9 @@ export default {
       selectedCountry: 'country',
       sideBarOpen: 'sideBarOpen'
     })
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
   },
   methods: {
     openSide() {

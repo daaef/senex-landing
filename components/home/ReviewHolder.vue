@@ -30,7 +30,7 @@
           <slide v-for="(item, idx) in reviews" :key="idx">
             <review-2
               :name="item.name"
-              :image="getImage(item.photo)"
+              :image="item.photo"
               :content="item.reviewText"
             ></review-2>
           </slide>

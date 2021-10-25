@@ -20,9 +20,11 @@
               online in no time with just a little discount. Get paid in your C
             </p> -->
           </div>
-          <button type="button" class="register-btn-abt">
-            Start Trading Bitcoin
-          </button>
+          <a :href="appLink + '/order/start'">
+            <button type="button" class="register-btn-abt">
+              Start Trading Bitcoin
+            </button>
+          </a>
         </div>
         <!-- <div class="hidden lg:flex crypto-buddy-mobile">
           <span class="up"
@@ -38,7 +40,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      appLink: ''
+    }
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
+  }
+}
 </script>
 
 <style></style>
