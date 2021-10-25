@@ -2,7 +2,8 @@ export const state = () => ({
   country: {
     name: 'Nigeria',
     imageSource: '/img/nigeria.svg',
-    code: 'NG'
+    code: 'NGN',
+    symbol: '₦'
   },
   sideBarOpen: false,
   showCookies: true

@@ -102,28 +102,32 @@
           name="Bitcoin"
           abbr="BTC"
           image="/img/btc.svg"
-          :buy="450000000"
-          :sell="45000000"
+          :buy="getFiatAmount('BTC', 'buy')"
+          :sell="getFiatAmount('BTC', 'sell')"
+          :country="country"
         >
         </coin-price>
         <coin-price
           name="USDT"
           abbr="USDT"
           image="/img/t-coin.svg"
-          :buy="450000"
-          :sell="450000"
+          :buy="getFiatAmount('USD', 'buy')"
+          :sell="getFiatAmount('USD', 'sell')"
+          :country="country"
         >
         </coin-price>
-        <coin-price
+        <!-- <coin-price
           name="DOGE COIN"
           abbr="DOGE"
           image="/img/doge-coin.svg"
           :buy="450000"
           :sell="450000"
         >
-        </coin-price>
+        </coin-price> -->
         <p class="paragraph u-mt-10 u-text-center u-white">
-          Senexpay Transaction fee is 1.5% pegged at N200.
+          Senexpay Transaction fee is {{ limits.platformFee }}% pegged at ${{
+            limits.platformFeeCap
+          }}.
           <router-link to="/terms" class="u-sec-color">Learn more</router-link>
           about our fees.
         </p>
@@ -515,6 +519,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import OurObsession from '../components/home/OurObsession.vue'
@@ -543,12 +548,48 @@ export default {
       scrollPosition: 0,
       ticking: false,
       buyBadge: false,
-      sellBadge: false
+      sellBadge: false,
+      rates: {
+        BTC_USD: { buy: 0, sell: 0 },
+        BTC_NGN: { buy: 0, sell: 0 },
+        BTC_ZAR: { buy: 0, sell: 0 },
+        USD_NGN: { buy: 0, sell: 0 },
+        USD_ZAR: { buy: 0, sell: 0 }
+      },
+      limits: {
+        disableBuy: false,
+        minimumBuyUsd: 30,
+        minimumSellUsd: 30,
+        platformFee: 0.7,
+        platformFeeCap: 2
+      }
     }
+  },
+  computed: {
+    ...mapState({
+      country: (state) => state.country
+    })
   },
   mounted() {
     AOS.init()
     this.loading = false
+    this.getRates()
+  },
+  methods: {
+    async getRates() {
+      // this.isLoading = true
+      try {
+        const { data } = await this.$axios.get('/rates/v2')
+        this.rates = data
+        this.limits = data.config
+        // this.isLoading = false
+      } catch (err) {
+        // this.getRates()
+      }
+    },
+    getFiatAmount(crypto, type) {
+      return this.rates[`${crypto}_${this.country.code}`][type]
+    }
   }
 }
 </script>
