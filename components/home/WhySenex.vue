@@ -11,24 +11,24 @@
         class="why-senex-circle"
       />
       <div class="container">
-        <p class="why heading-tertiary--v-sm">Why people love Senexpay</p>
+        <p class="why heading-tertiary--v-sm">Why people love SenexPay</p>
         <h2 class="heading-secondary u-text-left">
-          We just wanna to make crypto exchange stress-free.
+          We just wanna make crypto exchange stress-free.
         </h2>
         <div class="lg:flex reason-con" data-aos="slide-up">
           <div class="reason">
             <span class="icon up-anim"><img src="/img/why-senex-1.png" /></span>
             <p class="paragraph paragraph--700 u-my-10">Simple to use</p>
             <span class="paragraph"
-              >If you can read ‘A-Z’, then you can use Senexpay for your Crypto
+              >If you can read ‘A-Z’, then you can use SenexPay for your Crypto
               exchange. Easy stuff.</span
             >
           </div>
           <div class="reason">
             <span class="icon up-anim"><img src="/img/why-senex-2.png" /></span>
-            <p class="paragraph paragraph--700 u-my-10">Quick Payouts</p>
+            <p class="paragraph paragraph--700 u-my-10">Quick payouts</p>
             <span class="paragraph"
-              >Senexpay pays directly to your account swiftly. Come in, cash out
+              >SenexPay pays directly to your account swiftly. Come in, cash out
               - no unecessary delays.</span
             >
           </div>

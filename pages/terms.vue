@@ -10,7 +10,19 @@ import LandingFooter from '~/components/LandingFooter.vue'
 import TermsOfUse from '~/components/terms/TermsOfUse.vue'
 export default {
   components: { TermsOfUse, LandingFooter },
-  layout: 'about'
+  layout: 'about',
+  head() {
+    return {
+      title: 'Terms of Service',
+      meta: [
+        {
+          hid: 'SenexPay Terms',
+          name: 'Terms - SenexPay',
+          content: 'SenexPay'
+        }
+      ]
+    }
+  }
 }
 </script>
 

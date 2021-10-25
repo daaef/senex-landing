@@ -8,7 +8,7 @@
               <div class="car-star">
                 <img src="/img/careers/careers-star.svg" alt="star" />
               </div>
-              <h3 class="heading-tertiary--sm">Careers at Senexpay</h3>
+              <h3 class="heading-tertiary--sm">Careers at SenexPay</h3>
             </div>
             <h2 class="heading-primary u-text-left">
               Let’s make digital finance better together.

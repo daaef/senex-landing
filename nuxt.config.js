@@ -36,7 +36,7 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Senexpay Dashboard'
+        content: 'SenexPay Dashboard'
       },
       {
         hid: 'twitter:description',
@@ -111,10 +111,10 @@ export default {
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL:
-      process.env.NODE_ENV === 'development'
-        ? process.env.API_URL_DEV
-        : process.env.API_URL_PROD
+    baseURL: process.env.API_URL
+      // process.env.NODE_ENV === 'development'
+      //   ? process.env.API_URL_DEV
+      //   : process.env.API_URL_PROD
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

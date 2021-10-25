@@ -14,7 +14,7 @@
                 Contact Us
               </h1>
               <p class="paragraph">
-                Get in touch with the right people at Senexpay, we’re here to
+                Get in touch with the right people at SenexPay, we’re here to
                 help.
               </p>
             </div>
@@ -201,7 +201,19 @@ export default {
   components: {
     LandingFooter
   },
-  layout: 'about'
+  layout: 'about',
+  head() {
+    return {
+      title: 'Contact Us',
+      meta: [
+        {
+          hid: 'SenexPay Contact',
+          name: 'Contact - SenexPay',
+          content: 'SenexPay'
+        }
+      ]
+    }
+  }
 }
 </script>
 

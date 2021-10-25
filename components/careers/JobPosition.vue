@@ -10,9 +10,9 @@
             <p class="bold-paragraph-jp paragraph">
               About the {{ title }} role
             </p>
-            <p class="paragraph">
-              {{ description }}
-            </p>
+            <div class="paragraph" v-html="description">
+              <!-- {{ description }} -->
+            </div>
             <!-- <p class="paragraph">
               As the Android Developer, you will be responsible for developing
               applications for devices powered by the Android operating system

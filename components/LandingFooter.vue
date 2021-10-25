@@ -8,7 +8,7 @@
               <span class="logo-con" @click="toHome()"
                 ><img src="/img/senexpay-logo-light.png"
               /></span>
-              <span class="copyright">Senexpay © 2021</span>
+              <span class="copyright">SenexPay © 2021</span>
               <!-- <div class="terms-link">
                 <router-link to="/terms">Terms of Service | </router-link>
                 <router-link to="/privacy">Privacy Policy</router-link>
@@ -81,7 +81,7 @@
               <span class="logo-con"
                 ><img src="/img/senexpay-logo-light.png"
               /></span>
-              <span class="copyright">Senexpay © 2021</span>
+              <span class="copyright">SenexPay © 2021</span>
               <div class="terms-link">
                 <router-link to="/terms">Terms of Service | </router-link>
                 <router-link to="/privacy">Privacy Policy</router-link>

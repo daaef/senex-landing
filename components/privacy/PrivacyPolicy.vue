@@ -4,14 +4,14 @@
       <div class="con-tp">
         <div class="main-header-tp">
           <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
-            Senexpay Privacy Policy
+            SenexPay Privacy Policy
           </h1>
           <p class="paragraph u-text-color--black">
             Effective from March 28, 2021
           </p>
         </div>
         <div class="content-main-pp paragraph">
-          <p class="first-para-tp">Welcome to Senexpay’s Privacy Policy</p>
+          <p class="first-para-tp">Welcome to SenexPay’s Privacy Policy</p>
           <h2 class="heading-tertiary--v-sm">1. Please read carefully</h2>
           <h4>1.1. Our Purpose</h4>
           <p>

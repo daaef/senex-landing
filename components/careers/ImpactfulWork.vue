@@ -16,7 +16,7 @@
             Big Picture
           </h2>
           <p class="paragraph">
-            At Senexpay, we are big picture thinkers who not only focuses on
+            At SenexPay, we are big picture thinkers who not only focuses on
             today but build for the future by focusing on the BIG PICTURE.
           </p>
         </div>

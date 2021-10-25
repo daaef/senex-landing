@@ -10,7 +10,19 @@ import LandingFooter from '~/components/LandingFooter.vue'
 import PrivacyPolicy from '~/components/privacy/PrivacyPolicy.vue'
 export default {
   components: { PrivacyPolicy, LandingFooter },
-  layout: 'about'
+  layout: 'about',
+  head() {
+    return {
+      title: 'Privacy Policy',
+      meta: [
+        {
+          hid: 'SenexPay Privacy',
+          name: 'Privacy - SenexPay',
+          content: 'SenexPay'
+        }
+      ]
+    }
+  }
 }
 </script>
 

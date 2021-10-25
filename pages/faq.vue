@@ -52,6 +52,18 @@ export default {
       ]
     }
   },
+  head() {
+    return {
+      title: 'FAQ',
+      meta: [
+        {
+          hid: 'SenexPay FAQ Page',
+          name: 'FAQ - SenexPay',
+          content: 'SenexPay'
+        }
+      ]
+    }
+  },
   watch: {
     windowWidth(val) {
       if (val >= 640) {

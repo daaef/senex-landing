@@ -70,12 +70,12 @@ export default {
       reviews: [
         {
           image: '/img/landing-page-review.png',
-          text: 'Senexpay is the most reliable and fastest Bitcoin exchanger I have ever used. It’s so easy I was wondering why I have not been using it since.',
+          text: 'SenexPay is the most reliable and fastest Bitcoin exchanger I have ever used. It’s so easy I was wondering why I have not been using it since.',
           writer: 'Akinosho, from Lagos'
         },
         {
           image: '/img/about/ceo.png',
-          text: 'Senexpay is the most reliable and fastest.',
+          text: 'SenexPay is the most reliable and fastest.',
           writer: 'CEO, from Lagos'
         }
       ],

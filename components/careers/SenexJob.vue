@@ -5,7 +5,7 @@
         <h2
           class="heading-primary heading-primary--wt-500 u-mb-md u-text-color"
         >
-          Working at Senexpay
+          Working at SenexPay
         </h2>
       </div>
       <div class="grid lg:grid-cols-2 lg:gap-14">

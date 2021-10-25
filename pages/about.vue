@@ -8,7 +8,7 @@
       </h1>
       <p class="paragraph u-text-center text-black u-mb-md">
         These are the shining lights that guide everything we do inside
-        Senexpay.
+        SenexPay.
       </p>
       <div class="our-core-box">
         <div class="our-core-box__item">
@@ -90,6 +90,18 @@ export default {
   data() {
     return {
       open: false
+    }
+  },
+  head() {
+    return {
+      title: 'About',
+      meta: [
+        {
+          hid: 'SenexPay About Page',
+          name: 'About - SenexPay',
+          content: 'SenexPay'
+        }
+      ]
     }
   }
 }

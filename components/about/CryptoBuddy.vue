@@ -22,7 +22,7 @@
           </div>
           <a :href="appLink + '/order/start'">
             <button type="button" class="register-btn-abt">
-              Start Trading Bitcoin
+              Start trading
             </button>
           </a>
         </div>

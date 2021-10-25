@@ -9,10 +9,8 @@
                 <span class="snx-hero-content__title heading-primary"
                   >Buy and Sell</span
                 >
-                <!-- <span class="snx-hero-content__title--grad">
-                  Crypto
-                </span> -->
-                <p class="snx-hero-content__title--grad">
+                <span class="snx-hero-content__title--grad">Crypto</span>
+                <!-- <p class="snx-hero-content__title--grad">
                   <client-only>
                     <vue-typer
                       name="banner"
@@ -20,7 +18,7 @@
                       erase-style="clear"
                     />
                   </client-only>
-                </p>
+                </p> -->
               </h1>
               <h1 class="snx-hero-content__title heading-primary">
                 the easy way.
@@ -125,7 +123,7 @@
         >
         </coin-price> -->
         <p class="paragraph u-mt-10 u-text-center u-white">
-          Senexpay Transaction fee is {{ limits.platformFee }}% pegged at ${{
+          SenexPay Transaction fee is {{ limits.platformFee }}% pegged at ${{
             limits.platformFeeCap
           }}.
           <router-link to="/terms" class="u-sec-color">Learn more</router-link>
@@ -197,7 +195,7 @@
               It’s so easy, anyone can trade on it.
             </p>
             <p class="snx-description__subtitle">
-              Trading your Cryptocurrency on Senexpay is so easy that you do not
+              Trading your Cryptocurrency on SenexPay is so easy that you do not
               need to be a Crypto guru to do it yourself. We believe life should
               be as easy as it can be.
             </p>
@@ -564,6 +562,18 @@ export default {
         platformFee: 0.7,
         platformFeeCap: 2
       }
+    }
+  },
+  head() {
+    return {
+      title: 'Home',
+      meta: [
+        {
+          hid: 'SenexPay Home Page',
+          name: 'Home - SenexPay',
+          content: 'SenexPay'
+        }
+      ]
     }
   },
   computed: {

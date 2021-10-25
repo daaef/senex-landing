@@ -11,7 +11,7 @@
         initial-class="job-modal-con"
         final-class-open="job-modal-show"
       >
-        <job-modal :jobs="jobs" @close-modal="closeModal"></job-modal>
+        <job-modal @close-modal="closeModal"></job-modal>
       </app-modal>
       <landing-footer></landing-footer>
     </div>
@@ -45,8 +45,20 @@ export default {
       jobs: []
     }
   },
+  head() {
+    return {
+      title: 'Careers',
+      meta: [
+        {
+          hid: 'SenexPay Careers',
+          name: 'Careers - SenexPay',
+          content: 'SenexPay'
+        }
+      ]
+    }
+  },
   mounted() {
-    this.getJobs()
+    // this.getJobs()
   },
   methods: {
     closeModal() {

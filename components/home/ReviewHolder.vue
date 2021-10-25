@@ -72,10 +72,7 @@ export default {
     }
   },
   mounted() {
-    this.apiUrl =
-      process.env.NODE_ENV === 'development'
-        ? process.env.API_URL_DEV
-        : process.env.API_URL_PROD
+    this.apiUrl = process.env.API_URL
     this.getTestimonials()
     // this.$nextTick(() => {
     //   this.width = this.$refs.reviews.clientWidth

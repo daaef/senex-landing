@@ -4,21 +4,21 @@
       <div class="con-tp">
         <div class="main-header-tp">
           <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
-            Senexpay Terms Of Use
+            SenexPay Terms Of Use
           </h1>
           <p class="paragraph u-text-color--black">
             Last Revised: March 28, 2021
           </p>
         </div>
         <p class="first-para-tou paragraph">
-          Welcome to Senexpay’s Terms of Use! We are truly excited to have you
+          Welcome to SenexPay’s Terms of Use! We are truly excited to have you
           aboard. Thank you for choosing to use our services.
         </p>
         <p class="first-para-tp paragraph">
           Below we have listed important legal terms that apply to anyone who
           visits our website or uses our services. These terms are necessary in
           order to protect both you and us, and to make our services possible
-          and more enjoyable for everyone. Senexpay offers a wide range of
+          and more enjoyable for everyone. SenexPay offers a wide range of
           services and features and part of the terms below may not be relevant
           to the specific services you use.
         </p>
@@ -26,7 +26,7 @@
           We understand that legal terms can be exhausting to read, and we’ve
           tried to make the experience more pleasant. If you have any
           suggestions on how we can improve them, you are more than welcome to
-          contact us at support@Senexpay.com.
+          contact us at support@SenexPay.com.
         </p>
         <h2 class="heading-tertiary--sm">1. Introduction</h2>
         <h3 class="heading-tertiary--v-sm">1. Introduction</h3>
