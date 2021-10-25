@@ -7,218 +7,123 @@
   margin: 20px auto;
   border-radius: 8px;
   overflow-x: auto;
+  font-size: $default-font-size;
   @include flexcon(center, left, row);
+
+  @include respond(phone) {
+    padding: 15px;
+    font-size: 14px;
+  }
 
   &__coin-image-con {
     display: block;
     margin-right: 10px;
     min-width: 50px;
 
+    @include respond(phone) {
+      min-width: 35px;
+    }
+
     img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
+
+      @include respond(phone) {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
 
   &__coin-name-con {
     @include flexcon(left, center, column);
-    min-width: 100px;
+    min-width: 70px;
+
+    @include respond(phone) {
+      min-width: 50px;
+    }
 
     .title {
-      font-size: 14px;
       font-weight: 500;
     }
 
     .subtitle {
-      font-size: 14px;
       font-weight: 300;
     }
   }
 
+  &__price-box {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
 
-  .sell {
-    min-width: 100px;
-    //justify-content: flex-end;
-    text-align: center;
+    @include respond(tab-port) {
+      justify-content: flex-end;
+    }
+
+    // @include respond(phone) {
+    //   justify-content: space-between;
+    // }
   }
 
 
   &__coin-price-con {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    flex-wrap: wrap;
+    flex: 1 0 40%;
     margin: 0 20px;
 
+    @include respond(tab-port) {
+      flex-direction: column;
+      margin: 0 10px;
+    }
+
+    @include respond(phone) {
+      margin: 0 5px;
+    }
+
     .amount {
-      font-size: $font18;
       font-weight: 500;
       text-align: right;
-      // margin-top: 10px;
       margin-right: 10px;
+
+      @include respond(tab-port) {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      
     }
 
-    .action-buy {
-      @include custom-btn(#06a84b,$color_white,#06a84b);
+    .action {
       opacity: 0.9;
       padding: 10px 20px;
       width: 80px;
-      // margin-top: 10px;
-    }
+      font-size: 16px;
 
-    .action-buy:hover {
-      opacity: 1;
-      // margin-top: 10px;
-    }
+      @include respond(tab-port) {
+        padding: 8px 16px;
+        // width: 60px;
+      }
 
-    .action-sell {
-      @include custom-btn(#ff5f24,$color_white,#ff5f24);
-      padding: 10px 20px;
-      opacity: 0.9;
-      width: 80px;
-      // margin-top: 10px;
-    }
+      @include respond(phone) {
+        padding: 5px 10px;
+        width: 60px;
+      }
+      
 
-    .action-sell:hover {
-      opacity: 1;
-    }
-  }
-}
-
-@media screen and(max-width: 640px) {
-  .coin-holder{
-    padding: 20px 20px;
-
-    &__coin-image-con {
-      display: block;
-      margin-right: 5px;
-      min-width: 30px;
-  
-      img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-      }
-    }
-
-    &__coin-name-con {
-      min-width: 80px;
-      .title {
-        font-size: 12px;
-        font-weight: 500;
-      }
-  
-      .subtitle {
-        font-size: 12px;
-        font-weight: 300;
-      }
-    }
-
-    &__coin-price-con {
-      margin: 0 0;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  
-      .amount {
-        font-size: 12px;
-        font-weight: 500;
-        margin-right: 0;
-        text-align: center
-      }
-  
-      .action-buy {
-        @include custom-btn(#06a84b,$color_white,#06a84b);
-        margin-top: 10px;
-      }
-  
-      .action-sell {
-        @include custom-btn(#ff5f24,$color_white,#ff5f24);
-        margin-top: 10px;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .sell-con {
-    min-width: 210px;
-    justify-content: flex-end;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .coin-holder {
-    max-width: 1000px;
-    padding: 30px;
-
-    &__coin-image-con {
-      min-width: 80px;
-  
-      img {
-        width: 65px;
-        height: 65px;
-      }
-    }
-
-    &__coin-name-con {
-      @include flexcon(left, center, column);
-      // min-width: 100px;
-  
-      .title {
-        font-size: 20px;
-      }
-  
-      .subtitle {
-        font-size: 20px;
-      }
-    }
-
-    .sell {
-      min-width: 150px;
-    }
-
-    &__coin-price-con {
-      margin: 0 20px;
-      // min-width: 210px;
-  
-      .amount {
-        font-size: 20px;
-        // margin-top: 10px;
-        text-align: right;
-        margin-right: 10px;
-      }
-  
-      .action-buy {
-        @include custom-btn(#06a84b,$color_white,#06a84b);
-        width: 120px;
-        font-size: 18px;
-        padding: 12px 20px;
-        border-radius: 12px;
-        // margin-top: 10px;
-      }
-  
-      .action-buy:hover {
-        opacity: 1;
-        // margin-top: 10px;
-      }
-  
-      .action-sell {
-        @include custom-btn(#ff5f24,$color_white,#ff5f24);
-        width: 120px;
-        font-size: 18px;
-        padding: 12px 20px;
-        border-radius: 12px;
-        // margin-top: 10px;
-      }
-  
-      .action-sell:hover {
+      &:hover {
         opacity: 1;
       }
+
+      &--buy {
+        @include custom-btn(#06a84b,$color_white,#06a84b);
+      }
+
+      &--sell {
+        @include custom-btn(#ff5f24,$color_white,#ff5f24);
+      }
     }
-
-    
   }
-
 }

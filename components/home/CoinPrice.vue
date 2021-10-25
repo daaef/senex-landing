@@ -6,18 +6,22 @@
         <span class="title">{{ name }}</span>
         <span class="subtitle">{{ abbr }}</span>
       </div>
-      <div class="flex align-center ml-auto">
+      <div class="coin-holder__price-box">
         <div class="coin-holder__coin-price-con">
-          <span class="amount sell"
+          <span class="amount"
             >{{ country.symbol }}{{ Number(buy).toLocaleString() }}</span
           >
-          <span class="btn action-buy">Buy</span>
+          <span class="btn action action--buy"
+            ><a :href="appLink + '/order/start'">Buy</a></span
+          >
         </div>
-        <div class="coin-holder__coin-price-con sell-con">
-          <span class="amount sell"
+        <div class="coin-holder__coin-price-con">
+          <span class="amount"
             >{{ country.symbol }}{{ Number(sell).toLocaleString() }}</span
           >
-          <span class="btn action-sell">Sell</span>
+          <span class="btn action action--sell"
+            ><a :href="appLink + '/order/start'">Sell</a></span
+          >
         </div>
       </div>
     </div>
@@ -55,6 +59,14 @@ export default {
       type: Object,
       default: () => {}
     }
+  },
+  data() {
+    return {
+      appLink: ''
+    }
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
   }
 }
 </script>
