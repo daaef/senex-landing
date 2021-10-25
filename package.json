@@ -17,6 +17,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sentry": "^5.1.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "aos": "^2.3.4",
     "core-js": "^3.9.1",
     "fibers": "^5.0.0",

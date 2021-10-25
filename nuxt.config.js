@@ -88,7 +88,8 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sentry',
     'nuxt-i18n',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/sitemap'
   ],
 
   i18n: {
@@ -131,6 +132,12 @@ export default {
     dsn: process.env.SENTRY_DSN || '',
     disabled: process.env.NODE_ENV === 'development',
     config: {}
+  },
+
+  sitemap: {
+    hostname: 'https://www.senexpay.com',
+    // routes: [],
+    exclude: ['/order/**']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
