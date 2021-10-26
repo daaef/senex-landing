@@ -80,13 +80,13 @@
 
 ::-webkit-scrollbar {
   width: $scrollbar_width;
-  background-color: #F5F5F5;
+  background-color: transparent;//#F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $primary_color;
+  background-color: #707070;//$primary_color;
   // border: 2px solid #555555;
-  // border-radius: 10px;
+  border-radius: 20px;
 }
 
 // .lock-scroll {
