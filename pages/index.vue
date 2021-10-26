@@ -584,7 +584,6 @@ export default {
   mounted() {
     this.appLink = process.env.APP_URL
     AOS.init()
-    this.loading = false
     this.getRates()
   },
   methods: {
