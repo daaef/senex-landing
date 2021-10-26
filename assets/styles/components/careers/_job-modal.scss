@@ -44,3 +44,48 @@
     }
   }
 }
+
+.btn-loader {
+  &__box {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+  
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  
+    &--1 {
+      background-color: #F03484;
+      animation: bouncedot 1.5s linear 0.3s infinite;
+    }
+  
+    &--2 {
+      background-color: #34F0D3;
+      animation: bouncedot 1.5s linear 0.6s infinite;
+    }
+  
+    &--3 {
+      background-color: #FF6E14;
+      animation: bouncedot 1.5s linear 1s infinite;
+    }
+  }
+}
+
+@keyframes bouncedot {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}

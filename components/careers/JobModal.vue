@@ -40,29 +40,29 @@ export default {
     isOpen: {
       type: Boolean,
       default: false
+    },
+    jobs: {
+      type: Array,
+      default: () => []
     }
-    // jobs: {
-    //   type: Array,
-    //   default: () => []
-    // }
   },
   data() {
     return {
-      jobs: []
+      // jobs: []
     }
   },
   mounted() {
-    this.getJobs()
+    // this.getJobs()
   },
   methods: {
     closeModal() {
       this.$emit('close-modal')
-    },
-    getJobs() {
-      this.$axios.get('/jobs/').then((res) => {
-        this.jobs = res.data
-      })
     }
+    // getJobs() {
+    //   this.$axios.get('/jobs/').then((res) => {
+    //     this.jobs = res.data
+    //   })
+    // }
   }
 }
 </script>

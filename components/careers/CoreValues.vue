@@ -13,13 +13,14 @@
             <h2 class="heading-primary u-text-left">
               Let’s make digital finance better together.
             </h2>
-            <button
-              type="button"
-              class="btn register-btn-car"
-              @click="openModal"
-            >
-              View open positions
-            </button>
+            <div class="btn register-btn-car" @click="openModal">
+              <span v-if="!processing">View open positions</span>
+              <span v-else class="btn-loader__box">
+                <span class="btn-loader__dot btn-loader__dot--1"></span>
+                <span class="btn-loader__dot btn-loader__dot--2"></span>
+                <span class="btn-loader__dot btn-loader__dot--3"></span>
+              </span>
+            </div>
           </div>
         </div>
         <div class="foreword-img-car lg:w-3/5 2xl:w-1/2">
@@ -58,6 +59,12 @@
 
 <script>
 export default {
+  props: {
+    processing: {
+      type: Boolean,
+      default: false
+    }
+  },
   methods: {
     openModal() {
       this.$emit('open-modal')

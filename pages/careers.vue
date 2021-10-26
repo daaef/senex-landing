@@ -1,17 +1,18 @@
 <template>
   <div>
     <div>
-      <core-values @open-modal="openModal"></core-values>
+      <core-values :processing="processing" @open-modal="getJobs">
+      </core-values>
       <impactful-work></impactful-work>
       <senex-job></senex-job>
-      <blue-sect @open-modal="openModal"></blue-sect>
+      <blue-sect :processing="processing" @open-modal="getJobs"></blue-sect>
       <!-- <job-position></job-position> -->
       <app-modal
         :v-modal="modalOpen"
         initial-class="job-modal-con"
         final-class-open="job-modal-show"
       >
-        <job-modal @close-modal="closeModal"></job-modal>
+        <job-modal :jobs="jobs" @close-modal="closeModal"></job-modal>
       </app-modal>
       <landing-footer></landing-footer>
     </div>
@@ -42,7 +43,8 @@ export default {
   data() {
     return {
       modalOpen: false,
-      jobs: []
+      jobs: [],
+      processing: false
     }
   },
   head() {
@@ -68,9 +70,17 @@ export default {
       this.modalOpen = true
     },
     getJobs() {
-      this.$axios.get('/jobs/').then((res) => {
-        this.jobs = res.data
-      })
+      this.processing = true
+      this.$axios
+        .get('/jobs/')
+        .then((res) => {
+          this.jobs = res.data
+          this.modalOpen = true
+          this.processing = false
+        })
+        .catch((e) => {
+          this.processing = false
+        })
     }
   }
 }
