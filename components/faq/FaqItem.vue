@@ -15,9 +15,8 @@
         <div
           class="faq-item-con__content paragraph"
           :class="isOpen ? 'block' : 'hidden'"
-        >
-          {{ content }}
-        </div>
+          v-html="content"
+        ></div>
       </div>
     </div>
   </div>

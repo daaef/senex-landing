@@ -7,9 +7,9 @@
             <h3 class="heading-tertiary u-text-left">{{ title }}</h3>
           </div>
           <div class="ad-content-jp lg:w-1/2">
-            <p class="bold-paragraph-jp paragraph">
+            <!-- <p class="bold-paragraph-jp paragraph">
               About the {{ title }} role
-            </p>
+            </p> -->
             <div class="paragraph" v-html="description">
               <!-- {{ description }} -->
             </div>
