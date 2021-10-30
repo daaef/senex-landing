@@ -153,6 +153,10 @@ export default {
           ? apiUrl.slice(0, apiUrl.length - 1)
           : apiUrl
       return url + photo
+    },
+    splitUrl(url) {
+      // console.log(url.split('xyz')[1])
+      return url.split('xyz')[1]
     }
   }
 }

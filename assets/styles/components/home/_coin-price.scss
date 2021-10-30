@@ -15,6 +15,10 @@
     font-size: 14px;
   }
 
+  @include respond(small-phone) {
+    font-size: 13px;
+  }
+
   &__coin-image-con {
     display: block;
     margin-right: 10px;
