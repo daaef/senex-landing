@@ -519,6 +519,7 @@
 <script>
 import { mapState } from 'vuex'
 import AOS from 'aos'
+// import * as Simpu from 'https://static.simpu.co/widgets/v1/simpu-widget.js'
 import 'aos/dist/aos.css'
 import OurObsession from '../components/home/OurObsession.vue'
 import CoinPrice from '~/components/home/CoinPrice.vue'
@@ -585,6 +586,16 @@ export default {
     this.appLink = process.env.APP_URL
     AOS.init()
     this.getRates()
+    // const simpuJS = document.createElement('script')
+    // simpuJS.setAttribute(
+    //   'src',
+    //   'https://static.simpu.co/widgets/v1/simpu-widget.js'
+    // )
+    // document.head.appendChild(simpuJS)
+    const widget = window.Simpu.default.init({
+      platform_id: '1a75fbd8'
+    })
+    widget.render()
   },
   methods: {
     async getRates() {
