@@ -5,6 +5,8 @@ export default {
     script: [
       {
         src: 'https://static.simpu.co/widgets/v1/simpu-widget.js',
+        'data-cfasync': 'false',
+        async: true
       },
     ],
     meta: [

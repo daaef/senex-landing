@@ -593,7 +593,8 @@ export default {
     // )
     // document.head.appendChild(simpuJS)
     const widget = window.Simpu.default.init({
-      platform_id: '1a75fbd8'
+      app_id: '1a75fbd8', // spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C
+      public_key: 'spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C'
     })
     widget.render()
   },
