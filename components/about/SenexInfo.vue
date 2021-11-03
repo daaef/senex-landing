@@ -14,19 +14,19 @@
           <div class="grid grid-cols-2 lg:flex stat-con">
             <div class="year">
               <span>
-                <h2>2019</h2>
+                <h2>2016</h2>
                 <p>Senex Launched</p>
               </span>
             </div>
             <div class="year">
               <span>
-                <h2>30+</h2>
+                <h2>15+</h2>
                 <p>Employees</p>
               </span>
             </div>
             <div class="year">
               <span>
-                <h2>N22M</h2>
+                <h2>$10M</h2>
                 <p>Transactions till date</p>
               </span>
             </div>
