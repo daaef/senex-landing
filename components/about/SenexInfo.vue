@@ -30,12 +30,12 @@
                 <p>Transactions till date</p>
               </span>
             </div>
-            <div class="year">
+            <!-- <div class="year">
               <span>
                 <h2>140</h2>
                 <p>Countries</p>
               </span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
