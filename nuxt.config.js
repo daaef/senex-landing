@@ -4,9 +4,7 @@ export default {
     title: 'SenexPay - Buy and sell crypto in minutes.',
     script: [
       {
-        src: 'https://static.simpu.co/widgets/v1/simpu-widget.js',
-        'data-cfasync': 'false',
-        async: true
+        src: 'https://static.simpu.co/widgets/v1/simpu-widget.js'
       },
     ],
     meta: [

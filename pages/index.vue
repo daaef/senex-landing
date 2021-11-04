@@ -592,11 +592,13 @@ export default {
     //   'https://static.simpu.co/widgets/v1/simpu-widget.js'
     // )
     // document.head.appendChild(simpuJS)
-    const widget = window.Simpu.default.init({
-      app_id: '1a75fbd8', // spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C
-      public_key: 'spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C'
-    })
-    widget.render()
+    if (window !== undefined) {
+      const widget = window.Simpu.default.init({
+        app_id: '1a75fbd8', // spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C
+        public_key: 'spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C'
+      })
+      widget.render()
+    }
   },
   methods: {
     async getRates() {
