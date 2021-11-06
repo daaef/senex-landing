@@ -92,6 +92,12 @@
             <div class="lg:w-3/5">
               <div class="lg:flex lg:w-4/5 footer-social-con">
                 <a
+                  href="https://www.instagram.com/senexng/"
+                  class="block lg:inline-block"
+                  target="_blank"
+                  >Instagram</a
+                >
+                <a
                   href="https://web.facebook.com/senexng/"
                   class="block lg:inline-block"
                   target="_blank"
@@ -102,12 +108,6 @@
                   class="block lg:inline-block"
                   target="_blank"
                   >Twitter</a
-                >
-                <a
-                  href="https://www.instagram.com/senexng/"
-                  class="block lg:inline-block"
-                  target="_blank"
-                  >Instagram</a
                 >
                 <a
                   href="https://linkedin.com/company/senexpay/"

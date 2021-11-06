@@ -34,22 +34,29 @@
             <div class="contact-type-con">
               <p class="title heading-tertiary--v-sm">Send us an Email</p>
               <div class="location-con paragraph">
-                <span class="location">info@senexpay.com</span>
-                <span class="type">Send an Email</span>
+                <span class="location">hello@senexpay.com</span>
+                <a href="mailto:hello@senexpay.com" class="type"
+                  >Send an Email</a
+                >
               </div>
             </div>
             <div class="contact-type-con">
               <p class="title heading-tertiary--v-sm">Call us</p>
               <div class="location-con paragraph">
                 <span class="location">+234 705 274 4444</span>
-                <span class="type">Call now</span>
+                <a href="tel:+2347052744444" class="type">Call now</a>
               </div>
             </div>
             <div class="contact-type-con">
               <p class="title heading-tertiary--v-sm">Chat us on Whatsapp</p>
               <div class="location-con paragraph">
                 <span class="location">+234 818 489 9239</span>
-                <span class="type">Chat now</span>
+                <a
+                  href="https://api.whatsapp.com/send?phone=+2348184899239"
+                  target="_blank"
+                  class="type"
+                  >Chat now</a
+                >
               </div>
             </div>
           </div>
