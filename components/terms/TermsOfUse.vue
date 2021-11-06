@@ -4,14 +4,14 @@
       <div class="con-tp">
         <div class="main-header-tp">
           <h1 class="heading-primary heading-primary--wt-600 u-mb-sm">
-            SenexPay Terms Of Use
+            SenexPay Terms Of Service
           </h1>
           <p class="paragraph u-text-color--black">
             Last Revised: March 28, 2021
           </p>
         </div>
         <p class="first-para-tou paragraph">
-          Welcome to SenexPay’s Terms of Use! We are truly excited to have you
+          Welcome to SenexPay’s Terms of Service! We are truly excited to have you
           aboard. Thank you for choosing to use our services.
         </p>
         <p class="first-para-tp paragraph">
