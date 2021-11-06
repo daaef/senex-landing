@@ -211,12 +211,12 @@ export default {
   layout: 'about',
   head() {
     return {
-      title: 'Contact Us',
+      title: 'Talk to us | SenexPay',
       meta: [
         {
           hid: 'SenexPay Contact',
-          name: 'Contact - SenexPay',
-          content: 'SenexPay'
+          name: 'SenexPay Contact',
+          content: 'You can reach easily and get support.'
         }
       ]
     }

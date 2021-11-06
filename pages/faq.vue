@@ -54,12 +54,13 @@ export default {
   },
   head() {
     return {
-      title: 'FAQ',
+      title: 'Frequently Asked Questions | SenexPay',
       meta: [
         {
-          hid: 'SenexPay FAQ Page',
+          hid: 'FAQ - SenexPay',
           name: 'FAQ - SenexPay',
-          content: 'SenexPay'
+          content:
+            'Check out our FAQs and get some of your questions answered quickly.'
         }
       ]
     }

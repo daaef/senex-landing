@@ -567,12 +567,12 @@ export default {
   },
   head() {
     return {
-      title: 'Home',
+      title: 'Buy & Sell Bitcoin, USDT and more securely. | SenexPay',
       meta: [
         {
-          hid: 'SenexPay Home Page',
+          hid: 'Home - SenexPay',
           name: 'Home - SenexPay',
-          content: 'SenexPay'
+          content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
         }
       ]
     }

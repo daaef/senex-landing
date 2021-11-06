@@ -94,12 +94,13 @@ export default {
   },
   head() {
     return {
-      title: 'About',
+      title: 'Our mission, vision and core values. | SenexPay',
       meta: [
         {
-          hid: 'SenexPay About Page',
+          hid: 'About - SenexPay',
           name: 'About - SenexPay',
-          content: 'SenexPay'
+          content:
+            'Our easy and secure platform got everyone falling in love with Crypto'
         }
       ]
     }

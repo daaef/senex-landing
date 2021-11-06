@@ -13,12 +13,13 @@ export default {
   layout: 'about',
   head() {
     return {
-      title: 'Terms of Service',
+      title: 'Terms of Service | SenexPay',
       meta: [
         {
-          hid: 'SenexPay Terms',
+          hid: 'Terms - SenexPay',
           name: 'Terms - SenexPay',
-          content: 'SenexPay'
+          content:
+            'Welcome to SenexPay’s Terms of Use! We are truly excited to have you aboard. Thank you for choosing to use our services.'
         }
       ]
     }

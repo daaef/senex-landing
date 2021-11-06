@@ -49,12 +49,12 @@ export default {
   },
   head() {
     return {
-      title: 'Careers',
+      title: 'We are Hiring | SenexPay',
       meta: [
         {
-          hid: 'SenexPay Careers',
+          hid: 'Careers - SenexPay',
           name: 'Careers - SenexPay',
-          content: 'SenexPay'
+          content: 'Let’s make digital finance better together.'
         }
       ]
     }

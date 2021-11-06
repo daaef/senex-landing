@@ -13,12 +13,13 @@ export default {
   layout: 'about',
   head() {
     return {
-      title: 'Privacy Policy',
+      title: 'Privacy Policy | SenexPay',
       meta: [
         {
-          hid: 'SenexPay Privacy',
+          hid: 'Privacy - SenexPay',
           name: 'Privacy - SenexPay',
-          content: 'SenexPay'
+          content:
+            'We value data-privacy and ensure that our customers enjoy full privacy of their data.'
         }
       ]
     }
