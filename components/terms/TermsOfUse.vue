@@ -11,8 +11,8 @@
           </p>
         </div>
         <p class="first-para-tou paragraph">
-          Welcome to SenexPay’s Terms of Service! We are truly excited to have you
-          aboard. Thank you for choosing to use our services.
+          Welcome to SenexPay’s Terms of Service! We are truly excited to have
+          you aboard. Thank you for choosing to use our services.
         </p>
         <p class="first-para-tp paragraph">
           Below we have listed important legal terms that apply to anyone who
