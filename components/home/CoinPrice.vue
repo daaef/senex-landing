@@ -16,9 +16,7 @@
           > -->
           <span class="btn action action--buy"
             ><a
-              :href="
-                appLink + '/order/start/?type=buy&order=' + abbr.toLowerCase()
-              "
+              :href="`${appLink}/order/start/?type=buy&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
               >Buy</a
             ></span
           >
@@ -29,9 +27,7 @@
           >
           <span class="btn action action--sell"
             ><a
-              :href="
-                appLink + '/order/start/?type=sell&order=' + abbr.toLowerCase()
-              "
+              :href="`${appLink}/order/start/?type=sell&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
               >Sell</a
             ></span
           >
