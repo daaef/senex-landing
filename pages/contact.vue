@@ -28,7 +28,12 @@
               </p>
               <div class="location-con paragraph">
                 <span class="location">Lekki, Lagos, Nigeria.</span>
-                <span class="type">Find on Maps</span>
+                <a
+                  href="https://www.google.com/maps/place/Numberone/@6.4270853,3.4367673,16z/data=!4m9!1m2!2m1!1sNumberone,+Ligali+Ayorinde+St,+Victoria+Island+106104,+Lagos!3m5!1s0x103bf512d0a268e5:0x951f41058a9456e4!8m2!3d6.4270853!4d3.4411447!15sCjxOdW1iZXJvbmUsIExpZ2FsaSBBeW9yaW5kZSBTdCwgVmljdG9yaWEgSXNsYW5kIDEwNjEwNCwgTGFnb3OSARBjb3Jwb3JhdGVfb2ZmaWNl"
+                  class="type"
+                  target="_blank"
+                  >Find on Maps</a
+                >
               </div>
             </div>
             <div class="contact-type-con">

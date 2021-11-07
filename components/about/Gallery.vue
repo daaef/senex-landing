@@ -25,8 +25,8 @@
 <script>
 export default {
   mounted() {
-    const width = this.$refs.gallery.clientWidth
-    this.$nextTick(() => this.$refs.gallery.scrollTo(width / 4, 0))
+    // const width = this.$refs.gallery.clientWidth
+    // this.$nextTick(() => this.$refs.gallery.scrollTo(width / 4, 0))
     // this.$nextTick(() =>
     //   this.$refs.gallery.scrollIntoView({
     //     inline: 'center',
@@ -37,12 +37,18 @@ export default {
   methods: {
     rightScroll() {
       const width = this.$refs.gallery.clientWidth
-      const scrollPoint = this.$refs.gallery.scrollLeft + width / 4
+      let scrollPoint = this.$refs.gallery.scrollLeft + width / 3
+      if (width <= 600) {
+        scrollPoint = this.$refs.gallery.scrollLeft + width
+      }
       this.$refs.gallery.scrollTo({ left: scrollPoint, behavior: 'smooth' })
     },
     leftScroll() {
       const width = this.$refs.gallery.clientWidth
-      const scrollPoint = this.$refs.gallery.scrollLeft - width / 4
+      let scrollPoint = this.$refs.gallery.scrollLeft - width / 3
+      if (width <= 600) {
+        scrollPoint = this.$refs.gallery.scrollLeft - width
+      }
       this.$refs.gallery.scrollTo({ left: scrollPoint, behavior: 'smooth' })
     }
   }
