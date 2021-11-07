@@ -106,23 +106,18 @@ export default {
     '@nuxtjs/sentry',
     'nuxt-i18n',
     '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/onesignal',
   ],
 
   i18n: {
-    locales: ['en', 'fr', 'es'],
+    locales: ['en', 'za'],
     defaultLocale: 'en',
     vueI18n: {
       fallbackLocale: 'en',
       messages: {
         en: {
           welcome: 'Welcome'
-        },
-        fr: {
-          welcome: 'Bienvenue'
-        },
-        es: {
-          welcome: 'Bienvenido'
         }
       }
     }
@@ -139,14 +134,35 @@ export default {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
 
+  oneSignal: {
+    init: {
+      appId: process.env.ONE_SIGNAL_APP_ID,
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true
+      }
+    },
+    cdn: true,
+    OneSignalSDK: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js'
+  },
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
+      name: 'SenexPay',
       lang: 'en',
-      name: 'SenexPAY',
       author: 'Rikozone Technology',
+      theme_color: '#058856',
       categories: ['finance', 'money', 'exchange']
-    }
+    },
+    workbox: {
+      // options
+      // dev: true,
+      offlineAnalytics: true,
+      config: {
+        // debug: true
+      }
+    },
   },
 
   sentry: {
@@ -158,7 +174,12 @@ export default {
   sitemap: {
     hostname: 'https://www.senexpay.com',
     // routes: [],
-    exclude: ['/order/**']
+    // nuxt-i18n notation (advanced)
+    // i18n: {
+    //   locales: ['en', 'za'],
+    //   routesNameSeparator: '___'
+    // },
+    exclude: ['/blog']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
