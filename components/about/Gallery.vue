@@ -39,7 +39,7 @@ export default {
       const width = this.$refs.gallery.clientWidth
       let scrollPoint = this.$refs.gallery.scrollLeft + width / 3
       if (width <= 600) {
-        scrollPoint = this.$refs.gallery.scrollLeft + width
+        scrollPoint = this.$refs.gallery.scrollLeft + width + 25
       }
       this.$refs.gallery.scrollTo({ left: scrollPoint, behavior: 'smooth' })
     },
@@ -47,7 +47,7 @@ export default {
       const width = this.$refs.gallery.clientWidth
       let scrollPoint = this.$refs.gallery.scrollLeft - width / 3
       if (width <= 600) {
-        scrollPoint = this.$refs.gallery.scrollLeft - width
+        scrollPoint = this.$refs.gallery.scrollLeft - width + 25
       }
       this.$refs.gallery.scrollTo({ left: scrollPoint, behavior: 'smooth' })
     }
