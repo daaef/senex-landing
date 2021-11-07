@@ -219,11 +219,12 @@ export default {
       title: 'Talk to us | SenexPay',
       meta: [
         {
-          hid: 'SenexPay Contact',
-          name: 'SenexPay Contact',
+          hid: 'description',
+          name: 'description',
           content: 'You can reach easily and get support.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/contact' }]
     }
   }
 }

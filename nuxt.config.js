@@ -1,6 +1,10 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    htmlAttrs: {
+      lang: 'en',
+      'data-n-head': 'lang'
+    },
     title: 'SenexPay - Buy and sell crypto in minutes.',
     script: [
       {
@@ -12,14 +16,20 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'SenexPay Dashboard',
-        name: 'SenexPay',
-        content: 'SenexPay Dashboard'
+        hid: 'description',
+        name: 'description',
+        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
       },
+      {
+        name: 'keywords',
+        content:
+          'bitcoin, exchange, trade, btc, sell, buy, nigeria, sell bitcoin, buy bitcoin, otc, buy bitcoins in nigeria, sell bitcoins in nigeria, fast, secure, reliable, senex, senexpay, senex payment services, money, credit card, debit card, payment, buy bitcoin with card, blockchain, network, block, hash, confirmations, KYC, 24/7 exchange, currency exchange, crypto exchange, senex services payment'
+      },
+      { name: 'theme-color', content: '#058856' },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'SenexPay Dashboard'
+        content: 'Buy & Sell Bitcoin, USDT and more securely | SenexPay'
       },
       {
         hid: 'og:image',
@@ -37,17 +47,17 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Buy and sell Cryptocurrency the easy way'
+        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
       },
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'SenexPay Dashboard'
+        content: 'Buy & Sell Bitcoin, USDT and more securely | SenexPay'
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'Buy and sell Cryptocurrency the easy way'
+        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
       },
       {
         hid: 'twitter:image',
@@ -78,7 +88,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/composition-api/module'
+    '@nuxtjs/composition-api/module',
+    '@nuxtjs/google-analytics'
   ],
 
   generate: {
@@ -122,6 +133,10 @@ export default {
       // process.env.NODE_ENV === 'development'
       //   ? process.env.API_URL_DEV
       //   : process.env.API_URL_PROD
+  },
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

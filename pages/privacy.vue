@@ -16,12 +16,13 @@ export default {
       title: 'Privacy Policy | SenexPay',
       meta: [
         {
-          hid: 'Privacy - SenexPay',
-          name: 'Privacy - SenexPay',
+          hid: 'description',
+          name: 'description',
           content:
             'We value data-privacy and ensure that our customers enjoy full privacy of their data.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/privacy' }]
     }
   }
 }

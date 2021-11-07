@@ -16,12 +16,13 @@ export default {
       title: 'Terms of Service | SenexPay',
       meta: [
         {
-          hid: 'Terms - SenexPay',
-          name: 'Terms - SenexPay',
+          hid: 'description',
+          name: 'description',
           content:
-            'Welcome to SenexPay’s Terms of Use! We are truly excited to have you aboard. Thank you for choosing to use our services.'
+            'Welcome to SenexPay’s Terms of Service! We are truly excited to have you aboard. Thank you for choosing to use our services.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/terms' }]
     }
   }
 }

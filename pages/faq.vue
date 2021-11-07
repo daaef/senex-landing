@@ -57,12 +57,13 @@ export default {
       title: 'Frequently Asked Questions | SenexPay',
       meta: [
         {
-          hid: 'FAQ - SenexPay',
-          name: 'FAQ - SenexPay',
+          hid: 'description',
+          name: 'description',
           content:
             'Check out our FAQs and get some of your questions answered quickly.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/faq' }]
     }
   },
   watch: {

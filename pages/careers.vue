@@ -52,11 +52,12 @@ export default {
       title: 'We are Hiring | SenexPay',
       meta: [
         {
-          hid: 'Careers - SenexPay',
-          name: 'Careers - SenexPay',
+          hid: 'description',
+          name: 'description',
           content: 'Let’s make digital finance better together.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/careers' }]
     }
   },
   mounted() {

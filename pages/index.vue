@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <div class="snx-hero-banner">
+    <div ref="snxBanner" class="snx-hero-banner">
       <div class="container">
         <div class="block lg:flex">
           <div class="w-full lg:w-1/2 snx-hero-content-holder">
@@ -31,7 +31,12 @@
                 <a :href="appLink + '/register'" class="register_btn"
                   >Create your account</a
                 >
-                <a href="#coin-section" class="trading_btn">Start trading</a>
+                <span
+                  ref="coinPrice"
+                  class="trading_btn u-cursor-pointer"
+                  @click="scrollToCoin"
+                  >Start trading</span
+                >
               </div>
             </div>
           </div>
@@ -565,14 +570,15 @@ export default {
   },
   head() {
     return {
-      title: 'Buy & Sell Bitcoin, USDT and more securely. | SenexPay',
+      title: 'Buy & Sell Bitcoin, USDT and more securely | SenexPay',
       meta: [
         {
-          hid: 'Home - SenexPay',
-          name: 'Home - SenexPay',
+          hid: 'description',
+          name: 'description',
           content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/' }]
     }
   },
   computed: {
@@ -599,6 +605,19 @@ export default {
     }
   },
   methods: {
+    scrollToCoin() {
+      this.$nextTick(() => {
+        const top = this.$refs.snxBanner.clientHeight - 85
+        window.scrollTo({
+          top,
+          behavior: 'smooth'
+        })
+        // this.$refs.coinPrice.scrollIntoView({
+        //   behavior: 'smooth',
+        //   block: 'start'
+        // })
+      })
+    },
     async getRates() {
       // this.isLoading = true
       try {
