@@ -11,8 +11,16 @@
           <span class="amount"
             >{{ country.symbol }}{{ Number(buy).toLocaleString() }}</span
           >
-          <span class="btn action action--buy"
+          <!-- <span class="btn action action--buy"
             ><a :href="appLink + '/order/start'">Buy</a></span
+          > -->
+          <span class="btn action action--buy"
+            ><a
+              :href="
+                appLink + '/order/start/?type=buy&order=' + abbr.toLowerCase()
+              "
+              >Buy</a
+            ></span
           >
         </div>
         <div class="coin-holder__coin-price-con">
@@ -20,7 +28,12 @@
             >{{ country.symbol }}{{ Number(sell).toLocaleString() }}</span
           >
           <span class="btn action action--sell"
-            ><a :href="appLink + '/order/start'">Sell</a></span
+            ><a
+              :href="
+                appLink + '/order/start/?type=sell&order=' + abbr.toLowerCase()
+              "
+              >Sell</a
+            ></span
           >
         </div>
       </div>

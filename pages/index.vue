@@ -31,9 +31,7 @@
                 <a :href="appLink + '/register'" class="register_btn"
                   >Create your account</a
                 >
-                <a :href="appLink + '/order/start'" class="trading_btn"
-                  >Start trading</a
-                >
+                <a href="#coin-section" class="trading_btn">Start trading</a>
               </div>
             </div>
           </div>
@@ -94,7 +92,7 @@
       </div>
     </div>
     <!-- Crypocurrencies and amounts -->
-    <div class="coin-section">
+    <div id="coin-section" class="coin-section">
       <div class="container mx-auto overflow-con">
         <coin-price
           name="Bitcoin"

@@ -20,6 +20,9 @@
   height: auto;
   color: $primary_color;
 
+  @include respond(phone) {
+    padding-top: 30px;
+  }
 
 
   &__title {

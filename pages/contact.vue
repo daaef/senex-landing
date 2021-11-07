@@ -29,7 +29,7 @@
               <div class="location-con paragraph">
                 <span class="location">Lekki, Lagos, Nigeria.</span>
                 <a
-                  href="https://www.google.com/maps/place/Numberone/@6.4270853,3.4367673,16z/data=!4m9!1m2!2m1!1sNumberone,+Ligali+Ayorinde+St,+Victoria+Island+106104,+Lagos!3m5!1s0x103bf512d0a268e5:0x951f41058a9456e4!8m2!3d6.4270853!4d3.4411447!15sCjxOdW1iZXJvbmUsIExpZ2FsaSBBeW9yaW5kZSBTdCwgVmljdG9yaWEgSXNsYW5kIDEwNjEwNCwgTGFnb3OSARBjb3Jwb3JhdGVfb2ZmaWNl"
+                  href="https://www.google.com/maps/place/NumberOne+Lagos+(IMB+Building)/@6.4229469,3.421408,17z/data=!3m1!4b1!4m5!3m4!1s0x103bf543d59b3b85:0xca3bd3363638d8da!8m2!3d6.4229416!4d3.4235967"
                   class="type"
                   target="_blank"
                   >Find on Maps</a
@@ -75,7 +75,7 @@
           Get Social With Us
         </h3>
         <div class="socials-con">
-          <div class="social fb">
+          <a href="https://web.facebook.com/senexng/" class="social fb">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,8 +90,8 @@
                   transform="translate(-2.571 -1.928)"
                 /></svg
             ></span>
-          </div>
-          <div class="social ig">
+          </a>
+          <a href="https://www.instagram.com/senexng/" class="social ig">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +105,8 @@
                   d="M72.4,0C52.731,0,50.275.09,42.553.434A53.386,53.386,0,0,0,24.978,3.8a35.454,35.454,0,0,0-12.827,8.35A35.325,35.325,0,0,0,3.8,24.978,53.23,53.23,0,0,0,.434,42.553C.072,50.275,0,52.731,0,72.4s.09,22.124.434,29.847A53.419,53.419,0,0,0,3.8,119.821a35.505,35.505,0,0,0,8.35,12.827A35.4,35.4,0,0,0,24.978,141a53.452,53.452,0,0,0,17.575,3.367c7.723.362,10.178.434,29.847.434s22.124-.09,29.847-.434A53.576,53.576,0,0,0,119.821,141,37,37,0,0,0,141,119.821a53.419,53.419,0,0,0,3.367-17.575c.362-7.723.434-10.178.434-29.847s-.09-22.124-.434-29.847A53.542,53.542,0,0,0,141,24.978a35.533,35.533,0,0,0-8.35-12.827A35.275,35.275,0,0,0,119.821,3.8,53.263,53.263,0,0,0,102.246.434C94.523.072,92.068,0,72.4,0Zm0,13.032c19.325,0,21.629.1,29.261.428,7.059.332,10.89,1.5,13.436,2.5A23.825,23.825,0,0,1,128.841,29.7c.989,2.546,2.172,6.377,2.492,13.436.344,7.638.422,9.931.422,29.261s-.09,21.629-.446,29.261c-.368,7.059-1.545,10.89-2.54,13.436a22.988,22.988,0,0,1-5.424,8.338,22.587,22.587,0,0,1-8.326,5.406c-2.534.989-6.425,2.172-13.484,2.492-7.686.344-9.949.422-29.316.422s-21.635-.09-29.316-.446c-7.065-.368-10.956-1.545-13.49-2.54a22.421,22.421,0,0,1-8.32-5.424,21.984,21.984,0,0,1-5.43-8.326c-1-2.534-2.166-6.425-2.534-13.484-.271-7.6-.368-9.949-.368-29.225s.1-21.635.368-29.328c.368-7.059,1.538-10.944,2.534-13.478a21.461,21.461,0,0,1,5.43-8.332,21.414,21.414,0,0,1,8.32-5.418c2.534-1,6.341-2.178,13.4-2.54,7.692-.271,9.955-.362,29.316-.362l.271.181Zm0,22.19A37.177,37.177,0,1,0,109.576,72.4,37.175,37.175,0,0,0,72.4,35.222Zm0,61.31A24.133,24.133,0,1,1,96.533,72.4,24.126,24.126,0,0,1,72.4,96.533Zm47.337-62.776a8.688,8.688,0,1,1-8.688-8.682A8.694,8.694,0,0,1,119.737,33.756Z"
                 /></svg
             ></span>
-          </div>
-          <div class="social tw">
+          </a>
+          <a href="https://twitter.com/senexng/" class="social tw">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +121,7 @@
                   transform="translate(0 -3.381)"
                 /></svg
             ></span>
-          </div>
+          </a>
           <div class="social yt">
             <span class="icon-con"
               ><svg
@@ -138,7 +138,7 @@
                 /></svg
             ></span>
           </div>
-          <div class="social li">
+          <a href="https://linkedin.com/company/senexpay/" class="social li">
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +153,7 @@
                   transform="translate(0 -2.25)"
                 /></svg
             ></span>
-          </div>
+          </a>
         </div>
       </div>
     </div>
