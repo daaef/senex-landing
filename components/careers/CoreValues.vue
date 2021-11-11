@@ -28,18 +28,29 @@
             <div class="top-left">
               <img
                 src="/img/careers/career-boy-1.png"
-                alt="Combination of four pictures of showing young people in working mode with laptops."
+                alt="Combination of four pictures of showing young people in working mode with laptops one."
+                loading="lazy"
               />
             </div>
             <div class="top-right">
-              <img src="/img/careers/career-girl-1.png" />
+              <img
+                src="/img/careers/career-girl-1.png"
+                alt="Combination of four pictures of showing young people in working mode with laptops two."
+                loading="lazy"
+              />
             </div>
             <div class="bottom-left">
-              <img src="/img/careers/career-boy-2.png" />
+              <img
+                src="/img/careers/career-boy-2.png"
+                alt="Combination of four pictures of showing young people in working mode with laptops three."
+                loading="lazy"
+              />
             </div>
             <div class="bottom-right">
               <img
-                src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/career-girl-2_yeqcxb.png"
+                src="https://res.cloudinary.com/senexpay/image/upload/w_500/v1636463130/assets/career-girl-2_yeqcxb.png"
+                loading="lazy"
+                alt="Combination of four pictures of showing young people in working mode with laptops four."
               />
             </div>
           </div>

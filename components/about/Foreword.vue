@@ -31,13 +31,14 @@
           </span>
         </div>
         <div class="foreword-img">
-          <div class="lg:w-4/5 forward-img-con ml-auto">
+          <div class="lg:w-4/5 forward-img-con">
             <div class="dotted-img">
               <img src="/img/dotted-grid.png" alt="img-design" />
             </div>
             <div class="ceo-img">
               <img
-                src="https://res.cloudinary.com/senexpay/image/upload/v1636463129/assets/senexpay-ceo_zspvsi.png"
+                src="https://res.cloudinary.com/senexpay/image/upload/w_600/v1636463129/assets/senexpay-ceo_zspvsi.png"
+                loading="lazy"
                 alt="C.E.O"
               />
             </div>

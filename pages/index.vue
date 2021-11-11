@@ -143,7 +143,8 @@
             <img
               class="girl-with-phone"
               alt="A girl holding a phone in her hands and sitting on the floor."
-              src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/girl-with-phone-radius_jgukxi.png"
+              loading="lazy"
+              src="https://res.cloudinary.com/senexpay/image/upload/w_300/v1636463130/assets/girl-with-phone-radius_jgukxi.png"
             />
             <img
               class="yellow-star yellow-star--1"
@@ -246,8 +247,9 @@
           >
             <div class="screenshot-con">
               <img
-                alt="A young man holding a Bitcoin coin and making a signal."
-                src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/vp-3screenshot_t9esow.png"
+                alt="SenexPay dashboard and app screenshot."
+                src="https://res.cloudinary.com/senexpay/image/upload/w_500/v1636463130/assets/vp-3screenshot_t9esow.png"
+                loading="lazy"
                 class="screenshot-img lg:ml-auto"
               />
               <img
