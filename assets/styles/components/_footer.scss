@@ -75,7 +75,8 @@
     .logo-con {
       height: 40px;
       display: inline-block;
-      max-width: 200px;
+      align-self: flex-start;
+      // max-width: 200px;
       margin-bottom: 15px;
       cursor: pointer;
       

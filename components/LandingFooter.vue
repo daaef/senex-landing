@@ -6,7 +6,7 @@
           <div class="mr-auto lg:w-1/3">
             <div class="logo-copyright">
               <span class="logo-con" @click="toHome()"
-                ><img src="/img/senexpay-logo-light.png"
+                ><img src="/img/senexpay-logo-light.png" alt="logo"
               /></span>
               <span class="copyright">SenexPay © 2021</span>
               <!-- <div class="terms-link">
