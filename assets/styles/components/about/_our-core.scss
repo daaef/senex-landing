@@ -6,6 +6,10 @@
   border-radius: 12px;
   padding: 30px;
 
+  @include respond(big-desktop) {
+    max-width: 1200px;
+  }
+
   @include respond(tab-land-sm) {
     display: block;
     max-width: 500px;

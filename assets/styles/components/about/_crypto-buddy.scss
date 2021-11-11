@@ -41,6 +41,10 @@
     top: 30%;
     left: 20%;
     background-color: #FA8787;
+
+    @include respond(phone) {
+      left: 5%;
+    }
   }
 
   &--4 {
