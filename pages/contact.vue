@@ -32,6 +32,7 @@
                   href="https://www.google.com/maps/place/NumberOne+Lagos+(IMB+Building)/@6.4229469,3.421408,17z/data=!3m1!4b1!4m5!3m4!1s0x103bf543d59b3b85:0xca3bd3363638d8da!8m2!3d6.4229416!4d3.4235967"
                   class="type"
                   target="_blank"
+                  rel="noopener"
                   >Find on Maps</a
                 >
               </div>
@@ -40,7 +41,7 @@
               <p class="title heading-tertiary--v-sm">Send us an Email</p>
               <div class="location-con paragraph">
                 <span class="location">hello@senexpay.com</span>
-                <a href="mailto:hello@senexpay.com" class="type"
+                <a href="mailto:hello@senexpay.com" class="type" rel="noopener"
                   >Send an Email</a
                 >
               </div>
@@ -49,7 +50,9 @@
               <p class="title heading-tertiary--v-sm">Call us</p>
               <div class="location-con paragraph">
                 <span class="location">+234 705 274 4444</span>
-                <a href="tel:+2347052744444" class="type">Call now</a>
+                <a href="tel:+2347052744444" rel="noopener" class="type"
+                  >Call now</a
+                >
               </div>
             </div>
             <div class="contact-type-con">
@@ -60,6 +63,7 @@
                   href="https://api.whatsapp.com/send?phone=+2348184899239"
                   target="_blank"
                   class="type"
+                  rel="noopener"
                   >Chat now</a
                 >
               </div>
@@ -75,7 +79,11 @@
           Get Social With Us
         </h3>
         <div class="socials-con">
-          <a href="https://web.facebook.com/senexng/" class="social fb">
+          <a
+            href="https://web.facebook.com/senexng/"
+            class="social fb"
+            rel="noopener"
+          >
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +99,11 @@
                 /></svg
             ></span>
           </a>
-          <a href="https://www.instagram.com/senexng/" class="social ig">
+          <a
+            href="https://www.instagram.com/senexng/"
+            class="social ig"
+            rel="noopener"
+          >
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +118,11 @@
                 /></svg
             ></span>
           </a>
-          <a href="https://twitter.com/senexng/" class="social tw">
+          <a
+            href="https://twitter.com/senexng/"
+            class="social tw"
+            rel="noopener"
+          >
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +154,11 @@
                 /></svg
             ></span>
           </div>
-          <a href="https://linkedin.com/company/senexpay/" class="social li">
+          <a
+            href="https://linkedin.com/company/senexpay/"
+            class="social li"
+            rel="noopener"
+          >
             <span class="icon-con"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"

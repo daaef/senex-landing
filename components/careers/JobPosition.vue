@@ -45,7 +45,7 @@
                 to improve development efficiency.
               </li>
             </ul> -->
-            <a :href="applicationUrl" target="_blank">
+            <a :href="applicationUrl" target="_blank" rel="noopener">
               <button type="button" class="btn register-btn-jp">
                 Apply now
               </button>

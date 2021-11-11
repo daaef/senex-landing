@@ -28,7 +28,10 @@
                 exchange without any hassle.
               </p>
               <div class="snx-hero-content__btn_holder">
-                <a :href="appLink + '/register'" class="register_btn"
+                <a
+                  :href="appLink + '/register'"
+                  class="register_btn"
+                  rel="noopener"
                   >Create your account</a
                 >
                 <span

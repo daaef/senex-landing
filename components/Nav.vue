@@ -3,13 +3,14 @@
     <div class="landing-nav" :style="theme">
       <div class="nav-holder container">
         <span class="logo-con" :class="sideBarOpen ? 'invisible-logo' : ''"
-          ><router-link to="/"
+          ><router-link to="/" aria-label="logo"
             ><img
               :src="
                 theme.lightTheme
                   ? '/img/senex-full-logo.png'
                   : '/img/senexpay-logo-light.png'
               "
+              alt="logo"
               class="logo" /></router-link
         ></span>
         <div class="nav-con">
@@ -22,8 +23,13 @@
               <router-link class="link" to="/contact">Contact us</router-link>
             </div>
             <div class="register-con">
-              <a :href="appLink + '/login'" class="log-in link">Sign in</a>
-              <a :href="appLink + '/register'" class="btn register-btn"
+              <a :href="appLink + '/login'" class="log-in link" rel="noopener"
+                >Sign in</a
+              >
+              <a
+                :href="appLink + '/register'"
+                class="btn register-btn"
+                rel="noopener"
                 >Create your account</a
               >
               <div class="country-con">

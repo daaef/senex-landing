@@ -20,7 +20,7 @@
               online in no time with just a little discount. Get paid in your C
             </p> -->
           </div>
-          <a :href="appLink + '/order/start'">
+          <a :href="appLink + '/order/start'" rel="noopener">
             <button type="button" class="register-btn-abt">
               Start trading
             </button>

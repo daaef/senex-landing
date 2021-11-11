@@ -24,7 +24,10 @@
           >Buy and sell Bitcoin and USDT easy and fast without hassles. It’s
           never been easier.</span
         >
-        <a :href="appLink + '/register'" class="btn our-obsession__register-btn"
+        <a
+          :href="appLink + '/register'"
+          class="btn our-obsession__register-btn"
+          rel="noopener"
           >Create your account</a
         >
       </div>

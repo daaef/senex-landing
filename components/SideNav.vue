@@ -10,9 +10,13 @@
           <!-- <span class="link" @click="goTo('/learn')">Learn</span> -->
           <span class="link" @click="goTo('/faq')">FAQ</span>
           <span class="link" @click="goTo('/contact')">Contact us</span>
-          <span class="link"><a :href="appLink + '/login'">Sign in</a></span>
+          <span class="link"
+            ><a :href="appLink + '/login'" rel="noopener">Sign in</a></span
+          >
           <span class="link btn register-btn"
-            ><a :href="appLink + '/register'">Create your account</a></span
+            ><a :href="appLink + '/register'" rel="noopener"
+              >Create your account</a
+            ></span
           >
           <div class="country-con">
             <div class="country-icon">

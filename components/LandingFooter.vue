@@ -95,24 +95,28 @@
                   href="https://www.instagram.com/senexng/"
                   class="block lg:inline-block"
                   target="_blank"
+                  rel="noopener"
                   >Instagram</a
                 >
                 <a
                   href="https://web.facebook.com/senexng/"
                   class="block lg:inline-block"
                   target="_blank"
+                  rel="noopener"
                   >Facebook</a
                 >
                 <a
                   href="https://twitter.com/senexng/"
                   class="block lg:inline-block"
                   target="_blank"
+                  rel="noopener"
                   >Twitter</a
                 >
                 <a
                   href="https://linkedin.com/company/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
+                  rel="noopener"
                   >LinkedIn</a
                 >
               </div>
