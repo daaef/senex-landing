@@ -36,7 +36,10 @@
               <img src="/img/dotted-grid.png" alt="img-design" />
             </div>
             <div class="ceo-img">
-              <img src="/img/about/senexpay-ceo.png" alt="C.E.O" />
+              <img
+                src="https://res.cloudinary.com/senexpay/image/upload/v1636463129/assets/senexpay-ceo_zspvsi.png"
+                alt="C.E.O"
+              />
             </div>
             <div class="ceo-arrow">
               <img src="/img/arrow-ceo.svg" alt="arrow" />

@@ -3,13 +3,22 @@
     <div class="relative">
       <div ref="gallery" class="carousel-con flex">
         <div class="carousel-1">
-          <img src="img/about/carousel-3.png" alt="group-pic" />
+          <img
+            src="https://res.cloudinary.com/senexpay/image/upload/v1636463806/assets/carousel-3_zqhqe8.png"
+            alt="group-pic"
+          />
         </div>
         <div class="flex-grow carousel-1 mx-auto">
-          <img src="img/about/carousel-1.png" alt="group-pic" />
+          <img
+            src="https://res.cloudinary.com/senexpay/image/upload/v1636463807/assets/carousel-1_nhlohy.png"
+            alt="group-pic"
+          />
         </div>
         <div class="carousel-1">
-          <img src="img/about/carousel-2.png" alt="group-pic" />
+          <img
+            src="https://res.cloudinary.com/senexpay/image/upload/v1636463807/assets/carousel-2_abuwbp.png"
+            alt="group-pic"
+          />
         </div>
         <span class="btn scroll-btn left" @click="leftScroll"
           ><img src="/img/about/caret-left.svg"

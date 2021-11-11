@@ -143,7 +143,7 @@
             <img
               class="girl-with-phone"
               alt="A girl holding a phone in her hands and sitting on the floor."
-              src="/img/girl-with-phone-radius.png"
+              src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/girl-with-phone-radius_jgukxi.png"
             />
             <img
               class="yellow-star yellow-star--1"
@@ -247,7 +247,7 @@
             <div class="screenshot-con">
               <img
                 alt="A young man holding a Bitcoin coin and making a signal."
-                src="/img/vp-3screenshot.png"
+                src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/vp-3screenshot_t9esow.png"
                 class="screenshot-img lg:ml-auto"
               />
               <img

@@ -38,7 +38,9 @@
               <img src="/img/careers/career-boy-2.png" />
             </div>
             <div class="bottom-right">
-              <img src="/img/careers/career-girl-2.png" />
+              <img
+                src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/career-girl-2_yeqcxb.png"
+              />
             </div>
           </div>
         </div>

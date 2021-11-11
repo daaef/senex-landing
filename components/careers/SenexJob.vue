@@ -11,7 +11,7 @@
       <div class="grid lg:grid-cols-2 lg:gap-14">
         <div class="snx-jobs-img-con">
           <img
-            src="img/careers/working-2.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/working-2_rnpkkk.png"
             alt="A young lady working from home with a laptop at a table."
           />
           <!-- <div class="img-overlay">
@@ -29,7 +29,7 @@
         </div>
         <div class="snx-jobs-img-con">
           <img
-            src="img/careers/working-11.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/working-11_am3chn.png"
             alt="A young man working remotely from a workspace."
           />
           <!-- <div class="img-overlay">
@@ -47,7 +47,7 @@
         </div>
         <div class="snx-jobs-img-con">
           <img
-            src="img/careers/working-3.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/v1636463130/assets/working-3_u5f744.png"
             alt="A young man working remotely from a lounge."
           />
           <!-- <div class="img-overlay">
@@ -64,7 +64,10 @@
           </div> -->
         </div>
         <div class="snx-jobs-img-con">
-          <img src="img/careers/working-4.png" alt="work" />
+          <img
+            src="https://res.cloudinary.com/senexpay/image/upload/v1636463129/assets/working-4_ysk8wr.png"
+            alt="work"
+          />
           <!-- <div class="img-overlay">
             <div class="impact-iw">
               <h2>Impactful work</h2>
