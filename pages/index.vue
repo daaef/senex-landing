@@ -162,11 +162,13 @@
             <img
               src="/img/green-check-badge.svg"
               class="img-badge img-badge--1"
+              alt="badge"
               data-aos="badge-in"
             />
             <img
               src="/img/pink-badge.svg"
               class="img-badge img-badge--2"
+              alt="badge"
               data-aos="badge-in"
             />
 
