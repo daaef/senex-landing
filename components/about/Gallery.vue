@@ -21,10 +21,10 @@
           />
         </div>
         <span class="btn scroll-btn left" @click="leftScroll"
-          ><img src="/img/about/caret-left.svg"
+          ><img src="/img/about/caret-left.svg" alt="left arrow"
         /></span>
         <span class="btn scroll-btn right" @click="rightScroll"
-          ><img src="/img/about/caret-right.svg"
+          ><img src="/img/about/caret-right.svg" alt="right arrow"
         /></span>
       </div>
     </div>

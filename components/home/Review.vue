@@ -4,7 +4,7 @@
       <div class="lnd-review md:flex">
         <transition name="slide-fade" mode="out-in">
           <span :key="current" class="img-con w-full md:w-1/3"
-            ><img :src="reviews[current].image"
+            ><img :src="reviews[current].image" alt="reviewer"
           /></span>
         </transition>
         <div class="rvw-con md:w-2/3">

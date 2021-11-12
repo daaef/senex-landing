@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="coin-holder">
-      <span class="coin-holder__coin-image-con"><img :src="image" /></span>
+      <span class="coin-holder__coin-image-con"
+        ><img :src="image" alt="coin"
+      /></span>
       <div class="coin-holder__coin-name-con">
         <span class="title">{{ name }}</span>
         <span class="subtitle">{{ abbr }}</span>

@@ -3,7 +3,7 @@
     <div>
       <div class="container">
         <span class="hidden" @click="showSide()"
-          ><img src="/img/close.svg"
+          ><img src="/img/close.svg" alt="close"
         /></span>
         <div class="side-nav">
           <span class="link" @click="goTo('/about')">About us</span>
@@ -20,13 +20,17 @@
           >
           <div class="country-con">
             <div class="country-icon">
-              <img :src="selectedCountry.imageSource" />
+              <img :src="selectedCountry.imageSource" alt="country" />
               <div
                 v-for="c in otherCountries()"
                 :key="c.code"
                 class="other-countries"
               >
-                <img :src="c.imageSource" @click="countryChange(c)" />
+                <img
+                  :src="c.imageSource"
+                  alt="country"
+                  @click="countryChange(c)"
+                />
               </div>
             </div>
             <span class="caret-icon"

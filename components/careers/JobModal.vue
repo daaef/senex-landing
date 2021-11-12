@@ -4,7 +4,7 @@
       <div class="container">
         <div class="job-modal-con__header">
           <span class="arrow-down" @click="closeModal"
-            ><img src="/img/awesome-chevron-circle-down.svg"
+            ><img src="/img/awesome-chevron-circle-down.svg" alt="arrow"
           /></span>
           <h3 v-if="jobs.length > 0">OPEN POSITIONS</h3>
         </div>

@@ -11,7 +11,7 @@
       {{ value }}
     </div>
     <div class="btn-style" :class="[isLoading ? 'show' : 'hide']">
-      <img src="/img/loading.svg" class="rotate spinner" />
+      <img src="/img/loading.svg" class="rotate spinner" alt="loading" />
     </div>
     <input style="display: none" class="hidden" type="submit" />
   </div>

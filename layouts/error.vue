@@ -2,7 +2,10 @@
   <div class="main-not-found">
     <div v-if="error.statusCode === 404" class="holder">
       <span class="not-found-img-span"
-        ><img class="not-found-img" src="/img/not-found-icon.svg"
+        ><img
+          class="not-found-img"
+          src="/img/not-found-icon.svg"
+          alt="not found"
       /></span>
       <div class="lost-holder">
         <span class="paragraph">

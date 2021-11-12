@@ -34,13 +34,17 @@
               >
               <div class="country-con">
                 <div class="country-icon">
-                  <img :src="selectedCountry.imageSource" />
+                  <img :src="selectedCountry.imageSource" alt="country" />
                   <div
                     v-for="c in otherCountries()"
                     :key="c.code"
                     class="other-countries"
                   >
-                    <img :src="c.imageSource" @click="countryChange(c)" />
+                    <img
+                      :src="c.imageSource"
+                      alt="country"
+                      @click="countryChange(c)"
+                    />
                   </div>
                 </div>
                 <span class="caret-icon"

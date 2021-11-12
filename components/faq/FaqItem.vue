@@ -9,7 +9,7 @@
         <div class="faq-item-con__title-con">
           <h3 class="title paragraph">{{ title }}</h3>
           <span class="arrow-con" :class="isOpen ? 'rotate-up' : ''"
-            ><img src="/img/awesome-arrow-down.svg"
+            ><img src="/img/awesome-arrow-down.svg" alt="arrow"
           /></span>
         </div>
         <div

@@ -91,3 +91,6 @@ sw.*
 
 OneSignalSDKWorker.js
 OneSignalSDKUpdaterWorker.js
+
+static/OneSignalSDKWorker.js
+static/OneSignalSDKUpdaterWorker.js
