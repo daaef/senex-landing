@@ -4,21 +4,21 @@
       <div ref="gallery" class="carousel-con flex">
         <div class="carousel-1">
           <img
-            src="https://res.cloudinary.com/senexpay/image/upload/w_750/v1636463806/assets/carousel-3_zqhqe8.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/h_400/v1636463806/assets/carousel-3_zqhqe8.png"
             alt="group-pic"
             loading="lazy"
           />
         </div>
         <div class="flex-grow carousel-1 mx-auto">
           <img
-            src="https://res.cloudinary.com/senexpay/image/upload/w_550/v1636463807/assets/carousel-1_nhlohy.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/h_400/v1636463807/assets/carousel-1_nhlohy.png"
             alt="group-pic"
             loading="lazy"
           />
         </div>
         <div class="carousel-1">
           <img
-            src="https://res.cloudinary.com/senexpay/image/upload/w_550/v1636463807/assets/carousel-2_abuwbp.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/h_400/v1636463807/assets/carousel-2_abuwbp.png"
             alt="group-pic"
             loading="lazy"
           />

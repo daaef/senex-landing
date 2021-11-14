@@ -41,7 +41,11 @@
               <p class="title heading-tertiary--v-sm">Send us an Email</p>
               <div class="location-con paragraph">
                 <span class="location">hello@senexpay.com</span>
-                <a href="mailto:hello@senexpay.com" class="type" rel="noopener"
+                <a
+                  href="mailto:hello@senexpay.com"
+                  class="type"
+                  target="_blank"
+                  rel="noopener"
                   >Send an Email</a
                 >
               </div>
@@ -50,7 +54,11 @@
               <p class="title heading-tertiary--v-sm">Call us</p>
               <div class="location-con paragraph">
                 <span class="location">+234 705 274 4444</span>
-                <a href="tel:+2347052744444" rel="noopener" class="type"
+                <a
+                  href="tel:+2347052744444"
+                  rel="noopener"
+                  class="type"
+                  target="_blank"
                   >Call now</a
                 >
               </div>
@@ -83,6 +91,7 @@
             href="https://web.facebook.com/senexng/"
             class="social fb"
             rel="noopener"
+            target="_blank"
           >
             <span class="icon-con"
               ><svg
@@ -103,6 +112,7 @@
             href="https://www.instagram.com/senexng/"
             class="social ig"
             rel="noopener"
+            target="_blank"
           >
             <span class="icon-con"
               ><svg
@@ -122,6 +132,7 @@
             href="https://twitter.com/senexng/"
             class="social tw"
             rel="noopener"
+            target="_blank"
           >
             <span class="icon-con"
               ><svg
@@ -158,6 +169,7 @@
             href="https://linkedin.com/company/senexpay/"
             class="social li"
             rel="noopener"
+            target="_blank"
           >
             <span class="icon-con"
               ><svg
