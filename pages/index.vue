@@ -340,11 +340,13 @@
             <svg
               id="Component_109_1"
               class="secure-lock-svg"
+              :class="secureLockOpen ? 'secure-lock-svg-click' : ''"
               data-name="Component 109 – 1"
               xmlns="http://www.w3.org/2000/svg"
               width="495"
               height="484"
               viewBox="0 0 495 484"
+              @click="secureLockTouch()"
             >
               <rect
                 id="Rectangle_830"
@@ -572,7 +574,8 @@ export default {
         minimumSellUsd: 30,
         platformFee: 0.7,
         platformFeeCap: 2
-      }
+      },
+      secureLockOpen: false
     }
   },
   head() {
@@ -624,6 +627,11 @@ export default {
         //   block: 'start'
         // })
       })
+    },
+    secureLockTouch() {
+      if (window.innerWidth <= 1100) {
+        this.secureLockOpen = !this.secureLockOpen
+      }
     },
     async getRates() {
       // this.isLoading = true

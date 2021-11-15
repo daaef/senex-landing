@@ -709,7 +709,32 @@
     }
   }
 
-  .secure-lock-svg:hover {
+  @include respond(normal-to-big) {
+    .secure-lock-svg:hover {
+      #ios-lock {
+        //transform-origin: center center;
+        transform: translate(1310.755px, 4227.767px) rotate(180deg);
+      }
+  
+      #blue-circle-svg {
+        transform: scale(.9);
+      }
+  
+      .disappear {
+        opacity: 0;
+      }
+  
+      #diagonal-1 {
+        opacity: 0;
+      }
+  
+      #diagonal-2 {
+        opacity: 0;
+      }
+    }
+  }
+
+  .secure-lock-svg-click {
     #ios-lock {
       //transform-origin: center center;
       transform: translate(1310.755px, 4227.767px) rotate(180deg);
