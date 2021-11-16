@@ -98,7 +98,7 @@ export default {
     },
     getFAQs() {
       this.$axios.get('/faqs/').then((res) => {
-        this.faqs = res.data
+        this.faqs = res.data.sort((a, b) => a.id - b.id)
       })
       // .catch((err) => {
       //   // const {
