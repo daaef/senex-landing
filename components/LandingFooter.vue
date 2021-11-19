@@ -92,14 +92,14 @@
             <div class="lg:w-3/5">
               <div class="lg:flex lg:w-4/5 footer-social-con">
                 <a
-                  href="https://www.instagram.com/senexng/"
+                  href="https://www.instagram.com/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"
                   >Instagram</a
                 >
                 <a
-                  href="https://web.facebook.com/senexng/"
+                  href="https://web.facebook.com/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"

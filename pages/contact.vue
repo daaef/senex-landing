@@ -88,7 +88,7 @@
         </h3>
         <div class="socials-con">
           <a
-            href="https://web.facebook.com/senexng/"
+            href="https://web.facebook.com/senexpay/"
             class="social fb"
             rel="noopener"
             target="_blank"
@@ -109,7 +109,7 @@
             ></span>
           </a>
           <a
-            href="https://www.instagram.com/senexng/"
+            href="https://www.instagram.com/senexpay/"
             class="social ig"
             rel="noopener"
             target="_blank"
