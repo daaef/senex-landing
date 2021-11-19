@@ -99,7 +99,7 @@
                   >Instagram</a
                 >
                 <a
-                  href="https://web.facebook.com/senexng/"
+                  href="https://web.facebook.com/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"
