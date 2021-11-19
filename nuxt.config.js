@@ -29,12 +29,12 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Buy & Sell Bitcoin, USDT and more securely | SenexPay'
+        content: 'SenexPay | Buy & Sell Bitcoin and USDT securely.'
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/img/senepay-og.png'
+        content: '/img/senexpay-og.png'
       },
       {
         property: 'og:image:width',
@@ -52,7 +52,7 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Buy & Sell Bitcoin, USDT and more securely | SenexPay'
+        content: 'SenexPay | Buy & Sell Bitcoin and USDT securely.'
       },
       {
         hid: 'twitter:description',
@@ -62,7 +62,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: '/img/senepay-og.png'
+        content: '/img/senexpay-og.png'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
