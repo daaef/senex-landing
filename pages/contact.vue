@@ -109,7 +109,7 @@
             ></span>
           </a>
           <a
-            href="https://www.instagram.com/senexng/"
+            href="https://www.instagram.com/senexpay/"
             class="social ig"
             rel="noopener"
             target="_blank"
