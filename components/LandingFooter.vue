@@ -6,7 +6,7 @@
           <div class="mr-auto lg:w-1/3">
             <div class="logo-copyright">
               <span class="logo-con" @click="toHome()"
-                ><img src="/img/senexpay-logo-light.png" alt="logo"
+                ><img src="/img/senexpay-logo-light.svg" alt="logo"
               /></span>
               <span class="copyright">SenexPay © 2021</span>
               <!-- <div class="terms-link">
@@ -79,7 +79,7 @@
           <div class="mr-auto lg:w-1/3">
             <!-- <div class="logo-copyright">
               <span class="logo-con"
-                ><img src="/img/senexpay-logo-light.png"
+                ><img src="/img/senexpay-logo-light.svg"
               /></span>
               <span class="copyright">SenexPay © 2021</span>
               <div class="terms-link">

@@ -7,8 +7,8 @@
             ><img
               :src="
                 theme.lightTheme
-                  ? '/img/senex-full-logo.png'
-                  : '/img/senexpay-logo-light.png'
+                  ? '/img/senex-full-logo.svg'
+                  : '/img/senexpay-logo-light.svg'
               "
               alt="logo"
               class="logo" /></router-link

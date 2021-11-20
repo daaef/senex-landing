@@ -1,7 +1,7 @@
 <template>
   <span class="icon-span"
     ><router-link to="/">
-      <img id="logo-img" src="/img/senexpay-logo-light.png" alt="senexpay"
+      <img id="logo-img" src="/img/senexpay-logo-light.svg" alt="senexpay"
     /></router-link>
   </span>
 </template>
