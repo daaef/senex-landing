@@ -112,7 +112,7 @@
         >
         </coin-price>
         <coin-price
-          name="USDT"
+          name="Tether"
           abbr="USDT"
           image="/img/t-coin.svg"
           :buy="getFiatAmount('USD', 'buy')"
