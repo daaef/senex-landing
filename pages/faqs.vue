@@ -65,7 +65,7 @@ export default {
             'Check out our FAQs and get some of your questions answered quickly.'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/faq' }]
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/faqs' }]
     }
   },
   watch: {

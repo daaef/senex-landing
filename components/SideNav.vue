@@ -8,7 +8,7 @@
         <div class="side-nav">
           <span class="link" @click="goTo('/about')">About us</span>
           <!-- <span class="link" @click="goTo('/learn')">Learn</span> -->
-          <span class="link" @click="goTo('/faq')">FAQ</span>
+          <span class="link" @click="goTo('/faqs')">FAQs</span>
           <span class="link" @click="goTo('/contact')">Contact us</span>
           <span class="link"
             ><a :href="appLink + '/login'" rel="noopener">Sign in</a></span
