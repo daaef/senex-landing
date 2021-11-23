@@ -179,7 +179,7 @@ export default {
     //   locales: ['en', 'za'],
     //   routesNameSeparator: '___'
     // },
-    exclude: ['/blog']
+    exclude: ['/blog', '/za/blog']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

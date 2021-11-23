@@ -29,7 +29,7 @@
               <div class="links-and-headers">
                 <h1 class="header">Support</h1>
                 <ul>
-                  <li><router-link to="/faq">FAQ</router-link></li>
+                  <li><router-link to="/faqs">FAQs</router-link></li>
                   <li><router-link to="/contact">Contact Us</router-link></li>
                   <!-- <li><router-link to="/learn">Learn</router-link></li> -->
                 </ul>
