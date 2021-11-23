@@ -19,7 +19,7 @@
           <span class="btn action action--buy"
             ><a
               :href="`${appLink}/order/start/?type=buy&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
-              rel="noopener"
+              rel="noopener nofollow"
               >Buy</a
             ></span
           >
@@ -31,7 +31,7 @@
           <span class="btn action action--sell"
             ><a
               :href="`${appLink}/order/start/?type=sell&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
-              rel="noopener"
+              rel="noopener nofollow"
               >Sell</a
             ></span
           >
