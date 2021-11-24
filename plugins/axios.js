@@ -4,7 +4,7 @@ export default function ({ $axios, redirect }) {
     if (code === 401) {
       delete $axios.defaults.headers.common.authorization
       localStorage.clear()
-      redirect('/login')
+      redirect('/sign-in')
     }
   })
 }

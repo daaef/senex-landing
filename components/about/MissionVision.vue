@@ -24,7 +24,7 @@
           <p class="paragraph">
             Our vision is to make financial services accessible to every person
             on the African continent. We believe empowering people will
-            boundless inclusion.
+            lead to boundless inclusion.
           </p>
         </span>
       </div>

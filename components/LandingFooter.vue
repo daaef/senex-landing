@@ -38,10 +38,10 @@
                 <h1 class="header">Legal</h1>
                 <ul>
                   <li>
-                    <router-link to="/terms">Terms of Service</router-link>
+                    <router-link to="/terms-of-service">Terms of Service</router-link>
                   </li>
                   <li>
-                    <router-link to="/privacy">Privacy Policy</router-link>
+                    <router-link to="/privacy-policy">Privacy Policy</router-link>
                   </li>
                   <!-- <li>
                     <router-link to="/cookie-policy"

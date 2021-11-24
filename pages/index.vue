@@ -29,7 +29,7 @@
               </p>
               <div class="snx-hero-content__btn_holder">
                 <a
-                  :href="appLink + '/register'"
+                  :href="appLink + '/create-account'"
                   class="register_btn"
                   rel="noopener"
                   >Create your account</a
@@ -132,7 +132,7 @@
           SenexPay Transaction fee is {{ limits.platformFee }}% pegged at ${{
             limits.platformFeeCap
           }}.
-          <router-link to="/terms" class="u-sec-color">Learn more</router-link>
+          <router-link to="/terms-of-service" class="u-sec-color">Learn more</router-link>
           about our fees.
         </p>
       </div>

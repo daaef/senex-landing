@@ -14,7 +14,7 @@
             ><a :href="appLink + '/login'" rel="noopener">Sign in</a></span
           >
           <span class="link btn register-btn"
-            ><a :href="appLink + '/register'" rel="noopener"
+            ><a :href="appLink + '/create-account'" rel="noopener"
               >Create your account</a
             ></span
           >

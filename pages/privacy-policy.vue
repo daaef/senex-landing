@@ -22,7 +22,7 @@ export default {
             'We value data-privacy and ensure that our customers enjoy full privacy of their data.'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/privacy' }]
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/privacy-policy' }]
     }
   }
 }
