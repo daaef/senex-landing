@@ -23,7 +23,7 @@
               <router-link class="link" to="/contact">Contact us</router-link>
             </div>
             <div class="register-con">
-              <a :href="appLink + '/sign-in'" class="log-in link" rel="noopener"
+              <a :href="appLink + '/signin'" class="log-in link" rel="noopener"
                 >Sign in</a
               >
               <a

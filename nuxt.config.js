@@ -34,7 +34,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/img/senexpay-og.png'
+        content: '/img/senexpay-og-image.png'
       },
       {
         property: 'og:image:width',
@@ -55,6 +55,11 @@ export default {
         content: 'SenexPay | Buy & Sell Bitcoin and USDT securely.'
       },
       {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
+      },
+      {
         hid: 'twitter:description',
         name: 'twitter:description',
         content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
@@ -62,7 +67,12 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: '/img/senexpay-og.png'
+        content: '/img/senexpay-og-image-sq.png'
+      },
+      {
+        hid: 'twitter:image:src',
+        property: 'twitter:image:src',
+        content: '/img/senexpay-og-image-sq.png'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -173,6 +183,10 @@ export default {
 
   sitemap: {
     hostname: 'https://www.senexpay.com',
+    defaults: {
+      priority: 1,
+      lastmod: new Date()
+    },
     // routes: [],
     // nuxt-i18n notation (advanced)
     // i18n: {
