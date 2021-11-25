@@ -118,6 +118,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
     '@nuxtjs/onesignal',
+    'nuxt-facebook-pixel-module'
   ],
 
   i18n: {
@@ -142,6 +143,14 @@ export default {
 
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
+  },
+
+  facebook: {
+    /* module options */
+    track: 'PageView',
+    pixelId: process.env.FACEBOOK_PIXEL_ID,
+    autoPageView: true,
+    disabled: false
   },
 
   oneSignal: {
