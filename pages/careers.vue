@@ -54,7 +54,8 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Let’s make digital finance better together.'
+          content:
+            'Our team is made up of very talented and innovative people who enjoy building solutions. Wanna join us? Let’s make digital finance better together. Explore our open positions at SenexPay.'
         }
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/careers' }]

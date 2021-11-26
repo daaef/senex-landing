@@ -253,7 +253,8 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'You can reach easily and get support.'
+          content:
+            'You can reach out to us easily and get support. You can use our live chat channel on our website to get in touch quickly. Our customer support  representatives are available to speak to you 24/7.'
         }
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/contact' }]

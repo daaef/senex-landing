@@ -100,7 +100,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'Our easy and secure platform got everyone falling in love with Crypto'
+            'Our easy and secure platform got everyone falling in love with Crypto. Our vision is to make financial services accessible to every person on the African continent.'
         }
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/about' }]

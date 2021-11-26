@@ -62,7 +62,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'Check out our FAQs and get some of your questions answered quickly.'
+            'Check out our FAQs and get some of your questions answered quickly. How secure is SenexPay? SenexPay is very secure, we put security at the forefront of our operations.'
         }
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/faqs' }]
