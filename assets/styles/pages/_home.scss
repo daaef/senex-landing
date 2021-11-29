@@ -566,6 +566,7 @@
     @include respond(tab-port) {
       width: 50vw;
       height: 50vw;
+      left: 0;
     }
 
     @include respond(phone) {

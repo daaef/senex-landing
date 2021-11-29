@@ -9,10 +9,12 @@
   a {
     font-weight: 400;
     opacity: 0.7;
+    transform: all 0.3s;
   }
 
   a:hover {
-    color: darken(rgba(255, 255, 255, 0.705), 20%)
+    // color: darken(rgba(255, 255, 255, 0.705), 20%)
+    opacity: 0.5;
   }
 
   h1{
@@ -105,13 +107,40 @@
 
   .footer-social-con {
     // width: 18.75%;
+    display: flex;
     margin-bottom: 20px;
     margin-top: 100px;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding-right: 10%;
+
+    @include respond(tab-land) {
+      justify-content: flex-start;
+    }
+    // justify-content: space-between;
 
     a {
       line-height: 1.8em;
+
+      img {
+        width: 25px;
+        height: 25px;
+        margin: 0 15px;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
       // opacity: 0.7;
+    }
+
+    @include respond(v-small-phone) {
+      display: block;
+
+      a {
+        img {
+          margin: 15px 0;
+        }
+      }
     }
 
     // a:hover {

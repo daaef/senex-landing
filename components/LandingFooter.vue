@@ -38,10 +38,14 @@
                 <h1 class="header">Legal</h1>
                 <ul>
                   <li>
-                    <router-link to="/terms-of-service">Terms of Service</router-link>
+                    <router-link to="/terms-of-service"
+                      >Terms of Service</router-link
+                    >
                   </li>
                   <li>
-                    <router-link to="/privacy-policy">Privacy Policy</router-link>
+                    <router-link to="/privacy-policy"
+                      >Privacy Policy</router-link
+                    >
                   </li>
                   <!-- <li>
                     <router-link to="/cookie-policy"
@@ -90,35 +94,36 @@
           </div>
           <div class="lg:w-2/3 lg:flex justify-end w-full ml-auto">
             <div class="lg:w-3/5">
-              <div class="lg:flex lg:w-4/5 footer-social-con">
+              <div class="footer-social-con">
+                <span>Follow us:</span>
                 <a
                   href="https://www.instagram.com/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"
-                  >Instagram</a
-                >
+                  ><img src="/img/white-instagram.svg" alt="instagram"
+                /></a>
                 <a
                   href="https://web.facebook.com/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"
-                  >Facebook</a
-                >
+                  ><img src="/img/white-facebook.svg" alt="facebook"
+                /></a>
                 <a
                   href="https://twitter.com/senexng/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"
-                  >Twitter</a
-                >
+                  ><img src="/img/white-twitter.svg" alt="twitter"
+                /></a>
                 <a
                   href="https://linkedin.com/company/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"
-                  >LinkedIn</a
-                >
+                  ><img src="/img/white-linkedin.svg" alt="linkedin"
+                /></a>
               </div>
             </div>
           </div>
