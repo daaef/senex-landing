@@ -53,7 +53,7 @@
           </h3>
           <p class="paragraph">
             Behind every great product lies ears that listens to customers. We
-            are stop at nothing to satisfy ours.
+            will stop at nothing to satisfy ours.
           </p>
         </div>
       </div>
