@@ -1,0 +1,13 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "SenexPay",
+  "url": "https://www.senexpay.com",
+  "sameAs": [
+    "https://www.instagram.com/senexpay/",
+    "https://web.facebook.com/senexpay/",
+    "https://twitter.com/senexng/",
+    "https://linkedin.com/company/senexpay/",
+    "https://www.youtube.com/c/senexpay"
+  ]
+}

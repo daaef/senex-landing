@@ -20,9 +20,16 @@ export default {
           name: 'description',
           content:
             'Welcome to SenexPay’s Terms of Use! We are truly excited to have you aboard. Thank you for choosing to use our services.'
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://www.senexpay.com/terms-of-service'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://www.senexpay.com/terms-of-service' }]
+      link: [
+        { rel: 'canonical', href: 'https://www.senexpay.com/terms-of-service' }
+      ]
     }
   }
 }

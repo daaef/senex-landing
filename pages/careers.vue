@@ -56,6 +56,11 @@ export default {
           name: 'description',
           content:
             'Our team is made up of very talented and innovative people who enjoy building solutions. Wanna join us? Let’s make digital finance better together. Explore our open positions at SenexPay.'
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://www.senexpay.com/careers'
         }
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/careers' }]
