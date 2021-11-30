@@ -132,7 +132,9 @@
           SenexPay Transaction fee is {{ limits.platformFee }}% pegged at ${{
             limits.platformFeeCap
           }}.
-          <router-link to="/terms-of-service" class="u-sec-color">Learn more</router-link>
+          <router-link to="/terms-of-service" class="u-sec-color">
+            Learn more
+          </router-link>
           about our fees.
         </p>
       </div>
