@@ -11,7 +11,7 @@
           <span class="link" @click="goTo('/faqs')">FAQs</span>
           <span class="link" @click="goTo('/contact')">Contact us</span>
           <span class="link"
-            ><a :href="appLink + '/login'" rel="noopener">Sign in</a></span
+            ><a :href="appLink + '/signin'" rel="noopener">Sign in</a></span
           >
           <span class="link btn register-btn"
             ><a :href="appLink + '/create-account'" rel="noopener"
