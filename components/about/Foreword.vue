@@ -9,7 +9,7 @@
             <h5 class="paragraph--sm paragraph--700 u-mb-10">
               Chief Executive Officer.
             </h5>
-            <p class="paragraph u-mb-md">
+            <q class="paragraph quote">
               At SenexPay, we believe equality in society is never complete
               without financial equality. We are seeking to eliminate the
               disenfranchisement of Africans in the global economy by focusing
@@ -20,14 +20,12 @@
               to Bitcoin and other digital currencies and that belief is
               entrenched in what we do everyday -
               <span class="paragraph paragraph--600"
-                >“making crypto as easy as ABC”.</span
-              >
-            </p>
-            <p class="paragraph">
+                >making crypto as easy as ABC.</span
+              ><br />
               Join our
               <span class="paragraph--600">#CryptoForAll campaign</span>
               and be part of something truly revolutionary!
-            </p>
+            </q>
           </span>
         </div>
         <div class="foreword-img">

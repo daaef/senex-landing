@@ -36,6 +36,24 @@
   }
 }
 
+.quote {
+  position: relative;
+
+  &:before, &:after {
+    font-size: 24px;
+  }
+
+  &::before {
+    content: "\275D";
+  }
+
+  &::after {
+    content: "\275E";
+    position: absolute;
+    bottom: -5px;
+  }
+}
+
 .foreword-img {
   @include flexcon(right, flex-start, column);  
   // margin-top: 30px;

@@ -28,7 +28,7 @@
           :href="appLink + '/create-account'"
           class="btn our-obsession__register-btn"
           rel="noopener"
-          >Create your account</a
+          >Buy/Sell Crypto</a
         >
       </div>
     </div>

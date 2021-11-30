@@ -34,11 +34,11 @@
               u-mb-10
             "
           >
-            Equality
+            Empowerment
           </h3>
           <p class="paragraph">
-            The current financial system creates a lot of inequality. We are
-            using the power of technology to level the field.
+            We are using financial literacy as a tool to empower people, to make
+            the best money decisions.
           </p>
         </div>
         <div class="our-core-box__item">
@@ -53,7 +53,7 @@
           </h3>
           <p class="paragraph">
             Behind every great product lies ears that listens to customers. We
-            will stop at nothing to satisfy ours.
+            work to keep our customers happy always.
           </p>
         </div>
       </div>
