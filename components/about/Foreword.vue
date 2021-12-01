@@ -35,7 +35,7 @@
             </div>
             <div class="ceo-img">
               <img
-                src="https://res.cloudinary.com/senexpay/image/upload/w_600/v1636463129/assets/senexpay-ceo_zspvsi.png"
+                src="https://res.cloudinary.com/senexpay/image/upload/v1638316443/assets/Senexpay_CEO_py2lnw.png"
                 loading="lazy"
                 alt="C.E.O"
               />
