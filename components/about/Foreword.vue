@@ -14,11 +14,9 @@
               without financial equality. We are seeking to eliminate the
               disenfranchisement of Africans in the global economy by focusing
               on solving the problems associated with cryptocurrency access by
-              the average African. We are simplifying the way crypto is accessed
-              by everyone; from the Crypto-geek in the city to Grandma in the
-              village. We at SenexPay, believe everyone should have easy access
-              to Bitcoin and other digital currencies and that belief is
-              entrenched in what we do everyday -
+              the average African. We at SenexPay, believe everyone should have
+              easy access to Bitcoin and other digital currencies and that
+              belief is entrenched in what we do everyday -
               <span class="paragraph paragraph--600"
                 >making crypto as easy as ABC.</span
               ><br />
