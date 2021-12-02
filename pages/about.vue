@@ -59,7 +59,7 @@
       </div>
     </div>
     <senex-info></senex-info>
-    <!-- <gallery></gallery> -->
+    <gallery></gallery>
     <join-learn></join-learn>
     <crypto-buddy></crypto-buddy>
     <landing-footer></landing-footer>
@@ -70,7 +70,7 @@
 import Foreword from '~/components/about/Foreword.vue'
 import MissionVision from '~/components/about/MissionVision.vue'
 import SenexInfo from '~/components/about/SenexInfo.vue'
-// import Gallery from '~/components/about/Gallery.vue'
+import Gallery from '~/components/about/Gallery.vue'
 import JoinLearn from '~/components/about/JoinLearn.vue'
 import CryptoBuddy from '~/components/about/CryptoBuddy.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
@@ -80,7 +80,7 @@ export default {
     Foreword,
     MissionVision,
     SenexInfo,
-    // Gallery,
+    Gallery,
     JoinLearn,
     CryptoBuddy,
     LandingFooter

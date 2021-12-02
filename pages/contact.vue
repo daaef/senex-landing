@@ -27,7 +27,9 @@
                 Drop by our Head Office
               </p>
               <div class="location-con paragraph">
-                <span class="location">Lekki, Lagos, Nigeria.</span>
+                <span class="location"
+                  >1, Akin Adesola Street, Victoria Island</span
+                >
                 <a
                   href="https://www.google.com/maps/place/NumberOne+Lagos+(IMB+Building)/@6.4229469,3.421408,17z/data=!3m1!4b1!4m5!3m4!1s0x103bf543d59b3b85:0xca3bd3363638d8da!8m2!3d6.4229416!4d3.4235967"
                   class="type"
@@ -50,7 +52,7 @@
                 >
               </div>
             </div>
-            <div class="contact-type-con">
+            <!-- <div class="contact-type-con">
               <p class="title heading-tertiary--v-sm">Call us</p>
               <div class="location-con paragraph">
                 <span class="location">+234 705 274 4444</span>
@@ -62,11 +64,11 @@
                   >Call now</a
                 >
               </div>
-            </div>
+            </div> -->
             <div class="contact-type-con">
               <p class="title heading-tertiary--v-sm">Chat us on Whatsapp</p>
               <div class="location-con paragraph">
-                <span class="location">+234 818 489 9239</span>
+                <span class="location">+234 xxx xxx 9239</span>
                 <a
                   href="https://api.whatsapp.com/send?phone=+2348184899239"
                   target="_blank"

@@ -1,6 +1,7 @@
 <template>
   <div class="review-box">
-    <div class="review-box__profile">
+    <!-- <div class="review-box__profile"> -->
+    <div class="review-box__profil">
       <img :src="image" alt="Reviewer" class="review-box__img" />
       <span class="review-box__name paragraph">{{ name }}</span>
     </div>

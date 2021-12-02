@@ -87,7 +87,8 @@
   @include respond(phone-land) {
     flex: 90% 0 0 !important;
     max-width: 90vw !important;
-    margin: 0 0 !important;
+    // margin: 0 0 !important;
+    margin: 0 5px !important;
   }
 
   &__profile {

@@ -1,10 +1,14 @@
 <template>
   <div class="container">
     <div class="review-holder u-my-big">
-      <h3 class="heading-secondary heading-secondary--weight-md u-my-md">
+      <h3
+        v-if="reviews.length > 0"
+        class="heading-secondary heading-secondary--weight-md u-my-md"
+      >
         What our customers are saying.
       </h3>
-      <div class="review-holder__reviews u-mb-md">
+      <!-- <div class="review-holder__reviews u-mb-md"> -->
+      <div class="testimonial-carousel u-mb-md">
         <!-- ref="reviews"  -->
         <!-- <template v-for="(item, idx) in reviews">
           <review-2
@@ -14,7 +18,16 @@
             :content="item.content"
           ></review-2>
         </template> -->
-        <carousel
+        <VueSlickCarousel v-if="reviews.length > 0" v-bind="settings">
+          <div v-for="(item, idx) in reviews" :key="idx">
+            <review-2
+              :name="item.name"
+              :image="item.photo"
+              :content="item.reviewText"
+            ></review-2>
+          </div>
+        </VueSlickCarousel>
+        <!-- <carousel
           :scroll-per-page="false"
           pagination-position="left"
           pagination-color="#B2B2B2"
@@ -34,7 +47,7 @@
               :content="item.reviewText"
             ></review-2>
           </slide>
-        </carousel>
+        </carousel> -->
       </div>
       <!-- <div class="review-holder__dot-box">
         <span
@@ -54,21 +67,55 @@
 </template>
 
 <script>
-import Carousel from 'vue-carousel/src/Carousel.vue'
-import Slide from 'vue-carousel/src/Slide.vue'
+// import Carousel from 'vue-carousel/src/Carousel.vue'
+// import Slide from 'vue-carousel/src/Slide.vue'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import Review2 from './Review2.vue'
 export default {
   components: {
     Review2,
-    Carousel,
-    Slide
+    VueSlickCarousel
+    // Carousel,
+    // Slide
   },
   data() {
     return {
       reviews: [],
       current: 1,
       width: 1,
-      apiUrl: ''
+      apiUrl: '',
+      settings: {
+        dots: true,
+        slidesToShow: 2.05,
+        slidesToScroll: 1,
+        centerMode: true,
+        initialSlide: 0,
+        swipeToSlide: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              dots: true,
+              centerMode: false
+            }
+          },
+          {
+            breakpoint: 760,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              // initialSlide: 2,
+              centerMode: false,
+              dots: true
+            }
+          }
+        ]
+      }
     }
   },
   mounted() {
@@ -167,6 +214,22 @@ export default {
   width: 100%;
   text-align: left !important;
 }
+
+.testimonial-carousel {
+  .slick-dots {
+    position: static !important;
+    text-align: left !important;
+    margin-top: 25px;
+    li {
+      button {
+        &::before {
+          font-size: 12px !important;
+        }
+      }
+    }
+  }
+}
+
 .review-holder {
   // display: flex;
   margin: 50px 0;

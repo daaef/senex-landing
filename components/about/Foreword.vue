@@ -10,8 +10,7 @@
               Chief Executive Officer.
             </h5>
             <q class="paragraph quote">
-              At SenexPay, we believe equality in society is never complete
-              without financial equality. We are seeking to eliminate the
+              We are seeking to eliminate the
               disenfranchisement of Africans in the global economy by focusing
               on solving the problems associated with cryptocurrency access by
               the average African. We at SenexPay, believe everyone should have
