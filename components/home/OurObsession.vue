@@ -25,7 +25,7 @@
           never been easier.</span
         >
         <a
-          :href="appLink + '/create-account'"
+          :href="appLink + '/order/start'"
           class="btn our-obsession__register-btn"
           rel="noopener"
           >Buy/Sell Crypto</a
