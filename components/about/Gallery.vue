@@ -69,21 +69,21 @@
         <VueSlickCarousel v-bind="settings">
           <div class="courousel-item">
             <img
-              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_600/v1638381989/assets/Photo_of_senexpay_staff_discussing_g9argy.png"
+              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_520/v1638381989/assets/Photo_of_senexpay_staff_discussing_g9argy.png"
               alt="group-pic"
               loading="lazy"
             />
           </div>
           <div class="courousel-item courousel-item--2">
             <img
-              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_600/v1638381989/assets/photo_of_senexpay_staff_in_a_group_picture_zyl8c2.png"
+              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_520/v1638381989/assets/photo_of_senexpay_staff_in_a_group_picture_zyl8c2.png"
               alt="group-pic"
               loading="lazy"
             />
           </div>
           <div class="courousel-item">
             <img
-              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_600/v1638381989/assets/Photo_of_senexpay_staff_working_vune8c.png"
+              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_520/v1638381989/assets/Photo_of_senexpay_staff_working_vune8c.png"
               alt="group-pic"
               loading="lazy"
             />
