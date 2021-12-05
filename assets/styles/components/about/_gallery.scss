@@ -38,6 +38,42 @@
   }
 }
 
+.courousel-item {
+  // height: 450px;
+  padding: 0 7px;
+  // min-height: 600px !important;
+  // width: 650px !important;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // @include respond(tab-land) {
+  //   width: 600px !important;
+  // }
+
+  // @include respond(big-desktop) {
+  //   width: 950px !important;
+  // }
+}
+
+.gallery-carousel {
+  overflow-x: hidden !important;
+  .slick-dots {
+    position: static !important;
+    margin-top: 25px;
+    li {
+      button {
+        &::before {
+          font-size: 12px !important;
+        }
+      }
+    }
+  }
+}
+
 .carousel-1 {
   // display: inline-block;
   margin-right: 25px;

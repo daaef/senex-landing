@@ -69,21 +69,21 @@
         <VueSlickCarousel v-bind="settings">
           <div class="courousel-item">
             <img
-              src="https://res.cloudinary.com/senexpay/image/upload/h_500/v1638381989/assets/Photo_of_senexpay_staff_discussing_g9argy.png"
+              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_600/v1638381989/assets/Photo_of_senexpay_staff_discussing_g9argy.png"
+              alt="group-pic"
+              loading="lazy"
+            />
+          </div>
+          <div class="courousel-item courousel-item--2">
+            <img
+              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_600/v1638381989/assets/photo_of_senexpay_staff_in_a_group_picture_zyl8c2.png"
               alt="group-pic"
               loading="lazy"
             />
           </div>
           <div class="courousel-item">
             <img
-              src="https://res.cloudinary.com/senexpay/image/upload/h_500/v1638381989/assets/photo_of_senexpay_staff_in_a_group_picture_zyl8c2.png"
-              alt="group-pic"
-              loading="lazy"
-            />
-          </div>
-          <div class="courousel-item">
-            <img
-              src="https://res.cloudinary.com/senexpay/image/upload/h_500/v1638381989/assets/Photo_of_senexpay_staff_working_vune8c.png"
+              src="https://res.cloudinary.com/senexpay/image/upload/q_auto,h_600/v1638381989/assets/Photo_of_senexpay_staff_working_vune8c.png"
               alt="group-pic"
               loading="lazy"
             />
@@ -113,17 +113,33 @@ export default {
         dots: true,
         // infinite: false,
         // speed: 500,
-        // centerMode: true,
+        centerMode: true,
         // centerPadding: '20px',
-        slidesToShow: 2,
+        slidesToShow: 1.65,
         slidesToScroll: 1,
-        // initialSlide: 0,
+        initialSlide: 1,
+        swipeToSlide: true,
+        variableWidth: true,
+        adaptiveHeight: true,
         responsive: [
+          // {
+          //   breakpoint: 1240,
+          //   settings: {
+          //     slidesToShow: 2,
+          //     dots: true,
+          //     centerMode: true,
+          //     variableWidth: false,
+          //     adaptiveHeight: false
+          //   }
+          // },
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: 2,
-              dots: true
+              dots: true,
+              centerMode: false,
+              variableWidth: false,
+              adaptiveHeight: false
             }
           },
           {
@@ -132,7 +148,10 @@ export default {
               slidesToShow: 1,
               slidesToScroll: 1,
               // initialSlide: 2,
-              dots: true
+              dots: true,
+              centerMode: false,
+              variableWidth: false,
+              adaptiveHeight: false
             }
           }
         ]
@@ -170,29 +189,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.courousel-item {
-  // height: 450px;
-  padding: 0 7px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.gallery-carousel {
-  overflow-x: hidden !important;
-  .slick-dots {
-    position: static !important;
-    margin-top: 25px;
-    li {
-      button {
-        &::before {
-          font-size: 12px !important;
-        }
-      }
-    }
-  }
-}
-</style>
+<style lang="scss"></style>
