@@ -22,7 +22,7 @@
             /></span>
             <p class="paragraph paragraph--700 u-my-10">Simple to use</p>
             <span class="paragraph"
-              >If you can read ‘A-Z’, then you can use SenexPay for your Crypto
+              >If you can read ‘A-Z’, then you can use SenexPay for your crypto
               exchange. Easy stuff.</span
             >
           </div>
@@ -30,10 +30,10 @@
             <span class="icon up-anim"
               ><img src="/img/why-senex-2.png" alt="circle"
             /></span>
-            <p class="paragraph paragraph--700 u-my-10">Quick payouts</p>
+            <p class="paragraph paragraph--700 u-my-10">Swift transactions</p>
             <span class="paragraph"
-              >SenexPay pays directly to your account swiftly. Come in, cash out
-              - no unecessary delays.</span
+              >We know how much you hate to wait. Enjoy the power of instant
+              payment on SenexPay.</span
             >
           </div>
           <div class="reason">

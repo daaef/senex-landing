@@ -129,9 +129,8 @@
         >
         </coin-price> -->
         <p class="paragraph u-mt-10 u-text-center u-white">
-          SenexPay Transaction fee is {{ limits.platformFee }}% pegged at ${{
-            limits.platformFeeCap
-          }}.
+          SenexPay Transaction fee is {{ limits.platformFee }} percent pegged at
+          ${{ limits.platformFeeCap }}.
           <router-link to="/terms-of-service" class="u-sec-color">
             Learn more
           </router-link>
@@ -192,8 +191,8 @@
               It’s so easy, anyone can trade on it.
             </p>
             <p class="snx-description__subtitle paragraph">
-              Trading your Cryptocurrency on SenexPay is so easy you do not need
-              to be a Crypto guru to do it yourself. We designed a truly smooth
+              Trading your cryptocurrency on SenexPay is so easy you do not need
+              to be a crypto guru to do it yourself. We designed a truly smooth
               and seamless experience that’s one of a kind.
             </p>
           </div>
@@ -330,7 +329,7 @@
               We Are Serious About Security.
             </p>
             <p class="snx-description__subtitle paragraph">
-              Buy and sell your Cryptocurrency safely and securely with peace of
+              Buy and sell your cryptocurrency safely and securely with peace of
               mind. Your information is fully secure and you are protected to
               the maximum. “My guy no shaking!💪🏼”
             </p>
