@@ -586,7 +586,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex.`
+          content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!`
         },
         {
           hid: 'og:url',
