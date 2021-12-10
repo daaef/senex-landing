@@ -29,8 +29,9 @@
           </div> -->
         </div>
         <div class="snx-jobs-img-con">
+          <!-- src="https://res.cloudinary.com/senexpay/image/upload/w_750/v1636463130/assets/working-11_am3chn.png" -->
           <img
-            src="https://res.cloudinary.com/senexpay/image/upload/w_750/v1636463130/assets/working-11_am3chn.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/w_750/v1638984070/assets/SenexPay_staff_playing_chess_sjoiej.png"
             loading="lazy"
             alt="A young man working remotely from a workspace."
           />
@@ -48,8 +49,9 @@
           </div> -->
         </div>
         <div class="snx-jobs-img-con">
+          <!-- https://res.cloudinary.com/senexpay/image/upload/w_750/v1636463130/assets/working-3_u5f744.png -->
           <img
-            src="https://res.cloudinary.com/senexpay/image/upload/w_750/v1636463130/assets/working-3_u5f744.png"
+            src="https://res.cloudinary.com/senexpay/image/upload/v1638984070/assets/Two_SenexPay_staff_working_and_talking_jczzad.png"
             loading="lazy"
             alt="A young man working remotely from a lounge."
           />
