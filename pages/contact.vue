@@ -28,7 +28,7 @@
               </p>
               <div class="location-con paragraph">
                 <span class="location">
-                  Nunber One Lagos, <br />
+                  Number One Lagos, <br />
                   1, Akin Adesola Street, Victoria Island.</span
                 >
                 <a
