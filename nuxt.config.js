@@ -18,7 +18,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
+        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!`
       },
       {
         name: 'keywords',
@@ -47,7 +47,7 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure.`
+        content: `SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!`
       },
       {
         hid: 'twitter:title',
@@ -136,9 +136,9 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.API_URL
-      // process.env.NODE_ENV === 'development'
-      //   ? process.env.API_URL_DEV
-      //   : process.env.API_URL_PROD
+    // process.env.NODE_ENV === 'development'
+    //   ? process.env.API_URL_DEV
+    //   : process.env.API_URL_PROD
   },
 
   googleAnalytics: {
@@ -202,7 +202,7 @@ export default {
     //   locales: ['en', 'za'],
     //   routesNameSeparator: '___'
     // },
-    exclude: ['/blog', '/za/blog']
+    exclude: ['/blog', '/za', '/za/*']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
