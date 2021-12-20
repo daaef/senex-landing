@@ -1,0 +1,24 @@
+.reimagine-crypto {
+  display: flex;
+  flex-direction: column;
+  // min-height: 50vh;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__content {
+    max-width: 600px;
+    width: 100%;
+    color: #3E3E41;
+  }
+
+  &__btn {
+    padding: 12px 24px;
+    color: $color_white;
+    background-color: $primary_color;
+    font-size: $default_font_size;
+    border-radius: 8px;
+  }
+}

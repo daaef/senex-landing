@@ -60,7 +60,8 @@
     </div>
     <senex-info></senex-info>
     <gallery></gallery>
-    <join-learn></join-learn>
+    <!-- <join-learn></join-learn> -->
+    <reimagine-crypto></reimagine-crypto>
     <crypto-buddy></crypto-buddy>
     <landing-footer></landing-footer>
   </div>
@@ -71,9 +72,10 @@ import Foreword from '~/components/about/Foreword.vue'
 import MissionVision from '~/components/about/MissionVision.vue'
 import SenexInfo from '~/components/about/SenexInfo.vue'
 import Gallery from '~/components/about/Gallery.vue'
-import JoinLearn from '~/components/about/JoinLearn.vue'
+// import JoinLearn from '~/components/about/JoinLearn.vue'
 import CryptoBuddy from '~/components/about/CryptoBuddy.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
+import ReimagineCrypto from '~/components/about/ReimagineCrypto.vue'
 // import AppModal from '~/components/custom/AppModal.vue'
 export default {
   components: {
@@ -81,9 +83,10 @@ export default {
     MissionVision,
     SenexInfo,
     Gallery,
-    JoinLearn,
+    // JoinLearn,
     CryptoBuddy,
-    LandingFooter
+    LandingFooter,
+    ReimagineCrypto
     // AppModal
   },
   layout: 'about',
