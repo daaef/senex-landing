@@ -47,7 +47,7 @@
             </ul> -->
             <a :href="applicationUrl" target="_blank" rel="noopener">
               <button type="button" class="btn register-btn-jp">
-                Apply now
+                Learn more
               </button>
             </a>
           </div>
