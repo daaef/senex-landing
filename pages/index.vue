@@ -498,6 +498,8 @@
     <div class="overflow-hidden">
       <!-- Why Senex -->
       <why-senex></why-senex>
+      <!-- Referral banner -->
+      <referral-banner></referral-banner>
       <!-- Reviews -->
       <review-holder></review-holder>
       <!-- <review></review> -->
@@ -534,6 +536,7 @@ import { mapState } from 'vuex'
 import AOS from 'aos'
 // import * as Simpu from 'https://static.simpu.co/widgets/v1/simpu-widget.js'
 import 'aos/dist/aos.css'
+import ReferralBanner from '../components/home/ReferralBanner.vue'
 import OurObsession from '../components/home/OurObsession.vue'
 import CoinPrice from '~/components/home/CoinPrice.vue'
 // import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
@@ -547,6 +550,7 @@ export default {
     CoinPrice,
     LandingFooter,
     ReviewHolder,
+    ReferralBanner,
     // Review,
     // MobileAppBanner,
     WhySenex,
