@@ -26,7 +26,7 @@
           <button class="referral-banner__btn">Start Earning</button>
         </div>
         <div class="referral-banner__img-box">
-          <img src="/img/landing-guy-btc.png" alt="happy boy" />
+          <img src="/img/referral-happy.png" alt="happy boy" />
         </div>
       </div>
     </div>
