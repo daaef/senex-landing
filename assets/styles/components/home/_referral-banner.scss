@@ -5,13 +5,14 @@
 
   &__body {
     display: flex;
-    min-height: 70vh;
+    // min-height: 70vh;
     align-items: center;
     padding-top: 50px;
 
     @include respond(tab-port) {
       flex-direction: column;
       align-items: flex-start;
+      justify-content: flex-end;
     }
   }
 
@@ -81,14 +82,15 @@
     align-self: flex-end;
     // margin-top: -50px;
 
-    @include respond(tab-land-sm) {
+    @include respond(tab-port) {
       align-self: center;
     }
 
     img {
       width: auto;
-      height: 80%;
-      max-height: 500px;
+      // height: 80%;
+      height: 100%;
+      // max-height: 500px;
 
       @include respond(big-desktop) {
         max-height: none;

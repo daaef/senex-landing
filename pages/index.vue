@@ -238,10 +238,10 @@
                   heading-primary heading-primary--wt-500
                 "
               >
-                The Most Trusted Crypto Platform.
+                The most trusted crypto platform.
               </p>
               <p class="snx-description__subtitle paragraph">
-                Over the years, SenexPay has been able to build an unshakeable
+                Over the years, SenexPay has been able to build unshakeable
                 trust in its customers due to our efficient and swift payout
                 process. So fast our customers be like “Mad o!😳”
               </p>
@@ -326,12 +326,12 @@
                 heading-primary heading-primary--wt-500
               "
             >
-              We Are Serious About Security.
+              We are serious about security.
             </p>
             <p class="snx-description__subtitle paragraph">
-              Buy and sell your cryptocurrency safely and securely with peace of
-              mind. Your information is fully secure and you are protected to
-              the maximum. “My guy no shaking!💪🏼”
+              We know that security is priority for you; it is for us too. All
+              your transactions with us are fully encrypted with cutting-edge
+              security protocols that protect you.
             </p>
           </div>
         </div>
@@ -499,7 +499,7 @@
       <!-- Why Senex -->
       <why-senex></why-senex>
       <!-- Referral banner -->
-      <referral-banner></referral-banner>
+      <!-- <referral-banner></referral-banner> -->
       <!-- Reviews -->
       <review-holder></review-holder>
       <!-- <review></review> -->
@@ -536,7 +536,7 @@ import { mapState } from 'vuex'
 import AOS from 'aos'
 // import * as Simpu from 'https://static.simpu.co/widgets/v1/simpu-widget.js'
 import 'aos/dist/aos.css'
-import ReferralBanner from '../components/home/ReferralBanner.vue'
+// import ReferralBanner from '../components/home/ReferralBanner.vue'
 import OurObsession from '../components/home/OurObsession.vue'
 import CoinPrice from '~/components/home/CoinPrice.vue'
 // import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
@@ -550,7 +550,7 @@ export default {
     CoinPrice,
     LandingFooter,
     ReviewHolder,
-    ReferralBanner,
+    // ReferralBanner,
     // Review,
     // MobileAppBanner,
     WhySenex,

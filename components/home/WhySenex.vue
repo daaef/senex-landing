@@ -42,8 +42,8 @@
             /></span>
             <p class="paragraph paragraph--700 u-my-10">Safe and protected</p>
             <span class="paragraph"
-              >Our portal is highly secured with end-to-end bank-level security
-              encryption.</span
+              >SenexPay is highly secure with end-to-end bank-level security
+              encryption</span
             >
           </div>
         </div>

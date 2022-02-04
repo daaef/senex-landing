@@ -132,7 +132,7 @@
             ></span>
           </a>
           <a
-            href="https://twitter.com/senexng/"
+            href="https://twitter.com/senexpay/"
             class="social tw"
             rel="noopener"
             target="_blank"

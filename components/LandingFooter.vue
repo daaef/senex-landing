@@ -111,7 +111,7 @@
                   ><img src="/img/white-facebook.svg" alt="facebook"
                 /></a>
                 <a
-                  href="https://twitter.com/senexng/"
+                  href="https://twitter.com/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"

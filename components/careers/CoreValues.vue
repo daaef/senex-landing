@@ -11,7 +11,7 @@
               <h3 class="heading-tertiary--sm">Careers at SenexPay</h3>
             </div>
             <h2 class="heading-primary u-text-left">
-              Let’s make digital finance better together.
+              Together, let’s make digital finance better.
             </h2>
             <div class="btn register-btn-car" @click="openModal">
               <span v-if="!processing">View open positions</span>

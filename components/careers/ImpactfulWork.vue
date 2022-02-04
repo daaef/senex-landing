@@ -16,8 +16,8 @@
             Big Picture
           </h2>
           <p class="paragraph">
-            At SenexPay, we are big picture thinkers who not only focuses on
-            today but build for the future by focusing on the BIG PICTURE.
+            At SenexPay, we are big-picture thinkers. We do not only focus on
+            today, but build the future by focusing on the BIG PICTURE.
           </p>
         </div>
         <div class="our-core-box__item">
@@ -28,8 +28,9 @@
             Innovation
           </h2>
           <p class="paragraph">
-            We have a collective unrelenting drive to redefine the status quo by
-            constantly innovating by creating the new and polishing the old.
+            We have a collective and unrelenting drive to redefine the status
+            quo through innovation - that is; creating the new and polishing the
+            old.
           </p>
         </div>
         <div class="our-core-box__item">
@@ -40,9 +41,8 @@
             Dreamers
           </h2>
           <p class="paragraph">
-            We celebrate dreamers as we have know that every great
-            accomplishment in the world starts with just a dream. We dreamers
-            and doers.
+            We celebrate dreamers as we know that every great accomplishment in
+            the world starts with just a dream. We dreamers and doers.
           </p>
         </div>
       </div>
