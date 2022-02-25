@@ -8,7 +8,7 @@
               <span class="logo-con" @click="toHome()"
                 ><img src="/img/senexpay-logo-light.svg" alt="logo"
               /></span>
-              <span class="copyright">SenexPay © 2021</span>
+              <span class="copyright">SenexPay © {{ getYear() }}</span>
               <!-- <div class="terms-link">
                 <router-link to="/terms">Terms of Service | </router-link>
                 <router-link to="/privacy">Privacy Policy</router-link>
@@ -138,6 +138,9 @@ export default {
   methods: {
     toHome() {
       this.$router.push('/')
+    },
+    getYear() {
+      return new Date().getFullYear()
     }
   }
 }
