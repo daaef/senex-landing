@@ -69,9 +69,9 @@
             <div class="contact-type-con">
               <p class="title heading-tertiary--v-sm">Chat us on Whatsapp</p>
               <div class="location-con paragraph">
-                <span class="location">+234 818 *** 9239</span>
+                <span class="location">+234 916 *** 8206</span>
                 <a
-                  href="https://api.whatsapp.com/send?phone=+2348184899239"
+                  href="https://wa.me/message/YWEXC2GRC6UUI1"
                   target="_blank"
                   class="type"
                   rel="noopener"
