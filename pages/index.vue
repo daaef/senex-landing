@@ -103,23 +103,24 @@
     <div id="coin-section" class="coin-section">
       <div class="container mx-auto overflow-con">
         <coin-price
-          name="Bitcoin"
-          abbr="BTC"
-          image="/img/btc.svg"
-          :buy="getFiatAmount('BTC', 'buy')"
-          :sell="getFiatAmount('BTC', 'sell')"
+          v-for="(token, i) in countryCrypto"
+          :key="i"
+          :name="tokenConfig(token).name"
+          :abbr="tokenConfig(token).abbr"
+          :image="tokenConfig(token).image"
+          :rate="getPairRate(token)"
           :country="country"
         >
         </coin-price>
-        <coin-price
+        <!-- <coin-price
+          v-if="rates"
           name="Tether"
           abbr="USDT"
           image="/img/t-coin.svg"
-          :buy="getFiatAmount('USD', 'buy')"
-          :sell="getFiatAmount('USD', 'sell')"
+          :rate="getPairRate('USDT')"
           :country="country"
         >
-        </coin-price>
+        </coin-price> -->
         <!-- <coin-price
           name="DOGE COIN"
           abbr="DOGE"
@@ -564,14 +565,36 @@ export default {
       loading: true,
       scrollPosition: 0,
       ticking: false,
+      tokens: {
+        BTC: {
+          abbr: 'BTC',
+          name: 'Bitcoin',
+          image: '/img/btc.svg'
+        },
+        USDT: {
+          abbr: 'USDT',
+          name: 'Tether',
+          image: '/img/t-coin.svg'
+        },
+        ETH: {
+          abbr: 'ETH',
+          name: 'Ethereum',
+          image: '/img/ethereum-eth.svg'
+        },
+        DOGE: {
+          abbr: 'DOGE',
+          name: 'DogeCoin',
+          image: '/img/doge-coin.svg'
+        }
+      },
       buyBadge: false,
       sellBadge: false,
       rates: {
         BTC_USD: { buy: 0, sell: 0 },
         BTC_NGN: { buy: 0, sell: 0 },
         BTC_ZAR: { buy: 0, sell: 0 },
-        USD_NGN: { buy: 0, sell: 0 },
-        USD_ZAR: { buy: 0, sell: 0 }
+        USDT_NGN: { buy: 0, sell: 0 },
+        USDT_ZAR: { buy: 0, sell: 0 }
       },
       limits: {
         disableBuy: false,
@@ -622,7 +645,16 @@ export default {
   computed: {
     ...mapState({
       country: (state) => state.country
-    })
+    }),
+    countryCrypto() {
+      const list = Object.keys(this.rates)
+      list.pop()
+      return (
+        list
+          .filter((item) => item.split('_')[1] === this.country.code)
+          .map((item) => item.split('_')[0]) || ['BTC']
+      )
+    }
   },
   mounted() {
     this.appLink = process.env.APP_URL
@@ -664,7 +696,7 @@ export default {
     async getRates() {
       // this.isLoading = true
       try {
-        const { data } = await this.$axios.get('/rates/v2')
+        const { data } = await this.$axios.get('/rates/')
         this.rates = data
         this.limits = data.config
         // this.isLoading = false
@@ -672,8 +704,11 @@ export default {
         // this.getRates()
       }
     },
-    getFiatAmount(crypto, type) {
-      return this.rates[`${crypto}_${this.country.code}`][type]
+    getPairRate(crypto) {
+      return this.rates[`${crypto}_${this.country.code}`]
+    },
+    tokenConfig(token) {
+      if (this.countryCrypto) return this.tokens[token]
     }
   }
 }

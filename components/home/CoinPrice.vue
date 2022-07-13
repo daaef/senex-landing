@@ -11,7 +11,7 @@
       <div class="coin-holder__price-box">
         <div class="coin-holder__coin-price-con">
           <span class="amount"
-            >{{ country.symbol }}{{ Number(buy).toLocaleString() }}</span
+            >{{ country.symbol }}{{ Number(rate.buy).toLocaleString() }}</span
           >
           <!-- <span class="btn action action--buy"
             ><a :href="appLink + '/order/start'">Buy</a></span
@@ -26,7 +26,7 @@
         </div>
         <div class="coin-holder__coin-price-con">
           <span class="amount"
-            >{{ country.symbol }}{{ Number(sell).toLocaleString() }}</span
+            >{{ country.symbol }}{{ Number(rate.sell).toLocaleString() }}</span
           >
           <span class="btn action action--sell"
             ><a
@@ -59,6 +59,13 @@ export default {
     abbr: {
       type: String,
       default: ''
+    },
+    rate: {
+      type: Object,
+      default: () => ({
+        buy: 0,
+        sell: 0
+      })
     },
     buy: {
       type: Number,
