@@ -111,7 +111,10 @@ export default {
     ...mapState({
       selectedCountry: 'country',
       sideBarOpen: 'sideBarOpen'
-    })
+    }),
+    appLinkSync() {
+      return this.appLink
+    }
   },
   mounted() {
     this.appLink = process.env.APP_URL
