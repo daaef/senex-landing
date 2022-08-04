@@ -94,3 +94,5 @@ OneSignalSDKUpdaterWorker.js
 
 static/OneSignalSDKWorker.js
 static/OneSignalSDKUpdaterWorker.js
+
+yarn.lock
