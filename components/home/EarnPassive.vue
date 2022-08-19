@@ -11,7 +11,9 @@
           Earn 10 USDT each time you invite a friend to register and perform a
           transaction on SenexPay. There is no limit to what you can earn!
         </p>
-        <a href="" class="dash--btn"> Get Started</a>
+        <a :href="appLink + '/create-account'" class="dash--btn">
+          Get Started</a
+        >
       </div>
     </div>
   </section>

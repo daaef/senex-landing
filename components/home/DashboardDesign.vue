@@ -7,7 +7,9 @@
         dashboard.
       </p>
       <div class="text-center">
-        <a href="" class="dash--btn"> Get Started</a>
+        <a :href="appLink + '/create-account'" class="dash--btn">
+          Get Started</a
+        >
       </div>
       <div class="dash--img-holder">
         <img src="~/assets/img/dash.png" alt="Dashboard--img" />
