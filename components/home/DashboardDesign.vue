@@ -1,17 +1,19 @@
 <template>
   <section class="dashboard--design">
     <div class="container">
-      <h2>A Powerful Dashboard <br />Designed with You in Mind</h2>
-      <p>
-        Get a full bird's-eye view of all your crypto activities on the
-        dashboard.
-      </p>
-      <div class="text-center">
-        <a :href="appLink + '/create-account'" class="dash--btn">
-          Get Started</a
-        >
+      <div class="" data-aos="fade-down">
+        <h2>A Powerful Dashboard <br />Designed with You in Mind</h2>
+        <p>
+          Get a full bird's-eye view of all your crypto activities on the
+          dashboard.
+        </p>
+        <div class="text-center">
+          <a :href="appLink + '/create-account'" class="dash--btn">
+            Get Started</a
+          >
+        </div>
       </div>
-      <div class="dash--img-holder">
+      <div class="dash--img-holder" data-aos="fade-up">
         <img src="~/assets/img/dash.png" alt="Dashboard--img" />
       </div>
     </div>

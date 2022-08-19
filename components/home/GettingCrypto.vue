@@ -2,7 +2,7 @@
   <section class="getting--crypto">
     <img class="curves" src="/img/green-semi-circles-up.png" alt="" />
     <div class="container flex flex-wrap items-center">
-      <div class="left--info">
+      <div class="left--info" data-aos="fade-right">
         <div class="tag--badge uppercase">Virtual Event</div>
         <h3>Getting into Crypto</h3>
         <p>
@@ -12,7 +12,7 @@
         </p>
         <a href="" class="dash--btn"> Register for free</a>
       </div>
-      <div class="right--card">
+      <div class="right--card" data-aos="zoom-in">
         <div class="event--card">
           <div class="card--top">
             <h4>Talk to a <br /><span>Crypto Advisor</span></h4>

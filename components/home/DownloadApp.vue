@@ -2,16 +2,21 @@
   <section class="download--app">
     <div class="container">
       <div class="down--app-banner">
-        <div class="download--message">
+        <div class="download--message" data-aos="fade">
           <h3>Download the mobile app</h3>
           <p>Get smarter and faster access right on your mobile phone.</p>
           <div class="cto--btns">
             <button>
-              <img
-                src="~/assets/img/apple_logo_appstore.svg"
-                alt="Apple Logo"
-              />
-              <span> App Store </span>
+              <a
+                target="_blank"
+                href="https://apps.apple.com/us/app/senexpay/id1627864145"
+              >
+                <img
+                  src="~/assets/img/apple_logo_appstore.svg"
+                  alt="Apple Logo"
+                />
+                <span> App Store </span>
+              </a>
             </button>
             <button>
               <img
@@ -22,7 +27,7 @@
             </button>
           </div>
         </div>
-        <div class="app--image">
+        <div class="app--image" data-aos="fade-up">
           <img
             src="/img/app--bubble.png"
             class="app--bubble1"

@@ -105,6 +105,7 @@
         <coin-price
           v-for="(token, i) in countryCrypto"
           :key="i"
+          data-aos="fade-up"
           :name="tokenConfig(token).name"
           :abbr="tokenConfig(token).abbr"
           :image="tokenConfig(token).image"

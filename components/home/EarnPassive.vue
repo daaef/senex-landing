@@ -1,10 +1,10 @@
 <template>
   <section class="earn--passive">
     <div class="container flex flex-wrap items-center">
-      <div class="earn--group">
+      <div class="earn--group" data-aos="fade-down">
         <img src="/img/earn-group.png" alt="" />
       </div>
-      <div class="earn--info">
+      <div class="earn--info" data-aos="fade-up">
         <div class="tag--badge uppercase success">new</div>
         <h2>Earn Passive Income</h2>
         <p>

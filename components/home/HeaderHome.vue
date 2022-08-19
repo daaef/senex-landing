@@ -19,8 +19,16 @@
         </p>
         <div class="cto--btns">
           <button>
-            <img src="~/assets/img/apple_logo_appstore.svg" alt="Apple Logo" />
-            <span> App Store </span>
+            <a
+              target="_blank"
+              href="https://apps.apple.com/us/app/senexpay/id1627864145"
+            >
+              <img
+                src="~/assets/img/apple_logo_appstore.svg"
+                alt="Apple Logo"
+              />
+              <span> App Store </span>
+            </a>
           </button>
           <button>
             <img
