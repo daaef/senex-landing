@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="409" height="132" viewBox="0 0 409 132">
+  <defs>
+    <filter id="Rectangle_1175" x="0" y="0" width="409" height="132" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1018" data-name="Group 1018" transform="translate(11972.5 7269.5)">
+    <g transform="matrix(1, 0, 0, 1, -11972.5, -7269.5)" filter="url(#Rectangle_1175)">
+      <rect id="Rectangle_1175-2" data-name="Rectangle 1175" width="364" height="87" rx="20" transform="translate(22.5 19.5)" fill="#fff"/>
+    </g>
+    <g id="Group_1014" data-name="Group 1014" transform="translate(0 0.23)">
+      <path id="Icon_ionic-md-checkmark-circle" data-name="Icon ionic-md-checkmark-circle" d="M18.593,3.375A15.218,15.218,0,1,0,33.811,18.593,15.263,15.263,0,0,0,18.593,3.375ZM15.469,26.706l-7.8-7.8L9.857,16.72l5.619,5.619,11.86-11.86,2.188,2.188Z" transform="translate(-11644.598 -7225.605)" fill="#20d053"/>
+      <text id="Nigeria" transform="translate(-11878.49 -7197.23)" fill="#041d45" font-size="25" font-family="SFProDisplay-Regular, SF Pro Display"><tspan x="0" y="0">Nigeria</tspan></text>
+      <g id="nigeria_1_" data-name="nigeria (1)" transform="translate(-11925.213 -7222.23)">
+        <path id="Path_2864" data-name="Path 2864" d="M291.937,13.628l-1.836,5.09a37.974,37.974,0,0,1,0,19.483l1.836,5.089a15.731,15.731,0,0,0,0-29.662Z" transform="translate(-270.962 -12.729)" fill="#518d51"/>
+        <g id="Group_845" data-name="Group 845" transform="translate(15.687 0)">
+          <path id="Path_2865" data-name="Path 2865" d="M243.678,5.992V.9a15.7,15.7,0,0,0-5.244-.9C240.86,0,237.5,8.224,243.678,5.992Z" transform="translate(-238.391 -0.004)" fill="#e4e4e4"/>
+          <path id="Path_2866" data-name="Path 2866" d="M237.821,391.523a15.7,15.7,0,0,0,5.244-.9v-5.089C236.945,384.924,237.821,391.523,237.821,391.523Z" transform="translate(-237.777 -360.064)" fill="#e4e4e4"/>
+        </g>
+        <g id="Group_846" data-name="Group 846" transform="translate(0 0.878)">
+          <path id="Path_2867" data-name="Path 2867" d="M0,28.171A15.733,15.733,0,0,0,10.547,43.023V13.32A15.733,15.733,0,0,0,0,28.171Z" transform="translate(0 -13.32)" fill="#589f58"/>
+          <path id="Path_2868" data-name="Path 2868" d="M317.926,90.775v19.483A37.971,37.971,0,0,0,317.926,90.775Z" transform="translate(-296.952 -85.665)" fill="#589f58"/>
+        </g>
+        <path id="Path_2869" data-name="Path 2869" d="M170.3,25.476V5.992C169.232,2.457,167.484,0,165.059,0a15.694,15.694,0,0,0-5.183.878v29.7a15.7,15.7,0,0,0,5.183.878C167.484,31.464,169.232,29.011,170.3,25.476Z" transform="translate(-149.329 -0.004)" fill="#f3f4f5"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -75,7 +75,13 @@ export default {
         content: '/img/senexpay-og-image-sq.png'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'http://fonts.cdnfonts.com/css/sf-pro-display'
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

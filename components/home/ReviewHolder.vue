@@ -1,10 +1,7 @@
 <template>
-  <div class="container">
+  <div v-if="reviews.length > 0" class="container">
     <div class="review-holder u-my-big">
-      <h3
-        v-if="reviews.length > 0"
-        class="heading-secondary heading-secondary--weight-md u-my-md"
-      >
+      <h3 class="heading-secondary heading-secondary--weight-md u-my-md">
         What our customers are saying.
       </h3>
       <!-- <div class="review-holder__reviews u-mb-md"> -->
@@ -57,7 +54,7 @@
           :class="[current == i ? 'review-holder__dot--active' : '']"
           @click="clickDot(i)"
         ></span>
-        
+
       </div> -->
       <!-- <span class="review-holder__dot review-holder__dot--active"></span>
         <span class="review-holder__dot"></span>

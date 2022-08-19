@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="409" height="132" viewBox="0 0 409 132">
+  <defs>
+    <filter id="Rectangle_1174" x="0" y="0" width="409" height="132" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1017" data-name="Group 1017" transform="translate(11972.5 7168.5)">
+    <g transform="matrix(1, 0, 0, 1, -11972.5, -7168.5)" filter="url(#Rectangle_1174)">
+      <rect id="Rectangle_1174-2" data-name="Rectangle 1174" width="364" height="87" rx="20" transform="translate(22.5 19.5)" fill="#fff"/>
+    </g>
+    <g id="Group_1013" data-name="Group 1013">
+      <path id="Icon_ionic-md-checkmark-circle" data-name="Icon ionic-md-checkmark-circle" d="M18.593,3.375A15.218,15.218,0,1,0,33.811,18.593,15.263,15.263,0,0,0,18.593,3.375ZM15.469,26.706l-7.8-7.8L9.857,16.72l5.619,5.619,11.86-11.86,2.188,2.188Z" transform="translate(-11644.598 -7123.375)" fill="#20d053"/>
+      <text id="South_Africa" data-name="South Africa" transform="translate(-11878.49 -7096)" fill="#041d45" font-size="25" font-family="SFProDisplay-Regular, SF Pro Display"><tspan x="0" y="0">South Africa</tspan></text>
+      <g id="south-africa_1_" data-name="south-africa (1)" transform="translate(-11925.016 -7121)">
+        <circle id="Ellipse_5489" data-name="Ellipse 5489" cx="15.054" cy="15.054" r="15.054" transform="translate(0.34 0.339)" fill="#f0f0f0"/>
+        <path id="Path_2870" data-name="Path 2870" d="M4.549,96.946a15.532,15.532,0,0,1,0-21.966s8.957,10.983,8.957,10.983Z" transform="translate(0 -70.431)"/>
+        <path id="Path_2871" data-name="Path 2871" d="M30.9,136.248l-11.446-7.735a15.475,15.475,0,0,0-.937,1.927l5.795,5.808-5.795,5.808a15.466,15.466,0,0,0,.936,1.926Z" transform="translate(-17.391 -120.716)" fill="#ffda44"/>
+        <path id="Path_2872" data-name="Path 2872" d="M62.817,83.941H45.39l-8.957-8.957a15.593,15.593,0,0,0-2.489,3.248l7.72,7.735L33.943,93.7a15.59,15.59,0,0,0,2.49,3.249l8.957-8.957H62.817a15.676,15.676,0,0,0,0-4.052Z" transform="translate(-31.884 -70.434)" fill="#6da544"/>
+        <path id="Path_2873" data-name="Path 2873" d="M100.138,331.053a15.534,15.534,0,0,0,24.454-8.27H108.408Z" transform="translate(-94.062 -303.199)" fill="#0052b4"/>
+        <path id="Path_2874" data-name="Path 2874" d="M124.592,11.48a15.534,15.534,0,0,0-24.454-8.269l8.269,8.269h16.185Z" transform="translate(-94.062)" fill="#d80027"/>
+      </g>
+    </g>
+  </g>
+</svg>

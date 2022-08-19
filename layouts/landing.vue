@@ -12,13 +12,7 @@
       </transition>
     </app-modal>
     <div>
-      <Nav
-        :theme="{
-          backgroundColor: '#F5F5FD',
-          color: '#282836',
-          lightTheme: true
-        }"
-      />
+      <HomeHeaderHome />
       <Nuxt />
       <div class="container u-d-none">
         <div v-if="showCookies" class="cookies">
@@ -67,8 +61,8 @@ export default {
 
 <style>
 html {
-  font-family: 'SFPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
   /* font-size: 16px; */
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
