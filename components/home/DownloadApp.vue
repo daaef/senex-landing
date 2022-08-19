@@ -113,6 +113,28 @@ export default {
         height: 140px;
       }
     }
+    @media only screen and (max-width: 64em) {
+      & {
+        padding-top: 50px;
+      }
+      .app--image,
+      .download--message {
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 37.5em) {
+      .download--message {
+        .cto--btns {
+          flex-direction: column;
+          align-items: flex-start;
+          button {
+            margin: 0 0 20px;
+            font-size: 3rem;
+            justify-content: center;
+          }
+        }
+      }
+    }
   }
 }
 </style>

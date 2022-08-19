@@ -196,6 +196,9 @@ export default {
     .right--card {
       margin-top: 50px;
     }
+    .right--card .event--card .card--base .event--coin {
+      height: 120px;
+    }
   }
 }
 .tag--badge {

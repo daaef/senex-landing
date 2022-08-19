@@ -55,5 +55,15 @@ export default {
       color: #ffffff;
     }
   }
+  @media only screen and (max-width: 64em) {
+    .earn--group,
+    .earn--info {
+      width: 100%;
+      padding: 0;
+    }
+    .earn--info {
+      margin-top: 100px;
+    }
+  }
 }
 </style>

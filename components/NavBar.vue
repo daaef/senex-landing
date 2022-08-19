@@ -1,5 +1,5 @@
 <template>
-  <nav class="">
+  <nav class="home--nav">
     <div class="container">
       <div class="logo">
         <img src="/img/senexpay-logo-light.svg" alt="SenexPay logo" />
@@ -12,15 +12,19 @@
       </div>
       <div class="navigations">
         <ul class="left--section">
-          <li><a href="">About us</a></li>
-          <li><a href="">FAQ</a></li>
-          <li><a href="">Careers</a></li>
-          <li><a href="">Contact us</a></li>
-          <li><a href="" class="login-lnk">Log in</a></li>
+          <li><nuxt-link to="/about">About us</nuxt-link></li>
+          <li><nuxt-link to="/faqs">FAQ</nuxt-link></li>
+          <li><nuxt-link to="/careers">Careers</nuxt-link></li>
+          <li><nuxt-link to="/contact">Contact us</nuxt-link></li>
+          <li><a :href="appLink + '/signin'" class="login-lnk">Log in</a></li>
         </ul>
         <ul class="right--section">
-          <li><a href="" class="login-lnk">Log in</a></li>
-          <li><a href="" class="nav-btn"> Get Started</a></li>
+          <li><a :href="appLink + '/signin'" class="login-lnk">Log in</a></li>
+          <li>
+            <a :href="appLink + '/create-account'" class="nav-btn">
+              Get Started</a
+            >
+          </li>
         </ul>
         <!--        <div class="icon-dropdown">
           <img src="~/assets/img/nigerian_flag.svg" class="flag" alt="" />

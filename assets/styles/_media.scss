@@ -10,10 +10,10 @@
 
   header .header--content .header--cto {
     h2 {
-      font-size: 3rem;
+      font-size: 4rem;
     }
     p {
-      font-size: 1.3rem;
+      font-size: 1.9rem;
     }
   }
   .cto--btns {
@@ -25,7 +25,7 @@
       }
 
       span {
-        font-size: 1.2rem;
+        font-size: 1.9rem;
       }
     }
   }
@@ -34,9 +34,6 @@
 @media  (max-width: 1300px) {
   .cto--btns button {
     padding: 10px 20px;
-    //span {
-    //  font-size: 1rem;
-    //}
     img {
       height: 20px;
     }
@@ -54,7 +51,7 @@
   .cto--btns button {
     padding: 10px 20px;
     span {
-      font-size: 1rem;
+      font-size: 2rem;
     }
     img {
       height: 20px;
@@ -121,7 +118,7 @@
 }
 
 @media  (max-width: 1050px) {
-  nav {
+  nav.home--nav {
     .container {
       .navigations {
         background: $header-blue;
@@ -167,8 +164,8 @@
       }
     }
   }
-  nav .container .navigations ul li a {
-    font-size: 2.5rem;
+  nav.home--nav .container .navigations ul li a {
+    font-size: 3.5rem;
   }
   .container.small {
     max-width: 80%;
