@@ -2,7 +2,7 @@
   <section class="download--app">
     <div class="container">
       <div class="down--app-banner">
-        <div class="download--message" data-aos="fade">
+        <div class="download--message" data-aos="fade" data-aos-once="true">
           <h3>Download the mobile app</h3>
           <p>Get smarter and faster access right on your mobile phone.</p>
           <div class="cto--btns">
@@ -27,7 +27,7 @@
             </button>
           </div>
         </div>
-        <div class="app--image" data-aos="fade-up">
+        <div class="app--image" data-aos="fade-up" data-aos-once="true">
           <img
             src="/img/app--bubble.png"
             class="app--bubble1"
@@ -71,17 +71,18 @@ export default {
     .download--message {
       width: 60%;
       h3 {
-        font-size: 5rem;
+        font-size: 4.5rem;
         color: #ffffff;
         font-weight: bold;
       }
       p {
-        font-size: 2rem;
+        font-size: 1.9rem;
         color: #ffffff;
       }
       .cto--btns {
       }
       button {
+        align-items: center;
         &:hover {
           background: transparent
             linear-gradient(109deg, #1265fb 0%, #00ffff 100%);
@@ -133,6 +134,7 @@ export default {
           flex-direction: column;
           align-items: flex-start;
           button {
+            align-items: center;
             margin: 0 0 20px;
             font-size: 3rem;
             justify-content: center;

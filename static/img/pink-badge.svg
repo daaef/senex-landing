@@ -12,7 +12,7 @@
     <g transform="matrix(1, 0, 0, 1, 670, 2166)" filter="url(#Rectangle_979)">
       <rect id="Rectangle_979-2" data-name="Rectangle 979" width="297" height="99" rx="20" transform="translate(60 50)" fill="#fff"/>
     </g>
-    <text id="Easy_to_use" data-name="Easy to use" transform="translate(832 2277)" fill="#3e3e41" font-size="30" font-family="SFProDisplay-Regular, SF Pro Display"><tspan x="0" y="0">Easy to use</tspan></text>
+    <text id="Easy_to_use" data-name="Easy to use" transform="translate(832 2277)" fill="#3e3e41" font-size="30" font-family="SFProDisplay-Regular, SF Pro Display, SFPro"><tspan x="0" y="0">Easy to use</tspan></text>
     <rect id="Rectangle_981" data-name="Rectangle 981" width="57" height="57" rx="10" transform="translate(760 2237)" fill="#fc5286"/>
     <path id="Icon_feather-star" data-name="Icon feather-star" d="M18,3l4.635,9.39L33,13.9l-7.5,7.3,1.77,10.32L18,26.655,8.73,31.53,10.5,21.21,3,13.9,13.365,12.39Z" transform="translate(770.499 2248.235)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
   </g>

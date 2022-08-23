@@ -1,10 +1,10 @@
 <template>
   <section class="earn--passive">
     <div class="container flex flex-wrap items-center">
-      <div class="earn--group" data-aos="fade-down">
+      <div class="earn--group" data-aos="fade-down" data-aos-once="true">
         <img src="/img/earn-group.png" alt="" />
       </div>
-      <div class="earn--info" data-aos="fade-up">
+      <div class="earn--info" data-aos="fade-up" data-aos-once="true">
         <div class="tag--badge uppercase success">new</div>
         <h2>Earn Passive Income</h2>
         <p>
@@ -21,7 +21,15 @@
 
 <script>
 export default {
-  name: 'EarnPassive'
+  name: 'EarnPassive',
+  data() {
+    return {
+      appLink: ''
+    }
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
+  }
 }
 </script>
 
@@ -34,9 +42,68 @@ export default {
     width: 50%;
   }
   .earn--group {
+    display: block;
     padding-right: 40px;
+    position: relative;
+    @media (max-width: 767px) {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    @media (max-width: 435px) {
+      max-width: 270px;
+      margin: 0 auto;
+    }
+    &:hover {
+      &:before {
+        transition: 0.3s ease-in-out;
+        content: '';
+        height: 50%;
+        width: 70%;
+        background: #00fec3;
+        border-top-right-radius: 50px;
+        position: absolute;
+        right: 33px;
+        top: -7px;
+        display: block;
+        @media (max-width: 1023px) {
+          right: -7px;
+          border-top-right-radius: 65px;
+        }
+        @media (max-width: 767px) {
+          border-top-right-radius: 40px;
+        }
+        @media (max-width: 435px) {
+          border-top-right-radius: 30px;
+        }
+      }
+
+      &:after {
+        transition: 0.3s ease-in-out;
+        content: '';
+        height: 50%;
+        width: 70%;
+        background: #e1fe00;
+        border-bottom-left-radius: 50px;
+        position: absolute;
+        left: -7px;
+        bottom: -7px;
+        display: block;
+        @media (max-width: 1023px) {
+          right: -7px;
+          border-bottom-left-radius: 65px;
+        }
+        @media (max-width: 767px) {
+          border-bottom-left-radius: 40px;
+        }
+        @media (max-width: 435px) {
+          border-bottom-left-radius: 30px;
+        }
+      }
+    }
     img {
+      position: relative;
       width: 100%;
+      z-index: 2;
     }
   }
   .earn--info {
@@ -47,13 +114,13 @@ export default {
       }
     }
     h2 {
-      font-size: 5.8rem;
+      font-size: 5rem;
       font-weight: 500;
       margin: 10px 0;
       color: #ffffff;
     }
     p {
-      font-size: 2.7rem;
+      font-size: 1.9rem;
       color: #ffffff;
     }
   }

@@ -4,11 +4,11 @@
       :theme="{
         backgroundColor: '#F5F5FD',
         color: '#fafafa',
-        lightTheme: true
+        lightTheme: false
       }"
     />
     <div class="header--content container">
-      <div data-aos="fade-right" class="header--cto">
+      <div data-aos="fade-right" class="header--cto" data-aos-once="true">
         <h2>
           Buy and Sell <span class="gradient--text">Crypto</span> <br />the
           easier way.
@@ -39,7 +39,7 @@
           </button>
         </div>
       </div>
-      <div data-aos="fade-left" class="header--media">
+      <div data-aos="fade-left" data-aos-once="true" class="header--media">
         <div class="img--left">
           <img src="~/assets/img/App_home_screen.png" alt="Home screen image" />
         </div>

@@ -9,7 +9,7 @@ nav.home--nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100px;
+    min-height: 80px;
     .nav--toggle {
       display: none;
     }
@@ -88,6 +88,8 @@ nav.home--nav {
           opacity: 0.7;
           // bottom: -120%;
           z-index: 10;
+          width: 100%;
+          left: 0;
 
           img {
             margin-top: 5px;

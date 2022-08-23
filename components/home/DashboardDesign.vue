@@ -1,7 +1,7 @@
 <template>
   <section class="dashboard--design">
     <div class="container">
-      <div class="" data-aos="fade-down">
+      <div class="" data-aos="fade-down" data-aos-once="true">
         <h2>A Powerful Dashboard <br />Designed with You in Mind</h2>
         <p>
           Get a full bird's-eye view of all your crypto activities on the
@@ -13,7 +13,7 @@
           >
         </div>
       </div>
-      <div class="dash--img-holder" data-aos="fade-up">
+      <div class="dash--img-holder" data-aos="fade-up" data-aos-once="true">
         <img src="~/assets/img/dash.png" alt="Dashboard--img" />
       </div>
     </div>
@@ -22,7 +22,15 @@
 
 <script>
 export default {
-  name: 'DashboardDesign'
+  name: 'DashboardDesign',
+  data() {
+    return {
+      appLink: ''
+    }
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
+  }
 }
 </script>
 
@@ -44,6 +52,7 @@ export default {
     font-weight: 500;
     text-align: center;
     margin-bottom: 30px;
+    line-height: 1.2em;
   }
   p {
     font-size: 1.8rem;

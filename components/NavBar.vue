@@ -1,8 +1,17 @@
 <template>
-  <nav class="home--nav">
+  <nav class="home--nav" :class="theme.lightTheme ? 'light' : ''">
     <div class="container">
       <div class="logo">
-        <img src="/img/senexpay-logo-light.svg" alt="SenexPay logo" />
+        <router-link to="/" aria-label="logo">
+          <img
+            :src="
+              theme.lightTheme
+                ? '/img/senex-full-logo.svg'
+                : '/img/senexpay-logo-light.svg'
+            "
+            alt="SenexPay logo"
+          />
+        </router-link>
       </div>
       <input id="nav-toggle" type="checkbox" />
       <div class="nav--toggle">
@@ -78,7 +87,7 @@ export default {
       type: Object,
       default: () => {
         return {
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#F5F5FD',
           color: '#fafafa',
           lightTheme: true
         }
@@ -131,7 +140,28 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+nav.home--nav.light {
+  background: #ffffff;
+  .toggler {
+    color: #053888;
+  }
+  .container {
+    .navigations {
+      background: #ffffff;
+      ul {
+        li {
+          a {
+            color: #053888;
+            &.nav-btn {
+              color: #fafafa;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 #nav-toggle {
   display: none;
   &:checked {
@@ -152,8 +182,9 @@ export default {
   position: fixed;
   z-index: 200;
   color: #ffffff;
-  font-size: 1.2rem;
-  top: 60px;
+  font-size: 3rem;
+  top: 40px;
+  right: 2.5rem;
   transform: translateY(-50%);
   span:after {
     content: '\2630';

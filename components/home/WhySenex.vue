@@ -15,7 +15,11 @@
         <h2 class="heading-secondary u-text-left">
           We just wanna make crypto exchange stress-free.
         </h2>
-        <div class="lg:flex reason-con" data-aos="slide-up">
+        <div
+          class="lg:flex reason-con"
+          data-aos="slide-up"
+          data-aos-once="true"
+        >
           <div class="reason">
             <span class="icon up-anim"
               ><img src="/img/why-senex-1.png" alt="circle"

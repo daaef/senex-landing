@@ -106,6 +106,7 @@
           v-for="(token, i) in countryCrypto"
           :key="i"
           data-aos="fade-up"
+          data-aos-once="true"
           :name="tokenConfig(token).name"
           :abbr="tokenConfig(token).abbr"
           :image="tokenConfig(token).image"
@@ -148,6 +149,7 @@
       <div
         class="snx-description-con__inside snx-description-con__inside--reverse container"
         data-aos="slide-up"
+        data-aos-once="true"
       >
         <div class="snx-description-con__child">
           <div class="snx-description">

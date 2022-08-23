@@ -2,7 +2,7 @@
   <section class="getting--crypto">
     <img class="curves" src="/img/green-semi-circles-up.png" alt="" />
     <div class="container flex flex-wrap items-center">
-      <div class="left--info" data-aos="fade-right">
+      <div class="left--info" data-aos="fade-right" data-aos-once="true">
         <div class="tag--badge uppercase">Virtual Event</div>
         <h3>Getting into Crypto</h3>
         <p>
@@ -10,9 +10,11 @@
           cryptocurrency? Worry no more! Join other crypto newbies in the weekly
           session with our Crypto experts.
         </p>
-        <a href="" class="dash--btn"> Register for free</a>
+        <a :href="appLink + '/create-account'" class="dash--btn">
+          Register for free</a
+        >
       </div>
-      <div class="right--card" data-aos="zoom-in">
+      <div class="right--card" data-aos="zoom-in" data-aos-once="true">
         <div class="event--card">
           <div class="card--top">
             <h4>Talk to a <br /><span>Crypto Advisor</span></h4>
@@ -36,7 +38,20 @@
 
 <script>
 export default {
-  name: 'GettingCrypto'
+  name: 'GettingCrypto',
+  data() {
+    return {
+      appLink: ''
+    }
+  },
+  computed: {
+    appLinkSync() {
+      return this.appLink
+    }
+  },
+  mounted() {
+    this.appLink = process.env.APP_URL
+  }
 }
 </script>
 
@@ -177,6 +192,9 @@ export default {
           font-size: 2.7rem;
           font-weight: bold;
           line-height: 1;
+          @media (min-width: 1500px) {
+            font-size: 2rem;
+          }
         }
         .event--coin {
           position: absolute;
@@ -204,7 +222,7 @@ export default {
 .tag--badge {
   background: #4f39e1;
   color: #fafafa;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   padding: 5px 15px;
   border-radius: 20px;
   font-weight: bold;

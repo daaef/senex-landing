@@ -20,7 +20,7 @@
       <SideNav :is-open="showSide" @show="show" @reset-scroll="resetScroll" />
     </app-modal> -->
     <div class="">
-      <Nav
+      <NavBar
         :theme="{
           backgroundColor: '#FFFFFF',
           color: '#053888',
@@ -68,8 +68,8 @@ export default {
 
 <style>
 html {
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'SFPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   /* font-size: 16px; */
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
