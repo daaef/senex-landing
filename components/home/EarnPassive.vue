@@ -12,8 +12,8 @@
           transaction on SenexPay. There is no limit to what you can earn!
         </p>
         <a :href="appLink + '/create-account'" class="dash--btn">
-          Get Started</a
-        >
+          Get Started
+        </a>
       </div>
     </div>
   </section>
