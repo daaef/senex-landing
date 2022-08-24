@@ -19,11 +19,13 @@
               </a>
             </button>
             <button>
-              <img
-                src="~/assets/img/googleplay_logo_playstore.svg"
-                alt="Google Play Logo"
-              />
-              <span> Google Play </span>
+              <a target="_blank" href="#">
+                <img
+                  src="~/assets/img/googleplay_logo_playstore.svg"
+                  alt="Google Play Logo"
+                />
+                <span> Google Play </span>
+              </a>
             </button>
           </div>
         </div>
@@ -78,8 +80,6 @@ export default {
       p {
         font-size: 1.9rem;
         color: #ffffff;
-      }
-      .cto--btns {
       }
       button {
         align-items: center;

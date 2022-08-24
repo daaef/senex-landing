@@ -53,6 +53,12 @@ export default {
     text-align: center;
     margin-bottom: 30px;
     line-height: 1.2em;
+    @media (max-width: 767px) {
+      font-size: 3.5rem;
+    }
+    @media (max-width: 400px) {
+      font-size: 3rem;
+    }
   }
   p {
     font-size: 1.8rem;
