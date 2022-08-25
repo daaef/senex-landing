@@ -57,13 +57,16 @@ export default {
       font-size: 3.5rem;
     }
     @media (max-width: 400px) {
-      font-size: 3rem;
+      font-size: 4rem;
     }
   }
   p {
     font-size: 1.8rem;
     color: #fafafa;
     text-align: center;
+    @media (max-width: 450px) {
+      font-size: 2.2rem;
+    }
   }
   .dash--img-holder {
     margin-top: 40px;
@@ -86,6 +89,10 @@ a.dash--btn {
   text-align: center;
   display: inline-block;
   margin-top: 30px;
+  @media (max-width: 450px) {
+    font-size: 2.2rem;
+    padding: 10px 35px;
+  }
   &:hover {
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;

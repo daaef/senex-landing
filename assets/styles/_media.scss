@@ -5,12 +5,12 @@
   }
 }
 @media  (max-width: 1639px) {
-  .cto--btns button img {
+  .cto--btns a img {
     height: 30px;
   }
 }
 @media  (max-width: 1500px) {
-  .cto--btns button img {
+  .cto--btns a img {
     height: 30px;
   }
 
@@ -23,7 +23,7 @@
     }
   }
   .cto--btns {
-    button {
+    a {
       padding: 15px 40px;
       span {
         word-break: break-all;
@@ -40,7 +40,7 @@
 }
 
 @media  (max-width: 1300px) {
-  .cto--btns button {
+  .cto--btns a {
     padding: 10px 20px;
     img {
       height: 20px;
@@ -49,6 +49,23 @@
 }
 
 @media  (max-width: 1140px) {
+  .bottom--sect {
+    .container {
+      .meta--img {
+        .meta--container {
+          display: flex;
+          justify-content: flex-end;
+            .country--bubbles{
+              left: 25%;
+            }
+          .grad--circ {
+            right: 5%;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
   .bottom--sect .container .meta--img .meta--container {
     width: 100%;
     overflow: hidden;
@@ -56,7 +73,7 @@
       transform: translateY(-50%);
     }
   }
-  .cto--btns button {
+  .cto--btns a {
     padding: 8px 15px;
     span {
       font-size: 1.3rem;
@@ -185,5 +202,75 @@
   .dashboard--design .dash--img-holder {
     height: unset !important;
   }
+  .bottom--sect {
+    .container {
+      .meta--img {
+        .meta--container {
+          display: flex;
+          justify-content: flex-end;
+
+          .grad--circ {
+            right: 5%;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
 }
 
+@media  (max-width: 450px) {
+  header .header--content .header--cto {
+    & > * {
+      br {
+        display: none;
+      }
+    }
+    align-items: stretch;
+    text-align: left;
+    .cto--btns {
+      justify-content: space-between;
+      a {
+        width: calc(50% - 5px);
+        padding: 10px 20px;
+        justify-content: center;
+        margin-right: 0;
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  nav.home--nav .container .logo img{
+    height: 25px;
+  }
+  .bottom--sect {
+    .container {
+      .meta--info {
+        align-items: flex-start;
+        h3, p {
+          text-align: left;
+        }
+        p {
+          margin-top: 20px;
+          font-size: 2.2rem;
+        }
+      }
+      .meta--img {
+        .meta--container {
+          display: flex;
+          justify-content: flex-end;
+          .country--bubbles{
+            left: 5%;
+          }
+
+          .grad--circ {
+            height: 50%;
+            right: 5%;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}

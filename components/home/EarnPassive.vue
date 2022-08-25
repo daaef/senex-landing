@@ -50,8 +50,32 @@ export default {
       margin: 0 auto;
     }
     @media (max-width: 435px) {
-      max-width: 270px;
+      //max-width: 270px;
       margin: 0 auto;
+      &:before {
+        transition: 0.3s ease-in-out;
+        content: '';
+        height: 50%;
+        width: 70%;
+        background: #00fec3;
+        border-top-right-radius: 35px;
+        position: absolute;
+        right: -7px;
+        top: -7px;
+        display: block;
+      }
+      &:after {
+        transition: 0.3s ease-in-out;
+        content: '';
+        height: 50%;
+        width: 70%;
+        background: #e1fe00;
+        border-bottom-left-radius: 30px;
+        position: absolute;
+        left: -7px;
+        bottom: -7px;
+        display: block;
+      }
     }
     &:hover {
       &:before {
@@ -122,6 +146,9 @@ export default {
     p {
       font-size: 1.9rem;
       color: #ffffff;
+      @media (max-width: 450px) {
+        font-size: 2.2rem;
+      }
     }
   }
   @media only screen and (max-width: 64em) {

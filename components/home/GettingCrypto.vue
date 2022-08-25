@@ -81,6 +81,9 @@ export default {
     }
     p {
       font-size: 1.9rem;
+      @media (max-width: 450px) {
+        font-size: 2.2rem;
+      }
     }
 
     a.dash--btn {
@@ -93,6 +96,10 @@ export default {
       text-align: center;
       display: inline-block;
       margin-top: 30px;
+      @media (max-width: 450px) {
+        font-size: 2.2rem;
+        padding: 10px 35px;
+      }
       &:hover {
         -webkit-background-clip: unset;
         -webkit-text-fill-color: unset;

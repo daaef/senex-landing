@@ -19,13 +19,21 @@
           <span />
         </label>
       </div>
+      <div class="navigations1">
+        <ul class="link-resp">
+          <li>
+            <a :href="appLink + '/signin'" class="login-lnk dash--btn">
+              Log in
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="navigations">
         <ul class="left--section">
           <li><nuxt-link to="/about">About us</nuxt-link></li>
           <li><nuxt-link to="/faqs">FAQ</nuxt-link></li>
           <li><nuxt-link to="/careers">Careers</nuxt-link></li>
           <li><nuxt-link to="/contact">Contact us</nuxt-link></li>
-          <li><a :href="appLink + '/signin'" class="login-lnk">Log in</a></li>
         </ul>
         <ul class="right--section">
           <li><a :href="appLink + '/signin'" class="login-lnk">Log in</a></li>
@@ -35,10 +43,6 @@
             >
           </li>
         </ul>
-        <!--        <div class="icon-dropdown">
-          <img src="~/assets/img/nigerian_flag.svg" class="flag" alt="" />
-          <img src="~/assets/img/flag_dropdown.svg" class="icon" alt="" />
-        </div>-->
         <div class="icon-dropdown country-con">
           <div class="country-icon">
             <img :src="selectedCountry.imageSource" alt="country" />
@@ -141,6 +145,21 @@ export default {
 </script>
 
 <style lang="scss">
+.navigations1 {
+  display: none;
+  margin-right: 30px;
+  @media (max-width: 1050px) {
+    display: flex;
+  }
+  .link-resp {
+    list-style: none;
+    a.dash--btn {
+      font-size: 2.2rem;
+      padding: 7px 20px;
+      margin-top: 0;
+    }
+  }
+}
 nav.home--nav.light {
   background: #ffffff;
   .toggler {

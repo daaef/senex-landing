@@ -10,35 +10,28 @@
     <div class="header--content container">
       <div data-aos="fade-right" class="header--cto" data-aos-once="true">
         <h2>
-          Buy and Sell <span class="gradient--text">Crypto</span> <br />the
-          easier way.
+          Buy and Sell <span class="gradient--text">Crypto</span> <br />the easy
+          way.
         </h2>
         <p>
-          SenexPay created the simplest way to buy and sell <br />Bitcoin and
-          USDT in minutes.
+          SenexPay offers you a secure and easy <br />
+          way to make crypto-fiat exchange without any hassle.
         </p>
         <div class="cto--btns">
-          <button>
-            <a
-              target="_blank"
-              href="https://apps.apple.com/us/app/senexpay/id1627864145"
-            >
-              <img
-                src="~/assets/img/apple_logo_appstore.svg"
-                alt="Apple Logo"
-              />
-              <span> App Store </span>
-            </a>
-          </button>
-          <button>
-            <a target="_blank" href="#">
-              <img
-                src="~/assets/img/googleplay_logo_playstore.svg"
-                alt="Google Play Logo"
-              />
-              <span> Google Play </span>
-            </a>
-          </button>
+          <a
+            target="_blank"
+            href="https://apps.apple.com/us/app/senexpay/id1627864145"
+          >
+            <img src="~/assets/img/apple_logo_appstore.svg" alt="Apple Logo" />
+            <span> App Store </span>
+          </a>
+          <a target="_blank" href="#">
+            <img
+              src="~/assets/img/googleplay_logo_playstore.svg"
+              alt="Google Play Logo"
+            />
+            <span> Google Play </span>
+          </a>
         </div>
       </div>
       <div data-aos="fade-left" data-aos-once="true" class="header--media">
@@ -208,7 +201,7 @@ export default {
 }
 .st4 {
   font-family: 'SF Pro', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.9rem;
 }
 #Layer_1 {
   .st0 {
@@ -229,7 +222,7 @@ export default {
   }
   .st4 {
     font-family: 'SF Pro', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.9rem;
   }
 }
 </style>

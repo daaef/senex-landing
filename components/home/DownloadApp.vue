@@ -6,27 +6,23 @@
           <h3>Download the mobile app</h3>
           <p>Get smarter and faster access right on your mobile phone.</p>
           <div class="cto--btns">
-            <button>
-              <a
-                target="_blank"
-                href="https://apps.apple.com/us/app/senexpay/id1627864145"
-              >
-                <img
-                  src="~/assets/img/apple_logo_appstore.svg"
-                  alt="Apple Logo"
-                />
-                <span> App Store </span>
-              </a>
-            </button>
-            <button>
-              <a target="_blank" href="#">
-                <img
-                  src="~/assets/img/googleplay_logo_playstore.svg"
-                  alt="Google Play Logo"
-                />
-                <span> Google Play </span>
-              </a>
-            </button>
+            <a
+              target="_blank"
+              href="https://apps.apple.com/us/app/senexpay/id1627864145"
+            >
+              <img
+                src="~/assets/img/apple_logo_appstore.svg"
+                alt="Apple Logo"
+              />
+              <span> App Store </span>
+            </a>
+            <a target="_blank" href="#">
+              <img
+                src="~/assets/img/googleplay_logo_playstore.svg"
+                alt="Google Play Logo"
+              />
+              <span> Google Play </span>
+            </a>
           </div>
         </div>
         <div class="app--image" data-aos="fade-up" data-aos-once="true">
@@ -76,12 +72,19 @@ export default {
         font-size: 4.5rem;
         color: #ffffff;
         font-weight: bold;
+        line-height: 1.2em;
+        @media (max-width: 767px) {
+          font-size: 3.8rem;
+        }
       }
       p {
         font-size: 1.9rem;
         color: #ffffff;
+        @media (max-width: 450px) {
+          font-size: 2.2rem;
+        }
       }
-      button {
+      a {
         align-items: center;
         &:hover {
           background: transparent
@@ -131,17 +134,32 @@ export default {
     @media only screen and (max-width: 37.5em) {
       .download--message {
         .cto--btns {
-          flex-direction: column;
-          align-items: flex-start;
-          button {
+          align-items: center;
+          justify-content: space-between;
+          a {
             align-items: center;
-            margin: 0 0 20px;
-            font-size: 3rem;
+            width: calc(50% - 5px);
+            padding: 10px;
             justify-content: center;
+            margin-right: 0;
+            span {
+              font-size: 1.5rem;
+            }
           }
         }
       }
     }
+  }
+}
+@media (max-width: 450px) {
+  .download--app {
+    .down--app-banner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .download--app .down--app-banner .download--message p {
+    margin-top: 10px;
   }
 }
 </style>
