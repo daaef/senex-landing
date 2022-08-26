@@ -6,12 +6,12 @@ export default {
       'data-n-head': 'lang'
     },
     title: 'SenexPay - Buy and sell crypto in minutes.',
-    script: [
+    /* script: [
       {
         src: 'https://static.simpu.co/widgets/v1/simpu-widget.js',
         defer: true
       },
-    ],
+    ], */
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -110,7 +110,7 @@ export default {
 
   generate: {
     // choose to suit your project
-    interval: 2000,
+    interval: 2000
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -187,7 +187,7 @@ export default {
       config: {
         // debug: true
       }
-    },
+    }
   },
 
   sentry: {

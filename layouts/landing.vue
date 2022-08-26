@@ -42,15 +42,6 @@ export default {
       showCookies: 'showCookies'
     })
   },
-  // head() {
-  //   return {
-  //     script: [
-  //       {
-  //         src: 'https://static.simpu.co/widgets/v1/simpu-widget.js'
-  //       }
-  //     ]
-  //   }
-  // },
   methods: {
     toggleCookies() {
       this.$store.dispatch('toggleCookies')
