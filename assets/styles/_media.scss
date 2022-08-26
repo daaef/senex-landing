@@ -149,6 +149,9 @@
   }
   nav.home--nav {
     .container {
+      .toggler {
+        display: block;
+      }
       .navigations {
         background: $header-blue;
         transition: all .5s ease-in-out;

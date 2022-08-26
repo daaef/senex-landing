@@ -201,7 +201,13 @@ export default {
 }
 .st4 {
   font-family: 'SF Pro', sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
+  @media (max-width: 767px) {
+    font-size: 1.9rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 2.1rem;
+  }
 }
 #Layer_1 {
   .st0 {
@@ -222,7 +228,13 @@ export default {
   }
   .st4 {
     font-family: 'SF Pro', sans-serif;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
+    @media (max-width: 767px) {
+      font-size: 1.9rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 2.1rem;
+    }
   }
 }
 </style>
