@@ -152,7 +152,7 @@
       .navigations {
         background: $header-blue;
         transition: all .5s ease-in-out;
-        transform: translateY(-100%);
+        transform: translateX(-100%);
         flex-direction: column;
         position: fixed;
         left: 0;

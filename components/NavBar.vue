@@ -14,11 +14,11 @@
         </router-link>
       </div>
       <input id="nav-toggle" type="checkbox" />
-      <div class="nav--toggle">
-        <label for="nav-toggle" class="toggler">
-          <span />
-        </label>
-      </div>
+      <label id="toggle" for="nav-toggle" class="toggler">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </label>
       <div class="navigations1">
         <ul class="link-resp">
           <li>
@@ -147,7 +147,7 @@ export default {
 <style lang="scss">
 .navigations1 {
   display: none;
-  margin-right: 30px;
+  margin-right: 40px;
   @media (max-width: 1050px) {
     display: flex;
   }
@@ -184,6 +184,19 @@ nav.home--nav.light {
 #nav-toggle {
   display: none;
   &:checked {
+    & ~ .toggler {
+      .one {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .two {
+        opacity: 0;
+      }
+
+      .three {
+        transform: rotate(-45deg) translate(7px, -8px);
+      }
+    }
     & ~ .navigations {
       transform: none;
     }
@@ -197,6 +210,32 @@ nav.home--nav.light {
   }
 }
 
+#toggle {
+  width: 28px;
+  height: 30px;
+}
+
+#toggle span {
+  width: 100%;
+  height: 5px;
+  background: white;
+  display: block;
+  margin: 4px auto;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+#toggle.on .one {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle.on .two {
+  opacity: 0;
+}
+
+#toggle.on .three {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
 .toggler {
   position: fixed;
   z-index: 200;
@@ -205,8 +244,5 @@ nav.home--nav.light {
   top: 40px;
   right: 2.5rem;
   transform: translateY(-50%);
-  span:after {
-    content: '\2630';
-  }
 }
 </style>
