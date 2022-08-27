@@ -16,13 +16,6 @@
           <img
             data-aos="fade-left"
             data-aos-once="true"
-            src="~/assets/img/gradient_circle.svg"
-            class="grad--circ"
-            alt="Gradient Circle"
-          />
-          <img
-            data-aos="fade-left"
-            data-aos-once="true"
             src="~/assets/img/App_screen2.png"
             class="app--screen"
             alt="App screen"

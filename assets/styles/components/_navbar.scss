@@ -53,7 +53,7 @@ nav.home--nav {
             }
             &.nav-btn {
               background: #1265FB;
-              padding: 15px 50px;
+              padding: 12px 24px;
               border-radius: 8px;
               &:hover {
                 -webkit-background-clip: unset;
@@ -98,7 +98,7 @@ nav.home--nav {
             margin-top: 5px;
           }
         }
-        &:hover .other-countries {
+       &.active .other-countries {
           display: inline-block;
         }
       }

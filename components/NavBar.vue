@@ -44,8 +44,12 @@
           </li>
         </ul>
         <div class="icon-dropdown country-con">
-          <div class="country-icon">
-            <img :src="selectedCountry.imageSource" alt="country" />
+          <div class="country-icon" :class="{ active: opened }">
+            <img
+              :src="selectedCountry.imageSource"
+              alt="country"
+              @click="openDropdown"
+            />
             <div
               v-for="c in otherCountries()"
               :key="c.code"
@@ -58,7 +62,7 @@
               />
             </div>
           </div>
-          <span class="caret-icon">
+          <span class="caret-icon" @click="openDropdown">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20.905"
@@ -101,7 +105,8 @@ export default {
   data() {
     return {
       countries,
-      appLink: ''
+      appLink: '',
+      opened: false
     }
   },
   computed: {
@@ -117,6 +122,9 @@ export default {
     this.appLink = process.env.APP_URL
   },
   methods: {
+    openDropdown() {
+      this.opened = !this.opened
+    },
     openSide() {
       this.toggleSideBar()
     },

@@ -8,7 +8,10 @@
           dashboard.
         </p>
         <div class="text-center">
-          <a :href="appLink + '/create-account'" class="dash--btn">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG"
+            class="dash--btn"
+          >
             Get Started</a
           >
         </div>
@@ -83,7 +86,7 @@ a.dash--btn {
   color: #ffffff;
   transition: all 0.3s ease-in-out;
   background: #1265fb;
-  padding: 15px 50px;
+  padding: 12px 24px;
   border-radius: 8px;
   font-size: 1.8rem;
   text-align: center;

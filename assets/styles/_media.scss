@@ -222,6 +222,17 @@
   }
 }
 
+@media  (max-width: 767px) {
+  .bottom--sect .container .meta--img .meta--container .country--bubbles {
+    transform: translateY(-50%) translateX(-25%);
+  }
+}
+
+@media  (max-width: 535px) {
+  .bottom--sect .container .meta--img .meta--container .country--bubbles {
+    left: 20%;
+  }
+}
 @media  (max-width: 450px) {
   header .header--content .header--cto {
     & > * {
@@ -265,6 +276,7 @@
           justify-content: flex-end;
           .country--bubbles{
             left: 5%;
+            transform: translateY(-50%) translateX(-5%);
           }
 
           .grad--circ {
@@ -274,6 +286,18 @@
           }
         }
       }
+    }
+  }
+}
+
+
+@media  (max-width: 400px) {
+  .bottom--sect .container .meta--img .meta--container .country--bubbles {
+    width: 170px;
+  }
+  .getting--crypto .right--card .event--card .card--base h1 {
+    br {
+      display: none;
     }
   }
 }

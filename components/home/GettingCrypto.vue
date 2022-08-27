@@ -10,7 +10,11 @@
           cryptocurrency? Worry no more! Join other crypto newbies in the weekly
           session with our Crypto experts.
         </p>
-        <a :href="appLink + '/create-account'" class="dash--btn">
+        <a
+          href="https://www.eventbrite.co.uk/e/talk-to-a-crypto-advisor-tickets-319295329927"
+          target="_blank"
+          class="dash--btn"
+        >
           Register for free</a
         >
       </div>
@@ -27,7 +31,7 @@
               <img src="/img/host1.png" alt="" />
             </div>
             <span class="event--time">Every Friday 8:00-9:00 PM </span>
-            <h1>Teaching you the inner <br />windings of the Crypto market.</h1>
+            <h1>Get expert answers to <br />all your crypto questions.</h1>
             <img class="event--coin" src="/img/bit3d.png" alt="bitcoin 3d" />
           </div>
         </div>

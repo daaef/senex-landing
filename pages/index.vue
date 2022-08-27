@@ -165,7 +165,7 @@
             </p>
           </div>
         </div>
-        <div class="flex">
+        <div class="flex items-center">
           <div class="m-auto lg:mr-0 snx-description-img-con">
             <!-- <img src="/img/secure.svg" /> -->
             <svg
@@ -505,13 +505,13 @@ export default {
     //   'https://static.simpu.co/widgets/v1/simpu-widget.js'
     // )
     // document.head.appendChild(simpuJS)
-    /*if (window !== undefined) {
+    /* if (window !== undefined) {
       const widget = window.Simpu.default.init({
         app_id: '1a75fbd8', // spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C
         public_key: 'spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C'
       })
       widget.render()
-    }*/
+    } */
   },
   methods: {
     scrollToCoin() {

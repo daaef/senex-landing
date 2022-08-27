@@ -25,7 +25,10 @@
             <img src="~/assets/img/apple_logo_appstore.svg" alt="Apple Logo" />
             <span> App Store </span>
           </a>
-          <a target="_blank" href="#">
+          <a
+            target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG"
+          >
             <img
               src="~/assets/img/googleplay_logo_playstore.svg"
               alt="Google Play Logo"
@@ -35,13 +38,16 @@
         </div>
       </div>
       <div data-aos="fade-left" data-aos-once="true" class="header--media">
-        <div class="img--left">
-          <img src="~/assets/img/App_home_screen.png" alt="Home screen image" />
+        <div class="img--set">
+          <img src="~/assets/img/app_screen.png" alt="Home screen image" />
         </div>
-        <div class="img--group-right">
+        <!--        <div class="img&#45;&#45;left">
+          <img src="~/assets/img/phone.png" alt="Home screen image" />
+        </div>
+        <div class="img&#45;&#45;group-right">
           <img src="~/assets/img/dashboard_widget1.png" alt="Dash Widget 1" />
           <img src="~/assets/img/dashboard_widget2.png" alt="Dash Widget 2" />
-          <div class="widget--span">
+          <div class="widget&#45;&#45;span">
             <a href="#">
               <svg
                 id="Layer_1"
@@ -170,7 +176,7 @@
               </svg>
             </a>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </header>
@@ -183,6 +189,16 @@ export default {
 </script>
 
 <style lang="scss">
+.header--media {
+  .img--set {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
 .st0 {
   filter: url(#Rectangle_979);
 }
