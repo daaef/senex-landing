@@ -20,7 +20,7 @@
         <div class="cto--btns">
           <a
             target="_blank"
-            href="https://apps.apple.com/us/app/senexpay/id1627864145"
+            href="https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id1627864145"
           >
             <img src="~/assets/img/apple_logo_appstore.svg" alt="Apple Logo" />
             <span> App Store </span>

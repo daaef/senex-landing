@@ -16,7 +16,7 @@
 
   header .header--content .header--cto {
     h2 {
-      font-size: 4rem;
+      font-size: 5rem;
     }
     p {
       font-size: 1.9rem;
@@ -24,21 +24,20 @@
   }
   .cto--btns {
     a {
-      padding: 15px 40px;
-      span {
-        word-break: break-all;
-      }
+      padding: 12px 32px;
+
       img {
         height: 20px;
       }
 
       span {
-        font-size: 1.9rem;
+        font-size: 2.2rem;
       }
     }
   }
 }
 
+/*
 @media  (max-width: 1300px) {
   .cto--btns a {
     padding: 10px 20px;
@@ -47,6 +46,7 @@
     }
   }
 }
+*/
 
 @media  (max-width: 1140px) {
   .bottom--sect {
@@ -74,12 +74,12 @@
     }
   }
   .cto--btns a {
-    padding: 8px 15px;
+    padding: 12px 30px;
     span {
-      font-size: 1.3rem;
+      font-size: 2.2rem;
     }
     img {
-      height: 15px;
+      height: 20px;
     }
   }
   header .header--content {
@@ -99,6 +99,8 @@
       padding: 0;
     }
     .header--media {
+      max-width: 500px;
+      margin-top: 50px;
       button {
         background: transparent;
       }
@@ -235,6 +237,9 @@
 }
 @media  (max-width: 450px) {
   header .header--content .header--cto {
+    h2 {
+      font-size: 4.5rem;
+    }
     & > * {
       br {
         display: none;
@@ -242,18 +247,6 @@
     }
     align-items: stretch;
     text-align: left;
-    .cto--btns {
-      justify-content: space-between;
-      a {
-        width: calc(50% - 5px);
-        padding: 10px 20px;
-        justify-content: center;
-        margin-right: 0;
-        span {
-          font-size: 1.5rem;
-        }
-      }
-    }
   }
   nav.home--nav .container .logo img{
     height: 25px;
@@ -285,6 +278,24 @@
             width: 70%;
           }
         }
+      }
+    }
+  }
+  .cto--btns {
+    justify-content: center;
+    a {
+      //width: calc(50% - 5px);
+      padding: 12px 22px;
+      justify-content: center;
+      margin: auto 8px;
+      &:first-of-type {
+        margin-right: 8px;
+      }
+      span {
+        font-size: 1.9rem;
+      }
+      img {
+        height: 20px;
       }
     }
   }

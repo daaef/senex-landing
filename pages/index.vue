@@ -101,7 +101,7 @@
     </div>-->
     <!-- Crypocurrencies and amounts -->
     <div id="coin-section" class="coin-section">
-      <div class="container mx-auto overflow-con">
+      <div class="container mx-auto overflow-hidden overflow-con">
         <coin-price
           v-for="(token, i) in countryCrypto"
           :key="i"
@@ -165,7 +165,7 @@
             </p>
           </div>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center md:mt-16">
           <div class="m-auto lg:mr-0 snx-description-img-con">
             <!-- <img src="/img/secure.svg" /> -->
             <svg

@@ -1,6 +1,6 @@
 <template>
   <section class="earn--passive">
-    <div class="container flex flex-wrap items-center">
+    <div class="container flex flex-wrap items-center justify-center">
       <div class="earn--group" data-aos="fade-down" data-aos-once="true">
         <img src="/img/earn-group.png" alt="" />
       </div>
@@ -45,6 +45,7 @@ export default {
     display: block;
     padding-right: 40px;
     position: relative;
+    max-width: 550px;
     @media (max-width: 767px) {
       max-width: 400px;
       margin: 0 auto;

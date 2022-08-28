@@ -8,10 +8,7 @@
           dashboard.
         </p>
         <div class="text-center">
-          <a
-            href="https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG"
-            class="dash--btn"
-          >
+          <a :href="appLink + '/create-account'" class="dash--btn">
             Get Started</a
           >
         </div>

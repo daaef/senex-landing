@@ -11,7 +11,7 @@ header {
       padding-right: 50px;
       width: 50%;
       h2 {
-        font-size: 4.6rem;
+        font-size: 5.5rem;
         font-weight: bold;
         color: #ffffff;
         line-height: 1.2em;
@@ -148,22 +148,25 @@ header {
   a {
     cursor: pointer;
     display: flex;
-    padding: 12px 24px;
+    padding: 15px 40px;
     border-radius: 40px;
     background: #FFFFFF;
     align-items: center;
-    a {
-      display: flex;
-      align-items: center;
+
+    &:first-of-type{
+      img {
+        margin-top: -4px;
+      }
     }
     img {
-      height: 35px;
+      height: 28px;
     }
     span {
       display: block;
-      margin-left: 14.5px;
+      margin-left: 8px;
       color: #064EBE;
       font-size: 1.9rem;
+      white-space: nowrap;
       //margin-top: 4px;
     }
     &:hover {
@@ -176,7 +179,7 @@ header {
       }
     }
     &:first-of-type {
-      margin-right: 30px;
+      margin-right: 16px;
     }
   }
 }

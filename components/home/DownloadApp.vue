@@ -2,13 +2,22 @@
   <section class="download--app">
     <div class="container">
       <div class="down--app-banner">
-        <div class="download--message" data-aos="fade" data-aos-once="true">
-          <h3>Download the mobile app</h3>
+        <div
+          class="download--message md:text-center sm:text-left lg:text-left"
+          data-aos="fade"
+          data-aos-once="true"
+        >
+          <h3>
+            Download the
+            <br />mobile app
+          </h3>
           <p>Get smarter and faster access right on your mobile phone.</p>
-          <div class="cto--btns">
+          <div
+            class="cto--btns md:justify-center sm:justify-start lg:justify-start"
+          >
             <a
               target="_blank"
-              href="https://apps.apple.com/us/app/senexpay/id1627864145"
+              href="https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id1627864145"
             >
               <img
                 src="~/assets/img/apple_logo_appstore.svg"
@@ -16,7 +25,10 @@
               />
               <span> App Store </span>
             </a>
-            <a target="_blank" href="#">
+            <a
+              target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG"
+            >
               <img
                 src="~/assets/img/googleplay_logo_playstore.svg"
                 alt="Google Play Logo"
@@ -73,8 +85,17 @@ export default {
         color: #ffffff;
         font-weight: bold;
         line-height: 1.2em;
+        br {
+          display: none;
+        }
         @media (max-width: 767px) {
           font-size: 3.8rem;
+        }
+        @media (max-width: 450px) {
+          font-size: 4.3rem;
+          br {
+            display: block;
+          }
         }
       }
       p {
@@ -96,6 +117,7 @@ export default {
       padding-top: 100px;
       width: 40%;
       position: relative;
+      max-width: 450px;
       .app--screens {
         width: 100%;
         height: 90%;
@@ -135,15 +157,21 @@ export default {
       .download--message {
         .cto--btns {
           align-items: center;
-          justify-content: space-between;
+          //justify-content: center;
           a {
             align-items: center;
-            width: calc(50% - 5px);
-            padding: 10px;
+            //width: calc(50% - 5px);
+            //padding: 10px;
             justify-content: center;
-            margin-right: 0;
+            margin: 0;
             span {
-              font-size: 1.5rem;
+              font-size: 1.6rem;
+            }
+            &:first-of-type {
+              margin-right: 5px;
+            }
+            &:last-of-type {
+              margin-left: 5px;
             }
           }
         }
