@@ -1,0 +1,314 @@
+
+@media  (min-width: 1639px) {
+  header .header--content .header--cto h2 {
+    font-size: 5rem;
+  }
+}
+@media  (max-width: 1639px) {
+  .cto--btns a img {
+    height: 30px;
+  }
+}
+@media  (max-width: 1500px) {
+  .cto--btns a img {
+    height: 30px;
+  }
+
+  header .header--content .header--cto {
+    h2 {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 1.9rem;
+    }
+  }
+  .cto--btns {
+    a {
+      padding: 12px 32px;
+
+      img {
+        height: 20px;
+      }
+
+      span {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}
+
+/*
+@media  (max-width: 1300px) {
+  .cto--btns a {
+    padding: 10px 20px;
+    img {
+      height: 20px;
+    }
+  }
+}
+*/
+
+@media  (max-width: 1140px) {
+  .bottom--sect {
+    .container {
+      .meta--img {
+        .meta--container {
+          display: flex;
+          justify-content: flex-end;
+            .country--bubbles{
+              left: 25%;
+            }
+          .grad--circ {
+            right: 5%;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+  .bottom--sect .container .meta--img .meta--container {
+    width: 100%;
+    overflow: hidden;
+    .country--bubbles {
+      transform: translateY(-50%);
+    }
+  }
+  .cto--btns a {
+    padding: 12px 30px;
+    span {
+      font-size: 2.2rem;
+    }
+    img {
+      height: 20px;
+    }
+  }
+  header .header--content {
+    flex-direction: column;
+    padding-bottom: 50px;
+    text-align: center;
+    .header--cto {
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    .header--cto, .header--media {
+      width: 100%;
+      padding: 0;
+    }
+    .header--media {
+      max-width: 500px;
+      margin-top: 50px;
+      button {
+        background: transparent;
+      }
+    }
+  }
+  .crypto--card {
+    flex-direction: column;
+    & > div:not(:first-of-type) {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .cost {
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
+    }
+  }
+  .bottom--sect .container {
+    flex-direction: column;
+    .meta--img, .meta--info {
+      width: 100%;
+      padding: 0;
+    }
+    .meta--info {
+      min-height: 35vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .meta--container {
+      min-height: 50vh;
+      width: 100%;
+      .app--screen {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media  (max-width: 1050px) {
+  nav.home--nav .container .navigations ul li a.nav-btn {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px 40px;
+  }
+  nav.home--nav {
+    .container {
+      .toggler {
+        display: block;
+      }
+      .navigations {
+        background: $header-blue;
+        transition: all .5s ease-in-out;
+        transform: translateX(-100%);
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top:0;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        &.open {
+          transform: translateY(0);
+        }
+        ul {
+          flex-direction: column;
+          &.left--section {
+            margin-right: 0;
+            .login-lnk {
+              display: block;
+            }
+          }
+          &.right--section {
+            margin-bottom: 0;
+            align-items: center;
+            .login-lnk {
+              display: none;
+            }
+          }
+          margin-bottom: 20px;
+          li {
+            margin: 5px 0;
+          }
+        }
+      }
+      .nav--toggle {
+        display: block;
+      }
+    }
+  }
+  nav.home--nav .container .navigations ul li a {
+    font-size: 2.6rem;
+  }
+  .container.small {
+    max-width: 80%;
+  }
+  .bottom--sect .container .meta--img .meta--container .country--bubbles {
+    width: 200px;
+  }
+  .dashboard--design .dash--img-holder {
+    height: unset !important;
+  }
+  .bottom--sect {
+    .container {
+      .meta--img {
+        .meta--container {
+          display: flex;
+          justify-content: flex-end;
+
+          .grad--circ {
+            right: 5%;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media  (max-width: 767px) {
+  .bottom--sect .container .meta--img .meta--container .country--bubbles {
+    transform: translateY(-50%) translateX(-25%);
+  }
+}
+
+@media  (max-width: 535px) {
+  .bottom--sect .container .meta--img .meta--container .country--bubbles {
+    left: 20%;
+  }
+}
+@media  (max-width: 450px) {
+  header .header--content .header--cto {
+    h2 {
+      font-size: 4.5rem;
+    }
+    & > * {
+      br {
+        display: none;
+      }
+    }
+    align-items: stretch;
+    text-align: left;
+  }
+  nav.home--nav .container .logo img{
+    height: 25px;
+  }
+  .bottom--sect {
+    .container {
+      .meta--info {
+        align-items: flex-start;
+        h3, p {
+          text-align: left;
+        }
+        p {
+          margin-top: 20px;
+          font-size: 2.2rem;
+        }
+      }
+      .meta--img {
+        .meta--container {
+          display: flex;
+          justify-content: flex-end;
+          .country--bubbles{
+            left: 5%;
+            transform: translateY(-50%) translateX(-5%);
+          }
+
+          .grad--circ {
+            height: 50%;
+            right: 5%;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+  .cto--btns {
+    justify-content: center;
+    a {
+      //width: calc(50% - 5px);
+      padding: 12px 22px;
+      justify-content: center;
+      margin: auto 8px;
+      &:first-of-type {
+        margin-right: 8px;
+      }
+      span {
+        font-size: 1.9rem;
+      }
+      img {
+        height: 20px;
+      }
+    }
+  }
+}
+
+
+@media  (max-width: 400px) {
+  .bottom--sect .container .meta--img .meta--container .country--bubbles {
+    width: 170px;
+  }
+  .getting--crypto .right--card .event--card .card--base h1 {
+    br {
+      display: none;
+    }
+  }
+}

@@ -47,8 +47,8 @@
                     />
                   </div>
                 </div>
-                <span class="caret-icon"
-                  ><svg
+                <span class="caret-icon">
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20.905"
                     height="11.857"
@@ -60,8 +60,9 @@
                       d="M2.2,13.5H20.292a1.4,1.4,0,0,1,.991,2.4l-9.042,9.049a1.409,1.409,0,0,1-1.99,0L1.209,15.9A1.4,1.4,0,0,1,2.2,13.5Z"
                       transform="translate(-0.794 -13.5)"
                       :fill="theme.color"
-                    /></svg
-                ></span>
+                    />
+                  </svg>
+                </span>
               </div>
             </div>
           </nav>

@@ -1,0 +1,115 @@
+nav.home--nav {
+  background: $header-blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  .toggler {
+    display: none;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+    .nav--toggle {
+      display: none;
+    }
+    .logo {
+      img {
+        height: 30px;
+      }
+    }
+    .navigations {
+      display: flex;
+      align-items: center;
+      ul {
+        list-style: none;
+        display: flex;
+        &.left--section {
+          margin-right: 50px;
+          .login-lnk {
+            display: none;
+          }
+        }
+        li {
+          margin: 0 15px;
+          font-size: 1.8rem;
+          a {
+            color: #ffffff;
+            transition: all .3s ease-in-out;
+            &:hover {
+              background: transparent linear-gradient(109deg, #1265FB 0%, #00FFFF 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            &.login-lnk {
+              &:hover {
+                background: transparent linear-gradient(109deg, #1265FB 0%, #1265FB 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+            }
+            &.nav-btn {
+              background: #1265FB;
+              padding: 12px 24px;
+              border-radius: 8px;
+              &:hover {
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: unset;
+                background: #104cbe;
+              }
+            }
+          }
+        }
+      }
+      .icon-dropdown {
+        display: flex;
+        align-items: center;
+        .flag {
+          height: 28px;
+        }
+        .icon {
+          margin-left: 6px;
+          height: 10px;
+        }
+      }
+      .country-icon {
+        display: inline-block;
+        width: 45px;
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+
+        .other-countries {
+          display: none;
+          position: absolute;
+          padding-top: 3px;
+          opacity: 0.7;
+          // bottom: -120%;
+          z-index: 10;
+          width: 100%;
+          left: 0;
+
+          img {
+            margin-top: 5px;
+          }
+        }
+       &.active .other-countries {
+          display: inline-block;
+        }
+      }
+      .caret-icon {
+        display: inline-block;
+        width: 14px;
+        margin-left: 5px;
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

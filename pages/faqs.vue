@@ -4,9 +4,9 @@
       <div class="faq-search-con">
         <h3 class="heading-primary u-mb-md">Frequently Asked Questions.</h3>
         <div ref="faqSearchDiv" class="search-con">
-          <span class="search-icon"
-            ><img src="/img/map-search.svg" alt="search"
-          /></span>
+          <span class="search-icon">
+            <img src="/img/map-search.svg" alt="search" />
+          </span>
           <input v-model="search" :placeholder="searchPlaceholder" />
         </div>
       </div>

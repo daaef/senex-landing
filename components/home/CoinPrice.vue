@@ -6,7 +6,7 @@
       /></span>
       <div class="coin-holder__coin-name-con">
         <span class="title">{{ name }}</span>
-        <span class="subtitle">{{ abbr }}</span>
+        <!--        <span class="subtitle">{{ abbr }}</span>-->
       </div>
       <div class="coin-holder__price-box">
         <div class="coin-holder__coin-price-con">

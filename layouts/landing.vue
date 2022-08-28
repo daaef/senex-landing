@@ -12,13 +12,7 @@
       </transition>
     </app-modal>
     <div>
-      <Nav
-        :theme="{
-          backgroundColor: '#F5F5FD',
-          color: '#282836',
-          lightTheme: true
-        }"
-      />
+      <HomeHeaderHome />
       <Nuxt />
       <div class="container u-d-none">
         <div v-if="showCookies" class="cookies">
@@ -48,15 +42,6 @@ export default {
       showCookies: 'showCookies'
     })
   },
-  // head() {
-  //   return {
-  //     script: [
-  //       {
-  //         src: 'https://static.simpu.co/widgets/v1/simpu-widget.js'
-  //       }
-  //     ]
-  //   }
-  // },
   methods: {
     toggleCookies() {
       this.$store.dispatch('toggleCookies')

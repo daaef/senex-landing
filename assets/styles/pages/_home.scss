@@ -62,7 +62,7 @@
     width: 100%;
     flex-wrap: wrap;
 
-    
+
 
     .register_btn {
       @include custom-btn($primary_color,$color_white,$primary_color);
@@ -380,8 +380,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 30px 0;
 
     @include respond(tab-port) {
       flex-direction: column;
@@ -402,17 +401,17 @@
     &--reverse {
       flex-direction: row-reverse;
 
-      @include respond(tab-port) {
+      @include respond(tab-land-sm) {
         flex-direction: column-reverse;
       }
     }
   }
 
   &__child {
-    flex: 0 0 45%;
+    flex: 0 0 48%;
 
     @include respond(tab-land) {
-      flex: 0 0 40%;
+      flex: 0 0 50%;
     }
 
     @include respond(tab-port) {
@@ -441,8 +440,8 @@
   height: 100%;
 
   @include respond(tab-port) {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   &__title{
@@ -653,7 +652,7 @@
       top: 0;
       left: 0;
     }
-  
+
     .down {
       width: 57%;
       height: 57%;
@@ -684,6 +683,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-height: 400px;
 
     .disappear {
       transition: all .3s;
@@ -716,19 +716,19 @@
         //transform-origin: center center;
         transform: translate(1310.755px, 4227.767px) rotate(180deg);
       }
-  
+
       #blue-circle-svg {
         transform: scale(.9);
       }
-  
+
       .disappear {
         opacity: 0;
       }
-  
+
       #diagonal-1 {
         opacity: 0;
       }
-  
+
       #diagonal-2 {
         opacity: 0;
       }
@@ -800,9 +800,7 @@
   }
 }
 
-
-
-@media screen and(max-width: 550px) {
+@media screen and (max-width: 550px) {
 
   .landing-animation {
     animation-name: landing-anim-sm;
@@ -811,7 +809,7 @@
   .purple-arrow-animation {
     animation-name: purple-anim-sm;
   }
-  
+
   .lemon-arrow-animation {
     animation-name: lemon-anim-sm;
   }
@@ -823,26 +821,26 @@
       width: 40px;
       height: 40px;
     }
-  
+
     .purple-arrow {
       width: 40px;
       height: 40px;
       bottom: 0;
       left: 0;
     }
-  
+
     .circle-boy-small {
       left: 15%;
       bottom: 15%;
       height: 20px;
     }
-  
+
     .circle-girl-small {
       top: 25%;
       right: 25%;
       height: 20px;
     }
-  
+
   }
 
   // .atom-holder {
@@ -1001,5 +999,14 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .snx-description-con__child {
+    order: 1;
+  }
+  .snx-description-img-con .secure-lock-svg {
+    max-height: 100%;
   }
 }

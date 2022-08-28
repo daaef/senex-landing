@@ -11,6 +11,7 @@
 
 @import 'components/buttons';
 @import 'components/footer';
+@import 'components/navbar';
 @import 'components/side-nav';
 
 @import 'components/custom/app-modal';
@@ -21,6 +22,7 @@
 @import 'components/home/why-senex';
 @import 'components/home/intro-video';
 @import 'components/home/referral-banner';
+@import 'components/home/header';
 
 @import 'components/about/foreword';
 @import 'components/about/mission-vision';
@@ -289,3 +291,4 @@
 //     max-width: 1400px;
 //   }
 // }
+@import "media";

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <div ref="snxBanner" class="snx-hero-banner">
+    <!--    <div ref="snxBanner" class="snx-hero-banner">
       <div class="container">
         <div class="block lg:flex">
           <div class="w-full lg:w-1/2 snx-hero-content-holder">
@@ -9,8 +9,8 @@
                 <span class="snx-hero-content__title heading-primary"
                   >Buy and Sell</span
                 >
-                <span class="snx-hero-content__title--grad">Crypto</span>
-                <!-- <p class="snx-hero-content__title--grad">
+                <span class="snx-hero-content__title&#45;&#45;grad">Crypto</span>
+                &lt;!&ndash; <p class="snx-hero-content__title&#45;&#45;grad">
                   <client-only>
                     <vue-typer
                       name="banner"
@@ -18,7 +18,7 @@
                       erase-style="clear"
                     />
                   </client-only>
-                </p> -->
+                </p> &ndash;&gt;
               </h1>
               <h1 class="snx-hero-content__title heading-primary">
                 the easy way.
@@ -48,48 +48,48 @@
             <img
               src="/img/purple-star.svg"
               alt="purple star"
-              class="snx-hero-img-con__star snx-hero-img-con__star--purple"
+              class="snx-hero-img-con__star snx-hero-img-con__star&#45;&#45;purple"
             />
             <img
               src="/img/green-star.svg"
               alt="green star"
-              class="snx-hero-img-con__star snx-hero-img-con__star--green"
+              class="snx-hero-img-con__star snx-hero-img-con__star&#45;&#45;green"
             />
             <img
               src="/img/blue-circle.svg"
               alt="blue circle"
-              class="snx-hero-img-con__circle snx-hero-img-con__circle--blue"
+              class="snx-hero-img-con__circle snx-hero-img-con__circle&#45;&#45;blue"
               @mouseover="buyBadge = true"
               @click="buyBadge = true"
             />
             <img
               src="/img/green-circle.svg"
               alt="green circle"
-              class="snx-hero-img-con__circle snx-hero-img-con__circle--green"
+              class="snx-hero-img-con__circle snx-hero-img-con__circle&#45;&#45;green"
               @mouseover="sellBadge = true"
               @click="sellBadge = true"
             />
             <div
-              class="snx-hero-img-con__badge snx-hero-img-con__badge--blue"
-              :class="[buyBadge ? 'snx-hero-img-con__badge--show' : '']"
+              class="snx-hero-img-con__badge snx-hero-img-con__badge&#45;&#45;blue"
+              :class="[buyBadge ? 'snx-hero-img-con__badge&#45;&#45;show' : '']"
             >
               <span
                 class="
                   snx-hero-img-con__badge-elc-box
-                  snx-hero-img-con__badge-elc-box--blue
+                  snx-hero-img-con__badge-elc-box&#45;&#45;blue
                 "
                 ><img src="/img/electric-flash.svg" alt="flash"
               /></span>
               <span>Buy crypto from anywhere</span>
             </div>
             <div
-              class="snx-hero-img-con__badge snx-hero-img-con__badge--green"
-              :class="[sellBadge ? 'snx-hero-img-con__badge--show' : '']"
+              class="snx-hero-img-con__badge snx-hero-img-con__badge&#45;&#45;green"
+              :class="[sellBadge ? 'snx-hero-img-con__badge&#45;&#45;show' : '']"
             >
               <span
                 class="
                   snx-hero-img-con__badge-elc-box
-                  snx-hero-img-con__badge-elc-box--green
+                  snx-hero-img-con__badge-elc-box&#45;&#45;green
                 "
                 ><img src="/img/electric-flash.svg" alt="flash"
               /></span>
@@ -98,13 +98,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <!-- Crypocurrencies and amounts -->
     <div id="coin-section" class="coin-section">
-      <div class="container mx-auto overflow-con">
+      <div class="container mx-auto overflow-hidden overflow-con">
         <coin-price
           v-for="(token, i) in countryCrypto"
           :key="i"
+          data-aos="fade-up"
+          data-aos-once="true"
           :name="tokenConfig(token).name"
           :abbr="tokenConfig(token).abbr"
           :image="tokenConfig(token).image"
@@ -139,193 +141,20 @@
         </p>
       </div>
     </div>
+    <HomeTrustedExchange />
+    <HomeDashboardDesign />
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
-      <div class="snx-description-con__inside container">
-        <div class="snx-description-img-con snx-description-con__child">
-          <div class="holder m-auto lg:ml-0">
-            <img
-              class="girl-with-phone"
-              alt="A girl holding a phone in her hands and sitting on the floor."
-              loading="lazy"
-              src="https://res.cloudinary.com/senexpay/image/upload/w_300/v1636463130/assets/girl-with-phone-radius_jgukxi.png"
-            />
-            <img
-              class="yellow-star yellow-star--1"
-              alt="Yellow star"
-              src="/img/yellow-star.svg"
-            />
-            <img
-              class="yellow-star yellow-star--2"
-              alt="Yellow star"
-              src="/img/yellow-star.svg"
-            />
-            <img
-              src="/img/green-check-badge.svg"
-              class="img-badge img-badge--1"
-              alt="badge"
-              data-aos="badge-in"
-            />
-            <img
-              src="/img/pink-badge.svg"
-              class="img-badge img-badge--2"
-              alt="badge"
-              data-aos="badge-in"
-            />
-
-            <!-- <img
-              class="down"
-              alt="A man holding a phone to his ears and typing on a laptop."
-              src="/img/boy_using_senex.png"
-            /> -->
-          </div>
-        </div>
-        <div class="snx-description-con__child">
-          <div class="snx-description ml-auto" data-aos="slide-up">
-            <p
-              class="
-                snx-description__title
-                heading-primary heading-primary--wt-500
-              "
-            >
-              It’s so easy, anyone can trade on it.
-            </p>
-            <p class="snx-description__subtitle paragraph">
-              Trading your cryptocurrency on SenexPay is so easy you do not need
-              to be a crypto guru to do it yourself. We designed a truly smooth
-              and seamless experience that’s one of a kind.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="block lg:hidden snx-description-con sdc-pb container">
-        <div class="lg:w-1/2">
-          <div v-scroll-reveal.reset class="snx-description lg:w-4/5">
-            <p class="snx-description__title">
-              It’s so easy, anyone can trade on it.
-            </p>
-            <p class="snx-description__subtitle">
-              Trading your Cryptocurrency on SenexPay is so easy that you do not
-              need to be a Crypto guru to do it yourself. We believe life should
-              be as easy as it can be.
-            </p>
-          </div>
-        </div>
-        <div
-          v-scroll-reveal.reset="{
-            origin: 'right'
-          }"
-          class="lg:w-1/2 snx-description-img-con"
-        >
-          <img src="/img/landing-page-lady.png" />
-        </div>
-      </div> -->
-      <!-- Description 2 -->
-      <div class="bg-grey">
-        <!-- Large screen -->
-        <div
-          class="
-            snx-description-con__inside snx-description-con__inside--reverse-sm
-            container
-          "
-          data-aos="slide-up"
-        >
-          <div class="snx-description-con__child">
-            <div class="snx-description mx-auto">
-              <p
-                class="
-                  snx-description__title
-                  heading-primary heading-primary--wt-500
-                "
-              >
-                The most trusted crypto platform.
-              </p>
-              <p class="snx-description__subtitle paragraph">
-                Over the years, SenexPay has been able to build unshakeable
-                trust in its customers due to our efficient and swift payout
-                process. So fast our customers be like “Mad o!😳”
-              </p>
-            </div>
-          </div>
-          <div
-            class="snx-description-img-con snx-description-con__child"
-            data-aos="zoom-in"
-          >
-            <div class="screenshot-con">
-              <img
-                alt="SenexPay dashboard and app screenshot."
-                src="https://res.cloudinary.com/senexpay/image/upload/w_500/v1636463130/assets/vp-3screenshot_t9esow.png"
-                loading="lazy"
-                class="screenshot-img lg:ml-auto"
-              />
-              <img
-                src="/img/green-star.svg"
-                class="green-star green-star--up"
-                alt="green star"
-              />
-              <img
-                src="/img/green-star.svg"
-                class="green-star green-star--down"
-                alt="green star"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- Small Screen -->
-        <!-- <div class="block sdc-pb container lg:hidden">
-          <div class="lg:w-1/2">
-            <div v-scroll-reveal.reset class="snx-description lg:w-4/5 mx-auto">
-              <p
-                class="
-                  snx-description__title
-                  heading-primary heading-primary--wt-500
-                "
-              >
-                The most trusted crypto platform.
-              </p>
-              <p class="snx-description__subtitle paragraph">
-                Over the years, SenexPay has been able to build an unshakeable
-                trust in its customers due to our efficient and swift payout
-                process. So fast our customers be like “Mad o!😳”
-              </p>
-            </div>
-          </div>
-          <div v-scroll-reveal.reset class="lg:w-1/2 snx-description-img-con">
-            <img
-              alt="A young man holding a Bitcoin coin and making a signal."
-              src="/img/vp-3screenshot.png"
-            />
-            <img
-              src="/img/green-star.svg"
-              class="green-star green-star--up"
-              alt="green star"
-            />
-            <img
-              src="/img/green-star.svg"
-              class="green-star green-star--down"
-              alt="green star"
-            />
-          </div>
-        </div> -->
-      </div>
-
-      <!-- Description 3 -->
-
       <div
-        class="
-          snx-description-con__inside snx-description-con__inside--reverse
-          container
-        "
+        class="snx-description-con__inside snx-description-con__inside--reverse container"
         data-aos="slide-up"
+        data-aos-once="true"
       >
         <div class="snx-description-con__child">
           <div class="snx-description">
             <p
-              class="
-                snx-description__title
-                heading-primary heading-primary--wt-500
-              "
+              class="snx-description__title heading-primary heading-primary--wt-500"
             >
               We are serious about security.
             </p>
@@ -336,7 +165,7 @@
             </p>
           </div>
         </div>
-        <div class="flex">
+        <div class="flex items-center md:mt-16">
           <div class="m-auto lg:mr-0 snx-description-img-con">
             <!-- <img src="/img/secure.svg" /> -->
             <svg
@@ -503,16 +332,28 @@
       <!-- <referral-banner></referral-banner> -->
       <!-- Reviews -->
       <review-holder></review-holder>
+      <!--Getting Crypto-->
+      <home-getting-crypto />
+      <!--Getting Crypto-->
+
+      <!--Earn Passive-->
+      <home-earn-passive />
+      <!--Earn Passive-->
+
+      <!--Download App-->
+      <home-download-app />
+      <!--Download App-->
+
       <!-- <review></review> -->
       <!-- Landing video -->
-      <!-- <intro-video></intro-video> -->
+      <!--       <intro-video></intro-video>
       <our-obsession></our-obsession>
-      <!-- Mobile App Banner -->
+      &lt;!&ndash; Mobile App Banner &ndash;&gt;
       <div class="mbl-app-banner">
         <div class="container">
           <div class="block lg:flex py-24">
             <div class="text-and-store-con self-center lg:w-1/2">
-              <h1 class="heading-secondary heading-secondary--500">
+              <h1 class="heading-secondary heading-secondary&#45;&#45;500">
                 We are creating a unique financial revolution. Join us!
               </h1>
             </div>
@@ -525,7 +366,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
       <!-- Footer -->
       <landing-footer></landing-footer>
     </div>
@@ -538,7 +379,6 @@ import AOS from 'aos'
 // import * as Simpu from 'https://static.simpu.co/widgets/v1/simpu-widget.js'
 import 'aos/dist/aos.css'
 // import ReferralBanner from '../components/home/ReferralBanner.vue'
-import OurObsession from '../components/home/OurObsession.vue'
 import CoinPrice from '~/components/home/CoinPrice.vue'
 // import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
 // import Review from '~/components/home/Review.vue'
@@ -554,9 +394,8 @@ export default {
     // ReferralBanner,
     // Review,
     // MobileAppBanner,
-    WhySenex,
+    WhySenex
     // IntroVideo,
-    OurObsession
   },
   layout: 'landing',
   data() {
@@ -666,13 +505,13 @@ export default {
     //   'https://static.simpu.co/widgets/v1/simpu-widget.js'
     // )
     // document.head.appendChild(simpuJS)
-    if (window !== undefined) {
+    /* if (window !== undefined) {
       const widget = window.Simpu.default.init({
         app_id: '1a75fbd8', // spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C
         public_key: 'spk__U3zut0PukK4JS8kbRrgc41IlKxwiiW9n8Ccd5bdDyPi8o8bK8C'
       })
       widget.render()
-    }
+    } */
   },
   methods: {
     scrollToCoin() {
