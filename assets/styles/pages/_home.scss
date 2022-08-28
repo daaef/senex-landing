@@ -380,7 +380,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 30px;
+    padding: 100px 30px 0;
 
     @include respond(tab-port) {
       flex-direction: column;
@@ -440,7 +440,7 @@
   height: 100%;
 
   @include respond(tab-port) {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 50px;
   }
 
@@ -999,5 +999,14 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .snx-description-con__child {
+    order: 1;
+  }
+  .snx-description-img-con .secure-lock-svg {
+    max-height: 100%;
   }
 }

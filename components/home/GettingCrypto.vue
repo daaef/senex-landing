@@ -19,7 +19,11 @@
         >
       </div>
       <div class="right--card" data-aos="zoom-in" data-aos-once="true">
-        <div class="event--card">
+        <a
+          href="https://www.eventbrite.co.uk/e/talk-to-a-crypto-advisor-tickets-319295329927"
+          target="_blank"
+          class="event--card"
+        >
           <div class="card--top">
             <h4>Talk to a <br /><span>Crypto Advisor</span></h4>
           </div>
@@ -34,7 +38,7 @@
             <h1>Get expert answers to <br />all your crypto questions.</h1>
             <img class="event--coin" src="/img/bit3d.png" alt="bitcoin 3d" />
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -223,7 +227,8 @@ export default {
       padding: 0;
     }
     .right--card {
-      margin-top: 50px;
+      margin-bottom: 50px;
+      order: -1;
     }
     .right--card .event--card .card--base .event--coin {
       height: 120px;

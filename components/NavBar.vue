@@ -231,6 +231,7 @@ nav.home--nav.light {
   margin: 4px auto;
   transition: all 0.3s;
   backface-visibility: hidden;
+  border-radius: 1px;
 }
 
 #toggle.on .one {
