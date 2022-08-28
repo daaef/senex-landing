@@ -9,6 +9,9 @@ export default {
       // eslint-disable-next-line nuxt/no-globals-in-created
       window.location.href = 'https://app.senexpay.com/signin'
     }
+  },
+  mounted() {
+    this.$store.commit('toggleSideBar', false)
   }
 }
 </script>

@@ -31,6 +31,9 @@ export default {
         { rel: 'canonical', href: 'https://www.senexpay.com/privacy-policy' }
       ]
     }
+  },
+  mounted() {
+    this.$store.commit('toggleSideBar', false)
   }
 }
 </script>

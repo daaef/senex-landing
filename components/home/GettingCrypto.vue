@@ -34,7 +34,7 @@
             <div class="host-2">
               <img src="/img/host1.png" alt="" />
             </div>
-            <span class="event--time">Every Friday 8:00-9:00 PM </span>
+            <span class="event--time">Every Thursday 8:00-9:00 PM </span>
             <h1>Get expert answers to <br />all your crypto questions.</h1>
             <img class="event--coin" src="/img/bit3d.png" alt="bitcoin 3d" />
           </div>

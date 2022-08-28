@@ -34,7 +34,10 @@ import OurBlog from '~/components/blog/OurBlog.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 export default {
   components: { NewsBlog, OurBlog, LandingFooter },
-  layout: 'about'
+  layout: 'about',
+  mounted() {
+    this.$store.dispatch('toggleSideBar')
+  }
 }
 </script>
 

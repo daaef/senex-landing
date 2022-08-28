@@ -13,11 +13,7 @@
       <div class="our-core-box">
         <div class="our-core-box__item">
           <h3
-            class="
-              heading-tertiary--sm heading-tertiary--wt-500
-              our-core-box__title
-              u-mb-10
-            "
+            class="heading-tertiary--sm heading-tertiary--wt-500 our-core-box__title u-mb-10"
           >
             Financial Inclusion
           </h3>
@@ -28,11 +24,7 @@
         </div>
         <div class="our-core-box__item">
           <h3
-            class="
-              heading-tertiary--sm heading-tertiary--wt-500
-              our-core-box__title
-              u-mb-10
-            "
+            class="heading-tertiary--sm heading-tertiary--wt-500 our-core-box__title u-mb-10"
           >
             Empowerment
           </h3>
@@ -43,11 +35,7 @@
         </div>
         <div class="our-core-box__item">
           <h3
-            class="
-              heading-tertiary--sm heading-tertiary--wt-500
-              our-core-box__title
-              u-mb-10
-            "
+            class="heading-tertiary--sm heading-tertiary--wt-500 our-core-box__title u-mb-10"
           >
             Client Obssesion
           </h3>
@@ -113,6 +101,9 @@ export default {
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/about' }]
     }
+  },
+  mounted() {
+    this.$store.commit('toggleSideBar', false)
   }
 }
 </script>

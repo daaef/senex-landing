@@ -14,7 +14,15 @@
         </router-link>
       </div>
       <input id="nav-toggle" type="checkbox" />
-      <label id="toggle" for="nav-toggle" class="toggler">
+      <label
+        id="toggle"
+        :class="[
+          theme.lightTheme ? 'light' : 'dark',
+          'toggler',
+          sideBarOpen ? 'opened' : ''
+        ]"
+        @click="$store.commit('toggleSideBar', !sideBarOpen)"
+      >
         <span class="one"></span>
         <span class="two"></span>
         <span class="three"></span>
@@ -28,7 +36,7 @@
           </li>
         </ul>
       </div>
-      <div class="navigations">
+      <div class="navigations" :class="sideBarOpen ? 'navActive' : ''">
         <ul class="left--section">
           <li><nuxt-link to="/about">About us</nuxt-link></li>
           <li><nuxt-link to="/faqs">FAQ</nuxt-link></li>
@@ -106,7 +114,8 @@ export default {
     return {
       countries,
       appLink: '',
-      opened: false
+      opened: false,
+      navOpened: false
     }
   },
   computed: {
@@ -125,8 +134,8 @@ export default {
     openDropdown() {
       this.opened = !this.opened
     },
-    openSide() {
-      this.toggleSideBar()
+    openNav() {
+      this.navOpened = !this.navOpened
     },
     countryChange(c) {
       this.$store.dispatch('changeCountry', {
@@ -191,28 +200,27 @@ nav.home--nav.light {
 }
 #nav-toggle {
   display: none;
-  &:checked {
-    & ~ .toggler {
-      .one {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      .two {
-        opacity: 0;
-      }
-
-      .three {
-        transform: rotate(-45deg) translate(7px, -8px);
-      }
+}
+.toggler {
+  &.opened {
+    .one {
+      transform: rotate(45deg) translate(5px, 5px);
     }
-    & ~ .navigations {
-      transform: none;
+
+    .two {
+      opacity: 0;
     }
-    & ~ .nav--toggle {
-      .toggler {
-        span:after {
-          content: '\2715';
-        }
+
+    .three {
+      transform: rotate(-45deg) translate(7px, -8px);
+    }
+  }
+}
+@media (max-width: 1040px) {
+  nav.home--nav {
+    .container {
+      .navigations.navActive {
+        transform: none;
       }
     }
   }
@@ -221,6 +229,16 @@ nav.home--nav.light {
 #toggle {
   width: 28px;
   height: 30px;
+  &.dark {
+    span {
+      background: #ffffff;
+    }
+  }
+  &.light {
+    span {
+      background: #053888;
+    }
+  }
 }
 
 #toggle span {

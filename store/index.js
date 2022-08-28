@@ -13,8 +13,8 @@ export const mutations = {
   changeCountry(state, payload) {
     state.country = payload.country
   },
-  toggleSideBar(state) {
-    state.sideBarOpen = !state.sideBarOpen
+  toggleSideBar(state, payload) {
+    state.sideBarOpen = payload
   },
   toggleCookies(state) {
     state.showCookies = !state.showCookies

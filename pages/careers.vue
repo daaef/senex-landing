@@ -67,7 +67,7 @@ export default {
     }
   },
   mounted() {
-    // this.getJobs()
+    this.$store.dispatch('toggleSideBar')
   },
   methods: {
     closeModal() {

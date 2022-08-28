@@ -6,10 +6,7 @@
           <div class="con-tp">
             <div class="main-header-tp">
               <h1
-                class="
-                  heading-primary heading-primary--wt-600
-                  u-text-color u-mb-sm
-                "
+                class="heading-primary heading-primary--wt-600 u-text-color u-mb-sm"
               >
                 Contact Us
               </h1>
@@ -267,6 +264,9 @@ export default {
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com/contact' }]
     }
+  },
+  mounted() {
+    this.$store.commit('toggleSideBar', false)
   }
 }
 </script>

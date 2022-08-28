@@ -31,6 +31,9 @@ export default {
         { rel: 'canonical', href: 'https://www.senexpay.com/terms-of-service' }
       ]
     }
+  },
+  mounted() {
+    this.$store.commit('toggleSideBar', false)
   }
 }
 </script>

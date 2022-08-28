@@ -83,6 +83,7 @@ export default {
     }
   },
   async mounted() {
+    this.$store.commit('toggleSideBar', false)
     await this.getFAQs()
     if (window.innerWidth >= 640) {
       this.searchPlaceholder = 'Search for what you are looking for'

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <app-modal
+    <!--    <app-modal
       :v-modal="sideBarOpen"
       initial-class="side-nav-con"
       final-class-open="side-nav-show"
       final-class-close="side-nav-hide"
     >
-      <!-- <SideNav v-if="showSide" @show="show" @reset-scroll="resetScroll" /> -->
+      &lt;!&ndash; <SideNav v-if="showSide" @show="show" @reset-scroll="resetScroll" /> &ndash;&gt;
       <transition name="fade">
         <SideNav v-if="sideBarOpen" />
       </transition>
-    </app-modal>
+    </app-modal>-->
     <div>
       <HomeHeaderHome />
       <Nuxt />
@@ -33,14 +33,15 @@
 
 <script>
 import { mapState } from 'vuex'
-import AppModal from '~/components/custom/AppModal.vue'
 export default {
-  components: { AppModal },
   computed: {
     ...mapState({
       sideBarOpen: 'sideBarOpen',
       showCookies: 'showCookies'
     })
+  },
+  mounted() {
+    this.$store.commit('toggleSideBar', false)
   },
   methods: {
     toggleCookies() {

@@ -8,8 +8,8 @@
         <div class="tag--badge uppercase success">new</div>
         <h2>Earn Passive Income</h2>
         <p>
-          Earn 10 USDT each time you invite a friend to register and perform a
-          transaction on SenexPay. There is no limit to what you can earn!
+          Earn up to 5 USD each time you invite a friend to register and perform
+          a transaction on SenexPay. There is no limit to what you can earn!
         </p>
         <a :href="appLink + '/create-account'" class="dash--btn">
           Get Started

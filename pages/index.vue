@@ -496,6 +496,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.commit('toggleSideBar', false)
     this.appLink = process.env.APP_URL
     AOS.init()
     this.getRates()

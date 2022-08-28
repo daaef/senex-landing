@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-modal
+    <!--    <app-modal
       :v-modal="sideBarOpen"
       initial-class="side-nav-con"
       final-class-open="side-nav-show"
@@ -9,7 +9,7 @@
       <transition name="fade">
         <SideNav v-if="sideBarOpen" />
       </transition>
-    </app-modal>
+    </app-modal>-->
     <!-- <app-modal
       :v-modal="showSide"
       :scroll-reset="reset"
@@ -49,9 +49,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import AppModal from '~/components/custom/AppModal.vue'
 export default {
-  components: { AppModal },
   computed: {
     ...mapState({
       sideBarOpen: 'sideBarOpen',
