@@ -2,7 +2,7 @@
   <div>
     <div class="footer-con">
       <div class="container">
-        <div class="lg:flex">
+        <div class="lg:flex footer--set">
           <div class="mr-auto lg:w-1/3">
             <div class="logo-copyright">
               <span class="logo-con" @click="toHome()"
@@ -95,13 +95,16 @@
           <div class="lg:w-2/3 lg:flex justify-end w-full ml-auto">
             <div class="lg:w-3/5">
               <div class="footer-social-con">
-                <span>Follow us:</span>
+                <!--                <span>Follow us:</span>-->
                 <a
                   href="https://www.instagram.com/senexpay/"
                   class="block lg:inline-block"
                   target="_blank"
                   rel="noopener"
-                  ><img src="/img/white-instagram.svg" alt="instagram"
+                  ><img
+                    class="ml-0"
+                    src="/img/white-instagram.svg"
+                    alt="instagram"
                 /></a>
                 <a
                   href="https://web.facebook.com/senexpay/"
@@ -146,4 +149,32 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+@media (max-width: 450px) {
+  .footer-con {
+    .container {
+      display: grid;
+      grid-gap: 40px;
+      .footer--set {
+        display: grid;
+        grid-gap: 40px;
+        .copyright {
+          margin-bottom: 0;
+        }
+      }
+      .footer-social-con {
+        margin: 0;
+        a:first-of-type {
+          img {
+            margin-left: 0;
+          }
+        }
+      }
+      .links-and-headers {
+        margin-bottom: 0;
+      }
+      .links
+    }
+  }
+}
+</style>
