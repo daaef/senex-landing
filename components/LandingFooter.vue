@@ -16,7 +16,9 @@
             </div>
           </div>
           <div class="links-con lg:w-2/3">
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/5 ml-auto">
+            <div
+              class="grid link--grid grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/5 ml-auto"
+            >
               <div class="links-and-headers">
                 <h1 class="header">Company</h1>
                 <ul>
@@ -173,7 +175,6 @@ export default {
       .links-and-headers {
         margin-bottom: 0;
       }
-      .links
     }
   }
 }

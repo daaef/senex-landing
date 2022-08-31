@@ -131,7 +131,7 @@
           :sell="450000"
         >
         </coin-price> -->
-        <p class="paragraph u-mt-10 u-text-center u-white">
+        <p class="paragraph mt-20 u-text-center u-white">
           SenexPay Transaction fee is {{ limits.platformFee }} percent pegged at
           ${{ limits.platformFeeCap }}.
           <router-link to="/terms-of-service" class="u-sec-color">

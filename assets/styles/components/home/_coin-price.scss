@@ -1,136 +1,167 @@
-.coin-holder {
-  background-color: #041D45;
-  color: $color_white;
-  padding: 20px;
-  width: 100%;
+.coin--holding {
+  position: relative;
   max-width: 750px;
   margin: 20px auto;
-  border-radius: 8px;
-  overflow-x: auto;
-  font-size: $default-font-size;
-  @include flexcon(center, left, row);
-
-  @include respond(phone) {
-    padding: 15px;
-    font-size: 14px;
+  border-radius: 30px;
+  & > * {
+    position: relative;
   }
 
-  @include respond(small-phone) {
-    font-size: 13px;
+  &:before {
+    content: '';
+    background: transparent linear-gradient(97deg, #1265FB 0%, #5237E0 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100%);
+    height: calc(100%);
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    transition: .3s ease-in-out;
   }
 
-  @include respond(v-small-phone) {
-    font-size: 11px;
+  &:hover {
+    //border: 4px solid blue;
+    &:before {
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+    }
   }
+  .coin-holder {
+    background-color: #041D45;
+    color: $color_white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow-x: auto;
+    font-size: $default-font-size;
+    transition: .3s ease-in-out;
 
-  &__coin-image-con {
-    display: block;
-    margin-right: 10px;
-    min-width: 50px;
+    @include flexcon(center, left, row);
 
     @include respond(phone) {
-      min-width: 35px;
+      padding: 15px;
+      font-size: 14px;
     }
 
-    img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-
-      @include respond(phone) {
-        width: 35px;
-        height: 35px;
-      }
-    }
-  }
-
-  &__coin-name-con {
-    @include flexcon(left, center, column);
-    min-width: 70px;
-
-    @include respond(phone) {
-      min-width: 50px;
+    @include respond(small-phone) {
+      font-size: 13px;
     }
 
-    .title {
-      font-weight: 500;
+    @include respond(v-small-phone) {
+      font-size: 11px;
     }
 
-    .subtitle {
-      font-weight: 300;
-    }
-  }
-
-  &__price-box {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-
-    @include respond(tab-port) {
-      justify-content: flex-end;
-    }
-
-    // @include respond(phone) {
-    //   justify-content: space-between;
-    // }
-  }
-
-
-  &__coin-price-con {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1 0 40%;
-    margin: 0 20px;
-
-    @include respond(tab-port) {
-      flex-direction: column;
-      margin: 0 10px;
-    }
-
-    @include respond(phone) {
-      margin: 0 5px;
-    }
-
-    .amount {
-      font-weight: 500;
-      text-align: right;
+    &__coin-image-con {
+      display: block;
       margin-right: 10px;
+      min-width: 50px;
 
-      @include respond(tab-port) {
-        margin: 0;
-        margin-bottom: 5px;
+      @include respond(phone) {
+        min-width: 35px;
       }
 
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        @include respond(phone) {
+          width: 35px;
+          height: 35px;
+        }
+      }
     }
 
-    .action {
-      opacity: 0.9;
-      padding: 10px 20px;
-      width: 80px;
-      font-size: 16px;
+    &__coin-name-con {
+      @include flexcon(left, center, column);
+      min-width: 70px;
+
+      @include respond(phone) {
+        min-width: 50px;
+      }
+
+      .title {
+        font-weight: 500;
+      }
+
+      .subtitle {
+        font-weight: 300;
+      }
+    }
+
+    &__price-box {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
 
       @include respond(tab-port) {
-        padding: 8px 16px;
-        // width: 60px;
+        justify-content: flex-end;
+      }
+
+      // @include respond(phone) {
+      //   justify-content: space-between;
+      // }
+    }
+
+
+    &__coin-price-con {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 1 0 40%;
+      margin: 0 20px;
+
+      @include respond(tab-port) {
+        flex-direction: column;
+        margin: 0 10px;
       }
 
       @include respond(phone) {
-        padding: 5px 10px;
-        width: 60px;
+        margin: 0 5px;
       }
 
+      .amount {
+        font-weight: 500;
+        text-align: right;
+        margin-right: 10px;
 
-      &:hover {
-        opacity: 1;
+        @include respond(tab-port) {
+          margin: 0;
+          margin-bottom: 5px;
+        }
+
       }
 
-      &--buy {
-        @include custom-btn(#06a84b,$color_white,#06a84b);
-      }
+      .action {
+        opacity: 0.9;
+        padding: 10px 20px;
+        width: 80px;
+        font-size: 16px;
 
-      &--sell {
-        @include custom-btn(#ff5f24,$color_white,#ff5f24);
+        @include respond(tab-port) {
+          padding: 8px 16px;
+          // width: 60px;
+        }
+
+        @include respond(phone) {
+          padding: 5px 10px;
+          width: 60px;
+        }
+
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &--buy {
+          @include custom-btn(#06a84b, $color_white, #06a84b);
+        }
+
+        &--sell {
+          @include custom-btn(#ff5f24, $color_white, #ff5f24);
+        }
       }
     }
   }
