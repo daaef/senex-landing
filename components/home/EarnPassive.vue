@@ -1,8 +1,11 @@
 <template>
   <section class="earn--passive">
     <div class="container flex flex-wrap items-center justify-center">
+      <input id="toggleExpand" hidden type="checkbox" checked />
       <div class="earn--group" data-aos="fade-down" data-aos-once="true">
-        <img src="/img/earn-group.png" alt="" />
+        <label for="toggleExpand" class="cursor-pointer">
+          <img src="/img/earn-group.png" alt="" />
+        </label>
       </div>
       <div class="earn--info" data-aos="fade-up" data-aos-once="true">
         <div class="tag--badge uppercase success">new</div>
@@ -24,7 +27,8 @@ export default {
   name: 'EarnPassive',
   data() {
     return {
-      appLink: ''
+      appLink: '',
+      expandedAni: true
     }
   },
   mounted() {
@@ -40,6 +44,54 @@ export default {
   .earn--group,
   .earn--info {
     width: 50%;
+  }
+  #toggleExpand:checked {
+    & ~ .earn--group {
+      &:before {
+        content: '';
+        height: 50%;
+        transform: scale(1);
+        width: 70%;
+        background: #00fec3;
+        border-top-right-radius: 50px;
+        position: absolute;
+        right: 33px;
+        top: -7px;
+        display: block;
+        @media (max-width: 1023px) {
+          right: -7px;
+          border-top-right-radius: 65px;
+        }
+        @media (max-width: 767px) {
+          border-top-right-radius: 40px;
+        }
+        @media (max-width: 435px) {
+          border-top-right-radius: 30px;
+        }
+      }
+
+      &:after {
+        content: '';
+        height: 50%;
+        width: 70%;
+        background: #e1fe00;
+        border-bottom-left-radius: 50px;
+        position: absolute;
+        left: -7px;
+        bottom: -7px;
+        display: block;
+        @media (max-width: 1023px) {
+          right: -7px;
+          border-bottom-left-radius: 65px;
+        }
+        @media (max-width: 767px) {
+          border-bottom-left-radius: 40px;
+        }
+        @media (max-width: 435px) {
+          border-bottom-left-radius: 30px;
+        }
+      }
+    }
   }
   .earn--group {
     display: block;
@@ -78,11 +130,34 @@ export default {
         display: block;
       }
     }
+    &:before,
+    &:after {
+      content: '';
+      transition: 0.3s ease-in-out;
+      height: 50%;
+      width: 70%;
+      position: absolute;
+    }
+    &:before {
+      right: 40px;
+      top: 0;
+      border-top-right-radius: 50px;
+      background: #00fec3;
+
+      @media (max-width: 1023px) {
+        right: 0;
+      }
+    }
+    &:after {
+      left: 0;
+      bottom: 0;
+      border-bottom-left-radius: 50px;
+    }
     &:hover {
       &:before {
-        transition: 0.3s ease-in-out;
         content: '';
         height: 50%;
+        transform: scale(1);
         width: 70%;
         background: #00fec3;
         border-top-right-radius: 50px;
@@ -96,6 +171,8 @@ export default {
         }
         @media (max-width: 767px) {
           border-top-right-radius: 40px;
+          top: 0;
+          right: 0;
         }
         @media (max-width: 435px) {
           border-top-right-radius: 30px;
@@ -103,7 +180,6 @@ export default {
       }
 
       &:after {
-        transition: 0.3s ease-in-out;
         content: '';
         height: 50%;
         width: 70%;
@@ -114,11 +190,13 @@ export default {
         bottom: -7px;
         display: block;
         @media (max-width: 1023px) {
-          right: -7px;
+          left: -7px;
           border-bottom-left-radius: 65px;
         }
         @media (max-width: 767px) {
           border-bottom-left-radius: 40px;
+          bottom: 0;
+          left: 0;
         }
         @media (max-width: 435px) {
           border-bottom-left-radius: 30px;

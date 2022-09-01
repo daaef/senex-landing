@@ -1,40 +1,43 @@
 <template>
   <div>
-    <div class="coin-holder">
-      <span class="coin-holder__coin-image-con"
-        ><img :src="image" alt="coin"
-      /></span>
-      <div class="coin-holder__coin-name-con">
-        <span class="title">{{ name }}</span>
-        <!--        <span class="subtitle">{{ abbr }}</span>-->
-      </div>
-      <div class="coin-holder__price-box">
-        <div class="coin-holder__coin-price-con">
-          <span class="amount"
-            >{{ country.symbol }}{{ Number(rate.buy).toLocaleString() }}</span
-          >
-          <!-- <span class="btn action action--buy"
+    <div class="coin--holding">
+      <div class="coin-holder">
+        <span class="coin-holder__coin-image-con"
+          ><img :src="image" alt="coin"
+        /></span>
+        <div class="coin-holder__coin-name-con">
+          <span class="title">{{ name }}</span>
+          <!--        <span class="subtitle">{{ abbr }}</span>-->
+        </div>
+        <div class="coin-holder__price-box">
+          <div class="coin-holder__coin-price-con">
+            <span class="amount"
+              >{{ country.symbol }}{{ Number(rate.buy).toLocaleString() }}</span
+            >
+            <!-- <span class="btn action action--buy"
             ><a :href="appLink + '/order/start'">Buy</a></span
           > -->
-          <span class="btn action action--buy"
-            ><a
-              :href="`${appLink}/order/start/?type=buy&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
-              rel="noopener nofollow"
-              >Buy</a
-            ></span
-          >
-        </div>
-        <div class="coin-holder__coin-price-con">
-          <span class="amount"
-            >{{ country.symbol }}{{ Number(rate.sell).toLocaleString() }}</span
-          >
-          <span class="btn action action--sell"
-            ><a
-              :href="`${appLink}/order/start/?type=sell&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
-              rel="noopener nofollow"
-              >Sell</a
-            ></span
-          >
+            <span class="btn action action--buy"
+              ><a
+                :href="`${appLink}/order/start/?type=buy&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
+                rel="noopener nofollow"
+                >Buy</a
+              ></span
+            >
+          </div>
+          <div class="coin-holder__coin-price-con">
+            <span class="amount"
+              >{{ country.symbol
+              }}{{ Number(rate.sell).toLocaleString() }}</span
+            >
+            <span class="btn action action--sell"
+              ><a
+                :href="`${appLink}/order/start/?type=sell&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
+                rel="noopener nofollow"
+                >Sell</a
+              ></span
+            >
+          </div>
         </div>
       </div>
     </div>

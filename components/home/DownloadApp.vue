@@ -77,6 +77,7 @@ export default {
     border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     .download--message {
       width: 60%;

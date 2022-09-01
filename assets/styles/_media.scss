@@ -282,15 +282,18 @@
     }
   }
   .cto--btns {
-    justify-content: center;
+    justify-content: flex-start;
     a {
       //width: calc(50% - 5px);
       padding: 12px 22px;
       justify-content: center;
-      margin: auto 8px;
       &:first-of-type {
-        margin-right: 8px;
+        margin-right: 5px;
       }
+      &:last-of-type {
+        margin-left: 5px;
+      }
+
       span {
         font-size: 1.9rem;
       }
