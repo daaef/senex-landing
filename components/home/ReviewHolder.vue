@@ -86,19 +86,16 @@ export default {
       apiUrl: '',
       settings: {
         dots: true,
-        slidesToShow: 2.85,
+        slidesToShow: 2.05,
         slidesToScroll: 1,
-        // centerMode: true,
+        centerMode: true,
         initialSlide: 0,
         swipeToSlide: true,
-        centerPadding: '20px',
-        focusOnSelect: true,
-        infinite: true,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 2.6,
+              slidesToShow: 2,
               slidesToScroll: 1,
               dots: true,
               centerMode: false
@@ -110,10 +107,8 @@ export default {
               slidesToShow: 1,
               slidesToScroll: 1,
               // initialSlide: 2,
-              centerMode: true,
-              centerPadding: '20px',
-              dots: true,
-              swipeToSlide: true
+              centerMode: false,
+              dots: true
             }
           }
         ]
