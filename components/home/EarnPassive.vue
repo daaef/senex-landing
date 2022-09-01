@@ -1,7 +1,7 @@
 <template>
   <section class="earn--passive">
     <div class="container flex flex-wrap items-center justify-center">
-      <input id="toggleExpand" hidden type="checkbox" checked />
+      <input id="toggleExpand" hidden type="checkbox" />
       <div class="earn--group" data-aos="fade-down" data-aos-once="true">
         <label for="toggleExpand" class="cursor-pointer">
           <img src="/img/earn-group.png" alt="" />
@@ -46,49 +46,51 @@ export default {
     width: 50%;
   }
   #toggleExpand:checked {
-    & ~ .earn--group {
-      &:before {
-        content: '';
-        height: 50%;
-        transform: scale(1);
-        width: 70%;
-        background: #00fec3;
-        border-top-right-radius: 50px;
-        position: absolute;
-        right: 33px;
-        top: -7px;
-        display: block;
-        @media (max-width: 1023px) {
-          right: -7px;
-          border-top-right-radius: 65px;
+    @media (max-width: 1024px) {
+      & ~ .earn--group {
+        &:before {
+          content: '';
+          height: 50%;
+          transform: scale(1);
+          width: 70%;
+          background: #00fec3;
+          border-top-right-radius: 50px;
+          position: absolute;
+          right: 33px;
+          top: -7px;
+          display: block;
+          @media (max-width: 1023px) {
+            right: -7px;
+            border-top-right-radius: 65px;
+          }
+          @media (max-width: 767px) {
+            border-top-right-radius: 40px;
+          }
+          @media (max-width: 435px) {
+            border-top-right-radius: 30px;
+          }
         }
-        @media (max-width: 767px) {
-          border-top-right-radius: 40px;
-        }
-        @media (max-width: 435px) {
-          border-top-right-radius: 30px;
-        }
-      }
 
-      &:after {
-        content: '';
-        height: 50%;
-        width: 70%;
-        background: #e1fe00;
-        border-bottom-left-radius: 50px;
-        position: absolute;
-        left: -7px;
-        bottom: -7px;
-        display: block;
-        @media (max-width: 1023px) {
-          right: -7px;
-          border-bottom-left-radius: 65px;
-        }
-        @media (max-width: 767px) {
-          border-bottom-left-radius: 40px;
-        }
-        @media (max-width: 435px) {
-          border-bottom-left-radius: 30px;
+        &:after {
+          content: '';
+          height: 50%;
+          width: 70%;
+          background: #e1fe00;
+          border-bottom-left-radius: 50px;
+          position: absolute;
+          left: -7px;
+          bottom: -7px;
+          display: block;
+          @media (max-width: 1023px) {
+            right: -7px;
+            border-bottom-left-radius: 65px;
+          }
+          @media (max-width: 767px) {
+            border-bottom-left-radius: 40px;
+          }
+          @media (max-width: 435px) {
+            border-bottom-left-radius: 30px;
+          }
         }
       }
     }
