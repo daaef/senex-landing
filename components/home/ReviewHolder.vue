@@ -104,7 +104,7 @@ export default {
           {
             breakpoint: 760,
             settings: {
-              slidesToShow: 1,
+              slidesToShow: 1.02,
               slidesToScroll: 1,
               // initialSlide: 2,
               centerMode: false,
