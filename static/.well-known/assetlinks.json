@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.senexpay.mobile",
+    "sha256_cert_fingerprints":
+    ["4C:2C:CA:D4:B6:AE:3E:EA:FC:4F:BD:EE:B6:C5:BC:00:FA:F1:66:D0:D9:E5:04:A1:88:1F:AA:FE:B0:5C:2C:A0"]
+  }
+}]

@@ -19,6 +19,7 @@
         </p>
         <div class="cto--btns">
           <a
+            class="cto--btn"
             target="_blank"
             href="https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id1627864145"
           >
@@ -26,6 +27,7 @@
             <span> App Store </span>
           </a>
           <a
+            class="cto--btn"
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG"
           >
@@ -35,6 +37,25 @@
             />
             <span> Google Play </span>
           </a>
+          <a class="qr-code--btn" href="#0" @click="qrActive = true">
+            <img class="qr-img" src="~/assets/img/qrcode.svg" alt="QR-Code" />
+          </a>
+          <div class="qrcode--scan items-center">
+            <a class="qr-code--btn" href="#0">
+              <img
+                class="qr-img"
+                src="~/assets/img/qr_code.svg"
+                alt="QR-Code"
+              />
+            </a>
+            <span class="qr--code-text">
+              <span class="font-bold heading-1 text-2xl">Scan the QR Code</span
+              ><br />
+              <span class="paragraph"
+                >to download directly <br />on your phone.</span
+              >
+            </span>
+          </div>
         </div>
       </div>
       <div data-aos="fade-left" data-aos-once="true" class="header--media">
@@ -179,16 +200,139 @@
         </div>-->
       </div>
     </div>
+    <div class="qrcode--scan--sidebar" :class="qrActive ? 'active' : ''">
+      <label id="toggle" class="toggler opened" @click="qrActive = false">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </label>
+      <div class="qr--content">
+        <a class="qr-code--btn" href="#0">
+          <img class="qr-img" src="~/assets/img/qr_code.svg" alt="QR-Code" />
+        </a>
+        <span class="qr--code-text">
+          <span class="font-bold heading-1 text-2xl">Scan the QR Code</span
+          ><br />
+          <span class="paragraph"
+            >to download directly <br />on your phone.</span
+          >
+        </span>
+      </div>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'HeaderHome'
+  name: 'HeaderHome',
+  data() {
+    return {
+      qrActive: false
+    }
+  }
 }
 </script>
 
 <style lang="scss">
+.header--content {
+  .cto--btns {
+    position: relative;
+    align-items: center;
+    .qrcode--scan {
+      position: absolute;
+      background: transparent linear-gradient(112deg, #1265fb 0%, #5237e0 100%);
+      box-shadow: 0px 5px 20px #00000080;
+      border: 5px solid #ffffff;
+      border-radius: 22px;
+      padding: 20px;
+      top: 0;
+      right: 0;
+      display: flex;
+      transition: 0.3s 0.2s ease-in-out;
+      transform: scale(0) translate(100px, -100%);
+      z-index: 10;
+      transform-origin: top right;
+      .qr-code--btn {
+        margin-left: 0;
+        .qr-img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+      .qr--code-text {
+        margin-left: 20px;
+        .heading-1 {
+          font-size: 2rem;
+          color: #fafafa;
+          font-weight: bold;
+        }
+        .paragraph {
+          font-size: 1.8rem;
+          color: #fafafa;
+        }
+      }
+    }
+    .qr-code--btn {
+      padding: 10px;
+      border-radius: 10px;
+      background: #fafafa;
+      margin-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 1140px) {
+        border-radius: 3px;
+        padding: 5px;
+      }
+      @media (max-width: 400px) {
+        padding: 7px;
+        margin-left: 0;
+      }
+      img {
+        height: 40px;
+        width: 40px;
+        @media (max-width: 1140px) {
+          height: 30px;
+          width: 30px;
+        }
+      }
+
+      @media (min-width: 1141px) {
+        &:hover {
+          & ~ .qrcode--scan {
+            display: flex;
+            transform: scale(1) translate(100px, -100%);
+            z-index: 10;
+            transition: 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+    @media (max-width: 500px) {
+      justify-content: space-between;
+      .qr-code--btn {
+        margin-left: 16px;
+      }
+      .cto--btn {
+        padding: 12px 20px;
+        span {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    @media (max-width: 400px) {
+      .qr-code--btn {
+        margin-left: 5px;
+      }
+      .cto--btn {
+        padding: 12px 20px;
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
 .header--media {
   .img--set {
     width: 100%;
@@ -250,6 +394,73 @@ export default {
     }
     @media (max-width: 450px) {
       font-size: 2.1rem;
+    }
+  }
+}
+.qrcode--scan--sidebar {
+  .toggler {
+    position: absolute;
+  }
+  display: none;
+}
+@media (max-width: 1140px) {
+  .qrcode--scan--sidebar {
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #041d45;
+    transform: translateX(-100%);
+    transform-origin: top left;
+    border: none;
+    box-shadow: none;
+    min-height: 100vh;
+    min-width: 100%;
+    z-index: 1000000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    &.active {
+      transform: translateX(0);
+    }
+    .qr--content {
+      background: transparent linear-gradient(112deg, #1265fb 0%, #5237e0 100%);
+      box-shadow: 0 5px 20px #00000080;
+      border: 5px solid #ffffff;
+      border-radius: 22px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .qr-code--btn {
+        padding: 10px;
+        border-radius: 10px;
+        background: #fafafa;
+        margin-bottom: 30px;
+        display: inline-block;
+        img {
+          height: 150px;
+          width: 150px;
+        }
+      }
+      span {
+        line-height: 1.2em;
+      }
+      .qr--code-text {
+        display: inline-block;
+        .heading-1 {
+          font-size: 2.5rem;
+          color: #fafafa;
+          font-weight: bold;
+        }
+        .paragraph {
+          font-size: 2.1rem;
+          color: #fafafa;
+        }
+      }
     }
   }
 }

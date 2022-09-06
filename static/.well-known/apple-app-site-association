@@ -1,0 +1,15 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appIDs": ["5MPM3W735H.com.senexpay.mobile"],
+             "components": [
+               {
+                  "/": "/activate/*",
+                  "comment": "Matches any URL whose path starts with /activate/"
+               }
+             ]
+           }
+       ]
+   }
+}

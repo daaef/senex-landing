@@ -16,6 +16,7 @@
             class="cto--btns md:justify-center sm:justify-start lg:justify-start"
           >
             <a
+              class="cto--btn"
               target="_blank"
               href="https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id1627864145"
             >
@@ -26,6 +27,7 @@
               <span> App Store </span>
             </a>
             <a
+              class="cto--btn"
               target="_blank"
               href="https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG"
             >
@@ -159,7 +161,7 @@ export default {
         .cto--btns {
           align-items: center;
           //justify-content: center;
-          a {
+          a.cto--btn {
             align-items: center;
             //width: calc(50% - 5px);
             //padding: 10px;

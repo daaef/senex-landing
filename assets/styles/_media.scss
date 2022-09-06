@@ -5,12 +5,12 @@
   }
 }
 @media  (max-width: 1639px) {
-  .cto--btns a img {
+  .cto--btns a.cto--btn img {
     height: 30px;
   }
 }
 @media  (max-width: 1500px) {
-  .cto--btns a img {
+  .cto--btns a.cto--btn img {
     height: 30px;
   }
 
@@ -23,7 +23,7 @@
     }
   }
   .cto--btns {
-    a {
+    a.cto--btn {
       padding: 12px 32px;
 
       img {
@@ -283,7 +283,7 @@
   }
   .cto--btns {
     justify-content: flex-start;
-    a {
+    a.cto--btn {
       //width: calc(50% - 5px);
       padding: 12px 22px;
       justify-content: center;
