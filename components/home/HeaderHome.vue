@@ -8,7 +8,7 @@
       }"
     />
     <div class="header--content container">
-      <div data-aos="fade-right" class="header--cto" data-aos-once="true">
+      <div class="header--cto">
         <h2>
           Buy and Sell <span class="gradient--text">Crypto</span> <br />the easy
           way.
@@ -37,7 +37,7 @@
             />
             <span> Google Play </span>
           </a>
-          <a class="qr-code--btn" href="#0" @click="qrActive = true">
+          <a class="qr-code--btn" href="#" @click.prevent="qrActive = true">
             <img class="qr-img" src="~/assets/img/qrcode.svg" alt="QR-Code" />
           </a>
           <div class="qrcode--scan items-center">
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      <div data-aos="fade-left" data-aos-once="true" class="header--media">
+      <div data-aos="fade-right" data-aos-once="true" class="header--media">
         <div class="img--set">
           <img src="~/assets/img/app_screen.png" alt="Home screen image" />
         </div>
@@ -201,7 +201,11 @@
       </div>
     </div>
     <div class="qrcode--scan--sidebar" :class="qrActive ? 'active' : ''">
-      <label id="toggle" class="toggler opened" @click="qrActive = false">
+      <label
+        id="toggle"
+        class="toggler opened"
+        @click.prevent="qrActive = false"
+      >
         <span class="one"></span>
         <span class="two"></span>
         <span class="three"></span>
