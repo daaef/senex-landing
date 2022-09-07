@@ -42,11 +42,7 @@
           </a>
           <div class="qrcode--scan items-center">
             <a class="qr-code--btn" href="#0">
-              <img
-                class="qr-img"
-                src="~/assets/img/qr_code.svg"
-                alt="QR-Code"
-              />
+              <qr-code class="qr-img" :text="qr"></qr-code>
             </a>
             <span class="qr--code-text">
               <span class="font-bold heading-1 text-2xl">Scan the QR Code</span
@@ -212,7 +208,7 @@
       </label>
       <div class="qr--content">
         <a class="qr-code--btn" href="#0">
-          <img class="qr-img" src="~/assets/img/qr_code.svg" alt="QR-Code" />
+          <qr-code class="qr-img" :text="qr"></qr-code>
         </a>
         <span class="qr--code-text">
           <span class="font-bold heading-1 text-2xl">Scan the QR Code</span
@@ -231,7 +227,11 @@ export default {
   name: 'HeaderHome',
   data() {
     return {
-      qrActive: false
+      qrActive: false,
+      qr: `
+      'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id1627864145',
+      'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG'
+      `
     }
   }
 }
@@ -259,8 +259,10 @@ export default {
       .qr-code--btn {
         margin-left: 0;
         .qr-img {
-          height: 100px;
-          width: 100px;
+          img {
+            height: 100px;
+            width: 100px;
+          }
         }
       }
       .qr--code-text {
@@ -445,9 +447,11 @@ export default {
         background: #fafafa;
         margin-bottom: 30px;
         display: inline-block;
-        img {
-          height: 150px;
-          width: 150px;
+        .qr-img {
+          img {
+            height: 150px;
+            width: 150px;
+          }
         }
       }
       span {
