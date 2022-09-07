@@ -229,8 +229,7 @@ export default {
     return {
       qrActive: false,
       qr: `
-      'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id1627864145',
-      'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG'
+      'https://senexpay.onelink.me/9pDi/9tzjxvf1'
       `
     }
   }
@@ -315,9 +314,9 @@ export default {
       }
     }
     @media (max-width: 500px) {
-      justify-content: space-between;
+      justify-content: center;
       .qr-code--btn {
-        margin-left: 16px;
+        margin-left: 10px;
       }
       .cto--btn {
         padding: 12px 20px;
@@ -329,9 +328,14 @@ export default {
     @media (max-width: 400px) {
       .qr-code--btn {
         margin-left: 5px;
+        padding: 4.5px;
+        .qr-img {
+          height: 23px;
+          width: 23px;
+        }
       }
       .cto--btn {
-        padding: 12px 20px;
+        padding: 8px 16px;
         span {
           font-size: 1.4rem;
         }
