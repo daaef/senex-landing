@@ -228,9 +228,7 @@ export default {
   data() {
     return {
       qrActive: false,
-      qr: `
-      'https://senexpay.onelink.me/9pDi/9tzjxvf1'
-      `
+      qr: `https://onelink.to/xd462s`
     }
   }
 }
@@ -431,7 +429,7 @@ export default {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
     &.active {
       transform: translateX(0);
     }
