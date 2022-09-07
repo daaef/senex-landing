@@ -41,16 +41,7 @@
             <img class="qr-img" src="~/assets/img/qrcode.svg" alt="QR-Code" />
           </a>
           <div class="qrcode--scan items-center">
-            <a class="qr-code--btn" href="#0">
-              <qr-code class="qr-img" :text="qr"></qr-code>
-            </a>
-            <span class="qr--code-text">
-              <span class="font-bold heading-1 text-2xl">Scan the QR Code</span
-              ><br />
-              <span class="paragraph"
-                >to download directly <br />on your phone.</span
-              >
-            </span>
+            <QrBtn />
           </div>
         </div>
       </div>
@@ -206,25 +197,16 @@
         <span class="two"></span>
         <span class="three"></span>
       </label>
-      <div class="qr--content">
-        <a class="qr-code--btn" href="#0">
-          <qr-code class="qr-img" :text="qr"></qr-code>
-        </a>
-        <span class="qr--code-text">
-          <span class="font-bold heading-1 text-2xl">Scan the QR Code</span
-          ><br />
-          <span class="paragraph"
-            >to download directly <br />on your phone.</span
-          >
-        </span>
-      </div>
+      <QrBtn />
     </div>
   </header>
 </template>
 
 <script>
+import QrBtn from '~/components/home/QrBtn'
 export default {
   name: 'HeaderHome',
+  components: { QrBtn },
   data() {
     return {
       qrActive: false,
@@ -253,6 +235,10 @@ export default {
       transform: scale(0) translate(100px, -100%);
       z-index: 10;
       transform-origin: top right;
+      .qr--content {
+        display: flex;
+        align-items: center;
+      }
       .qr-code--btn {
         margin-left: 0;
         .qr-img {
