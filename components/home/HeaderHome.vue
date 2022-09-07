@@ -305,7 +305,7 @@ export default {
       .cto--btn {
         padding: 12px 20px;
         span {
-          font-size: 1.6rem;
+          font-size: 1.7rem;
         }
       }
     }
@@ -320,9 +320,6 @@ export default {
       }
       .cto--btn {
         padding: 8px 16px;
-        span {
-          font-size: 1.4rem;
-        }
       }
     }
   }

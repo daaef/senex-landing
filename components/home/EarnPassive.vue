@@ -97,7 +97,7 @@ export default {
   }
   .earn--group {
     display: block;
-    padding-right: 40px;
+    padding-right: 0;
     position: relative;
     max-width: 550px;
     @media (max-width: 767px) {
@@ -141,7 +141,7 @@ export default {
       position: absolute;
     }
     &:before {
-      right: 40px;
+      right: 0;
       top: 0;
       border-top-right-radius: 50px;
       background: #00fec3;
@@ -164,7 +164,7 @@ export default {
         background: #00fec3;
         border-top-right-radius: 50px;
         position: absolute;
-        right: 33px;
+        right: -7px;
         top: -7px;
         display: block;
         @media (max-width: 1023px) {
@@ -212,7 +212,7 @@ export default {
     }
   }
   .earn--info {
-    padding-left: 40px;
+    padding-left: 80px;
     .tag--badge {
       &.success {
         background: #05ba44;
