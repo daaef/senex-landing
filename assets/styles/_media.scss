@@ -5,12 +5,12 @@
   }
 }
 @media  (max-width: 1639px) {
-  .cto--btns a img {
+  .cto--btns a.cto--btn img {
     height: 30px;
   }
 }
 @media  (max-width: 1500px) {
-  .cto--btns a img {
+  .cto--btns a.cto--btn img {
     height: 30px;
   }
 
@@ -23,7 +23,7 @@
     }
   }
   .cto--btns {
-    a {
+    a.cto--btn {
       padding: 12px 32px;
 
       img {
@@ -156,7 +156,7 @@
       }
       .navigations {
         background: $header-blue;
-        transition: all .5s ease-in-out;
+        transition: all .2s ease-in-out;
         transform: translateX(-100%);
         flex-direction: column;
         position: fixed;
@@ -283,7 +283,7 @@
   }
   .cto--btns {
     justify-content: flex-start;
-    a {
+    a.cto--btn {
       //width: calc(50% - 5px);
       padding: 12px 22px;
       justify-content: center;
@@ -291,7 +291,7 @@
         margin-right: 5px;
       }
       &:last-of-type {
-        margin-left: 5px;
+        margin-left: 10px;
       }
 
       span {

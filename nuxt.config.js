@@ -83,7 +83,6 @@ export default {
       }
     ]
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/styles/global.scss'],
 
@@ -210,6 +209,7 @@ export default {
     // },
     exclude: ['/blog', '/za', '/za/*']
   },
+  // serverMiddleware: ['~/middleware/redirect.js'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}

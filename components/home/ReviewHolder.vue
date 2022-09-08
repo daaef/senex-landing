@@ -91,6 +91,7 @@ export default {
         centerMode: true,
         initialSlide: 0,
         swipeToSlide: true,
+        infinite: true,
         responsive: [
           {
             breakpoint: 1024,
@@ -98,6 +99,8 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 1,
               dots: true,
+              swipeToSlide: true,
+              infinite: true,
               centerMode: false
             }
           },
@@ -108,6 +111,8 @@ export default {
               slidesToScroll: 1,
               // initialSlide: 2,
               centerMode: false,
+              infinite: true,
+              swipeToSlide: true,
               dots: true
             }
           }

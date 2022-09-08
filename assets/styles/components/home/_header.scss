@@ -4,12 +4,15 @@ header {
   overflow-x: hidden;
   .header--content {
     display: flex;
-    padding-top: 120px;
+    @media (max-width: 1140px) {
+      padding-top: 120px;
+    }
     align-items: center;
     min-height: 100vh;
     .header--cto {
       padding-right: 50px;
       width: 50%;
+      margin-bottom: 15px;
       h2 {
         font-size: 5.5rem;
         font-weight: bold;
@@ -145,7 +148,7 @@ header {
 .cto--btns {
   display: flex;
   margin-top: 30px;
-  a {
+  a.cto--btn {
     cursor: pointer;
     display: flex;
     padding: 15px 40px;

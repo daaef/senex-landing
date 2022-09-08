@@ -50,7 +50,7 @@
     <gallery></gallery>
     <!-- <join-learn></join-learn> -->
     <reimagine-crypto></reimagine-crypto>
-    <crypto-buddy></crypto-buddy>
+    <download-app />
     <landing-footer></landing-footer>
   </div>
 </template>
@@ -61,18 +61,19 @@ import MissionVision from '~/components/about/MissionVision.vue'
 import SenexInfo from '~/components/about/SenexInfo.vue'
 import Gallery from '~/components/about/Gallery.vue'
 // import JoinLearn from '~/components/about/JoinLearn.vue'
-import CryptoBuddy from '~/components/about/CryptoBuddy.vue'
+// import CryptoBuddy from '~/components/about/CryptoBuddy.vue'
 import LandingFooter from '~/components/LandingFooter.vue'
 import ReimagineCrypto from '~/components/about/ReimagineCrypto.vue'
+import DownloadApp from '~/components/home/DownloadApp'
 // import AppModal from '~/components/custom/AppModal.vue'
 export default {
   components: {
+    DownloadApp,
     Foreword,
     MissionVision,
     SenexInfo,
     Gallery,
     // JoinLearn,
-    CryptoBuddy,
     LandingFooter,
     ReimagineCrypto
     // AppModal

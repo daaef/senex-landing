@@ -141,6 +141,7 @@ export default {
       this.$store.dispatch('changeCountry', {
         country: c
       })
+      this.opened = !this.opened
     },
     barColor() {
       if (this.sideBarOpen) {

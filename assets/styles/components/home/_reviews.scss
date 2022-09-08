@@ -99,7 +99,9 @@
   }
 
   &:hover {
-    transform: translateX(10px);
+    @media (min-width: 1141px) {
+      transform: translateX(10px);
+    }
   }
 
   @include respond(phone-land) {
