@@ -28,4 +28,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.review-box {
+  margin-right: 0;
+  height: 100%;
+  margin-left: 0 !important;
+  @media (max-width: 798px) {
+    padding: 40px;
+  }
+}
+</style>
