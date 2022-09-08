@@ -6,12 +6,16 @@ export default {
       'data-n-head': 'lang'
     },
     title: 'SenexPay - Buy and sell crypto in minutes.',
-    /* script: [
+    script: [
       {
-        src: 'https://static.simpu.co/widgets/v1/simpu-widget.js',
+        src: '/js/uikit.min.js',
         defer: true
       },
-    ], */
+      {
+        src: '/js/uikit-icons.min.js',
+        defer: true
+      }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -77,6 +81,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: '/css/uikit.min.css'
+      },
       {
         rel: 'stylesheet',
         href: 'http://fonts.cdnfonts.com/css/sf-pro-display'

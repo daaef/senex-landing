@@ -6,6 +6,10 @@
   box-sizing: inherit;
 }
 
+a:link, a:hover, a:active, a:focus {
+  color: #fafafa;
+  text-decoration: none;
+}
 
 html {
   // This defines what 1rem is

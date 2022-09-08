@@ -15,7 +15,35 @@
             :content="item.content"
           ></review-2>
         </template> -->
-        <VueSlickCarousel v-if="reviews.length > 0" v-bind="settings">
+        <div
+          class="uk-position-relative uk-visible-toggle uk-light"
+          tabindex="-1"
+          data-uk-slider="finite: true"
+        >
+          <ul
+            class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid"
+          >
+            <li
+              v-for="(item, idx) in reviews"
+              :key="idx"
+              class="uk-width-2-5@m uk-width-3-5@s uk-width-4-5"
+            >
+              <review-2
+                :name="item.name"
+                :image="item.photo"
+                :content="item.reviewText"
+              ></review-2>
+            </li>
+          </ul>
+          <div class="uk-position-bottom-center uk-position-small">
+            <ul class="uk-dotnav">
+              <li data-uk-slider-item="0"><a href="#0">Item 1</a></li>
+              <li data-uk-slider-item="1"><a href="#0">Item 2</a></li>
+              <li data-uk-slider-item="2"><a href="#0">Item 3</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--        <VueSlickCarousel v-if="reviews.length > 0" v-bind="settings">
           <div v-for="(item, idx) in reviews" :key="idx">
             <review-2
               :name="item.name"
@@ -23,7 +51,7 @@
               :content="item.reviewText"
             ></review-2>
           </div>
-        </VueSlickCarousel>
+        </VueSlickCarousel>-->
         <!-- <carousel
           :scroll-per-page="false"
           pagination-position="left"
@@ -66,15 +94,15 @@
 <script>
 // import Carousel from 'vue-carousel/src/Carousel.vue'
 // import Slide from 'vue-carousel/src/Slide.vue'
-import VueSlickCarousel from 'vue-slick-carousel'
+// import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import Review2 from './Review2.vue'
 export default {
   components: {
-    Review2,
-    VueSlickCarousel
+    Review2
+    // VueSlickCarousel
     // Carousel,
     // Slide
   },
@@ -91,7 +119,7 @@ export default {
         centerMode: true,
         initialSlide: 0,
         swipeToSlide: true,
-        infinite: true,
+        infinite: false,
         responsive: [
           {
             breakpoint: 1024,
@@ -100,18 +128,18 @@ export default {
               slidesToScroll: 1,
               dots: true,
               swipeToSlide: true,
-              infinite: true,
+              infinite: false,
               centerMode: false
             }
           },
           {
             breakpoint: 760,
             settings: {
-              slidesToShow: 1.02,
+              slidesToShow: 1.22,
               slidesToScroll: 1,
               // initialSlide: 2,
               centerMode: false,
-              infinite: true,
+              infinite: false,
               swipeToSlide: true,
               dots: true
             }
@@ -234,7 +262,28 @@ export default {
 
 .review-holder {
   // display: flex;
+  .uk-slider-items {
+    padding-bottom: 60px;
+  }
   margin: 50px 0;
+  .uk-position-bottom-center.uk-position-small {
+    transform: translateY(10px) translateX(0);
+    margin-left: 0;
+    left: 0;
+    .uk-dotnav {
+      li {
+        a {
+          background: #b2b2b2;
+          border: none;
+        }
+        &.uk-active {
+          a {
+            background: #3e3e41;
+          }
+        }
+      }
+    }
+  }
 
   &__reviews {
     display: flex;

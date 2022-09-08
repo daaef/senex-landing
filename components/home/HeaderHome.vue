@@ -298,7 +298,7 @@ export default {
       }
     }
     @media (max-width: 500px) {
-      justify-content: center;
+      justify-content: flex-start;
       .qr-code--btn {
         margin-left: 10px;
       }
@@ -394,7 +394,14 @@ export default {
   }
   display: none;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1040px) {
+  /*.testimonial-carousel {
+    .slick-list {
+      .slick-slide {
+        width: 300px !important;
+      }
+    }
+  }*/
   .qrcode--scan--sidebar {
     flex-direction: column;
     position: fixed;
