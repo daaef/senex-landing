@@ -34,6 +34,11 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  head() {
+    return {
+      meta: [{ name: 'theme-color', content: '041d45' }]
+    }
+  },
   computed: {
     ...mapState({
       sideBarOpen: 'sideBarOpen',
