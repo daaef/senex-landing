@@ -461,24 +461,6 @@ export default {
         }
       ],
       link: [{ rel: 'canonical', href: 'https://www.senexpay.com' }],
-      script: [
-        {
-          json: {
-            '@context': 'http://schema.org',
-            '@type': 'Organization',
-            name: 'SenexPay',
-            url: 'https://www.senexpay.com',
-            sameAs: [
-              'https://www.instagram.com/senexpay/',
-              'https://www.facebook.com/senexpay/',
-              'https://twitter.com/senexpay',
-              'https://www.linkedin.com/company/senexpay/',
-              'https://www.youtube.com/channel/UCf-zuXt2vynE1TFeiY1sw1Q'
-            ]
-          },
-          type: 'application/ld+json'
-        }
-      ]
     }
   },
   computed: {
