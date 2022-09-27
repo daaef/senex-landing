@@ -33,7 +33,9 @@
 
 <script>
 import { mapState } from 'vuex'
+import jsonld from '~/mixins/jsonld'
 export default {
+  mixins: [jsonld],
   head() {
     return {
       meta: [{ name: 'theme-color', content: '041d45' }]

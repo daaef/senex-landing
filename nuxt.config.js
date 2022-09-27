@@ -96,10 +96,11 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/jsonld',
     { src: '~/plugins/vue-scroll-reveal', ssr: false },
     { src: '~/plugins/axios', ssr: true },
     { src: '~plugins/vue-typer', mode: 'client' },
-    { src: '~/plugins/vue-carousel', ssr: false }
+    { src: '~/plugins/vue-carousel', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

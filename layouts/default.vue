@@ -53,3 +53,10 @@ html {
   background-color: #35495e;
 }
 </style>
+<script>
+import jsonld from '~/mixins/jsonld'
+
+export default {
+  mixins: [jsonld]
+}
+</script>

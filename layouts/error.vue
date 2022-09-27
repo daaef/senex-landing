@@ -26,9 +26,11 @@
 
 <script>
 import ButtonSpinner from '~/components/custom/ButtonSpinner.vue'
+import jsonld from "~/mixins/jsonld";
 export default {
   components: { ButtonSpinner },
   layout: 'error',
+  mixins: [jsonld],
   props: {
     error: {
       type: Object,
