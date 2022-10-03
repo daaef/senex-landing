@@ -18,27 +18,171 @@ export default {
       {
         json: {
           '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'SenexPay',
-          alternateName: 'Senex Payment Services',
-          url: 'https://www.senexpay.com',
-          logo: 'https://www.senexpay.com/senexpay-logo.jpeg',
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Lagos, Nigeria',
-            streetAddress:
-              'Number One Lagos, 1, Akin Adesola Street, Victoria Island.'
-          },
-          email: 'hello@senexpay.com',
-          telephone: '+234-916-259-8206',
-          description:
-            "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
-          sameAs: [
-            'https://web.facebook.com/senexpay/',
-            'https://twitter.com/senexpay/',
-            'https://www.youtube.com/channel/UCf-zuXt2vynE1TFeiY1sw1Q',
-            'https://www.instagram.com/senexpay/',
-            'https://linkedin.com/company/senexpay/'
+          '@graph': [
+            {
+              '@type': 'WebPage',
+              '@id': 'https://senexpay.com/',
+              url: 'https://senexpay.com/',
+              name: 'SenexPay',
+              isPartOf: {
+                '@id': 'https://senexpay.com/#website'
+              },
+              about: {
+                '@id': 'https://senexpay.com/#organization'
+              },
+              datePublished: '2016-09-14T08:13:22+00:00',
+              dateModified: '2022-08-31T12:27:02+00:00',
+              description:
+                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
+              breadcrumb: {
+                '@id': 'https://senexpay.com/#breadcrumb'
+              },
+              inLanguage: 'en-US',
+              potentialAction: [
+                {
+                  '@type': 'ReadAction',
+                  target: ['https://senexpay.com/']
+                }
+              ]
+            },
+            {
+              '@type': 'WebSite',
+              '@id': 'https://senexpay.com/#website',
+              url: 'https://senexpay.com/',
+              name: 'SenexPay',
+              description:
+                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
+              publisher: {
+                '@id': 'https://senexpay.com/#organization'
+              },
+              inLanguage: 'en-US',
+              copyrightHolder: {
+                '@id': 'https://senexpay.com/#organization'
+              }
+            },
+            {
+              '@type': ['Organization', 'Brand'],
+              '@id': 'https://senexpay.com/#organization',
+              name: 'SenexPay',
+              url: 'https://senexpay.com/',
+              sameAs: [
+                'https://web.facebook.com/senexpay/',
+                'https://twitter.com/senexpay/',
+                'https://www.youtube.com/channel/UCf-zuXt2vynE1TFeiY1sw1Q',
+                'https://www.instagram.com/senexpay/',
+                'https://linkedin.com/company/senexpay/'
+              ],
+              logo: {
+                '@type': 'ImageObject',
+                inLanguage: 'en-US',
+                '@id': 'https://senexpay.com/#/schema/logo/image/',
+                url: 'https://www.senexpay.com/senexpay-logo.jpeg',
+                contentUrl: 'https://www.senexpay.com/senexpay-logo.jpeg',
+                width: 500,
+                height: 500,
+                caption: 'Reimagining crypto for all'
+              },
+              image: {
+                '@id': 'https://www.senexpay.com/#/schema/logo/image/'
+              },
+              founder: {
+                '@type': 'Person',
+                name: 'Orhosere Okeoghene',
+                url: 'https://www.senexpay.com/about/'
+              },
+              foundingDate: '2016-01-01',
+              slogan: 'Reimagining crypto for all',
+              description:
+                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
+              alternateName: 'Senex Payment Services',
+              legalName: 'SenexPay'
+            },
+            {
+              '@type': 'MobileApplication',
+              applicationCategory:
+                'https://en.wikipedia.org/wiki/Android_(operating_system)',
+              installUrl:
+                'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
+              operatingSystem: 'Android',
+              featureList: 'Android'
+            },
+            {
+              '@type': 'MobileApplication',
+              applicationCategory: 'https://en.wikipedia.org/wiki/IOS',
+              installUrl:
+                'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
+              operatingSystem: 'IOS',
+              featureList: 'IOS'
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'What is SenexPay?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: '<p>SenexPay is an online cryptocurrency to fiat instant exchange platform that supports Naira and Rand.</p>'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How can I access SenexPay?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'SenexPay can be accessed via the web platform at www.senxpay.com on your mobile phone and laptop browsers.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What Cryptocurrencies can I buy on SenexPay?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: '<p>You can buy Bitcoin and USDT on SenexPay.</p>'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Is there a limit to the amount of cryptocurrency I can buy or sell on SenexPay?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'There is no upper limit to the amount of cryptocurrency you can buy or sell or SenexPay. However, you cannot buy or sell cryptocurrency that is worth below the value of $25.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What fees does SenexPay charge?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'SenexPay charges you a meagre fee of 0.7 of your total transaction amount capped at $2 - this means that if 0.7% of your transaction is more than $2, we charge you just $2 no matter the transaction amount, even if it’s a billion dollars!'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Why do I need to do KYC verification?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Know-Your-Customer (KYC) verification is a standard identity verification that is legally required for anyone who wants to trade crypto on SenexPay. It is required by law, to make financial organisations have information about their customers to protect the interest of the customers and the company.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How secure is SenexPay?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'SenexPay is very secure. We put security at the forefront of our operations and we place a high-degree of importance on customer-protection. Our platform is protected with bank-level security using DDOS, CSRF, Secure Socket Layer, etc, to protect all transactions and customer data.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'In what countries does SenexPay operate?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'SenexPay currently operates majorly in 5 countries: Nigeria, South Africa, Ghana, Dubai and the United Kingdom.'
+                  }
+                }
+              ]
+            }
           ]
         },
         type: 'application/ld+json'
