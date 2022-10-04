@@ -8,7 +8,7 @@
           dashboard.
         </p>
         <div class="text-center">
-          <a :href="appLink + '/create-account'" class="dash--btn">
+          <a :href="appLink + '/'" target="_blank" class="dash--btn">
             Get Started</a
           >
         </div>
