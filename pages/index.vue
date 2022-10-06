@@ -460,7 +460,7 @@ export default {
           content: 'https://www.senexpay.com'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://www.senexpay.com' }]
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com' }],
     }
   },
   computed: {

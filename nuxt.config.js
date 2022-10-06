@@ -20,48 +20,7 @@ export default {
           '@context': 'https://schema.org',
           '@graph': [
             {
-              '@type': 'WebPage',
-              '@id': 'https://senexpay.com/',
-              url: 'https://senexpay.com/',
-              name: 'SenexPay',
-              isPartOf: {
-                '@id': 'https://senexpay.com/#website'
-              },
-              about: {
-                '@id': 'https://senexpay.com/#organization'
-              },
-              datePublished: '2016-09-14T08:13:22+00:00',
-              dateModified: '2022-08-31T12:27:02+00:00',
-              description:
-                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
-              breadcrumb: {
-                '@id': 'https://senexpay.com/#breadcrumb'
-              },
-              inLanguage: 'en-US',
-              potentialAction: [
-                {
-                  '@type': 'ReadAction',
-                  target: ['https://senexpay.com/']
-                }
-              ]
-            },
-            {
-              '@type': 'WebSite',
-              '@id': 'https://senexpay.com/#website',
-              url: 'https://senexpay.com/',
-              name: 'SenexPay',
-              description:
-                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
-              publisher: {
-                '@id': 'https://senexpay.com/#organization'
-              },
-              inLanguage: 'en-US',
-              copyrightHolder: {
-                '@id': 'https://senexpay.com/#organization'
-              }
-            },
-            {
-              '@type': ['Organization', 'Brand'],
+              '@type': 'Organization',
               '@id': 'https://senexpay.com/#organization',
               name: 'SenexPay',
               url: 'https://senexpay.com/',
@@ -74,48 +33,60 @@ export default {
               ],
               logo: {
                 '@type': 'ImageObject',
+                '@id': 'https://senexpay.com/#logo',
                 inLanguage: 'en-US',
-                '@id': 'https://senexpay.com/#/schema/logo/image/',
                 url: 'https://www.senexpay.com/senexpay-logo.jpeg',
-                contentUrl: 'https://www.senexpay.com/senexpay-logo.jpeg',
-                width: 500,
-                height: 500,
-                caption: 'Reimagining crypto for all'
-              },
-              image: {
-                '@id': 'https://www.senexpay.com/#/schema/logo/image/'
-              },
-              founder: {
-                '@type': 'Person',
-                name: 'Orhosere Okeoghene',
-                url: 'https://www.senexpay.com/about/'
+                contentURL: 'https://www.senexpay.com/senexpay-logo.jpeg',
+                width: 200,
+                height: 200,
+                caption: 'Reimagining crypto for all',
+                alternateName: 'Senex Payment Services',
+                legalName: 'SenexPay'
               },
               foundingDate: '2016-01-01',
               slogan: 'Reimagining crypto for all',
+              image: { '@id': 'https://senexpay.com/#logo' }
+            },
+            {
+              '@type': 'WebSite',
+              '@id': 'https://senexpay.com/#website',
+              url: 'https://senexpay.com/',
+              name: 'SenexPay',
               description:
-                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
-              alternateName: 'Senex Payment Services',
-              legalName: 'SenexPay'
+                'Our easy and secure platform got everyone falling in love with Crypto. Our vision is to make financial services accessible to every person on the African continent.',
+              publisher: { '@id': 'https://senexpay.com/#organization' }
             },
             {
-              '@type': 'MobileApplication',
-              applicationCategory:
-                'https://en.wikipedia.org/wiki/Android_(operating_system)',
-              installUrl:
-                'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
-              operatingSystem: 'Android',
-              featureList: 'Android'
-            },
-            {
-              '@type': 'MobileApplication',
-              applicationCategory: 'https://en.wikipedia.org/wiki/IOS',
-              installUrl:
-                'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
-              operatingSystem: 'IOS',
-              featureList: 'IOS'
+              '@type': 'WebPage',
+              '@id': 'https://senexpay.com/about/#webpage',
+              url: 'https://senexpay.com/about/',
+              inLanguage: 'en-US',
+              name: 'Our mission, vision and core values | SenexPay',
+              isPartOf: { '@id': 'https://senexpay.com/#website' },
+              about: {
+                '@id': 'https://senexpay.com/#organization'
+              },
+              datePublished: '2016-09-14T08:13:22+00:00',
+              dateModified: '2022-08-31T12:27:02+00:00',
+              description:
+                'Our easy and secure platform got everyone falling in love with Crypto. Our vision is to make financial services accessible to every person on the African continent.',
+              potentialAction: [
+                {
+                  '@type': 'ReadAction',
+                  target: ['https://senexpay.com/about/']
+                }
+              ]
             },
             {
               '@type': 'FAQPage',
+              '@id': 'https://senexpay.com/faq/#faq',
+              url: 'https://senexpay.com/faqs/',
+              isPartOf: {
+                '@id': 'https://senexpay.com/#website'
+              },
+              about: {
+                '@id': 'https://senexpay.com/#organization'
+              },
               mainEntity: [
                 {
                   '@type': 'Question',
@@ -182,6 +153,99 @@ export default {
                   }
                 }
               ]
+            },
+            {
+              '@type': 'MobileApplication',
+              applicationCategory:
+                'https://en.wikipedia.org/wiki/Android_(operating_system)',
+              installUrl:
+                'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
+              operatingSystem: 'Android',
+              description:
+                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
+              name: 'SenexPay: Trade Bitcoin & USDT',
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '5',
+                ratingCount: '8'
+              },
+              review: [
+                {
+                  '@type': 'Review',
+                  author: 'Patfoz',
+                  datePublished: '2022-09-16',
+                  reviewBody:
+                    "Wow!!! Everything about you guys is so fast:). I really like the app. It's easy to use. I got my coin almost immediately the payment left my Kuda bank.",
+                  name: 'AMAZING',
+                  itemReviewed: {
+                    '@type': 'MobileApplication',
+                    name: 'SenexPay: Trade Bitcoin & USDT'
+                  },
+                  reviewRating: {
+                    '@type': 'Rating',
+                    bestRating: '5',
+                    ratingValue: '5',
+                    worstRating: '5'
+                  }
+                }
+              ],
+              /* offers: {
+                '@type': 'Offer',
+                price: '1.00',
+                priceCurrency: 'USD'
+              }, */
+              creator: {
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'Senexpay',
+                url: 'https://senexpay.com'
+              }
+            },
+            {
+              '@type': 'MobileApplication',
+              applicationCategory: 'https://en.wikipedia.org/wiki/IOS',
+              installUrl:
+                'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
+              operatingSystem: 'IOS',
+              description:
+                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
+              name: 'SenexPay: Trade Bitcoin & USDT',
+              review: [
+                {
+                  '@type': 'Review',
+                  author: 'Patfoz',
+                  datePublished: '2022-09-16',
+                  reviewBody:
+                    "Wow!!! Everything about you guys is so fast:). I really like the app. It's easy to use. I got my coin almost immediately the payment left my Kuda bank.",
+                  name: 'AMAZING',
+                  itemReviewed: {
+                    '@type': 'MobileApplication',
+                    name: 'SenexPay: Trade Bitcoin & USDT'
+                  },
+                  reviewRating: {
+                    '@type': 'Rating',
+                    bestRating: '5',
+                    ratingValue: '5',
+                    worstRating: '5'
+                  }
+                }
+              ],
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '5',
+                ratingCount: '8'
+              },
+              /* offers: {
+                '@type': 'Offer',
+                price: '1.00',
+                priceCurrency: 'USD'
+              }, */
+              creator: {
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'Senexpay',
+                url: 'https://senexpay.com'
+              }
             }
           ]
         },
