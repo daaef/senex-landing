@@ -155,97 +155,41 @@ export default {
               ]
             },
             {
-              '@type': 'MobileApplication',
+              '@type': 'SoftwareApplication',
               applicationCategory:
                 'https://en.wikipedia.org/wiki/Android_(operating_system)',
               installUrl:
                 'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
-              operatingSystem: 'Android',
-              description:
-                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
+              operatingSystem: 'ANDROID',
               name: 'SenexPay: Trade Bitcoin & USDT',
               aggregateRating: {
                 '@type': 'AggregateRating',
                 ratingValue: '5',
                 ratingCount: '8'
               },
-              review: [
-                {
-                  '@type': 'Review',
-                  author: 'Patfoz',
-                  datePublished: '2022-09-16',
-                  reviewBody:
-                    "Wow!!! Everything about you guys is so fast:). I really like the app. It's easy to use. I got my coin almost immediately the payment left my Kuda bank.",
-                  name: 'AMAZING',
-                  itemReviewed: {
-                    '@type': 'MobileApplication',
-                    name: 'SenexPay: Trade Bitcoin & USDT'
-                  },
-                  reviewRating: {
-                    '@type': 'Rating',
-                    bestRating: '5',
-                    ratingValue: '5',
-                    worstRating: '5'
-                  }
-                }
-              ],
-              /* offers: {
+              offers: {
                 '@type': 'Offer',
                 price: '1.00',
                 priceCurrency: 'USD'
-              }, */
-              creator: {
-                '@context': 'https://schema.org',
-                '@type': 'Organization',
-                name: 'Senexpay',
-                url: 'https://senexpay.com'
               }
             },
             {
-              '@type': 'MobileApplication',
+              '@type': 'SoftwareApplication',
               applicationCategory: 'https://en.wikipedia.org/wiki/IOS',
-              installUrl:
-                'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
-              operatingSystem: 'IOS',
-              description:
-                "SenexPay is the easiest and most reliable platform to exchange cryptocurrency. We are building Africa's biggest cross-border payments infrastructure. Pay seamlessly with Senex today!",
-              name: 'SenexPay: Trade Bitcoin & USDT',
-              review: [
-                {
-                  '@type': 'Review',
-                  author: 'Patfoz',
-                  datePublished: '2022-09-16',
-                  reviewBody:
-                    "Wow!!! Everything about you guys is so fast:). I really like the app. It's easy to use. I got my coin almost immediately the payment left my Kuda bank.",
-                  name: 'AMAZING',
-                  itemReviewed: {
-                    '@type': 'MobileApplication',
-                    name: 'SenexPay: Trade Bitcoin & USDT'
-                  },
-                  reviewRating: {
-                    '@type': 'Rating',
-                    bestRating: '5',
-                    ratingValue: '5',
-                    worstRating: '5'
-                  }
-                }
-              ],
               aggregateRating: {
                 '@type': 'AggregateRating',
                 ratingValue: '5',
                 ratingCount: '8'
               },
-              /* offers: {
+              installUrl:
+                'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
+              name: 'SenexPay: Trade Bitcoin & USDT',
+              offers: {
                 '@type': 'Offer',
                 price: '1.00',
                 priceCurrency: 'USD'
-              }, */
-              creator: {
-                '@context': 'https://schema.org',
-                '@type': 'Organization',
-                name: 'Senexpay',
-                url: 'https://senexpay.com'
-              }
+              },
+              operatingSystem: 'IOS'
             }
           ]
         },
