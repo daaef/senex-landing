@@ -131,7 +131,7 @@
           :sell="450000"
         >
         </coin-price> -->
-        <p class="paragraph mt-20 u-text-center u-white">
+        <p class="mt-20 paragraph u-text-center u-white">
           SenexPay Transaction fee is {{ limits.platformFee }} percent pegged at
           ${{ limits.platformFeeCap }}.
           <router-link to="/terms-of-service" class="u-sec-color">
@@ -147,7 +147,7 @@
     <div class="">
       <!-- Description 1 -->
       <div
-        class="snx-description-con__inside snx-description-con__inside--reverse container"
+        class="container snx-description-con__inside snx-description-con__inside--reverse"
         data-aos="slide-up"
         data-aos-once="true"
       >
@@ -351,13 +351,13 @@
       &lt;!&ndash; Mobile App Banner &ndash;&gt;
       <div class="mbl-app-banner">
         <div class="container">
-          <div class="block lg:flex py-24">
-            <div class="text-and-store-con self-center lg:w-1/2">
+          <div class="block py-24 lg:flex">
+            <div class="self-center text-and-store-con lg:w-1/2">
               <h1 class="heading-secondary heading-secondary&#45;&#45;500">
                 We are creating a unique financial revolution. Join us!
               </h1>
             </div>
-            <div class="lg:w-1/2 mx-auto">
+            <div class="mx-auto lg:w-1/2">
               <span class="mbl-img-con"
                 ><img
                   src="/img/pablita-cryptocurrency.svg"
