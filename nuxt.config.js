@@ -89,7 +89,7 @@ export default {
                   name: 'What is SenexPay?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: '<p>SenexPay is a Pan-African blockchain startup reimagining crypto for all currently offering fast and easy crypto exchange and wallet services.</p>'
+                    text: 'SenexPay is a Pan-African blockchain startup reimagining crypto for all currently offering fast and easy crypto exchange and wallet services.'
                   }
                 },
                 {
