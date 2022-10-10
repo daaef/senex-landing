@@ -27,9 +27,9 @@ export default {
               sameAs: [
                 'https://web.facebook.com/senexpay/',
                 'https://twitter.com/senexpay/',
-                'https://www.youtube.com/channel/UCf-zuXt2vynE1TFeiY1sw1Q',
                 'https://www.instagram.com/senexpay/',
-                'https://linkedin.com/company/senexpay/'
+                'https://linkedin.com/company/senexpay/',
+                'https://www.youtube.com/channel/UCf-zuXt2vynE1TFeiY1sw1Q'
               ],
               logo: {
                 '@type': 'ImageObject',
@@ -41,7 +41,7 @@ export default {
                 height: 200,
                 caption: 'Reimagining crypto for all',
                 alternateName: 'Senex Payment Services',
-                legalName: 'SenexPay'
+                legalName: 'Senex Payment Services'
               },
               foundingDate: '2016-01-01',
               slogan: 'Reimagining crypto for all',
@@ -93,55 +93,15 @@ export default {
                   name: 'What is SenexPay?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: '<p>SenexPay is an online cryptocurrency to fiat instant exchange platform that supports Naira and Rand.</p>'
+                    text: '<p>SenexPay is a Pan-African blockchain startup reimagining crypto for all currently offering fast and easy crypto exchange and wallet services.</p>'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'How can I access SenexPay?',
+                  name: 'What Cryptocurrencies can I exchange on SenexPay?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'SenexPay can be accessed via the web platform at www.senxpay.com on your mobile phone and laptop browsers.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'What Cryptocurrencies can I buy on SenexPay?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: '<p>You can buy Bitcoin and USDT on SenexPay.</p>'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Is there a limit to the amount of cryptocurrency I can buy or sell on SenexPay?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'There is no upper limit to the amount of cryptocurrency you can buy or sell or SenexPay. However, you cannot buy or sell cryptocurrency that is worth below the value of $25.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'What fees does SenexPay charge?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'SenexPay charges you a meagre fee of 0.7 of your total transaction amount capped at $2 - this means that if 0.7% of your transaction is more than $2, we charge you just $2 no matter the transaction amount, even if it’s a billion dollars!'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Why do I need to do KYC verification?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Know-Your-Customer (KYC) verification is a standard identity verification that is legally required for anyone who wants to trade crypto on SenexPay. It is required by law, to make financial organisations have information about their customers to protect the interest of the customers and the company.'
-                  }
-                },
-                {
-                  '@type': 'Question',
-                  name: 'How secure is SenexPay?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'SenexPay is very secure. We put security at the forefront of our operations and we place a high-degree of importance on customer-protection. Our platform is protected with bank-level security using DDOS, CSRF, Secure Socket Layer, etc, to protect all transactions and customer data.'
+                    text: '<p>You can buy/sell Bitcoin(BTC) and Tether(USDT) on SenexPay.</p>'
                   }
                 },
                 {
@@ -150,6 +110,22 @@ export default {
                   acceptedAnswer: {
                     '@type': 'Answer',
                     text: 'SenexPay currently operates majorly in 5 countries: Nigeria, South Africa, Ghana, Dubai and the United Kingdom.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Is there a limit to the amount of cryptocurrency I can buy or sell on SenexPay?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'There is no upper limit to the amount of cryptocurrency you can buy or sell or SenexPay. However, you cannot buy or sell cryptocurrency that is worth below the value of $40.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How secure is SenexPay?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'SenexPay is very secure. We put security at the forefront of our operations and we place a high-degree of importance on customer-protection. Our platform is protected with bank-level security using DDOS, CSRF, Secure Socket Layer, etc, to protect all transactions and customer data.'
                   }
                 }
               ]
@@ -161,34 +137,14 @@ export default {
               installUrl:
                 'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
               operatingSystem: 'ANDROID',
-              name: 'SenexPay: Trade Bitcoin & USDT',
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '5',
-                ratingCount: '8'
-              },
-              offers: {
-                '@type': 'Offer',
-                price: '1.00',
-                priceCurrency: 'USD'
-              }
+              name: 'SenexPay: Trade Bitcoin & USDT'
             },
             {
               '@type': 'SoftwareApplication',
               applicationCategory: 'https://en.wikipedia.org/wiki/IOS',
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '5',
-                ratingCount: '8'
-              },
               installUrl:
                 'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
               name: 'SenexPay: Trade Bitcoin & USDT',
-              offers: {
-                '@type': 'Offer',
-                price: '1.00',
-                priceCurrency: 'USD'
-              },
               operatingSystem: 'IOS'
             }
           ]
