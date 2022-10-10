@@ -132,20 +132,19 @@ export default {
             },
             {
               '@type': 'SoftwareApplication',
-              applicationCategory:
-                'https://en.wikipedia.org/wiki/Android_(operating_system)',
+              applicationCategory: 'FinanceApplication',
               installUrl:
                 'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
-              operatingSystem: 'ANDROID',
+              operatingSystem: 'Android',
               name: 'SenexPay: Trade Bitcoin & USDT'
             },
             {
-              '@type': 'SoftwareApplication',
-              applicationCategory: 'https://en.wikipedia.org/wiki/IOS',
+              '@type': 'MobileApplication',
+              applicationCategory: 'FinanceApplication',
               installUrl:
                 'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
               name: 'SenexPay: Trade Bitcoin & USDT',
-              operatingSystem: 'IOS'
+              operatingSystem: 'iOS'
             }
           ]
         },
