@@ -52,41 +52,7 @@ export default {
               name: 'SenexPay',
               description:
                 'Our easy and secure platform got everyone falling in love with Crypto. Our vision is to make financial services accessible to every person on the African continent.',
-              publisher: { '@id': 'https://senexpay.com/#organization' },
-              potentialAction: {
-                '@type': 'ViewAction',
-                target: [
-                  'https://www.senexpay.com/r/6/92204',
-                  {
-                    '@type': 'EntryPoint',
-                    urlTemplate: 'senexpay://r/6/92204',
-                    actionApplication: {
-                      '@type': 'SoftwareApplication',
-                      '@id': '4976013114347311704',
-                      name: 'SenexPay: Trade Bitcoin & USDT',
-                      applicationCategory: 'FinanceApplication',
-                      installUrl:
-                        'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
-                      operatingSystem: 'Android'
-                    },
-                    actionPlatform: 'AndroidPlatform'
-                  },
-                  {
-                    '@type': 'EntryPoint',
-                    urlTemplate: 'senexpay://r/6/92204',
-                    actionApplication: {
-                      '@type': 'SoftwareApplication',
-                      '@id': 'id1627864145',
-                      name: 'SenexPay: Trade Bitcoin & USDT',
-                      applicationCategory: 'FinanceApplication',
-                      installUrl:
-                        'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
-                      operatingSystem: 'iOS'
-                    },
-                    actionPlatform: 'IOSPlatform'
-                  }
-                ]
-              }
+              publisher: { '@id': 'https://senexpay.com/#organization' }
             },
             {
               '@type': 'WebPage',
@@ -162,6 +128,7 @@ export default {
             },
             {
               '@type': 'SoftwareApplication',
+              '@id': '4976013114347311704',
               applicationCategory: 'FinanceApplication',
               installUrl:
                 'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
@@ -170,6 +137,7 @@ export default {
             },
             {
               '@type': 'MobileApplication',
+              '@id': 'id1627864145',
               applicationCategory: 'FinanceApplication',
               installUrl:
                 'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
