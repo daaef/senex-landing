@@ -39,9 +39,7 @@ export default {
                 contentURL: 'https://www.senexpay.com/senexpay-logo.jpeg',
                 width: 200,
                 height: 200,
-                caption: 'Reimagining crypto for all',
-                alternateName: 'Senex Payment Services',
-                legalName: 'Senex Payment Services'
+                caption: 'Reimagining crypto for all'
               },
               foundingDate: '2016-01-01',
               slogan: 'Reimagining crypto for all',
@@ -54,15 +52,49 @@ export default {
               name: 'SenexPay',
               description:
                 'Our easy and secure platform got everyone falling in love with Crypto. Our vision is to make financial services accessible to every person on the African continent.',
-              publisher: { '@id': 'https://senexpay.com/#organization' }
+              publisher: { '@id': 'https://senexpay.com/#organization' },
+              potentialAction: {
+                '@type': 'ViewAction',
+                target: [
+                  'https://www.senexpay.com/r/6/92204',
+                  {
+                    '@type': 'EntryPoint',
+                    urlTemplate: 'senexpay://r/6/92204',
+                    actionApplication: {
+                      '@type': 'SoftwareApplication',
+                      '@id': '4976013114347311704',
+                      name: 'SenexPay: Trade Bitcoin & USDT',
+                      applicationCategory: 'FinanceApplication',
+                      installUrl:
+                        'https://play.google.com/store/apps/details?id=com.senexpay.mobile&hl=en&gl=NG',
+                      operatingSystem: 'Android'
+                    },
+                    actionPlatform: 'AndroidPlatform'
+                  },
+                  {
+                    '@type': 'EntryPoint',
+                    urlTemplate: 'senexpay://r/6/92204',
+                    actionApplication: {
+                      '@type': 'SoftwareApplication',
+                      '@id': 'id1627864145',
+                      name: 'SenexPay: Trade Bitcoin & USDT',
+                      applicationCategory: 'FinanceApplication',
+                      installUrl:
+                        'https://apps.apple.com/us/app/senexpay-trade-bitcoin-usdt/id162786414',
+                      operatingSystem: 'iOS'
+                    },
+                    actionPlatform: 'IOSPlatform'
+                  }
+                ]
+              }
             },
             {
               '@type': 'WebPage',
               '@id': 'https://senexpay.com/about/#webpage',
+              isPartOf: { '@id': 'https://senexpay.com/#website' },
               url: 'https://senexpay.com/about/',
               inLanguage: 'en-US',
               name: 'Our mission, vision and core values | SenexPay',
-              isPartOf: { '@id': 'https://senexpay.com/#website' },
               about: {
                 '@id': 'https://senexpay.com/#organization'
               },
@@ -70,12 +102,10 @@ export default {
               dateModified: '2022-08-31T12:27:02+00:00',
               description:
                 'Our easy and secure platform got everyone falling in love with Crypto. Our vision is to make financial services accessible to every person on the African continent.',
-              potentialAction: [
-                {
-                  '@type': 'ReadAction',
-                  target: ['https://senexpay.com/about/']
-                }
-              ]
+              potentialAction: {
+                '@type': 'ReadAction',
+                target: ['https://senexpay.com/about/']
+              }
             },
             {
               '@type': 'FAQPage',
@@ -85,7 +115,7 @@ export default {
                 '@id': 'https://senexpay.com/#website'
               },
               about: {
-                '@id': 'https://senexpay.com/#organization'
+                '@id': 'https://senexpay.com/about/#webpage'
               },
               mainEntity: [
                 {
@@ -101,7 +131,7 @@ export default {
                   name: 'What Cryptocurrencies can I exchange on SenexPay?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: '<p>You can buy/sell Bitcoin(BTC) and Tether(USDT) on SenexPay.</p>'
+                    text: 'You can buy/sell Bitcoin(BTC) and Tether(USDT) on SenexPay.'
                   }
                 },
                 {
