@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
 .dashboard--design {
   background: #041d45;
-  min-height: 100vh;
+  min-height: 800px;
   width: 100%;
   padding: 100px 0 0;
   @media only screen and (max-width: 64em) {
