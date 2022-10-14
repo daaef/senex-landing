@@ -133,17 +133,20 @@ export default {
       border-radius: 25px;
       box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.57);
       background: #ffffff;
-      min-height: 400px;
+      //min-height: 400px;
       width: 500px;
       position: relative;
       .card--top {
         position: relative;
         padding: 40px;
-        height: 200px;
+        height: 220px;
         overflow: hidden;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         width: 100%;
+        @media (max-width: 1024px) {
+          height: 200px;
+        }
         h4 {
           color: #ffffff;
           font-size: 3rem;
@@ -205,6 +208,7 @@ export default {
         }
         h1 {
           font-size: 2.7rem;
+          color: #0a0a0a;
           font-weight: bold;
           line-height: 1;
           @media (min-width: 1500px) {
