@@ -37,11 +37,18 @@ export default {
 <style lang="scss">
 .dashboard--design {
   background: #041d45;
-  min-height: 800px;
+  min-height: 900px;
   width: 100%;
   padding: 100px 0 0;
-  @media only screen and (max-width: 64em) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  @media only screen and (max-width: 1024px) {
     min-height: unset;
+    .dash--img-holder {
+      margin-top: 40px;
+      height: unset !important;
+    }
   }
 
   h2 {
@@ -70,7 +77,7 @@ export default {
   }
   .dash--img-holder {
     margin-top: 40px;
-    height: 70vh;
+    height: 500px;
     img {
       height: 100%;
       width: 100%;
