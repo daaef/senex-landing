@@ -16,13 +16,11 @@
             >
             <!-- <span class="btn action action--buy"
             ><a :href="appLink + '/order/start'">Buy</a></span
-          > -->
-            <span class="btn action action--buy"
-              ><a
-                :href="`${appLink}/order/start/?type=buy&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
-                rel="noopener nofollow"
-                >Buy</a
-              ></span
+          > --><a
+              class="btn action action--buy"
+              :href="`${appLink}/order/start/?type=buy&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
+              rel="noopener nofollow"
+              >Buy</a
             >
           </div>
           <div class="coin-holder__coin-price-con">
@@ -30,12 +28,11 @@
               >{{ country.symbol
               }}{{ Number(rate.sell).toLocaleString() }}</span
             >
-            <span class="btn action action--sell"
-              ><a
-                :href="`${appLink}/order/start/?type=sell&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
-                rel="noopener nofollow"
-                >Sell</a
-              ></span
+            <a
+              class="btn action action--sell"
+              :href="`${appLink}/order/start/?type=sell&order=${abbr.toLowerCase()}&cur=${country.code.toLowerCase()}`"
+              rel="noopener nofollow"
+              >Sell</a
             >
           </div>
         </div>
@@ -89,7 +86,7 @@ export default {
     }
   },
   mounted() {
-    this.appLink = process.env.APP_URL
+    this.appLink = this.$config.appLink
   }
 }
 </script>

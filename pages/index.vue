@@ -460,7 +460,7 @@ export default {
           content: 'https://www.senexpay.com'
         }
       ],
-      link: [{ rel: 'canonical', href: 'https://www.senexpay.com' }],
+      link: [{ rel: 'canonical', href: 'https://www.senexpay.com' }]
     }
   },
   computed: {
@@ -479,7 +479,7 @@ export default {
   },
   mounted() {
     this.$store.commit('toggleSideBar', false)
-    this.appLink = process.env.APP_URL
+    this.appLink = this.$config.appLink
     AOS.init()
     this.getRates()
     // const simpuJS = document.createElement('script')

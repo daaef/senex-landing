@@ -128,7 +128,7 @@ export default {
     }
   },
   mounted() {
-    this.appLink = process.env.APP_URL
+    this.appLink = this.$config.appLink
   },
   methods: {
     openDropdown() {

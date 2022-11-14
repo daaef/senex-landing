@@ -298,7 +298,9 @@ export default {
     autoPageView: true,
     disabled: false
   },
-
+  publicRuntimeConfig: {
+    appLink: process.env.APP_URL
+  },
   oneSignal: {
     init: {
       appId: process.env.ONE_SIGNAL_APP_ID,
