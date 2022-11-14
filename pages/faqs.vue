@@ -14,12 +14,34 @@
     <div class="faq-list-con">
       <!-- FAQ List -->
       <div v-if="searchedFAQs().length != 0" class="faq-list">
-        <faq-item
-          v-for="faq in searchedFAQs()"
-          :key="faq.id"
-          :title="faq.question"
-          :content="faq.answer"
-        ></faq-item>
+        <div
+          class="faq-sector relative container"
+          uk-filter="target: .js-filter; animation: delayed-fade"
+        >
+          <ul class="grid faq-filter sticky top-0 gap-4">
+            <li class="uk-active text-center w-full" uk-filter-control>
+              <a class="w-full" href="#">All</a>
+            </li>
+            <li
+              v-for="(cat, i) in categories"
+              :key="i"
+              class="w-full text-center block"
+              :uk-filter-control="`[data-color=${cat.filter}]`"
+            >
+              <a class="w-full" href="#">{{ cat.name }}</a>
+            </li>
+          </ul>
+
+          <div class="js-filter faqs flex-1">
+            <faq-item
+              v-for="faq in searchedFAQs()"
+              :key="faq.id"
+              :title="faq.question"
+              :content="faq.answer"
+              :data-color="getFilter(faq.number)"
+            ></faq-item>
+          </div>
+        </div>
       </div>
       <!-- Check Help Center -->
       <div class="container">
@@ -51,6 +73,23 @@ export default {
         //   question: '',
         //   answer: ''
         // }
+      ],
+      categories: [
+        {
+          name: 'General',
+          ids: [1, 2],
+          filter: 'general'
+        },
+        {
+          name: 'Security / KYC',
+          ids: [3, 4],
+          filter: 'kyc'
+        },
+        {
+          name: 'Rewards / Referrals',
+          ids: [5, 6, 7, 8, 9, 10, 11],
+          filter: 'rewards'
+        }
       ]
     }
   },
@@ -99,6 +138,11 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
+    getFilter(id) {
+      return this.categories.find((cat) => {
+        return cat.ids.includes(id)
+      })?.filter
+    },
     onResize() {
       this.windowWidth = window.innerWidth
     },
@@ -129,4 +173,4 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss"></style>

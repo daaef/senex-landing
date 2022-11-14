@@ -7,8 +7,15 @@
 }
 
 a:link, a:hover, a:active, a:focus {
-  color: #fafafa;
+  color: unset;
   text-decoration: none;
+}
+.link {
+  color: #0B6EB7;
+  transition: .2s ease-in-out;
+  &:hover {
+    color: #034f89;
+  }
 }
 
 html {

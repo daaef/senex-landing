@@ -19,9 +19,9 @@
             your personal information through the SenexPay websites and
             applications that reference this Privacy Notice. SenexPay comprises
             SenexPay websites (whose domain names include but are not limited to
-            <router-link to="/">(www.senexpay.com)</router-link>, mobile
-            applications(in view), clients, and other applications that are
-            developed to offer the company’s Services
+            <router-link to="/" class="link">(www.senexpay.com)</router-link>,
+            mobile applications(in view), clients, and other applications that
+            are developed to offer the company’s Services.
           </p>
           <p>
             This Privacy Policy applies to all platforms, websites, and
@@ -53,7 +53,7 @@
             <p>
               Personal information is data that can be used to identify you
               directly or indirectly, or to contact you. Our Privacy Policy
-              covers all personal information that you voluntarily submit to us
+              coversall personal information that you voluntarily submit to us
               and that we obtain from our partners. This Privacy Policy does not
               apply to anonymised data, as it cannot be used to identify you.
               You may be asked to provide personal information anytime you are
@@ -62,18 +62,17 @@
               Information to any third party.
             </p>
             <p>
-              Here are the types of personal information we collect: <br />
-              Information you give us: we receive and store any information you
-              provide in relation to SenexPay’s services. This is either
-              required by law or relevant for specified purposes. You can choose
-              not to provide certain information you are not comfortable with
-              but then you might not be able to use some of our services.
-              Examples of information that you give us include: Full name, date
-              of birth, age, nationality, gender, signature, utility bills,
-              photographs, phone number, home address, and/or email,Tax ID
-              number, passport number, driver’s license details, national
-              identity card details, photograph identification cards, and/or
-              visa information.
+              Here are the types of personal information we collect: Information
+              you give us: we receive and store any information you provide in
+              relation to SenexPay’s services. This is either required by law or
+              relevant for specified purposes. You can choose not to provide
+              certain information you are not comfortable with but then you
+              might not be able to use some of our services. Examples of
+              information that you give us include: Full name, date of birth,
+              age, nationality, gender, signature, utility bills, photographs,
+              phone number, home address, and/or email,Tax ID number, passport
+              number, driver’s licence details, national identity card details,
+              photograph identification cards, and/or visa information.
             </p>
             <p>
               Automatically-collected information: we automatically collect and
@@ -107,7 +106,7 @@
             <p>
               Employment Information: Office location, job title, and/or
               description of role. Online Identifiers:Geo location/tracking
-              details, browser fingerprint, OS, browser name and version, and/or
+              details,browser fingerprint, OS, browser name and version, and/or
               personal IP addresses.
             </p>
             <p>
@@ -133,8 +132,8 @@
             <p>
               Provide, troubleshoot, and improve Services. We use your personal
               information to provide functionality, analyse performance, fix
-              errors, and improve the usability and effectiveness of our
-              Services
+              errors,and improve the usability and effectiveness of our
+              Services.
             </p>
             <p>
               Recommendations and personalisation. We use your personal
@@ -172,7 +171,7 @@
               and we are not in the business of selling our users' personal
               information to others. SenexPay shares users' personal information
               only as described below and with the subsidiaries or affiliates of
-              SenexPay that are either subject to this Privacy Notice or follow
+              SenexPaythat are either subject to this Privacy Notice or follow
               practices at least as protective as those described in this
               Privacy Notice.
             </p>
@@ -222,15 +221,15 @@
               safeguards such as firewalls and data encryption, we enforce
               physical access controls to our buildings and files, and we
               authorise access to personal information only for those employees
-              who require it to fulfill their job responsibilities. Full credit
+              who require it to fulfil their job responsibilities. Full credit
               card data is securely transferred and hosted off-site by a payment
               vendor in compliance with Payment Card Industry Data Security
               Standards (PCI DSS). This Information is not accessible to
-              SenexPay or SenexPay staff.
+              SenexPay or SenexPaystaff.
             </p>
             <p>
               While we cannot guarantee that loss, misuse, unauthorised
-              acquisition, or alteration of your data will not occur. Please
+              acquisition,or alteration of your data will not occur. Please
               recognise that you play a vital role in protecting your own
               personal information. When Registering with our Services, it is
               important to choose a password of sufficient length and
@@ -253,13 +252,13 @@
               the "Your Account" section of the website. You are also entitled
               to review, correct, or amend your personal information, or to
               delete where it is inaccurate. You may do this at any time by
-              contacting us. If you close your SenexPay Account, we will mark
-              your account in our database as "Closed," but will keep your
-              account information in our database for a period of time described
-              above. This is necessary inorder to deter fraud, by ensuring that
-              persons who try to commit fraud will not be able to avoid
-              detection simply by closing their account and opening a new
-              account.
+              contacting us. <br />
+              If you close your SenexPay Account, we will mark your account in
+              our database as "Closed," but will keep your account information
+              in our database for a period of time described above. This is
+              necessary inorder to deter fraud, by ensuring that persons who try
+              to commit fraud will not be able to avoid detection simply by
+              closing their account and opening a new account.
             </p>
             <p>
               However, if you close your account, your personal information will
@@ -295,9 +294,9 @@
             </p>
             <p>
               Content that you post on our website such as support desk
-              comments, photographs, videos, blog posts, and other content may
-              be kept indefinitely after you close your account for audit and
-              crime prevention purposes.
+              comments,photographs, videos, blog posts, and other content may be
+              kept indefinitely after you close your account for audit and crime
+              prevention purposes.
             </p>
             <p>
               Recording of our telephone calls with you may be kept for a period
@@ -316,8 +315,8 @@
             </p>
             <p>
               We will also take steps to delete the information as soon as
-              possible. Please notify us if you know of any individuals under
-              the age of 18 using our Services so we can take action to prevent
+              possible.Please notify us if you know of any individuals under the
+              age of 18 using our Services so we can take action to prevent
               access to our Services.
             </p>
             <h4>GLOBAL COMPANY</h4>

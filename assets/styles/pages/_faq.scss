@@ -54,16 +54,39 @@
 
 .faq-list-con {
   margin-bottom: 25px;
-  
+  min-height: 20vh;
+
   .faq-list {
     margin-bottom: 25px;
   }
-  
+
   .faq-help {
     color: #242426;
-  
+
     a {
       color: #0850C6;
+    }
+  }
+}
+
+.faq-filter {
+  top: 90px;
+  margin-top: 25px;
+  li {
+    border-radius: 25px;
+    padding: 5px 15px;
+    transition: 0.3s ease-in-out;
+    a {
+      font-size: 1.9rem;
+      display: block;
+      transition: 0.3s ease-in-out;
+    }
+    &.uk-active,
+    &:hover {
+      background: rgba(2, 19, 47, 0.14);
+      a {
+        font-weight: 500;
+      }
     }
   }
 }

@@ -8,14 +8,6 @@ export default {
     title: 'SenexPay - Buy and sell crypto in minutes.',
     script: [
       {
-        src: '/js/uikit.min.js',
-        defer: true
-      },
-      {
-        src: '/js/uikit-icons.min.js',
-        defer: true
-      },
-      {
         json: {
           '@context': 'https://schema.org',
           '@graph': [
@@ -232,7 +224,8 @@ export default {
     { src: '~/plugins/vue-scroll-reveal', ssr: false },
     { src: '~/plugins/axios', ssr: true },
     { src: '~plugins/vue-typer', mode: 'client' },
-    { src: '~/plugins/vue-carousel', ssr: false }
+    { src: '~/plugins/vue-carousel', ssr: false },
+    { src: '~/plugins/uikit', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

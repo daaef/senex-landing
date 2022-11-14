@@ -315,3 +315,51 @@
     }
   }
 }
+
+.faq-sector {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  .faq-item-con {
+    p {
+      margin: 4px 0;
+    }
+    ul {
+      padding-left: 10px;
+      list-style: '-';
+      li {
+        padding-left: 5px;
+      }
+    }
+  }
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    .faq-filter {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      position: static;
+    }
+    align-items: center;
+    .faqs {
+      width: 100%;
+    }
+  }
+  & > .faqs {
+    height: unset !important;
+  }
+  @media (max-width: 769px) {
+    .faq-filter {
+      li {
+        a {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 570px) {
+    .faq-filter {
+      grid-template-columns: 1fr 1fr;
+      padding: 0 2.5rem;
+      width: 100%;
+    }
+  }
+}
