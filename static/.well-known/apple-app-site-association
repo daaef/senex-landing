@@ -7,9 +7,24 @@
                {
                   "/": "/activate/*",
                   "comment": "Matches any URL whose path starts with /activate/"
+               },
+               {
+                  "/": "/signin/*",
+                  "comment": "Matches any URL whose path starts with /signin/"
+               },
+               {
+                  "/": "/create-account/*",
+                  "comment": "Matches any URL whose path starts with /create-account/"
+               },
+               {
+                  "/": "/forgot-password/*",
+                  "comment": "Matches any URL whose path starts with /forgot-password/"
                }
              ]
            }
        ]
+   },
+   "webcredentials": {
+      "apps": [ "5MPM3W735H.com.senexpay.mobile" ]
    }
 }
