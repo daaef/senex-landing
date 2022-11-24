@@ -19,13 +19,13 @@
           uk-filter="target: .js-filter; animation: delayed-fade"
         >
           <ul class="grid faq-filter sticky top-0 gap-4">
-            <li class="uk-active text-center w-full" uk-filter-control>
+            <li class="uk-active w-full" uk-filter-control>
               <a class="w-full" href="#">All</a>
             </li>
             <li
               v-for="(cat, i) in categories"
               :key="i"
-              class="w-full text-center block"
+              class="w-full block"
               :uk-filter-control="`[data-color=${cat.filter}]`"
             >
               <a class="w-full" href="#">{{ cat.name }}</a>
