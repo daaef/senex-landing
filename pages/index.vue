@@ -151,22 +151,11 @@
         data-aos="slide-up"
         data-aos-once="true"
       >
-        <div class="snx-description-con__child">
-          <div class="snx-description">
-            <p
-              class="snx-description__title heading-primary heading-primary--wt-500"
-            >
-              We are serious about security.
-            </p>
-            <p class="snx-description__subtitle paragraph">
-              We know that security is priority for you; it is for us too. All
-              your transactions with us are fully encrypted with cutting-edge
-              security protocols that protect you.
-            </p>
-          </div>
-        </div>
-        <div class="flex items-center md:mt-16">
-          <div class="m-auto lg:mr-0 snx-description-img-con">
+        <h3 class="security--title heading-primary--wt-500">
+          We are serious <br />about <span>security</span>.
+        </h3>
+        <div class="flex items-center justify-center md:mt-16">
+          <div class="snx-description-img-con">
             <!-- <img src="/img/secure.svg" /> -->
             <svg
               id="Component_109_1"
@@ -321,6 +310,19 @@
                 </g>
               </g>
             </svg>
+          </div>
+          <div class="snx-description-con__child">
+            <div class="snx-description">
+              <img src="/snx-finger.png" alt="finger print image" />
+              <p class="snx-description__subtitle paragraph">
+                We know that security is priority for you; it is for us too. All
+                your transactions with us are fully encrypted with cutting-edge
+                security protocols that protect you.
+              </p>
+              <a :href="appLink + '/create-account'" class="dash--btn">
+                Get Started
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -595,4 +597,32 @@ export default {
 .links {
   padding-top: 15px;
 } */
+.security--title {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 0;
+  text-align: center;
+  color: #064ebe;
+  span {
+    font-size: 6rem;
+  }
+}
+.snx-description {
+  padding-left: 50px;
+  img {
+    height: 100px;
+    margin-bottom: 20px;
+    width: fit-content;
+    object-fit: contain;
+  }
+  a.dash--btn {
+    margin-top: 20px;
+  }
+}
+.snx-description-con__inside {
+  background-image: url(/security--bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
 </style>

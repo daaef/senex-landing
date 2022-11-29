@@ -73,18 +73,20 @@
 }
 
 .review-box {
-  background-color: #EEE8FF;
-  padding: 30px;
-  // flex: 30% 0 0;
-  border-radius: 30px;
-  border: 1px solid #AEAFB2;
-  margin-right: 50px;
-  color: #3e3e41;
-  transition: all 0.5s;
-  min-height: 275px;
-  flex: 800px 0 0 !important;
-  @media (max-width: 767px) {
-    padding: 50px 30px;
+  .review {
+    background-color: #EEE8FF;
+    padding: 30px;
+    // flex: 30% 0 0;
+    border-radius: 30px;
+    border: 1px solid #AEAFB2;
+    margin-right: 50px;
+    color: #3e3e41;
+    transition: all 0.5s;
+    min-height: 275px;
+    flex: 800px 0 0 !important;
+    @media (max-width: 767px) {
+      padding: 50px 30px;
+    }
   }
   // line-height: 2;
   .review-box__profil {

@@ -23,7 +23,7 @@
       <NavBar
         :theme="{
           backgroundColor: '#FFFFFF',
-          color: '#053888',
+          color: '#064EBE',
           lightTheme: true
         }"
       />

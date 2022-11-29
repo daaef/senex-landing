@@ -73,7 +73,7 @@ export default {
   padding: 100px 0;
   background: #e8f0fc;
   .down--app-banner {
-    background: transparent linear-gradient(116deg, #1265fb 0%, #5237e0 100%);
+    background: transparent linear-gradient(116deg, #064ebe 0%, #5237e0 100%);
     padding-left: 60px;
     padding-right: 60px;
     border-radius: 25px;
@@ -112,7 +112,7 @@ export default {
         align-items: center;
         &:hover {
           background: transparent
-            linear-gradient(109deg, #1265fb 0%, #00ffff 100%);
+            linear-gradient(109deg, #064ebe 0%, #00ffff 100%);
         }
       }
     }

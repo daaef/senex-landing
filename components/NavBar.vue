@@ -179,17 +179,22 @@ export default {
   }
 }
 nav.home--nav.light {
-  background: #ffffff;
   .toggler {
-    color: #053888;
+    color: #064ebe;
   }
   .container {
     .navigations {
-      background: #ffffff;
+      .caret-icon {
+        svg {
+          path {
+            fill: #064ebe;
+          }
+        }
+      }
       ul {
         li {
           a {
-            color: #053888;
+            color: #064ebe;
             &.nav-btn {
               color: #fafafa;
             }
@@ -237,7 +242,7 @@ nav.home--nav.light {
   }
   &.light {
     span {
-      background: #053888;
+      background: #064ebe;
     }
   }
 }

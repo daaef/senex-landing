@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="overflow-hidden">
+    <div class="overflow-hidden top-1 relative">
       <div class="why-blue-border"></div>
       <div class="why-light-triangle"></div>
     </div>

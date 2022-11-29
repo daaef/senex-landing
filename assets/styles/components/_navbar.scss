@@ -1,10 +1,13 @@
 nav.home--nav {
-  background: $header-blue;
-  position: fixed;
+  background: transparent;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
+  &.uk-sticky-fixed {
+    background: #fafafa;
+  }
   .toggler {
     display: none;
   }
@@ -37,7 +40,7 @@ nav.home--nav {
           margin: 0 15px;
           font-size: 18px;
           a {
-            color: #ffffff;
+            color: #0a0a0a;
             transition: all .3s ease-in-out;
             &:hover {
               background: transparent linear-gradient(109deg, #1265FB 0%, #00FFFF 100%);
@@ -55,6 +58,7 @@ nav.home--nav {
               background: #1265FB;
               padding: 10px 18px;
               border-radius: 6px;
+              color: #fafafa;
               &:hover {
                 -webkit-background-clip: unset;
                 -webkit-text-fill-color: unset;
@@ -112,4 +116,8 @@ nav.home--nav {
       }
     }
   }
+}
+.uk-sticky-placeholder{
+  position: absolute;
+  width: 100%;
 }

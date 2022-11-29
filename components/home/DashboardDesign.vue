@@ -36,8 +36,9 @@ export default {
 
 <style lang="scss">
 .dashboard--design {
-  background: #041d45;
+  background: #064ebe;
   min-height: 900px;
+  position: relative;
   width: 100%;
   padding: 100px 0 0;
   display: flex;
@@ -50,9 +51,19 @@ export default {
       height: unset !important;
     }
   }
-
+  &:before {
+    content: '';
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background: url(/dashboard--shape.png) no-repeat center top;
+    background-size: contain;
+  }
   h2 {
-    background: transparent linear-gradient(100deg, #1265fb 5%, #00ffff 95%);
+    background: transparent linear-gradient(100deg, #ffffff 5%, #00ffff 95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 5rem;
@@ -85,17 +96,25 @@ export default {
       object-position: bottom;
     }
   }
+  a.dash--btn {
+    color: #064ebe;
+    background: #fafafa;
+    &:hover {
+      background: #e3e3e3;
+    }
+  }
 }
 a.dash--btn {
   color: #ffffff;
   transition: all 0.3s ease-in-out;
-  background: #1265fb;
-  padding: 12px 24px;
+  background: #064ebe;
+  padding: 12px 18px;
   border-radius: 8px;
   font-size: 1.8rem;
   text-align: center;
   display: inline-block;
   margin-top: 30px;
+  align-self: flex-start;
   @media (max-width: 450px) {
     font-size: 2.2rem;
     padding: 10px 35px;

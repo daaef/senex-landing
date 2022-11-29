@@ -1,10 +1,11 @@
 <template>
   <header>
     <NavBar
+      uk-sticky="offset: 0; show-on-up: true; animation: uk-animation-slide-top"
       :theme="{
-        backgroundColor: '#F5F5FD',
+        backgroundColor: 'transparent',
         color: '#fafafa',
-        lightTheme: false
+        lightTheme: true
       }"
     />
     <div class="header--content container">
@@ -47,7 +48,7 @@
       </div>
       <div data-aos="fade-right" data-aos-once="true" class="header--media">
         <div class="img--set">
-          <img src="~/assets/img/app_screen.png" alt="Home screen image" />
+          <img src="/phone-img.png" alt="Home screen image" />
         </div>
         <!--        <div class="img&#45;&#45;left">
           <img src="~/assets/img/phone.png" alt="Home screen image" />
@@ -82,7 +83,7 @@
                     stdDeviation="20"
                   ></feGaussianBlur>
                   <feFlood
-                    flood-color="#053888"
+                    flood-color="#064EBE"
                     flood-opacity="0.392"
                   ></feFlood>
                   <feComposite in2="blur" operator="in"></feComposite>
@@ -141,7 +142,7 @@
                     stdDeviation="20"
                   ></feGaussianBlur>
                   <feFlood
-                    flood-color="#053888"
+                    flood-color="#064EBE"
                     flood-opacity="0.392"
                   ></feFlood>
                   <feComposite in2="blur" operator="in"></feComposite>
@@ -223,7 +224,7 @@ export default {
     align-items: center;
     .qrcode--scan {
       position: absolute;
-      background: transparent linear-gradient(112deg, #1265fb 0%, #5237e0 100%);
+      background: transparent linear-gradient(112deg, #064ebe 0%, #5237e0 100%);
       box-shadow: 0px 5px 20px #00000080;
       border: 5px solid #ffffff;
       border-radius: 22px;
@@ -262,9 +263,9 @@ export default {
       }
     }
     .qr-code--btn {
-      padding: 10px;
-      border-radius: 10px;
-      background: #fafafa;
+      padding: 7px;
+      border-radius: 8px;
+      background: #064ebe;
       margin-left: 20px;
       display: flex;
       justify-content: center;
@@ -278,8 +279,8 @@ export default {
         margin-left: 0;
       }
       img {
-        height: 40px;
-        width: 40px;
+        height: 40.9744px;
+        width: 40.9744px;
         @media (max-width: 1140px) {
           height: 30px;
           width: 30px;
@@ -424,7 +425,7 @@ export default {
       transform: translateX(0);
     }
     .qr--content {
-      background: transparent linear-gradient(112deg, #1265fb 0%, #5237e0 100%);
+      background: transparent linear-gradient(112deg, #064ebe 0%, #5237e0 100%);
       box-shadow: 0 5px 20px #00000080;
       border: 5px solid #ffffff;
       border-radius: 22px;

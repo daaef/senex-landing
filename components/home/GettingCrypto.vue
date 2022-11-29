@@ -66,7 +66,7 @@ export default {
 <style lang="scss">
 .getting--crypto {
   background: transparent
-    linear-gradient(296deg, #1265fb 0%, #cadbfa 0%, #dfebff 40%, #ffffff 100%);
+    linear-gradient(296deg, #064ebe 0%, #cadbfa 0%, #dfebff 40%, #ffffff 100%);
   width: 100%;
   position: relative;
   padding: 100px 0;
@@ -97,7 +97,7 @@ export default {
     a.dash--btn {
       color: #ffffff;
       transition: all 0.3s ease-in-out;
-      background: #1265fb;
+      background: #064ebe;
       padding: 15px 50px;
       border-radius: 8px;
       font-size: 1.8rem;
@@ -172,7 +172,7 @@ export default {
 
         &:before {
           background: transparent
-            linear-gradient(296deg, #1265fb 0%, #5237e0 100%);
+            linear-gradient(296deg, #064ebe 0%, #5237e0 100%);
         }
       }
       .card--base {
