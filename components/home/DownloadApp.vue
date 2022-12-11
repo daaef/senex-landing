@@ -71,9 +71,12 @@ export default {
 <style lang="scss">
 .download--app {
   padding: 100px 0;
-  background: #e8f0fc;
+  background: #ffffff;
   .down--app-banner {
-    background: transparent linear-gradient(116deg, #064ebe 0%, #5237e0 100%);
+    background: url(/download-shape.svg) right,
+      url('/download-lines.svg') left bottom no-repeat,
+      linear-gradient(116deg, #064ebe 0%, #5237e0 100%);
+    background-size: contain;
     padding-left: 60px;
     padding-right: 60px;
     border-radius: 25px;
@@ -110,9 +113,16 @@ export default {
       }
       a {
         align-items: center;
+        box-shadow: -2px 5px 20px #0956cf;
         &:hover {
           background: transparent
             linear-gradient(109deg, #064ebe 0%, #00ffff 100%);
+          img {
+            filter: brightness(100) sepia(1) brightness(3.5);
+          }
+          span {
+            color: #fafafa;
+          }
         }
       }
     }

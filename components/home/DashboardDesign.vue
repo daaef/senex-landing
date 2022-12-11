@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss">
 .dashboard--design {
-  background: #064ebe;
+  background: #041d45;
   min-height: 900px;
   position: relative;
   width: 100%;
@@ -61,15 +61,15 @@ export default {
     position: absolute;
     background: url(/dashboard--shape.png) no-repeat center top;
     background-size: contain;
+    opacity: 0.37;
   }
+
   h2 {
-    background: transparent linear-gradient(100deg, #ffffff 5%, #00ffff 95%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #fafafa;
     font-size: 5rem;
     font-weight: 500;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     line-height: 1.2em;
     @media (max-width: 767px) {
       font-size: 3.5rem;

@@ -1,14 +1,14 @@
 .footer-con {
-  background-color: #02132F;
+  background-color: #02132f;
   padding-top: 50px;
   padding-bottom: 50px;
   min-height: 150px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 16px;
 
   a {
     font-weight: 400;
-    opacity: .7;
+    opacity: 0.7;
     transition: all 0.3s ease-in-out;
   }
 
@@ -17,10 +17,10 @@
     opacity: 1;
   }
 
-  h1{
+  h1 {
     font-size: 20px;
     // text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 500;
     line-height: 1.2em;
     margin-bottom: 20px;
@@ -35,7 +35,7 @@
     }
 
     &__register-btn {
-      @include custom-btn(#06A84B,white,#06A84B);
+      @include custom-btn(#06a84b, white, #06a84b);
       padding: 8px 16px;
       min-width: 160px;
       font-size: 18px;
@@ -124,7 +124,6 @@
   .footer-social-con {
     // width: 18.75%;
     display: flex;
-    margin-bottom: 20px;
     margin-top: 100px;
     justify-content: flex-end;
     padding-right: 10%;
@@ -180,7 +179,8 @@
       grid-gap: 50px;
       .logo-copyright {
         margin: 0;
-        .logo-con, .copyright {
+        .logo-con,
+        .copyright {
           margin: 0;
         }
       }

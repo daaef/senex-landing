@@ -6,7 +6,7 @@
           <img
             :src="
               theme.lightTheme
-                ? '/img/senex-full-logo.svg'
+                ? '/logo-nav.png'
                 : '/img/senexpay-logo-light.svg'
             "
             alt="SenexPay logo"

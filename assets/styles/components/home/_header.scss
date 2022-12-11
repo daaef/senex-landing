@@ -1,5 +1,5 @@
 header {
-  background: url("/home-bg.png") no-repeat;
+  background: url('/home-bg.png') no-repeat;
   background-size: cover;
   min-height: 800px;
   overflow-x: hidden;
@@ -20,7 +20,8 @@ header {
         color: $header-blue;
         line-height: 1.2em;
         .gradient--text {
-          background: transparent linear-gradient(109deg, $header-blue 0%, #2B33DF 100%);
+          background: transparent
+            linear-gradient(109deg, $header-blue 0%, #2b33df 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -57,7 +58,8 @@ header {
         .widget--span {
           max-width: 100%;
           display: flex;
-          img, svg {
+          img,
+          svg {
             width: 100%;
           }
           a {
@@ -80,7 +82,7 @@ header {
 .bottom--sect {
   padding: 40px 0;
   overflow-x: hidden;
-  background: url("/walletBg.png");
+  background: url('/walletBg.png');
   background-size: cover;
   .container {
     display: flex;
@@ -89,7 +91,7 @@ header {
     .meta--info {
       width: 35%;
       h3 {
-        font-size: 4.5rem;
+        font-size: 3.8rem;
         font-weight: 500;
         color: #053888;
         line-height: 1.2em;
@@ -141,7 +143,7 @@ header {
           position: relative;
           top: 0;
           z-index: 2;
-          transition: .3s ease-in-out;
+          transition: 0.3s ease-in-out;
         }
 
         .grad--circ {
@@ -156,7 +158,7 @@ header {
         .country--bubbles {
           position: absolute;
           top: 50%;
-          transform: translateY(-50%) translateX(-20%);;
+          transform: translateY(-50%) translateX(-20%);
           z-index: 3;
           left: 0;
           width: 290px;
@@ -178,18 +180,18 @@ header {
     display: flex;
     padding: 15px 20px;
     border-radius: 8px;
-    background: #064EBE;
+    background: #064ebe;
     align-items: center;
     box-shadow: 0 6px 20px rgba(128, 128, 128, 0.37);
 
-    &:first-of-type{
+    &:first-of-type {
       img {
         margin-top: -4px;
       }
     }
     img {
       height: 28px;
-      filter: brightness(100);
+      filter: brightness(100) sepia(1) brightness(3.5);
     }
     span {
       display: block;
@@ -202,7 +204,7 @@ header {
     &:hover {
       background: #fafafa;
       span {
-        color: #064EBE;
+        color: #064ebe;
       }
       img {
         filter: none;

@@ -11,13 +11,10 @@
     <div class="header--content container">
       <div class="header--cto">
         <h2>
-          Buy and Sell <span class="gradient--text">Crypto</span> <br />the easy
-          way.
+          Trade and save <span class="gradient--text">crypto</span> <br />with
+          no hassle.
         </h2>
-        <p>
-          SenexPay offers you a secure and easy <br />
-          way to make crypto-fiat exchange without any hassle.
-        </p>
+        <p>Buy, exchange and save crypto assets using our wallet feature</p>
         <div class="cto--btns">
           <a
             class="cto--btn"
