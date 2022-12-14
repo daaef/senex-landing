@@ -464,9 +464,9 @@ export default {
 }
 .snx-description {
   padding-left: 50px;
-  align-items: center;
   @media only screen and (max-width: 75em) {
     padding-left: 0;
+    align-items: center;
     a.dash--btn {
       align-self: center;
     }
