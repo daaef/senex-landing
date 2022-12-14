@@ -114,6 +114,7 @@ export default {
       a {
         align-items: center;
         box-shadow: -2px 5px 20px #0956cf;
+        background: #fafafa;
         &:hover {
           background: transparent
             linear-gradient(109deg, #064ebe 0%, #00ffff 100%);
@@ -123,6 +124,12 @@ export default {
           span {
             color: #fafafa;
           }
+        }
+        span {
+          color: #064ebe;
+        }
+        img {
+          filter: none;
         }
       }
     }

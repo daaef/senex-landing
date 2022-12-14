@@ -148,6 +148,7 @@
       </div>
     </div>
     <HomeTrustedExchange />
+    <HomeSenexPlus />
     <HomeDashboardDesign />
     <!-- Descriptions -->
     <div class="">
@@ -157,7 +158,7 @@
         data-aos="slide-up"
         data-aos-once="true"
       >
-        <div class="flex items-center justify-center md:mt-16">
+        <div class="flex items-center flex-wrap justify-center md:mt-16">
           <div class="snx-description-img-con">
             <img src="/serious-pic.png" alt="Serious image" />
           </div>
@@ -461,6 +462,13 @@ export default {
 }
 .snx-description {
   padding-left: 50px;
+  align-items: center;
+  @media only screen and (max-width: 75em) {
+    padding-left: 0;
+    a.dash--btn {
+      align-self: center;
+    }
+  }
   img {
     height: 100px;
     margin-bottom: 20px;

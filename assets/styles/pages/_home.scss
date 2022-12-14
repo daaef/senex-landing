@@ -438,10 +438,13 @@
 }
 
 .snx-description {
-  @include flexcon(left, center, column);
+  @include flexcon(flex-start, center, column);
   padding-top: 100px;
   padding-bottom: 100px;
   height: 100%;
+  @include respond(tab-land) {
+    text-align: center;
+  }
 
   @include respond(tab-port) {
     padding-top: 0px;
@@ -464,9 +467,9 @@
     text-align: left;
     width: 100%;
     max-width: 400px;
-
     @include respond(tab-land) {
-      max-width: 100%;
+      text-align: center;
+      max-width: 700px;
     }
   }
 }
@@ -475,6 +478,12 @@
   position: relative;
   // border: 1px solid $primary_color;
   // width: 100%;
+  @include respond(tab-land) {
+    display: flex;
+    justify-content: center;
+    order: 2;
+    padding-top: 60px;
+  }
 
   &:hover {
     .holder {
@@ -1000,6 +1009,7 @@
 
 @media (max-width: 900px) {
   .snx-description-con__child {
+    margin-top: 40px;
     order: 1;
   }
   .snx-description-img-con .secure-lock-svg {
