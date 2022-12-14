@@ -103,7 +103,9 @@
     <div id="coin-section" class="coin-section">
       <div class="container mx-auto overflow-hidden overflow-con">
         <div class="flex text-white mb-20 flex-col items-center">
-          <h2 class="text-6xl font-bold">Buy and sell crypto seamlessly</h2>
+          <h2 class="text-6xl text-center font-bold">
+            Buy and sell crypto seamlessly
+          </h2>
           <p class="text-2xl mt-4">
             Control your crypto assets while trading smoothly.
           </p>
