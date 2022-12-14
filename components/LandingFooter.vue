@@ -166,7 +166,6 @@ export default {
         }
       }
       .footer-social-con {
-        margin: 0;
         a:first-of-type {
           img {
             margin-left: 0;
