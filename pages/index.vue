@@ -103,12 +103,8 @@
     <div id="coin-section" class="coin-section">
       <div class="container mx-auto overflow-hidden overflow-con">
         <div class="flex text-white mb-20 flex-col items-center">
-          <h2 class="text-6xl text-center font-bold">
-            Buy and sell crypto seamlessly
-          </h2>
-          <p class="text-2xl mt-4">
-            Control your crypto assets while trading smoothly.
-          </p>
+          <h2 class="text-center">Buy and sell crypto seamlessly</h2>
+          <p class="mt-4">Control your crypto assets while trading smoothly.</p>
         </div>
         <coin-price
           v-for="(token, i) in countryCrypto"
@@ -486,5 +482,18 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+.coin-section {
+  h2 {
+    line-height: 1.2em;
+    font-size: 5rem;
+    font-weight: 600;
+    @media (max-width: 1140px) {
+      font-size: 4rem;
+    }
+  }
+  p {
+    font-size: 1.9rem;
+  }
 }
 </style>

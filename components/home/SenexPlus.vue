@@ -9,10 +9,10 @@
           <img src="/senex-plus.png" alt="senexplus logo" />
         </div>
         <div class="text-content">
-          <h4>Higher trade volumes <br />from anywhere</h4>
+          <h4>Higher trade volumes from anywhere</h4>
           <p>
-            Perform your remittance, stocks and brokerage transactions<br />
-            securely and exclusively anywhere at anytime
+            Perform your remittance, stocks and brokerage transactions securely
+            and exclusively anywhere at anytime
           </p>
         </div>
       </div>
@@ -34,17 +34,11 @@ export default {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     grid-gap: 40px;
-    br {
-      display: none;
-    }
     .senex--side {
       padding: 40px 0;
     }
     @media (max-width: 1140px) {
       grid-template-columns: 1fr;
-      br {
-        display: block;
-      }
       .senex--side {
         order: 2;
         display: flex;
@@ -55,12 +49,14 @@ export default {
         text-align: center;
         justify-content: center;
         width: 100%;
+        max-width: 400px;
       }
     }
     .senexplus--info {
       position: relative;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 100px 0 60px;
 
       .logo {
@@ -77,7 +73,7 @@ export default {
       }
       .text-content {
         h4 {
-          font-size: 4.5rem;
+          font-size: 4rem;
           font-weight: 600;
           line-height: 1;
           margin-bottom: 20px;

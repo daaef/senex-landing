@@ -54,6 +54,7 @@
         .meta--container {
           display: flex;
           justify-content: flex-end;
+          min-height: 100%;
           .country--bubbles {
             left: 25%;
           }
@@ -85,6 +86,7 @@
     flex-direction: column;
     padding-bottom: 50px;
     text-align: center;
+    justify-content: space-around;
     .header--cto {
       min-height: 40vh;
       display: flex;
@@ -100,7 +102,6 @@
     }
     .header--media {
       max-width: 500px;
-      margin-top: 50px;
       button {
         background: transparent;
       }
@@ -138,7 +139,7 @@
       min-height: 50vh;
       width: 100%;
       .app--screen {
-        width: 100%;
+        width: 100% !important;
       }
     }
   }
@@ -239,7 +240,7 @@
 @media (max-width: 450px) {
   header .header--content .header--cto {
     h2 {
-      font-size: 4.5rem;
+      font-size: 4rem;
     }
     & > * {
       br {

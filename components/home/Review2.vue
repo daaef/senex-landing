@@ -62,15 +62,14 @@ export default {
   }
   .review {
     padding: 50px 30px 30px;
-    background: #e6edf8;
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('/testimonial-bg.svg');
-    background-repeat: no-repeat;
+    background: #e6edf8 url('/testimonial-bg.svg') no-repeat;
+    background-size: cover;
   }
   p,
   span {

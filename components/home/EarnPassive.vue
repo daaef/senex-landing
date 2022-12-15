@@ -220,7 +220,8 @@ export default {
     }
     h2 {
       font-size: 5rem;
-      font-weight: 500;
+      font-weight: 600;
+      line-height: 1.2em;
       margin: 10px 0;
       color: #ffffff;
     }

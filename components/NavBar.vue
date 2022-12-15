@@ -270,7 +270,7 @@ nav.home--nav.light {
   transform: rotate(-45deg) translate(7px, -8px);
 }
 .toggler {
-  position: fixed;
+  position: absolute;
   z-index: 200;
   color: #ffffff;
   font-size: 3rem;
