@@ -1,11 +1,10 @@
 <template>
   <section class="download--app">
     <div class="container">
-      <div class="down--app-banner">
+      <div class="down--app-banner overflow-hidden">
         <div
           class="download--message md:text-center sm:text-left lg:text-left"
-          data-aos="fade"
-          data-aos-once="true"
+          data-uk-scrollspy="cls: uk-animation-fade;"
         >
           <h3>
             Download the
@@ -39,7 +38,10 @@
             </a>
           </div>
         </div>
-        <div class="app--image" data-aos="fade-up" data-aos-once="true">
+        <div
+          class="app--image"
+          data-uk-scrollspy="cls: uk-animation-slide-bottom;"
+        >
           <img
             src="/img/app--bubble.png"
             class="app--bubble1"

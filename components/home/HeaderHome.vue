@@ -9,7 +9,10 @@
       }"
     />
     <div class="header--content container">
-      <div class="header--cto">
+      <div
+        class="header--cto"
+        data-uk-scrollspy="cls: uk-animation-slide-left;"
+      >
         <h2>
           Trade and save <span class="gradient--text">crypto</span> <br />with
           no hassle.
@@ -43,7 +46,10 @@
           </div>
         </div>
       </div>
-      <div data-aos="fade-right" data-aos-once="true" class="header--media">
+      <div
+        data-uk-scrollspy="cls: uk-animation-slide-right;"
+        class="header--media"
+      >
         <div class="img--set">
           <img src="/phone-img.png" alt="Home screen image" />
         </div>

@@ -1,7 +1,10 @@
 <template>
-  <section class="dashboard--design">
+  <section class="dashboard--design overflow-hidden">
     <div class="container">
-      <div class="" data-aos="fade-down" data-aos-once="true">
+      <div
+        class=""
+        data-uk-scrollspy="cls: uk-animation-scale-down; delay: 300"
+      >
         <h2>A Powerful Dashboard <br />Designed with You in Mind</h2>
         <p>
           Get a full bird's-eye view of all your crypto activities on the
@@ -13,7 +16,10 @@
           >
         </div>
       </div>
-      <div class="dash--img-holder" data-aos="fade-up" data-aos-once="true">
+      <div
+        class="dash--img-holder"
+        data-uk-scrollspy="cls: uk-animation-slide-bottom; delay: 300"
+      >
         <img src="~/assets/img/dash.png" alt="Dashboard--img" />
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <section class="bottom--sect">
     <div class="container">
-      <div class="meta--info">
+      <div data-uk-scrollspy="cls: uk-animation-slide-left;" class="meta--info">
         <h3 data-aos="fade-right" data-aos-once="true">
           Effective transactions from anywhere
         </h3>
@@ -11,35 +11,29 @@
           everyday.
         </p>
       </div>
-      <div class="meta--img">
+      <div data-uk-scrollspy="cls: uk-animation-slide-right;" class="meta--img">
         <div class="meta--container">
           <img
-            data-aos="fade-left"
-            data-aos-once="true"
+            data-uk-scrollspy="cls: uk-animation-slide-left;"
             src="~/assets/img/App_screen2.png"
             class="app--screen"
             alt="App screen"
           />
-          <div class="country--bubbles">
+          <div
+            class="country--bubbles"
+            data-uk-scrollspy="cls: uk-animation-scale-up; target: img; delay: 250;"
+          >
             <img
-              data-aos="fade-up"
-              data-aos-once="true"
               src="~/assets/img/nigeria_bubble.svg"
               class="bubble"
               alt="Nigeria Bubble"
             />
             <img
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-delay="200"
               src="~/assets/img/southafrica_bubble.svg"
               class="bubble"
               alt="SA Bubble"
             />
             <img
-              data-aos="fade-up"
-              data-aos-delay="400"
-              data-aos-once="true"
               src="~/assets/img/ghana_bubble.svg"
               class="bubble"
               alt="Ghana Bubble"

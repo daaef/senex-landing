@@ -101,7 +101,10 @@
     </div>-->
     <!-- Crypocurrencies and amounts -->
     <div id="coin-section" class="coin-section">
-      <div class="container mx-auto overflow-hidden overflow-con">
+      <div
+        class="container mx-auto overflow-hidden overflow-con"
+        data-uk-scrollspy="cls: uk-animation-scale-up; target: .cust--card; delay: 500;"
+      >
         <div class="flex text-white mb-20 flex-col items-center">
           <h2 class="text-center">Buy and sell crypto seamlessly</h2>
           <p class="mt-4">Control your crypto assets while trading smoothly.</p>
@@ -109,8 +112,7 @@
         <coin-price
           v-for="(token, i) in countryCrypto"
           :key="i"
-          data-aos="fade-up"
-          data-aos-once="true"
+          class="cust--card"
           :name="tokenConfig(token).name"
           :abbr="tokenConfig(token).abbr"
           :image="tokenConfig(token).image"
@@ -153,14 +155,18 @@
       <!-- Description 1 -->
       <div
         class="container snx-description-con__inside snx-description-con__inside--reverse"
-        data-aos="slide-up"
-        data-aos-once="true"
       >
         <div class="flex items-center flex-wrap justify-center md:mt-16">
-          <div class="snx-description-img-con">
+          <div
+            class="snx-description-img-con"
+            data-uk-scrollspy="cls: uk-animation-scale-up; repeat"
+          >
             <img src="/serious-pic.png" alt="Serious image" />
           </div>
-          <div class="snx-description-con__child">
+          <div
+            class="snx-description-con__child"
+            data-uk-scrollspy="cls: uk-animation-slide-top"
+          >
             <div class="snx-description">
               <h3 class="security--title heading-primary--wt-500">
                 We are serious <br />about security.

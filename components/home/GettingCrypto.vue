@@ -2,7 +2,7 @@
   <section class="getting--crypto">
     <img class="curves" src="/img/green-semi-circles-up.png" alt="" />
     <div class="container flex flex-wrap items-center">
-      <div class="left--info" data-aos="fade-right" data-aos-once="true">
+      <div class="left--info" data-uk-scrollspy="cls: uk-animation-slide-left;">
         <div class="tag--badge uppercase">Virtual Event</div>
         <h3>Getting into Crypto</h3>
         <p>
@@ -18,7 +18,7 @@
           Register for free</a
         >
       </div>
-      <div class="right--card" data-aos="zoom-in" data-aos-once="true">
+      <div class="right--card" data-uk-scrollspy="cls: uk-animation-scale-up">
         <a
           href="https://www.eventbrite.co.uk/e/talk-to-a-crypto-advisor-tickets-319295329927"
           target="_blank"

@@ -1,10 +1,13 @@
 <template>
   <section class="senex--plus">
     <div class="container">
-      <div class="senex--side" data-aos="zoom-in" data-aos-once="true">
+      <div class="senex--side" data-uk-scrollspy="cls: uk-animation-scale-up;">
         <img src="/senex-side.png" alt="Senex everywhere image" />
       </div>
-      <div class="senexplus--info" data-aos="fade-right" data-aos-once="true">
+      <div
+        class="senexplus--info"
+        data-uk-scrollspy="cls: uk-animation-slide-right;"
+      >
         <div class="logo">
           <img src="/senex-plus.png" alt="senexplus logo" />
         </div>
