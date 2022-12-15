@@ -2,10 +2,10 @@
   <section class="bottom--sect">
     <div class="container">
       <div data-uk-scrollspy="cls: uk-animation-slide-left;" class="meta--info">
-        <h3 data-aos="fade-right" data-aos-once="true">
+        <h3 data-uk-scrollspy="cls: uk-animation-slide-left;">
           Effective transactions from anywhere
         </h3>
-        <p data-aos="fade-right" data-aos-once="true">
+        <p data-uk-scrollspy="cls: uk-animation-slide-right;">
           Our fast payout is why people trust us. Skip the long waits and join
           the cool people who use SenexPay to buy and sell cryptocurrency
           everyday.
