@@ -207,6 +207,10 @@
                   the CDN helps us to optimize the loading speeds of our
                   Website.
                 </p>
+                <p>
+                  Resources from cloudinary usually start with
+                  <code class="text-xl">https://cloudinary.com</code>
+                </p>
               </li>
               <li>
                 <h1>SmileIdentity</h1>
