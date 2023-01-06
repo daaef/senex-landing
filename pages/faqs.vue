@@ -38,7 +38,7 @@
               :key="faq.id"
               :title="faq.question"
               :content="faq.answer"
-              :data-color="getFilter(faq.number)"
+              :data-color="getFilter(faq.category)"
             ></faq-item>
           </div>
         </div>
@@ -77,17 +77,17 @@ export default {
       categories: [
         {
           name: 'General',
-          ids: [1, 2],
+          ids: 1,
           filter: 'general'
         },
         {
           name: 'Security / KYC',
-          ids: [3, 4],
+          ids: 2,
           filter: 'kyc'
         },
         {
           name: 'Rewards / Referrals',
-          ids: [5, 6, 7, 8, 9, 10, 11],
+          ids: 3,
           filter: 'rewards'
         }
       ]
@@ -139,8 +139,9 @@ export default {
   },
   methods: {
     getFilter(id) {
+      console.log('id is', id)
       return this.categories.find((cat) => {
-        return cat.ids.includes(id)
+        return cat.ids === id
       })?.filter
     },
     onResize() {
@@ -148,7 +149,7 @@ export default {
     },
     getFAQs() {
       this.$axios.get('/faqs/').then((res) => {
-        this.faqs = res.data.sort((a, b) => a.id - b.id)
+        this.faqs = res.data.sort((a, b) => a.category - b.category)
       })
       // .catch((err) => {
       //   // const {
