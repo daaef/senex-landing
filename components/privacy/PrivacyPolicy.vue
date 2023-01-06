@@ -209,7 +209,7 @@
                 </p>
                 <p>
                   Resources from cloudinary usually start with
-                  <code class="text-xl">https://cloudinary.com</code>
+                  <code class="text-xl">https://res.cloudinary.com</code>
                 </p>
               </li>
               <li>
