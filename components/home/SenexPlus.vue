@@ -14,7 +14,7 @@
         <div class="text-content">
           <h4>Higher trade volumes from anywhere</h4>
           <p>
-            Perform your remittance, stocks and brokerage transactions securely
+            Perform your remittance, stocks and investment transactions securely
             and exclusively anywhere at anytime
           </p>
         </div>

@@ -6,7 +6,7 @@
           <img
             :src="
               theme.lightTheme
-                ? '/logo-nav.png'
+                ? '/img/senex-full-logo.svg'
                 : '/img/senexpay-logo-light.svg'
             "
             alt="SenexPay logo"
@@ -249,10 +249,10 @@ nav.home--nav.light {
 
 #toggle span {
   width: 100%;
-  height: 5px;
+  height: 3px;
   background: white;
   display: block;
-  margin: 4px auto;
+  margin: 6px auto;
   transition: all 0.3s;
   backface-visibility: hidden;
   border-radius: 1px;

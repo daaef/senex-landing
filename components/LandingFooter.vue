@@ -6,7 +6,7 @@
           <div class="mr-auto lg:w-1/3">
             <div class="logo-copyright">
               <span class="logo-con" @click="toHome()"
-                ><img src="/logo-white.png" alt="logo"
+                ><img src="/img/senexpay-logo-light.svg" alt="logo"
               /></span>
               <!-- <div class="terms-link">
                 <router-link to="/terms">Terms of Service | </router-link>
