@@ -109,7 +109,7 @@
           <h2 class="text-center">Buy and sell crypto seamlessly</h2>
           <p class="mt-4">Control your crypto assets while trading smoothly.</p>
         </div>
-        <coin-price
+        <lazy-home-coin-price
           v-for="(token, i) in countryCrypto"
           :key="i"
           class="cust--card"
@@ -119,7 +119,7 @@
           :rate="getPairRate(token)"
           :country="country"
         >
-        </coin-price>
+        </lazy-home-coin-price>
         <!-- <coin-price
           v-if="rates"
           name="Tether"
@@ -147,9 +147,9 @@
         </p>
       </div>
     </div>
-    <HomeTrustedExchange />
-    <HomeSenexPlus />
-    <HomeDashboardDesign />
+    <LazyHomeTrustedExchange />
+    <LazyHomeSenexPlus />
+    <LazyHomeDashboardDesign />
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
@@ -186,20 +186,20 @@
     </div>
     <div class="overflow-hidden">
       <!-- Why Senex -->
-      <why-senex></why-senex>
+      <lazy-home-why-senex></lazy-home-why-senex>
       <!-- Referral banner -->
       <!-- <referral-banner></referral-banner> -->
       <!--Getting Crypto-->
-      <home-getting-crypto />
+      <lazy-home-getting-crypto />
       <!--Getting Crypto-->
 
       <!--Earn Passive-->
-      <home-earn-passive />
+      <lazy-home-earn-passive />
       <!--Earn Passive-->
       <!-- Reviews -->
-      <review-holder></review-holder>
+      <lazy-home-review-holder></lazy-home-review-holder>
       <!--Download App-->
-      <home-download-app />
+      <lazy-home-download-app />
       <!--Download App-->
 
       <!-- <review></review> -->
@@ -226,7 +226,7 @@
         </div>
       </div>-->
       <!-- Footer -->
-      <landing-footer></landing-footer>
+      <lazy-landing-footer></lazy-landing-footer>
     </div>
   </div>
 </template>
@@ -236,25 +236,7 @@ import { mapState } from 'vuex'
 import AOS from 'aos'
 // import * as Simpu from 'https://static.simpu.co/widgets/v1/simpu-widget.js'
 import 'aos/dist/aos.css'
-// import ReferralBanner from '../components/home/ReferralBanner.vue'
-import CoinPrice from '~/components/home/CoinPrice.vue'
-// import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
-// import Review from '~/components/home/Review.vue'
-import ReviewHolder from '~/components/home/ReviewHolder.vue'
-import WhySenex from '~/components/home/WhySenex.vue'
-// import IntroVideo from '~/components/home/IntroVideo.vue'
-import LandingFooter from '~/components/LandingFooter.vue'
 export default {
-  components: {
-    CoinPrice,
-    LandingFooter,
-    ReviewHolder,
-    // ReferralBanner,
-    // Review,
-    // MobileAppBanner,
-    WhySenex
-    // IntroVideo,
-  },
   layout: 'landing',
   data() {
     return {

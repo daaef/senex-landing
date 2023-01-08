@@ -146,7 +146,8 @@ export default {
             }
           ]
         },
-        type: 'application/ld+json'
+        type: 'application/ld+json',
+        defer: true
       }
     ],
     meta: [
@@ -215,11 +216,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-        rel: 'stylesheet',
+        rel: 'preload stylesheet',
         href: '/css/uikit.min.css'
       },
       {
-        rel: 'stylesheet',
+        rel: 'preload stylesheet',
         href: 'http://fonts.cdnfonts.com/css/sf-pro-display'
       }
     ]
@@ -245,7 +246,8 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/composition-api/module',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@unlighthouse/nuxt'
   ],
 
   generate: {
@@ -355,5 +357,12 @@ export default {
   // serverMiddleware: ['~/middleware/redirect.js'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+  render: {
+    // Setting up cache for 'static' directory - a year in milliseconds
+    // https://web.dev/uses-long-cache-ttl
+    static: {
+      maxAge: 60 * 60 * 24 * 365 * 1000,
+    }
+  }
 }

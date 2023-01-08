@@ -54,7 +54,8 @@
         .meta--container {
           display: flex;
           justify-content: flex-end;
-          min-height: 100%;
+          min-height: 0;
+          height: 450px;
           .country--bubbles {
             left: 25%;
           }
@@ -270,6 +271,7 @@
         .meta--container {
           display: flex;
           justify-content: flex-end;
+          height: 320px;
           .country--bubbles {
             left: 5%;
             transform: translateY(-50%) translateX(-5%);
