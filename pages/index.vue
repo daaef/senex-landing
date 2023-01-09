@@ -479,10 +479,10 @@ export default {
 .coin-section {
   h2 {
     line-height: 1.2em;
-    font-size: 4rem;
+    font-size: 3.7rem;
     font-weight: 600;
     @media (max-width: 1140px) {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
   }
   p {
