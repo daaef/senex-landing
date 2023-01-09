@@ -14,10 +14,13 @@
         data-uk-scrollspy="cls: uk-animation-slide-left;"
       >
         <h2>
-          Trade and save <span class="gradient--text">crypto</span> <br />with
-          no hassle.
+          One wallet, <span class="gradient--text">endless </span> <br />
+          possibilities.
         </h2>
-        <p>Buy, exchange and save crypto assets using our wallet feature</p>
+        <p>
+          Start from a safe house and discover endless possibilities with crypto
+          using SenexPay wallet.
+        </p>
         <div class="cto--btns">
           <a
             class="cto--btn"
