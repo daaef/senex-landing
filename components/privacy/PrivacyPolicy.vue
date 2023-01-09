@@ -171,7 +171,7 @@
               and we are not in the business of selling our users' personal
               information to others. SenexPay shares users' personal information
               only as described below and with the subsidiaries or affiliates of
-              SenexPaythat are either subject to this Privacy Notice or follow
+              SenexPay that are either subject to this Privacy Notice or follow
               practices at least as protective as those described in this
               Privacy Notice.
             </p>
