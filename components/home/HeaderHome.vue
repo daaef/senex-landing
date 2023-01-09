@@ -19,7 +19,7 @@
         </h2>
         <p>
           Start from a safe house and discover endless possibilities with crypto
-          using SenexPay wallet.
+          assets using SenexPay wallet.
         </p>
         <div class="cto--btns">
           <a
