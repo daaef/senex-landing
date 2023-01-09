@@ -18,8 +18,8 @@
           possibilities.
         </h2>
         <p>
-          Start from a safe house and discover endless possibilities with crypto
-          assets using SenexPay wallet.
+          Start from a safe house and discover endless possibilities with your
+          crypto assets using SenexPay wallet.
         </p>
         <div class="cto--btns">
           <a
