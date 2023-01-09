@@ -1,94 +1,96 @@
 <template>
-  <div v-if="reviews.length > 0" class="container">
-    <div class="review-holder u-my-big">
-      <h3 class="heading-secondary heading-secondary--weight-md u-my-md">
-        What our customers are saying.
-      </h3>
-      <!-- <div class="review-holder__reviews u-mb-md"> -->
-      <div class="testimonial-carousel u-mb-md">
-        <!-- ref="reviews"  -->
-        <!-- <template v-for="(item, idx) in reviews">
-          <review-2
-            :key="idx"
-            :name="item.name"
-            :image="item.image"
-            :content="item.content"
-          ></review-2>
-        </template> -->
-        <div
-          class="uk-position-relative uk-visible-toggle uk-light"
-          tabindex="-1"
-          data-uk-slider="finite: true"
-        >
-          <ul
-            class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid"
-          >
-            <li
-              v-for="(item, idx) in reviews"
+  <section v-if="reviews.length > 0" class="reviews--holder">
+    <div class="container">
+      <div class="review-holder">
+        <h3 class="heading-secondary heading-secondary--weight-md u-my-md">
+          What our customers are saying.
+        </h3>
+        <!-- <div class="review-holder__reviews u-mb-md"> -->
+        <div class="testimonial-carousel u-mb-md">
+          <!-- ref="reviews"  -->
+          <!-- <template v-for="(item, idx) in reviews">
+            <review-2
               :key="idx"
-              class="uk-width-2-5@m uk-width-3-5@s uk-width-4-5"
+              :name="item.name"
+              :image="item.image"
+              :content="item.content"
+            ></review-2>
+          </template> -->
+          <div
+            class="uk-position-relative uk-visible-toggle uk-light"
+            tabindex="-1"
+            data-uk-slider="finite: true"
+          >
+            <ul
+              class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid"
             >
+              <li
+                v-for="(item, idx) in reviews"
+                :key="idx"
+                class="uk-width-2-5@m uk-width-3-5@s uk-width-4-5"
+              >
+                <review-2
+                  :name="item.name"
+                  :image="item.photo"
+                  :content="item.reviewText"
+                ></review-2>
+              </li>
+            </ul>
+            <div class="uk-position-bottom-center uk-position-small">
+              <ul class="uk-dotnav">
+                <li data-uk-slider-item="0"><a href="#0">Item 1</a></li>
+                <li data-uk-slider-item="1"><a href="#0">Item 2</a></li>
+                <li data-uk-slider-item="2"><a href="#0">Item 3</a></li>
+              </ul>
+            </div>
+          </div>
+          <!--        <VueSlickCarousel v-if="reviews.length > 0" v-bind="settings">
+            <div v-for="(item, idx) in reviews" :key="idx">
               <review-2
                 :name="item.name"
                 :image="item.photo"
                 :content="item.reviewText"
               ></review-2>
-            </li>
-          </ul>
-          <div class="uk-position-bottom-center uk-position-small">
-            <ul class="uk-dotnav">
-              <li data-uk-slider-item="0"><a href="#0">Item 1</a></li>
-              <li data-uk-slider-item="1"><a href="#0">Item 2</a></li>
-              <li data-uk-slider-item="2"><a href="#0">Item 3</a></li>
-            </ul>
-          </div>
+            </div>
+          </VueSlickCarousel>-->
+          <!-- <carousel
+            :scroll-per-page="false"
+            pagination-position="left"
+            pagination-color="#B2B2B2"
+            pagination-active-aolor="#3E3E41"
+            :loop="true"
+            :center-mode="true"
+            :per-page-custom="[
+              [0, 1],
+              [760, 1.5],
+              [1200, 2.5]
+            ]"
+          >
+            <slide v-for="(item, idx) in reviews" :key="idx">
+              <review-2
+                :name="item.name"
+                :image="item.photo"
+                :content="item.reviewText"
+              ></review-2>
+            </slide>
+          </carousel> -->
         </div>
-        <!--        <VueSlickCarousel v-if="reviews.length > 0" v-bind="settings">
-          <div v-for="(item, idx) in reviews" :key="idx">
-            <review-2
-              :name="item.name"
-              :image="item.photo"
-              :content="item.reviewText"
-            ></review-2>
-          </div>
-        </VueSlickCarousel>-->
-        <!-- <carousel
-          :scroll-per-page="false"
-          pagination-position="left"
-          pagination-color="#B2B2B2"
-          pagination-active-aolor="#3E3E41"
-          :loop="true"
-          :center-mode="true"
-          :per-page-custom="[
-            [0, 1],
-            [760, 1.5],
-            [1200, 2.5]
-          ]"
-        >
-          <slide v-for="(item, idx) in reviews" :key="idx">
-            <review-2
-              :name="item.name"
-              :image="item.photo"
-              :content="item.reviewText"
-            ></review-2>
-          </slide>
-        </carousel> -->
-      </div>
-      <!-- <div class="review-holder__dot-box">
-        <span
-          v-for="i in getPages()"
-          :key="i"
-          class="review-holder__dot"
-          :class="[current == i ? 'review-holder__dot--active' : '']"
-          @click="clickDot(i)"
-        ></span>
+        <!-- <div class="review-holder__dot-box">
+          <span
+            v-for="i in getPages()"
+            :key="i"
+            class="review-holder__dot"
+            :class="[current == i ? 'review-holder__dot--active' : '']"
+            @click="clickDot(i)"
+          ></span>
 
-      </div> -->
-      <!-- <span class="review-holder__dot review-holder__dot--active"></span>
-        <span class="review-holder__dot"></span>
-        <span class="review-holder__dot"></span> -->
+        </div> -->
+        <!-- <span class="review-holder__dot review-holder__dot--active"></span>
+          <span class="review-holder__dot"></span>
+          <span class="review-holder__dot"></span> -->
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -240,6 +242,11 @@ export default {
 </script>
 
 <style lang="scss">
+.reviews--holder {
+  background: url('/testimon-bg.png');
+  padding: 80px 0;
+  background-size: cover;
+}
 .VueCarousel-pagination {
   width: 100%;
   text-align: left !important;
@@ -264,8 +271,8 @@ export default {
   // display: flex;
   .uk-slider-items {
     padding-bottom: 60px;
+    padding-top: 80px;
   }
-  margin: 50px 0;
   .uk-position-bottom-center.uk-position-small {
     transform: translateY(10px) translateX(0);
     margin-left: 0;

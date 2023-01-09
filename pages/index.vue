@@ -101,19 +101,25 @@
     </div>-->
     <!-- Crypocurrencies and amounts -->
     <div id="coin-section" class="coin-section">
-      <div class="container mx-auto overflow-hidden overflow-con">
-        <coin-price
+      <div
+        class="container mx-auto overflow-hidden overflow-con"
+        data-uk-scrollspy="cls: uk-animation-scale-up; target: .cust--card; delay: 500;"
+      >
+        <div class="flex text-white mb-20 flex-col items-center">
+          <h2 class="text-center">Buy and sell crypto seamlessly</h2>
+          <p class="mt-4">Control your crypto assets while trading smoothly.</p>
+        </div>
+        <lazy-home-coin-price
           v-for="(token, i) in countryCrypto"
           :key="i"
-          data-aos="fade-up"
-          data-aos-once="true"
+          class="cust--card"
           :name="tokenConfig(token).name"
           :abbr="tokenConfig(token).abbr"
           :image="tokenConfig(token).image"
           :rate="getPairRate(token)"
           :country="country"
         >
-        </coin-price>
+        </lazy-home-coin-price>
         <!-- <coin-price
           v-if="rates"
           name="Tether"
@@ -141,207 +147,59 @@
         </p>
       </div>
     </div>
-    <HomeTrustedExchange />
-    <HomeDashboardDesign />
+    <LazyHomeTrustedExchange />
+    <LazyHomeSenexPlus />
+    <LazyHomeDashboardDesign />
     <!-- Descriptions -->
     <div class="">
       <!-- Description 1 -->
       <div
         class="container snx-description-con__inside snx-description-con__inside--reverse"
-        data-aos="slide-up"
-        data-aos-once="true"
       >
-        <div class="snx-description-con__child">
-          <div class="snx-description">
-            <p
-              class="snx-description__title heading-primary heading-primary--wt-500"
-            >
-              We are serious about security.
-            </p>
-            <p class="snx-description__subtitle paragraph">
-              We know that security is priority for you; it is for us too. All
-              your transactions with us are fully encrypted with cutting-edge
-              security protocols that protect you.
-            </p>
+        <div class="flex items-center flex-wrap justify-center md:mt-16">
+          <div
+            class="snx-description-img-con"
+            data-uk-scrollspy="cls: uk-animation-scale-up; repeat"
+          >
+            <img src="/serious-pic.png" alt="Serious image" />
           </div>
-        </div>
-        <div class="flex items-center md:mt-16">
-          <div class="m-auto lg:mr-0 snx-description-img-con">
-            <!-- <img src="/img/secure.svg" /> -->
-            <svg
-              id="Component_109_1"
-              class="secure-lock-svg"
-              :class="secureLockOpen ? 'secure-lock-svg-click' : ''"
-              data-name="Component 109 – 1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="495"
-              height="484"
-              viewBox="0 0 495 484"
-              @click="secureLockTouch()"
-            >
-              <rect
-                id="Rectangle_830"
-                data-name="Rectangle 830"
-                width="441"
-                height="441"
-                rx="30"
-                transform="translate(54)"
-                fill="#e4edfc"
-                class="disappear"
-              />
-              <rect
-                id="Rectangle_831"
-                data-name="Rectangle 831"
-                width="441"
-                height="441"
-                rx="30"
-                transform="translate(0 43)"
-                fill="#ddffeb"
-                class="disappear"
-              />
-              <g
-                id="Rectangle_829"
-                data-name="Rectangle 829"
-                transform="translate(28 18)"
-                fill="#fff"
-                stroke="#1370f8"
-                stroke-width="4"
-              >
-                <rect width="441" height="441" rx="30" stroke="none" />
-                <rect
-                  x="2"
-                  y="2"
-                  width="437"
-                  height="437"
-                  rx="28"
-                  fill="none"
-                />
-              </g>
-              <g
-                id="Ellipse_117"
-                data-name="Ellipse 117"
-                transform="translate(190 180)"
-                fill="none"
-                stroke="#fff"
-                stroke-width="4"
-              >
-                <circle cx="59" cy="59" r="59" stroke="none" />
-                <circle cx="59" cy="59" r="57" fill="none" />
-              </g>
-              <g
-                id="Group_694"
-                data-name="Group 694"
-                transform="translate(-1096 -4024)"
-              >
-                <rect
-                  id="diagonal-1"
-                  data-name="Rectangle 832"
-                  width="7"
-                  height="589"
-                  rx="3.5"
-                  transform="translate(1131.154 4059.3) rotate(-45)"
-                  fill="#e4edfc"
-                />
-                <rect
-                  id="diagonal-2"
-                  data-name="Rectangle 833"
-                  width="7"
-                  height="591"
-                  rx="3.5"
-                  transform="translate(1137.518 4473.664) rotate(-135)"
-                  fill="#e4edfc"
-                />
-              </g>
-              <circle
-                id="blue-circle-svg"
-                data-name="blue-circle-svg"
-                cx="50%"
-                cy="50%"
-                r="122"
-                fill="#1370f8"
-              />
-              <g
-                id="Group_698"
-                data-name="Group 698"
-                transform="translate(-1096 -4014)"
-              >
-                <g
-                  id="shield_1_"
-                  data-name="shield (1)"
-                  transform="translate(1240.11 4179)"
-                >
-                  <path
-                    id="Path_2064"
-                    data-name="Path 2064"
-                    d="M104.989,0,30.912,21.137V58.274a118.967,118.967,0,0,0,72.1,109.436l1.975.791,1.975-.791a118.967,118.967,0,0,0,72.1-109.436V21.137Z"
-                    fill="#e7e7e7"
-                  />
-                  <path
-                    id="Path_2065"
-                    data-name="Path 2065"
-                    d="M330.077,21.137V58.274a118.967,118.967,0,0,1-72.1,109.436L256,168.5V0Z"
-                    transform="translate(-151.011)"
-                    fill="#d3d3d8"
-                  />
-                  <path
-                    id="Path_2066"
-                    data-name="Path 2066"
-                    d="M145.259,62.425,90.936,77.932v22.223a99.244,99.244,0,0,0,51.953,87.312l2.371,1.284,2.371-1.284a99.243,99.243,0,0,0,51.953-87.312V77.932Z"
-                    transform="translate(-40.27 -41.881)"
-                    fill="#00abe9"
-                  />
-                  <path
-                    id="Path_2067"
-                    data-name="Path 2067"
-                    d="M310.323,77.932v22.223a99.244,99.244,0,0,1-51.953,87.312L256,188.75V62.425Z"
-                    transform="translate(-151.011 -41.881)"
-                    fill="#0095ff"
-                  />
-                </g>
-                <g
-                  id="Path_group"
-                  data-name="Group 695"
-                  transform="translate(13.5 13.5)"
-                >
-                  <circle
-                    id="Ellipse_118"
-                    data-name="Ellipse 118"
-                    cx="33"
-                    cy="33"
-                    r="33"
-                    transform="translate(1298.5 4216.5)"
-                    fill="#fff"
-                  />
-                  <path
-                    id="ios-lock"
-                    data-name="Icon ionic-ios-lock"
-                    d="M30.294,15.483H28.276V11.557a8.073,8.073,0,1,0-16.144-.109v4.036H10.113A3.373,3.373,0,0,0,6.75,18.847V34.991a3.373,3.373,0,0,0,3.363,3.363h20.18a3.373,3.373,0,0,0,3.363-3.363V18.847A3.373,3.373,0,0,0,30.294,15.483ZM21.381,25.977v5.785a1.206,1.206,0,0,1-1.118,1.211A1.179,1.179,0,0,1,19.026,31.8V25.977a2.691,2.691,0,1,1,2.354,0Zm4.541-10.494H14.486V11.447a5.718,5.718,0,0,1,11.436,0Z"
-                    fill="#1370f8"
-                  />
-                </g>
-              </g>
-            </svg>
+          <div
+            class="snx-description-con__child"
+            data-uk-scrollspy="cls: uk-animation-slide-top"
+          >
+            <div class="snx-description">
+              <h3 class="security--title heading-primary--wt-500">
+                We are serious <br />about security.
+              </h3>
+              <p class="snx-description__subtitle paragraph">
+                We know that security is priority for you; it is for us too. All
+                your transactions with us are fully encrypted with cutting-edge
+                security protocols that protect you.
+              </p>
+              <a :href="appLink + '/create-account'" class="dash--btn">
+                Get Started
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="overflow-hidden">
       <!-- Why Senex -->
-      <why-senex></why-senex>
+      <lazy-home-why-senex></lazy-home-why-senex>
       <!-- Referral banner -->
       <!-- <referral-banner></referral-banner> -->
+      <!--Getting Crypto-->
+      <lazy-home-getting-crypto />
+      <!--Getting Crypto-->
+
+      <!--Earn Passive-->
+      <lazy-home-earn-passive />
+      <!--Earn Passive-->
       <!-- Reviews -->
-      <review-holder></review-holder>
-      <!--Getting Crypto-->
-      <home-getting-crypto />
-      <!--Getting Crypto-->
-
-      <!--Earn Passive-->
-      <home-earn-passive />
-      <!--Earn Passive-->
-
+      <lazy-home-review-holder></lazy-home-review-holder>
       <!--Download App-->
-      <home-download-app />
+      <lazy-home-download-app />
       <!--Download App-->
 
       <!-- <review></review> -->
@@ -368,7 +226,7 @@
         </div>
       </div>-->
       <!-- Footer -->
-      <landing-footer></landing-footer>
+      <lazy-landing-footer></lazy-landing-footer>
     </div>
   </div>
 </template>
@@ -378,25 +236,7 @@ import { mapState } from 'vuex'
 import AOS from 'aos'
 // import * as Simpu from 'https://static.simpu.co/widgets/v1/simpu-widget.js'
 import 'aos/dist/aos.css'
-// import ReferralBanner from '../components/home/ReferralBanner.vue'
-import CoinPrice from '~/components/home/CoinPrice.vue'
-// import MobileAppBanner from '~/components/home/MobileAppBanner.vue'
-// import Review from '~/components/home/Review.vue'
-import ReviewHolder from '~/components/home/ReviewHolder.vue'
-import WhySenex from '~/components/home/WhySenex.vue'
-// import IntroVideo from '~/components/home/IntroVideo.vue'
-import LandingFooter from '~/components/LandingFooter.vue'
 export default {
-  components: {
-    CoinPrice,
-    LandingFooter,
-    ReviewHolder,
-    // ReferralBanner,
-    // Review,
-    // MobileAppBanner,
-    WhySenex
-    // IntroVideo,
-  },
   layout: 'landing',
   data() {
     return {
@@ -600,4 +440,53 @@ export default {
 .links {
   padding-top: 15px;
 } */
+.security--title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #064ebe;
+  span {
+    font-size: 6rem;
+  }
+  &:first-line {
+    line-height: 0.8;
+  }
+}
+.snx-description {
+  padding-left: 50px;
+  @media only screen and (max-width: 75em) {
+    padding-left: 0;
+    align-items: center;
+    a.dash--btn {
+      align-self: center;
+    }
+  }
+  img {
+    height: 100px;
+    margin-bottom: 20px;
+    width: fit-content;
+    object-fit: contain;
+  }
+  a.dash--btn {
+    margin-top: 20px;
+  }
+}
+.snx-description-con__inside {
+  background-image: url(/security--bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.coin-section {
+  h2 {
+    line-height: 1.2em;
+    font-size: 5rem;
+    font-weight: 600;
+    @media (max-width: 1140px) {
+      font-size: 4rem;
+    }
+  }
+  p {
+    font-size: 1.9rem;
+  }
+}
 </style>

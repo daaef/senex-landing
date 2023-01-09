@@ -1,11 +1,10 @@
 <template>
   <section class="download--app">
     <div class="container">
-      <div class="down--app-banner">
+      <div class="down--app-banner overflow-hidden">
         <div
           class="download--message md:text-center sm:text-left lg:text-left"
-          data-aos="fade"
-          data-aos-once="true"
+          data-uk-scrollspy="cls: uk-animation-fade;"
         >
           <h3>
             Download the
@@ -39,7 +38,10 @@
             </a>
           </div>
         </div>
-        <div class="app--image" data-aos="fade-up" data-aos-once="true">
+        <div
+          class="app--image"
+          data-uk-scrollspy="cls: uk-animation-slide-bottom;"
+        >
           <img
             src="/img/app--bubble.png"
             class="app--bubble1"
@@ -71,9 +73,12 @@ export default {
 <style lang="scss">
 .download--app {
   padding: 100px 0;
-  background: #e8f0fc;
+  background: #ffffff;
   .down--app-banner {
-    background: transparent linear-gradient(116deg, #1265fb 0%, #5237e0 100%);
+    background: url(/download-shape.svg) right,
+      url('/download-lines.svg') left bottom no-repeat,
+      linear-gradient(116deg, #064ebe 0%, #5237e0 100%);
+    background-size: contain;
     padding-left: 60px;
     padding-right: 60px;
     border-radius: 25px;
@@ -110,9 +115,23 @@ export default {
       }
       a {
         align-items: center;
+        box-shadow: -2px 5px 20px #0956cf;
+        background: #fafafa;
         &:hover {
           background: transparent
-            linear-gradient(109deg, #1265fb 0%, #00ffff 100%);
+            linear-gradient(109deg, #064ebe 0%, #00ffff 100%);
+          img {
+            filter: brightness(100) sepia(1) brightness(3.5);
+          }
+          span {
+            color: #fafafa;
+          }
+        }
+        span {
+          color: #064ebe;
+        }
+        img {
+          filter: none;
         }
       }
     }

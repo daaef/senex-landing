@@ -2,12 +2,15 @@
   <section class="earn--passive">
     <div class="container flex flex-wrap items-center justify-center">
       <input id="toggleExpand" hidden type="checkbox" />
-      <div class="earn--group" data-aos="fade-down" data-aos-once="true">
+      <div
+        class="earn--group"
+        data-uk-scrollspy="cls: uk-animation-scale-down;"
+      >
         <label for="toggleExpand" class="cursor-pointer">
           <img src="/img/earn-group.png" alt="" />
         </label>
       </div>
-      <div class="earn--info" data-aos="fade-up" data-aos-once="true">
+      <div class="earn--info" data-uk-scrollspy="cls: uk-animation-scale-up;">
         <div class="tag--badge uppercase success">new</div>
         <h2>Earn Passive Income</h2>
         <p>
@@ -220,7 +223,8 @@ export default {
     }
     h2 {
       font-size: 5rem;
-      font-weight: 500;
+      font-weight: 600;
+      line-height: 1.2em;
       margin: 10px 0;
       color: #ffffff;
     }

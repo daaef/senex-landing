@@ -2,7 +2,7 @@
   <section class="getting--crypto">
     <img class="curves" src="/img/green-semi-circles-up.png" alt="" />
     <div class="container flex flex-wrap items-center">
-      <div class="left--info" data-aos="fade-right" data-aos-once="true">
+      <div class="left--info" data-uk-scrollspy="cls: uk-animation-slide-left;">
         <div class="tag--badge uppercase">Virtual Event</div>
         <h3>Getting into Crypto</h3>
         <p>
@@ -18,7 +18,7 @@
           Register for free</a
         >
       </div>
-      <div class="right--card" data-aos="zoom-in" data-aos-once="true">
+      <div class="right--card" data-uk-scrollspy="cls: uk-animation-scale-up">
         <a
           href="https://www.eventbrite.co.uk/e/talk-to-a-crypto-advisor-tickets-319295329927"
           target="_blank"
@@ -66,7 +66,7 @@ export default {
 <style lang="scss">
 .getting--crypto {
   background: transparent
-    linear-gradient(296deg, #1265fb 0%, #cadbfa 0%, #dfebff 40%, #ffffff 100%);
+    linear-gradient(296deg, #064ebe 0%, #cadbfa 0%, #dfebff 40%, #ffffff 100%);
   width: 100%;
   position: relative;
   padding: 100px 0;
@@ -84,7 +84,7 @@ export default {
 
     h3 {
       font-size: 4.5rem;
-      font-weight: 500;
+      font-weight: 600;
       margin: 10px 0;
     }
     p {
@@ -97,7 +97,7 @@ export default {
     a.dash--btn {
       color: #ffffff;
       transition: all 0.3s ease-in-out;
-      background: #1265fb;
+      background: #064ebe;
       padding: 15px 50px;
       border-radius: 8px;
       font-size: 1.8rem;
@@ -172,7 +172,7 @@ export default {
 
         &:before {
           background: transparent
-            linear-gradient(296deg, #1265fb 0%, #5237e0 100%);
+            linear-gradient(296deg, #064ebe 0%, #5237e0 100%);
         }
       }
       .card--base {

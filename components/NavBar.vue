@@ -179,17 +179,22 @@ export default {
   }
 }
 nav.home--nav.light {
-  background: #ffffff;
   .toggler {
-    color: #053888;
+    color: #064ebe;
   }
   .container {
     .navigations {
-      background: #ffffff;
+      .caret-icon {
+        svg {
+          path {
+            fill: #064ebe;
+          }
+        }
+      }
       ul {
         li {
           a {
-            color: #053888;
+            color: #064ebe;
             &.nav-btn {
               color: #fafafa;
             }
@@ -237,17 +242,17 @@ nav.home--nav.light {
   }
   &.light {
     span {
-      background: #053888;
+      background: #064ebe;
     }
   }
 }
 
 #toggle span {
   width: 100%;
-  height: 5px;
+  height: 3px;
   background: white;
   display: block;
-  margin: 4px auto;
+  margin: 6px auto;
   transition: all 0.3s;
   backface-visibility: hidden;
   border-radius: 1px;
@@ -265,7 +270,7 @@ nav.home--nav.light {
   transform: rotate(-45deg) translate(7px, -8px);
 }
 .toggler {
-  position: fixed;
+  position: absolute;
   z-index: 200;
   color: #ffffff;
   font-size: 3rem;

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="overflow-hidden">
+  <div class="overflow-hidden">
+    <div class="overflow-hidden top-1 relative">
       <div class="why-blue-border"></div>
       <div class="why-light-triangle"></div>
     </div>
@@ -11,14 +11,21 @@
         class="why-senex-circle"
       />
       <div class="container">
-        <p class="why heading-tertiary--v-sm">Why people love SenexPay</p>
-        <h2 class="heading-secondary u-text-left">
+        <p
+          class="why heading-tertiary--v-sm"
+          data-uk-scrollspy="cls: uk-animation-slide-bottom;"
+        >
+          Why people love SenexPay
+        </p>
+        <h2
+          class="heading-secondary u-text-left"
+          data-uk-scrollspy="cls: uk-animation-slide-bottom;"
+        >
           We just wanna make crypto exchange stress-free.
         </h2>
         <div
           class="lg:flex reason-con"
-          data-aos="slide-up"
-          data-aos-once="true"
+          data-uk-scrollspy="cls: uk-animation-slide-bottom;"
         >
           <div class="reason">
             <span class="icon up-anim"
