@@ -98,7 +98,3 @@ static/OneSignalSDKUpdaterWorker.js
 
 yarn.lock
 .vercel
-/.nova/
-.nova
-.unlighthouse
-

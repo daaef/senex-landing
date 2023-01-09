@@ -260,6 +260,11 @@ export default {
           name: 'Ethereum',
           image: '/img/ethereum-eth.svg'
         },
+        LTC: {
+          abbr: 'LTC',
+          name: 'Litecoin',
+          image: '/img/litecoin.svg'
+        },
         DOGE: {
           abbr: 'DOGE',
           name: 'DogeCoin',
