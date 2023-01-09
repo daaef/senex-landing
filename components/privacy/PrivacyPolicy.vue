@@ -191,8 +191,46 @@
               information needed to perform their functions, but may not use it
               for other purposes. Further, they must process the personal
               information in accordance with this Privacy Notice and as only
-              permitted by applicable data protection laws.
+              permitted by applicable data protection laws. Some of these
+              providers include
             </p>
+            <ol>
+              <li>
+                <h1>Cloudinary</h1>
+                <p>
+                  We use a Content Delivery Network (CDN) of Cloudinary Ltd. A
+                  CDN is an online service that is used in particular to load
+                  large media files (such as graphics, page content or scripts)
+                  through a network of regionally distributed servers connected
+                  via the Internet and display them on our Website. The use of
+                  the CDN helps us to optimize the loading speeds of our
+                  Website.
+                </p>
+                <p>
+                  Resources from cloudinary usually start with
+                  <code class="text-xl">https://res.cloudinary.com</code>
+                </p>
+              </li>
+              <li>
+                <h1>SmileIdentity</h1>
+                <p>
+                  It is an onboarding, identity verification, user
+                  authentication, and digital KYC platform. KYC means Know your
+                  customer. This platform is used to verify users through
+                  various identification verification methods.
+                </p>
+              </li>
+              <li>
+                <h1>Termii</h1>
+                <p>
+                  This is a platform that helps businesses use messaging
+                  channels to verify and authenticate customer transactions. We
+                  use the messaging feature of this platform to collect users
+                  phone numbers and send them a verification code for
+                  validation.
+                </p>
+              </li>
+            </ol>
             <p>
               Business transfers: As we continue to develop our business, we
               might sell or buy other businesses or services. In such

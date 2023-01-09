@@ -8,7 +8,6 @@
               <span class="logo-con" @click="toHome()"
                 ><img src="/img/senexpay-logo-light.svg" alt="logo"
               /></span>
-              <span class="copyright">SenexPay © {{ getYear() }}</span>
               <!-- <div class="terms-link">
                 <router-link to="/terms">Terms of Service | </router-link>
                 <router-link to="/privacy">Privacy Policy</router-link>
@@ -93,6 +92,8 @@
                 <router-link to="/privacy">Privacy Policy</router-link>
               </div>
             </div> -->
+
+            <span class="copyright">SenexPay © {{ getYear() }}</span>
           </div>
           <div class="lg:w-2/3 lg:flex justify-end w-full ml-auto">
             <div class="lg:w-3/5">
@@ -165,7 +166,6 @@ export default {
         }
       }
       .footer-social-con {
-        margin: 0;
         a:first-of-type {
           img {
             margin-left: 0;
