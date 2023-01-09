@@ -151,7 +151,7 @@
     <LazyHomeSenexPlus />
     <LazyHomeDashboardDesign />
     <!-- Descriptions -->
-    <div class="">
+    <div class="snx-description-space">
       <!-- Description 1 -->
       <div
         class="container snx-description-con__inside snx-description-con__inside--reverse"
@@ -184,7 +184,7 @@
         </div>
       </div>
     </div>
-    <div class="overflow-hidden">
+    <div class="overflow-hidden why-bg-space">
       <!-- Why Senex -->
       <lazy-home-why-senex></lazy-home-why-senex>
       <!-- Referral banner -->
@@ -470,7 +470,7 @@ export default {
     margin-top: 20px;
   }
 }
-.snx-description-con__inside {
+.snx-description-space {
   background-image: url(/security--bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -479,7 +479,7 @@ export default {
 .coin-section {
   h2 {
     line-height: 1.2em;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 600;
     @media (max-width: 1140px) {
       font-size: 4rem;
@@ -488,5 +488,8 @@ export default {
   p {
     font-size: 1.9rem;
   }
+}
+.why-bg-space {
+  background: #f2f1f3;
 }
 </style>
