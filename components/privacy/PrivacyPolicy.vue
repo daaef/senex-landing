@@ -263,7 +263,7 @@
               card data is securely transferred and hosted off-site by a payment
               vendor in compliance with Payment Card Industry Data Security
               Standards (PCI DSS). This Information is not accessible to
-              SenexPay or SenexPaystaff.
+              SenexPay or SenexPay staff.
             </p>
             <p>
               While we cannot guarantee that loss, misuse, unauthorised
