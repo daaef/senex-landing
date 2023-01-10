@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="">
       <div
         class="faq-item-con"
         :class="isOpen ? 'faq-item-con--grey' : 'faq-item-con--grey'"

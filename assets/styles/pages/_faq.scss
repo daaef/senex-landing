@@ -94,10 +94,14 @@
       color: rgba(10, 10, 10, 0.45);
       text-align: center;
     }
-    &.uk-active,
-    &:hover {
+    &.uk-active{
       a {
         font-weight: 600;
+        color: $primary_color;
+      }
+    }
+    &:hover{
+      a {
         color: $primary_color;
       }
     }
